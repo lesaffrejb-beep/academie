@@ -64,7 +64,6 @@ SORTIE_SITE = RACINE / "site" / "banque.json"
 # image.fichier. Ajouté le 30/08/2026 : sans ça, les quatre cartes à
 # image de la banque étaient servies avec un `fichier` qui ne pointait
 # nulle part, et l'écran retombait en rendu dégradé.
-SORTIE_MEDIAS = SORTIE_SITE.parent
 
 # Blocs de config recopiés dans la charge servie. Le front n'a pas accès
 # à `academie.json` : sans eux, il devrait coder les seuils en dur, ce
@@ -84,7 +83,7 @@ def carte_publique(carte: dict) -> dict:
     return {c: carte[c] for c in CHAMPS if c in carte and carte[c] not in (None, [], "")}
 
 
-def publie_images(retenues: list[dict]) -> tuple[list[str], list[str]]:
+def publie_images(retenues: list[dict], dossier_sortie: Path) -> tuple[list[str], list[str]]:
     """Copie à côté du banque.json servi les images des cartes servies.
 
     On ne recopie PAS le dossier `images/` en bloc : seulement ce qui
@@ -109,7 +108,7 @@ def publie_images(retenues: list[dict]) -> tuple[list[str], list[str]]:
         if not source.is_file():
             erreurs.append(f"{carte['id']} : image absente ({rel})")
             continue
-        cible = SORTIE_MEDIAS / rel
+        cible = dossier_sortie / rel
         cible.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(source, cible)
         publiees.append(rel)
@@ -179,14 +178,12 @@ def main() -> int:
 
     # Les images d'abord : une carte servie dont l'image manque est une
     # carte cassée à l'écran, donc rien ne s'écrit.
-    images: list[str] = []
-    if args.sortie.resolve() == SORTIE_SITE.resolve():
-        images, manquantes = publie_images(retenues)
-        if manquantes:
-            print(f"image(s) introuvable(s) ({len(manquantes)}), rien n'est généré :")
-            for m in manquantes:
-                print(f"  - {m}")
-            return 1
+    images, manquantes = publie_images(retenues, args.sortie.parent)
+    if manquantes:
+        print(f"image(s) introuvable(s) ({len(manquantes)}), rien n'est généré :")
+        for m in manquantes:
+            print(f"  - {m}")
+        return 1
 
     texte = json.dumps(charge, ensure_ascii=False, indent=2) + "\n"
     for cible in sorties:
@@ -204,7 +201,7 @@ def main() -> int:
     print(f"  couches : {', '.join(sorted(couches))}")
     if images:
         print(f"  {len(images)} image(s) publiée(s) → "
-              f"{SORTIE_MEDIAS.relative_to(RACINE)}/ : {', '.join(sorted(set(images)))}")
+              f"{args.sortie.parent}/ : {', '.join(sorted(set(images)))}")
     if brouillons:
         print(f"  dont {brouillons} en `brouillon` : à revérifier à la source "
               f"avant de compter dessus")

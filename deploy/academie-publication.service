@@ -1,0 +1,23 @@
+[Unit]
+Description=Académie — publication autonome de la banque validée
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=academie
+Group=academie
+WorkingDirectory=/home/academie/repo
+ExecStart=/usr/bin/python3 app/genere.py --couches banque --sortie /var/lib/academie/publication/banque.json
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadOnlyPaths=/home/academie/repo
+ReadWritePaths=/var/lib/academie/publication
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+
+[Install]
+WantedBy=multi-user.target

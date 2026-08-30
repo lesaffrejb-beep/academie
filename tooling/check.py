@@ -12,7 +12,8 @@ RE_OLD_REPO = re.compile(r"erp/app/etude|wiki-copro-sergic|\.claude/skills")
 
 def main() -> int:
     errors: list[str] = []
-    for required in ("AGENTS.md", "CLAUDE.md", "project.yaml", "ROADMAP.md", "roadmap.json", "context/giverny.md"):
+    for required in ("AGENTS.md", "CLAUDE.md", "project.yaml", "ROADMAP.md", "roadmap.json", "context/giverny.md",
+                     "deploy/academie-publication.service", "deploy/academie-publication.timer"):
         if not (ROOT / required).is_file():
             errors.append(f"fichier requis absent : {required}")
     for rel in ("project.yaml", "roadmap.json", "academie.json"):
