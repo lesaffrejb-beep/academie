@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#14263d">
+  <meta name="description" content="L’Académie — apprendre le métier par rappel actif.">
+  <title>L’Académie</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <header class="barre">
+    <a class="marque" href="./" aria-label="Accueil Académie">
+      <span class="sceau">A</span>
+      <span><strong>L’Académie</strong><small>Le métier, chaque matin.</small></span>
+    </a>
+    <a class="retour" href="/">Giverny <span aria-hidden="true">↗</span></a>
+  </header>
+
+  <main>
+    <section id="accueil" class="accueil">
+      <div class="hero">
+        <p class="surtitre">Expédition du jour</p>
+        <h1>Quinze minutes pour devenir <em>meilleur sur le terrain.</em></h1>
+        <p class="intro">Une banque sourcée, du rappel actif et une progression qui reste sur cet appareil.</p>
+        <div class="actions">
+          <button id="commencer" class="primaire" type="button">Commencer la séance <span>→</span></button>
+          <p id="resume" class="resume" aria-live="polite">Chargement de la banque…</p>
+        </div>
+      </div>
+      <aside class="boussole" aria-label="Progression globale">
+        <div class="orbite"><div id="progression" class="progression">0<small>%</small></div></div>
+        <p>Territoire exploré</p>
+        <dl>
+          <div><dt id="revues">0</dt><dd>cartes vues</dd></div>
+          <div><dt id="serie">0</dt><dd>jours de série</dd></div>
+        </dl>
+      </aside>
+      <div class="vague" aria-hidden="true"></div>
+    </section>
+
+    <section class="territoires" aria-labelledby="titre-domaines">
+      <div class="titre-section">
+        <div><p class="surtitre">Carte des savoirs</p><h2 id="titre-domaines">Choisir un territoire</h2></div>
+        <p>La séance mélange les domaines pour entraîner le rappel, pas la reconnaissance.</p>
+      </div>
+      <div id="domaines" class="grille-domaines" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <section id="session" class="session" hidden aria-labelledby="question">
+    <header class="session-barre">
+      <button id="quitter" class="icone" type="button" aria-label="Quitter la séance">×</button>
+      <div class="session-avance"><span id="compteur">1 / 10</span><div><i id="avance"></i></div></div>
+      <span id="domaine-carte" class="pastille">Domaine</span>
+    </header>
+    <article class="carte">
+      <div class="meta"><span id="type-carte"></span><span id="niveau-carte"></span></div>
+      <img id="image-carte" class="image-carte" alt="" hidden>
+      <h2 id="question"></h2>
+      <div id="choix" class="choix"></div>
+      <div id="correction" class="correction" hidden>
+        <p class="label">Réponse</p><p id="reponse"></p>
+        <div id="explication-bloc"><p class="label">Pourquoi</p><p id="explication"></p></div>
+        <div id="vigilance-bloc" class="vigilance"><strong>Vigilance</strong><p id="vigilance"></p></div>
+        <div id="sources" class="sources"></div>
+      </div>
+      <footer class="carte-actions">
+        <button id="reveler" class="primaire" type="button">Voir la réponse</button>
+        <div id="notes" class="notes" hidden>
+          <button data-note="1" type="button">À revoir</button>
+          <button data-note="2" type="button">Difficile</button>
+          <button data-note="3" type="button">Bien</button>
+          <button data-note="4" type="button">Évident</button>
+        </div>
+      </footer>
+    </article>
+  </section>
+
+  <div id="erreur" class="erreur" hidden role="alert">
+    <strong>La banque n’est pas disponible.</strong>
+    <p>Académie conserve la dernière version chargée. Réessaie lorsque la connexion revient.</p>
+    <button type="button" onclick="location.reload()">Réessayer</button>
+  </div>
+</body>
+</html>

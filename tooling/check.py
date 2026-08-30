@@ -13,6 +13,7 @@ RE_OLD_REPO = re.compile(r"erp/app/etude|wiki-copro-sergic|\.claude/skills")
 def main() -> int:
     errors: list[str] = []
     for required in ("AGENTS.md", "CLAUDE.md", "project.yaml", "ROADMAP.md", "roadmap.json", "context/giverny.md",
+                     "client/index.html", "client/style.css", "client/app.js", "client/sw.js",
                      "deploy/academie-publication.service", "deploy/academie-publication.timer"):
         if not (ROOT / required).is_file():
             errors.append(f"fichier requis absent : {required}")
@@ -35,6 +36,10 @@ def main() -> int:
     ).stdout.strip()
     if tracked_claude:
         errors.append(".claude ne doit pas être versionné")
+    client = "\n".join((ROOT / "client" / name).read_text(encoding="utf-8")
+                       for name in ("index.html", "style.css", "app.js", "sw.js"))
+    if re.search(r"(?:^|[/'\"])(?:erp|etude)(?:[/'\"]|$)", client, re.MULTILINE | re.IGNORECASE):
+        errors.append("le client Académie ne doit importer ni ERP ni Etude")
     for error in errors:
         print(f"ERREUR: {error}")
     print(f"Académie : {len(errors)} erreur(s)")

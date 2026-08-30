@@ -126,16 +126,18 @@ personnelle ; toute carte porte sa source et sa date de vérification
 (doctrine ERP, « on vole les patterns des géants, jamais leurs
 plateformes »).
 
-Statut (30/08/2026) : **l'espace de jeu est jouable et déployé sur le
-VPS** — depuis l'ERP, un clic sur L'Académie ouvre l'archipel plein
-écran (O1a fetch runtime et O1b journal auto-save : faits ; les 7
-types de cartes se jouent ; banque copro 80 valide / 4 brouillon
+Statut (30/08/2026) : **l'espace de jeu autonome est jouable et déployé
+sur le VPS sous `/academie/`** — son client statique appartient à ce
+dépôt, charge la banque au runtime, conserve la progression sur
+l'appareil et reste disponible sur la dernière banque mise en cache.
+Les 8 types de cartes se jouent ; banque copro 80 valide / 4 brouillon
 après double passe Légifrance ; domaine test `domaines/arthur-ifsi`
-40 cartes). Les choix sont documentés : SPEC-PRODUIT (les décisions),
+40 cartes. Les choix sont documentés : SPEC-PRODUIT (les décisions),
 METHODE (la pédagogie sourcée), `DESIGN.md`
 §2bis-2ter (la peau de l'espace de jeu et ses pièges techniques),
 `travail/benchmark-2026-08-30.md` (ce qu'on a volé et sous quelle
-licence), CREDITS des icônes affichés dans l'app. Prochains gestes :
+licence), CREDITS des icônes affichés dans l'app. Le client historique
+dans ERP reste un adaptateur de transition. Prochains gestes :
 le rituel réel de JB (c'est lui le gate de tout), O2 (remplir les 5
 îles vides), la couleur d'île qui descend dans les exercices, puis le
 lieu-monde immeuble (v1.1).

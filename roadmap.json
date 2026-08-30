@@ -53,13 +53,13 @@
     {
       "id": "ACA-UI-1",
       "outcome": "L'interface de jeu vit dans Académie, charge sa banque au runtime et ne dépend d'aucun module ou fichier ERP.",
-      "status": "ready",
+      "status": "done",
       "mode": "agent-review",
       "risk": "medium",
       "priority": 96,
       "depends_on": ["ACA-PUBLISH-1"],
       "budget": {"max_units": 1, "max_minutes": 180, "max_tokens": 45000},
-      "proof": "Build autonome, test offline sur dernière banque valide, aucun import ERP et chargement initial inférieur à cinq secondes.",
+      "proof": "Client statique autonome publié sous /academie/ : 80 cartes runtime, progression locale, cache hors ligne, zéro import ERP ; tests Python et syntaxe JavaScript verts, rendu Chrome validé.",
       "parent_milestone": "ACADEMIE-UI-1"
     },
     {

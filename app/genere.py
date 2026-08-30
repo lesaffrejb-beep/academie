@@ -57,6 +57,8 @@ from datetime import date  # noqa: E402
 
 RACINE = Path(__file__).resolve().parents[1]
 SORTIE_SITE = RACINE / "site" / "banque.json"
+CLIENT = RACINE / "client"
+FICHIERS_CLIENT = ("index.html", "style.css", "app.js", "sw.js")
 # Maillon 3c : les IMAGES des cartes à image (photo, relier, datation,
 # plan). `image.fichier` est relatif à la racine de la banque ; on
 # recopie le MÊME chemin relatif à côté du banque.json servi, pour que
@@ -113,6 +115,25 @@ def publie_images(retenues: list[dict], dossier_sortie: Path) -> tuple[list[str]
         shutil.copy2(source, cible)
         publiees.append(rel)
     return publiees, erreurs
+
+
+def publie_client(dossier_sortie: Path) -> list[str]:
+    """Publie le client autonome à côté de la banque.
+
+    Le client appartient à Académie et ne dépend d'aucun build ERP. Les fichiers
+    sont volontairement statiques : le timer VPS peut publier l'application avec
+    Python seul, sans npm ni chaîne de compilation implicite.
+    """
+    publies: list[str] = []
+    for nom in FICHIERS_CLIENT:
+        source = CLIENT / nom
+        if not source.is_file():
+            raise FileNotFoundError(f"client autonome incomplet : {source}")
+        cible = dossier_sortie / nom
+        cible.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(source, cible)
+        publies.append(nom)
+    return publies
 
 
 def main() -> int:
@@ -185,6 +206,12 @@ def main() -> int:
             print(f"  - {m}")
         return 1
 
+    try:
+        client = publie_client(args.sortie.parent)
+    except FileNotFoundError as exc:
+        print(str(exc))
+        return 1
+
     texte = json.dumps(charge, ensure_ascii=False, indent=2) + "\n"
     for cible in sorties:
         cible.parent.mkdir(parents=True, exist_ok=True)
@@ -202,6 +229,7 @@ def main() -> int:
     if images:
         print(f"  {len(images)} image(s) publiée(s) → "
               f"{args.sortie.parent}/ : {', '.join(sorted(set(images)))}")
+    print(f"  client autonome publié : {', '.join(client)}")
     if brouillons:
         print(f"  dont {brouillons} en `brouillon` : à revérifier à la source "
               f"avant de compter dessus")
