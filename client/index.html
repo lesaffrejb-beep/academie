@@ -3,9 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="theme-color" content="#14263d">
-  <meta name="description" content="L’Académie — apprendre le métier par rappel actif.">
+  <meta name="theme-color" content="#10263b">
+  <meta name="description" content="L’Académie — un archipel de savoirs à explorer chaque matin.">
   <title>L’Académie</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='50' fill='%23102237'/%3E%3Ctext x='50' y='69' text-anchor='middle' font-size='62' font-family='Georgia' font-style='italic' fill='%23e7af51'%3EA%3C/text%3E%3C/svg%3E">
   <link rel="stylesheet" href="style.css">
   <script type="module" src="app.js"></script>
 </head>
@@ -16,35 +17,86 @@
       <span class="sceau">A</span>
       <span><strong>L’Académie</strong><small>Le métier, chaque matin.</small></span>
     </a>
-    <a class="retour" href="/">Giverny <span aria-hidden="true">↗</span></a>
+    <div class="barre-actions">
+      <span id="meteo" class="meteo" aria-live="polite">Lever du jour</span>
+      <button id="ambiance" class="ambiance" type="button" aria-label="Changer l’ambiance de la carte">Auto</button>
+      <a class="retour" href="/">Giverny <span aria-hidden="true">↗</span></a>
+    </div>
   </header>
 
   <main>
-    <section id="accueil" class="accueil">
-      <div class="hero">
-        <p class="surtitre">Expédition du jour</p>
-        <h1>Quinze minutes pour devenir <em>meilleur sur le terrain.</em></h1>
-        <p class="intro">Une banque sourcée, du rappel actif et une progression qui reste sur cet appareil.</p>
-        <div class="actions">
-          <button id="commencer" class="primaire" type="button">Commencer la séance <span>→</span></button>
-          <p id="resume" class="resume" aria-live="polite">Chargement de la banque…</p>
+    <section id="accueil" class="monde" aria-labelledby="titre-monde">
+      <div class="monde-entete">
+        <div>
+          <p class="surtitre">L’archipel des savoirs</p>
+          <h1 id="titre-monde">Choisis une île.<br><em>Le moteur choisit l’épreuve.</em></h1>
+        </div>
+        <div class="cap-du-jour">
+          <span>Cap du jour</span>
+          <strong id="resume">Chargement de la banque…</strong>
+          <button id="commencer" class="primaire" type="button">Allumer le phare <span>→</span></button>
         </div>
       </div>
-      <aside class="boussole" aria-label="Progression globale">
-        <div class="orbite"><div id="progression" class="progression">0<small>%</small></div></div>
-        <p>Territoire exploré</p>
-        <dl>
-          <div><dt id="revues">0</dt><dd>cartes vues</dd></div>
-          <div><dt id="serie">0</dt><dd>jours de série</dd></div>
-        </dl>
-      </aside>
-      <div class="vague" aria-hidden="true"></div>
+
+      <div class="cadre-carte">
+        <svg id="archipel" class="archipel" viewBox="0 0 1600 900" role="group" aria-labelledby="titre-carte description-carte">
+          <title id="titre-carte">Carte interactive des domaines de l’Académie</title>
+          <desc id="description-carte">Des îles reliées par des routes maritimes. Active une île pour commencer une séance dans ce domaine.</desc>
+          <defs>
+            <linearGradient id="mer" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="var(--mer-haute)"/>
+              <stop offset="1" stop-color="var(--mer-basse)"/>
+            </linearGradient>
+            <radialGradient id="lueur" cx="50%" cy="50%" r="50%">
+              <stop offset="0" stop-color="var(--lueur)" stop-opacity=".44"/>
+              <stop offset="1" stop-color="var(--lueur)" stop-opacity="0"/>
+            </radialGradient>
+            <filter id="ombre-ile" x="-40%" y="-40%" width="180%" height="180%">
+              <feDropShadow dx="0" dy="13" stdDeviation="11" flood-color="#04121d" flood-opacity=".44"/>
+            </filter>
+            <filter id="flou"><feGaussianBlur stdDeviation="18"/></filter>
+            <pattern id="vagues" width="76" height="28" patternUnits="userSpaceOnUse">
+              <path d="M0 14 Q19 2 38 14 T76 14" fill="none" stroke="var(--vague)" stroke-width="2" opacity=".34"/>
+            </pattern>
+          </defs>
+          <rect width="1600" height="900" fill="url(#mer)"/>
+          <rect width="1600" height="900" fill="url(#vagues)"/>
+          <g class="etoiles" aria-hidden="true"></g>
+          <g id="routes" aria-hidden="true"></g>
+          <g id="iles"></g>
+          <g id="phare" class="phare" role="button" tabindex="0" aria-label="Commencer la séance du matin">
+            <ellipse cx="170" cy="535" rx="98" ry="38" class="ilot-phare"/>
+            <path d="M141 530 L151 414 L189 414 L199 530 Z" class="tour-phare"/>
+            <path d="M151 447 H189 M147 478 H193" class="bandes-phare"/>
+            <rect x="146" y="389" width="48" height="29" rx="8" class="lanterne"/>
+            <path d="M142 389 L170 365 L198 389 Z" class="toit-phare"/>
+            <circle cx="170" cy="403" r="10" class="feu-phare"/>
+            <path d="M170 403 L495 275 L510 350 Z" class="faisceau"/>
+            <text x="170" y="586" text-anchor="middle" class="nom-phare">Séance du matin</text>
+            <text id="cartes-dues" x="170" y="615" text-anchor="middle" class="detail-phare">Le phare veille</text>
+          </g>
+          <g id="de" class="de" role="button" tabindex="0" aria-label="Partir en expédition aléatoire">
+            <circle cx="802" cy="465" r="48" class="bouee"/>
+            <rect x="778" y="441" width="48" height="48" rx="11" transform="rotate(-9 802 465)" class="cube"/>
+            <circle cx="789" cy="452" r="4"/><circle cx="815" cy="452" r="4"/><circle cx="802" cy="465" r="4"/><circle cx="789" cy="478" r="4"/><circle cx="815" cy="478" r="4"/>
+            <text x="802" y="536" text-anchor="middle" class="detail-phare">Expédition au hasard</text>
+          </g>
+        </svg>
+
+        <div class="hud-progression" aria-label="Progression locale">
+          <span>Territoire exploré</span>
+          <strong id="progression">0%</strong>
+          <div class="hud-jauge"><i id="progression-jauge"></i></div>
+          <p><b id="revues">0</b> cartes abordées · <b id="serie">0</b> jours de navigation</p>
+        </div>
+        <p class="aide-carte">Clique une île pour y débarquer · glisse horizontalement sur mobile</p>
+      </div>
     </section>
 
     <section class="territoires" aria-labelledby="titre-domaines">
       <div class="titre-section">
-        <div><p class="surtitre">Carte des savoirs</p><h2 id="titre-domaines">Choisir un territoire</h2></div>
-        <p>La séance mélange les domaines pour entraîner le rappel, pas la reconnaissance.</p>
+        <div><p class="surtitre">Journal de bord</p><h2 id="titre-domaines">État des territoires</h2></div>
+        <p>La progression correspond aux cartes réellement abordées sur cet appareil. Aucun XP parallèle, aucun classement public.</p>
       </div>
       <div id="domaines" class="grille-domaines" aria-live="polite"></div>
     </section>
@@ -59,7 +111,7 @@
     <article class="carte">
       <div class="meta"><span id="type-carte"></span><span id="niveau-carte"></span></div>
       <img id="image-carte" class="image-carte" alt="" hidden>
-      <h2 id="question"></h2>
+      <h2 id="question" tabindex="-1"></h2>
       <div id="choix" class="choix"></div>
       <div id="correction" class="correction" hidden>
         <p class="label">Réponse</p><p id="reponse"></p>

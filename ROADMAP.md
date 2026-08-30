@@ -22,8 +22,9 @@ Le cadrage M0-M11 d'août 2026 est conservé sans perte dans
 
 1. Produire le tableau de bord minimal du rituel depuis le journal append-only :
    séances commencées/finies, abandons, durée si disponible, rappels et modes.
-2. Extraire l'interface de jeu encore embarquée dans ERP vers un client Académie
-   autonome, sans import métier ni accès au dépôt ERP.
+2. Éprouver l'archipel SVG désormais autonome : phare, îles, routes, bateaux,
+   brouillard et cycle jour/nuit doivent rester lisibles sur mobile et refléter
+   uniquement la progression locale réelle, sans import métier ni accès à ERP.
 3. Jouer environ 30 séances réelles, puis refaire à froid 20 cartes du premier
    lot. Le résultat décide du format suivant.
 4. Cartographier les sources crédibles pour les trois domaines encore vides :
@@ -61,8 +62,8 @@ Le cadrage M0-M11 d'août 2026 est conservé sans perte dans
   copiée si elle doit vivre dans Socle.
 - La banque est chargée au runtime depuis l'artefact publié. Un échec réseau
   conserve la dernière banque valide ; jamais d'écran blanc le matin.
-- La 2,5D reste un habillage SVG/CSS. Three.js et les assets 3D n'entrent qu'après
-  preuve du rituel et budget de performance mobile.
+- La 2,5D est désormais un habillage SVG/CSS autonome. Three.js et les assets 3D
+  n'entrent qu'après preuve du rituel et budget de performance mobile.
 
 ### État d'apprentissage
 

@@ -40,6 +40,11 @@ def main() -> int:
                        for name in ("index.html", "style.css", "app.js", "sw.js"))
     if re.search(r"(?:^|[/'\"])(?:erp|etude)(?:[/'\"]|$)", client, re.MULTILINE | re.IGNORECASE):
         errors.append("le client Académie ne doit importer ni ERP ni Etude")
+    for marker in ('id="archipel"', 'id="phare"', 'id="routes"', 'id="iles"'):
+        if marker not in client:
+            errors.append(f"archipel autonome incomplet : marqueur absent {marker}")
+    if "academie-v2" not in (ROOT / "client" / "sw.js").read_text(encoding="utf-8"):
+        errors.append("le cache du client n'a pas été invalidé pour l'archipel")
     for error in errors:
         print(f"ERREUR: {error}")
     print(f"Académie : {len(errors)} erreur(s)")

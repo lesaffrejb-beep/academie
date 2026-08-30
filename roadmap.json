@@ -63,6 +63,24 @@
       "parent_milestone": "ACADEMIE-UI-1"
     },
     {
+      "id": "ACA-UI-2",
+      "outcome": "L'archipel SVG autonome remet la carte au centre avec îles, phare, bateaux, routes, brouillard et cycle jour/nuit reliés à la progression locale réelle.",
+      "status": "done",
+      "mode": "agent-review",
+      "risk": "medium",
+      "priority": 95,
+      "depends_on": [
+        "ACA-UI-1"
+      ],
+      "budget": {
+        "max_units": 1,
+        "max_minutes": 180,
+        "max_tokens": 45000
+      },
+      "proof": "Neuf îles accessibles au clavier, six domaines jouables, trois terres en friche explicites, navigation phare et expédition testées sous Chrome aux formats bureau et mobile, cache academie-v2 et suite complète verte.",
+      "parent_milestone": "ACADEMIE-UI-1"
+    },
+    {
       "id": "ACA-RITUAL-1",
       "outcome": "JB réalise environ 30 séances réelles et un test de rétention à froid de 20 cartes sans dette ni culpabilisation.",
       "status": "ready",
