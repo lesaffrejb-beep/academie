@@ -1,0 +1,283 @@
+[
+  {
+    "id": "pathologie-fissures-retrait-differentiel",
+    "domaine": "pathologie",
+    "branche": "fissures-et-humidite",
+    "niveau": 1,
+    "type": "flash",
+    "question": "Une maçonnerie de blocs préfabriqués fissure très peu de temps après son montage, avant toute mise en charge. Quelle cause faut-il envisager en premier ?",
+    "reponse": "Le retrait différentiel : le mortier de pose se rétracte en perdant son eau, alors que les blocs fabriqués en usine ont déjà terminé leur retrait et gardent leurs dimensions.",
+    "explication": "Deux matériaux assemblés qui ne bougent pas au même rythme finissent par se séparer à leur jonction. L'intensité du désordre est proportionnelle à l'excès d'eau de gâchage par rapport au dosage : c'est une fissuration de mise en œuvre, pas un problème de sol ni de structure. Un temps très sec au moment du montage et des éléments non humidifiés au préalable aggravent le phénomène.",
+    "vigilance": "Le repère utile est le délai : cette fissuration apparaît très rapidement après le montage. Une fissuration qui naît des années après la construction relève d'autre chose.",
+    "source": [
+      {
+        "texte": "Fiche pathologie bâtiment B.03, « Fissures structurelles des maçonneries de maisons individuelles », Agence Qualité Construction, 2024",
+        "url": "https://qualiteconstruction.com/wp-content/uploads/2024/05/Fiche-Pathologie-Batiment-B03-Fissures-Structurelles-Maconneries-Maisons-Individuelles-AQC.pdf"
+      }
+    ],
+    "verifie": "2026-08-28",
+    "peremption": null,
+    "statut": "valide",
+    "origine": "https://qualiteconstruction.com/wp-content/uploads/2024/05/Fiche-Pathologie-Batiment-B03-Fissures-Structurelles-Maconneries-Maisons-Individuelles-AQC.pdf",
+    "partage": "banque"
+  },
+  {
+    "id": "pathologie-fissures-appui-plancher-horizontale",
+    "domaine": "pathologie",
+    "branche": "fissures-et-humidite",
+    "niveau": 2,
+    "prerequis": [
+      "pathologie-fissures-retrait-differentiel"
+    ],
+    "type": "flash",
+    "question": "En façade, une fissure horizontale se dessine juste sous le niveau d'un plancher. Quel mécanisme explique cette forme et cette position ?",
+    "reponse": "La flexion du plancher : un plancher poutrelles-hourdis fléchit en partie centrale, ce qui fait tourner son appui sur le mur de façade et soulève sa rive. Le mouvement engendre une fissure horizontale sous l'arête de la base d'appui du plancher.",
+    "explication": "Ce qu'on voit sur place : un trait horizontal net, à peu près continu, qui court parallèlement au plancher à sa hauteur d'appui, souvent sur toute la longueur de la façade plutôt que sur une zone. C'est la géométrie qui parle avant la largeur. Une fissure horizontale filant au niveau d'un plancher raconte un mouvement de plancher ; une fissure verticale à une jonction raconte deux matériaux qui travaillent différemment ; une fissure oblique en escalier raconte un mouvement de sol.",
+    "vigilance": "La déformation de flexion peut ne pas nuire à la solidité du plancher tout en produisant la fissure. « Ça a fissuré » ne veut donc pas dire « le plancher lâche » : c'est un point à faire trancher par un homme de l'art, pas à rassurer ni à dramatiser en séance.",
+    "source": [
+      {
+        "texte": "Fiche pathologie bâtiment B.03, « Fissures structurelles des maçonneries de maisons individuelles », Agence Qualité Construction, 2024, § 2 Le diagnostic et § 4 L'œil de l'expert",
+        "url": "https://qualiteconstruction.com/wp-content/uploads/2024/05/Fiche-Pathologie-Batiment-B03-Fissures-Structurelles-Maconneries-Maisons-Individuelles-AQC.pdf"
+      }
+    ],
+    "verifie": "2026-08-28",
+    "peremption": null,
+    "statut": "valide",
+    "origine": "https://qualiteconstruction.com/wp-content/uploads/2024/05/Fiche-Pathologie-Batiment-B03-Fissures-Structurelles-Maconneries-Maisons-Individuelles-AQC.pdf",
+    "partage": "banque"
+  },
+  {
+    "id": "pathologie-fissures-traversantes-infiltrations",
+    "domaine": "pathologie",
+    "branche": "fissures-et-humidite",
+    "niveau": 1,
+    "type": "flash",
+    "question": "Pourquoi une fissure de façade n'est-elle jamais seulement une question d'aspect ?",
+    "reponse": "Parce que les fissures structurelles peuvent être traversantes, et donc être à l'origine d'infiltrations d'eau dans la paroi.",
+    "explication": "C'est l'argument à tenir devant un conseil syndical qui veut repousser un ravalement : la fissure n'est pas qu'un défaut visuel, c'est une entrée d'eau potentielle, donc un risque de dégradation de l'isolation, des parements intérieurs et, à terme, de la structure.",
+    "vigilance": "Côté prévention, la fiche renvoie au pontage de l'enduit par un grillage ou un tissu d'armature débordant de 0,15 m au-dessus du plancher et de 0,15 m au-dessous de l'appui de plancher (art. 6.3.1.1 du DTU 20.1 P1, art. 4.7 et 10.3.1 du DTU 26.1 P1-1). Utile pour lire un devis de ravalement : si l'entreprise ne prévoit aucun renfort au droit des planchers, la question se pose.",
+    "source": [
+      {
+        "texte": "Fiche pathologie bâtiment B.03, « Fissures structurelles des maçonneries de maisons individuelles », Agence Qualité Construction, 2024, § 1 Le constat et § 3 Les bonnes pratiques",
+        "url": "https://qualiteconstruction.com/wp-content/uploads/2024/05/Fiche-Pathologie-Batiment-B03-Fissures-Structurelles-Maconneries-Maisons-Individuelles-AQC.pdf"
+      }
+    ],
+    "verifie": "2026-08-28",
+    "peremption": null,
+    "statut": "valide",
+    "origine": "https://qualiteconstruction.com/wp-content/uploads/2024/05/Fiche-Pathologie-Batiment-B03-Fissures-Structurelles-Maconneries-Maisons-Individuelles-AQC.pdf",
+    "partage": "banque"
+  },
+  {
+    "id": "pathologie-fissures-retrait-gonflement-argiles",
+    "domaine": "pathologie",
+    "branche": "fissures-et-humidite",
+    "niveau": 1,
+    "type": "flash",
+    "question": "Le retrait-gonflement des argiles fissure les bâtiments. Quel type de bâti est le plus exposé, et pourquoi ?",
+    "reponse": "Les maisons individuelles : elles disposent le plus souvent de fondations superficielles, moins profondes que celles des bâtiments collectifs.",
+    "explication": "Le sol argileux se rétracte quand il sèche et gonfle quand il se réhumidifie. Une fondation posée haut suit ces mouvements ; une fondation descendue plus bas les subit moins. Au 28/08/2026, le ministère indique que les zones d'exposition moyenne et forte, celles soumises aux dispositions de la loi Élan, représentent 55 % du territoire hexagonal contre 48 % en 2020.",
+    "vigilance": "Dire « c'est la sécheresse » devant une fissure sur un immeuble collectif est un raccourci à éviter : le mécanisme existe, mais l'exposition du collectif n'est pas celle de la maison individuelle, dont les fondations sont le plus souvent superficielles. Et toute statistique d'exposition (part du territoire, nombre de communes) bouge à chaque mise à jour de la cartographie : elle ne se cite jamais sans sa date.",
+    "source": [
+      {
+        "texte": "« Retrait-gonflement des argiles dans la construction », ministère de la Transition écologique",
+        "url": "https://www.ecologie.gouv.fr/politiques-publiques/retrait-gonflement-argiles-construction"
+      }
+    ],
+    "verifie": "2026-08-28",
+    "peremption": "2027-08-28",
+    "statut": "valide",
+    "origine": "https://www.ecologie.gouv.fr/politiques-publiques/retrait-gonflement-argiles-construction",
+    "partage": "banque"
+  },
+  {
+    "id": "pathologie-humidite-remontee-capillaire-signes",
+    "domaine": "pathologie",
+    "branche": "fissures-et-humidite",
+    "niveau": 1,
+    "type": "flash",
+    "question": "À quoi reconnaît-on une remontée capillaire sur une façade, sans aucun appareil de mesure ?",
+    "reponse": "À des traces frangées ou ondulées qui peuvent s'élever à plusieurs mètres au-dessus du sol, la partie de façade située en dessous de ces traces étant généralement plus sombre que celle située au-dessus, et saturée d'humidité.",
+    "explication": "Ce qu'on voit sur place : une limite haute irrégulière, festonnée, jamais un trait droit, et surtout un contraste net entre le bas du mur, sombre et gorgé d'eau, et le haut resté clair. Dans les cas avancés, les enduits et peintures se décollent et laissent apparaître du salpêtre : ce dépôt blanchâtre n'est pas de la moisissure, ce sont les sels minéraux que l'eau avait dissous dans les matériaux et qu'elle abandonne en s'évaporant par le parement hors sol. Ces sels, avec les micro-organismes, forment précisément les franges visibles.",
+    "vigilance": "La hauteur atteinte se lit comme une contrainte d'évaporation, pas comme une mesure de gravité : quand l'évaporation est empêchée au plus près du sol, l'eau migre toujours plus haut pour trouver une surface d'évaporation suffisante.",
+    "source": [
+      {
+        "texte": "Fiche pathologie bâtiment B.01, « Remontées capillaires », Agence Qualité Construction, 2024, § 1 Le constat et § 2 Le diagnostic",
+        "url": "https://qualiteconstruction.com/wp-content/uploads/2024/05/Fiche-Pathologie-Batiment-B01-Remontees-Capillaires-AQC.pdf"
+      }
+    ],
+    "verifie": "2026-08-28",
+    "peremption": null,
+    "statut": "valide",
+    "origine": "https://qualiteconstruction.com/wp-content/uploads/2024/05/Fiche-Pathologie-Batiment-B01-Remontees-Capillaires-AQC.pdf",
+    "partage": "banque"
+  },
+  {
+    "id": "pathologie-humidite-trois-origines-diagnostic",
+    "domaine": "pathologie",
+    "branche": "fissures-et-humidite",
+    "niveau": 2,
+    "prerequis": [
+      "pathologie-humidite-remontee-capillaire-signes"
+    ],
+    "type": "qcm",
+    "question": "Sur un immeuble existant, de l'humidité apparaît en pied de mur. Que faut-il avoir établi avant d'engager le moindre traitement ?",
+    "reponse": "Un diagnostic préalable qui vérifie que l'humidité est bien d'origine ascensionnelle, et non liée à des infiltrations ou à de la condensation.",
+    "choix": [
+      {
+        "texte": "Un diagnostic préalable établissant que l'humidité est bien ascensionnelle, et non due à des infiltrations ou à de la condensation",
+        "correct": true
+      },
+      {
+        "texte": "Un devis de traitement par injection de résine, la technique la plus courante",
+        "correct": false,
+        "pourquoi_faux": "L'injection de résine est une des techniques curatives possibles, aux côtés des inserts en tôles inoxydables, des siphons atmosphériques et des procédés électriques. Choisir la technique avant d'avoir établi l'origine, c'est traiter au hasard, et l'injection elle-même échoue si la résine n'imprègne pas la maçonnerie de façon homogène."
+      },
+      {
+        "texte": "L'âge du bâtiment, qui suffit à conclure",
+        "correct": false,
+        "pourquoi_faux": "L'âge oriente sans conclure : les remontées capillaires affectent très rarement les constructions récentes, où l'arase étanche n'est presque jamais omise, mais cet indice ne remplace pas le diagnostic."
+      },
+      {
+        "texte": "Le relevé de la hauteur atteinte par les traces d'humidité",
+        "correct": false,
+        "pourquoi_faux": "Cette hauteur décrit l'ampleur, pas l'origine : une infiltration ou une condensation peut marquer un mur aussi haut. Elle ne permet pas de trancher entre les trois causes."
+      }
+    ],
+    "explication": "Trois origines, trois chantiers différents et trois payeurs potentiellement différents : se tromper d'origine, c'est engager la copropriété dans des travaux qui ne régleront rien. La fiche AQC pose ce diagnostic préalable comme le premier geste en travaux sur existant.",
+    "vigilance": "Quand une arase étanche efficace n'est pas réalisable, il reste les traitements palliatifs, qui ne mettent pas fin aux remontées mais en réduisent les conséquences : drainage périphérique raccordé à un exutoire, mise à nu des maçonneries pour accélérer l'évaporation, doublage avec vide d'air ventilé côté intérieur. Les annoncer comme une solution définitive serait faux.",
+    "source": [
+      {
+        "texte": "Fiche pathologie bâtiment B.01, « Remontées capillaires », Agence Qualité Construction, 2024, § 3 Les bonnes pratiques",
+        "url": "https://qualiteconstruction.com/wp-content/uploads/2024/05/Fiche-Pathologie-Batiment-B01-Remontees-Capillaires-AQC.pdf"
+      }
+    ],
+    "verifie": "2026-08-28",
+    "peremption": null,
+    "statut": "valide",
+    "origine": "https://qualiteconstruction.com/wp-content/uploads/2024/05/Fiche-Pathologie-Batiment-B01-Remontees-Capillaires-AQC.pdf",
+    "partage": "banque"
+  },
+  {
+    "id": "pathologie-humidite-condensation-points-froids",
+    "domaine": "pathologie",
+    "branche": "fissures-et-humidite",
+    "niveau": 2,
+    "prerequis": [
+      "pathologie-humidite-remontee-capillaire-signes"
+    ],
+    "type": "flash",
+    "question": "Où et quand la condensation se manifeste-t-elle en priorité dans un logement, et qu'est-ce qui la déclenche ?",
+    "reponse": "Aux ponts thermiques, par temps froid : la température superficielle y est plus basse que celle des surfaces environnantes, ils deviennent donc les points de condensation privilégiés de l'humidité intérieure.",
+    "explication": "Ce qu'on voit sur place : des taches noires de moisissure qui dessinent une géométrie, pas une tache au hasard. Elles suivent une jonction (mur et menuiserie, mur et plancher haut), un angle, ou trahissent une ossature métallique qui traverse l'isolant. Trois signes séparent la condensation des deux autres origines : elle est haute autant que basse, elle suit une ligne de construction, et elle est saisonnière. Une remontée capillaire, elle, part du sol et ne bouge pas avec la saison.",
+    "vigilance": "Le pont thermique n'est qu'une des deux causes : une ventilation inexistante ou inefficace produit les mêmes moisissures. Sur place, cela se contrôle sans outil : entrées d'air présentes et non obstruées, portes détalonnées, absence de sèche-linge non raccordé. Accuser le bâti sans avoir regardé la ventilation, c'est se tromper de travaux.",
+    "source": [
+      {
+        "texte": "Rapport REX Bâtiments performants, « Humidité dans la construction — 12 enseignements à connaître », Agence Qualité Construction, 2019, enseignements 7 et 11",
+        "url": "https://qualiteconstruction.com/wp-content/uploads/2024/05/Rapport-REX-BP-Humidite-Construction-AQC.pdf"
+      }
+    ],
+    "verifie": "2026-08-28",
+    "peremption": null,
+    "statut": "valide",
+    "origine": "https://qualiteconstruction.com/wp-content/uploads/2024/05/Rapport-REX-BP-Humidite-Construction-AQC.pdf",
+    "partage": "banque"
+  },
+  {
+    "id": "pathologie-humidite-enduit-impermeable-aggravant",
+    "domaine": "pathologie",
+    "branche": "fissures-et-humidite",
+    "niveau": 2,
+    "prerequis": [
+      "pathologie-humidite-remontee-capillaire-signes"
+    ],
+    "type": "flash",
+    "question": "Après un ravalement avec revêtement d'imperméabilité, l'humidité en pied de façade monte plus haut qu'avant. Comment l'expliquer ?",
+    "reponse": "Les parements peu perméables à la vapeur d'eau empêchent l'évaporation au plus près du sol : l'eau présente dans la maçonnerie migre alors toujours plus haut pour trouver une surface d'évaporation suffisante.",
+    "explication": "L'intuition dit qu'un revêtement étanche protège de l'eau. Ici il fait l'inverse : il n'empêche pas l'eau d'entrer par le bas, il l'empêche de ressortir. C'est un facteur aggravant, pas une cause : les remontées existaient avant, le revêtement a déplacé le symptôme vers le haut.",
+    "vigilance": "Sont concernés les enduits de mortier, les doublages et les revêtements d'imperméabilité. À garder en tête quand un ravalement est voté sur un immeuble ancien déjà marqué en pied de façade : le mode de traitement se discute avant, pas au constat du résultat.",
+    "source": [
+      {
+        "texte": "Fiche pathologie bâtiment B.01, « Remontées capillaires », Agence Qualité Construction, 2024, § 2 Le diagnostic",
+        "url": "https://qualiteconstruction.com/wp-content/uploads/2024/05/Fiche-Pathologie-Batiment-B01-Remontees-Capillaires-AQC.pdf"
+      }
+    ],
+    "verifie": "2026-08-28",
+    "peremption": null,
+    "statut": "valide",
+    "origine": "https://qualiteconstruction.com/wp-content/uploads/2024/05/Fiche-Pathologie-Batiment-B01-Remontees-Capillaires-AQC.pdf",
+    "partage": "banque"
+  },
+  {
+    "id": "pathologie-toiture-souche-hauteur-reglementaire",
+    "domaine": "pathologie",
+    "branche": "fissures-et-humidite",
+    "niveau": 1,
+    "type": "flash",
+    "question": "Qu'appelle-t-on la souche d'un conduit de fumée, et quelle hauteur doit-elle atteindre ?",
+    "reponse": "La souche est la partie du conduit qui dépasse la toiture. Elle doit dépasser de 40 cm minimum le niveau de tout faîtage ou obstacle situé à moins de 8 m, et de 120 cm dans le cas d'une toiture-terrasse ou d'une pente inférieure à 15°.",
+    "explication": "La hauteur n'est pas une question d'esthétique : elle favorise la dispersion des gaz et le tirage naturel. Une hauteur insuffisante peut être à l'origine d'un défaut de tirage, voire d'un refoulement dans le conduit.",
+    "vigilance": "Le seuil de 120 cm est celui qui concerne le plus souvent une visite de toiture-terrasse en copropriété. Une souche visiblement basse au milieu d'une terrasse, ou dominée par un local technique voisin, est un point à faire vérifier, pas un détail de couverture.",
+    "source": [
+      {
+        "texte": "Fiche pathologie bâtiment E.07, « Désordres touchant les conduits de fumée (bistrage et souche) », Agence Qualité Construction, 2024, § 2 Le diagnostic",
+        "url": "https://qualiteconstruction.com/wp-content/uploads/2024/05/Fiche-Pathologie-Batiment-E07-Desordres-Conduits-Fumee-Bistrage-Souche-AQC.pdf"
+      }
+    ],
+    "verifie": "2026-08-28",
+    "peremption": null,
+    "statut": "valide",
+    "origine": "https://qualiteconstruction.com/wp-content/uploads/2024/05/Fiche-Pathologie-Batiment-E07-Desordres-Conduits-Fumee-Bistrage-Souche-AQC.pdf",
+    "partage": "banque"
+  },
+  {
+    "id": "pathologie-toiture-souche-ou-event-de-chute",
+    "domaine": "pathologie",
+    "branche": "fissures-et-humidite",
+    "niveau": 2,
+    "prerequis": [
+      "pathologie-toiture-souche-hauteur-reglementaire"
+    ],
+    "type": "qcm",
+    "question": "Sur une toiture-terrasse, plusieurs ouvrages verticaux émergent. L'un d'eux est un tuyau qui prolonge une descente d'eaux usées jusqu'à l'air libre. Comment se nomme cet ouvrage et à quoi sert-il ?",
+    "reponse": "Un évent : les descentes d'eaux usées doivent être prolongées hors combles par un évent d'une section intérieure au moins égale à celle de la descente, afin qu'aucun obstacle ne s'oppose à la circulation de l'air entre l'égout et l'atmosphère extérieure.",
+    "choix": [
+      {
+        "texte": "Un évent de descente d'eaux usées, qui assure la circulation de l'air entre l'égout et l'atmosphère extérieure",
+        "correct": true
+      },
+      {
+        "texte": "Une souche, c'est-à-dire la partie émergente d'un conduit de fumée",
+        "correct": false,
+        "pourquoi_faux": "La souche est la partie du conduit de FUMÉE qui dépasse la toiture. Les deux ouvrages émergent d'une toiture et se ressemblent de loin, mais l'un évacue des gaz de combustion et l'autre ventile un réseau d'évacuation d'eaux usées. Les confondre, c'est se tromper d'entreprise et de contrat d'entretien."
+      },
+      {
+        "texte": "Une sortie de VMC, qui rejette l'air extrait des logements",
+        "correct": false,
+        "pourquoi_faux": "La sortie de VMC rejette l'air vicié extrait des pièces de service ; l'évent, lui, prolonge une canalisation d'eaux usées et n'extrait rien des logements. Ce sont deux réseaux distincts, avec deux lots de travaux distincts."
+      },
+      {
+        "texte": "Un exutoire de désenfumage",
+        "correct": false,
+        "pourquoi_faux": "L'exutoire de désenfumage est un ouvrage de sécurité incendie, à ouverture commandée, dimensionné pour évacuer les fumées d'un sinistre. Il n'a aucun rapport avec l'évacuation des eaux usées."
+      }
+    ],
+    "explication": "Ce qu'on voit sur place : trois familles d'émergences se ressemblent sur une terrasse. La souche de fumée est généralement un ouvrage maçonné ou un conduit isolé, plus massif, et elle est soumise à sa règle de hauteur. L'évent prolonge une descente et conserve la même section qu'elle sur toute sa hauteur, ce qui donne un simple tube. La sortie de VMC est raccordée au réseau aéraulique, pas à une chute. Nommer juste, sur place, évite d'appeler le mauvais prestataire.",
+    "vigilance": "L'article 42 du règlement sanitaire départemental type ne fixe pas de hauteur d'évent au-dessus du toit, contrairement à la règle des 40 cm de la souche de fumée : il impose le prolongement hors combles et la section. Ne pas transposer la règle de l'un à l'autre. Le règlement sanitaire départemental est pris par arrêté préfectoral sur le modèle du règlement type, et sa version applicable est celle du département concerné.",
+    "source": [
+      {
+        "texte": "Règlement sanitaire départemental, art. 42 « Évacuation », version du département des Bouches-du-Rhône publiée par l'ARS PACA",
+        "url": "https://www.paca.ars.sante.fr/sites/default/files/2017-01/RSD_13_ars_paca_01.pdf"
+      },
+      {
+        "texte": "Fiche pathologie bâtiment E.07, « Désordres touchant les conduits de fumée (bistrage et souche) », Agence Qualité Construction, 2024",
+        "url": "https://qualiteconstruction.com/wp-content/uploads/2024/05/Fiche-Pathologie-Batiment-E07-Desordres-Conduits-Fumee-Bistrage-Souche-AQC.pdf"
+      }
+    ],
+    "verifie": "2026-08-28",
+    "peremption": null,
+    "statut": "valide",
+    "origine": "https://www.paca.ars.sante.fr/sites/default/files/2017-01/RSD_13_ars_paca_01.pdf",
+    "partage": "banque"
+  }
+]

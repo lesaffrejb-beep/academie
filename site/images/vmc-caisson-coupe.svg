@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 480" width="600" height="480" role="img" aria-label="Coupe schématique d'un caisson d'extraction de VMC collective en toiture">
+  <title>Caisson d'extraction de VMC collective, vu en coupe</title>
+  <desc>Schéma de principe : caisson posé en toiture sur sa costière, moteur électrique entraînant la turbine par poulies et courroie, manchette souple antivibratile sur le raccordement au réseau aéraulique.</desc>
+
+  <rect x="0" y="0" width="600" height="480" fill="#ffffff"/>
+
+  <defs>
+    <marker id="fleche" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1a3d5c"/>
+    </marker>
+    <pattern id="hachures" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <line x1="0" y1="0" x2="0" y2="10" stroke="#9aa7b2" stroke-width="2"/>
+    </pattern>
+  </defs>
+
+  <g font-family="Helvetica, Arial, sans-serif" fill="#1a3d5c">
+
+    <text x="30" y="34" font-size="17" font-weight="bold">Caisson d'extraction de VMC collective — coupe de principe</text>
+    <text x="30" y="54" font-size="12" fill="#5a6b78">Schéma original, Académie. Les repères 1 à 6 ne sont pas légendés : c'est l'objet de l'exercice.</text>
+
+    <!-- toiture -->
+    <rect x="30" y="400" width="540" height="18" fill="url(#hachures)" stroke="#6b7a88" stroke-width="1.5"/>
+    <text x="34" y="440" font-size="13" fill="#5a6b78">Toiture-terrasse (ou comble)</text>
+
+    <!-- costière -->
+    <rect x="225" y="376" width="180" height="26" fill="#eef2f6" stroke="#1a3d5c" stroke-width="2"/>
+    <text x="218" y="394" font-size="12" fill="#5a6b78" text-anchor="end">Costière</text>
+
+    <!-- caisson (capot) -->
+    <rect x="155" y="120" width="290" height="256" rx="6" fill="#f7f9fb" stroke="#1a3d5c" stroke-width="3"/>
+
+    <!-- rejet d'air vicié -->
+    <rect x="270" y="98" width="60" height="24" fill="#eef2f6" stroke="#1a3d5c" stroke-width="2"/>
+    <line x1="300" y1="96" x2="300" y2="72" stroke="#1a3d5c" stroke-width="2.5" marker-end="url(#fleche)"/>
+    <text x="340" y="90" font-size="13">Rejet de l'air vicié</text>
+
+    <!-- turbine + blades -->
+    <circle cx="348" cy="250" r="58" fill="#ffffff" stroke="#1a3d5c" stroke-width="2.5"/>
+    <g stroke="#1a3d5c" stroke-width="2" fill="none">
+      <path d="M 348 250 L 348 196"/>
+      <path d="M 348 250 L 395 277"/>
+      <path d="M 348 250 L 301 277"/>
+      <path d="M 348 250 L 395 223"/>
+      <path d="M 348 250 L 301 223"/>
+      <path d="M 348 250 L 348 304"/>
+    </g>
+    <!-- poulie calée sur l'arbre de turbine -->
+    <circle cx="348" cy="250" r="21" fill="#dbe6ef" stroke="#1a3d5c" stroke-width="2.5"/>
+    <circle cx="348" cy="250" r="4" fill="#1a3d5c"/>
+
+    <!-- moteur -->
+    <rect x="177" y="294" width="78" height="56" rx="4" fill="#dbe6ef" stroke="#1a3d5c" stroke-width="2.5"/>
+    <line x1="255" y1="322" x2="264" y2="322" stroke="#1a3d5c" stroke-width="3"/>
+    <circle cx="279" cy="322" r="15" fill="#dbe6ef" stroke="#1a3d5c" stroke-width="2.5"/>
+    <circle cx="279" cy="322" r="3" fill="#1a3d5c"/>
+
+    <!-- courroie entre les deux poulies -->
+    <g stroke="#1a3d5c" stroke-width="3" fill="none">
+      <path d="M 272 309 L 341 230"/>
+      <path d="M 290 332 L 361 267"/>
+    </g>
+
+    <!-- manchette souple antivibratile -->
+    <g stroke="#1a3d5c" stroke-width="2.5" fill="none">
+      <path d="M 300 376 l 0 4 l 12 4 l -24 5 l 24 5 l -12 4 l 0 4"/>
+      <path d="M 348 376 l 0 4 l 12 4 l -24 5 l 24 5 l -12 4 l 0 4"/>
+      <line x1="300" y1="376" x2="348" y2="376"/>
+    </g>
+
+    <!-- conduit sous la toiture -->
+    <rect x="294" y="418" width="60" height="46" fill="#ffffff" stroke="#1a3d5c" stroke-width="2.5"/>
+    <line x1="324" y1="462" x2="324" y2="428" stroke="#4a7fa8" stroke-width="2.5" marker-end="url(#fleche)"/>
+    <text x="286" y="474" font-size="13" fill="#5a6b78" text-anchor="end">air extrait</text>
+
+    <!-- repères, posés au contact de l'élément -->
+    <g stroke="#1a3d5c" stroke-width="1.5">
+      <line x1="452" y1="200" x2="416" y2="221"/>
+      <line x1="452" y1="392" x2="352" y2="391"/>
+      <line x1="452" y1="446" x2="360" y2="440"/>
+    </g>
+    <g font-size="15" font-weight="bold">
+      <circle cx="176" cy="141" r="15" fill="#1a3d5c"/><text x="176" y="147" fill="#ffffff" text-anchor="middle">1</text>
+      <circle cx="216" cy="322" r="15" fill="#1a3d5c"/><text x="216" y="328" fill="#ffffff" text-anchor="middle">2</text>
+      <circle cx="303" cy="288" r="15" fill="#1a3d5c"/><text x="303" y="294" fill="#ffffff" text-anchor="middle">3</text>
+      <circle cx="466" cy="196" r="15" fill="#1a3d5c"/><text x="466" y="202" fill="#ffffff" text-anchor="middle">4</text>
+      <circle cx="466" cy="392" r="15" fill="#1a3d5c"/><text x="466" y="398" fill="#ffffff" text-anchor="middle">5</text>
+      <circle cx="466" cy="448" r="15" fill="#1a3d5c"/><text x="466" y="454" fill="#ffffff" text-anchor="middle">6</text>
+    </g>
+
+  </g>
+</svg>

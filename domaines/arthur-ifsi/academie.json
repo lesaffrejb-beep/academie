@@ -1,0 +1,65 @@
+{
+  "_": "Domaine « Arthur — concours IFSI voie FPC ». Instancié depuis academie/gabarit-domaine le 29/08/2026 (1re exécution réelle de l'usine à domaine, M10). Le moteur ne sait rien du métier : tout ce qui est métier vit ici.",
+  "_regions": "Sept régions, dont UNE seule est l'échéance : le concours (mars/avril 2027). Les neuf UE du semestre 1 présentes dans le tas d'Arthur sont regroupées en quatre régions matière plutôt qu'en neuf régions vides — le regroupement suit la parenté du contenu, pas la numérotation administrative des UE. `culture` garde `arbre: false` : la culture sanitaire et sociale d'un candidat au concours n'a pas de prérequis et ne se range dans aucune montée en niveau.",
+  "_etat_29_08_2026": "Deux régions portent des cartes (sciences-humaines, legislation-ethique) et une en porte quatre (biologie-fondamentale). Les quatre autres sont DÉCLARÉES ET VIDES : leur contenu est en trou nommé dans sources/INVENTAIRE.md. La région `concours`, qui est pourtant l'échéance, est vide faute de toute source — c'est le trou n° 1 du domaine et il se lit comme tel.",
+  "metier": "Soins infirmiers — préparation au concours d'entrée en IFSI, voie de la formation professionnelle continue (FPC)",
+  "profil_defaut": "arthur",
+  "domaines": {
+    "concours": {
+      "titre": "Concours FPC — épreuves et attendus",
+      "ordre": 1
+    },
+    "sciences-humaines": {
+      "titre": "Sciences humaines — psychologie, sociologie",
+      "ordre": 2
+    },
+    "legislation-ethique": {
+      "titre": "Législation, éthique, déontologie et droits du patient",
+      "ordre": 3
+    },
+    "biologie-fondamentale": {
+      "titre": "Biologie fondamentale et cycles de la vie",
+      "ordre": 4
+    },
+    "soins-et-pathologies": {
+      "titre": "Processus pathologiques, infectiologie, pharmacologie",
+      "ordre": 5
+    },
+    "pratique-professionnelle": {
+      "titre": "Raisonnement clinique et soins de confort",
+      "ordre": 6
+    },
+    "culture": {
+      "titre": "Culture sanitaire et sociale",
+      "ordre": 7,
+      "arbre": false
+    }
+  },
+  "quotas": {
+    "_": "RÈGLES DU JEU, pas du métier : valeurs par défaut du gabarit reprises telles quelles. À ajuster au bilan des 30 premières séances d'Arthur, pas avant.",
+    "revisions_par_seance": 10,
+    "nouveau_par_seance": 1,
+    "ateliers_par_semaine": 2,
+    "plafond_reprise": 20,
+    "revisions_min_jour_atelier": 5
+  },
+  "fsrs": {
+    "_": "RÈGLES DU JEU. Rétention souhaitée : défaut 0,90, plage utile 0,80-0,95. L'optimiseur personnalisé ne vaut rien avant ~400 revues.",
+    "retention_souhaitee": 0.9,
+    "seuil_optimiseur": 400
+  },
+  "progression": {
+    "_": "RÈGLES DU JEU. Remplissage d'une région = part des cartes `valide` dont la stabilité FSRS dépasse le seuil. L'XP affichée est dérivée de cette mesure, jamais une seconde comptabilité.",
+    "seuil_stabilite_acquise_jours": 21,
+    "seuil_ouverture_region": 0.75,
+    "examen_obligatoire_pour_100": true,
+    "examen_nb_cartes": 12,
+    "examen_score_reussite": 0.8
+  },
+  "quiz": {
+    "_": "RÈGLES DU JEU. Quiz de positionnement : une bonne réponse écrit une entrée au journal avec une stabilité initiale explicite, une mauvaise n'écrit rien. Le quiz OUVRE des régions, il n'écrit jamais leur remplissage.",
+    "nb_questions": 20,
+    "stabilite_initiale_jours": 21,
+    "seuil_ouverture_region_quiz": 0.8
+  }
+}

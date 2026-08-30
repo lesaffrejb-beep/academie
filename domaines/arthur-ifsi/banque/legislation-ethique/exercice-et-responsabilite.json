@@ -1,0 +1,176 @@
+[
+  {
+    "id": "le-exercice-role-propre",
+    "domaine": "legislation-ethique",
+    "branche": "exercice-et-responsabilite",
+    "niveau": 1,
+    "type": "qcm",
+    "question": "Parmi ces actes, lequel relève du rôle propre de l'infirmier, c'est-à-dire de ce qu'il accomplit sans prescription médicale ?",
+    "reponse": "L'aide à la prise d'un médicament non injectable, qui se rattache aux fonctions d'entretien et de continuité de la vie.",
+    "choix": [
+      {
+        "texte": "Aider une personne à prendre un médicament non injectable",
+        "correct": true
+      },
+      {
+        "texte": "Poser un cathéter court",
+        "correct": false,
+        "pourquoi_faux": "La mise en place comme l'ablation d'un cathéter court figurent parmi les actes accomplis sur prescription médicale. L'effraction cutanée est le repère : elle fait sortir du rôle propre."
+      },
+      {
+        "texte": "Poser une perfusion",
+        "correct": false,
+        "pourquoi_faux": "La mise en place d'une perfusion relève également de la prescription médicale. Le fait que le geste soit courant et quotidien ne le fait pas basculer dans le rôle propre."
+      },
+      {
+        "texte": "Perfuser un produit d'origine humaine",
+        "correct": false,
+        "pourquoi_faux": "C'est le cas le plus encadré des quatre : non seulement il suppose une prescription, mais il exige en outre qu'un médecin puisse intervenir à tout moment. Le distracteur est utile car il rappelle qu'il existe plusieurs degrés au-delà du rôle propre."
+      }
+    ],
+    "explication": "Le cours distingue quatre régimes d'actes : ceux du rôle propre, ceux qui supposent une prescription ou un protocole, ceux qui supposent une prescription et la possibilité pour un médecin d'intervenir à tout instant, et enfin ceux que le médecin réalise avec la participation de l'infirmier. Le rôle propre couvre l'entretien et la continuité de la vie : hygiène de la personne, équilibre alimentaire, aide à la prise de médicaments non injectables. Il est propre au sens de « qui appartient en propre », pas au sens de « mineur ».",
+    "vigilance": "La référence exacte de l'article du code de la santé publique qui définit l'exercice de la profession est illisible dans la transcription locale et n'est PAS reprise ici : elle est à relever sur Légifrance avant tout usage en épreuve écrite. Un numéro d'article cité de mémoire est une erreur garantie.",
+    "source": [
+      {
+        "texte": "IFSI S1, UE1.3 Fiche 008 — support de cours, transcription locale"
+      }
+    ],
+    "verifie": "2026-08-29",
+    "peremption": null,
+    "statut": "brouillon",
+    "origine": "usine à domaine, 1re fabrication (29/08/2026)",
+    "partage": "interne"
+  },
+  {
+    "id": "le-exercice-actes-conservatoires-urgence",
+    "domaine": "legislation-ethique",
+    "branche": "exercice-et-responsabilite",
+    "niveau": 2,
+    "prerequis": [
+      "le-exercice-role-propre"
+    ],
+    "type": "flash",
+    "question": "Que peut faire l'infirmier en situation d'urgence en l'absence de médecin, et quelle trace doit-il en laisser ?",
+    "reponse": "Il accomplit les actes conservatoires nécessaires jusqu'à l'intervention d'un médecin. Ces actes font obligatoirement l'objet d'un compte rendu écrit, daté et signé de sa main, remis au médecin et annexé au dossier du patient.",
+    "explication": "La règle règle deux problèmes d'un coup. Elle autorise l'infirmier à sortir de son cadre habituel quand attendre serait dangereux, en bornant strictement ce qu'il fait : des actes conservatoires, c'est-à-dire destinés à maintenir en l'état, pas à traiter. Et elle rend cette sortie de cadre traçable, ce qui protège autant le patient que le professionnel le jour où la situation est réexaminée.",
+    "vigilance": "Les quatre qualités du compte rendu se retiennent ensemble : écrit, daté, signé, annexé au dossier. Un compte rendu oral au médecin ne satisfait pas l'obligation.",
+    "source": [
+      {
+        "texte": "IFSI S1, UE1.3 Fiche 008 — support de cours, transcription locale"
+      }
+    ],
+    "verifie": "2026-08-29",
+    "peremption": null,
+    "statut": "brouillon",
+    "origine": "usine à domaine, 1re fabrication (29/08/2026)",
+    "partage": "interne"
+  },
+  {
+    "id": "le-exercice-dix-competences",
+    "domaine": "legislation-ethique",
+    "branche": "exercice-et-responsabilite",
+    "niveau": 2,
+    "type": "flash",
+    "question": "Combien de compétences le référentiel du diplôme d'État d'infirmier comporte-t-il, et lesquelles ?",
+    "reponse": "Dix. Évaluer une situation clinique et poser un diagnostic infirmier ; concevoir et conduire un projet de soins ; accompagner la personne dans ses soins quotidiens ; mettre en œuvre les actions diagnostiques et thérapeutiques ; initier et conduire des soins éducatifs et préventifs ; communiquer et conduire une relation de soin ; analyser la qualité des soins et améliorer sa pratique ; rechercher et traiter des données professionnelles et scientifiques ; organiser et coordonner les interventions soignantes ; informer et former des professionnels et des personnes en formation.",
+    "explication": "Les dix compétences ne sont pas une liste décorative : elles structurent la formation et l'évaluation en stage, et il est attendu d'un candidat qu'il sache rattacher une activité concrète à la compétence qu'elle mobilise. Les cinq premières se rapportent au soin lui-même, les cinq suivantes à la relation, à la qualité, à la recherche, à la coordination et à la transmission.",
+    "vigilance": "Le nombre exact (dix) est lui-même une question d'examen fréquente. La formulation officielle de chaque intitulé est à relever dans le référentiel publié plutôt que d'être restituée de mémoire.",
+    "source": [
+      {
+        "texte": "IFSI S1, UE1.3 Fiche 008 — support de cours, transcription locale"
+      }
+    ],
+    "verifie": "2026-08-29",
+    "peremption": null,
+    "statut": "brouillon",
+    "origine": "usine à domaine, 1re fabrication (29/08/2026)",
+    "partage": "interne"
+  },
+  {
+    "id": "le-responsabilite-trois-conditions",
+    "domaine": "legislation-ethique",
+    "branche": "exercice-et-responsabilite",
+    "niveau": 2,
+    "type": "qcm",
+    "question": "Quelles conditions le patient victime doit-il réunir pour engager la responsabilité civile ou administrative d'un soignant ?",
+    "reponse": "Trois, cumulatives : une faute, un préjudice et un lien de causalité entre les deux.",
+    "choix": [
+      {
+        "texte": "Une faute, un préjudice, et un lien de causalité entre les deux",
+        "correct": true
+      },
+      {
+        "texte": "Une faute et un préjudice, sans qu'il soit besoin de les relier",
+        "correct": false,
+        "pourquoi_faux": "Le lien de causalité est la condition qui manque le plus souvent en pratique : une faute réelle et un dommage réel ne suffisent pas si le dommage serait survenu de toute façon. L'omettre est l'erreur classique."
+      },
+      {
+        "texte": "Une infraction prévue par le code pénal",
+        "correct": false,
+        "pourquoi_faux": "L'infraction est le déclencheur de la responsabilité pénale, pas de la responsabilité civile. Les deux visent d'ailleurs des buts opposés : réparer d'un côté, punir de l'autre."
+      },
+      {
+        "texte": "Une sanction préalable de l'employeur",
+        "correct": false,
+        "pourquoi_faux": "La sanction disciplinaire relève de l'employeur et suit sa propre logique. Elle n'est ni un préalable ni une condition de la responsabilité civile : les quatre responsabilités se cumulent au lieu de se commander."
+      }
+    ],
+    "explication": "On parle de responsabilité civile pour les soignants du secteur privé et de responsabilité administrative pour ceux du secteur public, mais le mécanisme est le même : réparer un préjudice causé à autrui par des dommages et intérêts. En pratique, ce sont généralement les établissements employeurs qui supportent le versement, ce qui explique que l'engagement de cette responsabilité concerne souvent la structure autant que la personne.",
+    "vigilance": "Le mot « faute » ne signifie pas erreur grave. Une négligence légère suffit, dès lors que le préjudice et le lien de causalité sont établis.",
+    "source": [
+      {
+        "texte": "IFSI S1, UE1.3 Fiche 009 — support de cours, transcription locale"
+      }
+    ],
+    "verifie": "2026-08-29",
+    "peremption": null,
+    "statut": "brouillon",
+    "origine": "usine à domaine, 1re fabrication (29/08/2026)",
+    "partage": "interne"
+  },
+  {
+    "id": "le-responsabilite-disciplinaire-hors-juge",
+    "domaine": "legislation-ethique",
+    "branche": "exercice-et-responsabilite",
+    "niveau": 3,
+    "prerequis": [
+      "le-responsabilite-trois-conditions"
+    ],
+    "type": "qcm",
+    "question": "Laquelle des responsabilités de l'infirmier n'est pas mise en jeu par un juge ?",
+    "reponse": "La responsabilité disciplinaire : elle appartient à l'employeur, qui prononce la sanction en son propre nom.",
+    "choix": [
+      {
+        "texte": "La responsabilité disciplinaire",
+        "correct": true
+      },
+      {
+        "texte": "La responsabilité pénale",
+        "correct": false,
+        "pourquoi_faux": "Elle est au contraire prononcée par un tribunal, au nom de la société, sous forme d'amende, d'emprisonnement ou des deux, avec ouverture d'un casier judiciaire."
+      },
+      {
+        "texte": "La responsabilité civile",
+        "correct": false,
+        "pourquoi_faux": "Elle est tranchée par un juge, qui apprécie la faute, le préjudice et le lien de causalité avant de fixer des dommages et intérêts."
+      },
+      {
+        "texte": "La responsabilité ordinale",
+        "correct": false,
+        "pourquoi_faux": "Le distracteur le plus tentant : la sanction ne vient pas d'un juge ordinaire mais elle vient bien d'une instance juridictionnelle, celle de l'ordre infirmier, saisie au titre du code de déontologie. Ce n'est pas l'employeur qui décide."
+      }
+    ],
+    "explication": "Une même faute peut mettre en jeu plusieurs responsabilités à la fois, et c'est le point que l'examen vérifie. Elles se distinguent par qui prononce et dans quel but : le tribunal punit une infraction au nom de la société, le juge civil ou administratif répare un préjudice au bénéfice de la victime, l'employeur sanctionne un manquement au contrat, l'ordre sanctionne une violation du code de déontologie.",
+    "vigilance": "Disciplinaire et ordinale sont les deux à ne pas confondre. Le repère est l'auteur de la sanction : l'employeur pour la première, l'instance ordinale pour la seconde.",
+    "source": [
+      {
+        "texte": "IFSI S1, UE1.3 Fiche 009 — support de cours, transcription locale"
+      }
+    ],
+    "verifie": "2026-08-29",
+    "peremption": null,
+    "statut": "brouillon",
+    "origine": "usine à domaine, 1re fabrication (29/08/2026)",
+    "partage": "interne"
+  }
+]

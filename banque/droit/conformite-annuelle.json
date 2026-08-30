@@ -1,0 +1,542 @@
+[
+  {
+    "id": "droit-conformite-statut-non-verifie",
+    "domaine": "droit",
+    "branche": "conformite-annuelle",
+    "niveau": 1,
+    "type": "qcm",
+    "question": "Sur une obligation annuelle du syndic, la pièce qui fait foi n'est pas sous les yeux. Comment la ligne se note-t-elle, et que devient-elle dans le taux de conformité ?",
+    "reponse": "Non vérifié : un statut à part entière, sorti du calcul, et le taux s'écrit toujours avec le reste (par exemple 9/11 conformes, 2 non vérifiées).",
+    "choix": [
+      {
+        "texte": "Non vérifié, sorti du calcul du taux, qui s'affiche toujours avec le nombre de lignes non vérifiées",
+        "correct": true
+      },
+      {
+        "texte": "Conforme, puisque rien ne prouve un manquement",
+        "correct": false,
+        "pourquoi_faux": "C'est l'inversion de la charge de la preuve. Une obligation ne devient conforme que si la pièce qui fait foi a été vue et qu'elle est valide à la date du jour."
+      },
+      {
+        "texte": "Non conforme, par prudence",
+        "correct": false,
+        "pourquoi_faux": "Non conforme se réserve au cas où la pièce existe et montre le manquement, ou bien où l'échéance est passée sans acte. Traiter l'ignorance comme un manquement fabrique de fausses urgences et décrédibilise les vraies."
+      },
+      {
+        "texte": "Non vérifié, mais comptée au dénominateur du taux",
+        "correct": false,
+        "pourquoi_faux": "Absorber l'ignorance dans le dénominateur fait chuter le taux sans dire pourquoi : il ment sur l'état du dossier au lieu de désigner la pièce à aller chercher."
+      }
+    ],
+    "explication": "Trois statuts, jamais deux. « Rien d'enregistré » n'est pas « rien à faire » : l'ignorance a son propre statut, et c'est ce qui transforme une case vide en ligne de collecte plutôt qu'en jugement. Une ligne non vérifiée dit exactement où aller chercher la pièce ; une ligne faussement conforme ne dit plus rien du tout.",
+    "vigilance": "Un champ coché dans une fiche de mémoire interne ne vaut pas vérification : la ligne se vérifie sur la pièce qui fait foi. Les obligations qui ne visent pas cet immeuble se marquent N/A et sortent aussi du calcul.",
+    "source": [
+      {
+        "texte": "Radar de conformité annuelle (13 obligations), § 1 — trois statuts, jamais deux"
+      }
+    ],
+    "verifie": "2026-08-28",
+    "peremption": null,
+    "statut": "valide",
+    "origine": ".agents/skills/erp-pieces/references/radar-conformite-annuelle.md",
+    "partage": "banque"
+  },
+  {
+    "id": "droit-conformite-budget-deux-echeances",
+    "domaine": "droit",
+    "branche": "conformite-annuelle",
+    "niveau": 1,
+    "type": "flash",
+    "question": "Deux échéances encadrent le vote du budget prévisionnel. Lesquelles ?",
+    "reponse": "Le budget se vote avant le début de l'exercice qu'il concerne, et l'assemblée qui le vote se réunit dans les six mois du dernier jour de l'exercice précédent.",
+    "explication": "Les deux contraintes ne disent pas la même chose et se ratent séparément : la première borne le contenu (on ne vote pas un budget déjà entamé), la seconde borne le calendrier de la séance. Une copropriété qui tient bien une assemblée par an peut donc être en règle sur l'assemblée et en retard sur le budget.",
+    "vigilance": "L'obligation de tenir au moins une assemblée par an est une ligne distincte, avec son propre délai de convocation de vingt et un jours. Ne pas cocher l'une en croyant avoir traité l'autre.",
+    "source": [
+      {
+        "texte": "Art. 14-1 loi n° 65-557 du 10 juillet 1965 (assemblée qui vote le budget réunie dans les six mois du dernier jour de l'exercice précédent)",
+        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000043977299"
+      },
+      {
+        "texte": "Art. 43 al. 1 décret n° 67-223 du 17 mars 1967 (« Le budget prévisionnel couvre un exercice comptable de douze mois. Il est voté avant le début de l'exercice qu'il concerne. »)",
+        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000006488753"
+      },
+      {
+        "texte": "Art. 7 et 9 décret n° 67-223 (assemblée tenue au moins une fois chaque année ; convocation notifiée au moins vingt et un jours avant)"
+      }
+    ],
+    "verifie": "2026-08-28",
+    "peremption": null,
+    "statut": "valide",
+    "origine": ".agents/skills/erp-pieces/references/radar-conformite-annuelle.md",
+    "partage": "banque"
+  },
+  {
+    "id": "droit-conformite-budget-vote-tardif",
+    "domaine": "droit",
+    "branche": "conformite-annuelle",
+    "niveau": 2,
+    "prerequis": [
+      "droit-conformite-budget-deux-echeances"
+    ],
+    "type": "qcm",
+    "question": "Le budget prévisionnel n'a pas été voté avant le début de l'exercice qu'il concerne. Que le syndic peut-il appeler en attendant ?",
+    "reponse": "S'il y a été préalablement autorisé, deux provisions trimestrielles égales au quart du budget précédent.",
+    "choix": [
+      {
+        "texte": "Deux provisions trimestrielles égales au quart du budget précédent, s'il y a été préalablement autorisé",
+        "correct": true
+      },
+      {
+        "texte": "Rien : sans budget voté, aucun appel n'est possible",
+        "correct": false,
+        "pourquoi_faux": "Le blocage total n'est pas la règle. La loi organise précisément la continuité de trésorerie pendant le retard, à la condition que l'autorisation existe."
+      },
+      {
+        "texte": "Autant de provisions que nécessaire, au quart du budget précédent, jusqu'au vote",
+        "correct": false,
+        "pourquoi_faux": "Le relais est plafonné à deux provisions trimestrielles. Au-delà, c'est l'assemblée qu'il faut réunir, pas l'appel qu'il faut reconduire."
+      },
+      {
+        "texte": "Deux provisions trimestrielles, sans autorisation préalable : la loi y suffit",
+        "correct": false,
+        "pourquoi_faux": "L'autorisation préalable est la condition même du dispositif. Sans elle, l'appel est fragile et se conteste."
+      }
+    ],
+    "explication": "Le dispositif existe pour que le retard d'une assemblée ne vide pas la trésorerie du syndicat, mais il est volontairement court : deux trimestres, le temps de convoquer. Il achète un délai, il ne remplace pas le vote.",
+    "vigilance": "« Préalablement autorisé » veut dire que l'autorisation de l'assemblée précède l'appel : sans résolution en ce sens, les deux provisions ne peuvent pas être appelées. Le même alinéa écarte expressément la procédure de l'article 19-2 pour cette situation : on ne recouvre pas au fond accéléré ce qu'on a appelé sur un budget non voté.",
+    "source": [
+      {
+        "texte": "Art. 43 al. 2 décret n° 67-223 du 17 mars 1967 (et non l'art. 14-1 de la loi : le dispositif est réglementaire)",
+        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000006488753"
+      }
+    ],
+    "verifie": "2026-08-28",
+    "peremption": null,
+    "statut": "valide",
+    "origine": ".agents/skills/erp-pieces/references/radar-conformite-annuelle.md",
+    "partage": "banque"
+  },
+  {
+    "id": "droit-conformite-provisions-trimestrielles",
+    "domaine": "droit",
+    "branche": "conformite-annuelle",
+    "niveau": 1,
+    "type": "flash",
+    "question": "À quel montant et à quelle date les provisions sur budget prévisionnel sont-elles exigibles ?",
+    "reponse": "Au quart du budget voté, exigibles le premier jour de chaque trimestre, sauf modalités votées autrement par l'assemblée.",
+    "explication": "Le quart et le trimestre sont des règles supplétives : elles s'appliquent tant que l'assemblée n'a rien décidé d'autre. C'est ce qui explique qu'un appel mensuel puisse être parfaitement régulier dans une copropriété et irrégulier dans une autre.",
+    "vigilance": "Avant de dire qu'un appel est irrégulier, on lit la résolution qui fixe les modalités : c'est elle qui commande, pas l'habitude du cabinet. La pièce qui fait foi, ce sont les avis d'appel datés recoupés avec le grand livre.",
+    "source": [
+      {
+        "texte": "Art. 14-1 loi n° 65-557 du 10 juillet 1965 (provisions égales au quart du budget voté, exigibles le premier jour de chaque trimestre ou de la période fixée par l'assemblée)",
+        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000043977299"
+      }
+    ],
+    "verifie": "2026-08-28",
+    "peremption": null,
+    "statut": "valide",
+    "origine": ".agents/skills/erp-pieces/references/radar-conformite-annuelle.md",
+    "partage": "banque"
+  },
+  {
+    "id": "droit-conformite-fonds-travaux-plancher",
+    "domaine": "droit",
+    "branche": "conformite-annuelle",
+    "niveau": 2,
+    "type": "qcm",
+    "question": "Un plan pluriannuel de travaux a été adopté. À combien la cotisation annuelle au fonds de travaux doit-elle au minimum s'élever ?",
+    "reponse": "Au moins 5 % du budget prévisionnel ET au moins 2,5 % du montant des travaux du plan adopté : les deux planchers jouent ensemble.",
+    "choix": [
+      {
+        "texte": "Au moins 5 % du budget prévisionnel et au moins 2,5 % du montant des travaux du plan",
+        "correct": true
+      },
+      {
+        "texte": "5 % du budget prévisionnel ; le plan adopté ne change rien",
+        "correct": false,
+        "pourquoi_faux": "C'est le plancher de base, celui qui vaut en l'absence de plan adopté. L'adoption d'un plan ajoute un second plancher, elle ne laisse pas le premier seul."
+      },
+      {
+        "texte": "2,5 % du montant des travaux du plan, qui remplace le plancher de 5 %",
+        "correct": false,
+        "pourquoi_faux": "Le second plancher s'ajoute, il ne se substitue pas. Retenir le plus commode des deux revient à sous-appeler la cotisation."
+      },
+      {
+        "texte": "5 % du montant des travaux du plan",
+        "correct": false,
+        "pourquoi_faux": "Les taux et les assiettes sont croisés : 5 % se calcule sur le budget prévisionnel, 2,5 % sur le montant des travaux du plan. C'est l'erreur la plus fréquente sur cette ligne."
+      }
+    ],
+    "explication": "Deux planchers de nature différente : l'un indexe l'effort d'épargne sur le train de vie courant de la copropriété, l'autre sur ce que le plan a chiffré comme travaux à venir. Le second existe parce que le premier, seul, laisse une copropriété à petit budget cotiser une somme sans rapport avec ses besoins réels.",
+    "vigilance": "La cotisation peut être suspendue quand le fonds dépasse le budget prévisionnel, ou 50 % du montant des travaux du plan adopté. Suspension n'est pas dispense, et elle suppose le seuil atteint et constaté. La pièce qui fait foi est le relevé du compte séparé du fonds, pas la ligne du grand livre seule.",
+    "source": [
+      {
+        "texte": "Art. 14-2-1 loi n° 65-557 du 10 juillet 1965 (cotisation annuelle : pas moins de 2,5 % du montant des travaux du plan adopté ET pas moins de 5 % du budget de l'art. 14-1 ; suspension possible quand le fonds excède le budget prévisionnel ou 50 % du montant des travaux du plan)",
+        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000043967792"
+      }
+    ],
+    "verifie": "2026-08-28",
+    "peremption": null,
+    "statut": "valide",
+    "origine": ".agents/skills/erp-pieces/references/radar-conformite-annuelle.md",
+    "partage": "banque"
+  },
+  {
+    "id": "droit-conformite-fonds-travaux-dispenses",
+    "domaine": "droit",
+    "branche": "conformite-annuelle",
+    "niveau": 3,
+    "prerequis": [
+      "droit-conformite-fonds-travaux-plancher"
+    ],
+    "type": "qcm",
+    "question": "Deux dispenses de cotisation au fonds de travaux circulent encore : « moins de dix lots, à l'unanimité » et « un diagnostic technique global ne fait apparaître aucun besoin de travaux ». Que valent-elles ?",
+    "reponse": "Aucune ne dispense plus de cotiser : depuis le 01/01/2023 la cotisation n'a aucune dispense. La dispense par diagnostic technique global ne survit que pour le projet de plan pluriannuel de travaux.",
+    "choix": [
+      {
+        "texte": "Aucune ne dispense de cotiser ; la dispense par diagnostic technique global ne survit que pour le projet de plan pluriannuel",
+        "correct": true
+      },
+      {
+        "texte": "Les deux valent toujours : elles figurent à l'article 14-2",
+        "correct": false,
+        "pourquoi_faux": "Elles figuraient à l'ancien article 14-2, version ALUR. Citer un article par son numéro sans vérifier la version en vigueur est le piège exact de cette ligne."
+      },
+      {
+        "texte": "La dispense « moins de dix lots à l'unanimité » vaut encore pour les petites copropriétés",
+        "correct": false,
+        "pourquoi_faux": "Elle a disparu. Les petites copropriétés sont au contraire les dernières entrées dans l'obligation, donc les plus souvent en retard, pas les plus dispensées."
+      },
+      {
+        "texte": "La dispense par diagnostic technique global vaut pour la cotisation comme pour le plan",
+        "correct": false,
+        "pourquoi_faux": "Elle ne survit que pour le plan. Sur la cotisation, un diagnostic rassurant ne dispense de rien."
+      }
+    ],
+    "explication": "Ces deux dispenses ont réellement existé, ce qui explique qu'elles se lisent encore partout et qu'un copropriétaire les oppose de bonne foi en séance. Savoir qu'elles ont existé, et depuis quand elles ne valent plus, vaut mieux que de les contredire à l'aveugle.",
+    "vigilance": "Ne pas les confondre avec le seuil de la petite copropriété (comptabilité allégée) : autre régime, autre article, et là aussi l'ancien « moins de dix lots » a disparu.",
+    "source": [
+      {
+        "texte": "Art. 14-2-1 loi n° 65-557 du 10 juillet 1965, version en vigueur vérifiée le 28/08/2026 : aucune dispense de cotisation n'y figure plus",
+        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000043967792"
+      },
+      {
+        "texte": "Art. 171 VI loi n° 2021-1104 du 22 août 2021 (calendrier d'entrée en vigueur)",
+        "url": "https://www.legifrance.gouv.fr/jorf/article_jo/JORFARTI000043957111"
+      }
+    ],
+    "verifie": "2026-08-28",
+    "peremption": null,
+    "statut": "valide",
+    "origine": ".agents/skills/erp-pieces/references/radar-conformite-annuelle.md",
+    "partage": "banque"
+  },
+  {
+    "id": "droit-conformite-mandat-syndic-duree",
+    "domaine": "droit",
+    "branche": "conformite-annuelle",
+    "niveau": 1,
+    "type": "qcm",
+    "question": "Quelle est la durée maximale du mandat de syndic, et dans quel cas est-elle réduite ?",
+    "reponse": "Trois ans au maximum. Elle tombe à un an, pendant la période de la garantie décennale (art. 1792 du code civil), lorsque le syndic, son conjoint, leurs commettants ou employeurs ont participé à la construction de l'immeuble.",
+    "choix": [
+      {
+        "texte": "Trois ans, ramenée à un an en cas de lien avec la construction de l'immeuble",
+        "correct": true
+      },
+      {
+        "texte": "Trois ans, sans exception",
+        "correct": false,
+        "pourquoi_faux": "L'exception existe et vise le syndic lié à la construction de l'immeuble : la durée maximale tombe alors à un an."
+      },
+      {
+        "texte": "Un exercice comptable, renouvelable",
+        "correct": false,
+        "pourquoi_faux": "« Un exercice » est un intitulé de contrat, pas une durée légale. Ce sont les dates portées au contrat qui font foi, et elles ne coïncident pas toujours avec l'exercice."
+      },
+      {
+        "texte": "Cinq ans",
+        "correct": false,
+        "pourquoi_faux": "Le maximum est de trois ans. Aucun montage contractuel ne l'allonge : au-delà, c'est un renouvellement par l'assemblée qu'il faut, pas une reconduction."
+      }
+    ],
+    "explication": "La durée est un maximum, pas une norme : l'assemblée peut voter plus court. Le renouvellement passe toujours par elle, ce qui fait du contrat de syndic l'une des rares pièces dont la date de fin est une échéance dure du calendrier de la copropriété.",
+    "vigilance": "Le contrat se lit sur ses dates, jamais sur son intitulé. C'est là qu'une fin de mandat se découvre trop tard, une fois la période de convocation déjà entamée.",
+    "source": [
+      {
+        "texte": "Art. 28 décret n° 67-223 du 17 mars 1967 (durée des fonctions du syndic : trois ans au plus ; un an au plus pendant la période de l'art. 1792 du code civil en cas de participation à la construction)",
+        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000042078751"
+      },
+      {
+        "texte": "Art. 1792 du code civil (période de garantie visée par l'art. 28 ; la carte citait à tort l'art. 1792-4-1)"
+      }
+    ],
+    "verifie": "2026-08-28",
+    "peremption": null,
+    "statut": "valide",
+    "origine": ".agents/skills/erp-pieces/references/radar-conformite-annuelle.md",
+    "partage": "banque"
+  },
+  {
+    "id": "droit-conformite-registre-declaration-annuelle",
+    "domaine": "droit",
+    "branche": "conformite-annuelle",
+    "niveau": 2,
+    "type": "qcm",
+    "question": "Dans quel délai la déclaration annuelle des données financières au registre national d'immatriculation doit-elle être faite ?",
+    "reponse": "Dans les deux mois qui suivent l'assemblée générale qui approuve les comptes.",
+    "choix": [
+      {
+        "texte": "Dans les deux mois suivant l'assemblée qui approuve les comptes",
+        "correct": true
+      },
+      {
+        "texte": "Dans les deux mois suivant la clôture de l'exercice",
+        "correct": false,
+        "pourquoi_faux": "Le point de départ est l'assemblée d'approbation, pas la clôture. Les deux peuvent être séparées de plusieurs mois, et compter depuis la clôture reviendrait à déclarer des comptes non encore approuvés."
+      },
+      {
+        "texte": "Avant le 31 décembre de chaque année",
+        "correct": false,
+        "pourquoi_faux": "Il n'y a pas de date butoir calendaire commune. Le délai est mobile, accroché à la date de l'assemblée de chaque copropriété, ce qui interdit de gérer le portefeuille avec une seule échéance."
+      },
+      {
+        "texte": "Dans l'année qui suit l'assemblée d'approbation",
+        "correct": false,
+        "pourquoi_faux": "Le délai est de deux mois. Le confondre avec un an laisse courir l'astreinte pendant des mois sans que rien ne le signale."
+      }
+    ],
+    "explication": "La déclaration est annuelle et suit l'approbation des comptes parce qu'elle porte précisément les données financières approuvées. Le manquement est doublement coûteux : une astreinte pouvant aller jusqu'à 20 € par lot et par semaine, et surtout aucune subvention publique tant que l'immatriculation n'est pas à jour.",
+    "vigilance": "L'astreinte se compte par lot et par semaine : elle grossit avec la taille de l'immeuble et avec le temps. La pièce qui fait foi est la fiche du registre avec sa date de dernière mise à jour, pas le souvenir d'avoir déclaré.",
+    "source": [
+      {
+        "texte": "Art. R711-10 du code de la construction et de l'habitation (déclaration annuelle des données financières dans les deux mois suivant l'assemblée d'approbation des comptes)",
+        "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000033073009"
+      },
+      {
+        "texte": "Art. L711-6 du code de la construction et de l'habitation (astreinte plafonnée à 20 € par lot et par semaine, à la charge du syndic ; subventions publiques subordonnées à l'immatriculation)"
+      }
+    ],
+    "verifie": "2026-08-28",
+    "peremption": "2027-08-19",
+    "statut": "valide",
+    "origine": ".agents/skills/erp-pieces/references/radar-conformite-annuelle.md",
+    "partage": "banque"
+  },
+  {
+    "id": "droit-conformite-assurance-rc-syndicat",
+    "domaine": "droit",
+    "branche": "conformite-annuelle",
+    "niveau": 2,
+    "type": "flash",
+    "question": "Quelle assurance la loi impose-t-elle au syndicat des copropriétaires, et que faire si l'assemblée refuse de la voter ?",
+    "reponse": "La responsabilité civile du syndicat, sans seuil ni condition. Si l'assemblée refuse, le syndic peut souscrire pour le compte du syndicat.",
+    "explication": "L'obligation légale porte sur la responsabilité civile seule. La garantie du bâti (incendie, dégâts des eaux, multirisque immeuble) est presque toujours souscrite, mais elle relève du règlement de copropriété ou d'un vote, pas de cette obligation-là. Confondre les deux fait croire qu'une multirisque refusée en assemblée met le syndicat hors la loi, ce qui est faux, et fait oublier que le refus de la responsabilité civile, lui, ne s'accepte pas.",
+    "vigilance": "L'attestation doit être en cours de validité et au nom du syndicat : une attestation au nom du syndic, ou expirée, ne prouve rien. Le pouvoir de souscrire malgré le refus est attaché à cette obligation de responsabilité civile ; ne pas l'invoquer pour passer outre un vote sur une autre garantie.",
+    "source": [
+      {
+        "texte": "Art. 9-1 loi n° 65-557 du 10 juillet 1965 (obligation d'assurance de responsabilité civile du syndicat ; en cas de refus de l'assemblée, souscription par le syndic pour le compte du syndicat)",
+        "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000028779136"
+      }
+    ],
+    "verifie": "2026-08-28",
+    "peremption": null,
+    "statut": "valide",
+    "origine": ".agents/skills/erp-pieces/references/radar-conformite-annuelle.md",
+    "partage": "banque"
+  },
+  {
+    "id": "droit-conformite-dpe-collectif-champ",
+    "domaine": "droit",
+    "branche": "conformite-annuelle",
+    "niveau": 2,
+    "type": "qcm",
+    "question": "Quels bâtiments d'habitation collective sont soumis au diagnostic de performance énergétique collectif, et à quelle fréquence se renouvelle-t-il ?",
+    "reponse": "Ceux dont le permis de construire a été déposé avant le 01/01/2013 ; renouvelé tous les dix ans, sauf si un diagnostic postérieur au 01/07/2021 a établi une classe A, B ou C.",
+    "choix": [
+      {
+        "texte": "Permis de construire déposé avant le 01/01/2013 ; renouvellement décennal, sauf classe A, B ou C établie par un diagnostic postérieur au 01/07/2021",
+        "correct": true
+      },
+      {
+        "texte": "Tous les immeubles d'habitation collective, sans condition d'ancienneté",
+        "correct": false,
+        "pourquoi_faux": "Le champ est borné par la date de dépôt du permis de construire. Un immeuble dont le permis est postérieur au 01/01/2013 n'est pas visé, et la ligne se marque alors sans objet."
+      },
+      {
+        "texte": "Permis de construire déposé avant le 01/01/2013 ; renouvellement décennal sans exception",
+        "correct": false,
+        "pourquoi_faux": "L'exception existe et mérite d'être connue : une classe A, B ou C établie par un diagnostic postérieur au 01/07/2021 dispense du renouvellement."
+      },
+      {
+        "texte": "Les copropriétés de plus de cinquante lots seulement",
+        "correct": false,
+        "pourquoi_faux": "La taille a commandé le calendrier d'entrée en vigueur, jamais le champ de l'obligation. Les trois vagues étant passées, toutes les tailles sont désormais concernées."
+      }
+    ],
+    "explication": "Deux critères se superposent et se confondent : l'ancienneté du bâtiment détermine s'il est visé, la taille de la copropriété a seulement déterminé à quelle date l'obligation lui est devenue opposable. Une fois toutes les vagues passées, seul le critère d'ancienneté subsiste.",
+    "vigilance": "Le diagnostic collectif se contrôle par son numéro ADEME, vérifiable sur l'observatoire. Sans numéro, on tient un document, pas une preuve.",
+    "source": [
+      {
+        "texte": "Art. L126-31 du code de la construction et de l'habitation (permis de construire déposé avant le 01/01/2013 ; renouvellement ou mise à jour tous les dix ans, sauf classe A, B ou C établie par un diagnostic postérieur au 01/07/2021)",
+        "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043976972"
+      },
+      {
+        "texte": "Art. 158 loi n° 2021-1104 du 22 août 2021 (calendrier : 01/01/2024, 01/01/2025, 01/01/2026)"
+      }
+    ],
+    "verifie": "2026-08-28",
+    "peremption": null,
+    "statut": "valide",
+    "origine": ".agents/skills/erp-pieces/references/radar-conformite-annuelle.md",
+    "partage": "banque"
+  },
+  {
+    "id": "droit-conformite-dta-parties-communes",
+    "domaine": "droit",
+    "branche": "conformite-annuelle",
+    "niveau": 2,
+    "type": "flash",
+    "question": "Quel critère déclenche le dossier technique amiante des parties communes, et quelle obligation de communication l'accompagne ?",
+    "reponse": "Un permis de construire délivré avant le 01/07/1997, quelle que soit la taille de la copropriété. La fiche récapitulative est communiquée aux occupants dans le mois qui suit la constitution ou la mise à jour du dossier.",
+    "explication": "Le syndicat constitue, conserve et tient à jour le dossier : ce n'est pas une pièce qu'on classe une fois et qu'on oublie, mais un document vivant que tout matériau découvert en travaux vient actualiser. Le critère est une date de permis, pas un seuil de lots : le dossier technique amiante ne suit aucune des vagues d'entrée en vigueur des autres obligations.",
+    "vigilance": "Chaque mise à jour rouvre le délai d'un mois pour communiquer la fiche récapitulative aux occupants. C'est la partie la plus souvent oubliée : le repérage est fait, le dossier existe, et personne n'a diffusé la fiche.",
+    "source": [
+      {
+        "texte": "Art. R1334-29-5 du code de la santé publique (constitution, conservation, mise à jour ; III : communication de la fiche récapitulative aux occupants dans le mois suivant la constitution ou la mise à jour)",
+        "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043841389"
+      },
+      {
+        "texte": "Art. R1334-14 du code de la santé publique (champ : immeubles bâtis dont le permis de construire a été délivré avant le 1er juillet 1997)",
+        "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000024140895"
+      }
+    ],
+    "verifie": "2026-08-28",
+    "peremption": null,
+    "statut": "valide",
+    "origine": ".agents/skills/erp-pieces/references/radar-conformite-annuelle.md",
+    "partage": "banque"
+  },
+  {
+    "id": "droit-conformite-plan-pluriannuel-quinze-ans",
+    "domaine": "droit",
+    "branche": "conformite-annuelle",
+    "niveau": 3,
+    "prerequis": [
+      "droit-conformite-fonds-travaux-plancher"
+    ],
+    "type": "qcm",
+    "question": "Deux conditions d'ancienneté se confondent facilement : celle du fonds de travaux et celle du projet de plan pluriannuel de travaux. Laquelle s'applique au plan ?",
+    "reponse": "Quinze ans après la réception des travaux de construction, avec actualisation tous les dix ans. Le fonds de travaux, lui, court dix ans après la réception.",
+    "choix": [
+      {
+        "texte": "Quinze ans après la réception des travaux de construction, actualisé tous les dix ans",
+        "correct": true
+      },
+      {
+        "texte": "Dix ans après la réception, actualisé tous les dix ans",
+        "correct": false,
+        "pourquoi_faux": "Dix ans est la condition du fonds de travaux, pas celle du plan. Les deux ancres partent de la même réception, ce qui rend l'inversion facile : on croit une copropriété en retard sur son plan alors qu'elle n'y est pas encore soumise."
+      },
+      {
+        "texte": "Quinze ans après la réception, actualisé tous les quinze ans",
+        "correct": false,
+        "pourquoi_faux": "L'actualisation est décennale. Le délai de quinze ans ne vaut que pour l'élaboration initiale."
+      },
+      {
+        "texte": "Quinze ans après la dernière assemblée ayant voté des travaux",
+        "correct": false,
+        "pourquoi_faux": "Le point de départ est la réception des travaux de construction de l'immeuble, jamais un vote postérieur. Un immeuble qui a fait des travaux récemment n'a pas remis son compteur à zéro."
+      }
+    ],
+    "explication": "Le projet se présente à la première assemblée qui suit son élaboration. Si des travaux en ressortent sur dix ans, le syndic met en outre l'adoption du plan à l'ordre du jour de cette même assemblée : présenter et faire adopter ne sont pas la même obligation, et la seconde est conditionnelle.",
+    "vigilance": "Une dispense subsiste ici, et ici seulement : un diagnostic technique global ne faisant apparaître aucun besoin de travaux sur dix ans dispense du plan. Elle ne dispense jamais de la cotisation au fonds de travaux.",
+    "source": [
+      {
+        "texte": "Art. 14-2 loi n° 65-557 du 10 juillet 1965 (« A l'expiration d'un délai de quinze ans à compter de la date de réception des travaux de construction… Il est actualisé tous les dix ans. »)",
+        "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043977289"
+      },
+      {
+        "texte": "Art. 14-2-1 loi n° 65-557 (fonds de travaux : au terme d'une période de dix ans à compter de la réception)",
+        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000043967792"
+      }
+    ],
+    "verifie": "2026-08-28",
+    "peremption": null,
+    "statut": "valide",
+    "origine": ".agents/skills/erp-pieces/references/radar-conformite-annuelle.md",
+    "partage": "banque"
+  },
+  {
+    "id": "droit-conformite-calendrier-des-vagues",
+    "domaine": "droit",
+    "branche": "conformite-annuelle",
+    "niveau": 2,
+    "type": "flash",
+    "question": "Fonds de travaux, projet de plan pluriannuel et diagnostic de performance énergétique collectif sont entrés en vigueur par vagues, de la plus grande copropriété à la plus petite. Où en est-on ?",
+    "reponse": "Les trois vagues sont passées. Toute copropriété d'habitation est concernée par les trois obligations, y compris les plus petites.",
+    "explication": "Cotisation au fonds de travaux et projet de plan pluriannuel : au-dessus de 200 lots le 01/01/2023, de 51 à 200 lots le 01/01/2024, à 50 lots et moins le 01/01/2025. Diagnostic collectif : un an plus tard à chaque étage, soit 01/01/2024, 01/01/2025 puis 01/01/2026. Le calendrier n'est plus une défense, il n'est plus qu'une explication du retard.",
+    "vigilance": "Les petites copropriétés sont les dernières entrées, donc les plus souvent en retard. C'est là qu'il faut regarder en premier, et surtout pas là qu'il faut supposer une dispense.",
+    "source": [
+      {
+        "texte": "Art. 171 VI loi n° 2021-1104 du 22 août 2021 (fonds de travaux et projet de plan pluriannuel : plus de 200 lots au 01/01/2023, 51 à 200 lots au 01/01/2024, au plus 50 lots au 01/01/2025)",
+        "url": "https://www.legifrance.gouv.fr/jorf/article_jo/JORFARTI000043957111"
+      },
+      {
+        "texte": "Art. 158 loi n° 2021-1104 du 22 août 2021 (diagnostic de performance énergétique collectif : un an plus tard à chaque étage, 01/01/2024, 01/01/2025, 01/01/2026)"
+      }
+    ],
+    "verifie": "2026-08-28",
+    "peremption": null,
+    "statut": "valide",
+    "origine": ".agents/skills/erp-pieces/references/radar-conformite-annuelle.md",
+    "partage": "banque"
+  },
+  {
+    "id": "droit-conformite-petite-copropriete-seuil",
+    "domaine": "droit",
+    "branche": "conformite-annuelle",
+    "niveau": 2,
+    "type": "flash",
+    "question": "Quel est aujourd'hui le seuil de la petite copropriété, celle qui bénéficie de la comptabilité allégée ?",
+    "reponse": "Au plus cinq lots à usage de logements, de bureaux ou de commerces, ou un budget prévisionnel moyen inférieur à 15 000 € sur trois exercices consécutifs.",
+    "explication": "L'ancien seuil « moins de dix lots » a disparu le 01/06/2020 et se lit encore partout, y compris dans des documents professionnels récents. Le nouveau seuil est plus étroit sur les lots et ouvre une seconde porte par le budget, ce qui déplace la frontière au lieu de simplement la baisser.",
+    "vigilance": "Les deux branches sont alternatives : cinq lots OU le budget moyen, pas les deux. Et ce régime allège la forme des comptes, il ne dispense d'aucune des obligations annuelles du syndic.",
+    "source": [
+      {
+        "texte": "Art. 41-8 loi n° 65-557 du 10 juillet 1965 (« au plus cinq lots à usage de logements, de bureaux ou de commerces » ou budget prévisionnel moyen sur trois exercices consécutifs inférieur à 15 000 €)",
+        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000039301997"
+      }
+    ],
+    "verifie": "2026-08-28",
+    "peremption": "2027-08-19",
+    "statut": "valide",
+    "origine": ".agents/skills/erp-pieces/references/radar-conformite-annuelle.md",
+    "partage": "banque"
+  },
+  {
+    "id": "droit-conformite-comptes-engagement",
+    "domaine": "droit",
+    "branche": "conformite-annuelle",
+    "niveau": 1,
+    "type": "flash",
+    "question": "Selon quel principe les comptes d'une copropriété sont-ils tenus, et que doivent-ils comporter à leur présentation ?",
+    "reponse": "En engagement : charges et produits sont enregistrés dès l'engagement juridique, sans attendre le paiement. Ils sont présentés avec le comparatif de l'exercice précédent approuvé, sur un exercice de douze mois.",
+    "explication": "La comptabilité d'engagement est ce qui rend deux exercices comparables : une facture reçue et non payée pèse déjà sur l'exercice qui l'a engagée, au lieu de basculer sur le suivant au gré de la date de règlement. Sans elle, un simple retard de paiement suffirait à faire mentir un écart de charges.",
+    "vigilance": "« Approuvé » n'est pas décoratif : le comparatif se fait avec l'exercice précédent tel que l'assemblée l'a approuvé, pas avec une version retravaillée depuis.",
+    "source": [
+      {
+        "texte": "Art. 14-3 loi n° 65-557 du 10 juillet 1965 (charges et produits enregistrés dès leur engagement juridique par le syndic, indépendamment de leur règlement ; comptes présentés avec le comparatif de l'exercice précédent approuvé)",
+        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000006471590"
+      },
+      {
+        "texte": "Décret n° 2005-240 du 14 mars 2005 et arrêté du 14 mars 2005 relatifs aux comptes du syndicat des copropriétaires"
+      }
+    ],
+    "verifie": "2026-08-28",
+    "peremption": null,
+    "statut": "valide",
+    "origine": ".agents/skills/erp-pieces/references/radar-conformite-annuelle.md",
+    "partage": "banque"
+  }
+]

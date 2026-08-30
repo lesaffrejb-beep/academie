@@ -1,0 +1,111 @@
+[
+  {
+    "id": "equipements-ascenseur-organes-securite",
+    "domaine": "equipements",
+    "branche": "ascenseur",
+    "niveau": 1,
+    "type": "flash",
+    "question": "Cite trois organes d'un ascenseur dont un gestionnaire doit connaître le nom et la fonction, et dis à quoi sert chacun.",
+    "reponse": "L'opérateur de porte, qui commande l'ouverture et la fermeture des portes de cabine ; le parachute, qui bloque la cabine sur ses guides en cas de rupture ou de survitesse ; le limiteur de vitesse, qui détecte la survitesse et déclenche le parachute.",
+    "explication": "Ces trois pièces reviennent constamment dans les rapports d'entretien et dans les devis, et elles ne se valent pas. L'opérateur de porte est l'organe le plus sollicité de l'appareil, donc la panne la plus fréquente et souvent la plus chère à l'unité. Le limiteur de vitesse et le parachute forment un couple : le premier mesure, le second agit. L'arrêté du 18 novembre 2004 impose d'ailleurs, sur les appareils anciens, la mise en place d'un limiteur de vitesse et d'un parachute appropriés, le limiteur devant s'enclencher au plus tard à 140 % de la vitesse nominale. Un rapport qui signale un limiteur de vitesse hors tolérance ne signale pas un confort dégradé, il signale que la sécurité ultime de l'appareil n'est plus garantie.",
+    "vigilance": "Le parachute et le limiteur de vitesse sont nommés comme tels dans l'arrêté du 18 novembre 2004 ; « opérateur de porte » est en revanche un terme de métier et non un terme réglementaire, le texte parlant de serrures et de dispositifs de contrôle de la fermeture et du verrouillage. Savoir nommer ces organes change quand même la conversation avec l'ascensoriste : une ligne de devis « opérateur de porte » se discute, une ligne « intervention technique » ne se discute pas.",
+    "source": [
+      {
+        "texte": "Arrêté du 18 novembre 2004 relatif aux travaux de sécurité à réaliser dans les installations d'ascenseurs (en vigueur au 30/08/2026) : parachute de cabine, limiteur de vitesse, verrouillage des portes palières",
+        "url": "https://www.legifrance.gouv.fr/loda/id/LEGITEXT000005894844/"
+      },
+      {
+        "texte": "Art. L. 134-1 à L. 134-5 du code de la construction et de l'habitation, sécurité des ascenseurs",
+        "url": "https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006074096/LEGISCTA000006176386/"
+      }
+    ],
+    "verifie": "2026-08-30",
+    "peremption": null,
+    "statut": "valide",
+    "origine": "lot de test vitrine du 29/08/2026, matière issue du carnet documentaire, organes recoupés à l'arrêté du 18 novembre 2004 le 30/08/2026",
+    "partage": "banque"
+  },
+  {
+    "id": "equipements-ascenseur-controle-quinquennal",
+    "domaine": "equipements",
+    "branche": "ascenseur",
+    "niveau": 2,
+    "prerequis": [
+      "equipements-ascenseur-organes-securite"
+    ],
+    "type": "qcm",
+    "question": "Le contrôle technique quinquennal d'un ascenseur vient d'être réalisé et le rapport liste plusieurs défauts. Que doit en faire le syndic ?",
+    "reponse": "Le transmettre à l'entreprise chargée de l'entretien, ce que le texte impose, puis porter les suites à l'ordre du jour de la prochaine assemblée générale, seule à pouvoir voter les travaux.",
+    "choix": [
+      {
+        "texte": "Le transmettre à l'entreprise d'entretien, puis présenter les suites à la prochaine assemblée générale",
+        "correct": true
+      },
+      {
+        "texte": "Le classer au dossier : c'est un document technique, il n'a pas à circuler",
+        "correct": false,
+        "pourquoi_faux": "Le texte impose expressément au propriétaire de transmettre le rapport à l'entreprise chargée de l'entretien et à ceux qui auront à réaliser les travaux. Et le contrôle n'a d'utilité que s'il redescend au syndicat des copropriétaires, seul à pouvoir décider des travaux. Un rapport classé sans suite est exactement la pièce qui ressortira contre le syndic après un accident."
+      },
+      {
+        "texte": "Le transmettre au contrôleur qui l'a établi pour qu'il lève lui-même les réserves",
+        "correct": false,
+        "pourquoi_faux": "Le contrôle technique est confié à une personne dont l'indépendance est une condition posée par la loi, et qui ne peut pas réparer ce qu'elle contrôle. Lui confier les travaux détruirait l'indépendance qui fait toute la valeur du contrôle."
+      },
+      {
+        "texte": "Faire exécuter d'office tous les défauts listés, sans passer par l'assemblée",
+        "correct": false,
+        "pourquoi_faux": "Tous les défauts d'un rapport ne sont pas de même nature : certains relèvent de l'entretien courant déjà payé au contrat, d'autres sont des travaux qui appellent une décision et un financement. Les traiter en bloc revient soit à payer deux fois, soit à engager la copropriété sans décision."
+      }
+    ],
+    "explication": "Le contrôle technique est quinquennal : le propriétaire doit le faire réaliser tous les cinq ans. Le contrôleur remet son rapport dans le mois qui suit la fin de son intervention, et c'est ensuite au propriétaire de le transmettre à l'entreprise d'entretien. Le tri utile, avant l'assemblée, consiste à séparer ce que le contrat d'entretien couvre déjà de ce qui constitue de vrais travaux à voter.",
+    "vigilance": "Le passage en assemblée générale n'est pas écrit dans le texte du contrôle technique : il découle du fait que seuls les copropriétaires votent les travaux. Ce qui est écrit, en revanche, c'est la transmission à l'entreprise d'entretien. Le rapport se lit comme une liste d'obligations à venir : les défauts non traités reviendront au contrôle suivant, aggravés, et laisseront une trace écrite de cinq ans d'inaction.",
+    "source": [
+      {
+        "texte": "Art. R. 134-11 à R. 134-13 du code de la construction et de l'habitation : contrôle technique tous les cinq ans, rapport dans le mois, transmission par le propriétaire à l'entreprise d'entretien",
+        "url": "https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006074096/LEGISCTA000043818735/"
+      },
+      {
+        "texte": "Art. L. 134-4 du code de la construction et de l'habitation : contrôle technique périodique confié à une personne qualifiée, assurée et indépendante",
+        "url": "https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006074096/LEGISCTA000006176386/"
+      }
+    ],
+    "verifie": "2026-08-30",
+    "peremption": null,
+    "statut": "valide",
+    "origine": "lot de test vitrine du 29/08/2026 ; numérotation corrigée le 30/08/2026 (l'ancien art. L. 125-2 du CCH est devenu L. 134-4 et R. 134-6 et suivants à la recodification)",
+    "partage": "banque"
+  },
+  {
+    "id": "equipements-ascenseur-entretien-obligatoire",
+    "domaine": "equipements",
+    "branche": "ascenseur",
+    "niveau": 1,
+    "prerequis": [
+      "equipements-ascenseur-organes-securite"
+    ],
+    "type": "flash",
+    "question": "Le contrat d'entretien d'un ascenseur est-il obligatoire, et sur quels textes repose ce régime ?",
+    "reponse": "L'entretien, lui, est obligatoire : il incombe au propriétaire, qui doit maintenir l'appareil en bon état de fonctionnement. Le contrat n'est que la voie normale de s'en acquitter, la loi laissant au propriétaire la possibilité de l'assurer par ses propres moyens s'il en a les capacités techniques. Dès qu'il confie l'entretien à une entreprise, le contrat doit être écrit et comporter les clauses minimales fixées par le règlement, pour une durée d'un an au moins. Le régime figure aujourd'hui aux articles L. 134-3 et R. 134-6 et suivants du code de la construction et de l'habitation.",
+    "explication": "L'obligation d'entretien et l'obligation de contrôle technique quinquennal sont deux choses distinctes et cumulatives. La première est continue et confiée au mainteneur ; la seconde est périodique et confiée à un tiers indépendant. Un ascenseur peut être parfaitement entretenu et se voir signaler des défauts au contrôle, comme il peut avoir un contrôle propre et un contrat d'entretien qui ne couvre presque rien. En copropriété, l'entretien en régie n'existe pas en pratique : le syndicat passe un contrat, et la discussion utile porte sur son étendue, pas sur son existence.",
+    "vigilance": "Attention aux références de mémoire. Le décret n° 2004-964 du 9 septembre 2004 a bâti ce régime en modifiant le code de la construction et de l'habitation, mais on ne le cite plus utilement : c'est le code qui porte le texte, et la recodification a déplacé les articles (l'ancien R. 125-2 est devenu R. 134-6 et suivants). L'arrêté du 11 mars 1977, souvent opposé de mémoire en agence sur l'entretien des ascenseurs, est antérieur à tout cela : ne pas s'en servir face à un prestataire sans avoir vérifié sur Légifrance ce qui en reste en vigueur.",
+    "source": [
+      {
+        "texte": "Art. L. 134-3 du code de la construction et de l'habitation : entretien à la charge du propriétaire, par prestataire ou par ses propres moyens",
+        "url": "https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006074096/LEGISCTA000006176386/"
+      },
+      {
+        "texte": "Art. R. 134-6 et R. 134-7 du code de la construction et de l'habitation : contrat d'entretien écrit, clauses minimales, durée d'un an au moins",
+        "url": "https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006074096/LEGISCTA000043818735/"
+      },
+      {
+        "texte": "Origine historique : décret n° 2004-964 du 9 septembre 2004 relatif à la sécurité des ascenseurs et modifiant le code de la construction et de l'habitation",
+        "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000000624552"
+      }
+    ],
+    "verifie": "2026-08-30",
+    "peremption": null,
+    "statut": "valide",
+    "origine": "lot de test vitrine du 29/08/2026 ; réponse et sources corrigées le 30/08/2026 sur le code de la construction et de l'habitation en vigueur",
+    "partage": "banque"
+  }
+]

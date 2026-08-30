@@ -1,0 +1,95 @@
+[
+  {
+    "id": "droit-majorites-article-24",
+    "domaine": "droit",
+    "branche": "majorites",
+    "niveau": 1,
+    "type": "flash",
+    "question": "Sur quelle base se calcule la majorité de l'article 24 ?",
+    "reponse": "La majorité des voix exprimées des copropriétaires présents, représentés ou ayant voté par correspondance.",
+    "explication": "L'article 24 est la majorité simple : on ne compte que ceux qui votent effectivement. Les abstentions ne sont pas des voix exprimées, elles ne comptent donc ni pour ni contre. C'est ce qui la distingue de l'article 25, calculé sur TOUS les copropriétaires du syndicat, présents ou non.",
+    "vigilance": "« Majorité des présents » est un raccourci faux : un copropriétaire présent qui s'abstient ne pèse pas dans le calcul.",
+    "source": [
+      {
+        "texte": "Art. 24 loi n° 65-557 du 10 juillet 1965 (version en vigueur, vérifiée le 28/08/2026)",
+        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000051749514"
+      }
+    ],
+    "verifie": "2026-08-28",
+    "peremption": null,
+    "statut": "valide",
+    "origine": "templates/majorites-ag.md",
+    "partage": "banque"
+  },
+  {
+    "id": "droit-majorites-article-25",
+    "domaine": "droit",
+    "branche": "majorites",
+    "niveau": 1,
+    "prerequis": [
+      "droit-majorites-article-24"
+    ],
+    "type": "flash",
+    "question": "Sur quelle base se calcule la majorité de l'article 25, et en quoi diffère-t-elle de l'article 24 ?",
+    "reponse": "La majorité des voix de TOUS les copropriétaires du syndicat, présents ou non, votants ou non.",
+    "explication": "C'est la différence structurante avec l'article 24 : l'absentéisme joue contre la résolution. Un copropriétaire qui ne vient pas et ne donne pas pouvoir compte de fait comme un vote négatif, puisque le dénominateur reste l'intégralité des voix du syndicat.",
+    "vigilance": "Une résolution art. 25 peut réunir l'unanimité des présents et échouer quand même si la participation est faible.",
+    "source": [
+      {
+        "texte": "Art. 25 loi n° 65-557 du 10 juillet 1965 (« Ne sont adoptées qu'à la majorité des voix de tous les copropriétaires… », version en vigueur au 18/06/2025)",
+        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000039313590"
+      }
+    ],
+    "verifie": "2026-08-28",
+    "peremption": null,
+    "statut": "valide",
+    "origine": "templates/majorites-ag.md",
+    "partage": "banque"
+  },
+  {
+    "id": "droit-majorites-passerelle-25-1",
+    "domaine": "droit",
+    "branche": "majorites",
+    "niveau": 2,
+    "prerequis": [
+      "droit-majorites-article-25"
+    ],
+    "type": "qcm",
+    "question": "Une résolution relevant de l'article 25 est repoussée. À quelle condition un second vote peut-il avoir lieu immédiatement, dans la même assemblée ?",
+    "reponse": "Si le projet a recueilli au moins le tiers des voix de tous les copropriétaires, l'assemblée procède aussitôt à un second vote à la majorité de l'article 24.",
+    "choix": [
+      {
+        "texte": "Le projet a recueilli au moins le tiers des voix de tous les copropriétaires",
+        "correct": true
+      },
+      {
+        "texte": "Le projet a recueilli la majorité des voix des copropriétaires présents",
+        "correct": false,
+        "pourquoi_faux": "C'est la majorité de l'article 24, celle qui s'applique AU second vote — pas le seuil qui permet de l'ouvrir."
+      },
+      {
+        "texte": "Le président du conseil syndical le demande",
+        "correct": false,
+        "pourquoi_faux": "La passerelle est une condition de seuil arithmétique, elle ne dépend de la demande de personne."
+      },
+      {
+        "texte": "Le projet a recueilli au moins le quart des voix de tous les copropriétaires",
+        "correct": false,
+        "pourquoi_faux": "Le seuil est le tiers, pas le quart. Le quart des voix est un seuil que l'on rencontre ailleurs dans la loi, d'où la confusion."
+      }
+    ],
+    "explication": "La passerelle évite de reconvoquer une assemblée entière pour une résolution qui avait déjà réuni une adhésion substantielle. Le second vote a lieu séance tenante, sur le même ordre du jour.",
+    "vigilance": "Le seuil du tiers se calcule sur TOUS les copropriétaires, comme l'article 25 lui-même. Convertir ce tiers en « 334 tantièmes » n'est juste que sur une copropriété à 1 000 tantièmes : c'est une illustration, jamais la règle. Second alinéa à ne pas confondre avec le premier : quand le projet porte sur des travaux du f de l'article 25 et n'a PAS atteint le tiers, il n'y a pas de second vote en séance, mais une nouvelle assemblée convoquée dans les trois mois sur un projet identique peut statuer à la majorité de l'article 24.",
+    "source": [
+      {
+        "texte": "Art. 25-1 loi n° 65-557 du 10 juillet 1965, version en vigueur depuis le 11/04/2024 (LOI n° 2024-322 du 9 avril 2024, art. 40)",
+        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000049398359"
+      }
+    ],
+    "verifie": "2026-08-28",
+    "peremption": null,
+    "statut": "valide",
+    "origine": "erp/react FLASHCARDS_DATA f1, réécrite (la formulation d'origine convertissait le tiers en tantièmes)",
+    "partage": "banque"
+  }
+]

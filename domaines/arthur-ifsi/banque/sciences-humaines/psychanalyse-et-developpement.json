@@ -1,0 +1,131 @@
+[
+  {
+    "id": "sh-psychanalyse-premiere-topique",
+    "domaine": "sciences-humaines",
+    "branche": "psychanalyse-et-developpement",
+    "niveau": 1,
+    "type": "qcm",
+    "question": "Dans la première topique freudienne, quelle instance contient des contenus absents du champ de la conscience mais qui restent accessibles ?",
+    "reponse": "Le préconscient.",
+    "choix": [
+      {
+        "texte": "Le préconscient",
+        "correct": true
+      },
+      {
+        "texte": "L'inconscient",
+        "correct": false,
+        "pourquoi_faux": "C'est exactement l'inverse : l'inconscient n'est pas accessible au conscient, il en est séparé par la censure. Il abrite les pulsions innées et les désirs refoulés. Le mot « refoulé » est le repère : ce qui est refoulé ne revient pas sur simple demande."
+      },
+      {
+        "texte": "Le conscient",
+        "correct": false,
+        "pourquoi_faux": "Le conscient est par définition ce qui est présent à l'esprit maintenant. La question porte sur ce qui n'y est pas présent tout en restant récupérable."
+      },
+      {
+        "texte": "Le moi",
+        "correct": false,
+        "pourquoi_faux": "Le moi n'appartient pas à la première topique mais à la seconde, avec le ça et le surmoi. Confondre les deux topiques est l'erreur la plus fréquente sur ce chapitre : on ne mélange pas conscient / préconscient / inconscient avec moi / ça / surmoi."
+      }
+    ],
+    "explication": "La première topique décrit trois lieux psychiques selon leur accessibilité à la conscience. Le conscient reçoit les informations venues du dehors comme du dedans et obéit à la logique et au temps. Le préconscient est un sas : ni actif ni interdit, simplement pas mobilisé à l'instant. L'inconscient est barré par la censure, et c'est cette barrière qui fait toute la différence entre « je ne l'ai pas en tête » et « je ne peux pas y accéder ».",
+    "vigilance": "Une question d'examen qui mêle les six termes dans les propositions teste presque toujours la capacité à séparer les deux topiques, pas la définition de chacune.",
+    "source": [
+      {
+        "texte": "IFSI S1, UE1.1 Fiche 003 — support de cours, transcription locale"
+      }
+    ],
+    "verifie": "2026-08-29",
+    "peremption": null,
+    "statut": "brouillon",
+    "origine": "usine à domaine, 1re fabrication (29/08/2026)",
+    "partage": "interne"
+  },
+  {
+    "id": "sh-psychanalyse-seconde-topique",
+    "domaine": "sciences-humaines",
+    "branche": "psychanalyse-et-developpement",
+    "niveau": 2,
+    "prerequis": [
+      "sh-psychanalyse-premiere-topique"
+    ],
+    "type": "flash",
+    "question": "Quelles sont les trois instances de la seconde topique freudienne, et le rôle de chacune ?",
+    "reponse": "Le ça, réservoir des pulsions ; le surmoi, instance morale héritée de l'éducation et de ses valeurs ; le moi, la part la plus consciente, soumise à la réalité, qui arbitre entre les deux autres.",
+    "explication": "La seconde topique ne classe plus par accessibilité à la conscience mais par fonction. Le ça pousse, le surmoi interdit, le moi négocie sous la contrainte du réel. C'est aussi le moi qui met en œuvre les mécanismes de défense, et il le fait sans que la personne s'en aperçoive : le processus est inconscient. Le clivage du moi, la projection, la régression et le refoulement en sont des exemples cités par le cours.",
+    "vigilance": "Le moi est « la partie la plus consciente », pas la partie consciente : il agit largement à l'insu du sujet, ce que montre justement le fonctionnement des mécanismes de défense.",
+    "source": [
+      {
+        "texte": "IFSI S1, UE1.1 Fiche 003 — support de cours, transcription locale"
+      }
+    ],
+    "verifie": "2026-08-29",
+    "peremption": null,
+    "statut": "brouillon",
+    "origine": "usine à domaine, 1re fabrication (29/08/2026)",
+    "partage": "interne"
+  },
+  {
+    "id": "sh-psychanalyse-angoisse-anxiete",
+    "domaine": "sciences-humaines",
+    "branche": "psychanalyse-et-developpement",
+    "niveau": 2,
+    "type": "qcm",
+    "question": "Qu'est-ce qui distingue l'angoisse de l'anxiété telles que le cours les définit ?",
+    "reponse": "L'angoisse est sans objet, tandis que l'anxiété se rapporte à une difficulté réelle et identifiable.",
+    "choix": [
+      {
+        "texte": "L'angoisse est sans objet ; l'anxiété se rapporte à une difficulté réelle",
+        "correct": true
+      },
+      {
+        "texte": "L'angoisse est toujours pathologique ; l'anxiété est toujours normale",
+        "correct": false,
+        "pourquoi_faux": "Le cours dit explicitement que l'angoisse peut être normale ou pathologique. Le partage normal / pathologique traverse les deux notions, il ne les sépare pas."
+      },
+      {
+        "texte": "L'angoisse est physique ; l'anxiété est purement psychique",
+        "correct": false,
+        "pourquoi_faux": "Le clivage corps / esprit est tentant parce que l'angoisse se manifeste au corps, mais ce n'est pas le critère retenu : c'est la présence ou l'absence d'un objet identifiable."
+      },
+      {
+        "texte": "L'angoisse est un sentiment durable ; l'anxiété est une émotion brève",
+        "correct": false,
+        "pourquoi_faux": "Le couple émotion brève / sentiment durable sert à distinguer l'affect du sentiment, pas l'angoisse de l'anxiété. La proposition transpose une distinction juste sur le mauvais couple de notions."
+      }
+    ],
+    "explication": "L'angoisse est décrite comme la crainte qu'un danger survienne, réel ou imaginaire : elle relève du vécu et ne se rattache à rien de précis. L'anxiété lui ressemble mais garde un point d'accroche identifiable. La différence a une portée clinique directe : à une anxiété on peut répondre en agissant sur ce qui l'a déclenchée, à une angoisse on ne le peut pas, et le soignant qui cherche « la cause » à tout prix se trompe de geste.",
+    "vigilance": "Le langage courant emploie les deux mots l'un pour l'autre. En évaluation, c'est le critère de l'objet qui est attendu, pas l'intensité du ressenti.",
+    "source": [
+      {
+        "texte": "IFSI S1, UE1.1 Fiche 003 — support de cours, transcription locale"
+      }
+    ],
+    "verifie": "2026-08-29",
+    "peremption": null,
+    "statut": "brouillon",
+    "origine": "usine à domaine, 1re fabrication (29/08/2026)",
+    "partage": "interne"
+  },
+  {
+    "id": "sh-developpement-stades-psychoaffectifs",
+    "domaine": "sciences-humaines",
+    "branche": "psychanalyse-et-developpement",
+    "niveau": 1,
+    "type": "flash",
+    "question": "Dans quel ordre se succèdent les stades du développement psycho-affectif, de la naissance à l'adolescence ?",
+    "reponse": "Le stade oral, puis le stade anal, puis le stade phallique, puis la période de latence, puis le stade génital qui s'ouvre avec la puberté.",
+    "explication": "Chaque stade se caractérise par la zone du corps et le type de satisfaction qui organisent l'intérêt de l'enfant : l'oralité d'abord, les fonctions d'excrétion ensuite, puis les parties génitales. La période de latence rompt la série : le cours la décrit comme un temps sans conflit apparent. Le stade génital rouvre au contraire une période de crise, où l'attachement œdipien devient volontiers source d'angoisse.",
+    "vigilance": "Les bornes d'âge données par le cours (environ un an, trois ans, sept ans, douze ans) sont des repères indicatifs et varient d'un auteur et d'une édition à l'autre. C'est l'ORDRE des stades qui est demandé et qui, lui, ne varie pas ; réciter des âges au lieu d'un ordre est une réponse fragile.",
+    "source": [
+      {
+        "texte": "IFSI S1, UE1.1 Fiche 004 — support de cours, transcription locale"
+      }
+    ],
+    "verifie": "2026-08-29",
+    "peremption": null,
+    "statut": "brouillon",
+    "origine": "usine à domaine, 1re fabrication (29/08/2026)",
+    "partage": "interne"
+  }
+]

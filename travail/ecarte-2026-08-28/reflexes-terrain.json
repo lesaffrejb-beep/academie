@@ -1,0 +1,342 @@
+[
+  {
+    "id": "procedure-terrain-forclusion-sans-vote",
+    "domaine": "procedure",
+    "branche": "reflexes-terrain",
+    "niveau": 1,
+    "type": "qcm",
+    "question": "Un délai de prescription ou de forclusion est sur le point de se fermer sur un dossier de construction, et la prochaine assemblée générale n'a lieu que dans plusieurs mois. Que fait le syndic ?",
+    "reponse": "Il agit immédiatement : les mesures conservatoires et les demandes relevant du juge des référés se lancent sans autorisation de l'assemblée.",
+    "choix": [
+      {"texte": "Il agit sans attendre : un référé-expertise interruptif ne demande aucun vote", "correct": true},
+      {"texte": "Il inscrit la question à l'ordre du jour de la prochaine assemblée et attend la délibération", "correct": false, "pourquoi_faux": "C'est précisément la défense qui a été rejetée en cassation. Le syndic qui a laissé filer le délai en attendant l'assemblée a été condamné pour perte de chance, et c'est lui qui a payé, pas le syndicat."},
+      {"texte": "Il fait signer une décharge au conseil syndical avant d'engager quoi que ce soit", "correct": false, "pourquoi_faux": "Le conseil syndical n'a le pouvoir ni d'autoriser ni de couvrir. Et aucune décharge ne rouvre un droit une fois forclos : la signature arrive après la perte."},
+      {"texte": "Il convoque une assemblée générale extraordinaire, seule voie pour autoriser une action en justice", "correct": false, "pourquoi_faux": "L'autorisation d'agir est bien le principe, mais la loi en excepte les mesures conservatoires et les référés. Convoquer coûte des semaines dont un délai qui se ferme ne dispose pas."}
+    ],
+    "explication": "L'article 55 du décret du 17 mars 1967 dispense le syndic d'autorisation de l'assemblée pour les mesures conservatoires et les demandes relevant du juge des référés. Deux arrêts récents condamnent le gestionnaire pour la seule gestion du temps : un syndic qui déclare un sinistre dommages-ouvrage, reçoit une offre et ne répond pas pendant deux ans (prescription biennale de l'article L114-1 du code des assurances) doit l'indemnité perdue au titre de la perte de chance ; un autre qui laisse expirer le délai décennal en entretenant l'illusion d'une procédure en cours voit sa faute retenue.",
+    "vigilance": "Toute mission qui croise une échéance de construction ou d'assurance en cours de fermeture bascule en Red Path : on interrompt la chaîne, on pose la date butoir en tête, on traite, on reprend après.",
+    "source": [
+      {"texte": "Art. 55 décret n° 67-223 du 17 mars 1967"},
+      {"texte": "Cass. 3e civ. 9 septembre 2021, n° 20-12.554"},
+      {"texte": "Cass. 3e civ. 4 septembre 2025, n° 23-19.675"},
+      {"texte": "Art. L114-1 code des assurances"}
+    ],
+    "verifie": "2026-08-10",
+    "peremption": null,
+    "statut": "brouillon",
+    "origine": "apprentissages-syndic.md § Une forclusion qui se ferme n'attend pas l'assemblée générale",
+    "partage": "banque"
+  },
+  {
+    "id": "procedure-terrain-delai-desordre-intermediaire",
+    "domaine": "procedure",
+    "branche": "reflexes-terrain",
+    "niveau": 2,
+    "prerequis": ["procedure-terrain-forclusion-sans-vote"],
+    "type": "qcm",
+    "question": "Un désordre apparu après réception n'atteint pas la gravité décennale : il ne rend pas l'ouvrage impropre à sa destination et ne compromet pas sa solidité. De combien de temps dispose le syndicat pour agir contre les constructeurs ?",
+    "reponse": "Dix ans à compter de la réception : l'article 1792-4-3 du code civil couvre aussi les désordres intermédiaires, et c'est un délai de forclusion.",
+    "choix": [
+      {"texte": "Dix ans à compter de la réception", "correct": true},
+      {"texte": "Cinq ans, puisque le désordre sort du champ de la garantie décennale", "correct": false, "pourquoi_faux": "C'est le raccourci qui tue un recours vivant. Sortir du champ de la garantie décennale ne fait pas tomber dans la prescription de droit commun : le code civil prévoit un délai propre de dix ans depuis la réception pour agir contre les constructeurs, désordres intermédiaires compris."},
+      {"texte": "Deux ans, comme la garantie de bon fonctionnement", "correct": false, "pourquoi_faux": "La garantie biennale ne concerne que les éléments d'équipement dissociables. Elle ne fixe pas le délai pour agir sur un désordre affectant l'ouvrage lui-même."},
+      {"texte": "Un an, comme la garantie de parfait achèvement", "correct": false, "pourquoi_faux": "La garantie de parfait achèvement couvre l'année qui suit la réception et les réserves qui y sont portées. Elle s'ajoute aux autres délais, elle ne les remplace pas."}
+    ],
+    "explication": "Annoncer en séance qu'un recours est mort alors qu'il reste des années, c'est reproduire exactement la faute que la cassation sanctionne : la perte d'un droit par mauvaise lecture du temps. Le réflexe est de calculer depuis la date de réception, pièce en main, avant d'énoncer quoi que ce soit sur la survie d'un recours.",
+    "vigilance": "Il s'agit d'un délai de forclusion, pas d'une prescription : il ne se suspend pas comme on l'espère. La date de réception est la donnée à retrouver en premier dans le dossier.",
+    "source": [
+      {"texte": "Art. 1792-4-3 code civil"}
+    ],
+    "verifie": "2026-08-10",
+    "peremption": null,
+    "statut": "brouillon",
+    "origine": "apprentissages-syndic.md § Une forclusion qui se ferme n'attend pas l'assemblée générale",
+    "partage": "banque"
+  },
+  {
+    "id": "procedure-terrain-qualite-pour-agir-parties-communes",
+    "domaine": "procedure",
+    "branche": "reflexes-terrain",
+    "niveau": 2,
+    "type": "qcm",
+    "question": "Un copropriétaire subit une perte de loyers à cause d'un désordre qui vient des parties communes. Il demande en séance s'il peut attaquer lui-même l'entreprise et son assureur. Que répond-on ?",
+    "reponse": "Oui pour faire cesser le trouble et pour son préjudice personnel ; non pour le coût des travaux de réparation des parties communes, que seul le syndicat a qualité à réclamer.",
+    "choix": [
+      {"texte": "Oui pour son préjudice personnel, non pour le coût des travaux sur les parties communes", "correct": true},
+      {"texte": "Non : le désordre touche les parties communes, le syndicat est seul à pouvoir agir", "correct": false, "pourquoi_faux": "C'est la réponse réflexe, et elle écrase le premier temps de la règle. Le copropriétaire peut agir seul pour faire cesser le trouble et pour réparer son préjudice personnel. Lui dire non tout court, c'est le renvoyer alors qu'il a un droit."},
+      {"texte": "Oui sans restriction : il subit le dommage, il agit comme il l'entend", "correct": false, "pourquoi_faux": "Il ne peut pas percevoir le coût des travaux sur les parties communes. Cette somme revient au syndicat, qui seul l'affecte à la réparation : sinon un copropriétaire encaisserait une réparation collective."},
+      {"texte": "Oui, mais seulement après une autorisation de l'assemblée générale", "correct": false, "pourquoi_faux": "L'assemblée n'a rien à autoriser : l'action personnelle d'un copropriétaire lui appartient et ne passe pas par un vote du syndicat."}
+    ],
+    "explication": "La voie qui reste ouverte au copropriétaire lésé est d'agir contre le syndicat sur le fondement de l'article 14 de la loi de 1965 : le syndicat répond des dommages causés par un vice de construction ou un défaut d'entretien des parties communes, à charge pour lui d'appeler en garantie constructeurs et assureurs.",
+    "vigilance": "Formulation prête à dire, sans surplomb : « votre préjudice à vous, vous pouvez le porter. Les travaux sur la partie commune, c'est le syndicat qui les réclame, parce que c'est lui qui les paie et qui les fait faire. On ne vous renvoie pas, on porte le dossier. »",
+    "source": [
+      {"texte": "Cass. 3e civ. 8 juin 2023, n° 21-15.692"},
+      {"texte": "Art. 14 loi n° 65-557 du 10 juillet 1965", "url": "https://www.legifrance.gouv.fr/loda/id/LEGITEXT000006068256"}
+    ],
+    "verifie": "2026-08-10",
+    "peremption": null,
+    "statut": "brouillon",
+    "origine": "apprentissages-syndic.md § Qui a qualité pour agir sur un désordre en parties communes",
+    "partage": "banque"
+  },
+  {
+    "id": "procedure-terrain-quitus-sans-immunite",
+    "domaine": "procedure",
+    "branche": "reflexes-terrain",
+    "niveau": 2,
+    "type": "qcm",
+    "question": "L'assemblée générale a voté le quitus au syndic. Un copropriétaire, qui avait voté pour cette résolution, veut ensuite engager la responsabilité du syndic pour un préjudice qui lui est propre. Que peut-il faire ?",
+    "reponse": "Il ne peut plus demander l'annulation de la résolution de quitus, mais il reste recevable à agir en responsabilité délictuelle pour son préjudice personnel.",
+    "choix": [
+      {"texte": "Il ne peut plus contester la résolution, mais il peut agir en responsabilité délictuelle pour son préjudice personnel", "correct": true},
+      {"texte": "Rien : le quitus voté par l'assemblée solde la gestion du syndic à l'égard de tous", "correct": false, "pourquoi_faux": "C'est l'intuition la plus répandue, et elle est fausse. La relation contractuelle ne lie que le syndicat au syndic : le quitus n'a d'effet qu'entre ces deux-là. Il est sans effet sur la responsabilité délictuelle envers un copropriétaire pris individuellement."},
+      {"texte": "Rien, parce qu'il a voté pour : nul ne peut se contredire au détriment d'autrui", "correct": false, "pourquoi_faux": "Avoir voté pour ou contre est indifférent à l'action en responsabilité. Le sens du vote ferme seulement la contestation de la résolution elle-même, pas la voie délictuelle."},
+      {"texte": "Il peut demander l'annulation de la résolution de quitus dans le délai de deux mois", "correct": false, "pourquoi_faux": "Ce délai est ouvert aux opposants et défaillants. Le copropriétaire qui a voté pour la résolution n'est plus recevable à en demander l'annulation."}
+    ],
+    "explication": "Un quitus obtenu ne solde rien de ce qu'on doit à un copropriétaire pris isolément. Il n'y a donc aucun sens à jouer le quitus comme une protection, ni à le défendre bec et ongles en séance pour cette raison. Approbation des comptes et quitus étaient déjà deux choses distinctes (valider des chiffres, approuver une gestion) : ce qui s'ajoute, c'est que ni l'un ni l'autre ne ferme la porte du copropriétaire individuel.",
+    "vigilance": "La protection d'un gestionnaire, ce n'est pas un vote, c'est la trace de ce qu'il a fait. Un dossier tracé vaut mieux qu'un quitus voté.",
+    "source": [
+      {"texte": "Cass. 3e civ. 29 février 2024, n° 22-24.558, FS-B, publié au Bulletin"},
+      {"texte": "Art. 42 al. 2 loi n° 65-557 du 10 juillet 1965", "url": "https://www.legifrance.gouv.fr/loda/id/LEGITEXT000006068256"}
+    ],
+    "verifie": "2026-08-10",
+    "peremption": null,
+    "statut": "brouillon",
+    "origine": "apprentissages-syndic.md § Le quitus n'est pas une immunité",
+    "partage": "banque"
+  },
+  {
+    "id": "procedure-terrain-norme-marche-volontaire",
+    "domaine": "procedure",
+    "branche": "reflexes-terrain",
+    "niveau": 1,
+    "type": "qcm",
+    "question": "Un devis d'entreprise a été accepté et signé, sans autre document. Six mois plus tard, le chantier a du retard et l'entreprise réclame des travaux supplémentaires. Sur quoi le syndic peut-il s'appuyer ?",
+    "reponse": "Sur rien de plus que le devis : la norme qui encadre les marchés privés de travaux de bâtiment est d'application volontaire et ne s'applique que si le marché la cite parmi ses pièces contractuelles.",
+    "choix": [
+      {"texte": "Sur le devis seul : la norme des marchés privés de travaux ne s'applique que si le marché la cite", "correct": true},
+      {"texte": "Sur la norme des marchés privés de travaux de bâtiment, qui s'applique de plein droit à tout chantier", "correct": false, "pourquoi_faux": "C'est la croyance la plus coûteuse du métier. Cette norme est d'application volontaire : sans citation dans les pièces du marché, elle n'emporte aucune règle sur les pénalités de retard, les travaux supplémentaires, la réception ni le solde."},
+      {"texte": "Sur le code civil, qui fixe des pénalités de retard supplétives", "correct": false, "pourquoi_faux": "Aucune pénalité de retard n'existe si elle n'a pas été stipulée. Le code civil ouvre la voie de la responsabilité, ce qui suppose de prouver un préjudice : rien à voir avec une pénalité automatique."},
+      {"texte": "Sur le règlement de copropriété, qui encadre les travaux sur parties communes", "correct": false, "pourquoi_faux": "Le règlement organise les rapports entre copropriétaires. Il n'est pas opposable à l'entreprise, qui n'y est pas partie."}
+    ],
+    "explication": "Le seul moment où le syndic a du pouvoir, c'est avant de commander. Après, il négocie sans levier. Le dossier de consultation porte donc le cadre : norme citée, périmètre, forfait ou métré, délai et pénalités, retenue de garantie et son lieu de consignation, compte prorata, ordre de service écrit obligatoire pour tout supplément. Et il part identique à toutes les entreprises : c'est ce qui rend les offres comparables, donc ce qui rend la mise en concurrence défendable en assemblée. Sans cela, le moins-disant est presque toujours celui qui en a mis le moins dedans.",
+    "vigilance": "Poser un cadre écrit n'est pas de la défiance : c'est ce qui permet à l'entreprise de chiffrer juste et de savoir à quoi elle s'engage. C'est l'argument à lui donner si elle s'en étonne.",
+    "source": [
+      {"texte": "Norme NF P 03-001, édition d'octobre 2017 (CCAG des marchés privés de travaux de bâtiment)"}
+    ],
+    "verifie": "2026-08-10",
+    "peremption": null,
+    "statut": "brouillon",
+    "origine": "apprentissages-syndic.md § Le cadre d'un marché de travaux se pose à la consultation, jamais au litige",
+    "partage": "banque"
+  },
+  {
+    "id": "procedure-terrain-retenue-garantie-consignation",
+    "domaine": "procedure",
+    "branche": "reflexes-terrain",
+    "niveau": 2,
+    "prerequis": ["procedure-terrain-norme-marche-volontaire"],
+    "type": "qcm",
+    "question": "Une retenue de garantie de 5 % a été prélevée sur le solde d'un chantier et laissée sur le compte bancaire de la copropriété. Des réserves ne sont pas levées. Que peut obtenir l'entreprise ?",
+    "reponse": "Les sommes retenues, même sans levée des réserves : une retenue de garantie non consignée entre les mains d'un consignataire ne retient rien.",
+    "choix": [
+      {"texte": "Les sommes retenues, même sans levée des réserves", "correct": true},
+      {"texte": "Rien tant que les réserves ne sont pas levées : c'est l'objet même de la retenue", "correct": false, "pourquoi_faux": "C'est la pratique courante, et elle est sanctionnée. La loi impose de consigner les 5 % entre les mains d'un consignataire ; garder la somme sur le compte de la copropriété prive la retenue de son effet."},
+      {"texte": "La moitié des sommes, au prorata des réserves levées", "correct": false, "pourquoi_faux": "Aucun prorata de ce genre n'existe. Soit la retenue est régulièrement constituée, soit elle ne l'est pas."},
+      {"texte": "Rien : l'absence de consignation est une simple irrégularité de forme", "correct": false, "pourquoi_faux": "La consignation n'est pas une formalité, c'est la condition de validité du mécanisme. Sans elle, la somme reste due."}
+    ],
+    "explication": "Deux voies tiennent, une seule à la fois : soit on consigne réellement les 5 % chez un consignataire, soit on exige une caution bancaire à la place et on ne retient rien. Retenir sans consigner est la troisième voie, et c'est celle qui ne tient pas.",
+    "vigilance": "Le lieu de consignation se décide au dossier de consultation, pas au moment du solde. À ce moment-là il est déjà trop tard pour organiser quoi que ce soit.",
+    "source": [
+      {"texte": "Loi n° 71-584 du 16 juillet 1971 (retenue de garantie dans les marchés de travaux privés)"}
+    ],
+    "verifie": "2026-08-10",
+    "peremption": null,
+    "statut": "brouillon",
+    "origine": "apprentissages-syndic.md § Le cadre d'un marché de travaux se pose à la consultation, jamais au litige",
+    "partage": "banque"
+  },
+  {
+    "id": "procedure-terrain-garantie-de-paiement",
+    "domaine": "procedure",
+    "branche": "reflexes-terrain",
+    "niveau": 2,
+    "prerequis": ["procedure-terrain-norme-marche-volontaire"],
+    "type": "qcm",
+    "question": "Sur un marché de travaux dépassant 12 000 € HT, l'entreprise réclame une garantie de paiement avant de démarrer. Comment le syndic doit-il le prendre ?",
+    "reponse": "Comme l'application d'un droit d'ordre public : la garantie de paiement est réclamable à tout moment et l'entreprise peut suspendre le chantier à défaut.",
+    "choix": [
+      {"texte": "Comme un droit de l'entreprise, prévu par la loi et réclamable à tout moment", "correct": true},
+      {"texte": "Comme une marque de défiance envers la copropriété, à recadrer avant de poursuivre", "correct": false, "pourquoi_faux": "C'est la réaction spontanée, et elle place le gestionnaire en faux. L'entreprise applique la loi : le texte est d'ordre public, aucune clause ne peut y déroger, et s'en offusquer fait perdre du temps sur un point qui n'est pas discutable."},
+      {"texte": "Comme une clause négociable, qu'on peut écarter d'un commun accord dans le marché", "correct": false, "pourquoi_faux": "Le texte est d'ordre public : on ne peut pas y renoncer par contrat, même de bonne foi et même par écrit."},
+      {"texte": "Comme une demande hors délai si le marché est déjà signé", "correct": false, "pourquoi_faux": "La garantie se réclame à tout moment, y compris chantier commencé, et son absence autorise l'entreprise à suspendre les travaux."}
+    ],
+    "explication": "Le réflexe est d'anticiper cette garantie au dossier de consultation, en même temps que le reste du cadre, plutôt que de la découvrir en cours de chantier. Elle fait partie des points qu'une entreprise sérieuse regarde avant de chiffrer.",
+    "vigilance": "Le seuil est un montant fixé par voie réglementaire : le revérifier avant de l'énoncer en séance ou dans un dossier de consultation.",
+    "source": [
+      {"texte": "Art. 1799-1 code civil (garantie de paiement du maître de l'ouvrage privé)"}
+    ],
+    "verifie": "2026-08-10",
+    "peremption": "2027-08-28",
+    "statut": "brouillon",
+    "origine": "apprentissages-syndic.md § Le cadre d'un marché de travaux se pose à la consultation, jamais au litige",
+    "partage": "banque"
+  },
+  {
+    "id": "procedure-terrain-decompte-acceptation-tacite",
+    "domaine": "procedure",
+    "branche": "reflexes-terrain",
+    "niveau": 2,
+    "prerequis": ["procedure-terrain-norme-marche-volontaire"],
+    "type": "qcm",
+    "question": "L'entreprise transmet son décompte final de chantier. Le gestionnaire, occupé ailleurs, ne répond pas dans le délai prévu au marché. Quel est l'effet ?",
+    "reponse": "Le décompte est réputé accepté : la boucle du décompte général définitif fonctionne par acceptation tacite, dans les deux sens.",
+    "choix": [
+      {"texte": "Le décompte est réputé accepté, silence valant acceptation", "correct": true},
+      {"texte": "Rien ne se passe : sans signature du maître d'ouvrage, aucun décompte n'est définitif", "correct": false, "pourquoi_faux": "C'est traiter le solde comme une formalité administrative. Quand le marché organise la boucle du décompte, le silence dans le délai vaut accord : ne rien faire, c'est accepter."},
+      {"texte": "Le délai repart de zéro à chaque relance de l'entreprise", "correct": false, "pourquoi_faux": "Une relance ne rouvre pas un délai déjà couru. C'est l'inverse : l'entreprise n'a même pas besoin de relancer pour que le décompte se fige."},
+      {"texte": "L'acceptation tacite ne joue que contre l'entreprise, pas contre le maître d'ouvrage", "correct": false, "pourquoi_faux": "Le mécanisme est symétrique. Il joue contre celui qui ne répond pas, quel qu'il soit, et le syndic est aussi exposé que l'entreprise."}
+    ],
+    "explication": "Un solde de chantier se pose au carnet comme une échéance datée, pas comme une pile de papiers à traiter un jour. C'est la même famille de faute que la temporisation devant une forclusion : le temps qui passe produit lui-même l'effet juridique, sans qu'aucune décision n'ait été prise.",
+    "vigilance": "Le délai et la mécanique d'acceptation viennent du marché : ils n'existent que si le dossier de consultation les a posés.",
+    "source": [
+      {"texte": "Norme NF P 03-001, édition d'octobre 2017 (décompte général définitif)"}
+    ],
+    "verifie": "2026-08-10",
+    "peremption": null,
+    "statut": "brouillon",
+    "origine": "apprentissages-syndic.md § Le cadre d'un marché de travaux se pose à la consultation, jamais au litige",
+    "partage": "banque"
+  },
+  {
+    "id": "procedure-terrain-ventouse-maitre-des-lieux",
+    "domaine": "procedure",
+    "branche": "reflexes-terrain",
+    "niveau": 1,
+    "type": "qcm",
+    "question": "Un véhicule est abandonné depuis des mois sur le parking en parties communes d'une copropriété. Le conseil syndical demande au syndic d'appeler la police pour le faire enlever. Que se passe-t-il si le syndic se contente d'appeler ?",
+    "reponse": "Rien : sur un lieu privé où le code de la route ne s'applique pas, la mise en fourrière n'est possible qu'à la demande du maître des lieux et sous sa responsabilité. C'est le syndicat, représenté par son syndic, qui doit la formuler.",
+    "choix": [
+      {"texte": "Rien : la police ne peut pas agir d'elle-même sur un lieu privé, il faut une demande écrite du maître des lieux", "correct": true},
+      {"texte": "La police constate l'infraction de stationnement abusif et fait enlever le véhicule", "correct": false, "pourquoi_faux": "Le code de la route ne donne la main d'office aux forces de l'ordre que là où il s'applique, c'est-à-dire sur la voie publique. Sur un parking privé, il n'y a pas d'infraction de stationnement à constater."},
+      {"texte": "Le syndic peut faire enlever le véhicule par un dépanneur, la copropriété étant chez elle", "correct": false, "pourquoi_faux": "Être maître des lieux donne le droit de demander la fourrière, pas de se faire justice. Mandater un dépanneur sans prescription régulière de l'officier de police judiciaire expose le syndicat, et le gestionnaire avec lui."},
+      {"texte": "Il faut d'abord un vote de l'assemblée générale autorisant la demande", "correct": false, "pourquoi_faux": "Aucun vote n'est nécessaire : le syndic représente le syndicat, et c'est cette qualité de représentant du maître des lieux qui ouvre la compétence des services de police."}
+    ],
+    "explication": "Le courrier du syndic n'est pas une demande de service : c'est l'autorisation d'intervenir sur du privé. Il s'adresse à l'officier de police judiciaire territorialement compétent, et il doit énoncer la qualité de maître des lieux du syndicat représenté par son syndic. Sans cette qualité énoncée, le dossier n'a pas de fondement.",
+    "vigilance": "Compter environ un mois pour l'enchaînement complet (recommandé au titulaire, relance, fourrière en dernier ressort). Le dire au conseil syndical dès le départ évite de laisser croire à un enlèvement dans la semaine.",
+    "source": [
+      {"texte": "Art. L. 325-12 code de la route"},
+      {"texte": "Art. R. 325-47 code de la route"}
+    ],
+    "verifie": "2026-08-13",
+    "peremption": null,
+    "statut": "brouillon",
+    "origine": "apprentissages-syndic.md § Véhicule ventouse sur un parking de copropriété",
+    "partage": "banque"
+  },
+  {
+    "id": "procedure-terrain-ventouse-proprietaire-inconnu",
+    "domaine": "procedure",
+    "branche": "reflexes-terrain",
+    "niveau": 2,
+    "prerequis": ["procedure-terrain-ventouse-maitre-des-lieux"],
+    "type": "qcm",
+    "question": "Véhicule ventouse sur parties communes, titulaire de la carte grise inconnu du syndic. Qui notifie la mise en demeure de retirer le véhicule, et qui en supporte les frais ?",
+    "reponse": "Le courrier du syndic vaut demande d'identification : les services identifient le titulaire et lui expédient la mise en demeure, mais les frais d'expédition restent à la charge du requérant, donc du syndicat.",
+    "choix": [
+      {"texte": "Les services identifient le titulaire et lui expédient la mise en demeure, aux frais du syndicat requérant", "correct": true},
+      {"texte": "Les services identifient le titulaire et notifient à leurs frais, puisqu'ils agissent en police administrative", "correct": false, "pourquoi_faux": "Les frais d'expédition sont à la charge du requérant. Ne pas l'annoncer dans le courrier initial fait revenir le dossier et coûte un aller-retour d'un mois."},
+      {"texte": "Le syndic notifie lui-même par recommandé, comme lorsque le propriétaire est connu", "correct": false, "pourquoi_faux": "C'est la procédure de l'autre cas : propriétaire connu, le maître des lieux notifie lui-même une mise en demeure par recommandé, avec huit jours pour retirer le véhicule. Propriétaire inconnu, il ne peut évidemment pas notifier, et son courrier vaut demande d'identification."},
+      {"texte": "Le syndic obtient l'identité du titulaire auprès du fichier des immatriculations puis notifie", "correct": false, "pourquoi_faux": "Un syndic n'a pas accès au fichier des immatriculations. L'identification passe par les services compétents, saisis par le courrier de demande."}
+    ],
+    "explication": "Deux régimes coexistent selon que le titulaire est connu ou non, et le courrier n'est pas le même. Le cas courant sur un parking de copropriété est le titulaire inconnu. Avant la fourrière, le véhicule est en outre vérifié comme non signalé volé.",
+    "vigilance": "Un courrier par véhicule, un dossier par véhicule. C'est un courrier de position en recommandé, pas une mise en demeure : on ne met pas en demeure un service de l'État.",
+    "source": [
+      {"texte": "Art. R. 325-48 code de la route (propriétaire connu, mise en demeure, 8 jours)"},
+      {"texte": "Art. R. 325-49 code de la route (propriétaire inconnu, demande d'identification, frais du requérant)"},
+      {"texte": "Art. R. 325-50 code de la route (vérification préalable à la fourrière)"}
+    ],
+    "verifie": "2026-08-13",
+    "peremption": null,
+    "statut": "brouillon",
+    "origine": "apprentissages-syndic.md § Véhicule ventouse sur un parking de copropriété",
+    "partage": "banque"
+  },
+  {
+    "id": "procedure-terrain-ventouse-dossier-probatoire",
+    "domaine": "procedure",
+    "branche": "reflexes-terrain",
+    "niveau": 2,
+    "prerequis": ["procedure-terrain-ventouse-maitre-des-lieux"],
+    "type": "qcm",
+    "question": "Le conseil syndical affirme qu'un véhicule « n'a pas bougé depuis le printemps ». Qu'est-ce qui rend ce fait opposable dans le dossier ?",
+    "reponse": "Des constats datés à plusieurs dates différentes, dont un juste avant l'envoi du courrier : la continuité du stationnement se documente, elle ne se suppose pas.",
+    "choix": [
+      {"texte": "Plusieurs constats datés, échelonnés, dont un réalisé juste avant l'envoi", "correct": true},
+      {"texte": "Le témoignage écrit du président du conseil syndical, qui passe tous les jours", "correct": false, "pourquoi_faux": "Un témoignage rapporte une impression de continuité, il ne la prouve pas. Ce qui vaut, c'est une série de constats matériels datés que personne n'a à croire sur parole."},
+      {"texte": "Une seule photo nette du véhicule et de sa plaque, prise le jour du courrier", "correct": false, "pourquoi_faux": "Une photo unique prouve que le véhicule était là ce jour-là, rien de plus. Elle ne dit rien de la durée, qui est précisément le fait à établir."},
+      {"texte": "La mention au procès-verbal de la dernière assemblée générale", "correct": false, "pourquoi_faux": "Le procès-verbal date le signalement, pas le stationnement. Il entre dans la chronologie du dossier, il ne remplace pas le constat matériel."}
+    ],
+    "explication": "Le dossier probatoire se monte avant d'écrire : photos datées du véhicule, de sa plaque et de son environnement ; copie de l'avis amiable apposé sur le pare-brise avec sa date ; la chronologie sourcée (qui a signalé, quand, ce qui a été dit en assemblée) ; et un nouveau constat daté juste avant l'envoi. Le service de police attend par ailleurs des éléments précis : localisation exacte, date de début du stationnement, catégorie du véhicule, plaque, couleur, et le nom de la personne lésée si on le connaît. Un dossier incomplet revient, et on repart pour un mois.",
+    "vigilance": "Ce qu'on ne fait jamais, quelle que soit l'exaspération du conseil syndical : déplacer le véhicule, le bloquer, entrer dans l'habitacle, ou mandater un dépanneur sans prescription régulière de l'officier de police judiciaire.",
+    "source": [
+      {"texte": "Art. R. 325-47 à R. 325-50 code de la route"},
+      {"texte": "Liste des éléments attendus au courrier, dictée par le service de police saisi (13/08/2026)"}
+    ],
+    "verifie": "2026-08-13",
+    "peremption": null,
+    "statut": "brouillon",
+    "origine": "apprentissages-syndic.md § Véhicule ventouse sur un parking de copropriété",
+    "partage": "banque"
+  },
+  {
+    "id": "procedure-terrain-photos-de-constat",
+    "domaine": "procedure",
+    "branche": "reflexes-terrain",
+    "niveau": 1,
+    "type": "qcm",
+    "question": "Un dossier de constat arrive avec une fiche de synthèse et trois photos. Comment traite-t-on les photos ?",
+    "reponse": "On les ouvre et on les lit avant d'écrire : ce sont des sources, pas des pièces jointes. Ce qui s'y lit prime sur ce qu'une fiche a résumé.",
+    "choix": [
+      {"texte": "On les ouvre et on les lit avant de rédiger : elles portent des faits que la fiche n'a pas", "correct": true},
+      {"texte": "On les joint au courrier en fin de rédaction, comme illustration du constat", "correct": false, "pourquoi_faux": "Traiter les photos comme un ornement de fin de dossier fait manquer ce qu'elles prouvent. Sur un premier dossier de ce type, les clichés portaient un modèle de véhicule différent de celui de la fiche, ce qui aurait rendu le courrier faux dès la première ligne, et une vignette de pare-brise datée qui plaçait le véhicule hors contrôle technique valide."},
+      {"texte": "On les recadre et on masque les plaques des véhicules tiers avant de les joindre", "correct": false, "pourquoi_faux": "On ne retouche jamais un cliché de constat, même pour une raison louable. Une pièce probatoire altérée ne vaut plus rien : c'est l'intégrité du fichier qui fait sa valeur."},
+      {"texte": "On se fie à la fiche de synthèse, qui a déjà été relue par la personne présente sur place", "correct": false, "pourquoi_faux": "Une fiche est un résumé, donc une perte. Le détail qui fait la différence entre « un véhicule gênant » et « un véhicule laissé sans droit » (poussière, débris sous les essuie-glaces, vignette périmée) ne survit pas au résumé."}
+    ],
+    "explication": "Le même geste vaut pour toute pièce imagée d'un dossier : on lit l'image comme une source de rang 1, avant la note qui la commente. C'est le prolongement direct de la hiérarchie des sources, où la pièce prime sur la mémoire du dossier.",
+    "vigilance": "Deux réflexes de forme : le pli se livre fusionné, lettre puis annexe photo, en un seul fichier avec contrôle du compte de pages ; et l'annexe photo est un document de marque (titre, identification du véhicule et du lieu, date des clichés, une légende par cliché disant ce qu'il prouve), pas des images collées.",
+    "source": [
+      {"texte": "Doctrine interne de traitement des pièces probatoires, tirée du premier dossier de véhicule ventouse (13/08/2026)"}
+    ],
+    "verifie": "2026-08-13",
+    "peremption": null,
+    "statut": "brouillon",
+    "origine": "apprentissages-syndic.md § Véhicule ventouse sur un parking de copropriété (Les photos ne sont pas une pièce jointe, ce sont une source)",
+    "partage": "banque"
+  },
+  {
+    "id": "procedure-terrain-motif-de-vote-jamais-infere",
+    "domaine": "procedure",
+    "branche": "reflexes-terrain",
+    "niveau": 2,
+    "type": "qcm",
+    "question": "Un projet a été rejeté deux années de suite. Dans une lettre adressée aux copropriétaires, laquelle de ces phrases est défendable ?",
+    "reponse": "« Le point a été rejeté en assemblée lors des deux derniers exercices. » On écrit le fait que le procès-verbal porte, jamais le motif du vote.",
+    "choix": [
+      {"texte": "« Le point a été rejeté lors des deux dernières assemblées générales »", "correct": true},
+      {"texte": "« Vous l'avez refusé essentiellement en raison du montant »", "correct": false, "pourquoi_faux": "Un procès-verbal enregistre le résultat d'un vote, jamais son motif. Attribuer une raison à un vote passé, c'est prêter une intention aux votants dans un écrit opposable : un seul copropriétaire qui a voté non pour une autre raison peut le contester publiquement en séance."},
+      {"texte": "« Le conseil syndical estime que le refus tenait au montant »", "correct": false, "pourquoi_faux": "Attribuer l'inférence à un tiers ne la rend pas vraie et n'évite pas la contestation. Le conseil syndical ne peut pas davantage que le syndic dire pourquoi une assemblée a voté ainsi."},
+      {"texte": "« Ce point n'a jamais recueilli l'adhésion des copropriétaires »", "correct": false, "pourquoi_faux": "« Jamais » excède ce que les deux procès-verbaux prouvent, et « adhésion » qualifie un état d'esprit là où la pièce ne porte qu'un décompte de voix. Le fait plus fort que sa source est la seconde famille d'erreur."}
+    ],
+    "explication": "Dans tout document lu par un copropriétaire, chaque affirmation factuelle doit tracer vers une pièce. Même règle pour le verbe employé : une annexe comptable prouve la comptabilisation au résultat, pas l'encaissement bancaire. Comptabilisé n'est pas encaissé, notifié n'est pas reçu, commandé n'est pas fait.",
+    "vigilance": "Le test avant livraison : pour chaque phrase affirmative d'un diffusable, pouvoir nommer la pièce et la page qui la portent. Sinon la phrase saute ou se reformule au niveau de preuve disponible. En travail interne, l'analyse et l'hypothèse restent libres, à condition d'être marquées comme telles.",
+    "source": [
+      {"texte": "Doctrine interne de l'écrit défendable, arbitrage du 06/08/2026 sur une lettre de convocation"}
+    ],
+    "verifie": "2026-08-06",
+    "peremption": null,
+    "statut": "brouillon",
+    "origine": "apprentissages-syndic.md § Un motif de vote ne s'infère jamais dans un diffusable",
+    "partage": "banque"
+  }
+]

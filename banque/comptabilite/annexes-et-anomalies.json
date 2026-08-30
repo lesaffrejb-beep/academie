@@ -1,0 +1,348 @@
+[
+  {
+    "id": "comptabilite-annexes-et-anomalies-cinq-annexes",
+    "domaine": "comptabilite",
+    "branche": "annexes-et-anomalies",
+    "niveau": 1,
+    "type": "flash",
+    "question": "Que porte chacune des cinq annexes comptables remises avant l'assemblée d'approbation des comptes ?",
+    "reponse": "Annexe 1 : l'état financier après répartition. Annexe 2 : le compte de gestion général de l'exercice clos. Annexe 3 : le compte de gestion des opérations courantes, budget voté face au réalisé. Annexe 4 : les travaux hors budget et opérations exceptionnelles. Annexe 5 : l'état des travaux votés non encore clôturés.",
+    "explication": "Le découpage n'est pas décoratif : chaque annexe répond à une question différente. La 1 dit où en est le patrimoine du syndicat à la clôture, la 2 ce qui a été dépensé et encaissé, la 3 si le budget voté a été tenu, la 4 ce qui s'est passé en dehors de ce budget, la 5 ce qui reste ouvert et engage l'exercice suivant. Savoir laquelle ouvrir fait gagner l'essentiel du temps de relecture.",
+    "vigilance": "L'annexe 1 est un état APRÈS répartition : les charges y sont déjà réparties entre copropriétaires. Y chercher le détail des dépenses est une perte de temps, il est en annexe 2.",
+    "source": [
+      {
+        "texte": "Arrêté du 14 mars 2005 relatif aux comptes du syndicat des copropriétaires (modèles obligatoires des annexes 1 à 5)",
+        "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000258165"
+      },
+      {
+        "texte": "Décret n° 2005-240 du 14 mars 2005 relatif aux comptes du syndicat des copropriétaires",
+        "url": "https://www.legifrance.gouv.fr/loda/id/LEGITEXT000006051416"
+      }
+    ],
+    "verifie": "2026-08-28",
+    "peremption": null,
+    "statut": "valide",
+    "origine": ".agents/skills/erp-comptable/references/checklist-anomalies-comptes.md",
+    "partage": "banque"
+  },
+  {
+    "id": "comptabilite-annexes-et-anomalies-ou-lire-ecart-budget",
+    "domaine": "comptabilite",
+    "branche": "annexes-et-anomalies",
+    "niveau": 1,
+    "prerequis": [
+      "comptabilite-annexes-et-anomalies-cinq-annexes"
+    ],
+    "type": "qcm",
+    "question": "Vous voulez savoir si un poste de charges courantes a dépassé le budget voté l'an dernier. Quelle annexe ouvrez-vous ?",
+    "reponse": "L'annexe 3 : c'est la seule qui confronte, poste par poste, le budget voté au réalisé.",
+    "choix": [
+      {
+        "texte": "L'annexe 3",
+        "correct": true
+      },
+      {
+        "texte": "L'annexe 1",
+        "correct": false,
+        "pourquoi_faux": "L'annexe 1 est l'état financier après répartition : une photographie des soldes à la clôture, sans aucune référence au budget voté."
+      },
+      {
+        "texte": "L'annexe 2",
+        "correct": false,
+        "pourquoi_faux": "L'annexe 2 donne bien les charges et produits de l'exercice, mais toutes opérations confondues et sans les confronter au budget : elle dit combien on a dépensé, pas si on avait prévu de le dépenser."
+      },
+      {
+        "texte": "L'annexe 4",
+        "correct": false,
+        "pourquoi_faux": "L'annexe 4 porte précisément ce qui n'était PAS au budget prévisionnel : travaux hors budget et opérations exceptionnelles. Un dépassement de poste courant ne s'y trouve pas."
+      }
+    ],
+    "explication": "Le réflexe de relecture est mécanique : dépassement d'un poste courant, on ouvre l'annexe 3 et on demande l'explication écrite ; opération qui n'était pas au budget, on ouvre les annexes 4 et 5 et on cherche la résolution qui l'a votée.",
+    "vigilance": "Un poste peut être tenu en annexe 3 et le résultat global rester mauvais : les travaux hors budget vivent ailleurs. Les deux lectures ne se remplacent pas.",
+    "source": [
+      {
+        "texte": "Arrêté du 14 mars 2005 relatif aux comptes du syndicat des copropriétaires, annexe 3 (compte de gestion pour opérations courantes de l'exercice clos, réalisé et budgets prévisionnels)",
+        "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000258165"
+      }
+    ],
+    "verifie": "2026-08-28",
+    "peremption": null,
+    "statut": "valide",
+    "origine": ".agents/skills/erp-comptable/references/checklist-anomalies-comptes.md",
+    "partage": "banque"
+  },
+  {
+    "id": "comptabilite-annexes-et-anomalies-libelle-14-2-annexe-4",
+    "domaine": "comptabilite",
+    "branche": "annexes-et-anomalies",
+    "niveau": 2,
+    "prerequis": [
+      "comptabilite-annexes-et-anomalies-cinq-annexes"
+    ],
+    "type": "flash",
+    "question": "L'annexe 4 s'intitule « travaux de l'article 14-2 ». Pourquoi ce libellé est-il un piège de vocabulaire depuis 2021 ?",
+    "reponse": "Parce que l'intitulé réglementaire de l'annexe est resté figé alors que l'article 14-2 de la loi de 1965 a changé d'objet en 2021 : il porte désormais le plan pluriannuel de travaux. L'annexe 4, elle, contient toujours les travaux hors budget prévisionnel et les opérations exceptionnelles.",
+    "explication": "Le document officiel et la loi ne disent plus la même chose sous le même numéro. C'est sans conséquence tant qu'on lit l'annexe pour ce qu'elle contient, et gênant dès qu'on parle : « les travaux 14-2 » n'évoque plus la même chose pour un interlocuteur qui a lu la loi récemment et pour un comptable qui lit l'annexe.",
+    "vigilance": "En séance, dire « travaux hors budget » plutôt que « travaux 14-2 ». Le raccourci fait perdre dix minutes d'explication devant un copropriétaire à jour de ses lectures.",
+    "source": [
+      {
+        "texte": "Arrêté du 14 mars 2005 relatif aux comptes du syndicat des copropriétaires, annexe 4 (compte de gestion pour travaux de l'article 14-2 et opérations exceptionnelles hors budget)",
+        "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000258165"
+      },
+      {
+        "texte": "Art. 14-2 loi n° 65-557 du 10 juillet 1965, rédaction issue de la loi n° 2021-1104 (projet de plan pluriannuel de travaux)",
+        "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043977289"
+      }
+    ],
+    "verifie": "2026-08-28",
+    "peremption": null,
+    "statut": "valide",
+    "origine": ".agents/skills/erp-comptable/references/checklist-anomalies-comptes.md",
+    "partage": "banque"
+  },
+  {
+    "id": "comptabilite-annexes-et-anomalies-recoupement-des-soldes",
+    "domaine": "comptabilite",
+    "branche": "annexes-et-anomalies",
+    "niveau": 1,
+    "type": "flash",
+    "question": "Quels recoupements arithmétiques fait-on AVANT de commenter le moindre chiffre des comptes ?",
+    "reponse": "Deux. Un : les totaux des cinq annexes se recoupent, total des produits égal au total des charges augmenté du résultat de l'exercice. Deux : la somme des soldes individuels des copropriétaires est égale au solde global porté au bilan.",
+    "explication": "Ce sont des contrôles de cohérence interne, faisables en cinq minutes sans rien connaître de l'immeuble. Tant qu'ils ne passent pas, toute analyse posée sur ces chiffres est bâtie sur du sable : on ne sait pas si l'anomalie qu'on croit voir est réelle ou n'est que la conséquence de l'écart de départ.",
+    "vigilance": "Un écart de quelques euros n'est jamais « négligeable » : il signale presque toujours une écriture égarée, pas un arrondi. On demande l'explication, on ne l'invente pas.",
+    "source": [
+      {
+        "texte": "Arrêté du 14 mars 2005 relatif aux comptes du syndicat des copropriétaires (annexes 1 et 2)"
+      },
+      {
+        "texte": "Grille interne de relecture des comptes, blocs A et B"
+      }
+    ],
+    "verifie": "2026-08-28",
+    "peremption": null,
+    "statut": "valide",
+    "origine": ".agents/skills/erp-comptable/references/checklist-anomalies-comptes.md",
+    "partage": "banque"
+  },
+  {
+    "id": "comptabilite-annexes-et-anomalies-seuils-ecart-budgetaire",
+    "domaine": "comptabilite",
+    "branche": "annexes-et-anomalies",
+    "niveau": 1,
+    "prerequis": [
+      "comptabilite-annexes-et-anomalies-ou-lire-ecart-budget"
+    ],
+    "type": "flash",
+    "question": "À partir de quel écart entre budget voté et réalisé un poste mérite-t-il une explication écrite, et pourquoi la sous-consommation compte-t-elle aussi ?",
+    "reponse": "Seuils de vigilance de la grille de relecture : dépassement de plus de 15 % sur un poste, ou sous-consommation de plus de 20 %. Les deux déclenchent la même demande d'explication.",
+    "explication": "Une sous-consommation n'est pas une bonne nouvelle par défaut : elle signale le plus souvent un entretien reporté, un contrat non exécuté ou un budget initial sur-provisionné qui a fait payer trop de provisions aux copropriétaires. L'écart, dans les deux sens, est une question à poser, pas un jugement à rendre.",
+    "vigilance": "Ces deux pourcentages sont des seuils de vigilance internes, pas des seuils légaux : aucun texte ne fixe de taux de dépassement du budget. Les présenter en séance comme une règle de droit est indéfendable.",
+    "source": [
+      {
+        "texte": "Grille interne de relecture des comptes, bloc C (comparaison budget voté / réalisé)"
+      },
+      {
+        "texte": "Arrêté du 14 mars 2005 relatif aux comptes du syndicat des copropriétaires (annexe 3)"
+      }
+    ],
+    "verifie": "2026-08-28",
+    "peremption": null,
+    "statut": "valide",
+    "origine": ".agents/skills/erp-comptable/references/checklist-anomalies-comptes.md",
+    "partage": "banque"
+  },
+  {
+    "id": "comptabilite-annexes-et-anomalies-fonds-travaux-double-plancher",
+    "domaine": "comptabilite",
+    "branche": "annexes-et-anomalies",
+    "niveau": 2,
+    "type": "qcm",
+    "question": "Une copropriété a adopté un plan pluriannuel de travaux. Comment se calcule alors la cotisation annuelle minimale au fonds de travaux ?",
+    "reponse": "Deux planchers se cumulent : au moins 5 % du budget prévisionnel, et au moins 2,5 % du montant des travaux inscrits au plan adopté. C'est le plus élevé des deux qui commande.",
+    "choix": [
+      {
+        "texte": "Au moins 5 % du budget prévisionnel ET au moins 2,5 % du montant des travaux du plan adopté",
+        "correct": true
+      },
+      {
+        "texte": "5 % du budget prévisionnel, l'adoption d'un plan n'y change rien",
+        "correct": false,
+        "pourquoi_faux": "C'est le régime tant qu'aucun plan n'est adopté. Dès que le plan l'est, un second plancher apparaît, calculé sur le montant des travaux programmés."
+      },
+      {
+        "texte": "2,5 % du montant des travaux du plan, qui remplace le plancher de 5 %",
+        "correct": false,
+        "pourquoi_faux": "Les deux planchers se cumulent, aucun ne remplace l'autre : sur une copropriété au plan modeste, le plancher de 5 % du budget reste le plus contraignant."
+      },
+      {
+        "texte": "5 % du montant des travaux votés dans l'exercice",
+        "correct": false,
+        "pourquoi_faux": "L'assiette du premier plancher est le budget prévisionnel courant, pas les travaux de l'exercice. Confondre les deux fait chuter la cotisation les années sans travaux, c'est-à-dire exactement quand elle sert à provisionner."
+      }
+    ],
+    "explication": "Le fonds de travaux ne se dimensionne pas sur la trésorerie courante mais sur ce que l'immeuble va coûter. Le second plancher a été ajouté pour que l'existence d'un plan de travaux se traduise en argent mis de côté, et pas seulement en document présenté à l'assemblée.",
+    "vigilance": "Le contrôle porte sur deux choses distinctes : le taux appliqué, et le fait que les fonds appelés aux copropriétaires ont bien été crédités sur le support dédié.",
+    "source": [
+      {
+        "texte": "Art. 14-2-1 loi n° 65-557 du 10 juillet 1965 (cotisation annuelle : pas moins de 2,5 % du montant des travaux du plan adopté ET pas moins de 5 % du budget de l'art. 14-1)",
+        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000043967792"
+      }
+    ],
+    "verifie": "2026-08-28",
+    "peremption": "2027-04-12",
+    "statut": "valide",
+    "origine": ".agents/skills/erp-comptable/references/checklist-anomalies-comptes.md",
+    "partage": "banque"
+  },
+  {
+    "id": "comptabilite-annexes-et-anomalies-compte-separe-et-rapprochement",
+    "domaine": "comptabilite",
+    "branche": "annexes-et-anomalies",
+    "niveau": 1,
+    "type": "flash",
+    "question": "Sur la trésorerie du syndicat, que vérifie-t-on, et quelles pièces exige-t-on d'avoir sous les yeux ?",
+    "reponse": "L'existence d'un compte bancaire séparé ouvert au nom du syndicat, le relevé de ce compte à la date de clôture, et un rapprochement bancaire daté dont chaque écart est expliqué.",
+    "explication": "Le compte séparé est le principe posé par l'article 18 de la loi de 1965 : la trésorerie du syndicat ne se confond pas avec celle du syndic. Le rapprochement, lui, est ce qui relie le solde comptable au solde réel : sans lui, le chiffre du bilan n'est qu'une déclaration.",
+    "vigilance": "L'écart intéressant n'est pas toujours au bilan. Comparer les fonds appelés aux copropriétaires aux fonds effectivement crédités révèle plus d'anomalies que la lecture du solde final.",
+    "source": [
+      {
+        "texte": "Art. 18 loi n° 65-557 du 10 juillet 1965 (compte bancaire séparé ouvert au nom du syndicat ; compte séparé rémunéré pour le fonds de travaux)",
+        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000044074302"
+      },
+      {
+        "texte": "Grille interne de relecture des comptes, bloc G (trésorerie et banque)"
+      }
+    ],
+    "verifie": "2026-08-28",
+    "peremption": null,
+    "statut": "valide",
+    "origine": ".agents/skills/erp-comptable/references/checklist-anomalies-comptes.md",
+    "partage": "banque"
+  },
+  {
+    "id": "comptabilite-annexes-et-anomalies-honoraires-mutation-recouvrement",
+    "domaine": "comptabilite",
+    "branche": "annexes-et-anomalies",
+    "niveau": 2,
+    "type": "qcm",
+    "question": "Un lot a été vendu dans l'exercice et un copropriétaire est parti au recouvrement. Qui supporte les honoraires de mutation et les frais de recouvrement ?",
+    "reponse": "Les honoraires de mutation sont à la charge du vendeur, les frais de recouvrement à la charge du seul copropriétaire défaillant. Ni les uns ni les autres ne sont des charges communes.",
+    "choix": [
+      {
+        "texte": "Le vendeur pour la mutation, le copropriétaire défaillant pour le recouvrement",
+        "correct": true
+      },
+      {
+        "texte": "Le syndicat pour les deux, réparties aux tantièmes comme les autres charges",
+        "correct": false,
+        "pourquoi_faux": "C'est précisément l'anomalie que la relecture cherche : faire supporter à l'ensemble des copropriétaires des frais que la loi impute à une personne déterminée."
+      },
+      {
+        "texte": "L'acquéreur pour la mutation, le copropriétaire défaillant pour le recouvrement",
+        "correct": false,
+        "pourquoi_faux": "L'acquéreur supporte les frais d'acte chez le notaire, pas les honoraires dus au syndic au titre de la mutation, qui restent à la charge du vendeur."
+      },
+      {
+        "texte": "Le vendeur pour la mutation, l'ensemble des débiteurs de l'exercice pour le recouvrement",
+        "correct": false,
+        "pourquoi_faux": "L'imputation des frais de recouvrement est individuelle, dossier par dossier, à compter de la mise en demeure : elle ne se mutualise pas entre débiteurs."
+      }
+    ],
+    "explication": "Ces frais sont imputables à une personne nommée, pas au syndicat. Le contrôle se fait au grand livre : on vérifie que la ligne n'a pas atterri en charges communes, et que chaque frais de relance est tracé individuellement et proportionné à la diligence réellement accomplie.",
+    "vigilance": "L'erreur passe inaperçue à l'échelle du bilan et coûte peu, mais elle est difficile à défendre en assemblée : chaque copropriétaire présent a payé une part de ce qu'il ne devait pas.",
+    "source": [
+      {
+        "texte": "Art. 10-1 loi n° 65-557 du 10 juillet 1965 (frais nécessaires de recouvrement imputables au seul copropriétaire défaillant à compter de la mise en demeure ; honoraires du syndic pour l'état daté à l'occasion de la mutation, plafonnés par décret)",
+        "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000039313543"
+      },
+      {
+        "texte": "Cass. 3e civ., 10 septembre 2020, n° 19-17.045, publié au bulletin (seuls les frais nécessaires au recouvrement d'une créance justifiée sont imputables au copropriétaire défaillant)",
+        "url": "https://www.legifrance.gouv.fr/juri/id/JURITEXT000042348745"
+      }
+    ],
+    "verifie": "2026-08-28",
+    "peremption": null,
+    "statut": "valide",
+    "origine": ".agents/skills/erp-comptable/references/checklist-anomalies-comptes.md",
+    "partage": "banque"
+  },
+  {
+    "id": "comptabilite-annexes-et-anomalies-solde-travaux-clotures",
+    "domaine": "comptabilite",
+    "branche": "annexes-et-anomalies",
+    "niveau": 2,
+    "type": "flash",
+    "question": "Une opération de travaux est terminée et le compte clôturé, mais il reste un solde d'appels non consommé. Qu'en fait-on ?",
+    "reponse": "Rien automatiquement : le solde ne disparaît pas et ne se recycle pas sur une autre opération. Il est soit restitué aux copropriétaires selon la clé qui a servi à l'appeler, soit réaffecté par une décision d'assemblée qui le dit expressément.",
+    "explication": "Un appel de fonds spécial a un objet voté. Utiliser l'excédent pour financer autre chose, même utile, est un glissement d'affectation : l'argent a été demandé pour une chose et sert à une autre sans que personne ne l'ait décidé. C'est l'anomalie la plus fréquente et la plus mal vécue, parce qu'elle touche des sommes que les copropriétaires ont sorties de leur poche pour un chantier identifié.",
+    "vigilance": "Le contrôle miroir se fait sur l'annexe 5 : une opération votée non encore clôturée doit y figurer avec sa provision conservée. Une opération disparue des annexes sans avoir été soldée est un signal fort.",
+    "source": [
+      {
+        "texte": "Décret n° 67-223, art. 45-1 (comptabilité du syndicat, opérations de travaux)"
+      },
+      {
+        "texte": "Arrêté du 14 mars 2005 relatif aux comptes du syndicat des copropriétaires (annexes 4 et 5)"
+      }
+    ],
+    "verifie": "2026-04-12",
+    "peremption": null,
+    "statut": "brouillon",
+    "origine": ".agents/skills/erp-comptable/references/checklist-anomalies-comptes.md",
+    "partage": "banque",
+    "doute": "Le sort du solde d'une opération de travaux clôturée n'a pas été retrouvé à la source : le décret n° 2005-240 ne prévoit que la constatation du résultat lors de la clôture définitive de chaque opération, sans dire qu'il est restitué selon la clé d'appel ou réaffecté par une décision expresse. Retrouver le texte qui commande la restitution ou la réaffectation avant de valider."
+  },
+  {
+    "id": "comptabilite-annexes-et-anomalies-rattachement-des-charges",
+    "domaine": "comptabilite",
+    "branche": "annexes-et-anomalies",
+    "niveau": 2,
+    "type": "flash",
+    "question": "Quel contrôle fait-on à cheval sur deux exercices, et quel est le critère qui tranche ?",
+    "reponse": "On vérifie qu'une charge de l'exercice N n'a pas été imputée sur N-1, ni l'inverse. Le critère est la période à laquelle la prestation a été exécutée, pas la date de la facture ni celle du paiement.",
+    "explication": "La comptabilité du syndicat est tenue en engagement : une prestation réalisée en décembre et facturée en février appartient à l'exercice de décembre. Un rattachement fautif déplace de la dépense d'un exercice à l'autre, fausse la comparaison N contre N-1 et, dans le pire cas, fait payer une charge par les copropriétaires du mauvais exercice, ce qui n'est pas neutre quand un lot a été vendu entre-temps.",
+    "vigilance": "Le point de contrôle concret est le lot de factures arrivées après la clôture : chacune doit avoir été rattachée, ou explicitement laissée à l'exercice suivant pour une raison écrite.",
+    "source": [
+      {
+        "texte": "Décret n° 2005-240 du 14 mars 2005, art. 2 et 4 (produits acquis et charges engagées de l'exercice ; charges de travaux enregistrées au fur et à mesure de l'exécution des travaux ou des prestations, même à cheval sur plusieurs exercices)",
+        "url": "https://www.legifrance.gouv.fr/loda/id/LEGITEXT000006051416"
+      },
+      {
+        "texte": "Art. 14-3 loi n° 65-557 du 10 juillet 1965 (comptabilité d'engagement)",
+        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000006471590"
+      },
+      {
+        "texte": "Grille interne de relecture des comptes, bloc H (pièges)"
+      }
+    ],
+    "verifie": "2026-08-28",
+    "peremption": null,
+    "statut": "valide",
+    "origine": ".agents/skills/erp-comptable/references/checklist-anomalies-comptes.md",
+    "partage": "banque"
+  },
+  {
+    "id": "comptabilite-annexes-et-anomalies-cle-charges-utilite-objective",
+    "domaine": "comptabilite",
+    "branche": "annexes-et-anomalies",
+    "niveau": 2,
+    "type": "flash",
+    "question": "Sur quoi se fonde la répartition des charges d'un équipement commun comme l'ascenseur, et que vaut l'idée qu'un rez-de-chaussée n'en paie jamais ?",
+    "reponse": "Sur l'utilité objective que l'équipement présente pour chaque lot, telle que traduite en clé de répartition par le règlement de copropriété et l'état descriptif de division. Un lot en rez-de-chaussée n'est donc pas exonéré de droit : tout dépend de ce que dit le règlement et de l'usage qu'il peut avoir de l'équipement.",
+    "explication": "L'utilité s'apprécie objectivement, pas selon l'usage réel : un copropriétaire de rez-de-chaussée qui accède par l'ascenseur à une cave ou à un parking en sous-sol en tire une utilité, même s'il ne monte jamais. La relecture des comptes se borne à vérifier que la clé appliquée est bien celle du règlement en vigueur, dernier modificatif compris.",
+    "vigilance": "On ne corrige jamais une clé de sa propre initiative, même manifestement mauvaise : une clé se modifie par vote de l'assemblée ou par voie judiciaire. Constater l'écart et le signaler est le geste ; le rectifier en comptabilité ne l'est pas.",
+    "source": [
+      {
+        "texte": "Art. 10 loi n° 65-557 du 10 juillet 1965 (participation aux charges des services collectifs et éléments d'équipement commun en fonction de l'utilité objective que ces services et éléments présentent à l'égard de chaque lot ; le règlement fixe la quote-part de chaque lot)",
+        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000043977284"
+      },
+      {
+        "texte": "Grille interne de relecture des comptes, bloc F (ventilation par clé de charges)"
+      }
+    ],
+    "verifie": "2026-08-28",
+    "peremption": null,
+    "statut": "valide",
+    "origine": ".agents/skills/erp-comptable/references/checklist-anomalies-comptes.md",
+    "partage": "banque"
+  }
+]

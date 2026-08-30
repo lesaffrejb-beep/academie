@@ -1,0 +1,71 @@
+{
+  "_": "Config de l'Académie. Le moteur ne sait rien du métier : tout ce qui est syndic vit ici (BLUEPRINT §11). Un autre métier = un autre fichier + une autre banque.",
+  "metier": "gestionnaire de copropriété",
+  "profil_defaut": "jb",
+  "domaines": {
+    "pathologie": {
+      "titre": "Pathologie du bâtiment",
+      "ordre": 1
+    },
+    "equipements": {
+      "titre": "Technique des équipements",
+      "ordre": 2
+    },
+    "droit": {
+      "titre": "Droit de la copropriété",
+      "ordre": 3
+    },
+    "procedure": {
+      "titre": "Procédure et contentieux",
+      "ordre": 4
+    },
+    "sinistres": {
+      "titre": "Sinistres et assurances",
+      "ordre": 5
+    },
+    "comptabilite": {
+      "titre": "Comptabilité de copropriété",
+      "ordre": 6
+    },
+    "energie": {
+      "titre": "Énergie et réglementation",
+      "ordre": 7
+    },
+    "plans": {
+      "titre": "Lecture de plans et vocabulaire pro",
+      "ordre": 8
+    },
+    "culture": {
+      "titre": "Culture",
+      "ordre": 9,
+      "arbre": false
+    }
+  },
+  "quotas": {
+    "_": "Arbitrage JB du 28/08/2026, ajustable au bilan des 30 séances.",
+    "revisions_par_seance": 10,
+    "nouveau_par_seance": 1,
+    "ateliers_par_semaine": 2,
+    "plafond_reprise": 20,
+    "revisions_min_jour_atelier": 5
+  },
+  "fsrs": {
+    "_": "Valeurs vérifiées le 28/08/2026 (CORPUS §3) : défaut Anki 0,90, plage 0,80-0,95 ; optimiseur personnalisé à partir de ~400 revues.",
+    "retention_souhaitee": 0.9,
+    "seuil_optimiseur": 400
+  },
+  "progression": {
+    "_": "La carte-monde (SPEC-PRODUIT §3, GO socle 29/08/2026). Une région = un domaine ici ; remplissage = % des cartes valide de la région dont la stabilité FSRS >= seuil_stabilite_acquise_jours. L'XP affichée est dérivée de cette mesure, jamais une seconde comptabilité.",
+    "seuil_stabilite_acquise_jours": 21,
+    "seuil_ouverture_region": 0.75,
+    "examen_obligatoire_pour_100": true,
+    "examen_nb_cartes": 12,
+    "examen_score_reussite": 0.8
+  },
+  "quiz": {
+    "_": "Quiz de positionnement (SPEC-PRODUIT §3, corrigé au pré-mortem du 29/08 soir). Bonne réponse : entrée au journal origine=quiz avec stabilité initiale explicite. Mauvaise réponse : rien. Le quiz OUVRE des régions, il n'écrit jamais leur remplissage.",
+    "nb_questions": 20,
+    "stabilite_initiale_jours": 21,
+    "seuil_ouverture_region_quiz": 0.8
+  }
+}

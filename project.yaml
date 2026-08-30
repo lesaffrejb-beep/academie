@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "id": "academie",
+  "name": "Académie",
+  "kind": "product",
+  "classification": "private",
+  "parent": "giverny",
+  "canonical_instructions": "AGENTS.md",
+  "roadmap": "ROADMAP.md",
+  "machine_roadmap": "roadmap.json",
+  "context_bundle": "context/giverny.md",
+  "capabilities": ["academie.bank.validate", "academie.session.compose", "academie.publish_bank"],
+  "commands": {
+    "check": "python3 tooling/check.py",
+    "test": "python3 app/tests.py",
+    "build": "python3 app/genere.py --couches banque",
+    "roadmap-next": "python3 tooling/roadmap.py next"
+  },
+  "data_boundaries": {
+    "accepts": ["public", "internal", "human-approved-anonymized-content"],
+    "rejects": ["client-confidential", "contact", "building-identity", "contract", "email", "meeting-transcript", "secret"]
+  }
+}

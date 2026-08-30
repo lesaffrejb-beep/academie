@@ -1,0 +1,182 @@
+[
+  {
+    "id": "droit-ag-questions-diverses-sans-vote",
+    "domaine": "droit",
+    "branche": "assemblee-generale",
+    "niveau": 1,
+    "type": "qcm",
+    "question": "En séance, un copropriétaire soulève un projet de travaux lourds sous la rubrique « Questions diverses » et demande à ce que l'assemblée le vote tout de suite, la salle étant d'accord. Que fait le président de séance ?",
+    "reponse": "Il refuse le vote : aucune décision exécutoire ne peut être adoptée sous « Questions diverses ». Une telle résolution serait frappée de nullité.",
+    "choix": [
+      {"texte": "Il refuse le vote : la résolution serait nulle, les questions diverses n'étant pas un point délibératif de l'ordre du jour", "correct": true},
+      {"texte": "Il fait voter, puisque l'assemblée est souveraine et que personne ne s'y oppose", "correct": false, "pourquoi_faux": "La souveraineté de l'assemblée s'exerce dans les formes que la loi lui impose. Seules les questions inscrites à l'ordre du jour, accompagnées des pièces obligatoires, font l'objet d'une délibération : l'unanimité de la salle ne répare pas ce défaut."},
+      {"texte": "Il fait voter à l'unanimité des présents, ce qui purge l'irrégularité", "correct": false, "pourquoi_faux": "L'unanimité des présents n'est pas l'unanimité des copropriétaires, et surtout la nullité tient au défaut d'inscription à l'ordre du jour, pas au niveau de majorité atteint. Un absent, non convoqué sur ce point, n'a rien pu contester."},
+      {"texte": "Il fait voter en précisant au procès-verbal que le vote est indicatif et sera confirmé plus tard", "correct": false, "pourquoi_faux": "Un « vote indicatif » n'existe pas comme catégorie de résolution : le procès-verbal porterait une résolution que l'on sait nulle. Ce qui est licite, c'est de recueillir un vœu et de le relater comme tel, sans le présenter comme un vote."}
+    ],
+    "explication": "Le cas typique est le sujet lourd amené hors ordre du jour : isolation par l'extérieur, ravalement, aménagement. La demande est légitime, la voie ne l'est pas. Aucun vote de travaux, de budget ou de contrat ne peut être adopté sous cette rubrique.",
+    "vigilance": "Le danger n'est pas seulement l'annulation : c'est qu'une décision crue acquise soit ensuite exécutée, engagée, facturée, puis effondrée par un recours.",
+    "source": [
+      {"texte": "Art. 10 et 17 décret n° 67-223 du 17 mars 1967"}
+    ],
+    "verifie": "2026-08-28",
+    "peremption": null,
+    "statut": "brouillon",
+    "origine": "apprentissages-syndic.md § Questions diverses en assemblée générale : frontière stricte entre information/vœu et décision exécutoire",
+    "partage": "banque"
+  },
+  {
+    "id": "droit-ag-questions-diverses-voeu-au-pv",
+    "domaine": "droit",
+    "branche": "assemblee-generale",
+    "niveau": 2,
+    "prerequis": ["droit-ag-questions-diverses-sans-vote"],
+    "type": "qcm",
+    "question": "Puisqu'aucune décision ne peut être prise en questions diverses, que peut-on tout de même faire du sujet soulevé, et qu'en garde-t-on par écrit ?",
+    "reponse": "On peut en débattre, recueillir une orientation de principe sans valeur décisionnelle, et faire relater fidèlement l'échange au procès-verbal sous la rubrique des questions diverses.",
+    "choix": [
+      {"texte": "Débattre, recueillir un vœu sans valeur décisionnelle, et le faire relater au procès-verbal", "correct": true},
+      {"texte": "Rien : puisque le vote est interdit, le sujet ne peut pas être abordé et le procès-verbal doit rester muet", "correct": false, "pourquoi_faux": "C'est la sur-correction, et elle coûte cher. L'échange d'information et le débat sont parfaitement légaux et usuels ; refuser d'en garder trace fait perdre la mesure de l'adhésion et laisse le sujet repartir de zéro l'année suivante."},
+      {"texte": "Faire signer une pétition en séance, qui vaudra engagement pour l'assemblée suivante", "correct": false, "pourquoi_faux": "Une pétition n'engage pas l'assemblée à venir, qui se prononcera librement. Elle donne en plus l'apparence d'un engagement pris, ce qui est exactement l'ambiguïté à éviter."},
+      {"texte": "Faire voter le principe, en renvoyant à l'assemblée suivante le seul choix de l'entreprise", "correct": false, "pourquoi_faux": "Voter le principe reste voter : la résolution serait tout aussi nulle. Le principe se recueille comme un vœu, il ne se met pas au vote."}
+    ],
+    "explication": "Rédaction type : « Après débat informel, l'assemblée générale manifeste son intérêt pour cette démarche et souhaite que le sujet soit instruit et porté avec devis à l'ordre du jour de la prochaine assemblée. » L'échange permet de mesurer l'adhésion sans engager juridiquement, d'éviter des démarches dispersées, et de caler l'inscription formelle avec devis à l'assemblée suivante.",
+    "vigilance": "Réflexe de gestionnaire sur les sujets de performance énergétique : rappeler en séance que les travaux lourds s'adossent au diagnostic énergétique et au plan pluriannuel de travaux en cours, plutôt que de laisser partir une consultation isolée.",
+    "source": [
+      {"texte": "Art. 10 et 17 décret n° 67-223 du 17 mars 1967"},
+      {"texte": "Art. 24 et 25 loi n° 65-557 du 10 juillet 1965", "url": "https://www.legifrance.gouv.fr/loda/id/LEGITEXT000006068256"}
+    ],
+    "verifie": "2026-08-28",
+    "peremption": null,
+    "statut": "brouillon",
+    "origine": "apprentissages-syndic.md § Questions diverses en assemblée générale : frontière stricte entre information/vœu et décision exécutoire",
+    "partage": "banque"
+  },
+  {
+    "id": "droit-ag-convocation-pieces-nominatives",
+    "domaine": "droit",
+    "branche": "assemblee-generale",
+    "niveau": 1,
+    "type": "qcm",
+    "question": "L'ERP génère un pack comptable complet pour l'assemblée et propose de tout joindre à la convocation. Quelle pièce ne doit jamais partir dans l'envoi général ?",
+    "reponse": "La liste après répartition, qui révèle le solde et la situation financière nominative de chaque copropriétaire. Même exclusion pour le récapitulatif de régularisation et le détail des charges à répartir.",
+    "choix": [
+      {"texte": "La liste après répartition, qui révèle les soldes nominatifs de chaque copropriétaire", "correct": true},
+      {"texte": "Les annexes comptables 1 à 5, réservées au conseil syndical", "correct": false, "pourquoi_faux": "C'est l'inverse : les annexes comptables sont des pièces d'information collective et se notifient à tous les copropriétaires. Les retirer de l'envoi vicierait la convocation."},
+      {"texte": "Le relevé général des dépenses, trop détaillé pour une notification collective", "correct": false, "pourquoi_faux": "Le relevé des dépenses est collectif : il porte des dépenses du syndicat, pas des situations individuelles. Il fait partie de ce qui se notifie à tous."},
+      {"texte": "Les devis soumis au vote, qui contiennent les prix négociés avec les entreprises", "correct": false, "pourquoi_faux": "Les devis soumis au vote doivent être joints : sans eux, la résolution est attaquable. Le prix est précisément ce sur quoi l'assemblée se prononce."}
+    ],
+    "explication": "La frontière est celle de l'information collective et de la donnée personnelle. Se notifient à tous : les annexes comptables, le relevé général des dépenses, et les contrats, devis et projets soumis au vote. Restent strictement exclues de l'envoi général les pièces comptables nominatives ou de détail. Notifier une liste de soldes à toute la copropriété est une diffusion illicite de données financières personnelles entre voisins.",
+    "vigilance": "Le point de contrôle est l'écran d'émission de l'ERP : les cases sont souvent cochées par défaut. On décoche avant de valider le départ, postal comme électronique. Une fois parti, rien ne se rattrape.",
+    "source": [
+      {"texte": "Art. 11 décret n° 67-223 du 17 mars 1967"},
+      {"texte": "Règlement (UE) 2016/679 (RGPD), minimisation des données"}
+    ],
+    "verifie": "2026-08-28",
+    "peremption": null,
+    "statut": "brouillon",
+    "origine": "apprentissages-syndic.md § Pièces jointes de convocation : la frontière stricte entre notification collective et données personnelles",
+    "partage": "banque"
+  },
+  {
+    "id": "droit-ag-enregistrement-annonce",
+    "domaine": "droit",
+    "branche": "assemblee-generale",
+    "niveau": 2,
+    "type": "qcm",
+    "question": "Le syndic veut enregistrer l'assemblée générale pour rédiger le procès-verbal plus fidèlement. Qu'est-ce qui rend l'enregistrement licite ?",
+    "reponse": "L'annonce en ouverture, avant le premier vote, avec la possibilité réelle de s'y opposer : le consentement est présumé lorsque l'enregistrement est fait au vu et au su des intéressés sans qu'ils s'y soient opposés alors qu'ils pouvaient le faire.",
+    "choix": [
+      {"texte": "Une annonce en ouverture de séance et la possibilité réelle de s'y opposer", "correct": true},
+      {"texte": "Un vote de l'assemblée autorisant l'enregistrement à la majorité de l'article 24", "correct": false, "pourquoi_faux": "Il n'y a rien à faire voter : ni la loi de 1965 ni le décret de 1967 ne traitent de l'enregistrement d'une séance. Et un vote majoritaire ne pourrait de toute façon pas emporter le consentement de ceux qui ont voté contre."},
+      {"texte": "Le recueil de la signature de chaque participant sur la feuille de présence", "correct": false, "pourquoi_faux": "Aucune signature n'est à recueillir. Le texte se contente d'une présomption de consentement fondée sur la visibilité de l'enregistrement et la possibilité de s'y opposer."},
+      {"texte": "Rien de particulier : l'assemblée est une réunion collective, pas une conversation privée", "correct": false, "pourquoi_faux": "Une assemblée générale n'est pas une réunion publique : ses échanges relèvent du registre privé. Le droit commun s'applique, et enregistrer discrètement des paroles privées sans consentement est un délit, même sans aucune diffusion et même « pour soi »."}
+    ],
+    "explication": "Quatre gestes, dans cet ordre : annoncer en ouverture, avant le premier vote, qu'on enregistre, pourquoi (rédiger le procès-verbal) et jusqu'à quand on conserve ; demander explicitement si quelqu'un s'y oppose et laisser le temps de répondre, car c'est ce moment qui fait la présomption ; faire porter au procès-verbal l'annonce et le résultat ; et ne pas enregistrer si quelqu'un s'oppose. La phrase d'ouverture n'est pas un ornement, c'est la condition de licéité.",
+    "vigilance": "Le volet données personnelles se règle par la sobriété : finalité unique, durée courte et annoncée (suppression dès le procès-verbal notifié), aucune diffusion, y compris au conseil syndical ou à un absent qui le demande. Limite connue : la présomption est une lecture directe du texte, non confrontée à une décision portant spécifiquement sur une assemblée de copropriété ; un autre usage que la rédaction du procès-verbal passe par l'avocat.",
+    "source": [
+      {"texte": "Art. 226-1 code pénal", "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006417929"}
+    ],
+    "verifie": "2026-08-21",
+    "peremption": null,
+    "statut": "brouillon",
+    "origine": "apprentissages-syndic.md § Enregistrer une assemblée générale : c'est l'annonce qui rend l'acte licite",
+    "partage": "banque"
+  },
+  {
+    "id": "droit-ag-enregistrement-opposition-individuelle",
+    "domaine": "droit",
+    "branche": "assemblee-generale",
+    "niveau": 2,
+    "prerequis": ["droit-ag-enregistrement-annonce"],
+    "type": "qcm",
+    "question": "L'enregistrement de la séance est annoncé en ouverture. Une seule personne, sur quarante présents, déclare s'y opposer. Que fait-on ?",
+    "reponse": "On n'enregistre pas. Le consentement est individuel : aucune majorité, même écrasante, ne le remplace.",
+    "choix": [
+      {"texte": "On n'enregistre pas : le consentement est individuel et aucune majorité ne le remplace", "correct": true},
+      {"texte": "On met l'enregistrement aux voix et on suit la décision de l'assemblée", "correct": false, "pourquoi_faux": "Faire trancher par la salle transforme un droit individuel en objet de vote. L'opposant resterait sans consentement, et l'enregistrement resterait illicite à son égard, avec un procès-verbal qui en porterait la preuve."},
+      {"texte": "On enregistre en coupant pendant les interventions de la personne opposée", "correct": false, "pourquoi_faux": "L'opposant est présent dans la salle pendant toute la séance et ses paroles peuvent être captées à tout moment. La coupure sélective est de plus impossible à tenir en pratique et invérifiable."},
+      {"texte": "On enregistre en notant l'opposition au procès-verbal, ce qui vaut information de l'intéressé", "correct": false, "pourquoi_faux": "L'information n'est pas le consentement. Le texte présume le consentement de celui qui, informé, ne s'oppose pas ; il ne dit rien qui permette de passer outre une opposition exprimée."}
+    ],
+    "explication": "C'est ce qui distingue ce régime d'un vote : la présomption de consentement se construit personne par personne. Une seule opposition suffit à faire tomber la base légale de l'enregistrement pour toute la séance.",
+    "vigilance": "Bien annoncé et acté au procès-verbal, l'enregistrement protège le syndic le jour où un participant conteste ses propres propos. Fait discrètement, il devient un délit passible d'un an d'emprisonnement et de 45 000 euros d'amende.",
+    "source": [
+      {"texte": "Art. 226-1 code pénal", "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006417929"}
+    ],
+    "verifie": "2026-08-21",
+    "peremption": null,
+    "statut": "brouillon",
+    "origine": "apprentissages-syndic.md § Enregistrer une assemblée générale : c'est l'annonce qui rend l'acte licite",
+    "partage": "banque"
+  },
+  {
+    "id": "droit-ag-decision-deja-votee-verifier-pv",
+    "domaine": "droit",
+    "branche": "assemblee-generale",
+    "niveau": 1,
+    "type": "qcm",
+    "question": "La comptabilité demande d'inscrire à l'ordre du jour de la prochaine assemblée un point de paramétrage (date de clôture, seuil de mise en concurrence, clé de répartition), parce que l'ERP ne le prend pas en compte. Quel est le premier geste ?",
+    "reponse": "Ouvrir les procès-verbaux des deux dernières assemblées avant d'inscrire quoi que ce soit : le cas classique est une résolution déjà votée dont le paramétrage de l'ERP n'a pas suivi.",
+    "choix": [
+      {"texte": "Ouvrir les procès-verbaux des deux dernières assemblées avant d'inscrire le point", "correct": true},
+      {"texte": "Inscrire le point à l'ordre du jour : une demande de la comptabilité signale une décision manquante", "correct": false, "pourquoi_faux": "Une demande interne signale un écart entre l'outil et la réalité, pas nécessairement une décision manquante. Reposer au vote une décision déjà prise à l'unanimité donne l'image d'un syndic qui n'a pas exécuté une décision d'assemblée, et fait perdre la confiance gagnée l'année précédente."},
+      {"texte": "Interroger le conseil syndical, qui se souviendra de ce qui a été voté", "correct": false, "pourquoi_faux": "La mémoire d'un conseil syndical n'est pas une source. Le procès-verbal existe, il est écrit, daté et opposable : on le lit."},
+      {"texte": "Se fier à l'écran de l'ERP, qui reste la source de vérité légale sur les votes", "correct": false, "pourquoi_faux": "L'ERP fait foi sur les données qu'il tient à jour, mais quand un procès-verbal est disponible, il prime sur ce que dit un collègue de bonne foi depuis son écran. Ce n'est pas un désaccord, ce sont deux sources de fiabilité différentes."}
+    ],
+    "explication": "Si la résolution a déjà été votée, le travail n'est pas de re-voter : c'est de faire appliquer la décision côté outil. L'enjeu dépasse l'économie d'une résolution. Répondre « c'est voté depuis janvier, il reste à le basculer dans l'outil » remet la charge au bon endroit.",
+    "vigilance": "Ce réflexe vaut pour toute demande interne formulée en « il faudrait faire voter » : la vérifier au procès-verbal avant de la traduire en résolution.",
+    "source": [
+      {"texte": "Doctrine interne de préparation d'ordre du jour, hiérarchie des sources (le procès-verbal prime sur l'écran d'ERP)"}
+    ],
+    "verifie": "2026-08-15",
+    "peremption": null,
+    "statut": "brouillon",
+    "origine": "apprentissages-syndic.md § Une demande interne n'est pas forcément une décision manquante",
+    "partage": "banque"
+  },
+  {
+    "id": "droit-ag-honoraires-hausse-au-renouvellement",
+    "domaine": "droit",
+    "branche": "assemblee-generale",
+    "niveau": 2,
+    "type": "qcm",
+    "question": "Le forfait de syndic a été voté pour un mandat de trois ans. Au bout d'un an, le cabinet veut relever son honoraire de base. Que permet le cadre ?",
+    "reponse": "Seule l'indexation contractuelle s'applique en cours de mandat. Relever l'honoraire de base ne se fait qu'au renouvellement du contrat, par un vote de l'assemblée.",
+    "choix": [
+      {"texte": "Seule l'indexation prévue au contrat : la hausse de l'honoraire de base attend le renouvellement et son vote", "correct": true},
+      {"texte": "Une hausse votée en cours de mandat à la majorité de l'article 24, le contrat étant modifiable", "correct": false, "pourquoi_faux": "Le forfait est pluriannuel et a été voté comme tel : il ne se rouvre pas en cours de route par une résolution de circonstance. La désignation du syndic et son contrat relèvent en outre de l'article 25, pas de la majorité simple."},
+      {"texte": "Une hausse appliquée directement, avec information du conseil syndical", "correct": false, "pourquoi_faux": "Le conseil syndical n'a pas le pouvoir d'approuver une modification du contrat de syndic. Facturer au-delà du forfait voté expose à un remboursement pur et simple."},
+      {"texte": "Une hausse compensée par des honoraires de travaux plus élevés sur les chantiers de l'année", "correct": false, "pourquoi_faux": "Les honoraires de travaux sont eux aussi votés et encadrés par le contrat : on ne rattrape pas sur eux ce que le forfait ne permet pas. Et ils sont hors forfait, donc lisibles ligne à ligne par le copropriétaire, qui verra la compensation."}
+    ],
+    "explication": "Le levier de marge d'un cabinet est l'honoraire de gestion récurrent, pas la ponction sur travaux. Mais ce levier ne se manœuvre qu'à chaque fin de mandat, au moment du renouvellement, avec la mise en concurrence organisée par la loi. Tout se joue donc dans le contrat qu'on fait voter, pas dans la facturation de l'année en cours.",
+    "vigilance": "Tout ceci vit dans le cadre du contrat-type réglementaire et des tarifs qui y sont votés : on rend visible ce que le contrat permet, on n'invente pas de ligne de facturation hors contrat.",
+    "source": [
+      {"texte": "Art. 21 et 25 loi n° 65-557 du 10 juillet 1965", "url": "https://www.legifrance.gouv.fr/loda/id/LEGITEXT000006068256"},
+      {"texte": "Décret n° 2015-342 du 26 mars 2015 (contrat-type de syndic)"}
+    ],
+    "verifie": "2026-08-15",
+    "peremption": null,
+    "statut": "brouillon",
+    "origine": "apprentissages-syndic.md § Honoraires travaux — barème (garde-fou du vote)",
+    "partage": "banque"
+  }
+]

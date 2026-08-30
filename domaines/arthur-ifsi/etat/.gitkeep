@@ -1,0 +1,5 @@
+# L'état de jeu du joueur (journal de révisions, progression) atterrit
+# ici en local. Il est personnel et n'est jamais versionné : le dossier
+# existe vide pour que l'arborescence du modèle A4 se voie d'un coup
+# d'œil (SPEC-PRODUIT §2). En jeu réel, l'état de référence vit sur le
+# serveur, parce qu'un joueur a deux appareils.

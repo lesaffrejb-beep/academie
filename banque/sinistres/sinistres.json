@@ -1,0 +1,284 @@
+[
+  {
+    "id": "sinistres-delai-degat-des-eaux",
+    "domaine": "sinistres",
+    "branche": "sinistres",
+    "niveau": 1,
+    "type": "flash",
+    "question": "Dégât des eaux : de quel délai dispose-t-on pour déclarer à l'assureur, et à partir de quand court-il ?",
+    "reponse": "Cinq jours ouvrés, à compter de la DÉCOUVERTE du sinistre, pas de la date à laquelle la fuite a commencé.",
+    "explication": "Le point de départ est le moment où l'assuré a eu connaissance du sinistre. C'est ce qui rend la question « quand l'avez-vous découvert ? » plus importante, au téléphone, que « depuis quand ça fuit ? » : la seconde intéresse l'expert, la première fait courir le délai. La date de découverte se note et se date par écrit dès l'appel, elle sera la ligne de défense si le délai est contesté.",
+    "vigilance": "Cinq jours ouvrés est le plancher légal ; la police peut prévoir un délai plus long, jamais plus court. Devant un cas tendu, on vérifie le contrat plutôt que de réciter le plancher.",
+    "source": [
+      {
+        "texte": "Art. L113-2, 4° du code des assurances (déclaration dès que l'assuré en a eu connaissance et au plus tard dans le délai fixé par le contrat, qui ne peut être inférieur à cinq jours ouvrés)",
+        "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000035731302"
+      },
+      {
+        "texte": "Convention IRSI, convention inter-assureurs non publiée (sinistres survenus à compter du 01/06/2018, version révisée au 01/07/2020)"
+      }
+    ],
+    "verifie": "2026-08-28",
+    "peremption": null,
+    "statut": "valide",
+    "origine": ".agents/skills/erp-sinistres/references/grille-telephone-dde-irsi.md",
+    "partage": "banque"
+  },
+  {
+    "id": "sinistres-delai-vol-vandalisme",
+    "domaine": "sinistres",
+    "branche": "sinistres",
+    "niveau": 1,
+    "prerequis": [
+      "sinistres-delai-degat-des-eaux"
+    ],
+    "type": "qcm",
+    "question": "Un vol est constaté dans les parties communes. Quel est le délai de déclaration, et quelle pièce conditionne en pratique le dossier ?",
+    "reponse": "Deux jours ouvrés : c'est le plancher que le contrat ne peut pas descendre en cas de vol. Et le dépôt de plainte : sans numéro de plainte, l'assureur ne traite pas le dossier.",
+    "choix": [
+      {
+        "texte": "Deux jours ouvrés, avec dépôt de plainte préalable",
+        "correct": true
+      },
+      {
+        "texte": "Cinq jours ouvrés, comme pour un dégât des eaux",
+        "correct": false,
+        "pourquoi_faux": "Le vol est le cas où le délai est le plus court de tous. Appliquer par réflexe le délai du dégât des eaux fait perdre l'essentiel de la fenêtre."
+      },
+      {
+        "texte": "Deux jours ouvrés, le dépôt de plainte pouvant être fait plus tard",
+        "correct": false,
+        "pourquoi_faux": "Le numéro de plainte est une pièce du dossier de déclaration, pas une formalité de suite : sans lui l'assureur ne traite pas."
+      },
+      {
+        "texte": "Trente jours, comme pour une catastrophe naturelle",
+        "correct": false,
+        "pourquoi_faux": "Le délai de trente jours est propre à la catastrophe naturelle et court à compter de la publication de l'arrêté de reconnaissance, un mécanisme sans rapport avec le vol."
+      }
+    ],
+    "explication": "Le réflexe est en trois temps : déposer plainte, sécuriser les accès, déclarer avec le numéro de plainte. Les photos se prennent avant tout nettoyage, y compris avant le passage de l'entreprise de propreté, qui efface souvent les traces de la journée.",
+    "vigilance": "Deux jours ouvrés se consomment vite quand la constatation tombe un vendredi soir : un vol constaté en fin de semaine se traite le jour même, pas le lundi. Deux précisions à ne pas confondre : le plancher légal des deux jours vise le VOL, le vandalisme suit le délai prévu au contrat ; et l'exigence du dépôt de plainte est contractuelle, pas légale.",
+    "source": [
+      {
+        "texte": "Art. L113-2, 4° du code des assurances (délai contractuel de déclaration réduit à deux jours ouvrés en cas de vol)",
+        "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000035731302"
+      }
+    ],
+    "verifie": "2026-08-28",
+    "peremption": null,
+    "statut": "valide",
+    "origine": ".agents/skills/erp-sinistres/references/matrice-urgence-sinistre.md",
+    "partage": "banque"
+  },
+  {
+    "id": "sinistres-delai-catastrophe-naturelle",
+    "domaine": "sinistres",
+    "branche": "sinistres",
+    "niveau": 2,
+    "type": "flash",
+    "question": "Catastrophe naturelle : quel délai de déclaration, et à partir de quel événement court-il ?",
+    "reponse": "Trente jours à compter de la publication au Journal officiel de l'arrêté interministériel de reconnaissance de l'état de catastrophe naturelle. Le délai ne court pas depuis le sinistre lui-même.",
+    "explication": "Le mécanisme est particulier : tant que l'arrêté n'est pas publié, la garantie n'est pas ouverte, et l'horloge ne tourne pas. Le travail du gestionnaire est donc en deux temps : constituer le dossier de justificatifs immédiatement après l'événement, pendant que les traces sont fraîches, puis surveiller la publication de l'arrêté pour la commune concernée. Ce délai était de dix jours avant d'être porté à trente pour les sinistres relevant du régime en vigueur depuis le 1er janvier 2023.",
+    "vigilance": "Un dossier constitué au moment de la reconnaissance, plusieurs mois après l'événement, est presque toujours incomplet : les désordres ont été réparés, les photos n'existent pas.",
+    "source": [
+      {
+        "texte": "Art. L125-2 du code des assurances (déclaration au plus tard trente jours après la publication de l'arrêté interministériel de reconnaissance de l'état de catastrophe naturelle)",
+        "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000047109081"
+      },
+      {
+        "texte": "Loi n° 2021-1837 du 28 décembre 2021 (délai porté de dix à trente jours, en vigueur au 01/01/2023)"
+      }
+    ],
+    "verifie": "2026-08-28",
+    "peremption": "2027-07-02",
+    "statut": "valide",
+    "origine": ".agents/skills/erp-sinistres/references/matrice-urgence-sinistre.md",
+    "partage": "banque"
+  },
+  {
+    "id": "sinistres-decheance-de-garantie",
+    "domaine": "sinistres",
+    "branche": "sinistres",
+    "niveau": 2,
+    "prerequis": [
+      "sinistres-delai-degat-des-eaux"
+    ],
+    "type": "flash",
+    "question": "Que risque-t-on concrètement à laisser passer un délai de déclaration, et sur qui retombe ce risque ?",
+    "reponse": "La déchéance de garantie : l'assureur peut refuser toute indemnisation, et le syndicat comme le copropriétaire sinistré se retrouvent sans couverture. Le retard imputable au gestionnaire engage sa responsabilité professionnelle au titre de son obligation de diligence.",
+    "explication": "C'est la raison pour laquelle un sinistre ne se traite pas dans l'ordre d'arrivée : ce qui est perdu par le délai ne se rattrape par aucune argumentation ultérieure. Le montant en jeu n'est pas celui du dommage mais celui de l'indemnité perdue, qui devient une créance possible contre le professionnel.",
+    "vigilance": "La déchéance n'est pas automatique : l'assureur doit l'opposer et le retard doit lui avoir causé un préjudice. Cela n'en fait pas un risque théorique, cela en fait un contentieux qu'on ne veut jamais avoir à mener.",
+    "source": [
+      {
+        "texte": "Art. L113-2 du code des assurances (la déchéance pour déclaration tardive ne peut être opposée à l'assuré que si l'assureur établit que le retard lui a causé un préjudice)",
+        "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000035731302"
+      },
+      {
+        "texte": "Art. 18 loi n° 65-557 du 10 juillet 1965 (obligation de diligence du syndic)",
+        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000044074302"
+      }
+    ],
+    "verifie": "2026-08-28",
+    "peremption": null,
+    "statut": "valide",
+    "origine": ".agents/skills/erp-sinistres/references/matrice-urgence-sinistre.md",
+    "partage": "banque"
+  },
+  {
+    "id": "sinistres-irsi-tranches",
+    "domaine": "sinistres",
+    "branche": "sinistres",
+    "niveau": 2,
+    "type": "qcm",
+    "question": "Dégât des eaux, dommages estimés à 3 000 € HT pour le local sinistré. Quel régime s'applique et qui pilote ?",
+    "reponse": "Tranche 2 de la convention IRSI : l'assureur gestionnaire, celui de l'occupant du local sinistré, missionne une expertise pour compte commun, règle, puis exerce son recours.",
+    "choix": [
+      {
+        "texte": "Tranche 2 de l'IRSI : expertise pour compte commun par l'assureur gestionnaire, puis recours",
+        "correct": true
+      },
+      {
+        "texte": "Tranche 1 de l'IRSI : règlement sans expertise et sans recours",
+        "correct": false,
+        "pourquoi_faux": "La tranche 1 s'arrête au premier seuil, très en dessous de 3 000 € HT. Elle se distingue justement par l'absence d'expertise systématique et l'abandon de recours."
+      },
+      {
+        "texte": "Hors IRSI : chaque assureur gère son assuré, expertise contradictoire",
+        "correct": false,
+        "pourquoi_faux": "On ne sort de la convention qu'au-delà du second seuil. À 3 000 € HT, un seul assureur pilote, ce qui change complètement l'interlocuteur à relancer."
+      },
+      {
+        "texte": "Cela dépend de l'assureur du syndicat, qui gère dès que l'immeuble est concerné",
+        "correct": false,
+        "pourquoi_faux": "L'assureur gestionnaire est déterminé par le local sinistré, pas par la qualité de l'immeuble. L'assureur du syndicat n'intervient comme gestionnaire que lorsque le local sinistré relève des parties communes."
+      }
+    ],
+    "explication": "Les trois régimes, par estimation des dommages par local sinistré : jusqu'à 1 600 € HT, tranche 1, l'assureur du local sinistré gère seul, sans expertise systématique et sans recours ; de 1 600 à 5 000 € HT, tranche 2, expertise pour compte commun et recours après règlement ; au-delà de 5 000 € HT, on sort de l'IRSI vers la convention dédiée à la copropriété ou le droit commun, avec expertise contradictoire.",
+    "vigilance": "Ces montants sont des seuils conventionnels révisables, en euros HT, et ils s'apprécient PAR LOCAL sinistré : trois logements touchés à 2 000 € chacun ne font pas un dossier à 6 000 €. Vérifier le seuil en vigueur avant de l'annoncer à un copropriétaire.",
+    "source": [
+      {
+        "texte": "Convention IRSI, convention inter-assureurs NON PUBLIÉE (sinistres survenus à compter du 01/06/2018, version révisée au 01/07/2020) : tranche 1 jusqu'à 1 600 € HT par local, tranche 2 de 1 601 à 5 000 € HT par local, avec expertise pour compte commun obligatoire en tranche 2. Seuils recoupés le 28/08/2026 sur des sources professionnelles concordantes, le texte conventionnel n'étant pas consultable publiquement."
+      }
+    ],
+    "verifie": "2026-08-28",
+    "peremption": "2027-07-02",
+    "statut": "valide",
+    "origine": ".agents/skills/erp-sinistres/references/matrice-urgence-sinistre.md",
+    "partage": "banque"
+  },
+  {
+    "id": "sinistres-irsi-assureur-gestionnaire",
+    "domaine": "sinistres",
+    "branche": "sinistres",
+    "niveau": 2,
+    "prerequis": [
+      "sinistres-irsi-tranches"
+    ],
+    "type": "flash",
+    "question": "Sous convention IRSI, qui est l'assureur gestionnaire, et qu'est-ce que cela change pour le gestionnaire d'immeuble ?",
+    "reponse": "L'assureur de l'occupant du local sinistré, quel que soit l'endroit d'où vient l'eau. Lorsque le local sinistré relève des parties communes, c'est l'assureur multirisque du syndicat.",
+    "explication": "La convention désigne un pilote unique pour éviter que chaque assureur missionne son propre expert sur le même dégât. Conséquence pratique : on relance un seul interlocuteur, celui du sinistré, et non l'assureur de celui d'où provient la fuite. C'est contre-intuitif, et c'est la source d'erreur la plus courante dans le suivi d'un dossier.",
+    "vigilance": "Un locataire victime déclare à sa propre assurance habitation ; le syndicat déclare de son côté à la multirisque immeuble si les parties communes sont touchées. Les deux déclarations coexistent, l'une ne dispense pas de l'autre.",
+    "source": [
+      {
+        "texte": "Convention IRSI, convention inter-assureurs non publiée (sinistres survenus à compter du 01/06/2018, version révisée au 01/07/2020), désignation de l'assureur gestionnaire par le local sinistré"
+      }
+    ],
+    "verifie": "2026-08-28",
+    "peremption": null,
+    "statut": "valide",
+    "origine": ".agents/skills/erp-sinistres/references/matrice-urgence-sinistre.md",
+    "partage": "banque"
+  },
+  {
+    "id": "sinistres-recherche-de-fuite",
+    "domaine": "sinistres",
+    "branche": "sinistres",
+    "niveau": 2,
+    "prerequis": [
+      "sinistres-irsi-assureur-gestionnaire"
+    ],
+    "type": "flash",
+    "question": "Fuite invisible : qui organise la recherche de fuite, et qu'est-ce que la garantie couvre exactement ?",
+    "reponse": "L'assureur gestionnaire l'organise. Depuis la version de la convention applicable au 1er juillet 2020, la recherche de fuite est réputée garantie sans franchise ni plafond par tout contrat couvrant le local des investigations. La remise en état des dégâts causés par les investigations est comprise ; la réparation de la cause de la fuite en est exclue.",
+    "explication": "La distinction est celle qu'il faut savoir dire au téléphone : on prend en charge le fait d'être allé chercher, et de reboucher ce qu'on a ouvert, mais pas la réparation de la canalisation ou du joint fautif, qui reste à la charge de celui qui en a la propriété ou l'entretien. Sans rapport de recherche de fuite, une fuite invisible ne s'indemnise pas : c'est la pièce qui débloque le dossier.",
+    "vigilance": "Ne rien faire réparer d'irréversible avant l'expertise, et ne rien jeter. Une remise en état spontanée fait disparaître la preuve de l'origine et bascule le dossier sur la parole du sinistré.",
+    "source": [
+      {
+        "texte": "Convention IRSI, version applicable aux sinistres survenus à compter du 01/07/2020 : la recherche de fuite est réputée garantie, sans franchise ni plafond, par tout contrat garantissant le local des investigations, quelles que soient les responsabilités engagées. Convention inter-assureurs non publiée, point recoupé le 28/08/2026 sur des sources professionnelles concordantes."
+      }
+    ],
+    "verifie": "2026-08-28",
+    "peremption": null,
+    "statut": "valide",
+    "origine": ".agents/skills/erp-sinistres/references/matrice-urgence-sinistre.md",
+    "partage": "banque"
+  },
+  {
+    "id": "sinistres-cidre-abrogee",
+    "domaine": "sinistres",
+    "branche": "sinistres",
+    "niveau": 1,
+    "type": "flash",
+    "question": "Un interlocuteur vous parle de la convention CIDRE pour un dégât des eaux récent. Que répondez-vous ?",
+    "reponse": "Qu'elle ne s'applique plus : pour les sinistres survenus à compter du 1er juin 2018, c'est la convention IRSI qui régit les rapports entre assureurs. La CIDRE ne se cite plus.",
+    "explication": "Le vocabulaire est resté longtemps dans les habitudes, y compris chez des professionnels, et il induit en erreur sur des points concrets : seuils, assureur qui pilote, existence d'un recours. Reprendre le terme exact évite de raisonner sur un mécanisme qui n'existe plus.",
+    "vigilance": "Un sinistre ancien peut légitimement relever du régime antérieur : le critère est la date de survenance du sinistre, pas la date à laquelle on en parle.",
+    "source": [
+      {
+        "texte": "Convention IRSI (applicable aux sinistres survenus à compter du 01/06/2018, en remplacement de la CIDRE)"
+      }
+    ],
+    "verifie": "2026-08-28",
+    "peremption": null,
+    "statut": "valide",
+    "origine": ".agents/skills/erp-sinistres/references/grille-telephone-dde-irsi.md",
+    "partage": "banque"
+  },
+  {
+    "id": "sinistres-priorite-par-gravite",
+    "domaine": "sinistres",
+    "branche": "sinistres",
+    "niveau": 1,
+    "type": "flash",
+    "question": "Cinq sinistres sont ouverts sur votre bureau. Dans quel ordre les traitez-vous ?",
+    "reponse": "Jamais dans l'ordre d'arrivée. Par gravité : d'abord le sinistre actif qui cause des dommages en cours à un tiers ou fait courir un risque structurel, ensuite ceux dont le délai de déclaration expire, enfin le reste.",
+    "explication": "L'ordre d'arrivée est le pire des critères parce qu'il ignore les deux seules choses qui ne se rattrapent pas : le dommage qui continue de s'aggraver pendant qu'on ne fait rien, et le délai qui se referme. Une fuite active sur une dalle prime sur un dossier déclaré la semaine précédente et déjà stabilisé.",
+    "vigilance": "Le critère de tri le plus opérationnel est le délai restant : moins de quarante-huit heures, on agit dans la journée. Ce chiffre se calcule à partir de la date de découverte notée à l'ouverture du dossier, ce qui suppose qu'elle ait été notée.",
+    "source": [
+      {
+        "texte": "Matrice de décision urgence sinistre, grille de priorité opérationnelle (méthode interne)"
+      },
+      {
+        "texte": "Loi n° 65-557 du 10 juillet 1965, art. 18 (obligation de diligence du syndic)"
+      }
+    ],
+    "verifie": "2026-08-28",
+    "peremption": null,
+    "statut": "valide",
+    "origine": ".agents/skills/erp-sinistres/references/matrice-urgence-sinistre.md",
+    "partage": "banque"
+  },
+  {
+    "id": "sinistres-mesures-conservatoires-sans-ag",
+    "domaine": "sinistres",
+    "branche": "sinistres",
+    "niveau": 2,
+    "type": "flash",
+    "question": "Fuite active non maîtrisée un dimanche, aucune assemblée n'a rien voté. Le syndic peut-il engager la dépense ?",
+    "reponse": "Oui. En cas d'urgence, le syndic fait procéder de sa propre initiative à l'exécution de tous travaux nécessaires à la sauvegarde de l'immeuble, sans attendre un vote.",
+    "explication": "Le pouvoir existe précisément parce que convoquer une assemblée prend des semaines et que l'eau ne s'arrête pas pendant ce temps. Il est borné par son objet : ce qui est nécessaire pour arrêter l'aggravation, pas la réfection complète qu'on aurait de toute façon dû faire voter. La contrepartie est la traçabilité : ce qui a été décidé, quand, sur quel constat, et l'information sans délai des instances de la copropriété.",
+    "vigilance": "Le risque électrique passe avant tout le reste : plafonnier ou tableau qui coule, on fait couper le disjoncteur général avant de poser la moindre question sur l'assurance.",
+    "source": [
+      {
+        "texte": "Art. 18 loi n° 65-557 du 10 juillet 1965 (« en cas d'urgence, de faire procéder de sa propre initiative à l'exécution de tous travaux nécessaires à la sauvegarde de l'immeuble »)",
+        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000044074302"
+      }
+    ],
+    "verifie": "2026-08-28",
+    "peremption": null,
+    "statut": "valide",
+    "origine": ".agents/skills/erp-sinistres/references/grille-telephone-dde-irsi.md",
+    "partage": "banque"
+  }
+]

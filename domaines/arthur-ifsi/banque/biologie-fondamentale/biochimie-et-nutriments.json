@@ -1,0 +1,107 @@
+[
+  {
+    "id": "bf-biochimie-ion-cation-anion",
+    "domaine": "biologie-fondamentale",
+    "branche": "biochimie-et-nutriments",
+    "niveau": 1,
+    "type": "qcm",
+    "question": "Un atome a perdu un ou plusieurs électrons. Comment l'appelle-t-on et quelle est sa charge ?",
+    "reponse": "C'est un cation, et il porte une charge positive.",
+    "choix": [
+      {
+        "texte": "Un cation, chargé positivement",
+        "correct": true
+      },
+      {
+        "texte": "Un anion, chargé négativement",
+        "correct": false,
+        "pourquoi_faux": "C'est le cas inverse : l'anion a GAGNÉ un ou plusieurs électrons, et les électrons étant chargés négativement, il porte une charge négative. L'inversion des deux termes est l'erreur la plus fréquente du chapitre."
+      },
+      {
+        "texte": "Un cation, chargé négativement",
+        "correct": false,
+        "pourquoi_faux": "Le nom est bon, la charge ne l'est pas. Le raisonnement tient en une ligne : perdre des charges négatives rend l'ensemble positif."
+      },
+      {
+        "texte": "Un isotope, électriquement neutre",
+        "correct": false,
+        "pourquoi_faux": "Un ion se définit par un déséquilibre de charge dû aux électrons. Un atome resté électriquement neutre n'est pas un ion, quel que soit son noyau."
+      }
+    ],
+    "explication": "Le noyau réunit les protons, chargés positivement, et les neutrons, électriquement neutres ; les électrons, chargés négativement, gravitent autour. Une couche électronique incomplète pousse l'élément à gagner ou à perdre des électrons, et l'atome devient alors un ion. Les principaux ions cités par le cours dans l'organisme sont le sodium, le potassium, le calcium et le magnésium du côté des cations, le chlorure et le phosphate du côté des anions.",
+    "vigilance": "Ne pas confondre avec le classement des liaisons, abordé au même endroit : les liaisons covalentes et ioniques sont des liaisons fortes, la liaison hydrogène est une liaison faible.",
+    "source": [
+      {
+        "texte": "IFSI S1, UE2.1 Fiche 015 — support de cours, transcription locale"
+      }
+    ],
+    "verifie": "2026-08-29",
+    "peremption": null,
+    "statut": "brouillon",
+    "origine": "usine à domaine, 1re fabrication (29/08/2026)",
+    "partage": "interne"
+  },
+  {
+    "id": "bf-biochimie-eau-repartition",
+    "domaine": "biologie-fondamentale",
+    "branche": "biochimie-et-nutriments",
+    "niveau": 1,
+    "type": "flash",
+    "question": "Quelle part de la masse corporelle d'un adulte l'eau représente-t-elle, et comment se répartit-elle entre les compartiments ?",
+    "reponse": "Environ 60 % de la masse corporelle, dont à peu près 40 % en liquide intracellulaire et 20 % en liquide extracellulaire.",
+    "explication": "L'eau est la molécule la plus abondante du corps humain et le cours lui attribue plusieurs rôles : solvant, participation aux réactions d'hydrolyse, transport des molécules, amortissement, hydratation des cellules. Les entrées viennent des boissons, des aliments et du métabolisme lui-même ; les sorties se font par les urines, la sudation et la respiration. Cette double liste d'entrées et de sorties est la base de tout raisonnement sur un bilan hydrique.",
+    "vigilance": "Les deux tiers de l'eau se trouvent DANS les cellules : c'est le compartiment intracellulaire qui domine, et l'inverser fausse la lecture de toute déshydratation. Les proportions sont par ailleurs des ordres de grandeur, variables selon l'âge et la composition corporelle.",
+    "source": [
+      {
+        "texte": "IFSI S1, UE2.1 Fiche 016 — support de cours, transcription locale"
+      }
+    ],
+    "verifie": "2026-08-29",
+    "peremption": null,
+    "statut": "brouillon",
+    "origine": "usine à domaine, 1re fabrication (29/08/2026)",
+    "partage": "interne"
+  },
+  {
+    "id": "bf-biochimie-glucides-simples-et-complexes",
+    "domaine": "biologie-fondamentale",
+    "branche": "biochimie-et-nutriments",
+    "niveau": 2,
+    "type": "qcm",
+    "question": "Pourquoi les oses sont-ils qualifiés de sucres rapides, à la différence des polyholosides ?",
+    "reponse": "Parce qu'ils sont absorbés sans digestion préalable, alors que les polyholosides doivent d'abord être hydrolysés.",
+    "choix": [
+      {
+        "texte": "Parce qu'ils sont absorbés sans avoir besoin d'être digérés",
+        "correct": true
+      },
+      {
+        "texte": "Parce qu'ils apportent plus d'énergie par gramme",
+        "correct": false,
+        "pourquoi_faux": "La vitesse n'est pas une quantité. « Rapide » qualifie le délai avant que le sucre soit disponible dans le sang, pas la quantité d'énergie libérée."
+      },
+      {
+        "texte": "Parce qu'ils sont hydrophiles et hydrosolubles",
+        "correct": false,
+        "pourquoi_faux": "Les oses sont effectivement hydrophiles et hydrosolubles, mais ce n'est pas le motif retenu : c'est l'absence d'étape de digestion qui fait la rapidité, la solubilité n'en étant qu'une propriété parmi d'autres."
+      },
+      {
+        "texte": "Parce qu'ils sont formés de deux unités reliées par une liaison osidique",
+        "correct": false,
+        "pourquoi_faux": "Cette description est celle des diholosides, pas des oses. L'ose est au contraire la plus petite structure glucidique, celle qu'on ne peut plus scinder."
+      }
+    ],
+    "explication": "Les glucides sont bâtis sur du carbone, de l'oxygène et de l'hydrogène, et le cours les classe par taille croissante : l'ose, unité de base et principal substrat énergétique des cellules ; le diholoside, deux oses reliés par une liaison osidique ; le polyholoside, longue association d'oses. La digestion consiste à casser ces liaisons, ce qui explique le décalage dans le temps entre un sucre simple et un sucre complexe.",
+    "vigilance": "La cellulose est un polyholoside que l'être humain ne digère pas. Elle n'apporte donc pas d'énergie et constitue l'essentiel des fibres alimentaires utiles au transit : c'est le contre-exemple qui montre qu'un glucide complexe n'est pas forcément un sucre lent assimilable.",
+    "source": [
+      {
+        "texte": "IFSI S1, UE2.1 Fiche 018 — support de cours, transcription locale"
+      }
+    ],
+    "verifie": "2026-08-29",
+    "peremption": null,
+    "statut": "brouillon",
+    "origine": "usine à domaine, 1re fabrication (29/08/2026)",
+    "partage": "interne"
+  }
+]

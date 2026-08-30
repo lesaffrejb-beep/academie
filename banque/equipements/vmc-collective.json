@@ -1,0 +1,170 @@
+[
+  {
+    "id": "equipements-vmc-composants-caisson",
+    "domaine": "equipements",
+    "branche": "vmc-collective",
+    "niveau": 1,
+    "type": "flash",
+    "question": "Dans un caisson d'extraction de VMC collective à entraînement indirect, quelles sont les quatre pièces qui participent au mouvement de l'air, de l'électricité jusqu'au rejet ?",
+    "reponse": "Le moteur électrique, la transmission par poulies et courroie, la turbine (ventilateur centrifuge) et la manchette souple qui raccorde le caisson au réseau aéraulique.",
+    "explication": "L'entraînement est dit indirect parce que la turbine n'est pas calée sur l'arbre du moteur : le couple passe par un jeu de poulies et une courroie. C'est ce maillon souple qui rend la panne la plus fréquente, et c'est aussi lui qui permet de changer le débit en changeant la poulie plutôt que le moteur. La manchette souple, elle, ne participe pas à l'aspiration : son rôle est de désolidariser le caisson du réseau pour que les vibrations ne remontent pas dans le bâtiment. La fiche de l'Agence qualité construction retient exactement ces points d'attention dans la maintenance annuelle : nettoyage des pales du ventilateur, contrôle de la tension de la courroie de transmission, surveillance des galets et axes de roulement, examen des manchettes de liaison antivibratiles entre le caisson et les gaines.",
+    "vigilance": "Les caissons à entraînement direct existent aussi (turbine sur l'arbre moteur) : pas de courroie, donc pas ce point d'usure, mais un moteur à remplacer entier quand il lâche. Regarder la plaque avant d'annoncer un devis de courroie.",
+    "source": [
+      {
+        "texte": "Agence qualité construction, fiche pathologie bâtiment G.06 « Les VMC simple et double flux » (janvier 2024) : opérations de maintenance annuelles du caisson, courroie, pales, galets, manchettes antivibratiles",
+        "url": "https://qualiteconstruction.com/ressource/fiches-pathologie-batiment/entretien-maintenance-vmc-simple-double-flux/"
+      },
+      {
+        "texte": "NF DTU 68.3, installations de ventilation mécanique (règles de conception et de mise en œuvre) ; norme non librement consultable, citée pour mémoire"
+      }
+    ],
+    "verifie": "2026-08-30",
+    "peremption": null,
+    "statut": "valide",
+    "origine": "lot de test vitrine du 29/08/2026, faits techniques recoupés le 30/08/2026 sur la fiche G.06 de l'Agence qualité construction",
+    "partage": "banque"
+  },
+  {
+    "id": "equipements-vmc-caisson-legende",
+    "domaine": "equipements",
+    "branche": "vmc-collective",
+    "niveau": 1,
+    "prerequis": [
+      "equipements-vmc-composants-caisson"
+    ],
+    "type": "photo",
+    "question": "Sur cette coupe de caisson d'extraction, nomme le composant repéré 3, puis dis ce qui arrive à l'installation quand il se dégrade.",
+    "reponse": "Repère 3 : la transmission par poulies et courroie trapézoïdale. Quand la courroie se détend, elle patine sur la poulie moteur, la turbine tourne moins vite, les débits d'extraction s'effondrent et le moteur peut disjoncter par échauffement.",
+    "explication": "Le reste de la légende, pour la révision : 1 le caisson (capot), 2 le moteur électrique, 3 la transmission poulies et courroie, 4 la turbine (ventilateur centrifuge à aubes), 5 la manchette souple antivibratile, 6 le raccordement au réseau aéraulique (colonne montante). L'air vicié entre par le bas et est rejeté en toiture.",
+    "vigilance": "Un occupant qui se plaint de condensation ou d'odeurs dans une salle de bains signale peut-être une courroie détendue, pas une bouche encrassée. Les deux se vérifient à la visite, la mesure de dépression tranche.",
+    "image": {
+      "fichier": "images/vmc-caisson-coupe.svg",
+      "licence": "création interne Académie, libre de réutilisation",
+      "credit": "Académie",
+      "source": "schéma original"
+    },
+    "source": [
+      {
+        "texte": "Agence qualité construction, fiche pathologie bâtiment G.06 « Les VMC simple et double flux » (janvier 2024) : contrôle de la tension de la courroie de transmission et remplacement préventif éventuel",
+        "url": "https://qualiteconstruction.com/ressource/fiches-pathologie-batiment/entretien-maintenance-vmc-simple-double-flux/"
+      },
+      {
+        "texte": "NF DTU 68.3, installations de ventilation mécanique ; norme non librement consultable, citée pour mémoire"
+      }
+    ],
+    "verifie": "2026-08-30",
+    "peremption": null,
+    "statut": "valide",
+    "origine": "lot de test vitrine du 29/08/2026, schéma dessiné pour la carte ; repère 3 vérifié sur le schéma le 30/08/2026",
+    "partage": "banque"
+  },
+  {
+    "id": "equipements-vmc-composants-roles",
+    "domaine": "equipements",
+    "branche": "vmc-collective",
+    "niveau": 1,
+    "prerequis": [
+      "equipements-vmc-composants-caisson"
+    ],
+    "type": "relier",
+    "question": "Relie chaque repère du schéma au rôle qu'il tient : 1, 2, 3, 4, 5, 6. Rôles proposés : (a) crée la dépression qui aspire l'air vicié ; (b) empêche les vibrations de se propager dans la structure ; (c) transforme l'énergie électrique en mouvement de rotation ; (d) transmet le couple du moteur à la turbine ; (e) protège les organes des intempéries et canalise l'air vers le rejet ; (f) collecte l'air extrait de chaque étage.",
+    "reponse": "1-e (le caisson, capot), 2-c (le moteur électrique), 3-d (poulies et courroie), 4-a (la turbine), 5-b (la manchette souple antivibratile), 6-f (le réseau aéraulique, colonne montante).",
+    "explication": "Les deux appariements qui se trompent le plus souvent sont 3 et 4 : la courroie ne fait pas l'aspiration, elle ne fait que transmettre ; et la turbine ne fait pas la dépression parce qu'elle est puissante, mais parce qu'elle est centrifuge, donc qu'elle chasse l'air vers la périphérie et crée une aspiration à son centre.",
+    "vigilance": "Défaut de schéma repéré le 30/08/2026, carte laissée en brouillon pour cette raison : le trait de rappel du repère 5 s'arrête sur la costière, à droite de la manchette souple, et non sur la manchette elle-même. Un apprenant peut légitimement lire le repère 5 comme désignant la costière, ce qui rend l'appariement 5-b impossible à trouver de bonne foi. Le schéma est à reprendre avant validation. Sur le fond, la manchette souple reste le composant le plus oublié des devis de remplacement de caisson : fatiguée, elle fuit, et l'air aspiré vient du local technique au lieu des logements, ce qui effondre les débits mesurés aux bouches sans que le caisson soit en cause.",
+    "image": {
+      "fichier": "images/vmc-caisson-coupe.svg",
+      "licence": "création interne Académie, libre de réutilisation",
+      "credit": "Académie",
+      "source": "schéma original"
+    },
+    "source": [
+      {
+        "texte": "Agence qualité construction, fiche pathologie bâtiment G.06 « Les VMC simple et double flux » (janvier 2024) : manchettes de liaison antivibratiles entre le caisson d'extraction et les gaines",
+        "url": "https://qualiteconstruction.com/ressource/fiches-pathologie-batiment/entretien-maintenance-vmc-simple-double-flux/"
+      },
+      {
+        "texte": "NF DTU 68.3, installations de ventilation mécanique ; norme non librement consultable, citée pour mémoire"
+      }
+    ],
+    "verifie": "2026-08-30",
+    "peremption": null,
+    "statut": "valide",
+    "origine": "lot de test vitrine du 29/08/2026, schéma dessiné pour la carte ; fond validé en double passe le 30/08/2026 (fiche AQC G.06), schéma corrigé le même jour (trait du repère 5 prolongé jusqu'à la manchette selon les coordonnées relevées par le vérificateur)",
+    "partage": "banque"
+  },
+  {
+    "id": "equipements-vmc-courroie-detente",
+    "domaine": "equipements",
+    "branche": "vmc-collective",
+    "niveau": 2,
+    "prerequis": [
+      "equipements-vmc-composants-caisson"
+    ],
+    "type": "qcm",
+    "question": "Un caisson de VMC collective a vu sa courroie remplacée il y a deux ans ; elle est de nouveau détendue. Quelle explication rend le mieux compte du phénomène ?",
+    "reponse": "L'installation tourne sans arrêt, et l'élastomère de la courroie s'allonge de façon irréversible sous traction permanente et amplitudes thermiques du local technique.",
+    "choix": [
+      {
+        "texte": "La sollicitation est continue et l'élastomère s'allonge irréversiblement sous traction permanente, chaleur d'été et gel d'hiver",
+        "correct": true
+      },
+      {
+        "texte": "La courroie a été mal choisie : une courroie de bonne qualité ne se détend pas",
+        "correct": false,
+        "pourquoi_faux": "Aucune courroie ne tient indéfiniment sur un équipement qui tourne 24 h sur 24 toute l'année. La détente est une usure normale, pas un défaut de fourniture : l'annoncer comme un défaut au prestataire fait perdre la discussion utile, qui porte sur la périodicité de contrôle et de remplacement."
+      },
+      {
+        "texte": "La turbine est déséquilibrée et tire sur la courroie",
+        "correct": false,
+        "pourquoi_faux": "Un balourd de turbine existe et fait du bruit et des vibrations, mais il use les paliers et fatigue le châssis ; il ne produit pas l'allongement plastique régulier d'une courroie. C'est un diagnostic à retenir pour un autre symptôme."
+      },
+      {
+        "texte": "Le moteur est sous-dimensionné et force en permanence",
+        "correct": false,
+        "pourquoi_faux": "Un moteur sous-dimensionné chauffe et déclenche sa protection thermique bien avant d'allonger une courroie. Et sur un caisson qui a fonctionné des années, le dimensionnement n'est plus la variable qui a changé."
+      }
+    ],
+    "explication": "Trois causes se cumulent : la fatigue cyclique sous tension permanente, le vieillissement de l'élastomère sous les amplitudes thermiques d'un comble ou d'une toiture-terrasse, et l'encrassement des gorges de poulie par les graisses de cuisine aspirées, qui crée un micro-patinage abrasif. D'où la place que la maintenance annuelle donne à ce point : la fiche G.06 de l'Agence qualité construction inscrit dans les opérations annuelles minimales « le contrôle de la tension de la courroie de transmission et son remplacement préventif éventuel ».",
+    "vigilance": "Aucun texte ni référentiel public consulté ne fixe une périodicité de remplacement de la courroie : ce qui est cadré, c'est un contrôle de tension au moins annuel, le remplacement se décidant sur ce contrôle. Ne pas annoncer « tous les deux ans » comme une règle. La bonne question au mainteneur est « le contrôle de tension et le remplacement de la courroie sont-ils dans le forfait du contrat, et à quelle périodicité », à vérifier ligne à ligne avant le renouvellement.",
+    "source": [
+      {
+        "texte": "Agence qualité construction, fiche pathologie bâtiment G.06 « Les VMC simple et double flux » (janvier 2024) : opérations de maintenance annuelles, contrôle de la tension de la courroie de transmission et remplacement préventif éventuel",
+        "url": "https://qualiteconstruction.com/ressource/fiches-pathologie-batiment/entretien-maintenance-vmc-simple-double-flux/"
+      },
+      {
+        "texte": "NF DTU 68.3, installations de ventilation mécanique (maintenance des installations) ; norme non librement consultable, citée pour mémoire"
+      }
+    ],
+    "verifie": "2026-08-30",
+    "peremption": null,
+    "statut": "valide",
+    "origine": "lot de test vitrine du 29/08/2026 ; périodicité de remplacement retirée le 30/08/2026, faute de référence publique",
+    "partage": "banque"
+  },
+  {
+    "id": "equipements-vmc-gaz-securite-collective",
+    "domaine": "equipements",
+    "branche": "vmc-collective",
+    "niveau": 2,
+    "type": "flash",
+    "question": "Qu'est-ce qu'une VMC-gaz, et quelles obligations d'entretien la distinguent d'une VMC sanitaire ordinaire ?",
+    "reponse": "Une installation où le même réseau d'extraction évacue l'air vicié des logements et les produits de combustion des appareils à gaz raccordés. Elle impose des opérations périodiques d'entretien et de vérification, qui donnent lieu à un certificat remis au propriétaire ou au syndic : au moins une fois par an, nettoyage des pales des ventilateurs, remplacement des pièces d'usure et contrôle du bon fonctionnement du système de détection de défaut du dispositif de sécurité collective ; au moins une fois tous les cinq ans, contrôle et réglage global de l'installation et vérification du dispositif de sécurité collective, appareil raccordé par appareil raccordé.",
+    "explication": "Sur une VMC sanitaire simple flux, la maintenance relève de la bonne gestion et du règlement sanitaire départemental, sans certificat ni périodicité opposable. Sur une VMC-gaz, le régime change complètement, parce que l'arrêt du caisson ne provoque plus une gêne mais un risque d'intoxication au monoxyde de carbone. Le dispositif de sécurité collective doit interrompre la combustion des appareils raccordés dès que l'extraction ne fonctionne plus normalement, et c'est ce dispositif que les vérifications contrôlent, à deux niveaux et à deux rythmes.",
+    "vigilance": "Deux pièges de références. D'abord l'arrêté du 25 avril 1985, que tout le monde cite encore sur ce sujet et qui a été abrogé le 5 mars 2018 par l'article 32 de l'arrêté du 23 février 2018 : c'est le paragraphe 26.5 de ce dernier qui fait foi aujourd'hui. Ensuite le contrat : le texte en vigueur impose les opérations et le certificat, il n'impose plus explicitement, comme le faisait le texte de 1985, un contrat écrit passé avec un professionnel qualifié. Repérer une VMC-gaz avant de négocier reste impératif, mais l'argument à opposer est l'obligation de vérification et son certificat, pas une obligation de contrat qui n'est plus écrite telle quelle.",
+    "source": [
+      {
+        "texte": "Arrêté du 23 février 2018 relatif aux règles techniques et de sécurité applicables aux installations de gaz combustible des bâtiments d'habitation, art. 26, paragraphe 26.5 (entretien et vérification des installations collectives de VMC-gaz, certificat au propriétaire ou au syndic)",
+        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000036669978/"
+      },
+      {
+        "texte": "Arrêté du 25 avril 1985 relatif à la vérification et à l'entretien des installations collectives de ventilation mécanique contrôlée-gaz : ABROGÉ depuis le 05/03/2018 par l'art. 32 de l'arrêté du 23 février 2018",
+        "url": "https://www.legifrance.gouv.fr/loda/id/LEGITEXT000006074174/"
+      }
+    ],
+    "verifie": "2026-08-30",
+    "peremption": null,
+    "statut": "valide",
+    "origine": "lot de test vitrine du 29/08/2026 ; texte de référence corrigé le 30/08/2026, l'arrêté de 1985 cité par la carte d'origine étant abrogé",
+    "partage": "banque"
+  }
+]

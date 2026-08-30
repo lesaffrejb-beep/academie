@@ -1,0 +1,7 @@
+# Les sources du joueur (PDF, cours, annales, captures) ne sont ni
+# versionnées ni poussées : elles ne quittent jamais sa machine
+# (SPEC-PRODUIT §2, invariant 1). Seul l'inventaire, qui ne contient
+# que des verdicts, est suivi par git.
+*
+!.gitignore
+!INVENTAIRE.md

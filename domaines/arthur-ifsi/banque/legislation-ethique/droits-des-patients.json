@@ -1,0 +1,209 @@
+[
+  {
+    "id": "le-droits-loi-4-mars-2002",
+    "domaine": "legislation-ethique",
+    "branche": "droits-des-patients",
+    "niveau": 1,
+    "type": "qcm",
+    "question": "Quelle loi, dite loi Kouchner, porte sur les droits des malades et la qualité du système de santé ?",
+    "reponse": "La loi du 4 mars 2002.",
+    "choix": [
+      {
+        "texte": "La loi du 4 mars 2002",
+        "correct": true
+      },
+      {
+        "texte": "La loi du 22 avril 2005",
+        "correct": false,
+        "pourquoi_faux": "Elle porte sur les droits des malades et la fin de vie. Le début de l'intitulé est le même, ce qui la rend confondable, mais son objet est la fin de vie et non l'ensemble du système de santé."
+      },
+      {
+        "texte": "La loi du 2 février 2016",
+        "correct": false,
+        "pourquoi_faux": "Elle crée de nouveaux droits en faveur des malades et des personnes en fin de vie. Elle vient après la loi de 2005 sur le même terrain, et ne remplace pas le texte fondateur de 2002."
+      },
+      {
+        "texte": "La loi du 31 décembre 1970",
+        "correct": false,
+        "pourquoi_faux": "Elle pose le libre choix du médecin et de l'établissement de santé. C'est un texte plus ancien et beaucoup plus étroit, antérieur à la construction d'ensemble des droits des usagers."
+      }
+    ],
+    "explication": "La loi du 4 mars 2002 est le texte de référence de ce chapitre : elle énonce les grands principes de la prise en charge, parmi lesquels le respect de la dignité, la non-discrimination, le consentement aux soins et l'exercice du culte. Elle porte aussi deux dispositifs très souvent interrogés, la personne de confiance et les modalités d'accès au dossier. Les autres textes du chapitre s'organisent autour d'elle, avant ou après.",
+    "vigilance": "Les dates de ce chapitre se retiennent par paires objet / année. Quatre textes de la liste portent sur les droits des malades sans avoir le même objet ; réciter les années sans leur objet ne sert à rien.",
+    "source": [
+      {
+        "texte": "IFSI S1, UE1.3 Fiche 011 — support de cours, transcription locale"
+      }
+    ],
+    "verifie": "2026-08-29",
+    "peremption": null,
+    "statut": "brouillon",
+    "origine": "usine à domaine, 1re fabrication (29/08/2026)",
+    "partage": "interne"
+  },
+  {
+    "id": "le-droits-information-trois-limites",
+    "domaine": "legislation-ethique",
+    "branche": "droits-des-patients",
+    "niveau": 2,
+    "prerequis": [
+      "le-droits-loi-4-mars-2002"
+    ],
+    "type": "qcm",
+    "question": "Le droit du patient à être informé connaît trois limites. Laquelle de ces propositions n'en est PAS une ?",
+    "reponse": "Le fait que le pronostic soit grave n'est pas une limite au droit d'être informé.",
+    "choix": [
+      {
+        "texte": "Le pronostic est grave et le professionnel juge l'information trop lourde à recevoir",
+        "correct": true
+      },
+      {
+        "texte": "Le patient refuse d'être informé, hors pathologie transmissible",
+        "correct": false,
+        "pourquoi_faux": "C'est bien l'une des trois limites. La réserve compte autant que la règle : le refus d'être informé ne tient plus lorsque la pathologie est transmissible, car des tiers sont alors exposés."
+      },
+      {
+        "texte": "L'urgence",
+        "correct": false,
+        "pourquoi_faux": "C'est la deuxième limite reconnue. Elle est bornée à la durée de l'urgence : l'information est différée, elle n'est pas supprimée."
+      },
+      {
+        "texte": "L'impossibilité d'informer",
+        "correct": false,
+        "pourquoi_faux": "C'est la troisième limite. Elle vise une impossibilité de fait, par exemple un patient hors d'état de recevoir l'information, et non une appréciation d'opportunité par le soignant."
+      }
+    ],
+    "explication": "Toute personne a le droit d'être informée sur son état de santé, et tous les professionnels ont l'obligation correspondante d'informer, dans le cadre de leurs fonctions et de leurs compétences. L'information doit être claire et loyale, parce qu'elle est la condition d'une décision éclairée : sans elle, le consentement recueilli n'a pas de valeur. Les trois limites sont donc étroites et se justifient par des faits, jamais par le confort du soignant.",
+    "vigilance": "L'énoncé retenu comme correct ici décrit une pratique ancienne, longtemps admise et aujourd'hui écartée. C'est le distracteur type de ce chapitre : il paraît bienveillant et il est faux.",
+    "source": [
+      {
+        "texte": "IFSI S1, UE1.3 Fiche 011 — support de cours, transcription locale"
+      }
+    ],
+    "verifie": "2026-08-29",
+    "peremption": null,
+    "statut": "brouillon",
+    "origine": "usine à domaine, 1re fabrication (29/08/2026)",
+    "partage": "interne"
+  },
+  {
+    "id": "le-droits-personne-de-confiance",
+    "domaine": "legislation-ethique",
+    "branche": "droits-des-patients",
+    "niveau": 2,
+    "prerequis": [
+      "le-droits-loi-4-mars-2002"
+    ],
+    "type": "flash",
+    "question": "À quoi sert la personne de confiance, et à quelles conditions se désigne-t-elle ?",
+    "reponse": "Elle assiste le patient dans ses démarches médicales et elle est consultée lorsqu'il n'est plus en état d'exprimer sa volonté. Le patient doit être majeur et non placé sous tutelle ; la désignation se fait par écrit, elle est révocable à tout moment, et la personne désignée doit accepter cette fonction. Un parent, un proche ou le médecin traitant peuvent être désignés.",
+    "explication": "Le dispositif est proposé à l'admission, mais il n'est pas obligatoire : le patient peut ne désigner personne. Sa logique tient en deux temps. Tant que le patient s'exprime, la personne de confiance l'accompagne sans se substituer à lui. Quand il ne s'exprime plus, elle est consultée pour éclairer les décisions, ce qui suppose évidemment qu'elle ait été choisie avant.",
+    "vigilance": "Elle est consultée, elle ne décide pas à la place du patient. C'est la nuance qui distingue la personne de confiance d'un représentant légal.",
+    "source": [
+      {
+        "texte": "IFSI S1, UE1.3 Fiche 011 — support de cours, transcription locale"
+      }
+    ],
+    "verifie": "2026-08-29",
+    "peremption": null,
+    "statut": "brouillon",
+    "origine": "usine à domaine, 1re fabrication (29/08/2026)",
+    "partage": "interne"
+  },
+  {
+    "id": "le-droits-acces-au-dossier",
+    "domaine": "legislation-ethique",
+    "branche": "droits-des-patients",
+    "niveau": 3,
+    "prerequis": [
+      "le-droits-loi-4-mars-2002"
+    ],
+    "type": "flash",
+    "question": "Selon quelles modalités et dans quels délais un patient accède-t-il à son dossier de soins ?",
+    "reponse": "L'accès est direct, après demande écrite, ou indirect par l'intermédiaire du médecin traitant. La consultation sur place est gratuite, la copie du dossier est payante. Le délai court de 48 heures à 8 jours après réception de la demande, et passe à deux mois lorsque les informations médicales datent de plus de cinq ans.",
+    "explication": "Les deux bornes du délai ne jouent pas le même rôle. Les 48 heures sont un délai minimal, ménagé pour que la demande soit examinée et accompagnée ; les 8 jours sont le délai maximal ordinaire. L'allongement à deux mois pour les informations anciennes tient à leur archivage, pas à un droit d'accès moindre.",
+    "vigilance": "Ces délais et la gratuité de la consultation sur place sont à revérifier sur le texte publié avant toute épreuve : ce sont les chiffres les plus souvent réformés du chapitre, et la transcription locale ne permet pas de contrôler la version en vigueur.",
+    "source": [
+      {
+        "texte": "IFSI S1, UE1.3 Fiche 011 — support de cours, transcription locale"
+      }
+    ],
+    "verifie": "2026-08-29",
+    "peremption": "2027-08-29",
+    "statut": "brouillon",
+    "origine": "usine à domaine, 1re fabrication (29/08/2026)",
+    "partage": "interne"
+  },
+  {
+    "id": "le-droits-charte-personne-hospitalisee",
+    "domaine": "legislation-ethique",
+    "branche": "droits-des-patients",
+    "niveau": 1,
+    "type": "flash",
+    "question": "Qu'est-ce que la charte de la personne hospitalisée, de quel texte procède-t-elle et combien de principes généraux comporte-t-elle ?",
+    "reponse": "C'est l'actualisation de la charte du patient hospitalisé de 1995, rendue nécessaire par l'évolution des textes. Elle procède de la circulaire du 2 mars 2006 relative aux droits des personnes hospitalisées, et comporte onze principes généraux.",
+    "explication": "La charte n'ajoute pas de droits : elle rassemble en une page lisible ce que les lois ont établi ailleurs, du libre choix de l'établissement au consentement libre et éclairé, du respect de la vie privée à l'accès direct aux informations de santé, jusqu'à la possibilité de quitter l'établissement à tout moment et d'exprimer ses observations. Sa fonction est l'accessibilité, ce que confirment ses modalités de diffusion : version intégrale en français, en anglais et en braille, obtenue gratuitement sur simple demande auprès des services d'accueil de tout établissement de santé.",
+    "vigilance": "C'est une circulaire, pas une loi. Elle n'a donc pas la même portée juridique que la loi du 4 mars 2002 dont elle relaie le contenu, distinction régulièrement testée.",
+    "source": [
+      {
+        "texte": "IFSI S1, UE1.3 Fiche 014 — support de cours, transcription locale"
+      }
+    ],
+    "verifie": "2026-08-29",
+    "peremption": null,
+    "statut": "brouillon",
+    "origine": "usine à domaine, 1re fabrication (29/08/2026)",
+    "partage": "interne"
+  },
+  {
+    "id": "le-droits-libre-refus-d-etre-informe",
+    "domaine": "legislation-ethique",
+    "branche": "droits-des-patients",
+    "niveau": 3,
+    "prerequis": [
+      "le-droits-information-trois-limites"
+    ],
+    "type": "libre",
+    "question": "Une patiente te dit, avant une consultation d'annonce : « je ne veux rien savoir, ne me dites rien ». Rédige en cinq lignes ce que tu fais, ce que tu ne fais pas, et sur quoi tu t'appuies.",
+    "reponse": "Éléments attendus dans la correction : (1) le refus d'être informé est l'une des trois limites reconnues au droit à l'information : il se respecte, il ne se contourne pas au motif que l'information serait « pour son bien » ; (2) il se trace et se transmet à l'équipe, faute de quoi le prochain soignant l'ignorera et la volonté exprimée n'aura servi à rien ; (3) il ne tient pas si la pathologie est transmissible, parce que des tiers sont alors exposés ; (4) il n'emporte pas renonciation au consentement : aucun acte ni traitement ne peut être pratiqué sans consentement libre et éclairé, donc il faut délivrer au minimum ce qui est nécessaire à la décision sur l'acte proposé, et le dire à la patiente ; (5) le refus est réversible : on laisse la porte ouverte, on propose la désignation d'une personne de confiance, qui sera consultée si la patiente n'est plus en état de s'exprimer. Est acceptée toute réponse qui respecte le refus, cite la réserve de la pathologie transmissible et maintient l'exigence de consentement ; est refusée une réponse qui informe quand même, ou qui conclut du refus d'information à un blanc-seing pour agir.",
+    "explication": "La difficulté de la situation vient de ce que deux droits se croisent sans se confondre : le droit d'être informé, dont le patient peut ne pas vouloir, et l'exigence de consentement, dont personne ne peut le dispenser. Confondre les deux mène soit à passer outre le refus, soit à opérer sans accord ; les tenir séparés donne la conduite à suivre.",
+    "vigilance": "« Ne rien dire » n'est pas « ne rien noter ». Un refus d'information non écrit dans le dossier disparaît au premier changement d'équipe.",
+    "source": [
+      {
+        "texte": "IFSI S1, UE1.3 Fiche 011 — support de cours, transcription locale"
+      }
+    ],
+    "verifie": "2026-08-29",
+    "peremption": null,
+    "statut": "brouillon",
+    "origine": "usine à domaine, complément de types libre et rôle (29/08/2026)",
+    "partage": "interne"
+  },
+  {
+    "id": "le-droits-role-refus-de-soin",
+    "domaine": "legislation-ethique",
+    "branche": "droits-des-patients",
+    "niveau": 3,
+    "prerequis": [
+      "le-droits-loi-4-mars-2002"
+    ],
+    "type": "role",
+    "question": "Mise en situation, à lancer dans une conversation dédiée. Prompt à copier : « Tu es un patient de 62 ans, hospitalisé, lucide et parfaitement orienté. Tu refuses le traitement qu'on te propose et tu annonces que tu quittes l'établissement aujourd'hui. Tu donnes d'abord une raison de façade — tu as du travail, tu en as assez — et tu ne dis la vraie raison que si on te la demande vraiment : tu as vu ton père mourir après le même traitement. Tu es courtois mais ferme, et tu ne changes pas d'avis au premier argument. Je suis l'étudiant infirmier. » Objectif : que le refus soit un refus éclairé, tracé, et que la porte reste ouverte.",
+    "reponse": "Ce qu'un bon soignant fait : (1) vérifie d'abord que l'information a bien été délivrée, parce qu'un refus mal informé n'est pas encore un refus éclairé ; (2) cherche la raison du refus au lieu de la supposer, en laissant le silence faire son travail : peur, douleur, expérience passée, contrainte familiale, incompréhension ; (3) ne passe pas outre : aucun acte ni traitement sans consentement libre et éclairé, et ce consentement peut être retiré à tout moment ; (4) ne se réfugie pas non plus dans l'inverse, laisser partir sans rien dire : il réitère l'information sur les conséquences, propose un délai, une alternative, un second avis médical ; (5) alerte le médecin, qui reste responsable de l'information médicale et de la décision de sortie ; (6) trace le refus et l'information délivrée dans le dossier, et le transmet à l'équipe ; (7) referme en disant explicitement que la décision reste révocable et que le retour est possible.",
+    "explication": "Les deux erreurs symétriques sont faciles à repérer une fois nommées. Forcer le soin nie le consentement ; se contenter d'un « c'est votre droit » abandonne le patient au moment où l'information et le lien comptent le plus. La conduite juste consiste à respecter le droit sans renoncer à la relation, ce qui suppose de chercher la raison réelle avant de conclure.",
+    "vigilance": "La situation change complètement si le patient n'est plus en état d'exprimer sa volonté : on consulte alors la personne de confiance, qui éclaire la décision mais ne décide pas à sa place. Ne pas transposer la conduite d'un cas à l'autre.",
+    "source": [
+      {
+        "texte": "IFSI S1, UE1.3 Fiche 011 — support de cours, transcription locale"
+      },
+      {
+        "texte": "IFSI S1, UE1.3 Fiche 014 — support de cours, transcription locale (possibilité de quitter l'établissement)"
+      }
+    ],
+    "verifie": "2026-08-29",
+    "peremption": null,
+    "statut": "brouillon",
+    "origine": "usine à domaine, complément de types libre et rôle (29/08/2026)",
+    "partage": "interne"
+  }
+]

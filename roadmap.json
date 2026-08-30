@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "project": "academie",
+  "items": [
+    {
+      "id": "ACA-PORT-1",
+      "outcome": "Le moteur, la banque et les tests fonctionnent sans ERP.",
+      "status": "running",
+      "mode": "agent-review",
+      "risk": "medium",
+      "priority": 100,
+      "depends_on": [],
+      "budget": {"max_units": 1},
+      "proof": "Tests, build et contrôle anti-fuite verts dans un clone autonome.",
+      "parent_milestone": "GIV-ACADEMIE-AUTONOME"
+    },
+    {
+      "id": "ACA-UI-1",
+      "outcome": "L'interface de jeu vit dans Académie et consomme uniquement son artefact publié.",
+      "status": "blocked",
+      "mode": "agent-review",
+      "risk": "medium",
+      "priority": 80,
+      "depends_on": ["ACA-PORT-1"],
+      "budget": {"max_units": 1},
+      "proof": "Build du client autonome et absence d'import ERP.",
+      "parent_milestone": "GIV-ACADEMIE-AUTONOME"
+    },
+    {
+      "id": "ACA-ERP-1",
+      "outcome": "Le canal ERP vers Académie refuse toute donnée non anonymisée ou non validée.",
+      "status": "blocked",
+      "mode": "agent-review",
+      "risk": "high",
+      "priority": 90,
+      "depends_on": ["ACA-PORT-1"],
+      "budget": {"max_units": 1},
+      "proof": "Tests anti-fuite sur données fictives et rapport sans donnée client.",
+      "parent_milestone": "GIV-DATA-BOUNDARIES"
+    }
+  ]
+}

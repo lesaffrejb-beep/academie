@@ -1,0 +1,382 @@
+[
+  {
+    "id": "droit-veille-notification-electronique-principe",
+    "domaine": "droit",
+    "branche": "veille-recente",
+    "niveau": 1,
+    "type": "qcm",
+    "question": "Depuis le décret du 22 décembre 2025, quel est le mode de notification de principe entre le syndic et les copropriétaires ?",
+    "reponse": "L'électronique. Le postal est devenu l'exception, réservée au copropriétaire qui le demande expressément, et le syndic n'a plus à recueillir d'accord préalable pour notifier par voie électronique.",
+    "choix": [
+      {
+        "texte": "L'électronique ; le papier ne subsiste que pour le copropriétaire qui le demande expressément",
+        "correct": true
+      },
+      {
+        "texte": "L'électronique, mais seulement pour les copropriétaires ayant donné leur accord préalable",
+        "correct": false,
+        "pourquoi_faux": "C'est exactement le régime d'avant, que le décret a renversé. L'accord préalable n'est plus requis : continuer à le collecter ralentit le passage au numérique sans rien sécuriser."
+      },
+      {
+        "texte": "Le papier, l'électronique restant une option à faire accepter",
+        "correct": false,
+        "pourquoi_faux": "Le principe s'est inversé fin 2025. C'est le changement le plus structurant de la période, et celui qui met le plus de temps à entrer dans les habitudes de cabinet."
+      },
+      {
+        "texte": "Le papier pour les convocations et procès-verbaux, l'électronique pour le reste",
+        "correct": false,
+        "pourquoi_faux": "Le périmètre du décret ne se découpe pas ainsi : convocations, procès-verbaux, mises en demeure et appels de fonds sont tous concernés."
+      }
+    ],
+    "explication": "Le renversement porte sur le principe, pas sur la liberté du copropriétaire : il peut toujours obtenir le papier, mais c'est à lui de le demander. Le coût de l'envoi et la charge de la démarche changent donc de côté, ce qui est tout l'objet de la réforme.",
+    "vigilance": "Le renversement a une contrepartie, et c'est un contrôle nouveau : chaque appel de fonds et chaque convocation doit rappeler la possibilité de recevoir les notifications et mises en demeure par voie postale.",
+    "source": [
+      {
+        "texte": "Décret n° 2025-1292 du 22 décembre 2025 modifiant le décret n° 67-223 du 17 mars 1967 (art. 64 : la voie électronique devient le principe ; art. 64-1 : le postal sur demande du copropriétaire)",
+        "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000053159903"
+      }
+    ],
+    "verifie": "2026-08-28",
+    "peremption": "2027-08-10",
+    "statut": "valide",
+    "origine": ".agents/skills/erp-juridique/references/veille-2024-2026.md",
+    "partage": "banque"
+  },
+  {
+    "id": "droit-veille-lre-prestataire-qualifie",
+    "domaine": "droit",
+    "branche": "veille-recente",
+    "niveau": 2,
+    "prerequis": [
+      "droit-veille-notification-electronique-principe"
+    ],
+    "type": "flash",
+    "question": "Que recouvre exactement la « voie électronique » au sens de l'article 64 du décret du 17 mars 1967, dans sa rédaction issue du décret du 22 décembre 2025 ?",
+    "reponse": "Deux modalités, et deux seulement : la lettre recommandée électronique dans les conditions des articles R. 53 à R. 53-4 du code des postes et des communications électroniques, ou un procédé électronique mis en œuvre par un prestataire de service de confiance qualifié garantissant l'intégrité des données, la sécurité et la traçabilité. Un simple courriel ne vaut pas notification.",
+    "explication": "Le décret ne dématérialise pas la notification, il en change le support tout en gardant l'exigence de preuve : c'est la lettre recommandée électronique ou la qualification du prestataire qui produit l'équivalent du recommandé papier, horodatage et traçabilité compris. Un envoi depuis une boîte professionnelle, même avec accusé de lecture, ne fournit rien de tel.",
+    "vigilance": "C'est la confusion la plus coûteuse du nouveau régime : envoyer une convocation par courriel ordinaire en croyant appliquer le décret produit une convocation non notifiée, donc une assemblée attaquable.",
+    "source": [
+      {
+        "texte": "Art. 64 du décret n° 67-223 du 17 mars 1967, dans sa rédaction issue du décret n° 2025-1292 du 22 décembre 2025 (lettre recommandée électronique des art. R. 53 à R. 53-4 du code des postes et des communications électroniques, ou procédé électronique d'un prestataire de service de confiance qualifié)",
+        "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000053159903"
+      }
+    ],
+    "verifie": "2026-08-28",
+    "peremption": "2027-08-10",
+    "statut": "valide",
+    "origine": ".agents/skills/erp-juridique/references/veille-2024-2026.md",
+    "partage": "banque"
+  },
+  {
+    "id": "droit-veille-mention-voie-postale",
+    "domaine": "droit",
+    "branche": "veille-recente",
+    "niveau": 2,
+    "prerequis": [
+      "droit-veille-notification-electronique-principe"
+    ],
+    "type": "flash",
+    "question": "Quelle mention le décret du 22 décembre 2025 impose-t-il d'ajouter, et sur quels documents ?",
+    "reponse": "Le rappel de la possibilité de recevoir les notifications et mises en demeure par voie postale, sur chaque appel de fonds et sur chaque convocation d'assemblée.",
+    "explication": "C'est la contrepartie du renversement : puisque le copropriétaire n'a plus à consentir au numérique, il faut au moins l'informer, à chaque envoi, qu'il peut revenir au papier. L'obligation porte sur deux documents précis et récurrents, pas sur une information générale donnée une fois.",
+    "vigilance": "Une mention absente n'est pas un incident isolé mais une anomalie de process : elle vit dans les gabarits de l'outil de gestion et se répète sur tout le portefeuille jusqu'à correction du gabarit. C'est là qu'on va la vérifier, pas envoi par envoi.",
+    "source": [
+      {
+        "texte": "Art. 64-2 du décret n° 67-223 du 17 mars 1967, modifié par le décret n° 2025-1292 du 22 décembre 2025 (le syndic accompagne les appels de fonds et les convocations de la mention de la possibilité de recevoir les notifications et mises en demeure par voie postale)",
+        "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000053159903"
+      }
+    ],
+    "verifie": "2026-08-28",
+    "peremption": "2027-08-10",
+    "statut": "valide",
+    "origine": ".agents/skills/erp-juridique/references/veille-2024-2026.md",
+    "partage": "banque"
+  },
+  {
+    "id": "droit-veille-point-depart-des-delais",
+    "domaine": "droit",
+    "branche": "veille-recente",
+    "niveau": 2,
+    "type": "qcm",
+    "question": "Une convocation est notifiée. À compter de quand le délai court-il ?",
+    "reponse": "Papier : le lendemain de la première présentation au domicile. Électronique : le lendemain de la transmission de l'avis électronique par le prestataire qualifié.",
+    "choix": [
+      {
+        "texte": "Le lendemain de la première présentation pour le papier, le lendemain de la transmission de l'avis électronique pour l'électronique",
+        "correct": true
+      },
+      {
+        "texte": "Le jour de l'envoi, dans les deux cas",
+        "correct": false,
+        "pourquoi_faux": "La date d'envoi ne commande rien. C'est l'erreur qui fait croire un délai tenu alors qu'il manque plusieurs jours d'acheminement."
+      },
+      {
+        "texte": "Le jour du retrait du pli par le destinataire",
+        "correct": false,
+        "pourquoi_faux": "Le retrait ne compte pas, et il est précisément ce que le destinataire maîtrise : retenir le retrait laisserait un copropriétaire décaler le délai en ne se déplaçant pas."
+      },
+      {
+        "texte": "Le jour de la première présentation, sans décalage d'un jour",
+        "correct": false,
+        "pourquoi_faux": "Le délai court à compter du lendemain. Un jour d'écart suffit à rendre une convocation tardive et l'assemblée attaquable."
+      }
+    ],
+    "explication": "Les deux modes suivent la même logique : le délai part du moment où le destinataire a été mis en mesure de prendre connaissance du pli, pas du moment où l'expéditeur s'en est débarrassé, ni du moment où le destinataire a bien voulu s'en saisir. Le nouveau régime électronique n'a fait que transposer cette règle à l'avis du prestataire.",
+    "vigilance": "Ce qui prouve le point de départ est la trace de première présentation dans le suivi de l'envoi, pas la date de signature de l'accusé de réception. C'est cette pièce-là qu'on conserve au dossier.",
+    "source": [
+      {
+        "texte": "Art. 64 et 64-1 du décret n° 67-223 du 17 mars 1967, dans leur rédaction issue du décret n° 2025-1292 du 22 décembre 2025 (électronique : lendemain de la transmission par le prestataire de l'avis électronique ; postal : lendemain de la première présentation de la lettre recommandée au domicile)",
+        "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000053159903"
+      }
+    ],
+    "verifie": "2026-08-28",
+    "peremption": "2027-08-10",
+    "statut": "valide",
+    "origine": ".agents/skills/erp-juridique/references/veille-2024-2026.md",
+    "partage": "banque"
+  },
+  {
+    "id": "droit-veille-pieces-espace-en-ligne",
+    "domaine": "droit",
+    "branche": "veille-recente",
+    "niveau": 3,
+    "prerequis": [
+      "droit-veille-notification-electronique-principe"
+    ],
+    "type": "qcm",
+    "question": "Les documents de l'article 11 peuvent-ils être notifiés par simple mise à disposition sur l'espace en ligne sécurisé de la copropriété ?",
+    "reponse": "Oui, à deux conditions cumulatives : l'accord exprès du copropriétaire, et une convocation qui précise expressément que ces documents sont accessibles en ligne et pour quelle durée.",
+    "choix": [
+      {
+        "texte": "Oui, sous deux conditions cumulatives : accord exprès du copropriétaire, et convocation précisant l'accès en ligne et sa durée",
+        "correct": true
+      },
+      {
+        "texte": "Non : les pièces doivent obligatoirement être jointes au pli, y compris numérique",
+        "correct": false,
+        "pourquoi_faux": "Cette affirmation circule et elle est fausse. La mise à disposition sur l'espace en ligne vaut notification dès lors que les deux conditions sont réunies."
+      },
+      {
+        "texte": "Oui, dès lors que la copropriété dispose d'un espace en ligne sécurisé",
+        "correct": false,
+        "pourquoi_faux": "L'existence de l'espace ne suffit pas. Sans l'accord exprès et sans la mention dans la convocation, la notification est fragile, et la convocation avec elle."
+      },
+      {
+        "texte": "Oui, à la seule condition que la convocation mentionne l'accès en ligne",
+        "correct": false,
+        "pourquoi_faux": "La mention est nécessaire mais non suffisante : l'accord exprès du copropriétaire est la seconde condition, et elle s'apprécie copropriétaire par copropriétaire."
+      }
+    ],
+    "explication": "Le mécanisme évite d'alourdir chaque pli des annexes comptables, mais il repose sur un équilibre : le copropriétaire accepte d'aller chercher les pièces, et on lui dit où et jusqu'à quand. Les deux conditions sont ce qui empêche l'extranet de devenir un moyen de rendre les pièces inaccessibles.",
+    "vigilance": "La durée d'accessibilité fait partie de la mention obligatoire : écrire « les pièces sont sur l'espace en ligne » ne suffit pas, il faut dire jusqu'à quand elles y restent.",
+    "source": [
+      {
+        "texte": "Décret n° 2025-1292 du 22 décembre 2025, sur la notification des documents de l'art. 11 du décret n° 67-223"
+      }
+    ],
+    "verifie": "2026-08-10",
+    "peremption": "2027-08-10",
+    "statut": "brouillon",
+    "origine": ".agents/skills/erp-juridique/references/veille-2024-2026.md",
+    "partage": "banque",
+    "doute": "Règle non retrouvée à la source dans les articles 64 à 67 du décret du 17 mars 1967 en vigueur au 28/08/2026 : les deux conditions énoncées sont celles de l'ancien article 64-1 issu du décret n° 2020-834, et l'attribution de cette règle au décret n° 2025-1292, qui a renuméroté les articles 64 à 64-4, n'a pas pu être confirmée. Retrouver l'article porteur avant de valider."
+  },
+  {
+    "id": "droit-veille-recouvrement-une-mise-en-demeure-par-exercice",
+    "domaine": "droit",
+    "branche": "veille-recente",
+    "niveau": 2,
+    "type": "qcm",
+    "question": "Un syndicat réclame en justice des provisions impayées portant sur trois exercices, sur le fondement de l'article 19-2. Combien de mises en demeure faut-il justifier ?",
+    "reponse": "Une par exercice réclamé, avec l'approbation des comptes de chacun : l'article 19-2 ne dispense pas de justifier, pour chaque nouvelle période réclamée, d'une mise en demeure préalable.",
+    "choix": [
+      {
+        "texte": "Une par exercice réclamé, avec l'approbation des comptes correspondants",
+        "correct": true
+      },
+      {
+        "texte": "Une seule, la première, qui vaut pour les exercices suivants",
+        "correct": false,
+        "pourquoi_faux": "C'est précisément ce que la Cour de cassation a écarté le 15 janvier 2026 : une mise en demeure ne porte pas les périodes postérieures."
+      },
+      {
+        "texte": "Aucune : l'article 19-2 dispense de la mise en demeure préalable",
+        "correct": false,
+        "pourquoi_faux": "L'article 19-2 accélère le recouvrement, il ne supprime pas la mise en demeure. Ce raccourci fait tomber le dossier entier."
+      },
+      {
+        "texte": "Une par copropriétaire débiteur, quel que soit le nombre d'exercices",
+        "correct": false,
+        "pourquoi_faux": "Le découpage n'est pas par débiteur mais par période réclamée : un même copropriétaire redevable sur trois exercices appelle trois mises en demeure."
+      }
+    ],
+    "explication": "Avant toute assignation, quatre contrôles se déroulent dans l'ordre : une mise en demeure pour chaque exercice réclamé, une ventilation des provisions dans chacune, l'approbation des comptes de chaque exercice, et le délai de trente jours écoulé pour chacune. Une seule case vide, et on refait la mise en demeure avant d'assigner.",
+    "vigilance": "Le réflexe n'est pas d'assigner vite mais d'assigner sur une base complète : un dossier de recouvrement qui traîne coûte toujours moins cher qu'un dossier irrecevable.",
+    "source": [
+      {
+        "texte": "Cass. 3e civ., 15 janvier 2026, n° 23-23.534, publié au bulletin (le syndicat ne peut réclamer les provisions des exercices postérieurs qu'en justifiant, pour chacun, d'une nouvelle mise en demeure, et ne peut réclamer des sommes d'exercices dont les comptes ne sont pas approuvés)",
+        "url": "https://www.legifrance.gouv.fr/juri/id/JURITEXT000053384326"
+      },
+      {
+        "texte": "Art. 19-2 loi n° 65-557 du 10 juillet 1965",
+        "url": "https://www.legifrance.gouv.fr/loda/id/LEGITEXT000006068256"
+      }
+    ],
+    "verifie": "2026-08-28",
+    "peremption": "2027-08-10",
+    "statut": "valide",
+    "origine": ".agents/skills/erp-juridique/references/veille-2024-2026.md",
+    "partage": "banque"
+  },
+  {
+    "id": "droit-veille-recouvrement-ventilation-mise-en-demeure",
+    "domaine": "droit",
+    "branche": "veille-recente",
+    "niveau": 3,
+    "prerequis": [
+      "droit-veille-recouvrement-une-mise-en-demeure-par-exercice"
+    ],
+    "type": "flash",
+    "question": "Que doit contenir une mise en demeure fondée sur l'article 19-2, et que risque-t-on si elle annonce un solde global ?",
+    "reponse": "Elle doit indiquer avec précision la nature et le montant des provisions réclamées : ventilation par exercice, chaque provision impayée identifiée avec son objet et sa période. À défaut, la demande du syndicat est irrecevable, pas réduite.",
+    "explication": "L'irrecevabilité est ce qui rend l'exigence si coûteuse : le juge ne rabote pas la demande à sa part justifiée, il la rejette entière, et une condamnation déjà obtenue peut tomber en cassation pour ce seul motif. Le temps passé à ventiler une lettre est sans commune mesure avec celui d'une procédure à recommencer.",
+    "vigilance": "Le contrôle se fait avant d'assigner, sur la lettre déjà partie. Si elle n'est pas ventilée, on la refait, on laisse courir le délai de trente jours, et seulement ensuite on assigne.",
+    "source": [
+      {
+        "texte": "Art. 19-2 loi n° 65-557 du 10 juillet 1965",
+        "url": "https://www.legifrance.gouv.fr/loda/id/LEGITEXT000006068256"
+      },
+      {
+        "texte": "Cass. 3e civ., 18 juin 2026 — numéro de pourvoi non recoupé à la source : retrouver la référence avant de la citer en séance ou par écrit"
+      }
+    ],
+    "verifie": "2026-08-10",
+    "peremption": "2027-08-10",
+    "statut": "brouillon",
+    "origine": ".agents/skills/erp-juridique/references/veille-2024-2026.md",
+    "partage": "banque",
+    "doute": "Le principe est cohérent avec Cass. 3e civ., 15 janvier 2026, n° 23-23.534, mais l'arrêt du 18 juin 2026 qui le pose en propre n'a pas pu être ouvert sur Légifrance : le numéro n° 24-19.950 n'est attesté que par un commentaire de cabinet. Retrouver la décision à la source avant de citer la sanction d'irrecevabilité par écrit ou en séance."
+  },
+  {
+    "id": "droit-veille-quitus-portee",
+    "domaine": "droit",
+    "branche": "veille-recente",
+    "niveau": 2,
+    "type": "qcm",
+    "question": "L'assemblée a voté le quitus au syndic. Un copropriétaire s'estime personnellement lésé par une faute de gestion. Que peut-il faire ?",
+    "reponse": "Agir en responsabilité délictuelle contre le syndic pour son préjudice personnel : le quitus ne vaut que dans les rapports entre le syndicat et le syndic.",
+    "choix": [
+      {
+        "texte": "Agir en responsabilité délictuelle pour son préjudice personnel, qu'il ait voté pour ou contre le quitus",
+        "correct": true
+      },
+      {
+        "texte": "Rien : le quitus voté par l'assemblée couvre le syndic à l'égard de tous",
+        "correct": false,
+        "pourquoi_faux": "Le quitus n'est pas une immunité. La relation contractuelle ne lie que le syndicat et le syndic ; le quitus ne s'étend pas au copropriétaire pris individuellement."
+      },
+      {
+        "texte": "Rien s'il a voté pour le quitus, quelque chose s'il a voté contre",
+        "correct": false,
+        "pourquoi_faux": "Le sens du vote est indifférent à l'action en responsabilité délictuelle. Il ne joue que sur la recevabilité d'une demande d'annulation de la résolution."
+      },
+      {
+        "texte": "Demander l'annulation de la résolution de quitus, quel qu'ait été son vote",
+        "correct": false,
+        "pourquoi_faux": "Le copropriétaire qui a voté POUR n'est pas recevable à en demander l'annulation (article 42 alinéa 2). C'est justement la voie fermée, et c'est pourquoi l'autre compte."
+      }
+    ],
+    "explication": "Deux résolutions se confondent en séance : l'approbation des comptes valide des chiffres, le quitus approuve une gestion. Ce que la Cour ajoute en 2024 : même voté, le quitus ne ferme pas la porte du copropriétaire agissant à titre personnel, parce que le vote de l'assemblée n'engage que le syndicat.",
+    "vigilance": "Un syndic qui présente le quitus comme une décharge générale se trompe et le fait croire à l'assemblée. La formule prudente, en séance, est qu'il solde les rapports entre le syndicat et son syndic.",
+    "source": [
+      {
+        "texte": "Cass. 3e civ., 29 février 2024, n° 22-24.558, publié au bulletin (le vote du quitus ne prive pas le copropriétaire d'agir en responsabilité délictuelle contre le syndic pour son préjudice personnel)",
+        "url": "https://www.legifrance.gouv.fr/juri/id/JURITEXT000049290779"
+      },
+      {
+        "texte": "Art. 42 al. 2 loi n° 65-557 du 10 juillet 1965 (recevabilité de l'action en annulation réservée aux opposants et défaillants)",
+        "url": "https://www.legifrance.gouv.fr/loda/id/LEGITEXT000006068256"
+      }
+    ],
+    "verifie": "2026-08-28",
+    "peremption": "2027-08-10",
+    "statut": "valide",
+    "origine": ".agents/skills/erp-juridique/references/veille-2024-2026.md",
+    "partage": "banque"
+  },
+  {
+    "id": "droit-veille-meuble-tourisme-condition-ouverture",
+    "domaine": "droit",
+    "branche": "veille-recente",
+    "niveau": 3,
+    "type": "qcm",
+    "question": "Un conseil syndical demande si l'assemblée peut interdire la location en meublé de tourisme. Quelle est la première question à instruire ?",
+    "reponse": "Ce que le règlement de copropriété dit de l'activité commerciale : la faculté ouverte par la loi n'existe que dans les copropriétés dont le règlement interdit déjà toute activité commerciale dans les lots non spécifiquement destinés à un usage commercial.",
+    "choix": [
+      {
+        "texte": "Ce que le règlement de copropriété dit de l'activité commerciale, qui est la condition d'ouverture du dispositif",
+        "correct": true
+      },
+      {
+        "texte": "La majorité à réunir, celle des membres du syndicat représentant au moins les deux tiers des voix",
+        "correct": false,
+        "pourquoi_faux": "La majorité est exacte, mais elle vient après. Inscrire la résolution sans avoir vérifié la condition d'ouverture, c'est faire voter une résolution qui se fera annuler."
+      },
+      {
+        "texte": "Si le règlement comporte une clause d'habitation bourgeoise, laquelle suffit à interdire",
+        "correct": false,
+        "pourquoi_faux": "Une clause bourgeoise simple ne suffit généralement pas : depuis 2024, la Cour de cassation juge que la location meublée de courte durée non accompagnée de prestations de services accessoires n'est pas de nature commerciale."
+      },
+      {
+        "texte": "Si le dispositif est toujours en vigueur, sa constitutionnalité ayant été contestée",
+        "correct": false,
+        "pourquoi_faux": "Elle ne l'est plus : le Conseil constitutionnel a déclaré le dispositif conforme le 19 mars 2026. Le sujet est stabilisé dans son principe."
+      }
+    ],
+    "explication": "Deux mouvements de sens opposé se croisent sur ce sujet : côté juges, la jurisprudence est devenue plus permissive envers le meublé de courte durée sans services ; côté loi, l'assemblée a reçu un pouvoir d'interdiction nouveau, mais sous condition. On ne part donc jamais de la jurisprudence, on part du règlement de la copropriété concernée. L'interdiction, quand elle est possible, se vote à la majorité des membres du syndicat représentant au moins les deux tiers des voix.",
+    "vigilance": "L'interdiction ne peut viser que les lots autres que ceux constituant une résidence principale : elle n'atteint pas la location de courte durée de sa propre résidence principale.",
+    "source": [
+      {
+        "texte": "Art. 26 d) loi n° 65-557 du 10 juillet 1965, créé par la loi n° 2024-1039 du 19 novembre 2024 (interdiction possible seulement dans les copropriétés dont le règlement interdit toute activité commerciale dans les lots non spécifiquement destinés à un usage commercial ; majorité des membres du syndicat représentant au moins les deux tiers des voix ; lots autres que ceux constituant une résidence principale)",
+        "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000050612711"
+      },
+      {
+        "texte": "Cons. const., décision QPC du 19 mars 2026 (dispositif déclaré conforme à la Constitution)"
+      },
+      {
+        "texte": "Cass. 3e civ., 25 janvier 2024 (la location meublée de courte durée sans prestations de services accessoires n'est pas, par elle-même, de nature commerciale)"
+      }
+    ],
+    "verifie": "2026-08-28",
+    "peremption": "2027-08-10",
+    "statut": "valide",
+    "origine": ".agents/skills/erp-juridique/references/veille-2024-2026.md",
+    "partage": "banque"
+  },
+  {
+    "id": "droit-veille-isolation-individuelle-toiture-plancher",
+    "domaine": "droit",
+    "branche": "veille-recente",
+    "niveau": 2,
+    "type": "flash",
+    "question": "Un copropriétaire veut isoler à ses frais la toiture, ce qui affecte les parties communes. Quel est le cadre, et quel réflexe le précède ?",
+    "reponse": "Autorisation préalable de l'assemblée à la majorité des articles 25 et 25-1, sur inscription à l'ordre du jour de l'assemblée qui suit la notification de la demande, avec descriptif détaillé ; exécution possible après le délai de deux mois de l'article 42. Réflexe préalable : vérifier qu'un plan pluriannuel déjà adopté ne prévoit pas cette isolation.",
+    "explication": "Le dispositif ouvre l'initiative individuelle d'isolation thermique de la toiture ou du plancher aux frais du ou des copropriétaires demandeurs. Les travaux ne doivent porter atteinte ni à la structure de l'immeuble, ni à ses éléments d'équipement essentiels, ni à sa sécurité, ni à sa salubrité, ni affecter les modalités de jouissance des parties privatives des autres copropriétaires, et ne doivent pas être déjà programmés dans un plan pluriannuel de travaux adopté.",
+    "vigilance": "La condition oubliée est la dernière : si le plan adopté prévoit déjà l'isolation de la toiture, la demande individuelle n'a pas lieu d'être. Retenir aussi que la majorité est celle de l'article 25 AVEC sa passerelle de l'article 25-1 : un refus au-dessus du tiers rouvre un second vote en séance.",
+    "source": [
+      {
+        "texte": "Art. 25-2-1 loi n° 65-557 du 10 juillet 1965 (majorité des articles 25 et 25-1 ; conditions tenant à la structure, aux éléments d'équipement essentiels, à la sécurité, à la salubrité, aux modalités de jouissance des parties privatives d'autres copropriétaires et au plan pluriannuel adopté)",
+        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000049396722"
+      },
+      {
+        "texte": "Art. 10-4 du décret n° 67-223 du 17 mars 1967 (inscription à l'ordre du jour de l'assemblée qui suit la notification de la demande ; exécution après le délai de deux mois du deuxième alinéa de l'art. 42 de la loi)",
+        "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000053182694"
+      }
+    ],
+    "verifie": "2026-08-28",
+    "peremption": "2027-08-10",
+    "statut": "valide",
+    "origine": ".agents/skills/erp-juridique/references/veille-2024-2026.md",
+    "partage": "banque"
+  }
+]

@@ -1,0 +1,131 @@
+[
+  {
+    "id": "sh-social-influence-informationnelle-normative",
+    "domaine": "sciences-humaines",
+    "branche": "psychologie-sociale-et-sante",
+    "niveau": 2,
+    "type": "qcm",
+    "question": "Un étudiant modifie sa réponse parce qu'il pense que les autres, plus nombreux, ont probablement raison. De quelle forme d'influence sociale s'agit-il ?",
+    "reponse": "D'une influence informationnelle : autrui est utilisé comme source d'information sur l'exactitude de sa propre réponse.",
+    "choix": [
+      {
+        "texte": "Une influence informationnelle",
+        "correct": true
+      },
+      {
+        "texte": "Une influence normative",
+        "correct": false,
+        "pourquoi_faux": "Dans l'influence normative, l'individu se range au groupe pour en respecter les normes, sans être convaincu d'avoir tort. Ici le motif énoncé est la recherche de l'exactitude, pas la conformité : c'est ce motif qui départage les deux, et non le fait de changer d'avis."
+      },
+      {
+        "texte": "Une influence minoritaire",
+        "correct": false,
+        "pourquoi_faux": "Majoritaire et minoritaire décrivent d'où vient l'influence, pas pourquoi elle opère. La proposition répond à une autre question que celle posée, et le nombre indiqué dans l'énoncé désigne de toute façon une majorité."
+      },
+      {
+        "texte": "Un processus de socialisation secondaire",
+        "correct": false,
+        "pourquoi_faux": "La socialisation est l'intériorisation durable des normes et valeurs d'une société ; sa forme secondaire passe par les sphères professionnelle, conjugale ou parentale. Il s'agit d'un processus de long terme, pas d'un ajustement de réponse dans l'instant."
+      }
+    ],
+    "explication": "L'influence sociale désigne l'effet de la présence d'autrui sur les perceptions, jugements et comportements. Ses deux ressorts se distinguent par le motif : chercher à avoir juste, ou chercher à ne pas dévier. La conséquence pratique n'est pas la même, car une influence informationnelle modifie la conviction, tandis qu'une influence normative ne modifie souvent que la conduite publique.",
+    "vigilance": "Le fait de céder ne dit rien du mécanisme. Une même conduite observée peut relever de l'un ou de l'autre ressort : il faut la raison, pas l'observation.",
+    "source": [
+      {
+        "texte": "IFSI S1, UE1.1 Fiche 005 — support de cours, transcription locale"
+      }
+    ],
+    "verifie": "2026-08-29",
+    "peremption": null,
+    "statut": "brouillon",
+    "origine": "usine à domaine, 1re fabrication (29/08/2026)",
+    "partage": "interne"
+  },
+  {
+    "id": "sh-social-socialisation-instances",
+    "domaine": "sciences-humaines",
+    "branche": "psychologie-sociale-et-sante",
+    "niveau": 1,
+    "type": "flash",
+    "question": "Qu'appelle-t-on socialisation, et comment se répartissent ses instances primaires et secondaires ?",
+    "reponse": "La socialisation est le processus par lequel un individu apprend et intériorise les normes et les valeurs de sa société pour s'y intégrer. Les instances primaires sont la famille, l'école, le groupe de pairs et les médias ; les instances secondaires relèvent des sphères professionnelle, conjugale et parentale.",
+    "explication": "Le partage entre primaire et secondaire suit le moment de la vie plutôt que le degré d'importance : les premières instances façonnent l'enfant avant qu'il choisisse quoi que ce soit, les secondes interviennent sur un individu déjà constitué qui entre dans un métier, un couple, une parentalité. La relation sociale est le produit de ce processus, pas son point de départ.",
+    "vigilance": "« Secondaire » ne signifie ni plus tardif seulement, ni moins puissant : une socialisation professionnelle peut remanier profondément des manières d'agir acquises dans l'enfance.",
+    "source": [
+      {
+        "texte": "IFSI S1, UE1.1 Fiche 005 — support de cours, transcription locale"
+      }
+    ],
+    "verifie": "2026-08-29",
+    "peremption": null,
+    "statut": "brouillon",
+    "origine": "usine à domaine, 1re fabrication (29/08/2026)",
+    "partage": "interne"
+  },
+  {
+    "id": "sh-sante-schema-et-image-corporelle",
+    "domaine": "sciences-humaines",
+    "branche": "psychologie-sociale-et-sante",
+    "niveau": 2,
+    "type": "qcm",
+    "question": "Une personne amputée décrit son corps tel qu'elle se le figure, et non tel qu'il est. À quelle notion cette description renvoie-t-elle ?",
+    "reponse": "À l'image du corps, représentation subjective et imaginaire que chacun se fait de son corps.",
+    "choix": [
+      {
+        "texte": "L'image du corps",
+        "correct": true
+      },
+      {
+        "texte": "Le schéma corporel",
+        "correct": false,
+        "pourquoi_faux": "Le schéma corporel est la représentation objective du corps, la même pour tous à anatomie comparable. L'énoncé insiste au contraire sur un écart entre le corps réel et la façon dont il est vécu : c'est le versant subjectif qui est décrit."
+      },
+      {
+        "texte": "La qualité de vie",
+        "correct": false,
+        "pourquoi_faux": "La qualité de vie est un concept multidimensionnel qui agrège le physique, les sensations somatiques, le psychique, le statut social et l'aspect matériel. Elle évalue une situation d'ensemble, elle ne désigne pas une représentation du corps."
+      },
+      {
+        "texte": "L'approche psychosomatique",
+        "correct": false,
+        "pourquoi_faux": "L'approche psychosomatique cherche à expliquer le développement de maladies chroniques par des facteurs psychologiques déterminants. Elle porte sur la genèse d'une maladie, pas sur la représentation qu'une personne a de son corps."
+      }
+    ],
+    "explication": "Les deux notions sont volontairement appariées dans le cours parce qu'elles s'opposent terme à terme : objectif contre subjectif, mesurable contre vécu, construit par l'anatomie contre construit par l'imaginaire. En soins, l'écart entre les deux explique qu'une atteinte anatomiquement mineure soit vécue comme une catastrophe, et l'inverse.",
+    "vigilance": "L'image du corps ne se corrige pas en montrant à la personne ce qu'il en est réellement. C'est précisément ce qui la distingue d'une erreur de perception.",
+    "source": [
+      {
+        "texte": "IFSI S1, UE1.1 Fiche 006 — support de cours, transcription locale"
+      }
+    ],
+    "verifie": "2026-08-29",
+    "peremption": null,
+    "statut": "brouillon",
+    "origine": "usine à domaine, 1re fabrication (29/08/2026)",
+    "partage": "interne"
+  },
+  {
+    "id": "sh-sante-resilience-et-vulnerabilite",
+    "domaine": "sciences-humaines",
+    "branche": "psychologie-sociale-et-sante",
+    "niveau": 1,
+    "type": "flash",
+    "question": "Comment le cours définit-il la résilience, et comment définit-il la vulnérabilité ?",
+    "reponse": "La résilience est la capacité de rebondir et de s'adapter aux situations stressantes, de se reconstruire après une épreuve grave, par la mise en jeu de mécanismes adaptatifs. La vulnérabilité est une situation de faiblesse : la personne vulnérable est susceptible d'être exposée à des atteintes physiques ou morales, avec le risque de développer ou d'aggraver des incapacités.",
+    "explication": "Les deux notions ne sont pas les deux faces d'une même échelle. La vulnérabilité décrit une exposition, c'est-à-dire une position dans un environnement ; la résilience décrit un processus déployé après le choc. Une même personne peut être exposée et se reconstruire, ce qui interdit de traiter l'une comme le contraire de l'autre.",
+    "vigilance": "La vulnérabilité est aussi un concept d'éthique et de droit, où elle déclenche des protections particulières. Rencontrer le mot dans un énoncé n'indique donc pas à lui seul de quel chapitre il relève.",
+    "source": [
+      {
+        "texte": "IFSI S1, UE1.1 Fiche 006 — support de cours, transcription locale"
+      },
+      {
+        "texte": "IFSI S1, UE1.3 Fiche 007 — support de cours, transcription locale (reprise de la notion de vulnérabilité côté éthique)"
+      }
+    ],
+    "verifie": "2026-08-29",
+    "peremption": null,
+    "statut": "brouillon",
+    "origine": "usine à domaine, 1re fabrication (29/08/2026)",
+    "partage": "interne"
+  }
+]

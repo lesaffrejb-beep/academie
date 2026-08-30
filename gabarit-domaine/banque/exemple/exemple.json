@@ -1,0 +1,46 @@
+[
+  {
+    "_": "CARTE D'EXEMPLE, 100 % FICTIVE, À REMPLACER. Elle ne montre qu'une chose : la forme exacte d'une carte au contrat carte-v1. Son contenu ne veut rien dire et ne doit JAMAIS être publié. Le geste : renommer ce dossier `banque/exemple/` avec la clé de la région (`banque/region-1/`), renommer ce fichier avec le nom de la branche, puis remplacer ce tableau par les vraies cartes. Le champ `domaine` doit exister dans academie.json ; le nom du dossier n'est qu'une convention de rangement. `verifie` porte la date d'écriture du gabarit, pour que le valideur passe au vert dès l'installation (test de fumée de l'étape 0) : la vraie carte porte le jour où quelqu'un a réellement ouvert la source, au format AAAA-MM-JJ.",
+    "id": "region-1-exemple-definition",
+    "domaine": "region-1",
+    "branche": "exemple",
+    "niveau": 1,
+    "type": "qcm",
+    "question": "Dans le référentiel de [MÉTIER], que désigne exactement le terme [TERME] ?",
+    "reponse": "[La définition, telle que le référentiel public la formule, reformulée en une phrase.]",
+    "choix": [
+      {
+        "texte": "[La bonne réponse, dite dans les mots du métier]",
+        "correct": true
+      },
+      {
+        "texte": "[Un terme voisin, celui qu'on confond le plus souvent avec le bon]",
+        "correct": false,
+        "pourquoi_faux": "[Pourquoi la confusion est tentante, et le détail précis qui les sépare. Un distracteur sans cette phrase n'apprend rien.]"
+      },
+      {
+        "texte": "[Une définition qui était juste dans une édition précédente du référentiel]",
+        "correct": false,
+        "pourquoi_faux": "[Ce qui a changé, et à quelle date. C'est le piège « ça paraît juste et c'est faux ».]"
+      },
+      {
+        "texte": "[Une formulation courante mais imprécise, du langage de tous les jours]",
+        "correct": false,
+        "pourquoi_faux": "[Ce que le raccourci fait perdre, concrètement.]"
+      }
+    ],
+    "explication": "[Trois ou quatre phrases qui font comprendre, pas qui répètent la réponse : d'où vient la règle, à quoi elle sert, ce qu'elle sépare. C'est le cours, pas la fiche.]",
+    "vigilance": "[Le piège de terrain : la phrase qu'on entend dire et qui est fausse. Facultatif, mais c'est souvent le meilleur de la carte.]",
+    "source": [
+      {
+        "texte": "[Le référentiel public, son article ou sa page, avec la version ou l'édition]",
+        "url": "[URL du référentiel public]"
+      }
+    ],
+    "verifie": "2026-08-29",
+    "peremption": null,
+    "statut": "brouillon",
+    "origine": "gabarit-domaine (carte d'exemple)",
+    "partage": "banque"
+  }
+]

@@ -1,0 +1,52 @@
+{
+  "_": "COQUILLE VIDE. Config d'un domaine d'Académie. Le moteur ne sait rien du métier : tout ce qui est métier vit ici. Remplacer [MÉTIER], [IDENTIFIANT-DU-JOUEUR] et les [RÉGION-N] avant la première carte.",
+  "_domaines": "Les régions de la carte-monde. La clé est en kebab-case, sert de champ `domaine` dans chaque carte, et le dossier banque/<clé>/ suit la même convention. Commencer avec UNE région remplie (v1 bornée à ~30 cartes) : les autres restent déclarées et vides. `culture` porte `arbre: false` = pas de prérequis, pas de déblocage : on y range ce qui n'entre dans aucune montée en niveau. La garder ou la retirer, mais décider (USINE.md, étape 2).",
+  "metier": "[MÉTIER]",
+  "profil_defaut": "[IDENTIFIANT-DU-JOUEUR]",
+  "domaines": {
+    "region-1": {
+      "titre": "[RÉGION-1 — le titre lisible affiché au joueur]",
+      "ordre": 1
+    },
+    "region-2": {
+      "titre": "[RÉGION-2]",
+      "ordre": 2
+    },
+    "region-3": {
+      "titre": "[RÉGION-3]",
+      "ordre": 3
+    },
+    "culture": {
+      "titre": "Culture",
+      "ordre": 4,
+      "arbre": false
+    }
+  },
+  "quotas": {
+    "_": "RÈGLES DU JEU, pas du métier : valeurs par défaut reprises telles quelles. Ne pas y toucher à l'étape 2 ; les ajuster au bilan des 30 premières séances.",
+    "revisions_par_seance": 10,
+    "nouveau_par_seance": 1,
+    "ateliers_par_semaine": 2,
+    "plafond_reprise": 20,
+    "revisions_min_jour_atelier": 5
+  },
+  "fsrs": {
+    "_": "RÈGLES DU JEU. Rétention souhaitée : défaut 0,90, plage utile 0,80-0,95. L'optimiseur personnalisé ne vaut rien avant ~400 revues.",
+    "retention_souhaitee": 0.9,
+    "seuil_optimiseur": 400
+  },
+  "progression": {
+    "_": "RÈGLES DU JEU. Remplissage d'une région = part des cartes `valide` dont la stabilité FSRS dépasse le seuil. L'XP affichée est dérivée de cette mesure, jamais une seconde comptabilité.",
+    "seuil_stabilite_acquise_jours": 21,
+    "seuil_ouverture_region": 0.75,
+    "examen_obligatoire_pour_100": true,
+    "examen_nb_cartes": 12,
+    "examen_score_reussite": 0.8
+  },
+  "quiz": {
+    "_": "RÈGLES DU JEU. Quiz de positionnement : une bonne réponse écrit une entrée au journal avec une stabilité initiale explicite, une mauvaise n'écrit rien. Le quiz OUVRE des régions, il n'écrit jamais leur remplissage.",
+    "nb_questions": 20,
+    "stabilite_initiale_jours": 21,
+    "seuil_ouverture_region_quiz": 0.8
+  }
+}

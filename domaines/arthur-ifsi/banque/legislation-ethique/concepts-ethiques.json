@@ -1,0 +1,134 @@
+[
+  {
+    "id": "le-concepts-ethique-et-morale",
+    "domaine": "legislation-ethique",
+    "branche": "concepts-ethiques",
+    "niveau": 1,
+    "type": "qcm",
+    "question": "À quelle question l'éthique répond-elle, par opposition à la morale ?",
+    "reponse": "L'éthique répond à la question « comment vivre ? » ; la morale répond à la question « que dois-je faire ? ».",
+    "choix": [
+      {
+        "texte": "L'éthique répond à « comment vivre ? », la morale à « que dois-je faire ? »",
+        "correct": true
+      },
+      {
+        "texte": "L'éthique répond à « que dois-je faire ? », la morale à « comment vivre ? »",
+        "correct": false,
+        "pourquoi_faux": "Les deux questions sont inversées. Le repère qui évite l'erreur : la morale énonce des règles de conduite et tranche entre le bien et le mal, donc elle prescrit un acte ; l'éthique est une réflexion sur la manière de se comporter, donc elle interroge une orientation."
+      },
+      {
+        "texte": "L'éthique répond à « quels sont mes devoirs professionnels ? »",
+        "correct": false,
+        "pourquoi_faux": "C'est la définition de la déontologie, l'ensemble des devoirs et des droits moraux propres à une profession. L'éthique n'est pas rattachée à un métier ; la déontologie l'est par construction."
+      },
+      {
+        "texte": "L'éthique et la morale répondent à la même question, seul le registre de langue diffère",
+        "correct": false,
+        "pourquoi_faux": "Les traiter comme des synonymes est l'erreur la plus courante et elle est explicitement écartée par le cours, qui leur assigne deux questions distinctes."
+      }
+    ],
+    "explication": "La morale fournit des règles déjà constituées : un ensemble d'actions, de conduites et de valeurs qui départage le bien du mal. L'éthique, décrite comme la science de la morale et des mœurs, prend ces règles pour objet et les interroge. C'est cette différence de niveau qui rend possible une réflexion éthique là où deux règles morales s'opposent, situation dont un service de soins ne manque pas.",
+    "vigilance": "Trois termes se chevauchent dans ce chapitre : morale, éthique, déontologie. La déontologie est la seule des trois qui soit attachée à une profession et écrite dans un code.",
+    "source": [
+      {
+        "texte": "IFSI S1, UE1.3 Fiche 007 — support de cours, transcription locale"
+      }
+    ],
+    "verifie": "2026-08-29",
+    "peremption": null,
+    "statut": "brouillon",
+    "origine": "usine à domaine, 1re fabrication (29/08/2026)",
+    "partage": "interne"
+  },
+  {
+    "id": "le-concepts-deontologie",
+    "domaine": "legislation-ethique",
+    "branche": "concepts-ethiques",
+    "niveau": 1,
+    "prerequis": [
+      "le-concepts-ethique-et-morale"
+    ],
+    "type": "flash",
+    "question": "Que désigne la déontologie, et que désigne un code de déontologie ?",
+    "reponse": "La déontologie est l'ensemble des devoirs et des droits moraux d'une profession. Le code de déontologie en est la mise en règles écrites, élaborées pour le bon fonctionnement de cette profession.",
+    "explication": "La déontologie occupe une position intermédiaire : plus contraignante que l'éthique, puisqu'elle est écrite et opposable, mais adossée à des devoirs moraux et non à une loi pénale. Cela lui donne une conséquence propre : le manquement à un code de déontologie ouvre une responsabilité devant l'ordre professionnel, distincte des responsabilités civile, pénale et disciplinaire.",
+    "vigilance": "Un code de déontologie n'est pas un recueil de bonnes intentions : sa violation est sanctionnable par l'instance ordinale.",
+    "source": [
+      {
+        "texte": "IFSI S1, UE1.3 Fiche 007 — support de cours, transcription locale"
+      }
+    ],
+    "verifie": "2026-08-29",
+    "peremption": null,
+    "statut": "brouillon",
+    "origine": "usine à domaine, 1re fabrication (29/08/2026)",
+    "partage": "interne"
+  },
+  {
+    "id": "le-concepts-dilemme-et-conflit",
+    "domaine": "legislation-ethique",
+    "branche": "concepts-ethiques",
+    "niveau": 2,
+    "type": "qcm",
+    "question": "Comment le cours définit-il un dilemme ?",
+    "reponse": "Une situation qui impose de choisir entre deux solutions contradictoires, chacune aussi insatisfaisante que l'autre.",
+    "choix": [
+      {
+        "texte": "Un choix entre deux solutions contradictoires également insatisfaisantes",
+        "correct": true
+      },
+      {
+        "texte": "Une lutte entre deux tendances simultanément opposées",
+        "correct": false,
+        "pourquoi_faux": "C'est la définition du conflit, qui décrit une opposition de pensées, d'intérêts, d'opinions ou de sentiments. Le conflit oppose des forces ; le dilemme impose une décision. On peut vivre un conflit sans avoir à trancher, jamais un dilemme."
+      },
+      {
+        "texte": "Une situation où l'on hésite entre une bonne et une mauvaise solution",
+        "correct": false,
+        "pourquoi_faux": "S'il existe une bonne solution, il n'y a pas de dilemme mais une difficulté de courage ou d'information. Ce qui fait le dilemme, c'est justement qu'aucune issue ne soit satisfaisante."
+      },
+      {
+        "texte": "L'obligation morale de répondre de ses actes",
+        "correct": false,
+        "pourquoi_faux": "C'est la définition de la responsabilité. Elle porte sur les suites d'un acte déjà accompli, alors que le dilemme se situe avant, au moment de décider."
+      }
+    ],
+    "explication": "L'intérêt du dilemme en éthique soignante tient à cette symétrie du désagrément : puisque aucune option n'est bonne, la qualité de la décision ne se juge pas au résultat mais à la manière dont elle a été prise, c'est-à-dire à la délibération et à sa traçabilité.",
+    "vigilance": "Dans un énoncé, la présence de deux options désagréables ne suffit pas : il faut vérifier qu'elles sont bien contradictoires, donc qu'on ne peut pas les tenir ensemble.",
+    "source": [
+      {
+        "texte": "IFSI S1, UE1.3 Fiche 007 — support de cours, transcription locale"
+      }
+    ],
+    "verifie": "2026-08-29",
+    "peremption": null,
+    "statut": "brouillon",
+    "origine": "usine à domaine, 1re fabrication (29/08/2026)",
+    "partage": "interne"
+  },
+  {
+    "id": "le-concepts-libre-ethique-morale-deontologie",
+    "domaine": "legislation-ethique",
+    "branche": "concepts-ethiques",
+    "niveau": 2,
+    "prerequis": [
+      "le-concepts-deontologie"
+    ],
+    "type": "libre",
+    "question": "Dans une copie, un candidat écrit : « l'éthique, la morale et la déontologie, c'est la même chose appliquée aux soignants ». Corrige cette phrase en cinq lignes, en donnant pour chaque terme sa définition, sa question de référence, et ce qui le distingue des deux autres.",
+    "reponse": "Éléments attendus dans la correction : (1) l'éthique est l'ensemble des principes qui précisent comment les humains doivent se comporter, une science de la morale et des mœurs ; elle répond à la question « comment vivre ? » et elle réfléchit avant de trancher ; (2) la morale est l'ensemble des actions, règles de conduite et valeurs qui définissent ce qui est bien et ce qui est mal ; elle répond à la question « que dois-je faire ? » et elle est d'abord personnelle ; (3) la déontologie est l'ensemble des devoirs et des droits moraux d'une profession, mis en règles par un code élaboré pour le bon fonctionnement de cette profession : elle est écrite, collective et opposable, là où la morale reste individuelle ; (4) les trois ne se substituent donc pas : la déontologie dit ce qui est dû, elle ne résout pas un dilemme, c'est-à-dire une situation qui impose de choisir entre deux solutions contradictoires aussi insatisfaisantes l'une que l'autre ; (5) un exemple qui articule les trois vaut mieux qu'une définition de plus. Est acceptée toute réponse qui donne les deux questions de référence et pose la déontologie comme règle professionnelle écrite ; est refusée une réponse qui traite éthique et morale comme des synonymes, ou qui présente le code de déontologie comme la réponse à toute question éthique.",
+    "explication": "Ces trois mots reviennent dans presque tous les sujets de culture sanitaire et sociale, et c'est leur distinction, pas leur récitation, qui est notée. Le fil le plus solide pour les retenir est celui des questions : « comment vivre ? » pour l'éthique, « que dois-je faire ? » pour la morale, « qu'est-ce que ma profession m'impose ? » pour la déontologie.",
+    "vigilance": "Écrire les définitions les unes après les autres sans les opposer donne une réponse qui paraît complète et ne prouve rien. C'est l'articulation, et un exemple concret, qui font la différence dans une copie.",
+    "source": [
+      {
+        "texte": "IFSI S1, UE1.3 Fiche 007 — support de cours, transcription locale"
+      }
+    ],
+    "verifie": "2026-08-29",
+    "peremption": null,
+    "statut": "brouillon",
+    "origine": "usine à domaine, complément de types libre et rôle (29/08/2026)",
+    "partage": "interne"
+  }
+]

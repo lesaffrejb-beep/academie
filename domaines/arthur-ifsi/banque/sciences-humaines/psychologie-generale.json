@@ -1,0 +1,155 @@
+[
+  {
+    "id": "sh-psychologie-generale-cinq-domaines",
+    "domaine": "sciences-humaines",
+    "branche": "psychologie-generale",
+    "niveau": 1,
+    "type": "flash",
+    "question": "Quels sont les cinq grands domaines de la psychologie distingués par le cours d'UE1.1 ?",
+    "reponse": "La psychologie cognitive, la psychopathologie, la psychologie sociale, la psychologie du développement et la psychophysiologie.",
+    "explication": "Le découpage sépare cinq objets d'étude différents : ce qui se passe dans le traitement de l'information (cognitive), ce qui relève du trouble mental et de sa classification (psychopathologie), ce que l'environnement social fait à l'individu (sociale), ce qui change au fil de la vie (développement), et le lien entre le fonctionnement biologique du cerveau et le comportement (psychophysiologie). Retenir les cinq intitulés ne sert à rien tant qu'on ne sait pas rattacher un exemple à chacun : c'est ce rattachement qui est demandé, pas la liste.",
+    "vigilance": "La psychopathologie n'est pas une psychologie « du malade » opposée à une psychologie « du normal » : le cours souligne l'inverse, étudier le pathologique est un moyen de comprendre le fonctionnement ordinaire.",
+    "source": [
+      {
+        "texte": "IFSI S1, UE1.1 Fiche 001 — support de cours, transcription locale"
+      }
+    ],
+    "verifie": "2026-08-29",
+    "peremption": null,
+    "statut": "brouillon",
+    "origine": "usine à domaine, 1re fabrication (29/08/2026)",
+    "partage": "interne"
+  },
+  {
+    "id": "sh-psychologie-generale-objet-psychologie-sociale",
+    "domaine": "sciences-humaines",
+    "branche": "psychologie-generale",
+    "niveau": 1,
+    "prerequis": [
+      "sh-psychologie-generale-cinq-domaines"
+    ],
+    "type": "qcm",
+    "question": "Quel domaine de la psychologie étudie la façon dont un individu est influencé par l'environnement social dans lequel il évolue ?",
+    "reponse": "La psychologie sociale.",
+    "choix": [
+      {
+        "texte": "La psychologie sociale",
+        "correct": true
+      },
+      {
+        "texte": "La psychologie du développement",
+        "correct": false,
+        "pourquoi_faux": "Elle suit les changements d'un individu au fil de sa vie, sur les plans cognitif, affectif, moteur et social. Son axe est le temps, pas l'entourage : elle décrit ce qui évolue, la psychologie sociale décrit ce qui influence."
+      },
+      {
+        "texte": "La psychopathologie",
+        "correct": false,
+        "pourquoi_faux": "Son objet est le trouble mental : causes, classification, mécanismes, évolution, dans un but de diagnostic et d'orientation. Un contexte social difficile l'intéresse comme facteur, pas comme objet d'étude."
+      },
+      {
+        "texte": "La psychophysiologie",
+        "correct": false,
+        "pourquoi_faux": "Elle relie le fonctionnement biologique du cerveau aux comportements. La confusion vient du mot « comportement », présent dans les deux définitions, mais ici le déterminant cherché est organique, pas social."
+      }
+    ],
+    "explication": "La psychologie sociale a quatre centres d'intérêt selon le cours : la pensée, les interactions sociales, la présence imaginaire d'autrui et l'influence. La présence imaginaire est la notion la plus déroutante et la plus utile : autrui pèse sur la conduite même quand il est absent, par le simple fait qu'on se le représente.",
+    "vigilance": "« Sociale » ne veut pas dire « qui concerne les problèmes sociaux ». C'est le sens sociologique du mot : la présence d'autrui, réelle ou représentée.",
+    "source": [
+      {
+        "texte": "IFSI S1, UE1.1 Fiche 001 — support de cours, transcription locale"
+      }
+    ],
+    "verifie": "2026-08-29",
+    "peremption": null,
+    "statut": "brouillon",
+    "origine": "usine à domaine, 1re fabrication (29/08/2026)",
+    "partage": "interne"
+  },
+  {
+    "id": "sh-psychologie-generale-quatre-niveaux-analyse",
+    "domaine": "sciences-humaines",
+    "branche": "psychologie-generale",
+    "niveau": 2,
+    "prerequis": [
+      "sh-psychologie-generale-objet-psychologie-sociale"
+    ],
+    "type": "flash",
+    "question": "Quels sont les quatre niveaux d'analyse mobilisés en psychologie sociale ?",
+    "reponse": "Le niveau intrapersonnel, le niveau interpersonnel, le niveau intergroupe et le niveau sociétal.",
+    "explication": "Les quatre niveaux vont du plus resserré au plus large : ce qui se joue à l'intérieur d'une personne, puis entre deux personnes, puis entre des groupes constitués, puis à l'échelle des normes de la société entière. Un même fait s'explique différemment selon le niveau retenu, et l'exercice attendu consiste souvent à dire à quel niveau on se place.",
+    "vigilance": "Interpersonnel et intergroupe se confondent facilement : deux personnes qui s'affrontent en tant que représentantes de leurs groupes relèvent de l'intergroupe, pas de l'interpersonnel.",
+    "source": [
+      {
+        "texte": "IFSI S1, UE1.1 Fiche 001 — support de cours, transcription locale"
+      }
+    ],
+    "verifie": "2026-08-29",
+    "peremption": null,
+    "statut": "brouillon",
+    "origine": "usine à domaine, 1re fabrication (29/08/2026)",
+    "partage": "interne"
+  },
+  {
+    "id": "sh-psychologie-generale-memoire-trois-types",
+    "domaine": "sciences-humaines",
+    "branche": "psychologie-generale",
+    "niveau": 1,
+    "type": "flash",
+    "question": "Quelles sont les trois opérations de la mémoire, et les trois types de mémoire distingués en psychologie cognitive ?",
+    "reponse": "Trois opérations : coder, stocker, restituer l'information. Trois types : la mémoire sensorielle, la mémoire à court terme et la mémoire à long terme.",
+    "explication": "Le cours traite l'humain comme un système de traitement de l'information : une donnée entre, elle est traitée, elle ressort. La mémoire y tient le rôle de conservation, découpé en trois gestes. Les trois types de mémoire se différencient par la durée pendant laquelle l'information reste disponible, de la fraction de seconde pour la mémoire sensorielle à une conservation durable pour la mémoire à long terme.",
+    "vigilance": "L'attention n'est pas une mémoire. Elle sélectionne ce qui sera traité, et c'est justement pour cela qu'elle conditionne l'apprentissage : ce qui n'a pas été sélectionné n'a jamais été codé.",
+    "source": [
+      {
+        "texte": "IFSI S1, UE1.1 Fiche 002 — support de cours, transcription locale"
+      }
+    ],
+    "verifie": "2026-08-29",
+    "peremption": null,
+    "statut": "brouillon",
+    "origine": "usine à domaine, 1re fabrication (29/08/2026)",
+    "partage": "interne"
+  },
+  {
+    "id": "sh-psychologie-generale-six-emotions-de-base",
+    "domaine": "sciences-humaines",
+    "branche": "psychologie-generale",
+    "niveau": 1,
+    "type": "qcm",
+    "question": "Le cours retient six émotions dites « de base ». Laquelle de ces listes correspond exactement à ces six émotions ?",
+    "reponse": "La colère, la peur, le dégoût, la surprise, la joie et la tristesse.",
+    "choix": [
+      {
+        "texte": "Colère, peur, dégoût, surprise, joie, tristesse",
+        "correct": true
+      },
+      {
+        "texte": "Colère, peur, honte, surprise, joie, tristesse",
+        "correct": false,
+        "pourquoi_faux": "La honte remplace ici le dégoût. La honte suppose un regard d'autrui et un jugement sur soi : c'est une émotion sociale, construite, et non une émotion de base."
+      },
+      {
+        "texte": "Colère, peur, dégoût, amour, joie, tristesse",
+        "correct": false,
+        "pourquoi_faux": "L'amour n'est pas une émotion mais un sentiment : un état affectif durable et complexe, c'est-à-dire l'interprétation intellectuelle d'émotions, pas une réaction neurophysiologique brève."
+      },
+      {
+        "texte": "Colère, peur, dégoût, surprise, joie, anxiété",
+        "correct": false,
+        "pourquoi_faux": "L'anxiété prend la place de la tristesse. L'anxiété est un état affectif prolongé rapporté à une difficulté, voisin de l'angoisse : elle n'appartient pas à la liste des émotions de base."
+      }
+    ],
+    "explication": "Une émotion de base est décrite comme une réaction neurophysiologique issue de processus cognitifs et motivationnels. Elle est brève et corporelle, là où un sentiment est durable et interprété. Ce partage explique pourquoi les émotions influencent en retour la mémoire et l'attention : elles modifient l'état du système qui traite l'information.",
+    "vigilance": "Le piège de l'exercice n'est presque jamais d'oublier une émotion, c'est d'en ajouter une qui n'en est pas : honte, culpabilité, amour, anxiété sont les intrus habituels.",
+    "source": [
+      {
+        "texte": "IFSI S1, UE1.1 Fiche 002 — support de cours, transcription locale"
+      }
+    ],
+    "verifie": "2026-08-29",
+    "peremption": null,
+    "statut": "brouillon",
+    "origine": "usine à domaine, 1re fabrication (29/08/2026)",
+    "partage": "interne"
+  }
+]

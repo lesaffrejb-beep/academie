@@ -1,0 +1,107 @@
+[
+  {
+    "id": "le-situations-soins-psychiatriques-sans-consentement",
+    "domaine": "legislation-ethique",
+    "branche": "situations-particulieres",
+    "niveau": 3,
+    "type": "qcm",
+    "question": "Quel mode d'admission en soins psychiatriques suppose une demande manuscrite d'un proche accompagnée de deux certificats médicaux circonstanciés ?",
+    "reponse": "Les soins psychiatriques à la demande d'un tiers.",
+    "choix": [
+      {
+        "texte": "Les soins à la demande d'un tiers",
+        "correct": true
+      },
+      {
+        "texte": "Les soins pour péril imminent",
+        "correct": false,
+        "pourquoi_faux": "Ce mode existe précisément parce qu'aucun tiers ne s'engage. Un seul certificat médical circonstancié suffit, établi par un médecin extérieur à l'établissement. La présence ou l'absence d'un proche engagé est ce qui sépare les deux dispositifs."
+      },
+      {
+        "texte": "Les soins à la demande d'un représentant de l'État",
+        "correct": false,
+        "pourquoi_faux": "Ils supposent un trouble à l'ordre public ou une atteinte à la sûreté des personnes, et reposent sur un certificat médical circonstancié accompagné d'un arrêté municipal ou préfectoral. C'est l'autorité publique qui décide, pas un proche."
+      },
+      {
+        "texte": "Les soins libres",
+        "correct": false,
+        "pourquoi_faux": "Il s'agit d'une hospitalisation volontaire où le patient est consentant. Aucun certificat contraignant ni demande de tiers n'y a de place, puisque rien n'est imposé."
+      }
+    ],
+    "explication": "Les quatre modes se distinguent par deux questions : qui déclenche, et combien de certificats. Le patient lui-même en soins libres ; un proche qui s'engage dans le processus de soins, avec deux certificats, à la demande d'un tiers ; un médecin extérieur seul lorsque l'état impose des soins immédiats et une surveillance constante sans qu'aucun tiers ne se manifeste, en péril imminent ; l'autorité publique en cas de trouble à l'ordre public. Le principe de sectorisation, en vigueur depuis 1970, rattache par ailleurs le patient à un secteur défini par son domicile.",
+    "vigilance": "Cette carte est dérivée du passage le plus dégradé de la transcription locale : le vocabulaire y était mal restitué. Le fond est cohérent, mais les durées de la mesure et les références du code de la santé publique n'en sont volontairement PAS tirées et restent à établir sur le texte publié.",
+    "source": [
+      {
+        "texte": "IFSI S1, UE1.3 Fiche 012 — support de cours, transcription locale (passage à qualité de transcription dégradée)"
+      }
+    ],
+    "verifie": "2026-08-29",
+    "peremption": null,
+    "statut": "brouillon",
+    "origine": "usine à domaine, 1re fabrication (29/08/2026)",
+    "partage": "interne"
+  },
+  {
+    "id": "le-situations-protection-des-majeurs",
+    "domaine": "legislation-ethique",
+    "branche": "situations-particulieres",
+    "niveau": 2,
+    "type": "qcm",
+    "question": "Quelle mesure de protection des majeurs laisse à la personne ses droits et sa capacité juridique ?",
+    "reponse": "La sauvegarde de justice.",
+    "choix": [
+      {
+        "texte": "La sauvegarde de justice",
+        "correct": true
+      },
+      {
+        "texte": "La curatelle",
+        "correct": false,
+        "pourquoi_faux": "Elle intervient lorsque la sauvegarde de justice constitue une protection insuffisante : le majeur est alors représenté pour certains actes de la vie civile parce qu'il a besoin d'être conseillé ou contrôlé. Sa capacité est donc entamée."
+      },
+      {
+        "texte": "La tutelle",
+        "correct": false,
+        "pourquoi_faux": "C'est la mesure la plus lourde des trois, destinée aux personnes dont les facultés mentales sont altérées ou qui sont physiquement incapables d'exprimer leur volonté. Elle n'excède pas cinq ans, mais peut être rendue définitive si l'altération est irrémédiable."
+      },
+      {
+        "texte": "La désignation d'une personne de confiance",
+        "correct": false,
+        "pourquoi_faux": "Ce n'est pas une mesure de protection judiciaire mais un droit du patient qu'il exerce lui-même. Un majeur sous tutelle ne peut d'ailleurs pas désigner de personne de confiance."
+      }
+    ],
+    "explication": "Les trois mesures forment une gradation, déclenchée lorsqu'un majeur souffre d'une altération de ses facultés mentales ou corporelles. La sauvegarde de justice est temporaire et de courte durée : elle permet d'accompagner et de représenter pour certains actes sans retirer la capacité juridique. La curatelle ajoute un contrôle. La tutelle organise une représentation. Retenir la gradation vaut mieux que retenir trois définitions séparées.",
+    "vigilance": "Les durées et les conditions d'ouverture de ces mesures relèvent du code civil et évoluent. Elles sont à recontrôler sur le texte publié, la transcription locale ne permettant pas de vérifier la version en vigueur.",
+    "source": [
+      {
+        "texte": "IFSI S1, UE1.3 Fiche 012 — support de cours, transcription locale"
+      }
+    ],
+    "verifie": "2026-08-29",
+    "peremption": "2027-08-29",
+    "statut": "brouillon",
+    "origine": "usine à domaine, 1re fabrication (29/08/2026)",
+    "partage": "interne"
+  },
+  {
+    "id": "le-situations-consentement-du-mineur",
+    "domaine": "legislation-ethique",
+    "branche": "situations-particulieres",
+    "niveau": 2,
+    "type": "flash",
+    "question": "Comment s'exercent les droits d'un patient mineur, et qui tranche en cas de désaccord avec ses parents ?",
+    "reponse": "Les droits sont exercés par les titulaires de l'autorité parentale, à qui l'information est délivrée ; elle doit également être délivrée au mineur sous une forme adaptée, et son consentement est recherché dès que possible. En cas de désaccord entre le mineur et ses parents, le juge des enfants tranche par une mesure d'assistance éducative.",
+    "explication": "Le mineur n'est pas traité comme un objet de soins dont on décide entièrement à côté : la loi maintient l'exercice des droits chez les parents tout en imposant de l'informer et de rechercher son adhésion. Le cours signale par ailleurs des cas où le consentement des titulaires de l'autorité parentale n'est pas requis, notamment l'urgence vitale, la contraception et l'interruption volontaire de grossesse.",
+    "vigilance": "« Recherché » n'est pas « requis » : rechercher le consentement du mineur est une obligation de démarche, qui ne lui donne pas un droit de veto sur la décision parentale hors des cas de dispense.",
+    "source": [
+      {
+        "texte": "IFSI S1, UE1.3 Fiche 012 — support de cours, transcription locale"
+      }
+    ],
+    "verifie": "2026-08-29",
+    "peremption": null,
+    "statut": "brouillon",
+    "origine": "usine à domaine, 1re fabrication (29/08/2026)",
+    "partage": "interne"
+  }
+]

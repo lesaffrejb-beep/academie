@@ -1,0 +1,479 @@
+[
+  {
+    "id": "procedure-recouvrement-exigibilite-provision",
+    "domaine": "procedure",
+    "branche": "recouvrement-charges",
+    "niveau": 1,
+    "type": "flash",
+    "question": "À quelle date une provision sur charges courantes devient-elle exigible, et pourquoi cette date commande-t-elle tout le reste du recouvrement ?",
+    "reponse": "Le premier jour de chaque trimestre, ou le premier jour de la période fixée par l'assemblée générale si elle en a décidé une autre. C'est la date à partir de laquelle la créance existe et se compte : relance, mise en demeure, point de départ des intérêts et délai de trente jours de la déchéance du terme se calent tous, de proche en proche, sur elle.",
+    "explication": "Le recouvrement est une chaîne de délais, et une chaîne de délais n'a de valeur que si son premier maillon est daté. Tant que l'exigibilité n'est pas établie, une mise en demeure est prématurée et la déchéance du terme qui en découlerait serait fragile. C'est pour cette raison que l'appel de fonds et la décision d'assemblée qui fixe la périodicité sont les deux premières pièces à sortir du dossier avant d'écrire quoi que ce soit à un débiteur.",
+    "vigilance": "Le texte dit « le premier jour de chaque trimestre », pas « chaque trimestre civil » : les trimestres se comptent sur l'exercice comptable, et l'assemblée générale peut de toute façon avoir fixé une autre périodicité. Vérifier le procès-verbal avant de calculer une date d'exigibilité, plutôt que de supposer le trimestre calendaire.",
+    "source": [
+      {
+        "texte": "Art. 14-1 de la loi n° 65-557 du 10 juillet 1965 : « La provision est exigible le premier jour de chaque trimestre ou le premier jour de la période fixée par l'assemblée générale »",
+        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000043977299/"
+      },
+      {
+        "texte": "Art. 35 du décret n° 67-223 du 17 mars 1967 : liste des versements que le syndic peut exiger (version en vigueur depuis le 25/12/2025)",
+        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000053191341/"
+      }
+    ],
+    "verifie": "2026-08-30",
+    "peremption": null,
+    "statut": "valide",
+    "origine": "lot de test vitrine du 29/08/2026 ; « trimestre civil » corrigé en « trimestre » le 30/08/2026, au vu du texte de l'article 14-1",
+    "partage": "banque"
+  },
+  {
+    "id": "procedure-recouvrement-mise-en-demeure-contenu",
+    "domaine": "procedure",
+    "branche": "recouvrement-charges",
+    "niveau": 2,
+    "prerequis": [
+      "procedure-recouvrement-exigibilite-provision"
+    ],
+    "type": "flash",
+    "question": "Sous quelle forme s'envoie la mise en demeure préalable à la déchéance du terme, et que doit-elle contenir pour tenir ?",
+    "reponse": "Depuis le 25 décembre 2025, la forme de principe est électronique : lettre recommandée électronique, ou procédé électronique passant par un prestataire de services de confiance qualifié. La lettre recommandée avec demande d'avis de réception n'est plus que l'exception, réservée au copropriétaire qui demande à recevoir ses notifications par voie postale. Sur le contenu, l'article 19-2 n'impose rien en propre : il exige seulement une mise en demeure restée infructueuse passé un délai de trente jours. Ce qui se joue sur le contenu (ventilation du décompte poste par poste, montant et nature des sommes réclamées) relève de la jurisprudence et n'a pas pu être recoupé à la source dans cette passe.",
+    "explication": "La ventilation du décompte a une raison d'être qui se comprend sans texte : elle permet au débiteur de savoir ce qu'on lui réclame et au juge de vérifier que chaque poste était bien exigible. Un décompte global d'une seule ligne rend ce contrôle impossible et fragilise tout ce qui suit, puisque la déchéance du terme ne vaut que ce que vaut la mise en demeure qui la précède. Mais la sanction exacte de l'insuffisance de la lettre, et l'existence d'exigences de forme supplémentaires, ne se lisent pas dans la loi.",
+    "vigilance": "Deux points restent à trancher avant d'utiliser cette carte en séance ou par écrit. Premièrement, la carte d'origine affirmait que la mise en demeure doit reproduire le texte de l'article 19-2 et avertir de la sanction encourue : cette exigence ne figure pas dans l'article 19-2 en vigueur et n'a été retrouvée dans aucun texte, elle est retirée de la réponse et reste à confirmer ou à écarter avec l'avocat du syndicat. Deuxièmement, l'exigence de ventilation et sa sanction sont d'origine jurisprudentielle : la carte de veille correspondante du domaine droit porte le même doute, non levé. Ne pas engager une procédure sur une mise en demeure ancienne ou sommaire sans faire vérifier ces deux points.",
+    "source": [
+      {
+        "texte": "Art. 19-2 de la loi n° 65-557 du 10 juillet 1965 : mise en demeure restée infructueuse passé un délai de trente jours, sans exigence de forme ni de contenu dans le texte",
+        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000043977271/"
+      },
+      {
+        "texte": "Art. 64 du décret n° 67-223 du 17 mars 1967 (version en vigueur depuis le 25/12/2025) : les notifications et mises en demeure sont valablement faites par voie électronique",
+        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000053191373/"
+      },
+      {
+        "texte": "Art. 64-1 du décret n° 67-223 du 17 mars 1967 (version en vigueur depuis le 25/12/2025) : « Par exception, les notifications et mises en demeure sont valablement faites par lettre recommandée avec demande d'avis de réception, lorsqu'un copropriétaire demande à les recevoir par voie postale »",
+        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000053191378/"
+      }
+    ],
+    "verifie": "2026-08-30",
+    "peremption": null,
+    "statut": "brouillon",
+    "origine": "lot de test vitrine du 29/08/2026 ; forme corrigée le 30/08/2026 sur les articles 64 et 64-1 du décret dans leur rédaction issue du décret n° 2025-1292 du 22 décembre 2025",
+    "doute": "Deux affirmations de la carte d'origine n'ont pas été retrouvées à la source : l'obligation de reproduire le texte de l'article 19-2 dans la mise en demeure (absente de l'article 19-2 en vigueur et d'aucun texte identifié), et la sanction attachée à un décompte non ventilé (jurisprudence non recoupée sur Légifrance, même doute que sur la carte droit-veille-recouvrement-ventilation-mise-en-demeure). Retrouver la décision ou le texte porteur avant de passer la carte en valide.",
+    "partage": "banque"
+  },
+  {
+    "id": "procedure-recouvrement-mise-en-demeure-deux-effets",
+    "domaine": "procedure",
+    "branche": "recouvrement-charges",
+    "niveau": 2,
+    "prerequis": [
+      "procedure-recouvrement-mise-en-demeure-contenu"
+    ],
+    "type": "flash",
+    "question": "Quels sont les deux effets juridiques que produit la mise en demeure, indépendamment de la déchéance du terme qu'elle prépare ?",
+    "reponse": "D'abord elle fait courir les intérêts au taux légal en matière civile au profit du syndicat, dus à compter de la mise en demeure adressée par le syndic au copropriétaire défaillant, sauf stipulation contraire du règlement de copropriété. Ensuite elle rend imputables au seul copropriétaire défaillant les frais nécessaires exposés par le syndicat à partir de ce moment : frais de mise en demeure, frais de relance, frais de prise d'hypothèque, ainsi que les droits et émoluments des actes des commissaires de justice.",
+    "explication": "Ces deux effets expliquent pourquoi on ne laisse pas traîner l'envoi. Avant la mise en demeure, le retard ne coûte rien au débiteur et tout ce qu'on dépense pour le relancer reste à la charge collective ; après, l'horloge tourne à son détriment et la facture le suit. C'est la bascule économique du dossier, et elle tient à un seul courrier daté. À noter que les deux effets n'ont pas la même source : les intérêts viennent de l'article 36 du décret de 1967, l'imputation des frais de l'article 10-1 de la loi.",
+    "vigilance": "Deux réflexes. D'abord ouvrir le règlement de copropriété : l'article 36 du décret réserve la stipulation contraire, donc un règlement peut écarter ou aménager les intérêts. Ensuite dater la pièce correctement : le délai que la mise en demeure fait courir part du lendemain de la première présentation de la lettre recommandée quand elle a été envoyée par voie postale, et du lendemain de la transmission de l'avis électronique quand elle a été envoyée par voie électronique. La preuve de cette date se classe avec la copie de la lettre, jamais séparément.",
+    "source": [
+      {
+        "texte": "Art. 36 du décret n° 67-223 du 17 mars 1967 : « Sauf stipulation contraire du règlement de copropriété, les sommes dues au titre de l'article 35 portent intérêt au profit du syndicat. Cet intérêt, fixé au taux légal en matière civile, est dû à compter de la mise en demeure adressée par le syndic au copropriétaire défaillant »",
+        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000006488650/"
+      },
+      {
+        "texte": "Art. 10-1 a) de la loi n° 65-557 du 10 juillet 1965 : « Les frais nécessaires exposés par le syndicat, notamment les frais de mise en demeure, de relance et de prise d'hypothèque à compter de la mise en demeure »",
+        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000039313543/"
+      },
+      {
+        "texte": "Art. 64 et 64-1 du décret n° 67-223 du 17 mars 1967 : point de départ du délai que font courir les notifications et mises en demeure",
+        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000053191378/"
+      }
+    ],
+    "verifie": "2026-08-30",
+    "peremption": null,
+    "statut": "valide",
+    "origine": "lot de test vitrine du 29/08/2026 ; source des intérêts corrigée le 30/08/2026 (art. 36 du décret, et non art. 35), réserve du règlement de copropriété ajoutée",
+    "partage": "banque"
+  },
+  {
+    "id": "procedure-recouvrement-decheance-assiette",
+    "domaine": "procedure",
+    "branche": "recouvrement-charges",
+    "niveau": 2,
+    "prerequis": [
+      "procedure-recouvrement-mise-en-demeure-deux-effets"
+    ],
+    "type": "flash",
+    "question": "Que devient exigible, exactement, lorsque la déchéance du terme de l'article 19-2 est acquise ?",
+    "reponse": "Le débiteur perd le bénéfice de l'échelonnement et tout tombe d'un bloc : les autres provisions non encore échues appelées en application de l'article 14-1, c'est-à-dire les provisions du budget prévisionnel comme les sommes appelées pour les dépenses de travaux non comprises dans ce budget ; les cotisations du fonds de travaux, auxquelles l'article 19-2 est expressément rendu applicable ; et les sommes restant dues appelées au titre des exercices précédents, à la seule condition que les comptes de ces exercices aient été approuvés.",
+    "explication": "L'assiette est beaucoup plus large que l'impayé qui a déclenché la procédure, et c'est tout l'intérêt du mécanisme : on cesse de courir derrière un trimestre après l'autre. En contrepartie, chaque poste appelé doit reposer sur une décision d'assemblée identifiable, faute de quoi la partie contestée fait tomber le décompte. Le juge, saisi selon la procédure accélérée au fond, commence d'ailleurs par constater l'approbation par l'assemblée du budget prévisionnel, des travaux ou des comptes annuels avant de condamner. La condition d'approbation des comptes vaut, elle, pour les seuls arriérés antérieurs.",
+    "vigilance": "Piège de référence à connaître : depuis le 1er janvier 2023, l'article 14-2 de la loi ne désigne plus les travaux hors budget prévisionnel mais le plan pluriannuel de travaux. Les dépenses pour travaux non comprises dans le budget sont passées au II de l'article 14-1, et le fonds de travaux à l'article 14-2-1. Une mise en demeure ou un décompte qui vise encore « l'article 14-2 » pour des travaux hors budget cite un texte qui dit autre chose.",
+    "source": [
+      {
+        "texte": "Art. 19-2 de la loi n° 65-557 du 10 juillet 1965, version en vigueur depuis le 01/01/2023 : provisions non encore échues en application de l'article 14-1, sommes restant dues des exercices précédents après approbation des comptes, applicabilité aux cotisations du fonds de travaux",
+        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000043977271/"
+      },
+      {
+        "texte": "Art. 14-1 de la loi n° 65-557 du 10 juillet 1965, I (budget prévisionnel) et II (dépenses pour travaux non comprises dans le budget)",
+        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000043977299/"
+      },
+      {
+        "texte": "Art. 14-2-1 de la loi n° 65-557 du 10 juillet 1965 : fonds de travaux et cotisation annuelle obligatoire",
+        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000043967792/"
+      }
+    ],
+    "verifie": "2026-08-30",
+    "peremption": null,
+    "statut": "valide",
+    "origine": "lot de test vitrine du 29/08/2026 ; assiette et citations reprises le 30/08/2026 sur le texte en vigueur de l'article 19-2, qui ne vise ni l'article 14-2 ni une catégorie autonome de travaux hors budget",
+    "partage": "banque"
+  },
+  {
+    "id": "procedure-recouvrement-datation-decheance",
+    "domaine": "procedure",
+    "branche": "recouvrement-charges",
+    "niveau": 2,
+    "prerequis": [
+      "procedure-recouvrement-mise-en-demeure-contenu"
+    ],
+    "type": "datation",
+    "question": "Sur cette frise, un délai est laissé en blanc et marqué « ? », juste avant la quatrième étape. Quel est ce délai, à partir de quel événement se compte-t-il, et à quel rang la déchéance du terme se place-t-elle dans l'ordre des six étapes ?",
+    "reponse": "Le délai est de trente jours. Il se compte à partir de la mise en demeure : le lendemain du jour de la première présentation de la lettre recommandée si elle a été envoyée par voie postale, que le pli ait été retiré ou renvoyé avec la mention « avisé, non réclamé » ; le lendemain de la transmission de l'avis électronique si elle a été envoyée par voie électronique, ce qui est aujourd'hui la forme de principe. La déchéance du terme est la quatrième étape : elle vient après la mise en demeure (étape 3) et avant l'obtention d'un titre exécutoire (étape 5).",
+    "explication": "L'ordre est le vrai contenu de cette carte. Les trois premières étapes sont amiables et se comptent en jours ; la quatrième est un basculement juridique qui ne demande l'intervention de personne ; les deux dernières sont judiciaires et se comptent en mois. Confondre l'étape 4 et l'étape 5 est l'erreur classique : la déchéance rend la dette exigible, elle ne donne aucun droit de saisir. Il faut le titre pour cela.",
+    "vigilance": "Un pli revenu non réclamé fait courir le délai comme un pli retiré, puisque le point de départ est la première présentation et non le retrait. Le réflexe inverse, attendre un accusé signé pour lancer le compte à rebours, fait perdre des semaines sur chaque dossier.",
+    "image": {
+      "fichier": "images/frise-recouvrement-charges.svg",
+      "licence": "création interne Académie, libre de réutilisation",
+      "credit": "Académie",
+      "source": "schéma original"
+    },
+    "source": [
+      {
+        "texte": "Art. 19-2 de la loi n° 65-557 du 10 juillet 1965 : mise en demeure restée infructueuse passé un délai de trente jours",
+        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000043977271/"
+      },
+      {
+        "texte": "Art. 64-1 du décret n° 67-223 du 17 mars 1967 : « Le délai qu'elles font courir a pour point de départ le lendemain du jour de la première présentation de la lettre recommandée au domicile du destinataire »",
+        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000053191378/"
+      },
+      {
+        "texte": "Art. 64 du décret n° 67-223 du 17 mars 1967 : point de départ du délai pour la voie électronique, lendemain de la transmission de l'avis électronique",
+        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000053191373/"
+      }
+    ],
+    "verifie": "2026-08-30",
+    "peremption": null,
+    "statut": "valide",
+    "origine": "lot de test vitrine du 29/08/2026, schéma dessiné pour la carte ; point de départ précisé le 30/08/2026 (lendemain, et cas de la voie électronique) ; etapes ajoutées le 30/08/2026 (contrat §2, ordre conforme à la frise vérifiée en double passe)",
+    "partage": "banque",
+    "etapes": [
+      "Exigibilité de la provision (art. 14-1)",
+      "Relance simple (frais non imputables au débiteur)",
+      "Mise en demeure (voie électronique ou LRAR)",
+      "Déchéance du terme (art. 19-2, 30 jours après la première présentation)",
+      "Titre exécutoire (injonction de payer ou procédure accélérée au fond)",
+      "Exécution forcée par commissaire de justice"
+    ]
+  },
+  {
+    "id": "procedure-recouvrement-plan-deux-voies",
+    "domaine": "procedure",
+    "branche": "recouvrement-charges",
+    "niveau": 3,
+    "prerequis": [
+      "procedure-recouvrement-decheance-assiette"
+    ],
+    "type": "plan",
+    "question": "Sur cette frise, les deux voies judiciaires figurent dans un encadré en pointillés relié au trait principal, et non dans une boîte numérotée. Entre quelles étapes s'insèrent-elles, pourquoi ne portent-elles pas de numéro, et qu'est-ce qui distingue les deux voies en pratique ?",
+    "reponse": "L'encadré se rattache au trait entre l'étape 4, la déchéance du terme, et l'étape 5, le titre exécutoire. Il n'est pas numéroté parce qu'il ne s'agit pas d'une étape supplémentaire mais d'un choix entre deux chemins qui mènent au même point. L'injonction de payer est une requête déposée au greffe, non contradictoire, ouverte parce que la créance de charges résulte d'une obligation de caractère statutaire et porte sur un montant déterminé ; elle est rapide, mais l'opposition du débiteur, recevable dans le mois de la signification de l'ordonnance, renvoie l'affaire à un débat au fond et efface le gain de temps. La voie de l'article 19-2 est une assignation devant le président du tribunal judiciaire statuant selon la procédure accélérée au fond : plus lourde à monter, contradictoire d'emblée, elle fait constater par le juge l'approbation par l'assemblée du budget, des travaux ou des comptes, puis la défaillance, avant de condamner.",
+    "explication": "Lire un schéma, c'est d'abord lire ce qui n'y est pas : ici, l'absence de numéro dit que le circuit ne s'allonge pas d'une étape mais se dédouble. Le choix de la voie se fait sur la solidité du dossier, pas sur la vitesse affichée. Quand la mise en demeure est irréprochable et les comptes approuvés, la procédure de l'article 19-2 est la voie propre, parce qu'elle purge la discussion en une fois. Quand le montant est modeste et le débiteur peu susceptible de contester, l'injonction de payer reste la plus économique.",
+    "vigilance": "L'action en paiement des charges se prescrit par cinq ans, l'article 42 de la loi renvoyant à l'article 2224 du code civil pour le délai comme pour son point de départ. Cette limite ne se lit pas sur la frise, et c'est précisément ce qu'un schéma ne dit jamais : le temps qui court pendant qu'on ne fait rien. Le comparatif détaillé des deux voies (effet de l'opposition sur les frais déjà engagés, opportunité d'une demande reconventionnelle du débiteur) se tranche avec l'avocat du syndicat, dossier par dossier : la carte ne va pas au-delà de ce que les textes disent.",
+    "image": {
+      "fichier": "images/frise-recouvrement-charges.svg",
+      "licence": "création interne Académie, libre de réutilisation",
+      "credit": "Académie",
+      "source": "schéma original"
+    },
+    "source": [
+      {
+        "texte": "Art. 19-2 alinéa 2 de la loi n° 65-557 du 10 juillet 1965 : président du tribunal judiciaire statuant selon la procédure accélérée au fond",
+        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000043977271/"
+      },
+      {
+        "texte": "Art. 1405 du code de procédure civile : injonction de payer ouverte à la créance de cause contractuelle ou résultant d'une obligation de caractère statutaire, d'un montant déterminé",
+        "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006412552/"
+      },
+      {
+        "texte": "Art. 1416 du code de procédure civile : opposition formée dans le mois suivant la signification de l'ordonnance",
+        "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006412571/"
+      },
+      {
+        "texte": "Art. 42 alinéa 1 de la loi n° 65-557 du 10 juillet 1965, renvoyant à l'art. 2224 du code civil (prescription quinquennale)",
+        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000039329680/"
+      }
+    ],
+    "verifie": "2026-08-30",
+    "peremption": null,
+    "statut": "valide",
+    "origine": "lot de test vitrine du 29/08/2026, schéma dessiné pour la carte ; deux affirmations non recoupées retirées le 30/08/2026 (exécution provisoire présentée comme propre à l'art. 19-2, fermeture de la demande reconventionnelle)",
+    "partage": "banque"
+  },
+  {
+    "id": "procedure-recouvrement-frais-relance-simple",
+    "domaine": "procedure",
+    "branche": "recouvrement-charges",
+    "niveau": 2,
+    "prerequis": [
+      "procedure-recouvrement-mise-en-demeure-deux-effets"
+    ],
+    "type": "qcm",
+    "question": "Une relance simple est envoyée quinze jours après l'exigibilité, avant toute mise en demeure. Qui en supporte le coût ?",
+    "reponse": "La copropriété : les frais engagés avant la mise en demeure ne sont pas des frais nécessaires de recouvrement au sens de l'article 10-1, et ne peuvent pas être imputés au débiteur.",
+    "choix": [
+      {
+        "texte": "Le syndicat des copropriétaires, donc tous les copropriétaires par répartition",
+        "correct": true
+      },
+      {
+        "texte": "Le copropriétaire débiteur, au titre de l'article 10-1 de la loi de 1965",
+        "correct": false,
+        "pourquoi_faux": "L'article 10-1 vise les frais de mise en demeure, de relance et de prise d'hypothèque « à compter de la mise en demeure ». Avant elle, aucun texte ne fonde l'imputation, et le code des procédures civiles d'exécution dit même l'inverse : les frais de recouvrement entrepris sans titre exécutoire restent à la charge du créancier. Passer la ligne sur le compte du débiteur revient à créer un frais que la loi n'a pas prévu."
+      },
+      {
+        "texte": "Le copropriétaire débiteur, si le règlement de copropriété prévoit une facturation des relances",
+        "correct": false,
+        "pourquoi_faux": "Le règlement de copropriété organise la répartition des charges, il ne crée pas de frais individuels imputables que la loi ignore. Le code des procédures civiles d'exécution répute d'ailleurs non écrite toute stipulation contraire sur les frais de recouvrement sans titre."
+      },
+      {
+        "texte": "Le syndic personnellement, puisque la relance fait partie de sa mission",
+        "correct": false,
+        "pourquoi_faux": "La question n'est pas de savoir qui rédige la lettre mais sur quel compte la dépense se retrouve. Le temps passé relève du forfait de gestion courante ; le coût du pli, lui, reste une dépense du syndicat faute d'imputabilité au débiteur."
+      }
+    ],
+    "explication": "C'est la raison économique pour laquelle on ne multiplie pas les relances amiables : chaque courrier envoyé avant la mise en demeure est payé par les copropriétaires à jour de leurs charges. Une relance vaut mieux que zéro, parce qu'elle règle une bonne partie des retards d'inattention, mais la quatrième relance gratuite coûte à la collectivité et retarde la bascule qui, elle, fait basculer les frais.",
+    "vigilance": "Une porte de sortie existe mais elle est étroite et judiciaire : le créancier qui justifie du caractère nécessaire des démarches entreprises peut demander au juge de l'exécution de mettre tout ou partie de ces frais à la charge d'un débiteur de mauvaise foi. Cela se plaide, cela ne se passe pas en écriture. En assemblée, la question revient sous la forme « pourquoi c'est nous qui payons les relances des mauvais payeurs » : la bonne réponse est de montrer le calendrier de passage en mise en demeure, pas de promettre une imputation impossible.",
+    "source": [
+      {
+        "texte": "Art. 10-1 a) de la loi n° 65-557 du 10 juillet 1965 : frais nécessaires imputables au copropriétaire défaillant à compter de la mise en demeure",
+        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000039313543/"
+      },
+      {
+        "texte": "Art. L. 111-8 du code des procédures civiles d'exécution : les frais de recouvrement entrepris sans titre exécutoire restent à la charge du créancier, toute stipulation contraire étant réputée non écrite ; exception du débiteur de mauvaise foi devant le juge de l'exécution",
+        "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000028747701/"
+      }
+    ],
+    "verifie": "2026-08-30",
+    "peremption": null,
+    "statut": "valide",
+    "origine": "lot de test vitrine du 29/08/2026 ; fondement complété le 30/08/2026 par l'art. L. 111-8 du code des procédures civiles d'exécution",
+    "partage": "banque"
+  },
+  {
+    "id": "procedure-recouvrement-article-700",
+    "domaine": "procedure",
+    "branche": "recouvrement-charges",
+    "niveau": 3,
+    "prerequis": [
+      "procedure-recouvrement-frais-relance-simple"
+    ],
+    "type": "qcm",
+    "question": "Le syndicat a fait appel à un avocat pour l'assignation. Sur quel fondement les honoraires de cet avocat peuvent-ils être mis à la charge du copropriétaire condamné ?",
+    "reponse": "Sur une demande d'indemnité formée au titre de l'article 700 du code de procédure civile, que le juge accorde souverainement.",
+    "choix": [
+      {
+        "texte": "Une demande au titre de l'article 700 du code de procédure civile, formulée dans l'assignation",
+        "correct": true
+      },
+      {
+        "texte": "Une imputation directe de la facture d'avocat sur le compte individuel du débiteur, au titre de l'article 10-1",
+        "correct": false,
+        "pourquoi_faux": "L'article 10-1 couvre les frais nécessaires du syndicat à compter de la mise en demeure et les droits et émoluments des actes des commissaires de justice. L'honoraire d'avocat est un honoraire libre, pas un frais tarifé : l'imputer directement au débiteur expose à devoir le recréditer, avec la crédibilité du dossier en prime."
+      },
+      {
+        "texte": "Les dépens, mis à la charge de la partie perdante",
+        "correct": false,
+        "pourquoi_faux": "Les dépens sont la liste limitative de l'article 695 : droits et taxes perçus par les greffes, émoluments des officiers publics et ministériels, et la rémunération des avocats seulement dans la mesure où elle est réglementée. L'honoraire libre de l'avocat n'y figure pas, et c'est précisément ce qui a fait naître l'article 700 pour les frais non compris dans les dépens."
+      },
+      {
+        "texte": "Une répartition sur l'ensemble des copropriétaires, l'action étant menée dans l'intérêt collectif",
+        "correct": false,
+        "pourquoi_faux": "C'est ce qui arrive faute de demande au titre de l'article 700, mais ce n'est pas un fondement de récupération, c'est le résultat d'un oubli. La collectivité finit alors par financer la procédure engagée contre celui qui ne paie pas."
+      }
+    ],
+    "explication": "Trois régimes cohabitent et se confondent souvent. L'article 10-1 de la loi de 1965 vise les frais nécessaires du syndicat à compter de la mise en demeure et s'impute sans juge. Les dépens sont les frais énumérés à l'article 695 et suivent la partie perdante, l'article 696 posant que la partie perdante y est condamnée à moins que le juge, par décision motivée, n'en mette tout ou partie à la charge d'une autre partie. L'article 700 indemnise les frais qui ne sont dans aucune des deux catégories, honoraires d'avocat en tête, et il ne s'obtient que si on l'a demandé, pour un montant que le juge fixe en tenant compte de l'équité ou de la situation économique de la partie condamnée.",
+    "vigilance": "La somme accordée au titre de l'article 700 est presque toujours inférieure à la note d'honoraires réelle, le texte invitant expressément le juge à tenir compte de l'équité et de la situation économique du condamné. Annoncer au conseil syndical que la procédure sera « intégralement récupérée » est une promesse qui ne se tient pas.",
+    "source": [
+      {
+        "texte": "Art. 700 du code de procédure civile : condamnation aux frais exposés et non compris dans les dépens",
+        "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000045268436/"
+      },
+      {
+        "texte": "Art. 695 et 696 du code de procédure civile : composition des dépens et charge des dépens",
+        "url": "https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006070716/LEGISCTA000006135902/"
+      },
+      {
+        "texte": "Art. 10-1 de la loi n° 65-557 du 10 juillet 1965",
+        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000039313543/"
+      }
+    ],
+    "verifie": "2026-08-30",
+    "peremption": null,
+    "statut": "valide",
+    "origine": "lot de test vitrine du 29/08/2026 ; distracteur des dépens précisé le 30/08/2026 sur le texte de l'article 695",
+    "partage": "banque"
+  },
+  {
+    "id": "procedure-recouvrement-autorisation-assemblee",
+    "domaine": "procedure",
+    "branche": "recouvrement-charges",
+    "niveau": 2,
+    "prerequis": [
+      "procedure-recouvrement-decheance-assiette"
+    ],
+    "type": "qcm",
+    "question": "Quelle décision d'assemblée générale le syndic doit-il obtenir avant d'engager une action en recouvrement de charges impayées ?",
+    "reponse": "Aucune : le recouvrement de créances fait l'objet d'une dispense expresse d'autorisation préalable.",
+    "choix": [
+      {
+        "texte": "Aucune, le recouvrement de créances est expressément dispensé d'autorisation",
+        "correct": true
+      },
+      {
+        "texte": "Une autorisation d'agir en justice votée à la majorité de l'article 24",
+        "correct": false,
+        "pourquoi_faux": "C'est bien le régime de principe pour agir en justice au nom du syndicat, et c'est ce qui rend le distracteur crédible. Mais l'article 55 du décret, qui pose ce principe, prévoit lui-même l'exception pour les actions en recouvrement de créance : attendre le vote reviendrait à laisser prescrire ou grossir la dette entre deux assemblées."
+      },
+      {
+        "texte": "Une autorisation votée à la majorité de l'article 25, l'action engageant le patrimoine d'un copropriétaire",
+        "correct": false,
+        "pourquoi_faux": "L'article 25 n'a rien à voir avec l'habilitation du syndic à agir : il liste des décisions relevant de la majorité des voix de tous les copropriétaires. Aucune majorité renforcée n'est requise pour recouvrer une créance."
+      },
+      {
+        "texte": "Aucune si le règlement de copropriété le prévoit, une autorisation sinon",
+        "correct": false,
+        "pourquoi_faux": "La dispense ne dépend pas du règlement : elle est posée par le décret, pour toutes les copropriétés. Le règlement n'a rien à ajouter ni à retrancher à ce texte."
+      }
+    ],
+    "explication": "Le syndic n'a pas seulement le droit d'agir seul, il en a le devoir : rester passif devant des impayés qui grossissent est une faute de gestion. La dispense couvre d'ailleurs plus large que l'action au fond : elle vise aussi la mise en œuvre des voies d'exécution forcée et les mesures conservatoires. Deux obligations subsistent en contrepartie, et elles sont d'information, pas d'autorisation : aviser chaque copropriétaire de l'existence et de l'objet de l'instance, et rendre compte des actions introduites à la prochaine assemblée générale.",
+    "vigilance": "Une exception est écrite dans le texte lui-même : la dispense couvre les voies d'exécution forcée « à l'exception de la saisie en vue de la vente d'un lot ». La saisie immobilière demande donc bien une autorisation de l'assemblée, et l'article 19-2 précise même que la voix du copropriétaire débiteur n'est alors pas prise en compte dans le décompte de la majorité et qu'il ne peut pas recevoir de mandat. À préparer avec l'avocat du syndicat avant l'assemblée, pas après.",
+    "source": [
+      {
+        "texte": "Art. 55 du décret n° 67-223 du 17 mars 1967, version en vigueur depuis le 25/12/2025 : dispense d'autorisation pour les actions en recouvrement de créance et les voies d'exécution forcée, sauf saisie en vue de la vente d'un lot ; compte rendu à la prochaine assemblée générale",
+        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000053191360/"
+      },
+      {
+        "texte": "Art. 59 du décret n° 67-223 du 17 mars 1967 : le syndic avise chaque copropriétaire de l'existence et de l'objet de l'instance",
+        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000039345728/"
+      },
+      {
+        "texte": "Art. 19-2 dernier alinéa de la loi n° 65-557 du 10 juillet 1965 : vote autorisant la saisie en vue de la vente d'un lot",
+        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000043977271/"
+      }
+    ],
+    "verifie": "2026-08-30",
+    "peremption": null,
+    "statut": "valide",
+    "origine": "lot de test vitrine du 29/08/2026 ; vigilance corrigée le 30/08/2026, l'exception de la saisie en vue de la vente d'un lot étant écrite dans l'article 55 et non seulement une pratique",
+    "partage": "banque"
+  },
+  {
+    "id": "procedure-recouvrement-commissaire-de-justice",
+    "domaine": "procedure",
+    "branche": "recouvrement-charges",
+    "niveau": 3,
+    "prerequis": [
+      "procedure-recouvrement-plan-deux-voies"
+    ],
+    "type": "flash",
+    "question": "Ce que fait le commissaire de justice dans un dossier d'impayés se répartit de part et d'autre d'une ligne. Quelle est cette ligne, et que peut-il faire de chaque côté ?",
+    "reponse": "La ligne est l'obtention du titre exécutoire. Avant : il signifie les actes, délivre l'assignation et pratique les mesures conservatoires, que le syndicat peut désormais engager sans autorisation préalable du juge lorsqu'il se prévaut de provisions relevant de l'article 19-2. Après : il exécute, par commandement de payer puis saisie-attribution sur compte bancaire, saisie des rémunérations, saisie des loyers si le copropriétaire est bailleur, et saisie immobilière en dernier recours.",
+    "explication": "Deux gestes méritent d'être connus à part. La saisie des loyers d'abord : lorsque la mesure d'exécution porte sur une créance à exécution successive du débiteur, notamment une créance de loyer ou d'indemnité d'occupation, elle se poursuit jusqu'à l'extinction de la créance du syndicat résultant de l'ordonnance, sans qu'il faille refaire un acte à chaque échéance. Sur un débiteur bailleur, c'est souvent la voie la plus rapide et la moins conflictuelle, très en amont de toute idée de vente forcée. L'hypothèque légale ensuite, qui n'est pas l'affaire du commissaire de justice : c'est le syndic qui en requiert l'inscription au profit du syndicat, sans autorisation de l'assemblée, après une mise en demeure infructueuse.",
+    "vigilance": "L'hypothèque protège le rang du syndicat sans faire rentrer d'argent ; la saisie fait rentrer de l'argent sans protéger le rang. Les deux gestes ne se remplacent pas, et la question de savoir lequel engager en premier se pose avec l'avocat, dossier par dossier. Deux bornes à retenir : l'hypothèque légale du syndicat garantit les créances de l'année courante et des quatre dernières années échues, et aucune inscription ne peut plus être requise pour des créances échues depuis plus de cinq ans.",
+    "source": [
+      {
+        "texte": "Art. 19 de la loi n° 65-557 du 10 juillet 1965 : hypothèque légale du syndicat, inscription requise par le syndic sans autorisation de l'assemblée, après mise en demeure infructueuse",
+        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000039313565/"
+      },
+      {
+        "texte": "Art. 2402 3° du code civil : hypothèque légale spéciale pour les créances du syndicat relatives à l'année courante et aux quatre dernières années échues",
+        "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000044072139/"
+      },
+      {
+        "texte": "Art. 19-2 alinéa 4 de la loi n° 65-557 du 10 juillet 1965 : mesure d'exécution portant sur une créance à exécution successive, poursuivie jusqu'à extinction de la créance du syndicat",
+        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000043977271/"
+      },
+      {
+        "texte": "Art. L. 511-2 du code des procédures civiles d'exécution, modifié par la loi n° 2024-322 du 9 avril 2024 : mesure conservatoire sans autorisation préalable du juge pour les provisions mentionnées à l'article 19-2",
+        "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000025026106/"
+      }
+    ],
+    "verifie": "2026-08-30",
+    "peremption": null,
+    "statut": "valide",
+    "origine": "lot de test vitrine du 29/08/2026 ; l'inscription de l'hypothèque légale, attribuée à tort au commissaire de justice, corrigée le 30/08/2026 sur l'article 19 de la loi",
+    "partage": "banque"
+  },
+  {
+    "id": "procedure-recouvrement-libre-frais-au-conseil",
+    "domaine": "procedure",
+    "branche": "recouvrement-charges",
+    "niveau": 3,
+    "prerequis": [
+      "procedure-recouvrement-article-700"
+    ],
+    "type": "libre",
+    "question": "Un membre du conseil syndical demande : « celui qui ne paie pas, il nous rembourse bien tous nos frais, non ? » Réponds-lui en six lignes, sans jargon, en séparant ce qui lui sera imputé de ce qui restera à la charge de la copropriété.",
+    "reponse": "Éléments attendus dans la correction : (1) tout ce qui est engagé avant la mise en demeure reste à la charge de la copropriété, relances comprises ; (2) à partir de la mise en demeure, les frais nécessaires basculent sur le débiteur, et les intérêts au taux légal courent à son détriment ; (3) les frais énumérés à l'article 695, les dépens, suivent la partie perdante ; (4) les honoraires d'avocat ne sont ni des frais de l'article 10-1 ni des dépens, puisque seule la rémunération réglementée de l'avocat entre dans les dépens : ils ne se récupèrent que par une demande au titre de l'article 700, accordée par le juge et presque toujours pour moins que la note réelle ; (5) donc la réponse honnête est « en grande partie, pas en totalité », et le reste est financé par ceux qui paient ; (6) le levier utile n'est pas de promettre une récupération intégrale mais de raccourcir le délai de passage en mise en demeure. Est acceptée toute réponse qui pose la mise en demeure comme la ligne de partage et qui distingue les honoraires d'avocat du reste ; est refusée une réponse qui annonce une récupération intégrale, ou qui promet d'imputer la facture d'avocat sur le compte du débiteur.",
+    "explication": "La question du conseil syndical est légitime et se pose dans toutes les assemblées où les impayés montent. Y répondre par un « oui » rassurant fabrique une déception garantie au moment du décompte final ; y répondre par la ligne de partage installe la crédibilité et amène naturellement la seule décision utile, qui est d'accélérer le calendrier des mises en demeure.",
+    "vigilance": "Ne jamais chiffrer la récupération attendue en séance. Le montant de l'article 700 dépend du juge, qui tient compte de l'équité ou de la situation économique de la partie condamnée : c'est une somme que personne ne connaît avant la décision.",
+    "source": [
+      {
+        "texte": "Art. 10-1 de la loi n° 65-557 du 10 juillet 1965",
+        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000039313543/"
+      },
+      {
+        "texte": "Art. 695, 696 et 700 du code de procédure civile",
+        "url": "https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006070716/LEGISCTA000006135902/"
+      },
+      {
+        "texte": "Art. 36 du décret n° 67-223 du 17 mars 1967 : intérêts au taux légal à compter de la mise en demeure",
+        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000006488650/"
+      }
+    ],
+    "verifie": "2026-08-30",
+    "peremption": null,
+    "statut": "valide",
+    "origine": "lot de test vitrine du 29/08/2026 ; corrigé le 30/08/2026 sur le contenu des dépens et la source des intérêts",
+    "partage": "banque"
+  },
+  {
+    "id": "procedure-recouvrement-role-debiteur-au-telephone",
+    "domaine": "procedure",
+    "branche": "recouvrement-charges",
+    "niveau": 3,
+    "prerequis": [
+      "procedure-recouvrement-decheance-assiette"
+    ],
+    "type": "role",
+    "question": "Mise en situation, à lancer dans une conversation dédiée. Prompt à copier : « Tu es un copropriétaire qui vient de recevoir une mise en demeure et qui appelle le syndic, en colère. Tu soutiens trois choses : que tu n'as jamais reçu les appels de fonds, que tu retiens volontairement tes charges parce que l'ascenseur est en panne depuis trois semaines, et que tu paieras quand tu voudras puisque tu es propriétaire. Tu es de bonne foi, tu es en difficulté financière réelle, mais tu montes le ton et tu essaies d'obtenir l'annulation des frais. Ne cède pas au premier argument. Je suis le gestionnaire. » Objectif : ne rien concéder d'irrécupérable, et ressortir avec un fait vérifiable ou un engagement daté.",
+    "reponse": "Ce qu'un bon gestionnaire fait : (1) laisse passer la colère sans la contredire, puis ramène la conversation sur des dates plutôt que sur des torts ; (2) ne discute pas de mémoire, annonce qu'il rouvre le compte et rappelle, plutôt que d'improviser un montant au téléphone ; (3) traite la non-réception des appels de fonds comme une vérification d'adresse et de canal de notification, pas comme une accusation, et vérifie ensuite ce qui a été envoyé, à quelle adresse et sous quelle forme ; (4) sépare fermement les deux sujets que l'interlocuteur mélange, la panne d'ascenseur et la dette : un désordre sur les parties communes ouvre un recours contre le syndicat, il n'autorise pas la rétention des charges, et le dire une fois calmement vaut mieux que le répéter dix fois ; (5) n'annule aucun frais et ne suspend aucune procédure au téléphone, parce que ni l'un ni l'autre ne se rattrapent ; (6) propose la seule chose qui aide réellement quelqu'un en difficulté, un plan d'apurement écrit avec des échéances datées, et explique qu'un plan tenu se présente bien mieux devant le juge qu'un silence ; (7) referme par un écrit du jour même qui récapitule ce qui a été dit, ce qui va être vérifié et à quelle date, et rappelle que le délai de trente jours court toujours.",
+    "explication": "Deux pièges se referment dans ce genre d'appel. Le premier est de se laisser entraîner sur le terrain de l'ascenseur, où le gestionnaire est en position de faute et où la dette disparaît de la conversation. Le second est de lâcher une phrase du type « ne vous inquiétez pas, on va suspendre » : elle sera rappelée mot pour mot, et elle fragilise la mise en demeure sur laquelle repose tout le reste du circuit.",
+    "vigilance": "Un plan d'apurement est un engagement du syndicat : il se rédige, il se date, et il se fait valider selon les règles internes avant d'être proposé. Accordé au téléphone, il n'existe pas et il aura pourtant été promis. Le point « une panne de parties communes n'autorise pas la rétention des charges » n'est pas écrit dans la loi : il se déduit du caractère statutaire de l'obligation de contribuer aux charges et il est constamment jugé en ce sens, mais si le copropriétaire persiste par écrit, la réponse formelle se cale avec l'avocat du syndicat plutôt que sur la mémoire du gestionnaire.",
+    "source": [
+      {
+        "texte": "Art. 19-2 de la loi n° 65-557 du 10 juillet 1965 : mise en demeure et déchéance du terme",
+        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000043977271/"
+      },
+      {
+        "texte": "Art. 10-1 de la loi n° 65-557 du 10 juillet 1965 : frais imputables au copropriétaire défaillant",
+        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000039313543/"
+      },
+      {
+        "texte": "Art. 14-1 de la loi n° 65-557 du 10 juillet 1965 : obligation de verser les provisions à leur date d'exigibilité",
+        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000043977299/"
+      }
+    ],
+    "verifie": "2026-08-30",
+    "peremption": null,
+    "statut": "valide",
+    "origine": "lot de test vitrine du 29/08/2026 ; vigilance complétée le 30/08/2026 sur le fondement du refus de la rétention des charges",
+    "partage": "banque"
+  }
+]
