@@ -77,9 +77,9 @@ Les documents :
   scientifique sourcé, modes d'exercice, ateliers, arbres de
   compétence, architecture technique, généralisation à d'autres
   métiers. **À lire en premier.**
-- [`ROADMAP.md`](ROADMAP.md) — les chantiers M0 à M11 (+ M1-bis), dans l'ordre,
-  chacun avec son « fini quand », et le risque numéro un (le rituel
-  qui ne tient pas) traité en tête.
+- [`ROADMAP.md`](ROADMAP.md) — la roadmap active par résultats, courte et
+  exécutable. Le cadrage historique M0-M11 reste disponible dans
+  [`archive/roadmaps/`](archive/roadmaps/README.md).
 - [`CADRAGE-SCIENTIFIQUE.md`](CADRAGE-SCIENTIFIQUE.md) — cadrage
   neuroscientifique et sciences cognitives d'un système d'apprentissage
   quotidien d'élite : les 7 lois fondamentales, tableau comparatif des
