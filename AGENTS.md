@@ -15,3 +15,5 @@ Règles dures :
 
 La roadmap exécutable est `roadmap.json`; la vision produit détaillée reste dans
 `ROADMAP.md` et `SPEC-PRODUIT.md`.
+
+Le domaine (carte, décisions, doctrine) vit dans le dépôt labor, `labor/domaine/`, sur le Mac ; `context/giverny.md` en est le paquet historique. La veille se note dans `lab/VEILLE.md`, format des quatre verdicts.
