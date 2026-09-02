@@ -19,15 +19,18 @@ outils). Toute réponse d'erreur : `{"erreur": "<code>", "motif": "<phrase>"}`.
 
 Sémantique : le serveur ajoute chaque ligne dont le quadruplet (profil,
 `quand`, `mode`, `nonce`) est inconnu, ignore les autres, et renvoie
-toutes les lignes du profil postérieures à `depuis` que le client n'a
-pas envoyées. Aucune mise à jour, aucune suppression. Un lot est
-accepté ou refusé en entier si une ligne ne respecte pas `journal-v1`.
+toutes les lignes du profil dont `recu_le` (horodatage serveur) est
+postérieur à `depuis` et que le client n'a pas envoyées. Aucune mise à
+jour, aucune suppression. Un lot fait au plus 500 lignes ; il est
+accepté ou refusé en entier si une ligne ne respecte pas `journal-v1`,
+avec l'index de la ligne fautive : le client la met de côté dans un
+magasin local `rejets` et renvoie le reste, la file ne se bloque jamais.
 
 ## Banques
 
 | Méthode | Route | Réponse |
 |---|---|---|
-| GET | `/banques` | la liste des domaines servis à ce profil (couche `banque` pour tous, `interne` et `perso` pour leur propriétaire) avec version, empreinte, contrat |
+| GET | `/banques` | la liste des domaines servis à ce profil (couche `banque` pour tous, `interne` pour son seul propriétaire ; `perso` n'existe pas côté serveur) avec version, empreinte, contrat, licence |
 | GET | `/banques/<domaine>` | le `banque.json` du domaine, `ETag` = empreinte |
 
 ## Bibliothèque
@@ -35,7 +38,7 @@ accepté ou refusé en entier si une ligne ne respecte pas `journal-v1`.
 | Méthode | Route | Réponse |
 |---|---|---|
 | GET | `/bibliotheque` | les domaines adoptables : auteur, version, contrat, licence, chapitres, cartes, lien vers le rapport d'audit |
-| POST | `/bibliotheque/<domaine>/adopter` | ajoute le domaine au profil ; le quiz de positionnement se propose au premier lancement |
+| POST | `/bibliotheque/<domaine>/adopter` | ajoute le domaine au profil (table `adoptions`) ; quatre questions de positionnement se proposent au premier lancement |
 
 Seule la couche `banque` sous licence de partage y figure ; jamais une
 couche `interne`, jamais une source.
@@ -50,7 +53,10 @@ couche `interne`, jamais une source.
 | POST | `/livraisons/<id>/refuser` | `{"motif"}` | `200` |
 
 Le serveur re-passe `app/valide_banque.py` sur la banque reçue, en
-`ACADEMIE_RACINE` temporaire, avant toute quarantaine. Un fichier de
+`ACADEMIE_RACINE` temporaire reconstituée depuis le manifeste (`config` =
+le `academie.json` du dépôt-domaine, `programme` s'il est fourni), avant
+toute quarantaine. Une livraison `banque` sans `licence: CC-BY-SA-4.0`
+est refusée. Un fichier de
 `sources/` dans l'archive reçue = refus immédiat.
 
 ## Profil
@@ -77,7 +83,9 @@ Le serveur re-passe `app/valide_banque.py` sur la banque reçue, en
 | GET | `/cercles/<id>/fil` | jalons et kudos, jamais de séances ni de scores |
 | GET | `/cercles/<id>/ligue` | facultative ; score = cartes stabilisées × niveau sur la semaine, tronc commun |
 | POST | `/defis` | dix cartes d'un chapitre commun, même graine, 48 h |
-| GET | `/joueurs/<id>` | carte de visite et arbre miniature limité aux domaines rendus visibles |
+| GET | `/joueurs/<id>` | carte de visite et arbre miniature : tous les domaines sauf ceux que le joueur a masqués (visibilité par défaut, decisions/0010 amendée) ; « une même Académie » = tous les profils de ce serveur |
+| POST | `/masquages` | `{"domaine": "<clé>" \| "*"}` : masque un domaine, ou tout ; `DELETE` pour démasquer |
+| POST | `/signalements` | `{"carte", "motif"}` : la carte sort de la rotation du signaleur (ligne `mode: signalement` au journal, appliquée localement) et le propriétaire du domaine reçoit le signalement, tracé jusqu'au verdict (B8 du pré-mortem) |
 
 Ce qui n'existe pas et n'existera pas : une route qui donne l'état d'un
 joueur à quelqu'un qu'il n'a pas accepté, une route d'export collectif,

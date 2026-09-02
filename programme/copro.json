@@ -795,7 +795,7 @@
    "prerequis": [
     "droit.statut.diagnostiquer-un-reglement-de-copropriete-ancien"
    ],
-   "exercice_dominant": "qcm",
+   "exercice_dominant": "synthese",
    "cartes_cible": 8,
    "satellite": false,
    "statut": "a-ecrire"
@@ -809,7 +809,7 @@
    "prerequis": [
     "droit.statut.histoire-de-la-loi-de-1965"
    ],
-   "exercice_dominant": "qcm",
+   "exercice_dominant": "lecture",
    "cartes_cible": 6,
    "satellite": false,
    "statut": "a-ecrire"
@@ -940,7 +940,7 @@
    "prerequis": [
     "droit.organes.reprendre-un-immeuble-la-transmission-des-archives"
    ],
-   "exercice_dominant": "qcm",
+   "exercice_dominant": "synthese",
    "cartes_cible": 8,
    "satellite": false,
    "statut": "a-ecrire"
@@ -1107,7 +1107,7 @@
     "droit.assemblee.diagnostiquer-une-convocation-irreguliere",
     "droit.assemblee.preparer-une-assemblee-a-risque"
    ],
-   "exercice_dominant": "cas",
+   "exercice_dominant": "synthese",
    "cartes_cible": 8,
    "satellite": false,
    "statut": "a-ecrire"
@@ -1187,7 +1187,7 @@
    "prerequis": [
     "droit.majorites.le-tableau-des-majorites-par-decision"
    ],
-   "exercice_dominant": "qcm",
+   "exercice_dominant": "synthese",
    "cartes_cible": 8,
    "satellite": false,
    "statut": "a-ecrire"
@@ -1271,7 +1271,7 @@
    "prerequis": [
     "droit.charges.repondre-a-une-contestation-de-charges"
    ],
-   "exercice_dominant": "cas",
+   "exercice_dominant": "synthese",
    "cartes_cible": 8,
    "satellite": false,
    "statut": "a-ecrire"
@@ -1507,7 +1507,7 @@
    "titre": "Jurisprudence de responsabilité",
    "niveau": 4,
    "prerequis": [],
-   "exercice_dominant": "cas",
+   "exercice_dominant": "synthese",
    "cartes_cible": 8,
    "satellite": false,
    "statut": "a-ecrire"
@@ -1598,7 +1598,7 @@
    "titre": "Durabilité : l'état de la recherche",
    "niveau": 5,
    "prerequis": [],
-   "exercice_dominant": "photo",
+   "exercice_dominant": "lecture",
    "cartes_cible": 6,
    "satellite": false,
    "statut": "a-ecrire"
@@ -1713,7 +1713,7 @@
    "prerequis": [
     "pathologie.structure.quand-appeler-un-bureau-d-etudes"
    ],
-   "exercice_dominant": "photo",
+   "exercice_dominant": "synthese",
    "cartes_cible": 8,
    "satellite": false,
    "statut": "a-ecrire"
@@ -2284,7 +2284,7 @@
    "prerequis": [
     "equipements.chauffage.la-panne-de-janvier"
    ],
-   "exercice_dominant": "cas",
+   "exercice_dominant": "synthese",
    "cartes_cible": 8,
    "satellite": false,
    "statut": "a-ecrire"
@@ -2694,7 +2694,7 @@
    "titre": "Histoire de la partie double",
    "niveau": 4,
    "prerequis": [],
-   "exercice_dominant": "feuille-blanche",
+   "exercice_dominant": "synthese",
    "cartes_cible": 8,
    "satellite": false,
    "statut": "a-ecrire"
@@ -3118,7 +3118,7 @@
    "titre": "L'économie d'un cabinet",
    "niveau": 4,
    "prerequis": [],
-   "exercice_dominant": "qcm",
+   "exercice_dominant": "synthese",
    "cartes_cible": 8,
    "satellite": false,
    "statut": "a-ecrire"
@@ -3370,13 +3370,14 @@
    "branche": "construction",
    "titre": "Réception et parfait achèvement",
    "niveau": 1,
-   "prerequis": [
-    "travaux.chantier.reception-reserves-garanties"
-   ],
+   "prerequis": [],
    "exercice_dominant": "datation",
    "cartes_cible": 6,
    "satellite": false,
-   "statut": "a-ecrire"
+   "statut": "a-ecrire",
+   "ponts": [
+    "travaux.chantier.reception-reserves-garanties"
+   ]
   },
   {
    "id": "sinistres.construction.biennale-et-decennale",
@@ -3510,7 +3511,7 @@
    "prerequis": [
     "sinistres.gerer.la-methode-complete"
    ],
-   "exercice_dominant": "datation",
+   "exercice_dominant": "synthese",
    "cartes_cible": 8,
    "satellite": false,
    "statut": "a-ecrire"
@@ -4314,7 +4315,7 @@
    "titre": "Rénovation performante contre rénovation par gestes",
    "niveau": 4,
    "prerequis": [],
-   "exercice_dominant": "cas",
+   "exercice_dominant": "synthese",
    "cartes_cible": 8,
    "satellite": false,
    "statut": "a-ecrire"
@@ -4352,7 +4353,7 @@
    "titre": "Doctrine et déontologie des honoraires",
    "niveau": 4,
    "prerequis": [],
-   "exercice_dominant": "qcm",
+   "exercice_dominant": "synthese",
    "cartes_cible": 8,
    "satellite": false,
    "statut": "a-ecrire"
@@ -4487,7 +4488,7 @@
    "prerequis": [
     "energie.dpe.fiabilite-et-contestation"
    ],
-   "exercice_dominant": "qcm",
+   "exercice_dominant": "synthese",
    "cartes_cible": 8,
    "satellite": false,
    "statut": "a-ecrire"
@@ -4699,7 +4700,7 @@
    "titre": "Quelle énergie pour quel immeuble",
    "niveau": 4,
    "prerequis": [],
-   "exercice_dominant": "cas",
+   "exercice_dominant": "synthese",
    "cartes_cible": 8,
    "satellite": false,
    "statut": "a-ecrire"
@@ -4821,7 +4822,7 @@
    "titre": "Théories de la propriété",
    "niveau": 4,
    "prerequis": [],
-   "exercice_dominant": "qcm",
+   "exercice_dominant": "synthese",
    "cartes_cible": 8,
    "satellite": false,
    "statut": "a-ecrire"
@@ -5165,7 +5166,7 @@
    "titre": "Histoire et critique de la profession",
    "niveau": 4,
    "prerequis": [],
-   "exercice_dominant": "qcm",
+   "exercice_dominant": "synthese",
    "cartes_cible": 8,
    "satellite": false,
    "statut": "a-ecrire"

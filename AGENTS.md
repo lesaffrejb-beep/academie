@@ -1,4 +1,4 @@
-# AGENTS.md — Académie
+# AGENTS.md (Académie)
 
 Académie est un dépôt autonome d'apprentissage gamifié : l'école d'un
 métier, jouée tous les jours. Lis d'abord `DOCTRINE.md`, puis `README.md`,

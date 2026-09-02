@@ -158,9 +158,13 @@ Anatomie, de haut en bas :
    révélation, hauts de 48 px au moins, dans le tiers inférieur.
 4. **Après réponse** : le retour (juste ou faux, en une ligne, ton
    neutre), l'explication en trois lignes, la vigilance, puis la ligne
-   **source** (nature, parti, vérifié le, « à recouper » s'il y a lieu)
-   qui s'ouvre en feuille pour le dossier complet et le bouton « cette
-   carte est fausse ».
+   **source** (note de confiance en lettre, nature, parti, vérifié le,
+   « à recouper » ou « sans source retrouvée » s'il y a lieu) puis la
+   ligne de **provenance** en encre tertiaire (« Généré par Claude Opus le
+   21/08/2026 · 2 sources concordantes · relu le 22/08 »), qui s'ouvre en
+   feuille pour le dossier complet, le bouton « cette carte est fausse »
+   et le lien « Pourquoi croire ce professeur ? ». En épreuve, cette
+   ligne n'apparaît qu'à la fin.
 5. **Notes FSRS** (flash) : quatre boutons, mots adultes : À revoir,
    Difficile, Bien, Évident.
 

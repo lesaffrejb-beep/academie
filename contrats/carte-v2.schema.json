@@ -3,116 +3,572 @@
   "$id": "https://academie.local/contrats/carte-v2.schema.json",
   "title": "Carte v2 (proposition du 02/09/2026)",
   "type": "object",
-  "required": ["id", "chapitre", "domaine", "branche", "type", "niveau", "question", "reponse", "source", "provenance", "verifie", "statut", "partage"],
+  "required": [
+    "id",
+    "chapitre",
+    "domaine",
+    "branche",
+    "type",
+    "niveau",
+    "question",
+    "reponse",
+    "source",
+    "provenance",
+    "verifie",
+    "statut",
+    "partage"
+  ],
   "additionalProperties": false,
   "properties": {
-    "id": {"type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"},
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+    },
     "provenance": {
-      "type": "object", "required": ["auteur", "genere_le", "sources_retrouvees", "sans_source"], "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "auteur",
+        "genere_le",
+        "sources_retrouvees",
+        "sans_source"
+      ],
+      "additionalProperties": false,
       "description": "decisions/0021 : qui a écrit, quand, avec combien de sources ; affiché au joueur",
       "properties": {
-        "auteur": {"enum": ["modele", "humain"]},
-        "modele": {"type": "string", "description": "nom et version du modèle si auteur = modele"},
-        "genere_le": {"type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$"},
-        "session": {"type": "string"},
-        "sources_retrouvees": {"type": "integer", "minimum": 0},
-        "sources_concordantes": {"type": "integer", "minimum": 0},
-        "sans_source": {"type": "boolean", "description": "vrai si aucune source n'a été retrouvée : la carte est servie marquée, sans chiffre ni date, vérifiée en priorité"}
+        "auteur": {
+          "enum": [
+            "modele",
+            "humain"
+          ]
+        },
+        "modele": {
+          "type": "string",
+          "description": "nom et version du modèle si auteur = modele"
+        },
+        "genere_le": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "session": {
+          "type": "string"
+        },
+        "sources_retrouvees": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "sources_concordantes": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "sans_source": {
+          "type": "boolean",
+          "description": "vrai si aucune source n'a été retrouvée : la carte est servie marquée, sans chiffre ni date, vérifiée en priorité"
+        }
       }
     },
-    "chapitre": {"type": "string", "pattern": "^[a-z0-9-]+\\.[a-z0-9-]+\\.[a-z0-9-]+$"},
-    "domaine": {"type": "string", "pattern": "^[a-z0-9-]+$"},
-    "branche": {"type": "string", "pattern": "^[a-z0-9-]+$"},
-    "type": {"enum": ["flash", "qcm", "photo", "relier", "datation", "plan", "cas", "libre", "role", "dessin", "feuille-blanche", "synthese", "lecture", "ecoute"]},
-    "niveau": {"type": "integer", "minimum": 1, "maximum": 5},
-    "prerequis": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
-    "question": {"type": "string", "minLength": 1},
-    "reponse": {"type": "string", "minLength": 1},
-    "explication": {"type": "string"},
-    "vigilance": {"type": "string"},
-    "choix": {
-      "type": "array", "minItems": 3,
+    "chapitre": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+\\.[a-z0-9-]+\\.[a-z0-9-]+$"
+    },
+    "domaine": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+$"
+    },
+    "branche": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+$"
+    },
+    "type": {
+      "enum": [
+        "flash",
+        "qcm",
+        "photo",
+        "relier",
+        "datation",
+        "plan",
+        "cas",
+        "libre",
+        "role",
+        "dessin",
+        "feuille-blanche",
+        "synthese",
+        "lecture",
+        "ecoute"
+      ]
+    },
+    "niveau": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 5
+    },
+    "prerequis": {
+      "type": "array",
       "items": {
-        "type": "object", "required": ["texte", "correct"], "additionalProperties": false,
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "question": {
+      "type": "string",
+      "minLength": 1
+    },
+    "reponse": {
+      "type": "string",
+      "minLength": 1
+    },
+    "explication": {
+      "type": "string"
+    },
+    "vigilance": {
+      "type": "string"
+    },
+    "choix": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "object",
+        "required": [
+          "texte",
+          "correct"
+        ],
+        "additionalProperties": false,
         "properties": {
-          "texte": {"type": "string", "minLength": 1},
-          "correct": {"type": "boolean"},
-          "pourquoi_faux": {"type": "string", "minLength": 1}
+          "texte": {
+            "type": "string",
+            "minLength": 1
+          },
+          "correct": {
+            "type": "boolean"
+          },
+          "pourquoi_faux": {
+            "type": "string",
+            "minLength": 1
+          }
         }
       }
     },
     "pas": {
-      "type": "array", "minItems": 3, "maxItems": 5,
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 5,
       "items": {
-        "type": "object", "required": ["situation", "choix", "correct", "pourquoi"], "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "situation",
+          "choix",
+          "correct",
+          "pourquoi"
+        ],
+        "additionalProperties": false,
         "properties": {
-          "situation": {"type": "string"},
-          "choix": {"type": "array", "minItems": 2, "items": {"type": "string"}},
-          "correct": {"type": "integer", "minimum": 0},
-          "pourquoi": {"type": "string"}
+          "situation": {
+            "type": "string"
+          },
+          "choix": {
+            "type": "array",
+            "minItems": 2,
+            "items": {
+              "type": "string"
+            }
+          },
+          "correct": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "pourquoi": {
+            "type": "string"
+          }
         }
       }
     },
-    "attendus": {"type": "array", "minItems": 3, "maxItems": 10, "items": {"type": "string", "minLength": 1}},
-    "paires": {"type": "array", "items": {"type": "object", "required": ["element", "cible"], "properties": {"element": {"type": "string"}, "cible": {"type": "string"}}}},
-    "etapes": {"type": "array", "items": {"type": "string"}},
+    "attendus": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 10,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "paires": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "element",
+          "cible"
+        ],
+        "properties": {
+          "element": {
+            "type": "string"
+          },
+          "cible": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "etapes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
     "document": {
-      "type": "object", "required": ["titre", "url", "nature", "methode"], "additionalProperties": false,
-      "properties": {"titre": {"type": "string"}, "url": {"type": "string", "format": "uri"}, "nature": {"$ref": "#/$defs/nature"}, "methode": {"type": "string"}}
+      "type": "object",
+      "required": [
+        "titre",
+        "url",
+        "nature",
+        "methode"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "titre": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "nature": {
+          "$ref": "#/$defs/nature"
+        },
+        "methode": {
+          "type": "string"
+        }
+      }
     },
     "audio": {
-      "type": "object", "required": ["fichier", "empreinte_texte", "licence"], "additionalProperties": false,
-      "properties": {"fichier": {"type": "string"}, "empreinte_texte": {"type": "string", "pattern": "^[a-f0-9]{64}$"}, "licence": {"type": "string"}}
-    },
-    "image": {
-      "type": "object", "required": ["fichier", "licence", "credit", "source", "alt"], "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "fichier",
+        "empreinte_texte",
+        "licence"
+      ],
+      "additionalProperties": false,
       "properties": {
-        "fichier": {"type": "string", "pattern": "^images/[A-Za-z0-9._/-]+$"},
-        "licence": {"type": "string", "minLength": 1},
-        "credit": {"type": "string", "minLength": 1},
-        "source": {"type": "string", "minLength": 1},
-        "alt": {"type": "string", "minLength": 3},
-        "generee": {"type": "boolean", "description": "vrai si l'image est générée : illustration seulement, jamais un diagnostic"}
-      }
-    },
-    "chrono": {"type": "integer", "minimum": 5, "maximum": 120},
-    "confiance": {"type": "boolean"},
-    "source": {
-      "type": "array", "minItems": 0,
-      "description": "au moins une entrée sauf provenance.sans_source = true (contrôlé par le valideur, avec l'interdiction de chiffre ou de date)",
-      "items": {
-        "type": "object", "required": ["texte", "nature"], "additionalProperties": false,
-        "properties": {
-          "texte": {"type": "string", "minLength": 1},
-          "url": {"type": "string"},
-          "nature": {"$ref": "#/$defs/nature"},
-          "parti": {"type": "string", "maxLength": 80},
-          "empreinte": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+        "fichier": {
+          "type": "string"
+        },
+        "empreinte_texte": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "licence": {
+          "type": "string"
         }
       }
     },
-    "verifie": {"type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$"},
-    "verifie_par": {"type": "string"},
-    "peremption": {"type": ["string", "null"], "pattern": "^\\d{4}-\\d{2}-\\d{2}$"},
-    "statut": {"enum": ["brouillon", "valide", "signale", "perime"]},
-    "partage": {"enum": ["banque", "interne", "perso"]},
-    "origine": {"type": "string"},
+    "image": {
+      "type": "object",
+      "required": [
+        "fichier",
+        "licence",
+        "credit",
+        "source",
+        "alt"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "fichier": {
+          "type": "string",
+          "pattern": "^images/[A-Za-z0-9._/-]+$"
+        },
+        "licence": {
+          "type": "string",
+          "minLength": 1
+        },
+        "credit": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source": {
+          "type": "string",
+          "minLength": 1
+        },
+        "alt": {
+          "type": "string",
+          "minLength": 3
+        },
+        "generee": {
+          "type": "boolean",
+          "description": "vrai si l'image est générée : illustration seulement, jamais un diagnostic"
+        }
+      }
+    },
+    "chrono": {
+      "type": "integer",
+      "minimum": 5,
+      "maximum": 120,
+      "description": "secondes ; admis seulement sur qcm, photo, relier (fluence) et feuille-blanche (borne haute) ; jamais par défaut"
+    },
+    "confiance": {
+      "type": "boolean"
+    },
+    "source": {
+      "type": "array",
+      "minItems": 0,
+      "description": "au moins une entrée sauf provenance.sans_source = true (contrôlé par le valideur, avec l'interdiction de chiffre ou de date)",
+      "items": {
+        "type": "object",
+        "required": [
+          "texte",
+          "nature"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "texte": {
+            "type": "string",
+            "minLength": 1
+          },
+          "url": {
+            "type": "string"
+          },
+          "nature": {
+            "$ref": "#/$defs/nature"
+          },
+          "parti": {
+            "type": "string",
+            "maxLength": 80
+          },
+          "empreinte": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "fiabilite": {
+            "enum": [
+              "A",
+              "B",
+              "C"
+            ],
+            "description": "héritée du registre des sources (sources/registre.json) par le générateur ; jamais écrite à la main"
+          }
+        }
+      }
+    },
+    "verifie": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "verifie_par": {
+      "type": "string"
+    },
+    "peremption": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "statut": {
+      "enum": [
+        "brouillon",
+        "valide",
+        "signale",
+        "perime"
+      ]
+    },
+    "partage": {
+      "enum": [
+        "banque",
+        "interne",
+        "perso"
+      ]
+    },
+    "origine": {
+      "type": "string"
+    },
     "historique": {
       "type": "array",
-      "items": {"type": "object", "required": ["date", "statut"], "properties": {"date": {"type": "string"}, "statut": {"type": "string"}, "motif": {"type": "string"}, "par": {"type": "string"}}}
+      "items": {
+        "type": "object",
+        "required": [
+          "date",
+          "statut"
+        ],
+        "properties": {
+          "date": {
+            "type": "string"
+          },
+          "statut": {
+            "type": "string"
+          },
+          "motif": {
+            "type": "string"
+          },
+          "par": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "a_recouper": {
+      "type": "boolean",
+      "description": "DÉRIVÉ par le valideur et écrit par le générateur dans banque.json ; jamais à la main"
+    },
+    "note_confiance": {
+      "enum": [
+        "A",
+        "B",
+        "C"
+      ],
+      "description": "DÉRIVÉE (decisions/0022) par le valideur et écrite par le générateur dans banque.json ; jamais à la main"
     }
   },
   "allOf": [
-    {"if": {"properties": {"provenance": {"properties": {"sans_source": {"const": false}}}}}, "then": {"properties": {"source": {"minItems": 1}}}},
-    {"if": {"properties": {"type": {"const": "qcm"}}}, "then": {"required": ["choix"]}},
-    {"if": {"properties": {"type": {"const": "cas"}}}, "then": {"required": ["pas"]}},
-    {"if": {"properties": {"type": {"enum": ["dessin", "feuille-blanche", "synthese"]}}}, "then": {"required": ["attendus"]}},
-    {"if": {"properties": {"type": {"const": "lecture"}}}, "then": {"required": ["document"]}},
-    {"if": {"properties": {"type": {"const": "ecoute"}}}, "then": {"required": ["audio"]}},
-    {"if": {"properties": {"type": {"enum": ["photo", "relier", "datation", "plan"]}}}, "then": {"required": ["image"]}},
-    {"if": {"properties": {"type": {"enum": ["libre", "lecture", "synthese", "dessin", "cas"]}}}, "then": {"not": {"required": ["chrono"]}}}
+    {
+      "if": {
+        "properties": {
+          "provenance": {
+            "properties": {
+              "sans_source": {
+                "const": false
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "source": {
+            "minItems": 1
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "qcm"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "choix"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "cas"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "pas"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "enum": [
+              "dessin",
+              "feuille-blanche",
+              "synthese"
+            ]
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "attendus"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "lecture"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "document"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "ecoute"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "audio"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "enum": [
+              "photo",
+              "relier",
+              "datation",
+              "plan"
+            ]
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "image"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "not": {
+              "enum": [
+                "qcm",
+                "photo",
+                "relier",
+                "feuille-blanche"
+              ]
+            }
+          }
+        }
+      },
+      "then": {
+        "not": {
+          "required": [
+            "chrono"
+          ]
+        }
+      }
+    }
   ],
   "$defs": {
-    "nature": {"enum": ["texte-officiel", "jurisprudence", "institution", "norme", "doctrine", "presse-pro", "organisation-pro", "association", "editeur", "support-interne", "terrain"]}
+    "nature": {
+      "enum": [
+        "texte-officiel",
+        "jurisprudence",
+        "institution",
+        "norme",
+        "doctrine",
+        "presse-pro",
+        "organisation-pro",
+        "association",
+        "editeur",
+        "support-interne",
+        "terrain"
+      ]
+    }
   }
 }

@@ -8,7 +8,7 @@
 ## Décision
 
 1. Le **socle** est défini par métier dans le programme (copro : niveau
-   2 partout, niveau 3 en droit, comptabilité et assemblée générale).
+   2 partout, niveau 3 en droit, comptabilité et cabinet).
    Il se valide par l'épreuve du gestionnaire.
 2. **La séance protège le socle** : tant qu'il n'est pas validé, la
    moitié du neuf d'une séance vient de la branche du socle la moins

@@ -15,7 +15,9 @@ de valideur). Les schémas machine sont dans
 - `source` : au moins une entrée, **sauf** si `provenance.sans_source`
   vaut vrai (`decisions/0021`) ; dans ce cas la question et la réponse
   ne peuvent contenir aucun chiffre, date, délai, seuil ni montant (le
-  valideur le contrôle par motif), la carte est servie avec la mention
+  valideur le contrôle par motif : montants, pourcentages, durées en
+  jours, mois ou années, dates calendaires ; les numéros d'article, de
+  loi et de décret, et les noms de textes, sont exclus du motif), la carte est servie avec la mention
   « sans source retrouvée » et `a_recouper` vaut vrai. `verifie`
   obligatoire ; `peremption` obligatoire dès qu'un chiffre bouge ;
   `statut` parmi `brouillon`, `valide`, `signale`, `perime` ; `partage`
@@ -25,12 +27,17 @@ de valideur). Les schémas machine sont dans
   `source`.
 - Un prérequis pointe vers un identifiant existant ; le scan anti-fuite
   s'applique aux couches `banque` et `interne`.
+- **La couche `perso` change de sens en v2** (R1 du pré-mortem du
+  02/09) : elle ne porte plus jamais une pièce réelle ni une photo non
+  anonymisée, seulement des cartes personnelles du joueur sans donnée
+  d'un tiers ; elle ne se livre jamais et le serveur ne la connaît pas.
+  Une pièce réelle reste dans labor, hors du produit (`DOCTRINE.md` §2).
 
 ## 2. Ce que la carte gagne
 
 | Champ | Règle | Pourquoi |
 |---|---|---|
-| `provenance` | obligatoire : `{auteur: "modele" \| "humain", modele, genere_le, session, sources_retrouvees, sans_source}` ; affiché au joueur (« Généré par Claude Opus le 21/01/2026 · 2 sources concordantes ») | le modèle écrit, la provenance s'affiche (`decisions/0021`) |
+| `provenance` | obligatoire : `{auteur: "modele" \| "humain", modele, genere_le, session, sources_retrouvees, sources_concordantes, sans_source}` ; affiché au joueur (« Généré par Claude Opus le 21/01/2026 · 2 sources concordantes ») | le modèle écrit, la provenance s'affiche (`decisions/0021`) |
 | `chapitre` | obligatoire ; identifiant d'un chapitre existant | le chapitre est l'unité de contenu (`decisions/0002`) |
 | `niveau` | entier 1 à 5 ; ne peut pas dépasser le niveau du chapitre | échelle 1-5 (`decisions/0003`) |
 | `source[].nature` | obligatoire ; valeur fermée : `texte-officiel`, `jurisprudence`, `institution`, `norme`, `doctrine`, `presse-pro`, `organisation-pro`, `association`, `editeur`, `support-interne`, `terrain` | la source affiche sa nature (`decisions/0004`) |
@@ -42,12 +49,12 @@ de valideur). Les schémas machine sont dans
 | `document` | obligatoire si `type: lecture` : `{titre, url, nature, methode}` | la lecture guidée |
 | `audio` | obligatoire si `type: ecoute` : `{fichier, empreinte_texte, licence}` | l'écoute (plus tard) |
 | `chrono` | facultatif ; secondes ; interdit sur `libre`, `lecture`, `synthese`, `dessin`, `cas` | la fluence seulement |
-| `confiance` | facultatif ; booléen, défaut vrai pour `qcm` et `cas` de niveau ≥ 2 | l'hypercorrection |
+| `confiance` | facultatif ; booléen, défaut vrai pour `qcm` et `cas` de niveau ≥ 2 : demander au joueur s'il est sûr avant de révéler | l'hypercorrection |
 | `image.alt` | obligatoire si `image` | accessibilité |
 | `verifie_par` | facultatif ; libellé de la session ou de la personne | le dossier de la carte |
 | `historique` | facultatif ; liste de `{date, statut, motif, par}` ajoutée par les outils et les runs de vérification, jamais éditée à la main | auditabilité, `decisions/0019` et `0021` |
 | `a_recouper` | dérivé par le valideur, jamais écrit à la main : vrai si aucune source n'est `texte-officiel`, `jurisprudence`, `institution` ou `norme`, ou si `sans_source` | le marqueur à l'écran |
-| `confiance` | dérivée par le valideur, jamais écrite à la main : **A** si au moins deux sources de fiabilité A ou B concordantes, relue par un agent frais (`verifie_par`), vérifiée depuis moins de douze mois ; **B** si une source A ou B, relue ; **C** sinon (sources C seulement, sans source, relecture manquante ou vérification trop ancienne). Affichée en lettre sur la carte et le nœud | le dossier du professeur (`decisions/0022`) |
+| `note_confiance` | dérivée par le valideur, jamais écrite à la main : **A** si au moins deux sources de fiabilité A ou B concordantes, relue par un agent frais (`verifie_par`), vérifiée depuis moins de douze mois ; **B** si une source A ou B, relue ; **C** sinon (sources C seulement, sans source, relecture manquante ou vérification trop ancienne). Affichée en lettre sur la carte et le nœud | le dossier du professeur (`decisions/0022`) |
 
 ## 3. Le chapitre
 
@@ -61,7 +68,7 @@ Un fichier `banque/<domaine>/<branche>/<chapitre>.json` :
 | `prerequis` | identifiants de chapitres existants, tous de niveau ≤ au sien |
 | `objectifs` | 2 à 5 phrases « à la fin, tu sais… » |
 | `amorce` | `{question, aide, reponse_attendue}` : le problème à tenter avant la leçon |
-| `lecon` | Markdown, 300 à 800 mots, paraphrase et liens, avec un exemple travaillé |
+| `lecon` | Markdown, 300 à 800 mots (environ 1 500 à 5 500 caractères, borne du schéma), paraphrase et liens, avec un exemple travaillé |
 | `synthese` | `{consigne, attendus[]}` |
 | `cartes` | tableau de cartes v2 (ou `cartes_fichier` pointant un fichier v1 pendant la migration) |
 | `sources` | même format que celles d'une carte ; le chapitre hérite au valideur |
@@ -80,7 +87,8 @@ Une ligne par événement, append-only, JSON :
 
 | `mode` | Champs | Écrit par |
 |---|---|---|
-| `revision` | `quand`, `carte`, `note` 1-4, `format` (séance, étude, journée, domaine, épreuve), `duree_ms`, `confiance`, `nonce` | le client |
+| `signalement` | `quand`, `carte`, `motif` : la carte sort de la rotation du signaleur ; synchronisée, elle ouvre un signalement chez le propriétaire | le client |
+| `revision` | `quand`, `carte`, `note` 1-4, `format` (seance, domaine, etude, journee, epreuve, hasard, defi), `duree_ms`, `confiance`, `nonce` | le client |
 | `quiz` | `quand`, `carte`, `note`, `stabilite_forcee`, `origine: quiz` | le client |
 | `examen` | `quand`, `region` ou `dossier`, `score`, `cartes[]` | le client |
 | `erreur` | `quand`, `carte`, `raison` | le client (carnet, privé) |
@@ -99,5 +107,15 @@ recalcule toujours depuis ces lignes.
    fichiers de chapitre ; les identifiants ne bougent pas.
 3. Le valideur v2 lit les deux dispositions pendant la migration et
    refuse une carte sans `chapitre` passée la date fixée par le chantier.
-4. Le générateur publie `banque.json` v2 avec `contrat: "carte-v2"` ; le
-   client refuse une version qu'il ne connaît pas.
+4. Le générateur publie `banque.json` v2 avec `contrat: "carte-v2"`, les
+   champs dérivés (`a_recouper`, `note_confiance`, `source[].fiabilite`
+   hérité du registre machine `sources/registre.json`), les chapitres et
+   leurs prérequis ; le client refuse une version qu'il ne connaît pas et
+   suppose `carte-v1` quand le champ manque (banque publiée avant ce
+   chantier).
+5. **Le journal v0 migre vers journal-v1** (`serveur/importer_journal.py`,
+   chantier `ACA-JOURNAL-SYNC-1`) : une ligne `mode: "flash"` devient
+   `mode: "revision"` avec `format: "seance"` ; les lignes du quiz gardent
+   `origine` et `stabilite_forcee` ; les lignes du carnet deviennent
+   `mode: "erreur"` ; `nonce` = SHA-256 de la ligne d'origine ; rien
+   n'est perdu, rien n'est réécrit dans le fichier source.

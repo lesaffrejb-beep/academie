@@ -24,7 +24,7 @@ La conception d'août est archivée intacte dans
 | 5 | [`ARCHITECTURE.md`](ARCHITECTURE.md) | les quatre pièces, où est stocké quoi, le moteur, les contrats, le serveur, l'usine, l'archivage, l'audit, le déploiement |
 | 6 | [`DIRECTION-ARTISTIQUE.md`](DIRECTION-ARTISTIQUE.md) | à quoi ça ressemble, les écrans, la barre, le mouvement, l'accessibilité ; maquette : `travail/maquette-2026-09-02.html` |
 | 7 | [`ROADMAP.md`](ROADMAP.md) et `roadmap.json` | ce qu'on fait ensuite, avec la preuve attendue |
-| 8 | [`decisions/`](decisions/README.md) | les vingt décisions datées |
+| 8 | [`decisions/`](decisions/README.md) | les vingt-deux décisions datées |
 | 9 | [`CONTRAT-CARTE-V1.md`](CONTRAT-CARTE-V1.md) (en vigueur), [`CONTRAT-CARTE-V2.md`](CONTRAT-CARTE-V2.md) (proposé), [`contrats/`](contrats/README.md) | les formats, le valideur fait foi |
 | 10 | [`gabarit-domaine/`](gabarit-domaine/README.md), [`sources/`](sources/README.md), [`boite/`](boite/README.md), [`CORPUS.md`](CORPUS.md) | fabriquer un domaine, trier ses sources, glisser une idée |
 | 11 | [`IDEES-EN-VOL.md`](IDEES-EN-VOL.md), [`lab/VEILLE.md`](lab/VEILLE.md), [`travail/`](travail/) | ce qui n'est pas perdu |
@@ -68,7 +68,7 @@ python3 app/tests.py --mutation
 
 ## Règles qui ne bougent pas
 
-Aucune donnée client de labor. Aucune carte sans source, nature et date.
+Aucune donnée client de labor. Aucune carte sans provenance ni nature de source ; aucun chiffre sans source.
 Rien de rouge n'est servi. L'état joueur est un journal append-only,
 séparé de la banque, jamais dans git. Les actes irréversibles sont
 humains. Le détail : `DOCTRINE.md` §3.

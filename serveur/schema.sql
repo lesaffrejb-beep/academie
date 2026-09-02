@@ -34,7 +34,7 @@ CREATE TABLE sessions (
 CREATE TABLE journal (
   profil        TEXT NOT NULL REFERENCES profils(id) ON DELETE CASCADE,
   quand         TEXT NOT NULL,                  -- ISO 8601, écrit par le client
-  mode          TEXT NOT NULL CHECK (mode IN ('revision','quiz','examen','erreur','seance','synthese')),
+  mode          TEXT NOT NULL CHECK (mode IN ('revision','quiz','examen','erreur','seance','synthese','signalement')),
   nonce         TEXT NOT NULL,
   ligne         TEXT NOT NULL,                  -- la ligne journal-v1 complète, JSON
   recu_le       TEXT NOT NULL,                  -- horodatage serveur, pour `depuis`
@@ -50,7 +50,8 @@ CREATE TABLE banques (
   proprietaire  TEXT NOT NULL REFERENCES profils(id),
   contrat       TEXT NOT NULL,                  -- carte-v1 | carte-v2
   empreinte     TEXT NOT NULL,                  -- SHA-256 du banque.json
-  couches       TEXT NOT NULL,                  -- JSON : ["banque"] ou ["banque","interne"]
+  couches       TEXT NOT NULL,                  -- JSON : ["banque"] ou ["banque","interne"] ; jamais perso (R1)
+  licence       TEXT NOT NULL,                  -- CC-BY-SA-4.0 pour une couche banque (decisions/0018) ; interne sinon
   chemin        TEXT NOT NULL,                  -- /var/lib/academie/banques/<joueur>/<domaine>/<empreinte>.json
   genere_le     TEXT NOT NULL,
   servie        INTEGER NOT NULL DEFAULT 0,     -- 1 = c'est la version servie
@@ -103,14 +104,37 @@ CREATE TABLE membres (
   ligue_opt_in  INTEGER NOT NULL DEFAULT 0,
   PRIMARY KEY (cercle, profil)
 );
--- Visibilité par domaine : ce que `profil` laisse voir de son arbre à
--- `cercle`. Absence de ligne = invisible. Le carnet d'erreurs n'a pas
--- de colonne : il n'est jamais visible.
-CREATE TABLE visibilites (
+-- MASQUAGES : tous les joueurs d'une même Académie (= tous les profils de
+-- ce serveur) se voient par défaut (decisions/0010 amendée). Une ligne
+-- ici cache un domaine ('*' = tout le profil). Absence de ligne =
+-- visible. Le carnet d'erreurs n'a pas de colonne : il n'est jamais
+-- visible, quoi qu'il arrive.
+CREATE TABLE masquages (
   profil        TEXT NOT NULL REFERENCES profils(id) ON DELETE CASCADE,
-  cercle        TEXT NOT NULL REFERENCES cercles(id) ON DELETE CASCADE,
+  domaine       TEXT NOT NULL,                  -- clé de domaine, ou '*'
+  depuis        TEXT NOT NULL,
+  PRIMARY KEY (profil, domaine)
+);
+-- Domaines adoptés par un profil (bibliothèque, B7 du pré-mortem).
+CREATE TABLE adoptions (
+  profil        TEXT NOT NULL REFERENCES profils(id) ON DELETE CASCADE,
   domaine       TEXT NOT NULL,
-  PRIMARY KEY (profil, cercle, domaine)
+  adopte_le     TEXT NOT NULL,
+  quiz_fait_le  TEXT,
+  PRIMARY KEY (profil, domaine)
+);
+-- Signalements « cette carte est fausse » (B8) : dérivés des lignes
+-- `mode: signalement` du journal ; le propriétaire du domaine tranche.
+CREATE TABLE signalements (
+  id            TEXT PRIMARY KEY,
+  profil        TEXT NOT NULL REFERENCES profils(id) ON DELETE CASCADE,
+  domaine       TEXT NOT NULL,
+  carte         TEXT NOT NULL,
+  motif         TEXT,
+  recu_le       TEXT NOT NULL,
+  etat          TEXT NOT NULL CHECK (etat IN ('ouvert','confirme','ecarte')),
+  decide_le     TEXT,
+  decide_par    TEXT REFERENCES profils(id)
 );
 -- Consentement au tuteur : `profil` accepte que `tuteur` voie sa progression.
 CREATE TABLE consentements_tuteur (

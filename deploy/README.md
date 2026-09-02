@@ -29,6 +29,7 @@ Sur un Linux avec Python 3.12, Node 20, Caddy, git :
 5. Créer son profil avec l'outil de ligne de commande du serveur, se
    connecter, jouer.
 
-Aucune dépendance à labor, au socle PostGIS, à un fournisseur de modèle
-ni à un service tiers. La fabrication de contenu se fait ailleurs, sur
+Aucune dépendance à labor, au socle PostGIS ni à un fournisseur de
+modèle ; un seul service tiers, le fournisseur d'envoi de mail des magic
+links (`decisions/0020`). La fabrication de contenu se fait ailleurs, sur
 la machine du joueur (`gabarit-domaine/USINE.md`).

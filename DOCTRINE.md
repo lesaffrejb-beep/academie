@@ -55,7 +55,8 @@ abonnement à un modèle.
 2. **La source s'affiche, avec son parti.** Le joueur voit sur chaque
    question d'où elle vient et si l'émetteur défend un intérêt (syndics,
    copropriétaires, vendeur d'une prestation). Il peut se méfier en
-   connaissance de cause.
+   connaissance de cause. Seule exception : pendant une épreuve, les
+   sources apparaissent à la fin, pas pendant.
 3. **Le valideur fait foi.** Rien de rouge n'est servi. Un contrat qui
    diverge du valideur se corrige ; un valideur ne s'affaiblit jamais pour
    faire passer une carte.
@@ -97,7 +98,7 @@ corrige.
 | Rang | Document | Ce qu'il porte |
 |---|---|---|
 | 1 | ce fichier | ce qu'on est, ce qu'on refuse |
-| 2 | [`CONTRAT-CARTE-V1.md`](CONTRAT-CARTE-V1.md) et `app/valide_banque.py` | le format d'une carte ; le valideur prime sur le texte |
+| 2 | [`CONTRAT-CARTE-V1.md`](CONTRAT-CARTE-V1.md) et `app/valide_banque.py` | le format d'une carte ; le valideur prime sur le texte. [`CONTRAT-CARTE-V2.md`](CONTRAT-CARTE-V2.md) et [`contrats/`](contrats/README.md) prendront ce rang le jour où leur valideur existe ; d'ici là ce sont des propositions de rang 6 |
 | 3 | [`BLUEPRINT.md`](BLUEPRINT.md) | le produit tel qu'il est imaginé le 02/09/2026 |
 | 4 | [`PROGRAMME.md`](PROGRAMME.md) | ce qu'on enseigne au gestionnaire de copropriété, dans quel ordre |
 | 5 | [`METHODE.md`](METHODE.md), [`CADRAGE-SCIENTIFIQUE.md`](CADRAGE-SCIENTIFIQUE.md) | pourquoi chaque mécanique existe, avec sa source |
@@ -105,7 +106,7 @@ corrige.
 | 7 | [`DIRECTION-ARTISTIQUE.md`](DIRECTION-ARTISTIQUE.md) | à quoi ça ressemble et comment ça bouge |
 | 8 | [`ROADMAP.md`](ROADMAP.md), `roadmap.json` | ce qu'on fait ensuite, avec la preuve attendue |
 | 9 | [`decisions/`](decisions/README.md) | pourquoi on a tranché comme ça, daté |
-| 10 | [`gabarit-domaine/`](gabarit-domaine/README.md), [`CORPUS.md`](CORPUS.md), [`boite/`](boite/README.md) | les guides opérationnels |
+| 10 | [`gabarit-domaine/`](gabarit-domaine/README.md), [`CORPUS.md`](CORPUS.md), [`boite/`](boite/README.md), [`sources/`](sources/README.md), [`programme/`](programme/README.md), [`serveur/`](serveur/README.md), [`web/`](web/README.md) | les guides opérationnels et les squelettes |
 | 11 | [`archive/`](archive/roadmaps/README.md) | l'histoire, non pilotante |
 
 ## 5. Qui fait quoi

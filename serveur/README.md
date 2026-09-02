@@ -16,7 +16,11 @@ tester. Le chantier est `ACA-JOURNAL-SYNC-1`.
 
 Ce qu'il ne fait jamais : appeler un modèle, lire une source, calculer
 un score qu'un client ne pourrait pas recalculer, envoyer un mail à
-quelqu'un d'autre que le joueur lui-même, parler à labor.
+quelqu'un d'autre que le joueur lui-même, parler à labor, écrire dans
+le journal d'un joueur. Les tables dérivées (`jalons`, `defis_resultats`,
+`adoptions`, `signalements`) sont écrites par le serveur à partir des
+lignes de journal qu'il reçoit et des actions des joueurs ; elles se
+recalculent depuis le journal, elles ne sont pas une seconde vérité.
 
 ## Stack
 
@@ -64,4 +68,6 @@ serveur/
   une URL ni dans un journal.
 - La version du contrat (`carte-v2`, `journal-v1`) est vérifiée sur
   chaque requête qui porte des données.
-- Aucune dépendance à labor, au socle PostGIS ni à un service tiers.
+- Aucune dépendance à labor, au socle PostGIS ni à un service tiers, à
+  une exception près : le fournisseur d'envoi de mail des magic links
+  (`decisions/0020`).

@@ -191,7 +191,7 @@ l'arbre est grand.
 | à revoir | joué, mais pas revu depuis le seuil de fraîcheur | anneau grisé, daté (« vu il y a 47 j ») |
 
 Le **remplissage** n'a qu'une définition : la part des cartes validées du
-nœud dont la stabilité FSRS dépasse vingt et un jours (la convention
+nœud dont la stabilité FSRS atteint vingt et un jours (la convention
 « mature » d'Anki, paramétrée). Tout ce qui s'affiche en dérive ; il
 n'existe pas de seconde comptabilité.
 
@@ -212,7 +212,8 @@ n'existe pas de seconde comptabilité.
 
 ([`decisions/0013`](decisions/0013-le-socle-et-la-liberte.md)) Le
 **socle** est ce que tout gestionnaire doit tenir : niveau 2 dans les dix
-domaines, niveau 3 en droit, en comptabilité et sur l'assemblée générale
+domaines, niveau 3 en droit, en comptabilité et au cabinet (assemblée,
+cycle annuel, écrire, négocier)
 (`PROGRAMME.md` §3). Au-delà, c'est la spécialisation, jamais imposée.
 
 - **La séance protège le socle.** Tant qu'il n'est pas validé, la moitié
@@ -267,7 +268,7 @@ d'abord, on relit ensuite.
 | **datation** | remettre dans l'ordre un circuit ou une frise | 1-2 | exacte | jamais |
 | **plan** | extrait de plan annoté, lire une abréviation, un niveau | 1-3 | exacte | jamais |
 | **cas** | une situation en trois à cinq pas, une décision à chaque pas | 2-3 | exacte par pas | jamais |
-| **libre** | écrire ou dicter, corrigé contre les sources de la carte | 3-4 | modèle (clé du joueur) ou liste de contrôle | jamais |
+| **libre** | écrire ou dicter, corrigé contre les sources de la carte | 3-4 | liste de contrôle ; ou son propre assistant par copier-coller ; plus tard, un appel au fournisseur de modèle choisi par le joueur, déclaré et consenti (`decisions/0020`) | jamais |
 | **role** | un prompt prêt à copier pour une conversation dédiée | 3-4 | débrief par le modèle | jamais |
 | **dessin** | dessiner de mémoire sur papier, puis liste de contrôle | 1-3 | soi-même par liste | jamais |
 | **feuille-blanche** | rappel libre sur papier en temps borné, puis liste | 2-4 | soi-même par liste | oui, borne haute |
@@ -372,8 +373,9 @@ Chaque question porte, sous la réponse et en un tap depuis la question :
 
 ## 11. Le quiz de positionnement
 
-Au premier lancement d'un domaine, une vingtaine de questions réparties
-sur ses branches. Une bonne réponse inscrit la carte au journal comme
+Au premier lancement, vingt questions, deux par domaine de l'arbre (une
+de niveau 1, une de niveau 2, branches distinctes) ; un domaine adopté
+plus tard reçoit quatre questions sur ses branches. Une bonne réponse inscrit la carte au journal comme
 déjà stabilisée (stabilité initiale explicite, origine « quiz ») ; une
 mauvaise n'inscrit rien. Le quiz **ouvre** des branches, il n'écrit jamais
 leur remplissage. Puis le joueur joue cinq cartes tout de suite ; la
@@ -403,9 +405,12 @@ première séance dure moins de dix minutes.
   une **palette** de couleurs pour l'outil. Pas d'avatar : l'arbre est
   l'avatar, sa forme c'est toi.
 - **Une citation sourcée** aux moments de conquête, jamais de confettis.
-- **Le bilan du mois** : une page qu'on peut partager, façon récap
-  annuel : cartes stabilisées, domaines qui ont bougé, calibration,
-  erreurs récurrentes et leur raison, le nœud le plus dur.
+- **Le bilan du mois** : une page privée, façon récap annuel : cartes
+  stabilisées, domaines qui ont bougé, calibration, erreurs récurrentes
+  et leur raison (le carnet), le nœud le plus dur. Ce qui s'en partage
+  est une **carte** séparée qui ne porte que les cartes stabilisées, les
+  domaines qui ont bougé et le titre : jamais une erreur, jamais une
+  raison.
 - Interdits : boutique, monnaie, vies, série qui casse, coffres
   aléatoires, urgence factice. Les mécaniques d'engagement se coupent
   d'office pour un joueur dont elles dégradent le rituel mesuré.
@@ -505,3 +510,5 @@ lui.
 2. Le premier collègue invité, et quand.
 3. La semaine type par défaut (§4) : garder, ou décaler l'étude au
    dimanche.
+4. Les licences ([`decisions/0018`](decisions/0018-licences-du-code-et-du-contenu.md)) :
+   code MIT, contenu CC BY-SA. La bibliothèque commune les suppose.

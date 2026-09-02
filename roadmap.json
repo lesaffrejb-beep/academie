@@ -3,41 +3,687 @@
   "project": "academie",
   "_": "Réécrite le 02/09/2026 (ROADMAP.md, decisions/). Statuts : done | ready | blocked. Modes : deterministic | agent-safe | agent-review | human-only. tooling/roadmap.py ne choisit qu'un item ready, risque low ou medium, mode deterministic ou agent-safe, sans dépendance ouverte.",
   "items": [
-    {"id": "ACA-PORT-1", "outcome": "Le moteur, la banque, la publication et les tests fonctionnent dans un dépôt autonome sans ERP.", "status": "done", "mode": "agent-review", "risk": "medium", "priority": 100, "depends_on": [], "budget": {"max_units": 1, "max_minutes": 120}, "proof": "Clone autonome propre, 80 cartes valides, tests verts et publication VPS quotidienne isolée.", "parent_milestone": "ACADEMIE-1"},
-    {"id": "ACA-ENGINE-1", "outcome": "FSRS, séance, progression, quiz et carnet d'erreurs sont reproductibles et indépendants d'un LLM.", "status": "done", "mode": "agent-review", "risk": "medium", "priority": 99, "depends_on": ["ACA-PORT-1"], "budget": {"max_units": 1, "max_minutes": 120}, "proof": "Suite app/tests.py verte, comparaison FSRS et tests de mutation disponibles.", "parent_milestone": "ACADEMIE-1"},
-    {"id": "ACA-PUBLISH-1", "outcome": "Le VPS publie uniquement les cartes valides et les médias référencés sans salir le clone.", "status": "done", "mode": "agent-review", "risk": "medium", "priority": 98, "depends_on": ["ACA-PORT-1"], "budget": {"max_units": 1, "max_minutes": 90}, "proof": "Timer actif, artefact de 80 cartes et deux médias uniques, worktree propre.", "parent_milestone": "ACADEMIE-1"},
-    {"id": "ACA-UI-1", "outcome": "L'interface de jeu vit dans Académie, charge sa banque au runtime et ne dépend d'aucun module ou fichier ERP.", "status": "done", "mode": "agent-review", "risk": "medium", "priority": 96, "depends_on": ["ACA-PUBLISH-1"], "budget": {"max_units": 1, "max_minutes": 180, "max_tokens": 45000}, "proof": "Client statique autonome publié sous /academie/ : 80 cartes runtime, progression locale, cache hors ligne, zéro import ERP.", "parent_milestone": "ACADEMIE-UI-1"},
-    {"id": "ACA-UI-2", "outcome": "L'archipel SVG autonome remet la carte au centre (habillage remplacé par l'arbre le 02/09/2026, decisions/0001 ; reste servi jusqu'à ACA-FRONT-2).", "status": "done", "mode": "agent-review", "risk": "medium", "priority": 95, "depends_on": ["ACA-UI-1"], "budget": {"max_units": 1, "max_minutes": 180, "max_tokens": 45000}, "proof": "Neuf îles accessibles au clavier, six domaines jouables, cache academie-v2 et suite complète verte.", "parent_milestone": "ACADEMIE-UI-1"},
-    {"id": "ACA-DOC-2", "outcome": "La conception v2 est écrite et cohérente : doctrine, blueprint, programme en données, méthode étendue, architecture, direction artistique, contrats v2, squelette serveur et client, décisions 0001-0020, maquette du front ; la conception d'août est archivée intacte.", "status": "done", "mode": "agent-review", "risk": "low", "priority": 97, "depends_on": ["ACA-UI-2"], "budget": {"max_units": 1, "max_minutes": 240, "max_tokens": 200000}, "proof": "check.py et tests verts, pré-mortem par agent frais passé, liens internes valides, JSON des contrats et du programme lisibles.", "parent_milestone": "ACADEMIE-V2-FONDATIONS"},
-    {"id": "ACA-JOURNAL-SYNC-1", "outcome": "L'état joueur vit sur le VPS et le client joue hors-ligne : API d'état (serveur/API.md), SQLite (serveur/schema.sql), client qui écrit localement et synchronise par union, FSRS en parité des deux côtés.", "status": "ready", "mode": "agent-review", "risk": "medium", "priority": 96, "depends_on": ["ACA-DOC-2"], "budget": {"max_units": 2, "max_minutes": 360, "max_tokens": 120000}, "proof": "Une réponse jouée sur téléphone réseau coupé est relisible sur le Mac le soir, et l'inverse ; test de parité contre app/vecteurs_fsrs.py vert ; rejouer un lot ne change rien.", "parent_milestone": "ACADEMIE-V2-FONDATIONS"},
-    {"id": "ACA-RITUAL-METRICS-1", "outcome": "Un rapport déterministe mesure le rituel depuis le journal sans lire le contenu des réponses : séances commencées et finies, abandons, durée, formats, jours de la semaine.", "status": "ready", "mode": "deterministic", "risk": "low", "priority": 94, "depends_on": ["ACA-ENGINE-1"], "budget": {"max_units": 1, "max_minutes": 60, "max_tokens": 12000}, "proof": "Fixtures couvrant séance complète, arrêt après trois minutes, coupure de trois semaines et journal corrompu.", "parent_milestone": "ACADEMIE-RITUAL-1"},
-    {"id": "ACA-RITUAL-1", "outcome": "JB réalise environ trente séances réelles et un test de rétention à froid de vingt cartes sans dette ni culpabilisation.", "status": "ready", "mode": "human-only", "risk": "low", "priority": 95, "depends_on": ["ACA-ENGINE-1"], "budget": {"max_units": 30, "max_minutes": 600}, "proof": "Bilan usage et savoir : fréquence, abandons, formats, score à froid, calibration, verbatim JB et décision continuer, corriger ou geler.", "parent_milestone": "ACADEMIE-RITUAL-1"},
-    {"id": "ACA-PROGRAMME-1", "outcome": "Le programme copro est validé mécaniquement et branché : app/valide_programme.py (prérequis existants et de niveau ≤, pas de cycle, clés cohérentes), academie.json aligné (plans → travaux, immobilier et cabinet ajoutés), niveaux calibrés par un agent frais contre PROGRAMME.md §5.", "status": "ready", "mode": "agent-review", "risk": "low", "priority": 93, "depends_on": ["ACA-DOC-2"], "budget": {"max_units": 1, "max_minutes": 120, "max_tokens": 40000}, "proof": "Valideur vert en CI sur programme/copro.json ; rapport de calibrage listant les chapitres reclassés et pourquoi ; tests existants verts avec les nouvelles clés.", "parent_milestone": "ACADEMIE-V2-FONDATIONS"},
-    {"id": "ACA-SOURCES-1", "outcome": "Chaque source des 84 cartes a une ligne au registre (nature, parti, fiabilité, date) et chaque carte porte source[].nature ; la liste blanche copro est complète en v1.", "status": "ready", "mode": "agent-safe", "risk": "low", "priority": 92, "depends_on": ["ACA-DOC-2"], "budget": {"max_units": 1, "max_minutes": 120, "max_tokens": 30000}, "proof": "sources/REGISTRE.md sans ligne vide, zéro carte sans nature, tri NotebookLM repris ; valideur v1 toujours vert (la nature est tolérée avant le contrat v2).", "parent_milestone": "ACADEMIE-V2-FONDATIONS"},
-    {"id": "ACA-REUSE-1", "outcome": "Chaque candidat de travail/2026-09-02-reutilisation-a-verifier.md a sa licence lue à la source et un verdict (reprendre, voler le pattern, écarter) ; rien n'est installé avant.", "status": "ready", "mode": "agent-safe", "risk": "low", "priority": 91, "depends_on": ["ACA-DOC-2"], "budget": {"max_units": 1, "max_minutes": 120, "max_tokens": 40000}, "proof": "Tableau daté avec URL de licence par ligne ; taille ajoutée au bundle estimée pour chaque reprise ; aucune AGPL en code.", "parent_milestone": "ACADEMIE-V2-FONDATIONS"},
-    {"id": "ACA-CONTRAT-2", "outcome": "Le contrat carte-v2 et chapitre-v1 sont opposables : valideur v2 dans le même commit, banque migrée à la disposition par chapitre sans renumérotage, péremption par défaut du droit, a_recouper dérivé.", "status": "blocked", "mode": "agent-review", "risk": "medium", "priority": 90, "depends_on": ["ACA-PROGRAMME-1", "ACA-SOURCES-1"], "budget": {"max_units": 2, "max_minutes": 300, "max_tokens": 100000}, "proof": "Valideur v2 vert sur la banque migrée ; tests de mutation étendus ; genere.py publie contrat: carte-v2 ; l'archipel joue encore la banque v2 ou est retiré au même moment.", "parent_milestone": "ACADEMIE-V2-FONDATIONS"},
-    {"id": "ACA-EXPORT-1", "outcome": "app/export_anki.py produit un .apkg de n'importe quel sous-ensemble de la banque (assurance-vie de réversibilité).", "status": "ready", "mode": "deterministic", "risk": "low", "priority": 70, "depends_on": ["ACA-ENGINE-1"], "budget": {"max_units": 1, "max_minutes": 60, "max_tokens": 15000}, "proof": "Un paquet importé dans Anki sans erreur, licence genanki vérifiée à la date.", "parent_milestone": "ACADEMIE-V2-FONDATIONS"},
-    {"id": "ACA-FRONT-2", "outcome": "Le client v2 (web/) remplace l'archipel : arbre global et vue domaine, séance, fiche de nœud, clôture, profil, boîte, crédits ; hors-ligne d'abord ; DA appliquée ; check.py mis à jour.", "status": "blocked", "mode": "agent-review", "risk": "medium", "priority": 89, "depends_on": ["ACA-JOURNAL-SYNC-1", "ACA-PROGRAMME-1", "ACA-REUSE-1"], "budget": {"max_units": 4, "max_minutes": 720, "max_tokens": 250000}, "proof": "Première question en moins de trois secondes réseau coupé sur téléphone ; checklist DA §9 ; aucun hôte tiers contacté ; JB joue sept séances dessus.", "parent_milestone": "ACADEMIE-V2-JOUEUR"},
-    {"id": "ACA-SEMAINE-1", "outcome": "Le composeur applique la semaine type, la pondération du socle, la séance de domaine avec rappels d'ailleurs, et journalise la graine et le jour.", "status": "blocked", "mode": "deterministic", "risk": "low", "priority": 88, "depends_on": ["ACA-JOURNAL-SYNC-1", "ACA-PROGRAMME-1"], "budget": {"max_units": 1, "max_minutes": 120, "max_tokens": 30000}, "proof": "Tests : lundi sans neuf si > 15 dues ; moitié du neuf sur la branche socle la plus faible ; domaine choisi servi sans pondération ; même graine, même séance.", "parent_milestone": "ACADEMIE-V2-JOUEUR"},
-    {"id": "ACA-ETUDE-1", "outcome": "Le format étude (amorce, leçon, exercices, synthèse) se joue de bout en bout sur trois chapitres pilotes validés.", "status": "blocked", "mode": "agent-review", "risk": "medium", "priority": 87, "depends_on": ["ACA-CONTRAT-2", "ACA-FRONT-2"], "budget": {"max_units": 2, "max_minutes": 300, "max_tokens": 90000}, "proof": "Trois chapitres au contrat, double passe faite ; une étude jouée par JB avec synthèse cochée ; les cartes extraites entrent en rotation.", "parent_milestone": "ACADEMIE-V2-JOUEUR"},
-    {"id": "ACA-CONTENT-MAP-1", "outcome": "Énergie, travaux, immobilier, cabinet et culture disposent chacun d'une carte de sources primaires, licences, péremptions et premier lot proposé.", "status": "ready", "mode": "agent-safe", "risk": "low", "priority": 80, "depends_on": ["ACA-PORT-1"], "budget": {"max_units": 1, "max_minutes": 120, "max_tokens": 30000}, "proof": "Inventaire sourcé sans création de carte et sans contenu labor, avec critères d'abandon de chaque source, lignes ajoutées au registre.", "parent_milestone": "ACADEMIE-V2-CONTENU"},
-    {"id": "ACA-CONTENT-2", "outcome": "Les domaines du socle gagnent des lots de chapitres de niveaux 1 et 2 (leçon, amorce, cartes, synthèse) générés par le modèle avec recherche citée sur les sources fiables, tampon de provenance sur chaque carte, double passe par agent frais et échantillon humain (decisions/0021).", "status": "blocked", "mode": "agent-review", "risk": "medium", "priority": 78, "depends_on": ["ACA-CONTRAT-2", "ACA-CONTENT-MAP-1", "ACA-RITUAL-1"], "budget": {"max_units": 6, "max_minutes": 900, "max_tokens": 300000}, "proof": "Par lot : zéro carte brouillon restante, part des cartes sans source retrouvée écrite, zéro chiffre sans source, zéro erreur sur échantillon, coût mesuré par chapitre écrit dans DESSINER-LA-CARTE §6.", "parent_milestone": "ACADEMIE-V2-CONTENU"},
-    {"id": "ACA-VERIF-1", "outcome": "Des runs de vérification périodiques tirent un lot de cartes (sans source d'abord, puis anciennes, très révisées, juridiques), retournent sur les sources fiables voir si quelque chose a changé, écrivent l'historique et font bouger les statuts ; ils tournent chez le propriétaire du domaine.", "status": "blocked", "mode": "agent-review", "risk": "medium", "priority": 74, "depends_on": ["ACA-CONTRAT-2", "ACA-AUDIT-1"], "budget": {"max_units": 1, "max_minutes": 120, "max_tokens": 40000, "max_cost_eur": 10}, "proof": "Un run sur 30 cartes : chaque carte a une ligne d'historique datée avec les sources consultées ; au moins une carte volontairement périmée dans la fixture est détectée ; un audit croisé par un modèle d'un autre fournisseur sur le même lot, désaccords listés ; coût du run écrit.", "parent_milestone": "ACADEMIE-V2-CONTENU"},
-    {"id": "ACA-BOITE-1", "outcome": "Le skill « glisser dans l'Académie » transforme un mot-clé, un lien, un PDF, une capture ou une vidéo en chapitre satellite brouillon avec trous nommés et rattachement proposé ; la file de la boîte se synchronise entre téléphone et Mac.", "status": "blocked", "mode": "agent-review", "risk": "medium", "priority": 86, "depends_on": ["ACA-CONTRAT-2"], "budget": {"max_units": 2, "max_minutes": 240, "max_tokens": 80000}, "proof": "« chaudière hybride » donne un satellite validé ou un trou nommé motivé ; un PDF scanné passe l'OCR ; aucune source ne monte au serveur.", "parent_milestone": "ACADEMIE-V2-JOUEUR"},
-    {"id": "ACA-EXAMEN-1", "outcome": "Les épreuves de domaine (avec part des domaines prérequis), transverses (dossier en pas) et du gestionnaire se jouent ; verrou 24 h ; paliers nommés ; points, niveau, titres et calibration dérivés du journal.", "status": "blocked", "mode": "agent-review", "risk": "medium", "priority": 85, "depends_on": ["ACA-FRONT-2", "ACA-CONTRAT-2"], "budget": {"max_units": 2, "max_minutes": 300, "max_tokens": 90000}, "proof": "Tests : pas de 100 % sans épreuve ; épreuve ratée non retentable le jour même ; points recalculés identiques après effacement du cache ; un dossier transverse joué par JB.", "parent_milestone": "ACADEMIE-V2-JOUEUR"},
-    {"id": "ACA-JOURNEE-1", "outcome": "Le format journée compose des études entrelacées avec pauses, rappel du soir et plafond de neuf par jour.", "status": "blocked", "mode": "deterministic", "risk": "low", "priority": 75, "depends_on": ["ACA-ETUDE-1"], "budget": {"max_units": 1, "max_minutes": 120, "max_tokens": 30000}, "proof": "Tests : jamais plus de nouveau_par_jour cartes neuves ; deux domaines au moins ; le chapitre du matin revient l'après-midi ; une journée jouée par JB.", "parent_milestone": "ACADEMIE-V2-JOUEUR"},
-    {"id": "ACA-PAPIER-1", "outcome": "Les types dessin et feuille-blanche se jouent avec liste de contrôle, proposés seulement quand le joueur déclare avoir de quoi écrire.", "status": "blocked", "mode": "agent-review", "risk": "low", "priority": 72, "depends_on": ["ACA-CONTRAT-2", "ACA-ETUDE-1"], "budget": {"max_units": 1, "max_minutes": 120, "max_tokens": 30000}, "proof": "Dix cartes dessin sur pathologie et équipements validées ; note FSRS dérivée des attendus cochés ; jamais servies en séance téléphone par défaut.", "parent_milestone": "ACADEMIE-V2-JOUEUR"},
-    {"id": "ACA-AUDIT-1", "outcome": "audit_banque.py rend un rapport HTML par banque (cartes par nature, notes A/B/C, à recouper, sans source, périmées, à revérifier sous 30 jours, trous nommés, provenance par modèle) ; le client affiche le dossier de chaque carte et la page « Pourquoi croire ce professeur ? » par domaine avec le registre des signalements (decisions/0022).", "status": "blocked", "mode": "deterministic", "risk": "low", "priority": 76, "depends_on": ["ACA-CONTRAT-2"], "budget": {"max_units": 1, "max_minutes": 120, "max_tokens": 35000}, "proof": "Rapport et page lisibles par JB sans ouvrir un JSON ; chiffres recalculés identiques par le valideur ; note de confiance dérivée testée sur fixtures A, B, C.", "parent_milestone": "ACADEMIE-V2-CONTENU"},
-    {"id": "ACA-RESPONSE-1", "outcome": "Une expérience bornée compare réponse libre corrigée par le modèle (clé du joueur) et mode exact sur rétention, abandon et coût.", "status": "blocked", "mode": "agent-review", "risk": "medium", "priority": 60, "depends_on": ["ACA-RITUAL-1", "ACA-ETUDE-1"], "budget": {"max_units": 1, "max_minutes": 120, "max_tokens": 30000, "max_cost_eur": 10}, "proof": "Protocole avant/après, petit lot figé, coût par correction et décision conserver ou retirer.", "parent_milestone": "ACADEMIE-V2-JOUEUR"},
-    {"id": "ACA-MULTI-DECISION-1", "outcome": "JB arbitre comptes (magic links), fournisseur de mail comme sous-traitant, RGPD, suppression de compte sous 48 h, licences (decisions/0018), après preuve d'usage prolongée.", "status": "blocked", "mode": "human-only", "risk": "high", "priority": 50, "depends_on": ["ACA-RITUAL-1", "ACA-JOURNAL-SYNC-1"], "budget": {"max_units": 1, "max_minutes": 60}, "proof": "Décision acceptée avec coût mensuel, responsable de traitement, délai de suppression, rollback et critères d'arrêt.", "parent_milestone": "ACADEMIE-V2-OUVERTURE"},
-    {"id": "ACA-CERCLE-1", "outcome": "Tous les joueurs d'une Académie se voient par défaut (arbre, titre, insignes, compteur), chacun peut masquer un domaine ou se masquer ; fil des jalons, kudos, défis ; le carnet d'erreurs n'est jamais visible.", "status": "blocked", "mode": "agent-review", "risk": "high", "priority": 40, "depends_on": ["ACA-MULTI-DECISION-1", "ACA-FRONT-2"], "budget": {"max_units": 2, "max_minutes": 300, "max_tokens": 90000}, "proof": "Deux profils réels se voient ; masquage d'un domaine effectif en une action ; test qui prouve qu'aucune route ne rend le carnet ; un défi joué et comparé.", "parent_milestone": "ACADEMIE-V2-OUVERTURE"},
-    {"id": "ACA-LIGUE-1", "outcome": "Une ligue hebdomadaire facultative compte les cartes stabilisées × niveau sur le tronc commun, et se coupe d'office pour un joueur dont le rituel baisse.", "status": "blocked", "mode": "agent-review", "risk": "medium", "priority": 30, "depends_on": ["ACA-CERCLE-1"], "budget": {"max_units": 1, "max_minutes": 120, "max_tokens": 30000}, "proof": "Score recalculable depuis les journaux ; coupure automatique testée sur fixture de quatre semaines en baisse.", "parent_milestone": "ACADEMIE-V2-OUVERTURE"},
-    {"id": "ACA-TUTEUR-1", "outcome": "Un rôle tuteur consenti par chaque membre, visible par lui, sans agrégat ni export.", "status": "blocked", "mode": "agent-review", "risk": "high", "priority": 25, "depends_on": ["ACA-CERCLE-1"], "budget": {"max_units": 1, "max_minutes": 120, "max_tokens": 30000}, "proof": "Retrait d'un clic effectif ; aucune route d'export collectif ; test qui prouve l'asymétrie impossible.", "parent_milestone": "ACADEMIE-V2-OUVERTURE"},
-    {"id": "ACA-BIBLIOTHEQUE-1", "outcome": "Les livraisons de banque sont reçues, re-validées, mises en quarantaine, acceptées et servies ; la bibliothèque commune liste les domaines adoptables ; la licence du contenu est vérifiée à la réception.", "status": "blocked", "mode": "agent-review", "risk": "high", "priority": 45, "depends_on": ["ACA-MULTI-DECISION-1", "ACA-CONTRAT-2", "ACA-JOURNAL-SYNC-1"], "budget": {"max_units": 2, "max_minutes": 300, "max_tokens": 80000}, "proof": "Une livraison avec un fichier de sources est refusée ; une livraison valide est jouable après acceptation ; un second profil adopte le domaine sans rien fabriquer.", "parent_milestone": "ACADEMIE-V2-OUVERTURE"},
-    {"id": "ACA-DOMAIN-KIT-1", "outcome": "Le kit local transforme un dépôt de sources en domaine versionné, éprouvé avec Arthur ou un domaine public de secours, coût mesuré.", "status": "blocked", "mode": "agent-review", "risk": "medium", "priority": 55, "depends_on": ["ACA-RITUAL-1", "ACA-CONTENT-2", "ACA-BOITE-1"], "budget": {"max_units": 1, "max_minutes": 180, "max_tokens": 40000}, "proof": "Arthur joue sa première séance sur un domaine que JB n'a pas écrit ; le kit rejouerait la soirée ; le coût réel est écrit.", "parent_milestone": "ACADEMIE-V2-OUVERTURE"},
-    {"id": "ACA-SELFHOST-1", "outcome": "Un copain installe sa propre Académie en cinq étapes (deploy/README.md) sur un Linux vide, sans labor ni socle.", "status": "blocked", "mode": "agent-review", "risk": "medium", "priority": 35, "depends_on": ["ACA-JOURNAL-SYNC-1", "ACA-FRONT-2"], "budget": {"max_units": 1, "max_minutes": 180, "max_tokens": 40000}, "proof": "installer.sh idempotent ; une installation faite par quelqu'un d'autre que JB, chronométrée, ses trois pannes écrites.", "parent_milestone": "ACADEMIE-V2-OUVERTURE"},
-    {"id": "ACA-MEDIA-1", "outcome": "Photothèque de terrain (étiquetée, confirmée par un second joueur, quêtes de terrain) et audio (écoute, podcast de chapitre depuis la leçon validée), fabriqués chez le propriétaire du domaine.", "status": "blocked", "mode": "agent-review", "risk": "medium", "priority": 20, "depends_on": ["ACA-CONTENT-2", "ACA-CERCLE-1"], "budget": {"max_units": 3, "max_minutes": 480, "max_tokens": 120000}, "proof": "Vingt photos validées à deux ; un podcast dont l'empreinte de texte correspond à la leçon ; aucune génération côté serveur.", "parent_milestone": "ACADEMIE-V2-OUVERTURE"},
-    {"id": "ACA-ERP-1", "outcome": "Le canal labor vers Académie refuse toute donnée non anonymisée, non sourcée ou non validée ; la veille juridique arrive dans la boîte.", "status": "blocked", "mode": "agent-review", "risk": "high", "priority": 48, "depends_on": ["ACA-BOITE-1"], "budget": {"max_units": 1, "max_minutes": 120, "max_tokens": 25000}, "proof": "Fixtures anti-fuite pour noms, adresses, contacts, contrats, mails et transcriptions ; seule la couche autorisée est publiée.", "parent_milestone": "ACADEMIE-V2-OUVERTURE"},
-    {"id": "ACA-OPTIMISEUR-1", "outcome": "Les paramètres FSRS personnels de JB sont optimisés à partir de quatre cents révisions hors quiz, et comparés au défaut sur rétention réelle.", "status": "blocked", "mode": "deterministic", "risk": "low", "priority": 15, "depends_on": ["ACA-RITUAL-1", "ACA-JOURNAL-SYNC-1"], "budget": {"max_units": 1, "max_minutes": 90, "max_tokens": 20000}, "proof": "Journal exporté sans lignes origine=quiz ; paramètres versionnés ; rétention réelle avant/après.", "parent_milestone": "ACADEMIE-V2-OUVERTURE"}
+    {
+      "id": "ACA-PORT-1",
+      "outcome": "Le moteur, la banque, la publication et les tests fonctionnent dans un dépôt autonome sans ERP.",
+      "status": "done",
+      "mode": "agent-review",
+      "risk": "medium",
+      "priority": 100,
+      "depends_on": [],
+      "budget": {
+        "max_units": 1,
+        "max_minutes": 120
+      },
+      "proof": "Clone autonome propre, 80 cartes valides, tests verts et publication VPS quotidienne isolée.",
+      "parent_milestone": "ACADEMIE-1"
+    },
+    {
+      "id": "ACA-ENGINE-1",
+      "outcome": "FSRS, séance, progression, quiz et carnet d'erreurs sont reproductibles et indépendants d'un LLM.",
+      "status": "done",
+      "mode": "agent-review",
+      "risk": "medium",
+      "priority": 99,
+      "depends_on": [
+        "ACA-PORT-1"
+      ],
+      "budget": {
+        "max_units": 1,
+        "max_minutes": 120
+      },
+      "proof": "Suite app/tests.py verte, comparaison FSRS et tests de mutation disponibles.",
+      "parent_milestone": "ACADEMIE-1"
+    },
+    {
+      "id": "ACA-PUBLISH-1",
+      "outcome": "Le VPS publie uniquement les cartes valides et les médias référencés sans salir le clone.",
+      "status": "done",
+      "mode": "agent-review",
+      "risk": "medium",
+      "priority": 98,
+      "depends_on": [
+        "ACA-PORT-1"
+      ],
+      "budget": {
+        "max_units": 1,
+        "max_minutes": 90
+      },
+      "proof": "Timer actif, artefact de 80 cartes et deux médias uniques, worktree propre.",
+      "parent_milestone": "ACADEMIE-1"
+    },
+    {
+      "id": "ACA-UI-1",
+      "outcome": "L'interface de jeu vit dans Académie, charge sa banque au runtime et ne dépend d'aucun module ou fichier ERP.",
+      "status": "done",
+      "mode": "agent-review",
+      "risk": "medium",
+      "priority": 96,
+      "depends_on": [
+        "ACA-PUBLISH-1"
+      ],
+      "budget": {
+        "max_units": 1,
+        "max_minutes": 180,
+        "max_tokens": 45000
+      },
+      "proof": "Client statique autonome publié sous /academie/ : 80 cartes runtime, progression locale, cache hors ligne, zéro import ERP.",
+      "parent_milestone": "ACADEMIE-UI-1"
+    },
+    {
+      "id": "ACA-UI-2",
+      "outcome": "L'archipel SVG autonome remet la carte au centre (habillage remplacé par l'arbre le 02/09/2026, decisions/0001 ; reste servi jusqu'à ACA-FRONT-2).",
+      "status": "done",
+      "mode": "agent-review",
+      "risk": "medium",
+      "priority": 95,
+      "depends_on": [
+        "ACA-UI-1"
+      ],
+      "budget": {
+        "max_units": 1,
+        "max_minutes": 180,
+        "max_tokens": 45000
+      },
+      "proof": "Neuf îles accessibles au clavier, six domaines jouables, cache academie-v2 et suite complète verte.",
+      "parent_milestone": "ACADEMIE-UI-1"
+    },
+    {
+      "id": "ACA-DOC-2",
+      "outcome": "La conception v2 est écrite et cohérente : doctrine, blueprint, programme en données, méthode étendue, architecture, direction artistique, contrats v2, squelette serveur et client, décisions 0001-0022, maquette du front ; la conception d'août est archivée intacte.",
+      "status": "done",
+      "mode": "agent-review",
+      "risk": "low",
+      "priority": 97,
+      "depends_on": [
+        "ACA-UI-2"
+      ],
+      "budget": {
+        "max_units": 1,
+        "max_minutes": 240,
+        "max_tokens": 200000
+      },
+      "proof": "check.py et tests verts, pré-mortem par agent frais rendu le 02/09 (4 red paths et 16 bloquants réparés, relecture dans travail/relecture-2026-09-02-conception-v2.md), liens internes valides, JSON des contrats et du programme lisibles, commit poussé.",
+      "parent_milestone": "ACADEMIE-V2-FONDATIONS"
+    },
+    {
+      "id": "ACA-JOURNAL-SYNC-1",
+      "outcome": "L'état joueur vit sur le VPS et le client joue hors-ligne : API d'état (serveur/API.md), SQLite (serveur/schema.sql), client qui écrit localement et synchronise par union, FSRS en parité des deux côtés.",
+      "status": "ready",
+      "mode": "agent-review",
+      "risk": "medium",
+      "priority": 96,
+      "depends_on": [
+        "ACA-DOC-2"
+      ],
+      "budget": {
+        "max_units": 2,
+        "max_minutes": 360,
+        "max_tokens": 120000
+      },
+      "proof": "Une réponse jouée sur téléphone réseau coupé est relisible sur le Mac le soir, et l'inverse ; test de parité contre app/vecteurs_fsrs.py vert ; rejouer un lot ne change rien.",
+      "parent_milestone": "ACADEMIE-V2-FONDATIONS"
+    },
+    {
+      "id": "ACA-RITUAL-METRICS-1",
+      "outcome": "Un rapport déterministe mesure le rituel depuis le journal sans lire le contenu des réponses : séances commencées et finies, abandons, durée, formats, jours de la semaine.",
+      "status": "blocked",
+      "mode": "deterministic",
+      "risk": "low",
+      "priority": 94,
+      "depends_on": [
+        "ACA-JOURNAL-SYNC-1"
+      ],
+      "budget": {
+        "max_units": 1,
+        "max_minutes": 60,
+        "max_tokens": 12000
+      },
+      "proof": "Fixtures couvrant séance complète, arrêt après trois minutes, coupure de trois semaines et journal corrompu.",
+      "parent_milestone": "ACADEMIE-RITUAL-1"
+    },
+    {
+      "id": "ACA-RITUAL-1",
+      "outcome": "JB réalise environ trente séances réelles et un test de rétention à froid de vingt cartes sans dette ni culpabilisation.",
+      "status": "blocked",
+      "mode": "human-only",
+      "risk": "low",
+      "priority": 95,
+      "depends_on": [
+        "ACA-JOURNAL-SYNC-1"
+      ],
+      "budget": {
+        "max_units": 30,
+        "max_minutes": 600
+      },
+      "proof": "Bilan usage et savoir depuis le journal synchronisé : fréquence, abandons, formats, score à froid, calibration, verbatim JB et décision continuer, corriger ou geler.",
+      "parent_milestone": "ACADEMIE-RITUAL-1"
+    },
+    {
+      "id": "ACA-PROGRAMME-1",
+      "outcome": "Le programme copro est validé mécaniquement et branché : app/valide_programme.py (prérequis existants et de niveau ≤, pas de cycle, clés cohérentes), academie.json aligné (plans → travaux, immobilier et cabinet ajoutés), niveaux calibrés par un agent frais contre PROGRAMME.md §5.",
+      "status": "ready",
+      "mode": "agent-review",
+      "risk": "low",
+      "priority": 93,
+      "depends_on": [
+        "ACA-DOC-2"
+      ],
+      "budget": {
+        "max_units": 1,
+        "max_minutes": 120,
+        "max_tokens": 40000
+      },
+      "proof": "Valideur vert en CI sur programme/copro.json ; rapport de calibrage listant les chapitres reclassés et pourquoi ; tests existants verts avec les nouvelles clés.",
+      "parent_milestone": "ACADEMIE-V2-FONDATIONS"
+    },
+    {
+      "id": "ACA-SOURCES-1",
+      "outcome": "Chaque source des 84 cartes a une ligne au registre (nature, parti, fiabilité, date) et chaque carte porte source[].nature ; la liste blanche copro est complète en v1.",
+      "status": "ready",
+      "mode": "agent-safe",
+      "risk": "low",
+      "priority": 92,
+      "depends_on": [
+        "ACA-DOC-2"
+      ],
+      "budget": {
+        "max_units": 1,
+        "max_minutes": 120,
+        "max_tokens": 30000
+      },
+      "proof": "sources/REGISTRE.md sans ligne vide, zéro carte sans nature, tri NotebookLM repris ; valideur v1 toujours vert (la nature est tolérée avant le contrat v2).",
+      "parent_milestone": "ACADEMIE-V2-FONDATIONS"
+    },
+    {
+      "id": "ACA-REUSE-1",
+      "outcome": "Chaque candidat de travail/2026-09-02-reutilisation-a-verifier.md a sa licence lue à la source et un verdict (reprendre, voler le pattern, écarter) ; rien n'est installé avant.",
+      "status": "ready",
+      "mode": "agent-safe",
+      "risk": "low",
+      "priority": 91,
+      "depends_on": [
+        "ACA-DOC-2"
+      ],
+      "budget": {
+        "max_units": 1,
+        "max_minutes": 120,
+        "max_tokens": 40000
+      },
+      "proof": "Tableau daté avec URL de licence par ligne ; taille ajoutée au bundle estimée pour chaque reprise ; aucune AGPL en code.",
+      "parent_milestone": "ACADEMIE-V2-FONDATIONS"
+    },
+    {
+      "id": "ACA-CONTRAT-2",
+      "outcome": "Le contrat carte-v2 et chapitre-v1 sont opposables : valideur v2 dans le même commit, banque migrée à la disposition par chapitre sans renumérotage, péremption par défaut du droit, a_recouper dérivé.",
+      "status": "blocked",
+      "mode": "agent-review",
+      "risk": "medium",
+      "priority": 90,
+      "depends_on": [
+        "ACA-PROGRAMME-1",
+        "ACA-SOURCES-1"
+      ],
+      "budget": {
+        "max_units": 2,
+        "max_minutes": 300,
+        "max_tokens": 100000
+      },
+      "proof": "Valideur v2 vert sur la banque migrée ; tests de mutation étendus ; genere.py publie contrat: carte-v2 ; l'archipel joue encore la banque v2 ou est retiré au même moment.",
+      "parent_milestone": "ACADEMIE-V2-FONDATIONS"
+    },
+    {
+      "id": "ACA-EXPORT-1",
+      "outcome": "app/export_anki.py produit un .apkg de n'importe quel sous-ensemble de la banque (assurance-vie de réversibilité).",
+      "status": "ready",
+      "mode": "deterministic",
+      "risk": "low",
+      "priority": 70,
+      "depends_on": [
+        "ACA-ENGINE-1"
+      ],
+      "budget": {
+        "max_units": 1,
+        "max_minutes": 60,
+        "max_tokens": 15000
+      },
+      "proof": "Un paquet importé dans Anki sans erreur, licence genanki vérifiée à la date.",
+      "parent_milestone": "ACADEMIE-V2-FONDATIONS"
+    },
+    {
+      "id": "ACA-FRONT-2",
+      "outcome": "Le client v2 (web/) remplace l'archipel : arbre global et vue domaine, séance, fiche de nœud, clôture, profil, boîte, crédits ; hors-ligne d'abord ; DA appliquée ; check.py mis à jour.",
+      "status": "blocked",
+      "mode": "agent-review",
+      "risk": "medium",
+      "priority": 89,
+      "depends_on": [
+        "ACA-JOURNAL-SYNC-1",
+        "ACA-PROGRAMME-1",
+        "ACA-REUSE-1"
+      ],
+      "budget": {
+        "max_units": 4,
+        "max_minutes": 720,
+        "max_tokens": 250000
+      },
+      "proof": "Première question en moins de trois secondes réseau coupé sur téléphone ; checklist DA §9 ; aucun hôte tiers contacté ; JB joue sept séances dessus.",
+      "parent_milestone": "ACADEMIE-V2-JOUEUR"
+    },
+    {
+      "id": "ACA-ARBRE-1",
+      "outcome": "progression.py v2 descend au niveau du chapitre et de la branche : états de nœud (inconnu, ouvert, en cours, solide, validé, à revoir par seuil de fraîcheur), ouverture de branche à 75 %, règle de croissance ; genere.py publie chapitres et prérequis dans banque.json ; le client recalcule la même chose (parité).",
+      "status": "blocked",
+      "mode": "deterministic",
+      "risk": "low",
+      "priority": 88,
+      "depends_on": [
+        "ACA-PROGRAMME-1",
+        "ACA-JOURNAL-SYNC-1"
+      ],
+      "budget": {
+        "max_units": 1,
+        "max_minutes": 180,
+        "max_tokens": 40000
+      },
+      "proof": "Tests : un nœud validé le reste après ajout de chapitres ; un nœud non revu depuis seuil_fraicheur_jours passe « à revoir » ; états identiques entre app/progression.py et web/src/moteur/progression.ts sur les mêmes fixtures.",
+      "parent_milestone": "ACADEMIE-V2-JOUEUR"
+    },
+    {
+      "id": "ACA-SEMAINE-1",
+      "outcome": "Le composeur applique la semaine type, la pondération du socle, la séance de domaine avec rappels d'ailleurs, et journalise la graine et le jour.",
+      "status": "blocked",
+      "mode": "deterministic",
+      "risk": "low",
+      "priority": 88,
+      "depends_on": [
+        "ACA-JOURNAL-SYNC-1",
+        "ACA-PROGRAMME-1"
+      ],
+      "budget": {
+        "max_units": 1,
+        "max_minutes": 120,
+        "max_tokens": 30000
+      },
+      "proof": "Tests : lundi sans neuf si > 15 dues ; moitié du neuf sur la branche socle la plus faible ; domaine choisi servi sans pondération ; même graine, même séance.",
+      "parent_milestone": "ACADEMIE-V2-JOUEUR"
+    },
+    {
+      "id": "ACA-ETUDE-1",
+      "outcome": "Le format étude (amorce, leçon, exercices, synthèse) se joue de bout en bout sur trois chapitres pilotes validés.",
+      "status": "blocked",
+      "mode": "agent-review",
+      "risk": "medium",
+      "priority": 87,
+      "depends_on": [
+        "ACA-CONTRAT-2",
+        "ACA-FRONT-2"
+      ],
+      "budget": {
+        "max_units": 2,
+        "max_minutes": 300,
+        "max_tokens": 90000
+      },
+      "proof": "Trois chapitres au contrat, double passe faite ; une étude jouée par JB avec synthèse cochée ; les cartes extraites entrent en rotation.",
+      "parent_milestone": "ACADEMIE-V2-JOUEUR"
+    },
+    {
+      "id": "ACA-CONTENT-MAP-1",
+      "outcome": "Énergie, travaux, immobilier, cabinet et culture disposent chacun d'une carte de sources primaires, licences, péremptions et premier lot proposé.",
+      "status": "ready",
+      "mode": "agent-safe",
+      "risk": "low",
+      "priority": 80,
+      "depends_on": [
+        "ACA-PORT-1"
+      ],
+      "budget": {
+        "max_units": 1,
+        "max_minutes": 120,
+        "max_tokens": 30000
+      },
+      "proof": "Inventaire sourcé sans création de carte et sans contenu labor, avec critères d'abandon de chaque source, lignes ajoutées au registre.",
+      "parent_milestone": "ACADEMIE-V2-CONTENU"
+    },
+    {
+      "id": "ACA-CONTENT-2",
+      "outcome": "Les domaines du socle gagnent des lots de chapitres de niveaux 1 et 2 (leçon, amorce, cartes, synthèse) générés par le modèle avec recherche citée sur les sources fiables, tampon de provenance sur chaque carte, double passe par agent frais et échantillon humain (decisions/0021).",
+      "status": "blocked",
+      "mode": "agent-review",
+      "risk": "medium",
+      "priority": 78,
+      "depends_on": [
+        "ACA-CONTRAT-2",
+        "ACA-CONTENT-MAP-1",
+        "ACA-RITUAL-1"
+      ],
+      "budget": {
+        "max_units": 6,
+        "max_minutes": 900,
+        "max_tokens": 300000
+      },
+      "proof": "Par lot : zéro carte brouillon restante, part des cartes sans source retrouvée écrite, zéro chiffre sans source, zéro erreur sur échantillon, coût mesuré par chapitre écrit dans DESSINER-LA-CARTE §6.",
+      "parent_milestone": "ACADEMIE-V2-CONTENU"
+    },
+    {
+      "id": "ACA-VERIF-1",
+      "outcome": "Des runs de vérification périodiques tirent un lot de cartes (sans source d'abord, puis anciennes, très révisées, juridiques), retournent sur les sources fiables voir si quelque chose a changé, écrivent l'historique et font bouger les statuts ; ils tournent chez le propriétaire du domaine.",
+      "status": "blocked",
+      "mode": "agent-review",
+      "risk": "medium",
+      "priority": 74,
+      "depends_on": [
+        "ACA-CONTRAT-2",
+        "ACA-AUDIT-1"
+      ],
+      "budget": {
+        "max_units": 1,
+        "max_minutes": 120,
+        "max_tokens": 40000,
+        "max_cost_eur": 10
+      },
+      "proof": "Un run sur 30 cartes : chaque carte a une ligne d'historique datée avec les sources consultées ; au moins une carte volontairement périmée dans la fixture est détectée ; un audit croisé par un modèle d'un autre fournisseur sur le même lot, désaccords listés ; coût du run écrit.",
+      "parent_milestone": "ACADEMIE-V2-CONTENU"
+    },
+    {
+      "id": "ACA-BOITE-1",
+      "outcome": "Le skill « glisser dans l'Académie » transforme un mot-clé, un lien, un PDF, une capture ou une vidéo en chapitre satellite brouillon avec trous nommés et rattachement proposé ; la file de la boîte se synchronise entre téléphone et Mac.",
+      "status": "blocked",
+      "mode": "agent-review",
+      "risk": "medium",
+      "priority": 86,
+      "depends_on": [
+        "ACA-CONTRAT-2"
+      ],
+      "budget": {
+        "max_units": 2,
+        "max_minutes": 240,
+        "max_tokens": 80000
+      },
+      "proof": "« chaudière hybride » donne un satellite validé ou un trou nommé motivé ; un PDF scanné passe l'OCR ; aucune source ne monte au serveur.",
+      "parent_milestone": "ACADEMIE-V2-JOUEUR"
+    },
+    {
+      "id": "ACA-EXAMEN-1",
+      "outcome": "Les épreuves de domaine (avec part des domaines prérequis), transverses (dossier en pas) et du gestionnaire se jouent ; verrou 24 h ; paliers nommés ; points, niveau, titres et calibration dérivés du journal.",
+      "status": "blocked",
+      "mode": "agent-review",
+      "risk": "medium",
+      "priority": 85,
+      "depends_on": [
+        "ACA-FRONT-2",
+        "ACA-CONTRAT-2"
+      ],
+      "budget": {
+        "max_units": 2,
+        "max_minutes": 300,
+        "max_tokens": 90000
+      },
+      "proof": "Tests : pas de 100 % sans épreuve ; épreuve ratée non retentable le jour même ; points recalculés identiques après effacement du cache ; un dossier transverse joué par JB.",
+      "parent_milestone": "ACADEMIE-V2-JOUEUR"
+    },
+    {
+      "id": "ACA-JOURNEE-1",
+      "outcome": "Le format journée compose des études entrelacées avec pauses, rappel du soir et plafond de neuf par jour.",
+      "status": "blocked",
+      "mode": "deterministic",
+      "risk": "low",
+      "priority": 75,
+      "depends_on": [
+        "ACA-ETUDE-1"
+      ],
+      "budget": {
+        "max_units": 1,
+        "max_minutes": 120,
+        "max_tokens": 30000
+      },
+      "proof": "Tests : jamais plus de nouveau_par_jour cartes neuves ; deux domaines au moins ; le chapitre du matin revient l'après-midi ; une journée jouée par JB.",
+      "parent_milestone": "ACADEMIE-V2-JOUEUR"
+    },
+    {
+      "id": "ACA-PAPIER-1",
+      "outcome": "Les types dessin et feuille-blanche se jouent avec liste de contrôle, proposés seulement quand le joueur déclare avoir de quoi écrire.",
+      "status": "blocked",
+      "mode": "agent-review",
+      "risk": "low",
+      "priority": 72,
+      "depends_on": [
+        "ACA-CONTRAT-2",
+        "ACA-ETUDE-1"
+      ],
+      "budget": {
+        "max_units": 1,
+        "max_minutes": 120,
+        "max_tokens": 30000
+      },
+      "proof": "Dix cartes dessin sur pathologie et équipements validées ; note FSRS dérivée des attendus cochés ; jamais servies en séance téléphone par défaut.",
+      "parent_milestone": "ACADEMIE-V2-JOUEUR"
+    },
+    {
+      "id": "ACA-AUDIT-1",
+      "outcome": "audit_banque.py rend un rapport HTML par banque (cartes par nature, notes A/B/C, à recouper, sans source, périmées, à revérifier sous 30 jours, trous nommés, provenance par modèle) ; le client affiche le dossier de chaque carte et la page « Pourquoi croire ce professeur ? » par domaine avec le registre des signalements (decisions/0022).",
+      "status": "blocked",
+      "mode": "deterministic",
+      "risk": "low",
+      "priority": 76,
+      "depends_on": [
+        "ACA-CONTRAT-2"
+      ],
+      "budget": {
+        "max_units": 1,
+        "max_minutes": 120,
+        "max_tokens": 35000
+      },
+      "proof": "Rapport et page lisibles par JB sans ouvrir un JSON ; chiffres recalculés identiques par le valideur ; note de confiance dérivée testée sur fixtures A, B, C.",
+      "parent_milestone": "ACADEMIE-V2-CONTENU"
+    },
+    {
+      "id": "ACA-RESPONSE-1",
+      "outcome": "Une expérience bornée compare réponse libre corrigée par le modèle (clé du joueur) et mode exact sur rétention, abandon et coût.",
+      "status": "blocked",
+      "mode": "agent-review",
+      "risk": "medium",
+      "priority": 60,
+      "depends_on": [
+        "ACA-RITUAL-1",
+        "ACA-ETUDE-1"
+      ],
+      "budget": {
+        "max_units": 1,
+        "max_minutes": 120,
+        "max_tokens": 30000,
+        "max_cost_eur": 10
+      },
+      "proof": "Protocole avant/après, petit lot figé, coût par correction et décision conserver ou retirer.",
+      "parent_milestone": "ACADEMIE-V2-JOUEUR"
+    },
+    {
+      "id": "ACA-MULTI-DECISION-1",
+      "outcome": "JB arbitre comptes (magic links), fournisseur de mail comme sous-traitant, RGPD, suppression de compte sous 48 h, licences (decisions/0018), après preuve d'usage prolongée.",
+      "status": "blocked",
+      "mode": "human-only",
+      "risk": "high",
+      "priority": 50,
+      "depends_on": [
+        "ACA-RITUAL-1",
+        "ACA-JOURNAL-SYNC-1"
+      ],
+      "budget": {
+        "max_units": 1,
+        "max_minutes": 60
+      },
+      "proof": "Décision acceptée avec coût mensuel, responsable de traitement, délai de suppression, rollback et critères d'arrêt.",
+      "parent_milestone": "ACADEMIE-V2-OUVERTURE"
+    },
+    {
+      "id": "ACA-CERCLE-1",
+      "outcome": "Tous les joueurs d'une Académie se voient par défaut (arbre, titre, insignes, compteur), chacun peut masquer un domaine ou se masquer ; fil des jalons, kudos, défis ; le carnet d'erreurs n'est jamais visible.",
+      "status": "blocked",
+      "mode": "agent-review",
+      "risk": "high",
+      "priority": 40,
+      "depends_on": [
+        "ACA-MULTI-DECISION-1",
+        "ACA-FRONT-2"
+      ],
+      "budget": {
+        "max_units": 2,
+        "max_minutes": 300,
+        "max_tokens": 90000
+      },
+      "proof": "Deux profils réels se voient ; masquage d'un domaine effectif en une action ; test qui prouve qu'aucune route ne rend le carnet ; un défi joué et comparé.",
+      "parent_milestone": "ACADEMIE-V2-OUVERTURE"
+    },
+    {
+      "id": "ACA-LIGUE-1",
+      "outcome": "Une ligue hebdomadaire facultative compte les cartes stabilisées × niveau sur le tronc commun, et se coupe d'office pour un joueur dont le rituel baisse.",
+      "status": "blocked",
+      "mode": "agent-review",
+      "risk": "medium",
+      "priority": 30,
+      "depends_on": [
+        "ACA-CERCLE-1"
+      ],
+      "budget": {
+        "max_units": 1,
+        "max_minutes": 120,
+        "max_tokens": 30000
+      },
+      "proof": "Score recalculable depuis les journaux ; coupure automatique testée sur fixture de quatre semaines en baisse.",
+      "parent_milestone": "ACADEMIE-V2-OUVERTURE"
+    },
+    {
+      "id": "ACA-TUTEUR-1",
+      "outcome": "Un rôle tuteur consenti par chaque membre, visible par lui, sans agrégat ni export.",
+      "status": "blocked",
+      "mode": "agent-review",
+      "risk": "high",
+      "priority": 25,
+      "depends_on": [
+        "ACA-CERCLE-1"
+      ],
+      "budget": {
+        "max_units": 1,
+        "max_minutes": 120,
+        "max_tokens": 30000
+      },
+      "proof": "Retrait d'un clic effectif ; aucune route d'export collectif ; test qui prouve l'asymétrie impossible.",
+      "parent_milestone": "ACADEMIE-V2-OUVERTURE"
+    },
+    {
+      "id": "ACA-BIBLIOTHEQUE-1",
+      "outcome": "Les livraisons de banque sont reçues, re-validées, mises en quarantaine, acceptées et servies ; la bibliothèque commune liste les domaines adoptables ; la licence du contenu est vérifiée à la réception.",
+      "status": "blocked",
+      "mode": "agent-review",
+      "risk": "high",
+      "priority": 45,
+      "depends_on": [
+        "ACA-MULTI-DECISION-1",
+        "ACA-CONTRAT-2",
+        "ACA-JOURNAL-SYNC-1"
+      ],
+      "budget": {
+        "max_units": 2,
+        "max_minutes": 300,
+        "max_tokens": 80000
+      },
+      "proof": "Une livraison avec un fichier de sources est refusée ; une livraison valide est jouable après acceptation ; un second profil adopte le domaine sans rien fabriquer.",
+      "parent_milestone": "ACADEMIE-V2-OUVERTURE"
+    },
+    {
+      "id": "ACA-DOMAIN-KIT-1",
+      "outcome": "Le kit local transforme un dépôt de sources en domaine versionné, éprouvé avec Arthur ou un domaine public de secours, coût mesuré.",
+      "status": "blocked",
+      "mode": "agent-review",
+      "risk": "medium",
+      "priority": 55,
+      "depends_on": [
+        "ACA-RITUAL-1",
+        "ACA-CONTENT-2",
+        "ACA-BOITE-1"
+      ],
+      "budget": {
+        "max_units": 1,
+        "max_minutes": 180,
+        "max_tokens": 40000
+      },
+      "proof": "Arthur joue sa première séance sur un domaine que JB n'a pas écrit ; le kit rejouerait la soirée ; le coût réel est écrit.",
+      "parent_milestone": "ACADEMIE-V2-OUVERTURE"
+    },
+    {
+      "id": "ACA-SELFHOST-1",
+      "outcome": "Un copain installe sa propre Académie en cinq étapes (deploy/README.md) sur un Linux vide, sans labor ni socle.",
+      "status": "blocked",
+      "mode": "agent-review",
+      "risk": "medium",
+      "priority": 35,
+      "depends_on": [
+        "ACA-JOURNAL-SYNC-1",
+        "ACA-FRONT-2"
+      ],
+      "budget": {
+        "max_units": 1,
+        "max_minutes": 180,
+        "max_tokens": 40000
+      },
+      "proof": "installer.sh idempotent ; une installation faite par quelqu'un d'autre que JB, chronométrée, ses trois pannes écrites.",
+      "parent_milestone": "ACADEMIE-V2-OUVERTURE"
+    },
+    {
+      "id": "ACA-MEDIA-1",
+      "outcome": "Photothèque de terrain (étiquetée, confirmée par un second joueur, quêtes de terrain) et audio (écoute, podcast de chapitre depuis la leçon validée), fabriqués chez le propriétaire du domaine.",
+      "status": "blocked",
+      "mode": "agent-review",
+      "risk": "medium",
+      "priority": 20,
+      "depends_on": [
+        "ACA-CONTENT-2",
+        "ACA-CERCLE-1"
+      ],
+      "budget": {
+        "max_units": 3,
+        "max_minutes": 480,
+        "max_tokens": 120000
+      },
+      "proof": "Vingt photos validées à deux ; un podcast dont l'empreinte de texte correspond à la leçon ; aucune génération côté serveur.",
+      "parent_milestone": "ACADEMIE-V2-OUVERTURE"
+    },
+    {
+      "id": "ACA-ERP-1",
+      "outcome": "Le canal labor vers Académie refuse toute donnée non anonymisée, non sourcée ou non validée ; la veille juridique arrive dans la boîte.",
+      "status": "blocked",
+      "mode": "agent-review",
+      "risk": "high",
+      "priority": 48,
+      "depends_on": [
+        "ACA-BOITE-1"
+      ],
+      "budget": {
+        "max_units": 1,
+        "max_minutes": 120,
+        "max_tokens": 25000
+      },
+      "proof": "Fixtures anti-fuite pour noms, adresses, contacts, contrats, mails et transcriptions ; seule la couche autorisée est publiée.",
+      "parent_milestone": "ACADEMIE-V2-OUVERTURE"
+    },
+    {
+      "id": "ACA-OPTIMISEUR-1",
+      "outcome": "Les paramètres FSRS personnels de JB sont optimisés à partir de quatre cents révisions hors quiz, et comparés au défaut sur rétention réelle.",
+      "status": "blocked",
+      "mode": "deterministic",
+      "risk": "low",
+      "priority": 15,
+      "depends_on": [
+        "ACA-RITUAL-1",
+        "ACA-JOURNAL-SYNC-1"
+      ],
+      "budget": {
+        "max_units": 1,
+        "max_minutes": 90,
+        "max_tokens": 20000
+      },
+      "proof": "Journal exporté sans lignes origine=quiz ; paramètres versionnés ; rétention réelle avant/après.",
+      "parent_milestone": "ACADEMIE-V2-OUVERTURE"
+    }
   ]
 }

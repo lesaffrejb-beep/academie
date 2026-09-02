@@ -10,11 +10,11 @@ nature des sources et les cercles. La conception v2 vit à la racine :
 
 | Fichier | Ce que c'était | Ce qui en survit |
 |---|---|---|
-| `BLUEPRINT-v1.md` | le produit imaginé le 28/08 (vision, socle scientifique, modes, ateliers, sources, moteur, arbres, architecture) | presque tout le fond ; réécrit dans `BLUEPRINT.md` v2 avec une table de concordance des paragraphes |
+| `BLUEPRINT-v1.md` | le produit imaginé le 28/08 (vision, socle scientifique, modes, ateliers, sources, moteur, arbres, architecture) | presque tout le fond ; réécrit dans `BLUEPRINT.md` v2 avec une table de concordance des paragraphes (§16) |
 | `SPEC-PRODUIT.md` | l'architecture arrêtée le 29/08 (modèle A4, carte-monde, quiz, carnet d'erreurs, usine, sécurité, plan des sessions O1-O8) | le modèle A4, les invariants, le quiz, le carnet : repris dans `ARCHITECTURE.md` et `BLUEPRINT.md` ; l'archipel et le plan O1-O8 sont remplacés par `ROADMAP.md` |
 | `CADRAGE-PRODUIT.md` | les 52 questions et les réponses de la séance JB × Arthur du 29/08 | les réponses restent l'histoire des arbitrages ; les décisions vivantes sont dans `decisions/` |
 | `DESIGN.md` | la charte du front React de l'ERP, avec ses tokens Tailwind et l'archipel | rien d'opposable ; `DIRECTION-ARTISTIQUE.md` repart d'une feuille blanche adulte |
 
 Les commentaires du code (`app/*.py`, `academie.json`) qui citent
 « BLUEPRINT §n » ou « SPEC-PRODUIT §n » renvoient à ces fichiers ; la
-table de concordance de `BLUEPRINT.md` §14 donne l'équivalent v2.
+table de concordance de `BLUEPRINT.md` §16 donne l'équivalent v2.

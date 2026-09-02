@@ -20,8 +20,8 @@ cette roadmap sont dans [`decisions/`](decisions/README.md).
 - une réponse jouée dans le tram relisible sur le Mac le soir ;
 - rétention à froid mesurée après environ trente séances, et une
   calibration qui s'améliore ;
-- 100 % des cartes servies sourcées, datées, valides, avec leur nature
-  affichée ;
+- 100 % des cartes servies valides, avec leur provenance, la nature de
+  leurs sources et leur note de confiance affichées ;
 - le coût de fabrication d'un chapitre connu avant d'en promettre.
 
 ## Maintenant : prouver le rituel et poser les fondations v2

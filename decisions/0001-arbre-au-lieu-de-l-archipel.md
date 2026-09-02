@@ -13,7 +13,9 @@ compétences** : des domaines, des branches, des chapitres reliés par des
 liens de prérequis, dessinés comme une planche technique adulte. Le
 graphe qui vit dessous (`app/progression.py` : régions, remplissage
 mesuré par FSRS, ouverture à seuil, épreuve pour le 100 %, exploration
-libre partout) ne change pas.
+libre partout) ne change pas de principe ; il descend au niveau du
+chapitre et de la branche par le chantier `ACA-ARBRE-1` (états de nœud,
+fraîcheur, ouverture de branche).
 
 ## Contexte
 

@@ -54,10 +54,12 @@ programme commence là.
 
 ## 2. Les domaines
 
-Dix domaines dans l'arbre, un hors arbre. La clé est celle de
-`academie.json` (deux clés changent par rapport au 30/08 : `plans`
-devient `travaux`, et `immobilier` et `cabinet` s'ajoutent ; `pathologie`
-garde sa clé et change de titre). L'ordre est le chemin recommandé, pas
+Dix domaines dans l'arbre, un hors arbre. Les clés sont celles que
+`academie.json` portera après le chantier `ACA-PROGRAMME-1` (au 02/09 il
+porte encore `plans`, et ni `immobilier` ni `cabinet`) : trois changements
+par rapport au 30/08, `plans` devient `travaux`, `immobilier` et `cabinet`
+s'ajoutent ; `pathologie` garde sa clé et change de titre ; l'ordre des
+domaines change aussi (le droit passe premier). L'ordre est le chemin recommandé, pas
 un verrou.
 
 | Ordre | Clé | Titre proposé | Pourquoi ce domaine | Sources primaires |
@@ -83,7 +85,7 @@ valide par l'épreuve du gestionnaire (`BLUEPRINT.md` §8).
 |---|---|---|
 | droit | **3** | diagnostiquer une convocation, choisir une majorité, répondre à un copropriétaire sur ses droits |
 | comptabilite | **3** | lire les cinq annexes, expliquer un appel de fonds, repérer une anomalie |
-| cabinet | **3** sur les branches assemblée générale et cycle annuel ; 2 ailleurs | tenir une AG, dérouler l'année sans oublier une obligation |
+| cabinet | **3** (le domaine entier ; l'assemblée et le cycle annuel en sont le cœur) | tenir une AG, dérouler l'année sans oublier une obligation, écrire, négocier |
 | pathologie | 2 | nommer et expliquer un désordre courant, savoir quand appeler qui |
 | equipements | 2 | nommer les organes, comprendre un contrat d'entretien, lire un compte rendu d'intervention |
 | sinistres | 2 | dérouler un dégât des eaux sous IRSI, savoir ce qu'une MRI couvre |

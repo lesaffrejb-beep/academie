@@ -9,10 +9,17 @@
 1. **Ce qu'on mesure est dans le journal du joueur**, et il peut le
    lire et l'exporter : révisions, formats, durées, confiance, graines,
    erreurs (son carnet), épreuves, synthèses.
-2. **Aucun service tiers** : pas d'analytique externe, pas de police ni
-   de script chargé d'un autre domaine, pas de rapport de plantage
-   envoyé ailleurs que sur le VPS de JB. La politique de sécurité de
-   contenu (CSP) du client l'interdit mécaniquement.
+2. **Aucun service tiers**, à deux exceptions nommées : pas d'analytique
+   externe, pas de police ni de script chargé d'un autre domaine, pas de
+   rapport de plantage envoyé ailleurs que sur le VPS de JB. La
+   politique de sécurité de contenu (CSP) du client l'interdit
+   mécaniquement. Exception 1 : le fournisseur d'envoi de mail, pour les
+   magic links et la confirmation de suppression, inscrit au registre
+   comme sous-traitant. Exception 2, plus tard et opt-in : le fournisseur
+   de modèle que le joueur choisit lui-même pour la correction libre,
+   avec sa clé, déclaré dans ses réglages ; l'appel part de son
+   navigateur vers ce seul hôte, et la CSP l'admet uniquement quand le
+   joueur l'a activé (R4 du pré-mortem du 02/09).
 3. **Les mesures produit** (fréquence des séances, abandons, durée,
    formats qui lassent, rétention réelle) se calculent depuis le
    journal, côté serveur, par `rapport_rituel.py`, **sans lire le

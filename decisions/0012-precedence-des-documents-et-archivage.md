@@ -39,7 +39,7 @@ réécriture cohérente coûte moins qu'une cinquième couche.
   `CONTRAT-CARTE-V1.md` pointent vers les nouveaux documents.
 - Les commentaires du code qui citent « BLUEPRINT §n » ou
   « SPEC-PRODUIT §n » restent valables via la table de concordance de
-  `BLUEPRINT.md` §14 ; ils se mettent à jour au fil des chantiers qui
+  `BLUEPRINT.md` §16 ; ils se mettent à jour au fil des chantiers qui
   touchent ces fichiers, jamais en masse.
 - Toute session qui trouve une contradiction entre deux documents la
   règle par la précédence et laisse une ligne dans `decisions/` si elle

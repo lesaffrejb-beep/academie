@@ -4,31 +4,130 @@
   "title": "Manifeste de livraison v1 (proposition du 02/09/2026)",
   "description": "Ce qu'un joueur pousse vers le serveur de jeu : un manifeste et une banque. Le serveur re-passe le valideur, met en quarantaine, puis le propriétaire du domaine accepte. Les sources ne partent jamais.",
   "type": "object",
-  "required": ["joueur", "domaine", "contrat", "banque_empreinte", "couches", "cartes", "chapitres", "registre_sources", "genere_le", "moteur_version"],
+  "required": [
+    "joueur",
+    "domaine",
+    "contrat",
+    "banque_empreinte",
+    "couches",
+    "cartes",
+    "chapitres",
+    "registre_sources",
+    "genere_le",
+    "moteur_version",
+    "licence",
+    "config"
+  ],
   "additionalProperties": false,
   "properties": {
-    "joueur": {"type": "string"},
-    "domaine": {"type": "string", "description": "clé du domaine ou du métier livré"},
-    "contrat": {"enum": ["carte-v1", "carte-v2"]},
-    "banque_empreinte": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
-    "couches": {"type": "array", "items": {"enum": ["banque", "interne", "perso"]}, "minItems": 1},
-    "cartes": {"type": "integer", "minimum": 1},
-    "chapitres": {"type": "integer", "minimum": 0},
-    "registre_sources": {
-      "type": "array", "minItems": 1,
+    "joueur": {
+      "type": "string"
+    },
+    "domaine": {
+      "type": "string",
+      "description": "clé du domaine ou du métier livré"
+    },
+    "contrat": {
+      "enum": [
+        "carte-v1",
+        "carte-v2"
+      ]
+    },
+    "banque_empreinte": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "couches": {
+      "type": "array",
       "items": {
-        "type": "object", "required": ["source", "nature", "fiabilite", "verifie"],
+        "enum": [
+          "banque",
+          "interne"
+        ]
+      },
+      "minItems": 1,
+      "description": "jamais perso : la couche perso ne quitte jamais la machine du joueur (R1 du pré-mortem du 02/09)"
+    },
+    "cartes": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "chapitres": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "registre_sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "source",
+          "nature",
+          "fiabilite",
+          "verifie"
+        ],
         "properties": {
-          "source": {"type": "string"},
-          "nature": {"enum": ["texte-officiel", "jurisprudence", "institution", "norme", "doctrine", "presse-pro", "organisation-pro", "association", "editeur", "support-interne", "terrain"]},
-          "parti": {"type": "string"},
-          "fiabilite": {"enum": ["A", "B", "C"]},
-          "verifie": {"type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$"}
+          "source": {
+            "type": "string"
+          },
+          "nature": {
+            "enum": [
+              "texte-officiel",
+              "jurisprudence",
+              "institution",
+              "norme",
+              "doctrine",
+              "presse-pro",
+              "organisation-pro",
+              "association",
+              "editeur",
+              "support-interne",
+              "terrain"
+            ]
+          },
+          "parti": {
+            "type": "string"
+          },
+          "fiabilite": {
+            "enum": [
+              "A",
+              "B",
+              "C"
+            ]
+          },
+          "verifie": {
+            "type": "string",
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+          }
         }
       }
     },
-    "genere_le": {"type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$"},
-    "moteur_version": {"type": "string"},
-    "note": {"type": "string", "maxLength": 500}
+    "genere_le": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "moteur_version": {
+      "type": "string"
+    },
+    "note": {
+      "type": "string",
+      "maxLength": 500
+    },
+    "licence": {
+      "enum": [
+        "CC-BY-SA-4.0",
+        "interne"
+      ],
+      "description": "CC-BY-SA-4.0 obligatoire pour une couche banque (decisions/0018) ; interne = non redistribuable, servie à son seul propriétaire"
+    },
+    "config": {
+      "type": "object",
+      "description": "le academie.json du dépôt-domaine (domaines, quotas, règles) : le valideur rejoué à la réception en a besoin"
+    },
+    "programme": {
+      "type": "object",
+      "description": "facultatif : le programme/<metier>.json du dépôt-domaine"
+    }
   }
 }

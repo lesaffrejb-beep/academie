@@ -21,4 +21,9 @@ Fiabilité :
 | C | à recouper : éditeur, blog, notice, contenu commercial. Une carte qui n'a que du C porte le marqueur « à recouper » |
 
 Le tri du carnet NotebookLM du 29/08 (`NOTEBOOKLM-A-RETIRER.md`) est la
-première matière de ce registre.
+première matière de ce registre. Dans un dépôt-domaine fabriqué avec le
+gabarit, le même tableau s'appelle `sources/INVENTAIRE.md` (il porte en
+plus le tas et les trous nommés) ; les colonnes nature, parti et
+fiabilité y sont les mêmes. Le chantier `ACA-SOURCES-1` produit aussi la
+forme machine `sources/registre.json` (versionnée), que le générateur lit
+pour hériter `fiabilite` sur chaque source de carte.

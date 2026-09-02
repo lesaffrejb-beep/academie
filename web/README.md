@@ -34,7 +34,8 @@ web/
   src/
     main.tsx                 amorçage, routage, thème
     app/
-      routes.tsx             /  /domaine/:cle  /noeud/:id  /salle/*  /profil  /cercle  /boite  /credits
+      routes.tsx             /  /domaine/:cle  /noeud/:id  /salle/*  /profil  /confiance/:domaine  /cercle  /boite  /credits
+                             (/cercle est masqué, barre à trois entrées, tant qu'ACA-CERCLE-1 n'est pas livré)
       theme.ts               nuit | papier ; palette par rang de domaine
       i18n.ts                français seulement ; les chaînes vivent ici, pas dans les composants
     moteur/                  la partie du moteur qui doit tourner hors-ligne
@@ -81,7 +82,8 @@ web/
    liste les hôtes contactés).
 5. **Accessibilité** : la checklist de `DIRECTION-ARTISTIQUE.md` §9.
 6. **Contrat** : le client refuse un `banque.json` dont `contrat` est
-   inconnu et le dit à l'écran.
+   inconnu et le dit à l'écran ; un `banque.json` sans champ `contrat`
+   (publié avant ACA-CONTRAT-2) est lu comme `carte-v1`.
 
 ## Ce que le client ne fait jamais
 

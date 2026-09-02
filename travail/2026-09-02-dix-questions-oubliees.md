@@ -22,7 +22,7 @@ La calibration (l'écart entre confiance et justesse : un pro bien
 calibré sait quand vérifier). Et le rituel de sortie de réunion : trente
 secondes dictées, « je n'ai pas su répondre à X », qui entrent dans la
 boîte ; la fréquence de ces « je n'ai pas su » sur les sujets déjà
-validés est la mesure du transfert. Bilan trimestriel dans le profil.
+validés est la mesure du transfert. Suivi dans le bilan du mois du profil.
 → `BLUEPRINT.md` §7 (confiance), §14 ; `ARCHITECTURE.md` §4 (`points.py`).
 
 ## 3. À qui appartient la banque, et sous quelle licence ?
@@ -80,7 +80,10 @@ Arthur a un concours ; JB a un cap à trois-cinq ans (expert bâtiment).
 échéance facultative) ; il pèse sur le neuf hors socle et sur l'ordre
 des propositions ; le bilan annuel le relit et demande s'il tient.
 Sans cap, le programme suffit.
-→ `BLUEPRINT.md` §3 (« cap ») ; journal-v1 `cap`.
+→ le cap vit dans les réglages du profil (`profils.reglages.cap`) ; le
+champ `cap` du journal-v1, lui, note le domaine choisi ce matin-là ; le
+bilan qui le relit est le bilan du mois (`BLUEPRINT.md` §12), et une fois
+par an il pose la question.
 
 ## 10. Qui valide quand personne n'est expert, et combien de temps humain ça coûte ?
 

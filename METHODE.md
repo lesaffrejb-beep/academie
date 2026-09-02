@@ -92,7 +92,7 @@ discriminer ce qui se ressemble.
 
 ## 7. L'algo est le prof : tu ne choisis jamais le format
 
-**Ce qu'on fait** : tu cliques une zone (ou l'expédition aléatoire),
+**Ce qu'on fait** : tu cliques une zone (ou « au hasard »),
 et le moteur enchaîne les formats — QCM, image, document à expliquer,
 mise en situation — sans te demander ton avis.
 **Pourquoi** : laisser l'élève choisir sa méthode produit exactement
@@ -135,7 +135,7 @@ fait abandonner, elle ne fait pas revenir.
 **Source** : Deci, Koestner & Ryan (1999), méta-analyse SDT — vérifié
 28/08/2026.
 
-## 10. Le boss de région est un examen à froid
+## 10. L'épreuve de domaine est un examen à froid
 
 **Ce qu'on fait** : le 100 % d'une région n'existe qu'après un examen
 (cartes tirées à froid, score solennel) ; sans lui, plafond à 99 %.
@@ -190,7 +190,7 @@ vérifiés 28/08/2026.
 **Ce qu'on fait** : ~20 questions au premier lancement ; une bonne
 réponse inscrit la carte comme déjà stabilisée (21 j, paramétré,
 marquée `origine: quiz`), une mauvaise n'inscrit rien, et le quiz
-OUVRE des régions sans jamais écrire leur remplissage.
+ouvre des branches sans jamais écrire leur remplissage.
 **Pourquoi** : évaluer le niveau réel avant de dérouler évite l'ennui
 (le tueur de rituel n°1 chez quelqu'un qui sait déjà) sans jamais
 « valider » : seule la mesure FSRS au fil des séances fait foi.
@@ -200,8 +200,8 @@ première révision n'est que de ~2 jours — mesuré sur le moteur).
 
 ## 15. Les « dark patterns », assumés et bornés
 
-**Ce qu'on fait** : brouillard de carte, citadelles de boss, tirage,
-cosmétiques de zone — les mécaniques d'engagement des jeux, utilisées
+**Ce qu'on fait** : brouillard de l'arbre, épreuves, tirage,
+insignes — les mécaniques d'engagement des jeux, utilisées
 délibérément pour ramener chaque matin.
 **Pourquoi** : le rituel quotidien est la condition de tout le reste
 (l'espacement ne marche que si on revient) ; on met l'engagement au
@@ -379,6 +379,37 @@ accepte d'apprendre.
 **Source** : règle de conception (`decisions/0021`, `0022`) ; les
 patterns de labor « validated sans lien ne vaut rien » et « un rapport
 de LLM vaut par ses questions » (`labor/wiki/patterns/`).
+
+## 30. La fiche se lit après, jamais avant (ajouté le 02/09/2026)
+
+**Ce qu'on fait** : chaque chapitre a sa fiche de rappel (la leçon et la
+liste question-réponse de ses cartes), lisible à tout moment depuis le
+nœud, proposée quand un nœud passe « à revoir » et la veille d'une
+épreuve ; elle n'ouvre jamais une séance et ne remplace jamais une
+carte.
+**Pourquoi** : relire n'apprend pas (§2), mais relire **après** avoir
+tenté de se souvenir, ou pour réactiver un savoir périmé avant de le
+tester, n'est pas de la relecture passive : c'est le retour d'information
+qui suit le rappel. « Relis trois minutes, puis cinq cartes » est un
+rappel avec feedback, pas une lecture.
+**Source** : Roediger & Karpicke (2006) sur la relecture qui gagne au
+test immédiat et perd au test différé ; Hattie & Timperley (2007) sur le
+feedback ; vérifiés 28/08/2026.
+
+## 31. Les petits leviers d'engagement, et leurs bornes (ajouté le 02/09/2026)
+
+**Ce qu'on fait** : une mission par semaine qui donne un insigne ; une
+notification par jour au plus, opt-in, silencieuse si la séance est
+faite ; le calendrier du métier qui pèse en silence sur le neuf ; le
+bilan du mois, privé, et sa carte partageable sans aucune erreur ; le
+fil des jalons et les kudos dans le cercle.
+**Pourquoi** : ce sont des déclencheurs et des signes de reconnaissance,
+pas des récompenses ; ils soutiennent l'habitude sans créer de dette ni
+de comparaison imposée. Chacun se coupe d'office pour un joueur dont il
+dégrade le rituel mesuré, et aucun ne donne de points.
+**Source** : Deci, Koestner & Ryan (1999) pour les bornes, vérifié
+28/08/2026 ; la mesure au journal (`rapport_rituel.py`) pour le reste ;
+`decisions/0014`, `0016`, `0020`.
 
 ---
 

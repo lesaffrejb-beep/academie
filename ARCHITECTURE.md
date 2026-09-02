@@ -118,7 +118,8 @@ Ce qui s'ajoute, chantier par chantier :
 | `etude.py` | composeur d'étude : amorce, leçon, exercices, synthèse | ACA-ETUDE-1 |
 | `journee.py` | composeur de journée : études entrelacées, pauses, rappel du soir, plafond de neuf | ACA-JOURNEE-1 |
 | `epreuves.py` | épreuve de domaine (avec part des domaines prérequis), transverse (dossier en pas), du gestionnaire ; verrou 24 h | ACA-EXAMEN-1 |
-| `points.py` | points de savoir, niveau, titres, calibration : tout dérivé du journal | ACA-EXAMEN-1 |
+| `progression.py` v2 | descend au niveau du chapitre et de la branche : états de nœud (inconnu, ouvert, en cours, solide, validé, « à revoir » au-delà de `seuil_fraicheur_jours`), ouverture de branche à 75 %, règle de croissance ; `genere.py` publie chapitres, prérequis et les 21 poids FSRS dans `banque.json` | ACA-ARBRE-1 |
+| `points.py` | points de savoir (dix × niveau par carte stabilisée), niveau, titres, calibration : tout dérivé du journal ; remplace `xp_affichee` de `progression.py` | ACA-EXAMEN-1 |
 | `rapport_rituel.py` | tableau de bord du rituel depuis le journal, sans lire les réponses | ACA-RITUAL-METRICS-1 |
 | `audit_banque.py` | rapport HTML d'audit d'une banque : cartes par nature de source, « à recouper », sans source, périmées, trous, provenance par modèle | ACA-AUDIT-1 |
 | `verif_run.py` | tire un lot de cartes à revérifier (sans source d'abord, puis anciennes, très révisées, juridiques), produit le dossier de recherche pour l'agent, écrit `historique` et le statut ; tourne chez le propriétaire du domaine | ACA-VERIF-1 |
