@@ -10,9 +10,13 @@ placeholder en majuscules — `[MÉTIER]`, `[RÉGION-1]`, `[URL du
 référentiel public]`. Un placeholder laissé en place est un travail
 non fait, jamais un défaut acceptable.
 
-Référence : [`../SPEC-PRODUIT.md`](../SPEC-PRODUIT.md) §2 (le modèle
-A4) et §4 (le parcours en 7 étapes). Contrat de format des cartes :
-[`../CONTRAT-CARTE-V1.md`](../CONTRAT-CARTE-V1.md).
+Référence : [`../ARCHITECTURE.md`](../ARCHITECTURE.md) §1 (les quatre
+pièces, le modèle A4) et §7 (l'usine et la boîte) ;
+[`../decisions/0008`](../decisions/0008-chacun-son-depot-et-son-abonnement.md).
+Contrat de format des cartes : [`../CONTRAT-CARTE-V1.md`](../CONTRAT-CARTE-V1.md)
+(en vigueur) et [`../CONTRAT-CARTE-V2.md`](../CONTRAT-CARTE-V2.md)
+(proposé). Les sources de confiance par métier :
+[`../sources/LISTE-BLANCHE.md`](../sources/LISTE-BLANCHE.md).
 
 ---
 

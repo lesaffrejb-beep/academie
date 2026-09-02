@@ -38,6 +38,24 @@ arbitrée) · **ÉCARTÉE** (dit pourquoi).
 
 | 30/08 | « Trop dark, pas drôle, les modules se ressemblent — prends des libertés pour donner envie de rester » | GRAVÉE | SPEC §3 « la nuit n'est pas un tombeau » : couleurs par région, personnalité par type d'exercice, vie sur la carte, humour discret |
 
+| 02/09 | « Une sorte de skill tree ; pourquoi pas abandonner le bateau, trop enfantin pour mes collègues ; ni genre ni âge » | GRAVÉE | `decisions/0001` ; BLUEPRINT §5 ; DA |
+| 02/09 | « Un Duolingo de la copro » avec un pipeline pour que n'importe qui, 300 PDF et des sites fiables, se fasse son programme | GRAVÉE | `gabarit-domaine/USINE.md`, `sources/LISTE-BLANCHE.md`, `decisions/0008` |
+| 02/09 | « La source s'affiche sur la question, on se méfie d'une source biaisée » | GRAVÉE | `decisions/0004` ; BLUEPRINT §10 |
+| 02/09 | « Chaque chapitre fini ouvre le suivant, jusqu'à l'état de la science » | GRAVÉE | `decisions/0003` (niveaux 1-5) ; PROGRAMME §5 |
+| 02/09 | « Passer sur papier parfois ? » | GRAVÉE | `decisions/0011` (dessin, feuille blanche) |
+| 02/09 | « 15-20 minutes le matin, mais aussi une demi-journée, une journée » | GRAVÉE | `decisions/0005` ; BLUEPRINT §3 |
+| 02/09 | « À glisser dans Académie : chaudière hybride, un chapitre dessus, peu importe où j'en suis » | GRAVÉE | `decisions/0009` ; `boite/` |
+| 02/09 | « Un copain reprend tout le repo, fait ses fiches avec son LLM, et ça rentre dans mon truc » | GRAVÉE | `decisions/0008`, `0018` ; bibliothèque (ARCHITECTURE §6) |
+| 02/09 | Saisons calées sur le calendrier du métier (proposition agent) | ÉCARTÉE | JB : « bizarre, j'aime pas » → semaine type, `decisions/0016` |
+| 02/09 | « Des jours à thème : lundi rattrapage, vendredi exploration » | GRAVÉE | `decisions/0016` ; BLUEPRINT §4 |
+| 02/09 | Cosmétiques de fin de zone sur un avatar (idée du 30/08) | ÉCARTÉE | `decisions/0015` : pas d'avatar, l'arbre est l'avatar, palettes et insignes |
+| 02/09 | Voix générées (situations à écouter, podcast de chapitre) ; photothèque sûre | DIFFÉRÉE | JB : « plus lourd que QCM ou relier, plus tard » → `decisions/0017`, `ACA-MEDIA-1` |
+| 02/09 | « Un mailing tout prêt au collègue : je viens de passer le niveau de base en compta » | GRAVÉE (partage manuel) | BLUEPRINT §13 : le produit fabrique la carte, le joueur l'envoie lui-même |
+| 02/09 | « Je veux que tous les joueurs se voient » | GRAVÉE | `decisions/0010` amendée ; DOCTRINE §2 |
+| 02/09 | « S'appuyer sur des repos open source (learning, QCM, relier, lecteurs, classement, profil) et reprendre le code pour en être maître » | GRAVÉE (chantier) | `travail/2026-09-02-reutilisation-a-verifier.md` ; `ACA-REUSE-1` |
+| 02/09 | « Une fois les fiches générées par les autres, les stocker sur le VPS pour les suivants » | GRAVÉE | bibliothèque commune, ARCHITECTURE §6, `ACA-BIBLIOTHEQUE-1` |
+| 02/09 | Le lieu-monde (l'immeuble en coupe) comme habillage de l'arbre | DIFFÉRÉE | derrière l'arbre lui-même ; METHODE §11 |
+
 *Toute session qui entend JB lancer une idée en route l'ajoute ici
-dans le commit du jour — même si elle est gravée ailleurs dans la
+dans le commit du jour, même si elle est gravée ailleurs dans la
 foulée : ce tableau est l'index de traçabilité.*

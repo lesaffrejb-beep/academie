@@ -228,3 +228,49 @@ L'architecture scientifique de L'Académie repose de manière stricte sur la lit
 13. **Ye, J. et al. (2022, 2024)**. *A Stochastic Shortest Path Algorithm for Optimizing Spaced Repetition Scheduling (FSRS)*. ACM KDD / IEEE Transactions.
     *Apport clé* : Documentation du modèle DSR et de l'optimisation stochastique par descente de gradient, prouvant des gains d'efficience massifs (réduction de 20 à 30 % des révisions) sur un corpus de centaines de millions d'itérations.
     [Open Spaced Repetition / FSRS](https://github.com/open-spaced-repetition/awesome-fsrs)
+
+---
+
+## 6. Références ajoutées le 02/09/2026, vérifiées à la source
+
+Ajoutées pour les mécaniques de la conception v2 (`METHODE.md` §16 à
+§28). Chaque ligne a été retrouvée en ligne le 02/09/2026 ; les nuances
+comptent autant que les effets.
+
+14. **Sinha, T., & Kapur, M. (2021)**. *When Problem Solving Followed by Instruction Works: Evidence for Productive Failure*. Review of Educational Research, 91(5), 761-798.
+    *Apport clé* : méta-analyse de 53 études, 166 comparaisons, plus de 12 000 participants : résoudre un problème avant l'instruction bat l'ordre inverse, effet moyen g = 0,36 (IC 95 % 0,20 ; 0,51). Fonde l'amorce des chapitres. Origine du concept : Kapur (2008), Cognition and Instruction, 26(3), 379-424.
+    [DOI: 10.3102/00346543211019105](https://doi.org/10.3102/00346543211019105)
+
+15. **Karpicke, J. D., & Blunt, J. R. (2011)**. *Retrieval Practice Produces More Learning than Elaborative Studying with Concept Mapping*. Science, 331(6018), 772-775.
+    *Apport clé* : le rappel bat la carte conceptuelle même sur des questions d'inférence et même quand le test final est une carte conceptuelle. Fonde « on te fait répondre » jusque dans la compréhension.
+    [DOI: 10.1126/science.1199327](https://doi.org/10.1126/science.1199327)
+
+16. **Bisra, K., Liu, Q., Nesbit, J. C., Salimi, F., & Winne, P. H. (2018)**. *Inducing Self-Explanation: a Meta-Analysis*. Educational Psychology Review, 30, 703-725.
+    *Apport clé* : 69 tailles d'effet, g = 0,55 en faveur des apprenants incités à s'auto-expliquer. Origine : Chi et al. (1989), Cognitive Science, 13, 145-182. Fonde la synthèse de chapitre.
+    [DOI: 10.1007/s10648-018-9434-x](https://doi.org/10.1007/s10648-018-9434-x)
+
+17. **Fiorella, L., & Mayer, R. E. (2013)**. *The relative benefits of learning by teaching and teaching expectancy*. Contemporary Educational Psychology, 38(4), 281-288.
+    *Apport clé* : se préparer à enseigner aide à court terme ; enseigner réellement ajoute un bénéfice plus durable. Fonde « explique-le à un collègue en 60 secondes » et les défis entre joueurs.
+    [DOI: 10.1016/j.cedpsych.2013.06.001](https://doi.org/10.1016/j.cedpsych.2013.06.001)
+
+18. **Wammes, J. D., Meade, M. E., & Fernandes, M. A. (2016)**. *The drawing effect: Evidence for reliable and robust memory benefits in free recall*. Quarterly Journal of Experimental Psychology, 69(9), 1752-1776. Synthèse : Fernandes, Wammes & Meade (2018), Current Directions in Psychological Science.
+    *Apport clé* : sept expériences ; dessiner un item bat l'écrire, souvent du simple au double en rappel libre, effet non réductible à l'élaboration ni à l'imagerie. Fonde le type `dessin`.
+    [DOI: 10.1080/17470218.2015.1094494](https://doi.org/10.1080/17470218.2015.1094494)
+
+19. **Morehead, K., Dunlosky, J., & Rawson, K. A. (2019)**. *How Much Mightier Is the Pen than the Keyboard for Note-Taking? A Replication and Extension of Mueller and Oppenheimer (2014)*. Educational Psychology Review, 31(3), 753-780.
+    *Apport clé* : la supériorité de la prise de notes manuscrite ne se réplique pas (effets petits, non significatifs). On ne promet donc rien sur « écrire à la main pour retenir » ; le papier sert au dessin et au rappel libre.
+    [DOI: 10.1007/s10648-019-09468-2](https://doi.org/10.1007/s10648-019-09468-2)
+
+20. **Binder, C. (1996)**. *Behavioral fluency: Evolution of a new paradigm*. The Behavior Analyst, 19, 163-197.
+    *Apport clé* : la fluence (justesse plus vitesse) prédit rétention, endurance et transfert. Fonde le chrono, réservé aux automatismes.
+    [DOI: 10.1007/BF03393163](https://doi.org/10.1007/BF03393163)
+
+21. **Ericsson, K. A., Krampe, R. T., & Tesch-Römer, C. (1993)**. *The role of deliberate practice in the acquisition of expert performance*. Psychological Review, 100(3), 363-406. Nuance : **Macnamara, Hambrick & Oswald (2014)**, Psychological Science, méta-analyse : la pratique délibérée explique environ 26 % de la variance dans les jeux, 4 % en éducation, moins de 1 % dans les professions.
+    *Apport clé* : l'expertise professionnelle ne se réduit pas au drill ; d'où l'échelle qui monte vers la doctrine, les cas réels et la contribution (niveaux 4 et 5) plutôt que vers plus de cartes.
+    [DOI: 10.1177/0956797614535810](https://doi.org/10.1177/0956797614535810)
+
+Références citées de mémoire et **à relire à la source avant d'être
+affichées dans l'app** : Hagger et al. (2016), réplication multi-labo de
+l'ego depletion ; Barnett & Ceci (2002), taxonomie du transfert ; Lally
+et al. (2010), formation des habitudes ; Maguire et al. (2003), méthode
+des lieux.

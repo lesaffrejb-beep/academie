@@ -102,18 +102,27 @@ te reste est celui qui motive sans nuire : OÙ aller sur la carte.
 **Source** : Dunlosky et al. (2013) sur l'inefficacité des stratégies
 auto-choisies ; Bjork & Bjork (2011) — vérifiés 28/08/2026.
 
-## 8. Le matin, 15 minutes, pas plus
+## 8. Le matin, court ; le reste quand on a le temps (amendé le 02/09/2026)
 
-**Ce qu'on fait** : la séance vise ~15 minutes vers 8h15, avec un
-plafond dur ; le « mode 3 minutes » (5 révisions) est une séance
-valide.
-**Pourquoi** : le pic de cortisol du réveil optimise l'encodage
-préfrontal et hippocampique ; au-delà d'un quart d'heure quotidien on
-entame les ressources d'autorégulation de la journée — et on tue le
-rituel, qui est la seule chose qui compte vraiment.
-**Source** : Pruessner, Lupien et al. (1997, 2007) sur la réponse
-cortisol du réveil ; Baumeister & Vohs (2016) sur l'épuisement
-exécutif — vérifiés 28/08/2026.
+**Ce qu'on fait** : la séance du matin vise 8 à 20 minutes, sans
+verrou dur : la clôture est honorable à tout moment, cinq cartes valent
+une séance. Deux formats longs existent, l'étude (45 à 90 min) et la
+journée, avec **le neuf plafonné par jour** quel que soit le format
+(`decisions/0005`).
+**Pourquoi** : le rituel court est ce qui survit à une vie de bureau,
+et c'est lui qui fait travailler l'espacement. La pratique massée est
+inférieure à la pratique distribuée pour la rétention, donc une longue
+journée ne doit pas bourrer de cartes neuves : elle dépense son temps
+en compréhension et en production. La thèse de l'épuisement des
+ressources exécutives, qui fondait le plafond dur de 15 minutes, a mal
+survécu à sa réplication : elle ne justifie plus un verrou.
+**Source** : Cepeda et al. (2006), *Psychological Bulletin*, 839
+comparaisons, vérifié 28/08/2026 ; Pruessner, Lupien et al. (1997,
+2007) sur la réponse cortisol du réveil, vérifié 28/08/2026 (le matin
+reste un bon moment, pas une obligation) ; Hagger et al. (2016),
+réplication multi-laboratoires préenregistrée de l'ego depletion,
+*Perspectives on Psychological Science* `[À VÉRIFIER : référence
+citée de mémoire le 02/09, à relire avant de la citer dans l'app]`.
 
 ## 9. La série ne casse jamais, la dette n'existe pas
 
@@ -137,18 +146,19 @@ désirables enseignent.
 **Source** : Adesope et al. (2017) ; Bjork & Bjork (2011) — vérifiés
 28/08/2026.
 
-## 11. La carte est un lieu (l'immeuble, l'hôpital)
+## 11. L'arbre est un lieu stable (amendé le 02/09/2026)
 
-**Ce qu'on fait** : le savoir s'ancre dans un lieu navigable — pour
-la copro, l'immeuble (la toiture = étanchéité, la chaufferie =
-P1-P5…) ; chaque métier aura son lieu-monde.
-**Pourquoi** : la méthode des lieux (palais de mémoire) — l'ancrage
-spatial des connaissances exploite la mémoire spatiale, très
-puissante chez l'humain ; c'est la technique des champions de
-mémoire, documentée en imagerie.
+**Ce qu'on fait** : chaque savoir a une place fixe sur l'arbre du
+métier (domaine, branche, nœud, distance au tronc) et cette place ne
+bouge pas : on retrouve « la compta en bas à gauche, les majorités près
+du tronc ». L'habillage « immeuble en coupe » (palais de mémoire) est
+gravé comme idée et différé derrière l'arbre lui-même.
+**Pourquoi** : l'ancrage spatial des connaissances exploite la mémoire
+spatiale, très puissante chez l'humain ; une disposition stable est la
+condition de cet ancrage, quel que soit le décor.
 **Source** : Maguire et al. (2003), *Nature Neuroscience*, « Routes
-to remembering » `[À VÉRIFIER — référence à relire à la source avant
-de construire l'habillage lieu-monde]`.
+to remembering » `[À VÉRIFIER, référence à relire à la source avant
+de s'en réclamer dans l'app]`.
 
 ## 12. Certains exercices sont chronométrés, d'autres jamais
 
@@ -158,8 +168,11 @@ diagnostic) se travaillent parfois en temps court ; l'analyse
 **Pourquoi** : la fluence — produire vite et sans effort — est une
 composante mesurable de l'expertise, distincte de la justesse ; mais
 chronométrer l'analyse ne produit que du stress sans apprentissage.
-**Source** : `[À VÉRIFIER — littérature fluence/automaticité à
-sourcer proprement avant d'activer les niveaux chronométrés]`.
+**Source** : Binder (1996), « Behavioral fluency: evolution of a new
+paradigm », *The Behavior Analyst* 19, 163-197, vérifié 02/09/2026 :
+la fluence (justesse plus vitesse) prédit la rétention, l'endurance et
+le transfert mieux que la justesse seule. Le chrono ne s'active que
+sur des automatismes d'une branche déjà solide.
 
 ## 13. Les images montrent, le texte explique — jamais en double
 
@@ -199,7 +212,175 @@ dégradent le rituel, et la récompense qui compte ouvre du contenu.
 **Source** : Deci, Koestner & Ryan (1999) pour les bornes — vérifié
 28/08/2026 ; arbitrages JB des 29-30/08 pour le cap.
 
+## 16. Le concret avant la théorie : l'amorce (ajouté le 02/09/2026)
+
+**Ce qu'on fait** : un chapitre s'ouvre sur un problème à tenter
+(« laquelle de ces trois fissures appelle un expert dans la semaine ? »)
+avant toute leçon. Se tromper y est prévu.
+**Pourquoi** : résoudre avant d'être instruit prépare l'encodage de la
+leçon (on remarque ce qu'on ne savait pas) et améliore la compréhension
+et le transfert, pas seulement la rétention.
+**Source** : Sinha & Kapur (2021), *Review of Educational Research*,
+méta-analyse de 53 études, g = 0,36 en faveur de « problème puis
+instruction » ; vérifié 02/09/2026.
+
+## 17. Le rappel bat l'élaboration, même pour comprendre (ajouté le 02/09/2026)
+
+**Ce qu'on fait** : on ne remplace jamais les cartes par des schémas à
+compléter ou des cartes mentales « pour comprendre » ; comprendre passe
+aussi par répondre.
+**Pourquoi** : le rappel produit plus d'apprentissage que l'étude
+élaborative par carte conceptuelle, y compris sur des questions
+d'inférence, et même quand le test final est une carte conceptuelle.
+**Source** : Karpicke & Blunt (2011), *Science* 331, 772-775 ; vérifié
+02/09/2026.
+
+## 18. La synthèse : s'expliquer à soi-même (ajouté le 02/09/2026)
+
+**Ce qu'on fait** : tout chapitre se clôt par une production (une
+phrase, une explication, une note) relue contre une liste de contrôle.
+À partir du niveau 3 la synthèse devient l'exercice dominant.
+**Pourquoi** : inciter à s'auto-expliquer améliore l'apprentissage
+substantiellement, dans des conditions très variées.
+**Source** : Bisra et al. (2018), *Educational Psychology Review*,
+méta-analyse, g = 0,55 ; Chi et al. (1989) pour l'effet initial ;
+vérifiés 02/09/2026.
+
+## 19. Expliquer à quelqu'un (ajouté le 02/09/2026)
+
+**Ce qu'on fait** : la synthèse de niveau 2 est « explique-le à un
+collègue en soixante secondes » ; les défis entre joueurs et, plus tard,
+la contribution d'un chapitre en sont la version réelle.
+**Pourquoi** : se préparer à enseigner aide à court terme ; enseigner
+réellement ajoute un bénéfice qui dure.
+**Source** : Fiorella & Mayer (2013), *Contemporary Educational
+Psychology* 38, 281-288 ; vérifié 02/09/2026.
+
+## 20. Le papier : dessiner, oui ; écrire à la main, pas prouvé (ajouté le 02/09/2026)
+
+**Ce qu'on fait** : deux exercices sur papier, le dessin de mémoire
+(un caisson de VMC, un circuit de recouvrement) et la feuille blanche
+(rappel libre en temps borné), corrigés par liste de contrôle. Aucune
+promesse sur « écrire à la main pour mieux retenir ».
+**Pourquoi** : dessiner un item bat l'écrire, souvent du simple au
+double en rappel libre ; la prise de notes manuscrite, elle, ne
+réplique pas sa supériorité.
+**Source** : Wammes, Meade & Fernandes (2016), *QJEP* ; Fernandes,
+Wammes & Meade (2018), *Current Directions* ; Morehead, Dunlosky &
+Rawson (2019), *Educational Psychology Review* ; vérifiés 02/09/2026.
+
+## 21. La journée : du temps pour comprendre, pas pour bourrer (ajouté le 02/09/2026)
+
+**Ce qu'on fait** : une demi-journée ou une journée enchaîne des études
+sur deux ou trois domaines, avec des pauses, un rappel en fin de journée
+sur les chapitres du matin, et un plafond de cartes neuves par jour.
+**Pourquoi** : la pratique massée est inférieure à la pratique
+distribuée pour la rétention ; c'est le neuf qui fabrique la dette de
+révisions, pas la compréhension. Espacer les reprises dans la journée
+et entrelacer les domaines garde ce que la science donne.
+**Source** : Cepeda et al. (2006), *Psychological Bulletin* ; Rohrer &
+Taylor (2007) pour l'entrelacement ; vérifiés 28/08/2026.
+
+## 22. Dire sa confiance avant de répondre (ajouté le 02/09/2026)
+
+**Ce qu'on fait** : sur un cas ou un QCM de niveau 2 et plus, le joueur
+dit s'il est sûr avant de révéler. Le profil affiche sa calibration.
+**Pourquoi** : une erreur confiante est mieux corrigée qu'une erreur
+hésitante, à condition d'un retour immédiat ; et savoir quand on ne
+sait pas est la compétence d'un professionnel qui vérifie.
+**Source** : Butterfield & Metcalfe (2001, 2006), vérifiés 28/08/2026 ;
+la calibration est mesurée au journal, elle n'est pas promise.
+
+## 23. Le socle protégé, la liberté ailleurs (ajouté le 02/09/2026)
+
+**Ce qu'on fait** : tant que le socle n'est pas validé, la moitié du
+neuf d'une séance vient de la branche du socle la moins avancée ;
+l'étude est libre ; on ne bloque jamais.
+**Pourquoi** : le choix auto-régulé tend vers ce qu'on aime et vers les
+illusions de maîtrise ; bloquer détruit l'autonomie, qui est un besoin
+de base de la motivation. Pondérer sans bloquer respecte les deux.
+**Source** : Dunlosky et al. (2013) sur les stratégies auto-choisies ;
+Deci, Koestner & Ryan (1999) sur l'autonomie ; vérifiés 28/08/2026.
+
+## 24. Les niveaux 4 et 5 : l'expertise n'est pas du drill (ajouté le 02/09/2026)
+
+**Ce qu'on fait** : au-delà du praticien, l'arbre monte vers la
+doctrine, les cas réels, la controverse et la contribution, pas vers
+plus de cartes.
+**Pourquoi** : la pratique délibérée explique une part de la
+performance dans les jeux et la musique, mais très peu dans les
+professions ; l'expertise professionnelle vient du jugement sur des cas
+et de la connaissance du débat.
+**Source** : Ericsson, Krampe & Tesch-Römer (1993) ; Macnamara,
+Hambrick & Oswald (2014), méta-analyse (moins de 1 % de variance
+expliquée dans les professions) ; vérifiés 02/09/2026.
+
+## 25. La variété des formats (ajouté le 02/09/2026)
+
+**Ce qu'on fait** : jamais deux formats identiques d'affilée quand la
+matière le permet, au moins trois types par séance, et les formats
+riches (cas, lecture, jeu de rôle) arrivent avec les niveaux.
+**Pourquoi** : c'est une règle de conception, pas un effet mesuré en
+laboratoire : elle prolonge l'entrelacement (§6) et se juge au journal
+(abandons par format). Un format qui lasse se coupe.
+**Source** : Bjork & Bjork (2011) pour l'entrelacement ; la mesure des
+abandons par format est la source du reste (`rapport_rituel.py`).
+
+## 26. Les épreuves transverses (ajouté le 02/09/2026)
+
+**Ce qu'on fait** : un dossier en cinq pas qui mêle au moins trois
+domaines, une décision à chaque pas ; l'épreuve du gestionnaire en
+compte trois.
+**Pourquoi** : sur le terrain les problèmes n'arrivent pas rangés par
+matière ; tester le transfert, c'est tester dans un contexte qui ne
+ressemble pas à l'entraînement.
+**Source** : Bjork & Bjork (2011), difficultés désirables ; Barnett &
+Ceci (2002) pour la taxonomie du transfert `[À VÉRIFIER : cité de
+mémoire le 02/09]`.
+
+## 27. Les points sont dérivés, la ligue compte des cartes stabilisées (ajouté le 02/09/2026)
+
+**Ce qu'on fait** : une carte stabilisée vaut dix fois son niveau ; la
+ligue hebdomadaire compte les cartes stabilisées × niveau ; jamais le
+temps, jamais les clics ; jamais de monnaie.
+**Pourquoi** : une mesure qu'on peut gagner sans apprendre devient un
+objectif et cesse de mesurer (Goodhart) ; les récompenses extrinsèques
+futiles détruisent la motivation intrinsèque ; ce qui ouvre du contenu
+dure.
+**Source** : Deci, Koestner & Ryan (1999), vérifié 28/08/2026 ;
+`labor/wiki/patterns/mesure-objectif-goodhart.md`.
+
+## 28. La semaine type (ajouté le 02/09/2026)
+
+**Ce qu'on fait** : des jours colorés (fondations, cours, terrain,
+exploration, étude, libre) qui pèsent sur le neuf et les formats ;
+les révisions dues sont servies tous les jours.
+**Pourquoi** : une habitude tient à un déclencheur stable ; un rythme
+hebdomadaire lisible en est un, et la variété entre jours prolonge
+l'entrelacement sans folklore.
+**Source** : règle de conception ; Lally et al. (2010) sur la formation
+des habitudes `[À VÉRIFIER : cité de mémoire le 02/09]` ; la mesure au
+journal (`jour` sur chaque séance) tranchera.
+
+## 29. Le professeur a un dossier, pas un diplôme (ajouté le 02/09/2026)
+
+**Ce qu'on fait** : chaque carte dit qui l'a écrite (modèle ou humain,
+date), combien de sources l'adossent, qui l'a relue, quand elle a été
+vérifiée, et porte une note A, B ou C dérivée de tout ça. Chaque domaine
+a sa page « Pourquoi croire ce professeur ? » avec ses chiffres, ses
+erreurs connues et ses limites ; un second modèle, d'un autre
+fournisseur, relit un échantillon chaque mois.
+**Pourquoi** : un modèle n'a pas de diplôme ; ce qui se juge, c'est un
+procédé et des résultats. Rendre visibles la provenance, le taux
+d'erreur trouvé et le délai de correction est ce qui permet à un adulte
+de décider de sa confiance, et de se méfier au bon endroit. Ce n'est
+pas une mécanique d'apprentissage, c'est la condition pour qu'on
+accepte d'apprendre.
+**Source** : règle de conception (`decisions/0021`, `0022`) ; les
+patterns de labor « validated sans lien ne vaut rien » et « un rapport
+de LLM vaut par ses questions » (`labor/wiki/patterns/`).
+
 ---
 
 *Toute nouvelle mécanique ajoute son entrée ICI dans le même commit
-que son code — sinon elle n'existe pas.*
+que son code ; sinon elle n'existe pas.*

@@ -10,9 +10,16 @@ Lecteur visé : **un agent IA** qui déroule le parcours avec un humain
 qui ne code pas. Le ton du guide est celui d'un accompagnateur : une
 question à la fois, jamais deux étapes en parallèle.
 
-Source de vérité du parcours : [`../SPEC-PRODUIT.md`](../SPEC-PRODUIT.md)
-§4. Si ce guide et la spec divergent, la spec fait foi et ce fichier
-se corrige.
+Source de vérité du parcours : [`../ARCHITECTURE.md`](../ARCHITECTURE.md)
+§7 et [`../decisions/0008`](../decisions/0008-chacun-son-depot-et-son-abonnement.md)
+(le `SPEC-PRODUIT` d'août, archivé, en est l'origine). Si ce guide et
+l'architecture divergent, l'architecture fait foi et ce fichier se
+corrige. Depuis le 02/09/2026, l'étape 3 remplit aussi `nature`, `parti`
+et fiabilité par source (`decisions/0004`, `sources/README.md`) et
+s'appuie sur `sources/LISTE-BLANCHE.md` pour dire au joueur quoi
+déposer et où trouver le reste ; les entrées PDF scanné (OCR), vidéo
+(sous-titres ou transcription locale) et capture d'écran (vision, chez
+le joueur) sont admises à l'étape 1.
 
 ---
 
@@ -40,9 +47,14 @@ arbitrage humain.
 Ils sont sortis des étapes exprès : une règle citée dans une seule
 étape se dilue à la troisième heure de session.
 
-1. **Aucune carte sans source.** Une source, c'est un texte
-   identifiable et, quand elle existe, une URL. La mémoire du modèle
-   n'est pas une source. Un « c'est bien connu » n'est pas une source.
+1. **Aucune carte sans provenance, aucun chiffre sans source.** (Amendé
+   le 02/09/2026, `decisions/0021`.) Une source, c'est un texte
+   identifiable et, quand elle existe, une URL. Le modèle a le droit
+   d'écrire s'il a cherché sur les domaines fiables
+   (`sources/LISTE-BLANCHE.md`), cité ce qu'il a trouvé, et dit
+   combien ; s'il n'a rien trouvé, il l'écrit (`sans_source: true`) et
+   la carte ne porte alors ni chiffre, ni date, ni délai, ni montant.
+   Un « c'est bien connu » n'est toujours pas une source.
 2. **Aucune donnée personnelle réelle, dans aucune couche.** Pour un
    domaine santé, cela veut dire : **aucune donnée patient, aucune
    photo clinique non publiée sous licence** — les cas, tracés et
@@ -69,9 +81,14 @@ que c'est elle qui tient la promesse « il ne faut pas me dire de
 bêtises ».
 
 > Si le plan de région réclame un sujet et qu'**aucune source fiable
-> sous la main ne le couvre**, on **ne crée pas les fiches**. On écrit
+> sous la main ne le couvre**, on cherche d'abord sur les domaines de
+> la liste blanche. Si la recherche rend quelque chose, on écrit les
+> fiches avec leur tampon de provenance. Si elle ne rend rien, on écrit
 > le trou dans `sources/INVENTAIRE.md` (« sujet X : à sourcer, rien de
-> fiable sous la main »), et on propose où le chercher légalement.
+> fiable trouvé le AAAA-MM-JJ »), on propose où chercher, **et on peut
+> tout de même écrire une fiche conceptuelle avouée « sans source
+> retrouvée »**, sans aucun chiffre ni date, qui sera vérifiée en
+> priorité (`decisions/0021`, amendement du 02/09/2026).
 
 **Écrire un trou est un livrable, pas un échec.** Un domaine qui rend
 30 cartes solides et 12 trous nommés est en bon état ; un domaine qui
@@ -163,6 +180,15 @@ et les régions avec leur `ordre`.
   coquille : c'est la région sans prérequis, celle où l'on range ce
   qui n'entre dans aucune progression. La garder ou la retirer, mais
   décider.
+
+**Le cadre est écrit par l'agent** (`decisions/0022`, 02/09/2026) : à
+partir de ce que le joueur dit de son métier et de son objectif, l'agent
+propose le programme (domaines, branches, chapitres, niveaux, socle)
+calibré sur les ancres publiques du métier (le diplôme d'entrée, le
+référentiel de compétences, la formation continue), et le joueur le
+relit et le corrige. Les documents du joueur viennent ensuite
+corroborer, compléter ou contredire chapitre par chapitre ; ils ne
+dessinent pas la carte.
 
 **Porte.** Le joueur sait dire en une phrase ce qu'il saura faire
 quand la première région sera pleine.

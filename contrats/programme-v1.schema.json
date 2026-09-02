@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://academie.local/contrats/programme-v1.schema.json",
+  "title": "Programme d'un métier v1 (proposition du 02/09/2026)",
+  "type": "object",
+  "required": ["version", "metier", "genere_le", "socle", "semaine_type", "positionnement", "domaines", "branches", "chapitres"],
+  "properties": {
+    "_": {"type": "string"},
+    "version": {"type": "string"},
+    "metier": {"type": "string"},
+    "genere_le": {"type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$"},
+    "niveaux": {"type": "object"},
+    "socle": {
+      "type": "object", "required": ["niveaux"],
+      "properties": {"_": {"type": "string"}, "niveaux": {"type": "object", "additionalProperties": {"type": "integer", "minimum": 1, "maximum": 5}}, "chapitres": {"type": "integer"}, "cartes_cible": {"type": "integer"}}
+    },
+    "semaine_type": {
+      "type": "object",
+      "required": ["lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi", "dimanche"],
+      "additionalProperties": {"enum": ["fondations", "cours", "terrain", "exploration", "etude", "libre"]},
+      "properties": {"_": {"type": "string"}}
+    },
+    "positionnement": {"type": "object", "required": ["questions_par_domaine", "niveaux"]},
+    "domaines": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object", "required": ["titre", "ordre"],
+        "properties": {"titre": {"type": "string"}, "ordre": {"type": "integer"}, "niveau_socle": {"type": ["integer", "null"]}, "arbre": {"type": "boolean"}, "sources_primaires": {"type": "array", "items": {"type": "string"}}}
+      }
+    },
+    "branches": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "items": {"type": "object", "required": ["cle", "titre", "ordre"], "properties": {"cle": {"type": "string"}, "titre": {"type": "string"}, "ordre": {"type": "integer"}, "exercice_dominant": {"type": "string"}}}
+      }
+    },
+    "chapitres": {
+      "type": "array",
+      "items": {
+        "type": "object", "required": ["id", "domaine", "branche", "titre", "niveau", "prerequis", "statut"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^[a-z0-9-]+\\.[a-z0-9-]+\\.[a-z0-9-]+$"},
+          "domaine": {"type": "string"}, "branche": {"type": "string"}, "titre": {"type": "string"},
+          "niveau": {"type": "integer", "minimum": 1, "maximum": 5},
+          "prerequis": {"type": "array", "items": {"type": "string"}},
+          "exercice_dominant": {"type": "string"},
+          "cartes_cible": {"type": "integer"},
+          "satellite": {"type": "boolean"},
+          "statut": {"enum": ["a-ecrire", "brouillon", "valide"]}
+        }
+      }
+    },
+    "disposition": {"type": "object", "description": "positions dessinées des nœuds par domaine, pour l'arbre ; facultatif, le client a un placement automatique de repli"},
+    "compte": {"type": "object"}
+  }
+}

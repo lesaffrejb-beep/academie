@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://academie.local/contrats/journal-v1.schema.json",
+  "title": "Ligne de journal v1 (proposition du 02/09/2026)",
+  "description": "Une ligne = un événement, append-only. Le serveur n'écrit jamais dans le journal d'un joueur ; il en fait l'union. L'état se recalcule toujours depuis ces lignes.",
+  "type": "object",
+  "required": ["quand", "mode", "nonce"],
+  "properties": {
+    "quand": {"type": "string", "format": "date-time"},
+    "mode": {"enum": ["revision", "quiz", "examen", "erreur", "seance", "synthese"]},
+    "nonce": {"type": "string", "minLength": 8, "description": "identifiant aléatoire côté client ; l'union se fait sur (profil, quand, mode, nonce)"},
+    "carte": {"type": "string"},
+    "note": {"type": "integer", "minimum": 1, "maximum": 4},
+    "format": {"enum": ["seance", "domaine", "etude", "journee", "epreuve", "hasard", "defi"]},
+    "duree_ms": {"type": "integer", "minimum": 0},
+    "confiance": {"type": "boolean"},
+    "stabilite_forcee": {"type": "number", "exclusiveMinimum": 0},
+    "origine": {"type": "string"},
+    "region": {"type": "string"},
+    "dossier": {"type": "string"},
+    "score": {"type": "number", "minimum": 0, "maximum": 1},
+    "cartes": {"type": "array", "items": {"type": "string"}},
+    "raison": {"type": "string", "maxLength": 200},
+    "jour": {"enum": ["fondations", "cours", "terrain", "exploration", "etude", "libre"]},
+    "graine": {"type": "integer"},
+    "cap": {"type": "string", "description": "le domaine choisi par le joueur, s'il en a choisi un"},
+    "banque_version": {"type": "string"},
+    "moteur_version": {"type": "string"},
+    "chapitre": {"type": "string"},
+    "attendus_coches": {"type": "array", "items": {"type": "integer"}}
+  },
+  "allOf": [
+    {"if": {"properties": {"mode": {"const": "revision"}}}, "then": {"required": ["carte", "note", "format"]}},
+    {"if": {"properties": {"mode": {"const": "quiz"}}}, "then": {"required": ["carte", "note", "stabilite_forcee", "origine"]}},
+    {"if": {"properties": {"mode": {"const": "examen"}}}, "then": {"required": ["score"], "anyOf": [{"required": ["region"]}, {"required": ["dossier"]}]}},
+    {"if": {"properties": {"mode": {"const": "erreur"}}}, "then": {"required": ["carte"]}},
+    {"if": {"properties": {"mode": {"const": "seance"}}}, "then": {"required": ["format", "graine", "banque_version", "moteur_version"]}},
+    {"if": {"properties": {"mode": {"const": "synthese"}}}, "then": {"required": ["chapitre", "attendus_coches"]}}
+  ]
+}

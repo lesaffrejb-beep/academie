@@ -1,0 +1,679 @@
+<title>L'Académie</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,400&family=Source+Sans+3:wght@400;500;600&display=swap">
+<style>
+:root{
+  --fond:#0F1521;--surface:#171F2E;--surface2:#1E293A;--encre:#EDE6D8;--encre2:rgba(237,230,216,.62);--encre3:rgba(237,230,216,.38);
+  --trait:rgba(237,230,216,.14);--trait2:rgba(237,230,216,.28);--succes:#7EA88A;--erreur:#B5654B;--brume:rgba(15,21,33,.72);
+  --d1:#C9953F;--d2:#BF6E45;--d3:#7FA38B;--d4:#8E86C4;--d5:#5E8CAB;--d6:#AA544C;--d7:#8E9C4E;--d8:#8D5C7E;--d9:#C9B47C;--d10:#7A8896;
+  --ombre:0 18px 48px rgba(0,0,0,.45);
+  --serif:"Fraunces",Georgia,"Times New Roman",serif;--sans:"Source Sans 3","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  color-scheme:dark;
+}
+@media (prefers-color-scheme: light){
+  :root:not([data-theme="dark"]){
+    --fond:#EEF0EC;--surface:#FFFFFF;--surface2:#F5F6F2;--encre:#1B2230;--encre2:rgba(27,34,48,.64);--encre3:rgba(27,34,48,.4);
+    --trait:rgba(27,34,48,.14);--trait2:rgba(27,34,48,.3);--succes:#4E8462;--erreur:#A2533C;--brume:rgba(238,240,236,.72);
+    --d1:#A8772B;--d2:#A4583A;--d3:#5D8A6B;--d4:#6E66A6;--d5:#43718F;--d6:#8E4640;--d7:#6E7B36;--d8:#764A68;--d9:#A08B4E;--d10:#5E6B78;
+    --ombre:0 18px 48px rgba(27,34,48,.14);color-scheme:light;
+  }
+}
+:root[data-theme="light"]{
+  --fond:#EEF0EC;--surface:#FFFFFF;--surface2:#F5F6F2;--encre:#1B2230;--encre2:rgba(27,34,48,.64);--encre3:rgba(27,34,48,.4);
+  --trait:rgba(27,34,48,.14);--trait2:rgba(27,34,48,.3);--succes:#4E8462;--erreur:#A2533C;--brume:rgba(238,240,236,.72);
+  --d1:#A8772B;--d2:#A4583A;--d3:#5D8A6B;--d4:#6E66A6;--d5:#43718F;--d6:#8E4640;--d7:#6E7B36;--d8:#764A68;--d9:#A08B4E;--d10:#5E6B78;
+  --ombre:0 18px 48px rgba(27,34,48,.14);color-scheme:light;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--fond);color:var(--encre);font-family:var(--sans);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
+body{min-height:100vh;font-variant-numeric:tabular-nums}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;padding:0}
+button:focus-visible,a:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--accent,var(--d1));outline-offset:3px}
+h1,h2,h3{font-family:var(--serif);font-weight:500;margin:0;text-wrap:balance;line-height:1.15}
+.serif{font-family:var(--serif)}
+.ital{font-family:var(--serif);font-style:italic;font-weight:400}
+.eyebrow{font-size:.78rem;letter-spacing:.09em;text-transform:uppercase;color:var(--encre2);font-weight:600}
+.muted{color:var(--encre2)}
+.num{font-variant-numeric:tabular-nums}
+
+/* Bandeau maquette */
+.bandeau{display:flex;gap:16px;align-items:center;justify-content:space-between;padding:10px 16px;border-bottom:1px solid var(--trait);background:var(--surface);position:sticky;top:0;z-index:40;font-size:.9rem}
+.bandeau b{font-family:var(--serif);font-weight:500;font-size:1.05rem}
+.bandeau .actions{display:flex;gap:8px;align-items:center}
+.btn-ghost{border:1px solid var(--trait2);border-radius:10px;padding:6px 12px;font-weight:500}
+.btn-ghost:hover{background:var(--surface2)}
+
+/* Cadre app */
+.app{display:grid;grid-template-columns:1fr;min-height:calc(100vh - 45px);position:relative}
+.rail{display:none}
+.contenu{padding:16px 16px 96px;max-width:1120px;width:100%;margin:0 auto}
+.tabbar{position:fixed;left:0;right:0;bottom:0;height:64px;background:var(--surface);border-top:1px solid var(--trait);display:grid;grid-template-columns:repeat(4,1fr);z-index:30}
+.tabbar button{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;font-size:.72rem;color:var(--encre2);font-weight:600;letter-spacing:.02em}
+.tabbar button[aria-current="page"]{color:var(--encre)}
+.tabbar svg,.rail svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.fab{position:fixed;right:18px;bottom:84px;z-index:31;background:var(--accent,var(--d1));color:#0F1521;border-radius:16px;padding:14px 18px;font-weight:600;box-shadow:var(--ombre);display:flex;gap:8px;align-items:center;transition:transform .12s}
+.fab:active{transform:scale(.98)}
+@media (min-width:900px){
+  .app{grid-template-columns:84px 1fr}
+  .rail{display:flex;flex-direction:column;align-items:center;gap:6px;padding:18px 0;border-right:1px solid var(--trait);background:var(--surface);position:sticky;top:45px;height:calc(100vh - 45px)}
+  .rail button{width:60px;height:56px;border-radius:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;font-size:.66rem;font-weight:600;color:var(--encre2);letter-spacing:.02em}
+  .rail button[aria-current="page"]{color:var(--encre);background:var(--surface2)}
+  .rail .seance{margin-bottom:14px;background:var(--accent,var(--d1));color:#0F1521}
+  .rail .seance:hover{filter:brightness(1.05)}
+  .tabbar,.fab{display:none}
+  .contenu{padding:28px 32px 48px}
+}
+
+/* Cartes / surfaces */
+.tuile{background:var(--surface);border:1px solid var(--trait);border-radius:20px;padding:18px}
+.tuile.creux{background:var(--surface2)}
+.ligne{display:flex;align-items:center;gap:12px}
+.pastille{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:3px 10px;font-size:.78rem;font-weight:600;letter-spacing:.02em;border:1px solid var(--trait2);color:var(--encre2)}
+.pastille .dot{width:8px;height:8px;border-radius:50%;background:var(--accent,var(--d1))}
+.btn{border-radius:12px;padding:12px 16px;font-weight:600;border:1px solid var(--trait2);transition:transform .12s,background .12s;min-height:48px}
+.btn:active{transform:scale(.98)}
+.btn.plein{background:var(--accent,var(--d1));color:#0F1521;border-color:transparent}
+.btn.plein:hover{filter:brightness(1.06)}
+.btn.creux:hover{background:var(--surface2)}
+.btn.petit{min-height:40px;padding:8px 14px;border-radius:10px}
+@media (min-width:900px){.btn{min-height:40px;padding:9px 16px}}
+
+/* Écrans */
+.ecran{display:none;animation:entree .22s cubic-bezier(.2,0,0,1)}
+.ecran.actif{display:block}
+@keyframes entree{from{transform:translateY(6px);opacity:.001}to{transform:none;opacity:1}}
+.entete{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;margin-bottom:14px;flex-wrap:wrap}
+.entete h1{font-size:clamp(1.7rem,3.2vw,2.3rem)}
+
+/* Bandeau du jour */
+.cap{display:grid;grid-template-columns:1fr auto;gap:14px;align-items:center;background:var(--surface);border:1px solid var(--trait);border-left:4px solid var(--accent,var(--d1));border-radius:16px;padding:14px 16px;margin-bottom:16px}
+.cap .jour{font-family:var(--serif);font-size:1.25rem}
+.cap .detail{color:var(--encre2);font-size:.95rem}
+
+/* Arbre global */
+.arbre-wrap{position:relative;background:radial-gradient(circle at 50% 45%,var(--surface2),var(--surface) 55%,var(--fond) 100%);border:1px solid var(--trait);border-radius:24px;overflow:hidden}
+.arbre-wrap svg{width:100%;height:auto;display:block;max-height:78vh}
+.noeud{cursor:pointer}
+.noeud .anneau-fond{fill:none;stroke:var(--trait);stroke-width:4}
+.noeud .anneau{fill:none;stroke-width:4;stroke-linecap:round;transform:rotate(-90deg);transform-origin:center;transform-box:fill-box;transition:stroke-dashoffset .6s cubic-bezier(.2,0,0,1)}
+.noeud .disque{fill:var(--surface);stroke:var(--trait2);stroke-width:1}
+.noeud .mono{font-family:var(--serif);font-style:italic;font-size:17px;fill:var(--encre);text-anchor:middle;dominant-baseline:central}
+.noeud .titre{font-family:var(--sans);font-size:12.5px;font-weight:600;fill:var(--encre);text-anchor:middle}
+.noeud .sous{font-family:var(--sans);font-size:11px;fill:var(--encre2);text-anchor:middle}
+.noeud:hover .disque{stroke:var(--encre2)}
+.noeud .lettre{font-family:var(--sans);font-size:10px;font-weight:700;fill:var(--encre2);text-anchor:middle;dominant-baseline:central}
+.lien{fill:none;stroke:var(--trait2);stroke-width:1.4}
+.lien.pale{stroke:var(--trait);stroke-dasharray:3 4}
+.silhouette{fill:var(--surface2);stroke:var(--trait);stroke-width:1;filter:blur(.6px)}
+.tronc .fond{fill:var(--surface)}
+.legende{position:absolute;left:14px;bottom:12px;display:flex;gap:12px;font-size:.75rem;color:var(--encre2);flex-wrap:wrap}
+.legende i{display:inline-block;width:10px;height:10px;border-radius:50%;border:2px solid var(--trait2);vertical-align:-1px;margin-right:4px}
+.legende i.plein{background:var(--encre2);border-color:var(--encre2)}
+.legende i.brume{background:var(--surface2);border-color:var(--trait)}
+
+/* Vue domaine */
+.props{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:14px 0 18px}
+.prop{background:var(--surface);border:1px solid var(--trait);border-radius:14px;padding:12px 14px;text-align:left;min-height:74px;display:flex;flex-direction:column;justify-content:space-between;transition:transform .12s}
+.prop:active{transform:scale(.98)}
+.prop b{font-family:var(--serif);font-weight:500;font-size:1.05rem}
+.prop small{color:var(--encre2)}
+.prop.principal{background:var(--accent);color:#0F1521;border-color:transparent}
+.prop.principal small{color:rgba(15,21,33,.7)}
+.branches{display:flex;gap:14px;overflow-x:auto;padding:6px 2px 14px;scroll-snap-type:x proximity}
+.branche{flex:0 0 200px;scroll-snap-align:start}
+.branche h3{font-size:1rem;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid var(--trait)}
+.chaine{display:flex;flex-direction:column;gap:0}
+.nd{display:grid;grid-template-columns:40px 1fr;gap:10px;align-items:center;padding:8px 6px;border-radius:12px;text-align:left;position:relative}
+.nd:hover{background:var(--surface2)}
+.nd + .nd::before{content:"";position:absolute;left:25px;top:-10px;height:14px;border-left:1.5px solid var(--trait2)}
+.nd .ring{width:38px;height:38px;border-radius:50%;border:3px solid var(--trait);display:grid;place-items:center;font-family:var(--serif);font-style:italic;font-size:.9rem;position:relative}
+.nd .ring::after{content:"";position:absolute;inset:-3px;border-radius:50%;border:3px solid var(--accent);clip-path:var(--clip,inset(0 100% 0 0));}
+.nd .t{font-weight:600;font-size:.93rem;line-height:1.25}
+.nd .s{font-size:.78rem;color:var(--encre2)}
+.nd.inconnu{opacity:.55}.nd.inconnu .t{filter:blur(2.5px)}
+.nd.revoir .ring{border-style:dashed}
+.nd .lettre{position:absolute;right:8px;top:8px;font-size:.68rem;font-weight:700;color:var(--encre2);border:1px solid var(--trait2);border-radius:6px;padding:0 5px}
+
+/* Feuille (sheet) */
+.voile{position:fixed;inset:0;background:var(--brume);backdrop-filter:blur(6px);z-index:50;display:none}
+.voile.ouvert{display:block}
+.feuille{position:fixed;left:0;right:0;bottom:0;background:var(--surface);border-radius:24px 24px 0 0;padding:20px 18px 28px;z-index:51;max-height:86vh;overflow:auto;box-shadow:var(--ombre);transform:translateY(100%);transition:transform .26s cubic-bezier(.2,0,0,1)}
+.feuille.ouvert{transform:none}
+.feuille .poignee{width:42px;height:4px;border-radius:2px;background:var(--trait2);margin:0 auto 14px}
+@media (min-width:900px){.feuille{left:auto;right:32px;bottom:32px;width:420px;border-radius:20px;transform:translateY(24px);opacity:.001}.feuille.ouvert{transform:none;opacity:1}}
+.feuille h2{font-size:1.45rem;margin:4px 0 6px}
+.objectifs{margin:12px 0;padding-left:18px;color:var(--encre2)}
+.objectifs li{margin:3px 0}
+.feuille .actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+
+/* Salle */
+.salle{position:fixed;inset:0;background:var(--fond);z-index:60;display:none;flex-direction:column}
+.salle.ouvert{display:flex}
+.salle-barre{display:flex;align-items:center;gap:12px;padding:12px 16px}
+.salle-barre .x{width:40px;height:40px;border-radius:12px;border:1px solid var(--trait2);display:grid;place-items:center;font-size:1.2rem}
+.progres{flex:1;height:3px;background:var(--trait);border-radius:2px;overflow:hidden}
+.progres i{display:block;height:100%;background:var(--accent);width:0;transition:width .3s}
+.salle-corps{flex:1;overflow:auto;padding:8px 16px 120px;max-width:720px;width:100%;margin:0 auto}
+.carte-tete{display:flex;gap:10px;align-items:center;margin:8px 0 18px}
+.question{font-family:var(--serif);font-size:clamp(1.35rem,2.6vw,1.75rem);font-weight:500;line-height:1.28;margin:0 0 18px}
+.choix{display:grid;gap:10px}
+.choix button{text-align:left;border:1px solid var(--trait2);border-radius:14px;padding:13px 14px;background:var(--surface);min-height:48px;transition:transform .12s,border-color .12s}
+.choix button:active{transform:scale(.98)}
+.choix button.choisi{border-color:var(--encre)}
+.choix button.juste{border-color:var(--succes);background:color-mix(in srgb,var(--succes) 14%,var(--surface))}
+.choix button.faux{border-color:var(--erreur);background:color-mix(in srgb,var(--erreur) 14%,var(--surface))}
+.confiance{display:flex;align-items:center;gap:10px;margin:16px 0 6px;color:var(--encre2);font-size:.92rem}
+.confiance .seg{display:inline-flex;border:1px solid var(--trait2);border-radius:10px;overflow:hidden}
+.confiance .seg button{padding:6px 12px;font-weight:600}
+.confiance .seg button[aria-pressed="true"]{background:var(--surface2);color:var(--encre)}
+.pied{position:fixed;left:0;right:0;bottom:0;background:linear-gradient(to top,var(--fond) 70%,transparent);padding:14px 16px 20px}
+.pied .interieur{max-width:720px;margin:0 auto;display:grid;gap:10px}
+.notes{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.notes button{border:1px solid var(--trait2);border-radius:12px;padding:12px 6px;font-weight:600;min-height:48px;background:var(--surface)}
+.notes button:nth-child(3){border-color:var(--succes)}
+.retour{border-radius:16px;padding:14px 16px;background:var(--surface);border:1px solid var(--trait);margin-top:14px;display:none}
+.retour.ouvert{display:block}
+.retour .verdict{font-family:var(--serif);font-size:1.2rem;margin-bottom:6px}
+.retour .verdict.faux{color:var(--erreur)}
+.retour .verdict.juste{color:var(--succes)}
+.retour p{margin:6px 0;color:var(--encre2)}
+.retour .vig{border-left:3px solid var(--accent);padding-left:10px;color:var(--encre)}
+.source-ligne{margin-top:12px;padding-top:10px;border-top:1px solid var(--trait);font-size:.86rem;color:var(--encre2);display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center}
+.source-ligne .nat{border:1px solid var(--trait2);border-radius:6px;padding:0 6px;font-weight:600;font-size:.76rem;letter-spacing:.02em}
+.source-ligne .lettre{border:1px solid var(--trait2);border-radius:6px;padding:0 6px;font-weight:700;font-size:.76rem;color:var(--encre)}
+.source-ligne a{color:var(--encre);text-decoration:underline;text-underline-offset:3px}
+.prov{font-size:.8rem;color:var(--encre3);margin-top:6px}
+.schema{width:100%;max-width:520px;margin:0 auto 14px;display:block}
+.schema text{font-family:var(--sans);font-size:11px;fill:var(--encre2)}
+.schema .l{stroke:var(--encre2);fill:none;stroke-width:1.4}
+.schema .a{stroke:var(--accent);fill:none;stroke-width:2}
+.dessin-note{font-size:.8rem;color:var(--encre3);text-align:center;margin-top:-6px;margin-bottom:12px}
+
+/* Clôture */
+.cloture{max-width:560px;margin:8vh auto 0;text-align:center;padding:0 16px}
+.cloture .grand{font-family:var(--serif);font-size:clamp(2rem,5vw,3rem);line-height:1.1;margin:10px 0}
+.cloture .anneau-cl{width:150px;height:150px;margin:18px auto}
+.cloture .anneau-cl .fond{fill:none;stroke:var(--trait);stroke-width:8}
+.cloture .anneau-cl .val{fill:none;stroke:var(--accent);stroke-width:8;stroke-linecap:round;transform:rotate(-90deg);transform-origin:center;transition:stroke-dashoffset .9s cubic-bezier(.2,0,0,1) .2s}
+.cloture .phrase{font-size:1.05rem;color:var(--encre2);max-width:46ch;margin:0 auto}
+.citation{font-family:var(--serif);font-style:italic;font-size:1.15rem;margin:26px auto 4px;max-width:40ch}
+.citation + small{color:var(--encre3)}
+
+/* Profil bento */
+.bento{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.bento .t1{grid-column:span 2}
+@media (min-width:900px){.bento{grid-template-columns:repeat(4,1fr)}.bento .t1{grid-column:span 2}.bento .t2{grid-column:span 2}.bento .t3{grid-column:span 3}}
+.visite{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:center}
+.visite .socle-ring{width:112px;height:112px}
+.visite .socle-ring .fond{fill:none;stroke:var(--trait);stroke-width:7}
+.visite .socle-ring .val{fill:none;stroke:var(--accent);stroke-width:7;stroke-linecap:round;transform:rotate(-90deg);transform-origin:center}
+.visite .socle-ring text{font-family:var(--serif);font-size:26px;fill:var(--encre);text-anchor:middle;dominant-baseline:central}
+.visite h2{font-size:1.5rem}
+.gros{font-family:var(--serif);font-size:2rem;line-height:1;margin:6px 0 2px}
+.heat{display:grid;grid-template-columns:repeat(18,1fr);gap:3px;margin-top:10px}
+.heat i{aspect-ratio:1;border-radius:3px;background:var(--accent);opacity:var(--o,.08)}
+.insignes{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
+.insigne{width:64px;height:64px;border-radius:16px;border:1px solid var(--trait2);display:grid;place-items:center;position:relative}
+.insigne svg{width:30px;height:30px;stroke:var(--encre);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.insigne.verrou{opacity:.35}
+.liste{margin:8px 0 0;padding:0;list-style:none}
+.liste li{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-bottom:1px solid var(--trait);font-size:.95rem}
+.liste li:last-child{border-bottom:0}
+.liste li span:last-child{color:var(--encre2);white-space:nowrap}
+
+/* Cercle */
+.onglets{display:flex;gap:6px;border-bottom:1px solid var(--trait);margin-bottom:14px}
+.onglets button{padding:10px 12px;font-weight:600;color:var(--encre2);border-bottom:2px solid transparent;margin-bottom:-1px}
+.onglets button[aria-selected="true"]{color:var(--encre);border-bottom-color:var(--encre)}
+.fil{display:grid;gap:10px}
+.jalon{display:grid;grid-template-columns:44px 1fr auto;gap:12px;align-items:center}
+.avatar-arbre{width:44px;height:44px;border-radius:12px;background:var(--surface2);border:1px solid var(--trait);display:grid;place-items:center}
+.avatar-arbre svg{width:30px;height:30px}
+.kudos{border:1px solid var(--trait2);border-radius:999px;padding:6px 12px;font-weight:600;font-size:.86rem}
+.kudos[aria-pressed="true"]{background:var(--surface2);border-color:var(--encre)}
+table.ligue{width:100%;border-collapse:collapse;font-size:.95rem}
+table.ligue th{text-align:left;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--encre2);padding:8px 6px;border-bottom:1px solid var(--trait)}
+table.ligue td{padding:10px 6px;border-bottom:1px solid var(--trait)}
+table.ligue tr.moi td{background:var(--surface2);font-weight:600}
+table.ligue td:last-child,table.ligue th:last-child{text-align:right}
+.joueur{background:none;text-align:left;font-weight:inherit;text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--trait2)}
+
+/* Boîte */
+.depot{border:1.5px dashed var(--trait2);border-radius:18px;padding:22px;text-align:center;background:var(--surface)}
+.depot input{width:100%;margin-top:12px;border:1px solid var(--trait2);border-radius:12px;padding:12px 14px;background:var(--fond);color:var(--encre);font:inherit;min-height:48px}
+.file{margin-top:16px;display:grid;gap:8px}
+.file .item{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center;padding:12px 14px;background:var(--surface);border:1px solid var(--trait);border-radius:14px}
+.etat{font-size:.76rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;border-radius:6px;padding:2px 8px;border:1px solid var(--trait2);color:var(--encre2)}
+.etat.ok{color:var(--succes);border-color:var(--succes)}
+
+/* Confiance */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin:12px 0}
+.stat{background:var(--surface2);border-radius:14px;padding:12px 14px}
+.stat b{font-family:var(--serif);font-weight:500;font-size:1.6rem;display:block}
+.stat small{color:var(--encre2)}
+.barre-abc{display:flex;height:12px;border-radius:6px;overflow:hidden;margin:8px 0 6px}
+.barre-abc i{display:block;height:100%}
+.aide{position:fixed;left:50%;bottom:76px;transform:translateX(-50%);background:var(--surface);border:1px solid var(--trait2);border-radius:999px;padding:6px 14px;font-size:.8rem;color:var(--encre2);z-index:32;display:none}
+@media (min-width:900px){.aide{display:block;bottom:18px}}
+@media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}}
+</style>
+
+<div class="bandeau">
+  <div><b>L'Académie</b> <span class="muted">· maquette cliquable du 02/09/2026 · données fictives</span></div>
+  <div class="actions">
+    <button class="btn-ghost" id="theme" aria-label="Basculer nuit ou papier">Papier</button>
+  </div>
+</div>
+
+<div class="app" id="app" style="--accent:var(--d4)">
+  <nav class="rail" aria-label="Navigation">
+    <button class="seance" data-go="salle" title="Séance du jour"><svg viewBox="0 0 24 24"><path d="M12 3v18M5 10l7-7 7 7"/></svg>Séance</button>
+    <button data-tab="arbre" aria-current="page"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 9V4M12 15v5M9 12H4M15 12h5M6 6l3 3M18 6l-3 3M6 18l3-3M18 18l-3-3"/></svg>Arbre</button>
+    <button data-tab="cercle"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="10" r="2.5"/><path d="M3 19c0-3.3 2.7-6 6-6s6 2.7 6 6M14 19c0-2.2 1.3-4 3-4s3 1.8 3 4"/></svg>Cercle</button>
+    <button data-tab="boite"><svg viewBox="0 0 24 24"><path d="M3 9l9-5 9 5v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1zM3 9l9 5 9-5M12 14v7"/></svg>Boîte</button>
+    <button data-tab="profil"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg>Profil</button>
+  </nav>
+
+  <main class="contenu">
+
+    <!-- ARBRE -->
+    <section class="ecran actif" id="ecran-arbre" aria-label="Arbre du métier">
+      <div class="cap" id="cap">
+        <div>
+          <div class="eyebrow">Lundi · fondations</div>
+          <div class="jour">9 cartes t'attendent, dont 5 du socle.</div>
+          <div class="detail">Le socle d'abord ce matin ; le neuf attend mardi. S'arrêter tôt reste une séance.</div>
+        </div>
+        <button class="btn plein" data-go="salle">Commencer</button>
+      </div>
+      <div class="entete">
+        <div>
+          <div class="eyebrow">Gestionnaire de copropriété</div>
+          <h1>Ton arbre</h1>
+        </div>
+        <div class="ligne"><span class="pastille"><span class="dot"></span>Socle 62 %</span><span class="pastille">Junior</span></div>
+      </div>
+      <div class="arbre-wrap">
+        <svg id="arbre" viewBox="0 0 800 760" role="group" aria-label="Arbre des dix domaines autour du socle"></svg>
+        <div class="legende"><span><i class="plein"></i>validé</span><span><i></i>en cours</span><span><i class="brume"></i>inconnu</span><span>· les niveaux 4 et 5 s'estompent vers le bord</span></div>
+      </div>
+      <p class="muted" style="margin:12px 2px 0;font-size:.92rem">Touche un domaine : « ce matin, compta ». Le moteur choisit l'exercice, tu choisis où aller et combien de temps.</p>
+    </section>
+
+    <!-- DOMAINE -->
+    <section class="ecran" id="ecran-domaine" aria-label="Vue d'un domaine">
+      <button class="btn creux petit" data-tab="arbre" style="margin-bottom:12px">← Arbre</button>
+      <div class="entete">
+        <div><div class="eyebrow" id="dom-eyebrow">Domaine 4 · socle niveau 3</div><h1 id="dom-titre">Comptabilité et finances</h1></div>
+        <div class="ligne"><span class="pastille" id="dom-pct"><span class="dot"></span>58 % · en cours</span><span class="pastille">B</span></div>
+      </div>
+      <div class="props">
+        <button class="prop principal" data-go="salle"><b>Réviser</b><small>6 cartes dues · 2 rappels d'ailleurs</small></button>
+        <button class="prop" data-go="salle"><b>Continuer</b><small>Le fonds de travaux · 3 cartes neuves</small></button>
+        <button class="prop" data-go="etude"><b>Étudier</b><small>Avances et emprunt collectif · 45 min</small></button>
+        <button class="prop" disabled style="opacity:.5"><b>Épreuve</b><small>ouvre à 75 %</small></button>
+        <button class="prop" data-go="salle"><b>Au hasard</b><small>un exercice dans les nœuds ouverts</small></button>
+      </div>
+      <div class="branches" id="branches"></div>
+      <p class="muted" style="font-size:.88rem">Un pointillé signale un prérequis dans un autre domaine (Procédure, Droit). Un nœud flou est encore inconnu ; sa forme est visible, pas son contenu.</p>
+    </section>
+
+    <!-- PROFIL -->
+    <section class="ecran" id="ecran-profil" aria-label="Profil">
+      <div class="entete"><div><div class="eyebrow">Carte de visite</div><h1>JB</h1></div><button class="btn creux petit" data-go="confiance">Pourquoi croire ce professeur ?</button></div>
+      <div class="bento">
+        <div class="tuile t1 visite">
+          <svg class="socle-ring" viewBox="0 0 120 120"><circle class="fond" cx="60" cy="60" r="52"/><circle class="val" cx="60" cy="60" r="52" stroke-dasharray="326.7" stroke-dashoffset="124.2"/><text x="60" y="60">62 %</text></svg>
+          <div><div class="eyebrow">Socle</div><h2>Junior · gestionnaire de copropriété</h2><p class="muted" style="margin:6px 0 0">Compta et procédure sont tes branches les plus en retard. Une étude de 45 minutes ferait passer la compta de 58 à 66 %.</p></div>
+        </div>
+        <div class="tuile"><div class="eyebrow">Séances</div><div class="gros num">34</div><small class="muted">ne descend jamais</small></div>
+        <div class="tuile"><div class="eyebrow">Calibration</div><div class="gros num">71 %</div><small class="muted">tu sais quand tu ne sais pas</small></div>
+        <div class="tuile t2"><div class="eyebrow">Régularité · 18 semaines</div><div class="heat" id="heat"></div></div>
+        <div class="tuile t2"><div class="eyebrow">Points de savoir</div><div class="ligne" style="gap:24px;margin-top:6px"><div><div class="gros num">1 430</div><small class="muted">cumulé</small></div><div><div class="gros num" style="color:var(--encre2)">1 260</div><small class="muted">à jour</small></div></div></div>
+        <div class="tuile t2"><div class="eyebrow">Insignes</div>
+          <div class="insignes">
+            <div class="insigne" title="Droit de la copropriété · validé le 12/08/2026"><svg viewBox="0 0 24 24"><path d="M12 3v18M4 8h16M6 8l-3 6h6zM18 8l-3 6h6z"/></svg></div>
+            <div class="insigne" title="Dossier · Un impayé de dix-huit mois · 21/08/2026"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8 10h8M8 14h5"/></svg></div>
+            <div class="insigne verrou" title="Comptabilité · pas encore"><svg viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></div>
+          </div>
+        </div>
+        <div class="tuile t3"><div class="eyebrow">Bilan d'août</div>
+          <ul class="liste"><li><span>Cartes stabilisées</span><span>87</span></li><li><span>Domaine qui a le plus bougé</span><span>Droit, +19 points</span></li><li><span>Erreur récurrente</span><span>art. 25 et 25-1, « lu trop vite »</span></li><li><span>Le nœud le plus dur</span><span>Les clés de répartition</span></li></ul>
+          <button class="btn creux petit" style="margin-top:12px">Partager ce bilan (image)</button>
+        </div>
+        <div class="tuile"><div class="eyebrow">Carnet d'erreurs</div><p class="muted" style="margin:6px 0 0;font-size:.9rem">12 notes. Privé, toujours.</p></div>
+        <div class="tuile t2"><div class="eyebrow">Réglages</div>
+          <ul class="liste"><li><span>Semaine type</span><span>par défaut</span></li><li><span>Thème</span><span>système</span></li><li><span>Rappel</span><span>8h05, silencieux si fait</span></li><li><span>Visible par les autres</span><span>tout sauf Cabinet</span></li><li><span>Exporter mon journal</span><span>JSON · Anki</span></li></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CERCLE -->
+    <section class="ecran" id="ecran-cercle" aria-label="Cercle">
+      <div class="entete"><div><div class="eyebrow">Service copropriété · Angers</div><h1>Le cercle</h1></div></div>
+      <div class="onglets" role="tablist">
+        <button role="tab" aria-selected="true" data-onglet="fil">Fil</button>
+        <button role="tab" aria-selected="false" data-onglet="ligue">Ligue</button>
+        <button role="tab" aria-selected="false" data-onglet="defis">Défis</button>
+      </div>
+      <div id="onglet-fil" class="fil">
+        <div class="tuile jalon"><div class="avatar-arbre"><svg viewBox="0 0 30 30"><circle cx="15" cy="15" r="4" fill="var(--d3)"/><circle cx="15" cy="5" r="2.5" fill="var(--d1)"/><circle cx="24" cy="12" r="2.5" fill="var(--d2)"/><circle cx="6" cy="12" r="2.5" fill="var(--trait2)"/><circle cx="8" cy="24" r="2.5" fill="var(--d4)"/><circle cx="22" cy="24" r="2.5" fill="var(--trait2)"/></svg></div><div><b>Lucas</b> a validé <b>Sinistres et assurances</b>.<br><small class="muted">hier · épreuve à 87 %</small></div><button class="kudos" aria-pressed="false">Kudos · 3</button></div>
+        <div class="tuile jalon"><div class="avatar-arbre"><svg viewBox="0 0 30 30"><circle cx="15" cy="15" r="4" fill="var(--d1)"/><circle cx="15" cy="5" r="2.5" fill="var(--d1)"/><circle cx="24" cy="12" r="2.5" fill="var(--trait2)"/><circle cx="6" cy="12" r="2.5" fill="var(--d3)"/><circle cx="8" cy="24" r="2.5" fill="var(--trait2)"/><circle cx="22" cy="24" r="2.5" fill="var(--d4)"/></svg></div><div><b>Florence</b> a réussi le dossier <b>Un dégât des eaux du 5e au 2e</b>.<br><small class="muted">lundi</small></div><button class="kudos" aria-pressed="true">Kudos · 5</button></div>
+        <div class="tuile jalon"><div class="avatar-arbre"><svg viewBox="0 0 30 30"><circle cx="15" cy="15" r="4" fill="var(--d4)"/><circle cx="15" cy="5" r="2.5" fill="var(--d1)"/><circle cx="24" cy="12" r="2.5" fill="var(--d2)"/><circle cx="6" cy="12" r="2.5" fill="var(--d3)"/><circle cx="8" cy="24" r="2.5" fill="var(--d4)"/><circle cx="22" cy="24" r="2.5" fill="var(--trait2)"/></svg></div><div><b>JB</b> est passé <b>Junior</b>.<br><small class="muted">la semaine dernière</small></div><button class="kudos" aria-pressed="false">Kudos · 2</button></div>
+        <p class="muted" style="font-size:.86rem">Le fil ne montre que des jalons. Jamais une séance, jamais un score, jamais un carnet.</p>
+      </div>
+      <div id="onglet-ligue" hidden>
+        <p class="muted" style="margin:0 0 10px;font-size:.92rem">Semaine 36 · facultative · cartes stabilisées × niveau, tronc commun.</p>
+        <table class="ligue"><thead><tr><th>#</th><th>Joueur</th><th>Titre</th><th>Score</th></tr></thead><tbody>
+          <tr><td>1</td><td><button class="joueur" data-go="autre">Lucas</button></td><td>Confirmé</td><td class="num">212</td></tr>
+          <tr><td>2</td><td><button class="joueur" data-go="autre">Florence</button></td><td>Gestionnaire</td><td class="num">176</td></tr>
+          <tr><td>3</td><td><button class="joueur" data-go="autre">Hugo</button></td><td>Junior</td><td class="num">141</td></tr>
+          <tr class="moi"><td>4</td><td>JB</td><td>Junior</td><td class="num">138</td></tr>
+          <tr><td>5</td><td><button class="joueur" data-go="autre">Caroline</button></td><td>Apprentie</td><td class="num">64</td></tr>
+        </tbody></table>
+        <p class="muted" style="font-size:.86rem">Ta ligne est mise en avant ; le podium n'est pas plus gros que le reste. La ligue se coupe d'elle-même si elle te fait jouer moins.</p>
+      </div>
+      <div id="onglet-defis" hidden>
+        <div class="tuile"><div class="eyebrow">Défi de Florence · expire dans 31 h</div><h2 style="font-size:1.3rem;margin:6px 0">Les majorités · 10 cartes</h2><p class="muted" style="margin:0 0 12px">Même tirage, chacun à son heure. Comparaison à la fin.</p><button class="btn plein" data-go="salle">Jouer le défi</button></div>
+      </div>
+    </section>
+
+    <!-- BOÎTE -->
+    <section class="ecran" id="ecran-boite" aria-label="Boîte">
+      <div class="entete"><div><div class="eyebrow">À glisser dans l'Académie</div><h1>La boîte</h1></div></div>
+      <div class="depot">
+        <div class="serif" style="font-size:1.2rem">Un mot, un lien, une capture, un PDF.</div>
+        <p class="muted" style="margin:6px 0 0;font-size:.92rem">Le Mac en fera un chapitre satellite, avec ses sources et ses trous. Il sera jouable tout de suite, peu importe où tu en es.</p>
+        <input id="boite-in" placeholder="chaudière hybride…" aria-label="Glisser un mot ou un lien">
+        <button class="btn plein" style="margin-top:10px" id="boite-ok">Glisser</button>
+      </div>
+      <div class="file" id="file">
+        <div class="item"><div><b>chaudière hybride</b><br><small class="muted">mot-clé · 02/09</small></div><span class="etat">à traiter</span></div>
+        <div class="item"><div><b>Cass. 3e civ., 11 juillet 2024 (arrêt sur les charges)</b><br><small class="muted">lien · 30/08</small></div><span class="etat ok">satellite proposé → Droit · Charges</span></div>
+        <div class="item"><div><b>« Je n'ai pas su répondre sur la répartition eau froide »</b><br><small class="muted">sortie de réunion · 28/08</small></div><span class="etat ok">rattaché · Compta · Les clés de répartition</span></div>
+      </div>
+    </section>
+
+    <!-- CONFIANCE -->
+    <section class="ecran" id="ecran-confiance" aria-label="Pourquoi croire ce professeur">
+      <button class="btn creux petit" data-tab="profil" style="margin-bottom:12px">← Profil</button>
+      <div class="entete"><div><div class="eyebrow">Comptabilité et finances</div><h1>Pourquoi croire ce professeur ?</h1></div></div>
+      <div class="tuile">
+        <div class="eyebrow">Qui a écrit</div>
+        <p style="margin:6px 0 0">Claude Opus (versions 4.8 et 5) : 184 cartes · JB : 9 cartes · relecture par agent frais : 100 % des cartes servies.</p>
+        <div class="eyebrow" style="margin-top:16px">Notes de confiance</div>
+        <div class="barre-abc"><i style="width:61%;background:var(--succes)"></i><i style="width:27%;background:var(--accent)"></i><i style="width:12%;background:var(--erreur)"></i></div>
+        <div class="stats"><div class="stat"><b>61 %</b><small>A · deux sources concordantes, relue, fraîche</small></div><div class="stat"><b>27 %</b><small>B · une source primaire</small></div><div class="stat"><b>12 %</b><small>C · à recouper ou sans source</small></div><div class="stat"><b>3 %</b><small>sans source retrouvée, avoué</small></div></div>
+        <div class="eyebrow" style="margin-top:8px">Comment c'est vérifié</div>
+        <ul class="liste"><li><span>Rejet par la double passe (dernier lot)</span><span>9 %</span></li><li><span>Échantillon lu par JB</span><span>20 cartes, 1 erreur</span></li><li><span>Audit croisé (autre modèle, 14/08)</span><span>30 cartes, 2 désaccords</span></li><li><span>Signalements des joueurs</span><span>4, traités en 2 jours</span></li><li><span>Cartes périmées retirées cette année</span><span>6</span></li><li><span>Trous nommés</span><span>2 (annexes fictives, jeu d'écritures)</span></li></ul>
+        <p class="muted" style="font-size:.9rem;margin-bottom:0">Toutes les sources sont imparfaites. Ce que cette page garantit, c'est qu'on sait qui a écrit, avec quoi, et ce qui a été trouvé faux depuis.</p>
+      </div>
+    </section>
+
+    <!-- PROFIL D'UN AUTRE -->
+    <section class="ecran" id="ecran-autre" aria-label="Profil d'un autre joueur">
+      <button class="btn creux petit" data-tab="cercle" style="margin-bottom:12px">← Cercle</button>
+      <div class="tuile visite">
+        <svg class="socle-ring" viewBox="0 0 120 120"><circle class="fond" cx="60" cy="60" r="52"/><circle class="val" cx="60" cy="60" r="52" stroke-dasharray="326.7" stroke-dashoffset="52" style="stroke:var(--d3)"/><text x="60" y="60">84 %</text></svg>
+        <div><div class="eyebrow">Confirmé · socle validé</div><h2>Lucas</h2><p class="muted" style="margin:6px 0 0">412 séances · 3 insignes affichés · Cabinet masqué.</p><div class="ligne" style="margin-top:12px;gap:8px"><button class="btn creux petit">Kudos</button><button class="btn creux petit">Lancer un défi</button></div></div>
+      </div>
+      <p class="muted" style="font-size:.88rem;margin-top:12px">Tu vois son arbre et ses jalons. Tu ne verras jamais son carnet d'erreurs, ses réponses ni ses temps.</p>
+    </section>
+
+    <!-- ÉTUDE (aperçu) -->
+    <section class="ecran" id="ecran-etude" aria-label="Étude">
+      <button class="btn creux petit" data-tab="domaine" style="margin-bottom:12px">← Domaine</button>
+      <div class="entete"><div><div class="eyebrow">Étude · 45 à 90 min</div><h1>Avances et emprunt collectif</h1></div><span class="pastille">niveau 2</span></div>
+      <div class="tuile" style="display:grid;gap:14px">
+        <div class="ligne"><span class="pastille"><span class="dot"></span>1 · Amorce</span><span>Un copropriétaire demande pourquoi on lui réclame une « avance de trésorerie » alors que le budget est voté. Que réponds-tu, avant de lire quoi que ce soit ?</span></div>
+        <div class="ligne"><span class="pastille">2 · Leçon</span><span class="muted">La fiche du chapitre, 6 minutes, un exemple travaillé sur un appel de fonds.</span></div>
+        <div class="ligne"><span class="pastille">3 · Exercices</span><span class="muted">12 cartes mélangées, confiance demandée sur les cas.</span></div>
+        <div class="ligne"><span class="pastille">4 · Synthèse</span><span class="muted">Explique à un collègue en 60 secondes la différence entre avance, provision et fonds de travaux. Liste de contrôle à cocher.</span></div>
+        <button class="btn plein" data-go="salle">Commencer l'étude</button>
+      </div>
+    </section>
+
+  </main>
+
+  <nav class="tabbar" aria-label="Navigation">
+    <button data-tab="arbre" aria-current="page"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 9V4M12 15v5M9 12H4M15 12h5M6 6l3 3M18 6l-3 3M6 18l3-3M18 18l-3-3"/></svg>Arbre</button>
+    <button data-tab="cercle"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="10" r="2.5"/><path d="M3 19c0-3.3 2.7-6 6-6s6 2.7 6 6M14 19c0-2.2 1.3-4 3-4s3 1.8 3 4"/></svg>Cercle</button>
+    <button data-tab="boite"><svg viewBox="0 0 24 24"><path d="M3 9l9-5 9 5v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1zM3 9l9 5 9-5M12 14v7"/></svg>Boîte</button>
+    <button data-tab="profil"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg>Profil</button>
+  </nav>
+  <button class="fab" data-go="salle" id="fab"><svg viewBox="0 0 24 24" style="width:18px;height:18px;stroke:#0F1521;fill:none;stroke-width:2;stroke-linecap:round"><path d="M12 3v18M5 10l7-7 7 7"/></svg>Séance</button>
+  <div class="aide">Espace révèle · 1 à 4 notent · Échap sort</div>
+</div>
+
+<!-- Feuille du nœud -->
+<div class="voile" id="voile"></div>
+<aside class="feuille" id="feuille" aria-label="Fiche du nœud">
+  <div class="poignee"></div>
+  <div class="ligne" style="gap:8px"><span class="pastille" id="f-branche"><span class="dot"></span>Budget</span><span class="pastille" id="f-niveau">niveau 2</span><span class="pastille" id="f-lettre">B</span></div>
+  <h2 id="f-titre">Le fonds de travaux</h2>
+  <p class="muted" id="f-etat" style="margin:0">En cours · 40 % · vu il y a 3 jours</p>
+  <ul class="objectifs" id="f-obj"><li>Dire à quoi sert le fonds et qui l'alimente.</li><li>Donner le taux minimal et ce qui le fait varier.</li><li>Expliquer pourquoi il ne se rembourse pas à la vente.</li></ul>
+  <div class="prov">Généré par Claude Opus le 21/08/2026 · 2 sources concordantes · relu le 22/08 · vérifié le 30/08</div>
+  <div class="actions"><button class="btn plein" data-go="salle">Réviser · 4 dues</button><button class="btn creux" data-go="etude">Étudier · 45 min</button><button class="btn creux" style="grid-column:span 2">Lire la fiche de rappel</button></div>
+</aside>
+
+<!-- Salle -->
+<div class="salle" id="salle" role="dialog" aria-label="Séance">
+  <div class="salle-barre"><button class="x" id="sortir" aria-label="Quitter la séance">×</button><div class="progres"><i id="progres"></i></div><span class="muted num" id="compteur">1 / 3</span></div>
+  <div class="salle-corps" id="corps"></div>
+  <div class="pied"><div class="interieur" id="pied"></div></div>
+</div>
+
+<script>
+(function(){
+  const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
+  const app=$('#app');
+  const D=[
+    {cle:'droit',titre:'Droit de la copropriété',mono:'Dr',rang:1,pct:.78,etat:'validé',lettre:'A'},
+    {cle:'pathologie',titre:'Bâtiment et pathologie',mono:'Bâ',rang:2,pct:.41,etat:'en cours',lettre:'B'},
+    {cle:'equipements',titre:'Technique des équipements',mono:'Éq',rang:3,pct:.22,etat:'en cours',lettre:'B'},
+    {cle:'comptabilite',titre:'Comptabilité et finances',mono:'Co',rang:4,pct:.58,etat:'en cours',lettre:'B'},
+    {cle:'sinistres',titre:'Sinistres et assurances',mono:'Si',rang:5,pct:.66,etat:'à revoir',lettre:'A'},
+    {cle:'procedure',titre:'Procédure et justice',mono:'Pr',rang:6,pct:.12,etat:'en cours',lettre:'B'},
+    {cle:'travaux',titre:'Travaux, marchés et plans',mono:'Tr',rang:7,pct:0,etat:'ouvert',lettre:''},
+    {cle:'energie',titre:'Énergie et rénovation',mono:'Én',rang:8,pct:0,etat:'ouvert',lettre:''},
+    {cle:'immobilier',titre:'Propriété et urbanisme',mono:'Im',rang:9,pct:0,etat:'inconnu',lettre:''},
+    {cle:'cabinet',titre:'Le cabinet',mono:'Ca',rang:10,pct:0,etat:'inconnu',lettre:''},
+  ];
+  const BR={
+    comptabilite:[
+      {t:'Les bases',n:[['Débit et crédit',1,1,'A'],['Actif et passif',1,1,'A'],['Engagement et trésorerie',2,.9,'A'],['Pourquoi pas de bilan',2,.6,'B'],['Histoire de la partie double',4,0,'']]},
+      {t:'Budget',n:[['Le budget prévisionnel',1,1,'A'],['Les appels de fonds',1,.8,'A'],['Le fonds de travaux',2,.4,'B'],['Avances et emprunt',2,0,'B'],['Construire un budget',3,0,'']]},
+      {t:'Les cinq annexes',n:[['L\'état financier',1,.7,'A'],['Le compte de gestion',1,.5,'A'],['Par clé de répartition',2,0,'B'],['Lire pour le CS',3,0,''],['Limites du décret',4,0,'']]},
+      {t:'Impayés',n:[['Relance et mise en demeure',1,.9,'A'],['Les frais imputables',2,.3,'B'],['Du comptable au juge ⇢ Procédure',2,0,'B'],['Le plan de recouvrement',3,0,'']]},
+      {t:'Factures et TVA',n:[['Mentions d\'une facture',1,.2,'A'],['La TVA à 20, 10, 5,5 %',2,0,'B'],['Refuser une facture',3,0,'']]},
+      {t:'Contrôle',n:[['Approbation et quitus',1,0,'A'],['Les anomalies classiques',2,0,'B'],['L\'audit d\'un arrêté',3,0,'']]},
+    ],
+    droit:[
+      {t:'Statut',n:[['Qu\'est-ce qu\'une copropriété',1,1,'A'],['Lots, privatif, commun',1,1,'A'],['Parties communes spéciales',2,1,'A'],['Histoire de la loi de 1965',4,.3,'B']]},
+      {t:'Assemblée',n:[['La convocation',1,1,'A'],['L\'ordre du jour',2,1,'A'],['Vote par correspondance',2,.8,'A'],['Diagnostiquer une convocation',3,.7,'A']]},
+      {t:'Majorités',n:[['Article 24',1,1,'A'],['Article 25 et passerelle',1,.9,'A'],['Article 26 et unanimité',1,1,'A'],['Le tableau par décision',3,.6,'A'],['L\'abus de majorité',4,0,'']]},
+      {t:'Charges',n:[['Générales et spéciales',1,1,'A'],['Les clés de répartition',2,.5,'B'],['Répondre à une contestation',3,.2,'']]},
+    ]
+  };
+  const generique=(d)=>[{t:'Branche 1',n:[['Repères',1,d.pct,'B'],['Mécanismes',2,Math.max(0,d.pct-.3),''],['Praticien',3,0,'']]},{t:'Branche 2',n:[['Repères',1,Math.max(0,d.pct-.1),'B'],['Mécanismes',2,0,''],['Praticien',3,0,'']]},{t:'Branche 3',n:[['Repères',1,0,''],['Mécanismes',2,0,''],['Doctrine',4,0,'']]}];
+
+  let ecranActif='arbre', dom=D[3];
+  function accent(d){app.style.setProperty('--accent',`var(--d${d.rang})`)}
+  function montre(id){
+    ecranActif=id;
+    $$('.ecran').forEach(e=>e.classList.toggle('actif',e.id==='ecran-'+id));
+    const onglet={domaine:'arbre',confiance:'profil',autre:'cercle',etude:'arbre'}[id]||id;
+    $$('[data-tab]').forEach(b=>{ if(b.closest('.tabbar,.rail')) b.setAttribute('aria-current',b.dataset.tab===onglet?'page':'false')});
+    window.scrollTo({top:0});
+  }
+  document.addEventListener('click',e=>{
+    const t=e.target.closest('[data-tab],[data-go]'); if(!t) return;
+    if(t.dataset.tab){ montre(t.dataset.tab); if(t.dataset.tab==='arbre') accent(D[3]); }
+    if(t.dataset.go==='salle'){ fermeFeuille(); ouvreSalle(); }
+    if(t.dataset.go==='etude'){ fermeFeuille(); montre('etude'); }
+    if(t.dataset.go==='confiance'){ montre('confiance'); }
+    if(t.dataset.go==='autre'){ montre('autre'); }
+  });
+
+  /* ---- Arbre global (SVG) ---- */
+  function arbre(){
+    const svg=$('#arbre'); const cx=400, cy=390, R=238; const ns='http://www.w3.org/2000/svg';
+    const el=(n,a={},txt)=>{const x=document.createElementNS(ns,n);for(const k in a)x.setAttribute(k,a[k]);if(txt!=null)x.textContent=txt;return x};
+    const gLiens=el('g'), gSil=el('g'), gN=el('g');
+    svg.append(gLiens,gSil,gN);
+    // tronc
+    const tronc=el('g',{class:'tronc noeud',tabindex:0,role:'button','aria-label':'Socle commun, 62 %'});
+    tronc.append(el('circle',{class:'fond',cx,cy,r:66}));
+    tronc.append(el('circle',{class:'anneau-fond',cx,cy,r:66}));
+    const c=2*Math.PI*66; const a=el('circle',{class:'anneau',cx,cy,r:66,stroke:'var(--encre)','stroke-dasharray':c,'stroke-dashoffset':c*(1-.62)}); tronc.append(a);
+    tronc.append(el('text',{class:'mono',x:cx,y:cy-8,style:'font-size:30px'},'62 %'));
+    tronc.append(el('text',{class:'sous',x:cx,y:cy+18},'socle'));
+    gN.append(tronc);
+    D.forEach((d,i)=>{
+      const ang=(-90+i*36)*Math.PI/180; const x=cx+Math.cos(ang)*R, y=cy+Math.sin(ang)*R;
+      d.x=x; d.y=y;
+      const mx=cx+Math.cos(ang)*120, my=cy+Math.sin(ang)*120;
+      gLiens.append(el('path',{class:'lien'+(d.etat==='inconnu'?' pale':''),d:`M${cx+Math.cos(ang)*68} ${cy+Math.sin(ang)*68} Q${mx} ${my} ${x-Math.cos(ang)*34} ${y-Math.sin(ang)*34}`}));
+      // silhouettes (chapitres lointains, canopée)
+      for(let k=-1;k<=1;k++){
+        const a2=ang+k*0.22, r2=R+86+(k===0?24:0); const sx=cx+Math.cos(a2)*r2, sy=cy+Math.sin(a2)*r2;
+        gLiens.append(el('path',{class:'lien pale',d:`M${x+Math.cos(a2)*32} ${y+Math.sin(a2)*32} L${sx} ${sy}`}));
+        gSil.append(el('circle',{class:'silhouette',cx:sx,cy:sy,r:k===0?11:9,opacity:k===0?.9:.6}));
+        if(k!==0){ const a3=a2+k*0.1, r3=r2+46; gSil.append(el('circle',{class:'silhouette',cx:cx+Math.cos(a3)*r3,cy:cy+Math.sin(a3)*r3,r:6,opacity:.3})); }
+      }
+      const g=el('g',{class:'noeud',tabindex:0,role:'button','aria-label':`${d.titre}, ${d.etat}, ${Math.round(d.pct*100)} %`});
+      const r=32, circ=2*Math.PI*r;
+      g.append(el('circle',{class:'disque',cx:x,cy:y,r}));
+      if(d.etat==='inconnu'){ g.append(el('circle',{class:'silhouette',cx:x,cy:y,r})); }
+      else{
+        g.append(el('circle',{class:'anneau-fond',cx:x,cy:y,r}));
+        g.append(el('circle',{class:'anneau',cx:x,cy:y,r,stroke:d.etat==='à revoir'?'var(--encre3)':`var(--d${d.rang})`,'stroke-dasharray':circ,'stroke-dashoffset':circ*(1-d.pct),'stroke-dasharray':d.etat==='à revoir'?`${circ}`:circ}));
+        g.append(el('text',{class:'mono',x,y,fill:`var(--d${d.rang})`},d.mono));
+        if(d.lettre) g.append(el('text',{class:'lettre',x:x+26,y:y-26},d.lettre));
+      }
+      const lab=el('text',{class:'titre',x,y:y+52},d.etat==='inconnu'?'···':d.titre.length>22?d.titre.slice(0,21)+'…':d.titre); g.append(lab);
+      g.append(el('text',{class:'sous',x,y:y+67},d.etat==='inconnu'?'inconnu':d.etat==='à revoir'?'à revoir · vu il y a 47 j':d.etat==='ouvert'?'ouvert':`${Math.round(d.pct*100)} % · ${d.etat}`));
+      const go=()=>{ if(d.etat==='inconnu') return; dom=d; accent(d); domaine(d); montre('domaine'); };
+      g.addEventListener('click',go); g.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();go()}});
+      gN.append(g);
+    });
+  }
+
+  /* ---- Vue domaine ---- */
+  function domaine(d){
+    $('#dom-titre').textContent=d.titre; $('#dom-eyebrow').textContent=`Domaine ${d.rang} · socle niveau ${d.rang===1||d.rang===4||d.rang===10?3:2}`;
+    $('#dom-pct').innerHTML=`<span class="dot"></span>${Math.round(d.pct*100)} % · ${d.etat}`;
+    const br=BR[d.cle]||generique(d); const wrap=$('#branches'); wrap.innerHTML='';
+    br.forEach(b=>{
+      const col=document.createElement('div'); col.className='branche'; col.innerHTML=`<h3>${b.t}</h3>`;
+      const ch=document.createElement('div'); ch.className='chaine';
+      b.n.forEach(([t,niv,pct,let_],i)=>{
+        const etat=pct>=.75?'solide':pct>0?'en cours':(i===0||b.n[i-1][2]>0)?'ouvert':'inconnu';
+        const btn=document.createElement('button'); btn.className='nd '+(etat==='inconnu'?'inconnu':'');
+        btn.style.setProperty('--clip',`inset(0 ${Math.round((1-pct)*100)}% 0 0)`);
+        btn.innerHTML=`<span class="ring" aria-hidden="true">${['I','II','III','IV','V'][niv-1]}</span><span><span class="t">${t}</span><br><span class="s">${etat==='inconnu'?'niveau '+niv:etat==='ouvert'?'ouvert · niveau '+niv:Math.round(pct*100)+' % · niveau '+niv}</span></span>${let_?`<span class="lettre">${let_}</span>`:''}`;
+        if(etat!=='inconnu') btn.addEventListener('click',()=>ouvreFeuille(b.t,t,niv,pct,let_,etat));
+        ch.append(btn);
+      });
+      col.append(ch); wrap.append(col);
+    });
+  }
+
+  /* ---- Feuille ---- */
+  function ouvreFeuille(br,t,niv,pct,let_,etat){
+    $('#f-branche').innerHTML=`<span class="dot"></span>${br}`; $('#f-niveau').textContent='niveau '+niv; $('#f-lettre').textContent=let_||'—'; $('#f-lettre').style.display=let_?'':'none';
+    $('#f-titre').textContent=t; $('#f-etat').textContent=etat==='ouvert'?'Ouvert · jamais joué':`${etat} · ${Math.round(pct*100)} % · vu il y a 3 jours`;
+    $('#voile').classList.add('ouvert'); $('#feuille').classList.add('ouvert');
+  }
+  function fermeFeuille(){ $('#voile').classList.remove('ouvert'); $('#feuille').classList.remove('ouvert'); }
+  $('#voile').addEventListener('click',fermeFeuille);
+
+  /* ---- Salle ---- */
+  const CARTES=[
+    {type:'QCM',dom:'Droit',niv:2,q:'Un projet relevant de l\'article 25 recueille 30 % des voix de tous les copropriétaires, sans obtenir la majorité. Que se passe-t-il ?',
+      choix:[['On revote immédiatement à la majorité de l\'article 24.',true,''],['Le projet est rejeté ; il faudra le réinscrire à une prochaine assemblée.',false,'C\'est ce qui arrive sous le tiers : la passerelle ne s\'ouvre pas.'],['Une seconde assemblée est convoquée dans les trois mois.',false,'La seconde assemblée dans les trois mois concerne l\'article 26 quand le projet a recueilli au moins la moitié des voix (25-1 al. 2, ancien régime), pas ce cas.'],['Le syndic tranche.',false,'Le syndic n\'a aucun pouvoir de décision sur une résolution.']],
+      expl:'Le seuil qui ouvre la passerelle est le tiers des voix de tous les copropriétaires (article 25-1). Il est atteint : le second vote a lieu tout de suite, en séance, à la majorité des présents et représentés.',vig:'Le second vote a lieu immédiatement, dans la même assemblée. Une AG qui le renvoie fait une erreur de procédure.',
+      src:{txt:'Art. 25-1, loi du 10 juillet 1965',nat:'texte officiel',url:'#',lettre:'A'},prov:'Généré par Claude Opus le 21/08/2026 · 2 sources concordantes (Légifrance, ANIL) · relu le 22/08 · vérifié le 30/08',confiance:true},
+    {type:'Flash',dom:'Bâtiment',niv:1,q:'Une maçonnerie de blocs fissure quelques semaines après son montage, avant toute mise en charge. Quelle cause envisager en premier ?',
+      rep:'Le retrait différentiel : le mortier de pose se rétracte en perdant son eau, alors que les blocs préfabriqués ont déjà fini leur retrait.',expl:'Deux matériaux qui ne bougent pas au même rythme se séparent à leur jonction. C\'est une fissuration de mise en œuvre, pas un problème de sol ni de structure.',vig:'Le repère utile est le délai : très tôt après le montage. Une fissure qui naît des années après relève d\'autre chose.',
+      src:{txt:'Fiche pathologie B.03, AQC, 2024',nat:'norme',url:'#',lettre:'A'},prov:'Généré par Claude Opus le 28/08/2026 · 1 source (AQC) · relu le 28/08',flash:true},
+    {type:'Photo',dom:'Équipements',niv:1,q:'Sur ce caisson de VMC, quel organe est signalé, et pourquoi se détend-il avec le temps ?',
+      choix:[['La courroie de transmission : elle s\'allonge par usure et par échauffement, le débit chute.',true,''],['Le filtre : il s\'encrasse et se détend.',false,'Un filtre s\'encrasse, il ne se détend pas ; il n\'est d\'ailleurs pas sur cette coupe.'],['La turbine : ses pales se déforment.',false,'La turbine est l\'organe entraîné, pas l\'organe signalé ; elle ne se « détend » pas.'],['Le moteur : ses paliers prennent du jeu.',false,'Le jeu des paliers existe mais ce n\'est pas ce que la flèche montre.']],
+      expl:'La courroie relie le moteur à la turbine. Elle s\'allonge à l\'usage ; détendue, elle patine, la turbine tourne moins vite, les débits d\'extraction chutent, l\'humidité monte dans les logements.',vig:'Une courroie détendue se voit et s\'entend (sifflement) : c\'est le premier point d\'un contrôle VMC.',
+      src:{txt:'Schéma maison d\'après DTU 68.3 et notice constructeur',nat:'norme · éditeur',url:'#',lettre:'B'},prov:'Schéma dessiné par l\'agent le 30/08/2026 · 2 sources · relu le 31/08 · à recouper : la notice est commerciale',schema:true,confiance:true},
+  ];
+  let idx=0, sur=null, choisi=null, revele=false;
+  function ouvreSalle(){ idx=0; $('#salle').classList.add('ouvert'); document.body.style.overflow='hidden'; rendCarte(); }
+  function fermeSalle(){ $('#salle').classList.remove('ouvert'); document.body.style.overflow=''; }
+  $('#sortir').addEventListener('click',fermeSalle);
+  function rendCarte(){
+    const c=CARTES[idx]; sur=null; choisi=null; revele=false;
+    $('#progres').style.width=`${(idx/CARTES.length)*100}%`; $('#compteur').textContent=`${idx+1} / ${CARTES.length}`;
+    const corps=$('#corps'), pied=$('#pied');
+    const schema=c.schema?`<svg class="schema" viewBox="0 0 520 210" aria-label="Coupe d'un caisson de VMC"><rect x="30" y="30" width="460" height="150" rx="10" class="l"/><circle cx="150" cy="105" r="38" class="l"/><circle cx="150" cy="105" r="6" class="l"/><rect x="330" y="70" width="90" height="70" rx="8" class="l"/><ellipse cx="240" cy="105" rx="98" ry="30" class="a" stroke-dasharray="6 5"/><path d="M420 105h60" class="l"/><path d="M30 105H10" class="l"/><text x="150" y="160" text-anchor="middle">turbine</text><text x="375" y="160" text-anchor="middle">moteur</text><text x="240" y="60" text-anchor="middle" style="fill:var(--accent);font-weight:700">?</text><text x="470" y="95">refoulement</text><text x="6" y="95">aspiration</text></svg><p class="dessin-note">Schéma maison, licence Académie. Aucune image d'éditeur n'est reprise.</p>`:'';
+    corps.innerHTML=`<div class="carte-tete"><span class="pastille"><span class="dot"></span>${c.dom}</span><span class="pastille">${c.type}</span><span class="muted" style="font-size:.85rem">niveau ${['I','II','III'][c.niv-1]}</span></div>
+      ${schema}<h2 class="question">${c.q}</h2>
+      ${c.choix?`<div class="choix" id="choix">${c.choix.map((x,i)=>`<button data-i="${i}">${x[0]}</button>`).join('')}</div>`:''}
+      ${c.confiance?`<div class="confiance"><span>Sûr de toi ?</span><span class="seg"><button data-sur="1" aria-pressed="false">Oui</button><button data-sur="0" aria-pressed="false">Pas vraiment</button></span></div>`:''}
+      <div class="retour" id="retour"></div>`;
+    pied.innerHTML=c.flash?`<button class="btn plein" id="reveler">Voir la réponse</button>`:`<button class="btn plein" id="valider" disabled style="opacity:.5">Valider</button>`;
+    if(c.choix) $$('#choix button').forEach(b=>b.addEventListener('click',()=>{ if(revele) return; $$('#choix button').forEach(x=>x.classList.remove('choisi')); b.classList.add('choisi'); choisi=+b.dataset.i; const v=$('#valider'); v.disabled=false; v.style.opacity=1; }));
+    $$('[data-sur]').forEach(b=>b.addEventListener('click',()=>{ $$('[data-sur]').forEach(x=>x.setAttribute('aria-pressed','false')); b.setAttribute('aria-pressed','true'); sur=b.dataset.sur==='1'; }));
+    if(c.flash) $('#reveler').addEventListener('click',()=>reveleFlash(c)); else $('#valider').addEventListener('click',()=>valide(c));
+  }
+  function ligneSource(c){ return `<div class="source-ligne"><span class="lettre" title="note de confiance">${c.src.lettre}</span><span class="nat">${c.src.nat}</span><a href="${c.src.url}">${c.src.txt}</a><span>· vérifié le 30/08/2026</span><button class="btn creux petit" style="margin-left:auto;min-height:32px;padding:4px 10px;font-size:.8rem">Cette carte est fausse</button></div><div class="prov">${c.prov}</div>`; }
+  function valide(c){
+    if(choisi==null||revele) return; revele=true;
+    const juste=c.choix[choisi][1];
+    $$('#choix button').forEach((b,i)=>{ b.classList.remove('choisi'); if(c.choix[i][1]) b.classList.add('juste'); else if(i===choisi) b.classList.add('faux'); });
+    const r=$('#retour'); r.classList.add('ouvert');
+    r.innerHTML=`<div class="verdict ${juste?'juste':'faux'}">${juste?'C\'est ça.':'Pas ça.'}</div>${!juste?`<p>${c.choix[choisi][2]}</p>`:''}<p>${c.expl}</p><p class="vig">${c.vig}</p>${!juste&&sur?`<p class="muted" style="font-size:.9rem">Tu étais sûr : c'est le moment où la correction s'imprime le mieux. Elle reviendra vite.</p>`:''}${!juste?`<p class="muted" style="font-size:.9rem">Pourquoi je me suis trompé ? <span class="ital">(une ligne, privée, facultative)</span></p>`:''}${ligneSource(c)}`;
+    $('#pied').innerHTML=`<button class="btn plein" id="suite">${idx<CARTES.length-1?'Suite':'Clôture'}</button>`; $('#suite').addEventListener('click',suite);
+    r.scrollIntoView({behavior:'smooth',block:'nearest'});
+  }
+  function reveleFlash(c){
+    if(revele) return; revele=true;
+    const r=$('#retour'); r.classList.add('ouvert'); r.innerHTML=`<div class="verdict">Réponse</div><p style="color:var(--encre)">${c.rep}</p><p>${c.expl}</p><p class="vig">${c.vig}</p>${ligneSource(c)}`;
+    $('#pied').innerHTML=`<div class="notes"><button data-n="1">À revoir</button><button data-n="2">Difficile</button><button data-n="3">Bien</button><button data-n="4">Évident</button></div>`;
+    $$('[data-n]').forEach(b=>b.addEventListener('click',suite)); r.scrollIntoView({behavior:'smooth',block:'nearest'});
+  }
+  function suite(){ idx++; if(idx<CARTES.length) rendCarte(); else cloture(); }
+  function cloture(){
+    $('#progres').style.width='100%'; $('#compteur').textContent='';
+    $('#corps').innerHTML=`<div class="cloture"><div class="eyebrow">Séance close · 3 cartes · 4 min</div><div class="grand">Deux cartes stabilisées.</div>
+      <svg class="anneau-cl" viewBox="0 0 150 150"><circle class="fond" cx="75" cy="75" r="64"/><circle class="val" id="cl-ring" cx="75" cy="75" r="64" stroke-dasharray="402" stroke-dashoffset="402"/><text x="75" y="70" text-anchor="middle" style="font-family:var(--serif);font-size:26px;fill:var(--encre)">61 %</text><text x="75" y="92" text-anchor="middle" style="font-size:11px;fill:var(--encre2)">Compta · +3</text></svg>
+      <p class="phrase">Socle à 62 %. La compta est ta branche la plus en retard ; une étude de 45 minutes la fait passer à 66 %. La carte sur l'article 25-1 revient demain.</p>
+      <p class="citation">« Si j'ai vu plus loin, c'est en montant sur les épaules de géants. »</p><small>Isaac Newton, lettre à Robert Hooke, 1675</small>
+      <div style="display:grid;gap:10px;max-width:320px;margin:26px auto 0"><button class="btn plein" id="fermer">Retour à l'arbre</button><button class="btn creux petit">Partager ce jalon (image)</button></div></div>`;
+    $('#pied').innerHTML='';
+    requestAnimationFrame(()=>requestAnimationFrame(()=>{ $('#cl-ring').style.strokeDashoffset=402*(1-.61); }));
+    $('#fermer').addEventListener('click',()=>{ fermeSalle(); montre('arbre'); accent(D[3]); });
+  }
+  document.addEventListener('keydown',e=>{
+    if(!$('#salle').classList.contains('ouvert')) { if(e.key==='Escape') fermeFeuille(); return; }
+    if(e.key==='Escape') fermeSalle();
+    if(e.key===' '&&$('#reveler')){ e.preventDefault(); $('#reveler').click(); }
+    if(e.key===' '&&$('#valider')&&!$('#valider').disabled){ e.preventDefault(); $('#valider').click(); }
+    if(/^[1-4]$/.test(e.key)){ const b=$(`[data-n="${e.key}"]`); if(b) b.click(); else if($('#choix')&&!revele){ const c=$$('#choix button')[+e.key-1]; if(c) c.click(); } }
+    if(e.key==='Enter'&&$('#suite')) $('#suite').click();
+  });
+
+  /* ---- Onglets cercle ---- */
+  $$('[data-onglet]').forEach(b=>b.addEventListener('click',()=>{ $$('[data-onglet]').forEach(x=>x.setAttribute('aria-selected','false')); b.setAttribute('aria-selected','true'); ['fil','ligue','defis'].forEach(o=>$('#onglet-'+o).hidden=o!==b.dataset.onglet); }));
+  $$('.kudos').forEach(b=>b.addEventListener('click',()=>{ const on=b.getAttribute('aria-pressed')==='true'; b.setAttribute('aria-pressed',String(!on)); const n=+b.textContent.replace(/\D/g,''); b.textContent=`Kudos · ${on?n-1:n+1}`; }));
+
+  /* ---- Boîte ---- */
+  $('#boite-ok').addEventListener('click',()=>{ const v=$('#boite-in').value.trim(); if(!v) return; const it=document.createElement('div'); it.className='item'; it.innerHTML=`<div><b>${v.replace(/</g,'&lt;')}</b><br><small class="muted">${/^https?:/.test(v)?'lien':'mot-clé'} · aujourd'hui</small></div><span class="etat">à traiter</span>`; $('#file').prepend(it); $('#boite-in').value=''; });
+
+  /* ---- Heatmap ---- */
+  (function(){ const h=$('#heat'); let s=7; for(let i=0;i<18*7;i++){ s=(s*9301+49297)%233280; const r=s/233280; const o=r<.35?.08:r<.6?.35:r<.85?.65:1; const el=document.createElement('i'); el.style.setProperty('--o',o); el.title=o>.08?'séance':'—'; h.append(el);} })();
+
+  /* ---- Thème ---- */
+  const root=document.documentElement; const btn=$('#theme');
+  function etiquette(){ const t=root.getAttribute('data-theme'); const clair=t==='light'||(t!=='dark'&&matchMedia('(prefers-color-scheme: light)').matches); btn.textContent=clair?'Nuit':'Papier'; }
+  btn.addEventListener('click',()=>{ const t=root.getAttribute('data-theme'); const clair=t==='light'||(t!=='dark'&&matchMedia('(prefers-color-scheme: light)').matches); root.setAttribute('data-theme',clair?'dark':'light'); etiquette(); });
+  etiquette();
+
+  arbre(); domaine(D[3]); accent(D[3]);
+})();
+</script>

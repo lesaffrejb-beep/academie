@@ -1,0 +1,5759 @@
+{
+ "_": "Programme du gestionnaire de copropriété en données (brouillon instruit, 02/09/2026). Fait foi sur PROGRAMME.md. Le moteur ne le lit pas encore : ACA-PROGRAMME-1 écrit son valideur. Les identifiants de chapitres sont immuables une fois une carte publiée dessus.",
+ "version": "0.1",
+ "metier": "gestionnaire de copropriété",
+ "genere_le": "2026-09-02",
+ "niveaux": {
+  "1": "Repères",
+  "2": "Mécanismes",
+  "3": "Praticien",
+  "4": "Doctrine",
+  "5": "Frontière"
+ },
+ "socle": {
+  "_": "Niveau à tenir par domaine pour valider le socle (BLUEPRINT §6). L'épreuve du gestionnaire le valide.",
+  "niveaux": {
+   "droit": 3,
+   "pathologie": 2,
+   "equipements": 2,
+   "comptabilite": 3,
+   "sinistres": 2,
+   "procedure": 2,
+   "travaux": 2,
+   "energie": 2,
+   "immobilier": 2,
+   "cabinet": 3
+  },
+  "chapitres": 315,
+  "cartes_cible": 2278
+ },
+ "semaine_type": {
+  "_": "Couleur des jours (BLUEPRINT §4). Les révisions dues sont servies tous les jours ; la couleur ne pèse que sur le neuf et les formats.",
+  "lundi": "fondations",
+  "mardi": "cours",
+  "mercredi": "terrain",
+  "jeudi": "cours",
+  "vendredi": "exploration",
+  "samedi": "etude",
+  "dimanche": "libre"
+ },
+ "positionnement": {
+  "_": "Quiz de positionnement : deux questions par domaine de l'arbre, une de niveau 1 et une de niveau 2, branches distinctes.",
+  "questions_par_domaine": 2,
+  "niveaux": [
+   1,
+   2
+  ]
+ },
+ "domaines": {
+  "droit": {
+   "titre": "Droit de la copropriété",
+   "ordre": 1,
+   "niveau_socle": 3,
+   "sources_primaires": [
+    "Loi n° 65-557 du 10 juillet 1965 (Légifrance)",
+    "Décret n° 67-223 du 17 mars 1967 (Légifrance)",
+    "Judilibre",
+    "ANIL",
+    "Service-public.fr"
+   ]
+  },
+  "pathologie": {
+   "titre": "Bâtiment et pathologie",
+   "ordre": 2,
+   "niveau_socle": 2,
+   "sources_primaires": [
+    "Fiches pathologie bâtiment AQC (texte)",
+    "Cerema",
+    "Guides ANAH",
+    "DTU (AFNOR, payant)"
+   ]
+  },
+  "equipements": {
+   "titre": "Technique des équipements",
+   "ordre": 3,
+   "niveau_socle": 2,
+   "sources_primaires": [
+    "Arrêtés et décrets applicables (ventilation, ascenseurs)",
+    "Règlement sanitaire départemental",
+    "ADEME",
+    "Guides Cerema"
+   ]
+  },
+  "comptabilite": {
+   "titre": "Comptabilité et finances de copropriété",
+   "ordre": 4,
+   "niveau_socle": 3,
+   "sources_primaires": [
+    "Décret n° 2005-240 du 14 mars 2005",
+    "Arrêté du 14 mars 2005 (plan comptable)",
+    "Loi 65-557 art. 14-1 à 14-3",
+    "ANIL",
+    "Code général des impôts (TVA)"
+   ]
+  },
+  "sinistres": {
+   "titre": "Sinistres et assurances",
+   "ordre": 5,
+   "niveau_socle": 2,
+   "sources_primaires": [
+    "Code des assurances",
+    "Code civil art. 1792 et s.",
+    "Convention IRSI (France Assureurs, organisation-pro, à recouper)"
+   ]
+  },
+  "procedure": {
+   "titre": "Procédure et justice",
+   "ordre": 6,
+   "niveau_socle": 2,
+   "sources_primaires": [
+    "Code de procédure civile",
+    "Code de l'organisation judiciaire",
+    "Loi 65-557 art. 19 à 19-2, 42",
+    "Décret 67-223 art. 55",
+    "Judilibre",
+    "justice.fr"
+   ]
+  },
+  "travaux": {
+   "titre": "Travaux, marchés et lecture de plans",
+   "ordre": 7,
+   "niveau_socle": 2,
+   "sources_primaires": [
+    "Code civil art. 1792 et s.",
+    "Code de la construction et de l'habitation",
+    "Code de l'urbanisme",
+    "AQC",
+    "Guides ANAH",
+    "NF P 03-001 (AFNOR, payant, résumé de doctrine)"
+   ]
+  },
+  "energie": {
+   "titre": "Énergie et rénovation",
+   "ordre": 8,
+   "niveau_socle": 2,
+   "sources_primaires": [
+    "ADEME",
+    "ecologie.gouv.fr",
+    "Décrets et arrêtés DPE 2021",
+    "Loi Climat et résilience",
+    "ANAH / France Rénov'",
+    "CRE"
+   ]
+  },
+  "immobilier": {
+   "titre": "Propriété, immobilier et urbanisme",
+   "ordre": 9,
+   "niveau_socle": 2,
+   "sources_primaires": [
+    "Code civil",
+    "Code de l'urbanisme",
+    "Loi n° 89-462",
+    "Loi Hoguet",
+    "ANIL",
+    "DVF"
+   ]
+  },
+  "cabinet": {
+   "titre": "Le cabinet : déontologie, contrats, relation",
+   "ordre": 10,
+   "niveau_socle": 3,
+   "sources_primaires": [
+    "Loi Hoguet et décret 72-678",
+    "Décret 2015-1090 (déontologie)",
+    "Décret 2015-342 (contrat type)",
+    "CNIL",
+    "Doctrine de négociation (ouvrages)"
+   ]
+  },
+  "culture": {
+   "titre": "Culture",
+   "ordre": 11,
+   "niveau_socle": null,
+   "arbre": false,
+   "sources_primaires": [
+    "Textes publics choisis",
+    "Presse de fond",
+    "Histoire"
+   ]
+  }
+ },
+ "branches": {
+  "droit": [
+   {
+    "cle": "statut",
+    "titre": "Le statut de la copropriété",
+    "ordre": 1,
+    "exercice_dominant": "qcm"
+   },
+   {
+    "cle": "organes",
+    "titre": "Le syndicat et ses organes",
+    "ordre": 2,
+    "exercice_dominant": "qcm"
+   },
+   {
+    "cle": "assemblee",
+    "titre": "L'assemblée générale",
+    "ordre": 3,
+    "exercice_dominant": "cas"
+   },
+   {
+    "cle": "majorites",
+    "titre": "Les majorités",
+    "ordre": 4,
+    "exercice_dominant": "qcm"
+   },
+   {
+    "cle": "charges",
+    "titre": "Les charges et leur répartition",
+    "ordre": 5,
+    "exercice_dominant": "cas"
+   },
+   {
+    "cle": "travaux",
+    "titre": "Les travaux et les parties communes",
+    "ordre": 6,
+    "exercice_dominant": "cas"
+   },
+   {
+    "cle": "mutations",
+    "titre": "Les mutations de lots",
+    "ordre": 7,
+    "exercice_dominant": "cas"
+   },
+   {
+    "cle": "responsabilites",
+    "titre": "Les responsabilités",
+    "ordre": 8,
+    "exercice_dominant": "cas"
+   }
+  ],
+  "pathologie": [
+   {
+    "cle": "materiaux",
+    "titre": "Les matériaux et leur vieillissement",
+    "ordre": 1,
+    "exercice_dominant": "photo"
+   },
+   {
+    "cle": "structure",
+    "titre": "Structure et fondations",
+    "ordre": 2,
+    "exercice_dominant": "photo"
+   },
+   {
+    "cle": "facades",
+    "titre": "Façades",
+    "ordre": 3,
+    "exercice_dominant": "photo"
+   },
+   {
+    "cle": "toitures",
+    "titre": "Toitures et étanchéité",
+    "ordre": 4,
+    "exercice_dominant": "photo"
+   },
+   {
+    "cle": "humidite",
+    "titre": "L'humidité",
+    "ordre": 5,
+    "exercice_dominant": "photo"
+   },
+   {
+    "cle": "epoques",
+    "titre": "Le bâti par époques",
+    "ordre": 6,
+    "exercice_dominant": "datation"
+   },
+   {
+    "cle": "diagnostics",
+    "titre": "Diagnostics réglementaires du bâti",
+    "ordre": 7,
+    "exercice_dominant": "qcm"
+   },
+   {
+    "cle": "visite",
+    "titre": "La visite technique",
+    "ordre": 8,
+    "exercice_dominant": "dessin"
+   }
+  ],
+  "equipements": [
+   {
+    "cle": "ventilation",
+    "titre": "Ventilation",
+    "ordre": 1,
+    "exercice_dominant": "dessin"
+   },
+   {
+    "cle": "chauffage",
+    "titre": "Chauffage collectif et eau chaude",
+    "ordre": 2,
+    "exercice_dominant": "cas"
+   },
+   {
+    "cle": "ascenseurs",
+    "titre": "Ascenseurs",
+    "ordre": 3,
+    "exercice_dominant": "photo"
+   },
+   {
+    "cle": "plomberie",
+    "titre": "Plomberie et réseaux",
+    "ordre": 4,
+    "exercice_dominant": "dessin"
+   },
+   {
+    "cle": "electricite",
+    "titre": "Électricité des communs",
+    "ordre": 5,
+    "exercice_dominant": "photo"
+   },
+   {
+    "cle": "acces",
+    "titre": "Contrôle d'accès et sécurité",
+    "ordre": 6,
+    "exercice_dominant": "photo"
+   },
+   {
+    "cle": "contrats",
+    "titre": "Les contrats d'entretien",
+    "ordre": 7,
+    "exercice_dominant": "cas"
+   }
+  ],
+  "comptabilite": [
+   {
+    "cle": "bases",
+    "titre": "Les bases",
+    "ordre": 1,
+    "exercice_dominant": "feuille-blanche"
+   },
+   {
+    "cle": "plan-comptable",
+    "titre": "Le plan comptable de la copropriété",
+    "ordre": 2,
+    "exercice_dominant": "qcm"
+   },
+   {
+    "cle": "budget",
+    "titre": "Budget et appels de fonds",
+    "ordre": 3,
+    "exercice_dominant": "cas"
+   },
+   {
+    "cle": "annexes",
+    "titre": "Les cinq annexes",
+    "ordre": 4,
+    "exercice_dominant": "lecture"
+   },
+   {
+    "cle": "controle",
+    "titre": "Le contrôle des comptes",
+    "ordre": 5,
+    "exercice_dominant": "cas"
+   },
+   {
+    "cle": "impayes",
+    "titre": "Les impayés",
+    "ordre": 6,
+    "exercice_dominant": "datation"
+   },
+   {
+    "cle": "factures",
+    "titre": "Factures, devis et TVA",
+    "ordre": 7,
+    "exercice_dominant": "qcm"
+   },
+   {
+    "cle": "honoraires",
+    "titre": "Les honoraires du syndic",
+    "ordre": 8,
+    "exercice_dominant": "qcm"
+   }
+  ],
+  "sinistres": [
+   {
+    "cle": "contrat",
+    "titre": "Le contrat d'assurance",
+    "ordre": 1,
+    "exercice_dominant": "qcm"
+   },
+   {
+    "cle": "mri",
+    "titre": "La multirisque immeuble",
+    "ordre": 2,
+    "exercice_dominant": "cas"
+   },
+   {
+    "cle": "degat-des-eaux",
+    "titre": "Le dégât des eaux",
+    "ordre": 3,
+    "exercice_dominant": "cas"
+   },
+   {
+    "cle": "autres-sinistres",
+    "titre": "Incendie, tempête, catastrophe naturelle",
+    "ordre": 4,
+    "exercice_dominant": "qcm"
+   },
+   {
+    "cle": "construction",
+    "titre": "Les garanties de construction",
+    "ordre": 5,
+    "exercice_dominant": "datation"
+   },
+   {
+    "cle": "expertise",
+    "titre": "L'expertise",
+    "ordre": 6,
+    "exercice_dominant": "cas"
+   },
+   {
+    "cle": "gerer",
+    "titre": "Gérer un sinistre",
+    "ordre": 7,
+    "exercice_dominant": "datation"
+   }
+  ],
+  "procedure": [
+   {
+    "cle": "organisation",
+    "titre": "L'organisation judiciaire",
+    "ordre": 1,
+    "exercice_dominant": "relier"
+   },
+   {
+    "cle": "acteurs",
+    "titre": "Les acteurs",
+    "ordre": 2,
+    "exercice_dominant": "relier"
+   },
+   {
+    "cle": "avant-le-proces",
+    "titre": "Avant le procès",
+    "ordre": 3,
+    "exercice_dominant": "datation"
+   },
+   {
+    "cle": "urgence",
+    "titre": "Le référé et l'urgence",
+    "ordre": 4,
+    "exercice_dominant": "cas"
+   },
+   {
+    "cle": "recouvrement",
+    "titre": "Le recouvrement judiciaire",
+    "ordre": 5,
+    "exercice_dominant": "datation"
+   },
+   {
+    "cle": "contentieux-ag",
+    "titre": "Le contentieux de l'assemblée",
+    "ordre": 6,
+    "exercice_dominant": "cas"
+   },
+   {
+    "cle": "contentieux-batiment",
+    "titre": "Le contentieux du bâtiment",
+    "ordre": 7,
+    "exercice_dominant": "cas"
+   },
+   {
+    "cle": "penal",
+    "titre": "Le pénal en copropriété",
+    "ordre": 8,
+    "exercice_dominant": "qcm"
+   },
+   {
+    "cle": "lire",
+    "titre": "Lire une décision",
+    "ordre": 9,
+    "exercice_dominant": "lecture"
+   }
+  ],
+  "travaux": [
+   {
+    "cle": "vocabulaire",
+    "titre": "Le vocabulaire du chantier",
+    "ordre": 1,
+    "exercice_dominant": "relier"
+   },
+   {
+    "cle": "plans",
+    "titre": "Lire un plan",
+    "ordre": 2,
+    "exercice_dominant": "plan"
+   },
+   {
+    "cle": "du-besoin-au-devis",
+    "titre": "Du besoin au devis",
+    "ordre": 3,
+    "exercice_dominant": "cas"
+   },
+   {
+    "cle": "marche-prive",
+    "titre": "Le marché privé de travaux",
+    "ordre": 4,
+    "exercice_dominant": "qcm"
+   },
+   {
+    "cle": "chantier",
+    "titre": "Le suivi de chantier",
+    "ordre": 5,
+    "exercice_dominant": "datation"
+   },
+   {
+    "cle": "urbanisme-des-travaux",
+    "titre": "L'urbanisme des travaux",
+    "ordre": 6,
+    "exercice_dominant": "qcm"
+   },
+   {
+    "cle": "renovation-globale",
+    "titre": "La rénovation globale",
+    "ordre": 7,
+    "exercice_dominant": "cas"
+   },
+   {
+    "cle": "honoraires-travaux",
+    "titre": "Les honoraires sur travaux",
+    "ordre": 8,
+    "exercice_dominant": "qcm"
+   }
+  ],
+  "energie": [
+   {
+    "cle": "physique",
+    "titre": "La physique du bâtiment",
+    "ordre": 1,
+    "exercice_dominant": "dessin"
+   },
+   {
+    "cle": "dpe",
+    "titre": "Le DPE",
+    "ordre": 2,
+    "exercice_dominant": "qcm"
+   },
+   {
+    "cle": "calendrier",
+    "titre": "Le calendrier des obligations",
+    "ordre": 3,
+    "exercice_dominant": "qcm"
+   },
+   {
+    "cle": "audit-et-ppt",
+    "titre": "Audit énergétique et PPT",
+    "ordre": 4,
+    "exercice_dominant": "cas"
+   },
+   {
+    "cle": "aides",
+    "titre": "Les aides",
+    "ordre": 5,
+    "exercice_dominant": "qcm"
+   },
+   {
+    "cle": "contrats-energie",
+    "titre": "Les contrats d'énergie",
+    "ordre": 6,
+    "exercice_dominant": "qcm"
+   },
+   {
+    "cle": "chauffage-collectif",
+    "titre": "Le chauffage collectif et ses choix",
+    "ordre": 7,
+    "exercice_dominant": "cas"
+   },
+   {
+    "cle": "irve",
+    "titre": "Bornes de recharge",
+    "ordre": 8,
+    "exercice_dominant": "qcm"
+   }
+  ],
+  "immobilier": [
+   {
+    "cle": "propriete",
+    "titre": "La propriété",
+    "ordre": 1,
+    "exercice_dominant": "qcm"
+   },
+   {
+    "cle": "vente",
+    "titre": "La vente d'un lot",
+    "ordre": 2,
+    "exercice_dominant": "datation"
+   },
+   {
+    "cle": "location",
+    "titre": "La location",
+    "ordre": 3,
+    "exercice_dominant": "qcm"
+   },
+   {
+    "cle": "urbanisme",
+    "titre": "L'urbanisme",
+    "ordre": 4,
+    "exercice_dominant": "qcm"
+   },
+   {
+    "cle": "acteurs-et-formes",
+    "titre": "Acteurs et formes",
+    "ordre": 5,
+    "exercice_dominant": "relier"
+   },
+   {
+    "cle": "fiscalite",
+    "titre": "Fiscalité de base",
+    "ordre": 6,
+    "exercice_dominant": "qcm"
+   },
+   {
+    "cle": "local",
+    "titre": "Angers et le 49",
+    "ordre": 7,
+    "exercice_dominant": "photo"
+   }
+  ],
+  "cabinet": [
+   {
+    "cle": "profession",
+    "titre": "La profession",
+    "ordre": 1,
+    "exercice_dominant": "qcm"
+   },
+   {
+    "cle": "contrat-de-syndic",
+    "titre": "Le contrat de syndic",
+    "ordre": 2,
+    "exercice_dominant": "qcm"
+   },
+   {
+    "cle": "cycle-annuel",
+    "titre": "Le cycle annuel",
+    "ordre": 3,
+    "exercice_dominant": "datation"
+   },
+   {
+    "cle": "conseil-syndical",
+    "titre": "Le conseil syndical en pratique",
+    "ordre": 4,
+    "exercice_dominant": "cas"
+   },
+   {
+    "cle": "assemblee-en-pratique",
+    "titre": "L'assemblée en pratique",
+    "ordre": 5,
+    "exercice_dominant": "cas"
+   },
+   {
+    "cle": "ecrire",
+    "titre": "Écrire",
+    "ordre": 6,
+    "exercice_dominant": "synthese"
+   },
+   {
+    "cle": "negocier",
+    "titre": "Négocier",
+    "ordre": 7,
+    "exercice_dominant": "role"
+   },
+   {
+    "cle": "donnees",
+    "titre": "Données, RGPD, blanchiment",
+    "ordre": 8,
+    "exercice_dominant": "qcm"
+   },
+   {
+    "cle": "charge",
+    "titre": "Gérer sa charge",
+    "ordre": 9,
+    "exercice_dominant": "synthese"
+   },
+   {
+    "cle": "cas-transverses",
+    "titre": "Les cas transverses",
+    "ordre": 10,
+    "exercice_dominant": "cas"
+   }
+  ],
+  "culture": [
+   {
+    "cle": "lectures",
+    "titre": "Lectures",
+    "ordre": 1,
+    "exercice_dominant": "lecture"
+   }
+  ]
+ },
+ "chapitres": [
+  {
+   "id": "droit.statut.qu-est-ce-qu-une-copropriete",
+   "domaine": "droit",
+   "branche": "statut",
+   "titre": "Qu'est-ce qu'une copropriété",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "droit.statut.lots-parties-privatives-parties-communes",
+   "domaine": "droit",
+   "branche": "statut",
+   "titre": "Lots, parties privatives, parties communes",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "droit.statut.parties-communes-speciales-et-a-jouissance-privative",
+   "domaine": "droit",
+   "branche": "statut",
+   "titre": "Parties communes spéciales et à jouissance privative",
+   "niveau": 2,
+   "prerequis": [
+    "droit.statut.qu-est-ce-qu-une-copropriete",
+    "droit.statut.lots-parties-privatives-parties-communes",
+    "droit.statut.tantiemes-et-quotes-parts",
+    "droit.statut.fiche-synthetique-et-immatriculation"
+   ],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "droit.statut.tantiemes-et-quotes-parts",
+   "domaine": "droit",
+   "branche": "statut",
+   "titre": "Tantièmes et quotes-parts",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "droit.statut.le-reglement-de-copropriete-et-l-etat-descriptif-de-division",
+   "domaine": "droit",
+   "branche": "statut",
+   "titre": "Le règlement de copropriété et l'état descriptif de division",
+   "niveau": 2,
+   "prerequis": [
+    "droit.statut.qu-est-ce-qu-une-copropriete",
+    "droit.statut.lots-parties-privatives-parties-communes",
+    "droit.statut.tantiemes-et-quotes-parts",
+    "droit.statut.fiche-synthetique-et-immatriculation"
+   ],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "droit.statut.fiche-synthetique-et-immatriculation",
+   "domaine": "droit",
+   "branche": "statut",
+   "titre": "Fiche synthétique et immatriculation",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "droit.statut.diagnostiquer-un-reglement-de-copropriete-ancien",
+   "domaine": "droit",
+   "branche": "statut",
+   "titre": "Diagnostiquer un règlement de copropriété ancien",
+   "niveau": 3,
+   "prerequis": [
+    "droit.statut.parties-communes-speciales-et-a-jouissance-privative",
+    "droit.statut.le-reglement-de-copropriete-et-l-etat-descriptif-de-division"
+   ],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 10,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "droit.statut.histoire-de-la-loi-de-1965",
+   "domaine": "droit",
+   "branche": "statut",
+   "titre": "Histoire de la loi de 1965",
+   "niveau": 4,
+   "prerequis": [
+    "droit.statut.diagnostiquer-un-reglement-de-copropriete-ancien"
+   ],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "droit.statut.la-reforme-permanente-controverses",
+   "domaine": "droit",
+   "branche": "statut",
+   "titre": "La réforme permanente : controverses",
+   "niveau": 5,
+   "prerequis": [
+    "droit.statut.histoire-de-la-loi-de-1965"
+   ],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "droit.organes.le-syndicat-des-coproprietaires",
+   "domaine": "droit",
+   "branche": "organes",
+   "titre": "Le syndicat des copropriétaires",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "droit.organes.le-syndic-et-ses-missions",
+   "domaine": "droit",
+   "branche": "organes",
+   "titre": "Le syndic et ses missions",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "droit.organes.designation-contrat-fin-de-mandat",
+   "domaine": "droit",
+   "branche": "organes",
+   "titre": "Désignation, contrat, fin de mandat",
+   "niveau": 2,
+   "prerequis": [
+    "droit.organes.le-syndicat-des-coproprietaires",
+    "droit.organes.le-syndic-et-ses-missions",
+    "droit.organes.le-conseil-syndical"
+   ],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "droit.organes.le-conseil-syndical",
+   "domaine": "droit",
+   "branche": "organes",
+   "titre": "Le conseil syndical",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "droit.organes.la-delegation-au-conseil-syndical",
+   "domaine": "droit",
+   "branche": "organes",
+   "titre": "La délégation au conseil syndical",
+   "niveau": 2,
+   "prerequis": [
+    "droit.organes.le-syndicat-des-coproprietaires",
+    "droit.organes.le-syndic-et-ses-missions",
+    "droit.organes.le-conseil-syndical"
+   ],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "droit.organes.syndic-benevole-et-cooperatif",
+   "domaine": "droit",
+   "branche": "organes",
+   "titre": "Syndic bénévole et coopératif",
+   "niveau": 2,
+   "prerequis": [
+    "droit.organes.le-syndicat-des-coproprietaires",
+    "droit.organes.le-syndic-et-ses-missions",
+    "droit.organes.le-conseil-syndical"
+   ],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "droit.organes.administrateur-provisoire-et-procedure-d-alerte",
+   "domaine": "droit",
+   "branche": "organes",
+   "titre": "Administrateur provisoire et procédure d'alerte",
+   "niveau": 2,
+   "prerequis": [
+    "droit.organes.le-syndicat-des-coproprietaires",
+    "droit.organes.le-syndic-et-ses-missions",
+    "droit.organes.le-conseil-syndical"
+   ],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "droit.organes.reprendre-un-immeuble-la-transmission-des-archives",
+   "domaine": "droit",
+   "branche": "organes",
+   "titre": "Reprendre un immeuble : la transmission des archives",
+   "niveau": 3,
+   "prerequis": [
+    "droit.organes.designation-contrat-fin-de-mandat",
+    "droit.organes.la-delegation-au-conseil-syndical",
+    "droit.organes.syndic-benevole-et-cooperatif",
+    "droit.organes.administrateur-provisoire-et-procedure-d-alerte"
+   ],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 10,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "droit.organes.la-gouvernance-de-la-copropriete-en-question",
+   "domaine": "droit",
+   "branche": "organes",
+   "titre": "La gouvernance de la copropriété en question",
+   "niveau": 4,
+   "prerequis": [
+    "droit.organes.reprendre-un-immeuble-la-transmission-des-archives"
+   ],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "droit.assemblee.la-convocation-forme-et-delai",
+   "domaine": "droit",
+   "branche": "assemblee",
+   "titre": "La convocation : forme et délai",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "cas",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "droit.assemblee.l-ordre-du-jour-et-les-inscriptions",
+   "domaine": "droit",
+   "branche": "assemblee",
+   "titre": "L'ordre du jour et les inscriptions",
+   "niveau": 2,
+   "prerequis": [
+    "droit.assemblee.la-convocation-forme-et-delai",
+    "droit.assemblee.tenue-de-seance-bureau-feuille-de-presence",
+    "droit.assemblee.le-proces-verbal-et-sa-notification"
+   ],
+   "exercice_dominant": "cas",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "droit.assemblee.les-pieces-jointes-obligatoires",
+   "domaine": "droit",
+   "branche": "assemblee",
+   "titre": "Les pièces jointes obligatoires",
+   "niveau": 2,
+   "prerequis": [
+    "droit.assemblee.la-convocation-forme-et-delai",
+    "droit.assemblee.tenue-de-seance-bureau-feuille-de-presence",
+    "droit.assemblee.le-proces-verbal-et-sa-notification"
+   ],
+   "exercice_dominant": "cas",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "droit.assemblee.pouvoirs-et-representation",
+   "domaine": "droit",
+   "branche": "assemblee",
+   "titre": "Pouvoirs et représentation",
+   "niveau": 2,
+   "prerequis": [
+    "droit.assemblee.la-convocation-forme-et-delai",
+    "droit.assemblee.tenue-de-seance-bureau-feuille-de-presence",
+    "droit.assemblee.le-proces-verbal-et-sa-notification"
+   ],
+   "exercice_dominant": "cas",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "droit.assemblee.tenue-de-seance-bureau-feuille-de-presence",
+   "domaine": "droit",
+   "branche": "assemblee",
+   "titre": "Tenue de séance, bureau, feuille de présence",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "cas",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "droit.assemblee.vote-par-correspondance-et-visioconference",
+   "domaine": "droit",
+   "branche": "assemblee",
+   "titre": "Vote par correspondance et visioconférence",
+   "niveau": 2,
+   "prerequis": [
+    "droit.assemblee.la-convocation-forme-et-delai",
+    "droit.assemblee.tenue-de-seance-bureau-feuille-de-presence",
+    "droit.assemblee.le-proces-verbal-et-sa-notification"
+   ],
+   "exercice_dominant": "cas",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "droit.assemblee.le-proces-verbal-et-sa-notification",
+   "domaine": "droit",
+   "branche": "assemblee",
+   "titre": "Le procès-verbal et sa notification",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "cas",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "droit.assemblee.la-contestation-en-deux-mois",
+   "domaine": "droit",
+   "branche": "assemblee",
+   "titre": "La contestation en deux mois",
+   "niveau": 2,
+   "prerequis": [
+    "droit.assemblee.la-convocation-forme-et-delai",
+    "droit.assemblee.tenue-de-seance-bureau-feuille-de-presence",
+    "droit.assemblee.le-proces-verbal-et-sa-notification"
+   ],
+   "exercice_dominant": "cas",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "droit.assemblee.diagnostiquer-une-convocation-irreguliere",
+   "domaine": "droit",
+   "branche": "assemblee",
+   "titre": "Diagnostiquer une convocation irrégulière",
+   "niveau": 3,
+   "prerequis": [
+    "droit.assemblee.l-ordre-du-jour-et-les-inscriptions",
+    "droit.assemblee.les-pieces-jointes-obligatoires",
+    "droit.assemblee.pouvoirs-et-representation",
+    "droit.assemblee.vote-par-correspondance-et-visioconference",
+    "droit.assemblee.la-contestation-en-deux-mois"
+   ],
+   "exercice_dominant": "cas",
+   "cartes_cible": 10,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "droit.assemblee.preparer-une-assemblee-a-risque",
+   "domaine": "droit",
+   "branche": "assemblee",
+   "titre": "Préparer une assemblée à risque",
+   "niveau": 3,
+   "prerequis": [
+    "droit.assemblee.l-ordre-du-jour-et-les-inscriptions",
+    "droit.assemblee.les-pieces-jointes-obligatoires",
+    "droit.assemblee.pouvoirs-et-representation",
+    "droit.assemblee.vote-par-correspondance-et-visioconference",
+    "droit.assemblee.la-contestation-en-deux-mois"
+   ],
+   "exercice_dominant": "cas",
+   "cartes_cible": 10,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "droit.assemblee.l-assemblee-dematerialisee-doctrine",
+   "domaine": "droit",
+   "branche": "assemblee",
+   "titre": "L'assemblée dématérialisée : doctrine",
+   "niveau": 4,
+   "prerequis": [
+    "droit.assemblee.diagnostiquer-une-convocation-irreguliere",
+    "droit.assemblee.preparer-une-assemblee-a-risque"
+   ],
+   "exercice_dominant": "cas",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "droit.majorites.l-article-24",
+   "domaine": "droit",
+   "branche": "majorites",
+   "titre": "L'article 24",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "droit.majorites.l-article-25-et-la-passerelle",
+   "domaine": "droit",
+   "branche": "majorites",
+   "titre": "L'article 25 et la passerelle",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "droit.majorites.l-article-26-et-l-unanimite",
+   "domaine": "droit",
+   "branche": "majorites",
+   "titre": "L'article 26 et l'unanimité",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "droit.majorites.les-cas-particuliers",
+   "domaine": "droit",
+   "branche": "majorites",
+   "titre": "Les cas particuliers",
+   "niveau": 2,
+   "prerequis": [
+    "droit.majorites.l-article-24",
+    "droit.majorites.l-article-25-et-la-passerelle",
+    "droit.majorites.l-article-26-et-l-unanimite"
+   ],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "droit.majorites.le-tableau-des-majorites-par-decision",
+   "domaine": "droit",
+   "branche": "majorites",
+   "titre": "Le tableau des majorités par décision",
+   "niveau": 3,
+   "prerequis": [
+    "droit.majorites.les-cas-particuliers"
+   ],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 10,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "droit.majorites.l-abus-de-majorite",
+   "domaine": "droit",
+   "branche": "majorites",
+   "titre": "L'abus de majorité",
+   "niveau": 4,
+   "prerequis": [
+    "droit.majorites.le-tableau-des-majorites-par-decision"
+   ],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "droit.charges.charges-generales-et-charges-speciales",
+   "domaine": "droit",
+   "branche": "charges",
+   "titre": "Charges générales et charges spéciales",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "cas",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "droit.charges.les-cles-de-repartition",
+   "domaine": "droit",
+   "branche": "charges",
+   "titre": "Les clés de répartition",
+   "niveau": 2,
+   "prerequis": [
+    "droit.charges.charges-generales-et-charges-speciales"
+   ],
+   "exercice_dominant": "cas",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "droit.charges.la-regularisation-annuelle",
+   "domaine": "droit",
+   "branche": "charges",
+   "titre": "La régularisation annuelle",
+   "niveau": 2,
+   "prerequis": [
+    "droit.charges.charges-generales-et-charges-speciales"
+   ],
+   "exercice_dominant": "cas",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "droit.charges.modifier-une-repartition",
+   "domaine": "droit",
+   "branche": "charges",
+   "titre": "Modifier une répartition",
+   "niveau": 2,
+   "prerequis": [
+    "droit.charges.charges-generales-et-charges-speciales"
+   ],
+   "exercice_dominant": "cas",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "droit.charges.repondre-a-une-contestation-de-charges",
+   "domaine": "droit",
+   "branche": "charges",
+   "titre": "Répondre à une contestation de charges",
+   "niveau": 3,
+   "prerequis": [
+    "droit.charges.les-cles-de-repartition",
+    "droit.charges.la-regularisation-annuelle",
+    "droit.charges.modifier-une-repartition"
+   ],
+   "exercice_dominant": "cas",
+   "cartes_cible": 10,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "droit.charges.jurisprudence-des-cles-de-repartition",
+   "domaine": "droit",
+   "branche": "charges",
+   "titre": "Jurisprudence des clés de répartition",
+   "niveau": 4,
+   "prerequis": [
+    "droit.charges.repondre-a-une-contestation-de-charges"
+   ],
+   "exercice_dominant": "cas",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "droit.travaux.travaux-votes-et-travaux-urgents",
+   "domaine": "droit",
+   "branche": "travaux",
+   "titre": "Travaux votés et travaux urgents",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "cas",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "droit.travaux.travaux-privatifs-affectant-les-communes",
+   "domaine": "droit",
+   "branche": "travaux",
+   "titre": "Travaux privatifs affectant les communes",
+   "niveau": 2,
+   "prerequis": [
+    "droit.travaux.travaux-votes-et-travaux-urgents"
+   ],
+   "exercice_dominant": "cas",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "droit.travaux.l-acces-aux-lots",
+   "domaine": "droit",
+   "branche": "travaux",
+   "titre": "L'accès aux lots",
+   "niveau": 2,
+   "prerequis": [
+    "droit.travaux.travaux-votes-et-travaux-urgents"
+   ],
+   "exercice_dominant": "cas",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "droit.travaux.le-plan-pluriannuel-et-le-fonds-de-travaux",
+   "domaine": "droit",
+   "branche": "travaux",
+   "titre": "Le plan pluriannuel et le fonds de travaux",
+   "niveau": 2,
+   "prerequis": [
+    "droit.travaux.travaux-votes-et-travaux-urgents"
+   ],
+   "exercice_dominant": "cas",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "droit.travaux.le-diagnostic-technique-global",
+   "domaine": "droit",
+   "branche": "travaux",
+   "titre": "Le diagnostic technique global",
+   "niveau": 2,
+   "prerequis": [
+    "droit.travaux.travaux-votes-et-travaux-urgents"
+   ],
+   "exercice_dominant": "cas",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "droit.travaux.instruire-une-demande-de-travaux",
+   "domaine": "droit",
+   "branche": "travaux",
+   "titre": "Instruire une demande de travaux",
+   "niveau": 3,
+   "prerequis": [
+    "droit.travaux.travaux-privatifs-affectant-les-communes",
+    "droit.travaux.l-acces-aux-lots",
+    "droit.travaux.le-plan-pluriannuel-et-le-fonds-de-travaux",
+    "droit.travaux.le-diagnostic-technique-global"
+   ],
+   "exercice_dominant": "cas",
+   "cartes_cible": 10,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "droit.mutations.la-vente-d-un-lot-vue-du-syndic",
+   "domaine": "droit",
+   "branche": "mutations",
+   "titre": "La vente d'un lot vue du syndic",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "cas",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "droit.mutations.l-avis-de-mutation-et-l-opposition",
+   "domaine": "droit",
+   "branche": "mutations",
+   "titre": "L'avis de mutation et l'opposition",
+   "niveau": 2,
+   "prerequis": [
+    "droit.mutations.la-vente-d-un-lot-vue-du-syndic"
+   ],
+   "exercice_dominant": "cas",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "droit.mutations.division-et-reunion-de-lots",
+   "domaine": "droit",
+   "branche": "mutations",
+   "titre": "Division et réunion de lots",
+   "niveau": 2,
+   "prerequis": [
+    "droit.mutations.la-vente-d-un-lot-vue-du-syndic"
+   ],
+   "exercice_dominant": "cas",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "droit.mutations.changement-d-usage-et-location",
+   "domaine": "droit",
+   "branche": "mutations",
+   "titre": "Changement d'usage et location",
+   "niveau": 2,
+   "prerequis": [
+    "droit.mutations.la-vente-d-un-lot-vue-du-syndic"
+   ],
+   "exercice_dominant": "cas",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "droit.mutations.le-coproprietaire-defaillant",
+   "domaine": "droit",
+   "branche": "mutations",
+   "titre": "Le copropriétaire défaillant",
+   "niveau": 3,
+   "prerequis": [
+    "droit.mutations.l-avis-de-mutation-et-l-opposition",
+    "droit.mutations.division-et-reunion-de-lots",
+    "droit.mutations.changement-d-usage-et-location"
+   ],
+   "exercice_dominant": "cas",
+   "cartes_cible": 10,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "droit.responsabilites.la-responsabilite-du-syndicat",
+   "domaine": "droit",
+   "branche": "responsabilites",
+   "titre": "La responsabilité du syndicat",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "cas",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "droit.responsabilites.la-responsabilite-du-syndic",
+   "domaine": "droit",
+   "branche": "responsabilites",
+   "titre": "La responsabilité du syndic",
+   "niveau": 2,
+   "prerequis": [
+    "droit.responsabilites.la-responsabilite-du-syndicat",
+    "droit.responsabilites.l-assurance-obligatoire"
+   ],
+   "exercice_dominant": "cas",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "droit.responsabilites.la-responsabilite-du-coproprietaire",
+   "domaine": "droit",
+   "branche": "responsabilites",
+   "titre": "La responsabilité du copropriétaire",
+   "niveau": 2,
+   "prerequis": [
+    "droit.responsabilites.la-responsabilite-du-syndicat",
+    "droit.responsabilites.l-assurance-obligatoire"
+   ],
+   "exercice_dominant": "cas",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "droit.responsabilites.l-assurance-obligatoire",
+   "domaine": "droit",
+   "branche": "responsabilites",
+   "titre": "L'assurance obligatoire",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "cas",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "droit.responsabilites.troubles-anormaux-de-voisinage",
+   "domaine": "droit",
+   "branche": "responsabilites",
+   "titre": "Troubles anormaux de voisinage",
+   "niveau": 2,
+   "prerequis": [
+    "droit.responsabilites.la-responsabilite-du-syndicat",
+    "droit.responsabilites.l-assurance-obligatoire"
+   ],
+   "exercice_dominant": "cas",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "droit.responsabilites.jurisprudence-de-responsabilite",
+   "domaine": "droit",
+   "branche": "responsabilites",
+   "titre": "Jurisprudence de responsabilité",
+   "niveau": 4,
+   "prerequis": [],
+   "exercice_dominant": "cas",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "pathologie.materiaux.beton-ciment-mortier",
+   "domaine": "pathologie",
+   "branche": "materiaux",
+   "titre": "Béton, ciment, mortier",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "photo",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "pathologie.materiaux.les-aciers-et-la-corrosion",
+   "domaine": "pathologie",
+   "branche": "materiaux",
+   "titre": "Les aciers et la corrosion",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "photo",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "pathologie.materiaux.bois-et-pierre",
+   "domaine": "pathologie",
+   "branche": "materiaux",
+   "titre": "Bois et pierre",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "photo",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "pathologie.materiaux.briques-et-enduits",
+   "domaine": "pathologie",
+   "branche": "materiaux",
+   "titre": "Briques et enduits",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "photo",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "pathologie.materiaux.les-isolants",
+   "domaine": "pathologie",
+   "branche": "materiaux",
+   "titre": "Les isolants",
+   "niveau": 2,
+   "prerequis": [
+    "pathologie.materiaux.beton-ciment-mortier",
+    "pathologie.materiaux.les-aciers-et-la-corrosion",
+    "pathologie.materiaux.bois-et-pierre",
+    "pathologie.materiaux.briques-et-enduits"
+   ],
+   "exercice_dominant": "photo",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "pathologie.materiaux.reconnaitre-un-materiau-sur-photo",
+   "domaine": "pathologie",
+   "branche": "materiaux",
+   "titre": "Reconnaître un matériau sur photo",
+   "niveau": 3,
+   "prerequis": [
+    "pathologie.materiaux.les-isolants"
+   ],
+   "exercice_dominant": "photo",
+   "cartes_cible": 10,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "pathologie.materiaux.durabilite-l-etat-de-la-recherche",
+   "domaine": "pathologie",
+   "branche": "materiaux",
+   "titre": "Durabilité : l'état de la recherche",
+   "niveau": 5,
+   "prerequis": [],
+   "exercice_dominant": "photo",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "pathologie.structure.fondations-et-tassements",
+   "domaine": "pathologie",
+   "branche": "structure",
+   "titre": "Fondations et tassements",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "photo",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "pathologie.structure.microfissure-fissure-lezarde",
+   "domaine": "pathologie",
+   "branche": "structure",
+   "titre": "Microfissure, fissure, lézarde",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "photo",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "pathologie.structure.fissures-structurelles-et-leur-lecture",
+   "domaine": "pathologie",
+   "branche": "structure",
+   "titre": "Fissures structurelles et leur lecture",
+   "niveau": 2,
+   "prerequis": [
+    "pathologie.structure.fondations-et-tassements",
+    "pathologie.structure.microfissure-fissure-lezarde"
+   ],
+   "exercice_dominant": "photo",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "pathologie.structure.temoins-et-suivi-d-une-fissure",
+   "domaine": "pathologie",
+   "branche": "structure",
+   "titre": "Témoins et suivi d'une fissure",
+   "niveau": 2,
+   "prerequis": [
+    "pathologie.structure.fondations-et-tassements",
+    "pathologie.structure.microfissure-fissure-lezarde"
+   ],
+   "exercice_dominant": "photo",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "pathologie.structure.balcons-et-corrosion-des-aciers",
+   "domaine": "pathologie",
+   "branche": "structure",
+   "titre": "Balcons et corrosion des aciers",
+   "niveau": 2,
+   "prerequis": [
+    "pathologie.structure.fondations-et-tassements",
+    "pathologie.structure.microfissure-fissure-lezarde"
+   ],
+   "exercice_dominant": "photo",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "pathologie.structure.carbonatation",
+   "domaine": "pathologie",
+   "branche": "structure",
+   "titre": "Carbonatation",
+   "niveau": 2,
+   "prerequis": [
+    "pathologie.structure.fondations-et-tassements",
+    "pathologie.structure.microfissure-fissure-lezarde"
+   ],
+   "exercice_dominant": "photo",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "pathologie.structure.quand-appeler-un-bureau-d-etudes",
+   "domaine": "pathologie",
+   "branche": "structure",
+   "titre": "Quand appeler un bureau d'études",
+   "niveau": 3,
+   "prerequis": [
+    "pathologie.structure.fissures-structurelles-et-leur-lecture",
+    "pathologie.structure.temoins-et-suivi-d-une-fissure",
+    "pathologie.structure.balcons-et-corrosion-des-aciers",
+    "pathologie.structure.carbonatation"
+   ],
+   "exercice_dominant": "photo",
+   "cartes_cible": 10,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "pathologie.structure.seuils-et-normes-ce-qui-est-publie",
+   "domaine": "pathologie",
+   "branche": "structure",
+   "titre": "Seuils et normes : ce qui est publié",
+   "niveau": 4,
+   "prerequis": [
+    "pathologie.structure.quand-appeler-un-bureau-d-etudes"
+   ],
+   "exercice_dominant": "photo",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "pathologie.facades.enduits-et-classes-d-impermeabilite",
+   "domaine": "pathologie",
+   "branche": "facades",
+   "titre": "Enduits et classes d'imperméabilité",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "photo",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "pathologie.facades.le-ravalement",
+   "domaine": "pathologie",
+   "branche": "facades",
+   "titre": "Le ravalement",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "photo",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "pathologie.facades.l-isolation-par-l-exterieur-et-ses-desordres",
+   "domaine": "pathologie",
+   "branche": "facades",
+   "titre": "L'isolation par l'extérieur et ses désordres",
+   "niveau": 2,
+   "prerequis": [
+    "pathologie.facades.enduits-et-classes-d-impermeabilite",
+    "pathologie.facades.le-ravalement"
+   ],
+   "exercice_dominant": "photo",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "pathologie.facades.decollements-et-efflorescences",
+   "domaine": "pathologie",
+   "branche": "facades",
+   "titre": "Décollements et efflorescences",
+   "niveau": 2,
+   "prerequis": [
+    "pathologie.facades.enduits-et-classes-d-impermeabilite",
+    "pathologie.facades.le-ravalement"
+   ],
+   "exercice_dominant": "photo",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "pathologie.facades.diagnostiquer-une-facade-avant-devis",
+   "domaine": "pathologie",
+   "branche": "facades",
+   "titre": "Diagnostiquer une façade avant devis",
+   "niveau": 3,
+   "prerequis": [
+    "pathologie.facades.l-isolation-par-l-exterieur-et-ses-desordres",
+    "pathologie.facades.decollements-et-efflorescences"
+   ],
+   "exercice_dominant": "photo",
+   "cartes_cible": 10,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "pathologie.toitures.toiture-terrasse-et-releves",
+   "domaine": "pathologie",
+   "branche": "toitures",
+   "titre": "Toiture-terrasse et relevés",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "photo",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "pathologie.toitures.souches-cheminees-ventilations-primaires",
+   "domaine": "pathologie",
+   "branche": "toitures",
+   "titre": "Souches, cheminées, ventilations primaires",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "photo",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "pathologie.toitures.tuiles-ardoises-zinguerie",
+   "domaine": "pathologie",
+   "branche": "toitures",
+   "titre": "Tuiles, ardoises, zinguerie",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "photo",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "pathologie.toitures.cheneaux-et-eaux-pluviales",
+   "domaine": "pathologie",
+   "branche": "toitures",
+   "titre": "Chéneaux et eaux pluviales",
+   "niveau": 2,
+   "prerequis": [
+    "pathologie.toitures.toiture-terrasse-et-releves",
+    "pathologie.toitures.souches-cheminees-ventilations-primaires",
+    "pathologie.toitures.tuiles-ardoises-zinguerie"
+   ],
+   "exercice_dominant": "photo",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "pathologie.toitures.la-visite-de-toiture",
+   "domaine": "pathologie",
+   "branche": "toitures",
+   "titre": "La visite de toiture",
+   "niveau": 3,
+   "prerequis": [
+    "pathologie.toitures.cheneaux-et-eaux-pluviales"
+   ],
+   "exercice_dominant": "photo",
+   "cartes_cible": 10,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "pathologie.humidite.remontees-capillaires",
+   "domaine": "pathologie",
+   "branche": "humidite",
+   "titre": "Remontées capillaires",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "photo",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "pathologie.humidite.condensation",
+   "domaine": "pathologie",
+   "branche": "humidite",
+   "titre": "Condensation",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "photo",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "pathologie.humidite.infiltration",
+   "domaine": "pathologie",
+   "branche": "humidite",
+   "titre": "Infiltration",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "photo",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "pathologie.humidite.ponts-thermiques-et-moisissures",
+   "domaine": "pathologie",
+   "branche": "humidite",
+   "titre": "Ponts thermiques et moisissures",
+   "niveau": 2,
+   "prerequis": [
+    "pathologie.humidite.remontees-capillaires",
+    "pathologie.humidite.condensation",
+    "pathologie.humidite.infiltration"
+   ],
+   "exercice_dominant": "photo",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "pathologie.humidite.humidite-et-ventilation",
+   "domaine": "pathologie",
+   "branche": "humidite",
+   "titre": "Humidité et ventilation",
+   "niveau": 2,
+   "prerequis": [
+    "pathologie.humidite.remontees-capillaires",
+    "pathologie.humidite.condensation",
+    "pathologie.humidite.infiltration"
+   ],
+   "exercice_dominant": "photo",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "pathologie.humidite.un-logement-humide-que-dire-au-coproprietaire",
+   "domaine": "pathologie",
+   "branche": "humidite",
+   "titre": "Un logement humide : que dire au copropriétaire",
+   "niveau": 3,
+   "prerequis": [
+    "pathologie.humidite.ponts-thermiques-et-moisissures",
+    "pathologie.humidite.humidite-et-ventilation"
+   ],
+   "exercice_dominant": "photo",
+   "cartes_cible": 10,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "pathologie.epoques.le-bati-haussmannien",
+   "domaine": "pathologie",
+   "branche": "epoques",
+   "titre": "Le bâti haussmannien",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "datation",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "pathologie.epoques.1950-1975-beton-amiante-plomb",
+   "domaine": "pathologie",
+   "branche": "epoques",
+   "titre": "1950-1975 : béton, amiante, plomb",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "datation",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "pathologie.epoques.1975-1990",
+   "domaine": "pathologie",
+   "branche": "epoques",
+   "titre": "1975-1990",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "datation",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "pathologie.epoques.le-bati-recent",
+   "domaine": "pathologie",
+   "branche": "epoques",
+   "titre": "Le bâti récent",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "datation",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "pathologie.epoques.dater-une-facade",
+   "domaine": "pathologie",
+   "branche": "epoques",
+   "titre": "Dater une façade",
+   "niveau": 2,
+   "prerequis": [
+    "pathologie.epoques.le-bati-haussmannien",
+    "pathologie.epoques.1950-1975-beton-amiante-plomb",
+    "pathologie.epoques.1975-1990",
+    "pathologie.epoques.le-bati-recent"
+   ],
+   "exercice_dominant": "datation",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "pathologie.epoques.les-pathologies-attendues-par-epoque",
+   "domaine": "pathologie",
+   "branche": "epoques",
+   "titre": "Les pathologies attendues par époque",
+   "niveau": 3,
+   "prerequis": [
+    "pathologie.epoques.dater-une-facade"
+   ],
+   "exercice_dominant": "datation",
+   "cartes_cible": 10,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "pathologie.diagnostics.amiante-et-dossier-technique-amiante",
+   "domaine": "pathologie",
+   "branche": "diagnostics",
+   "titre": "Amiante et dossier technique amiante",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "pathologie.diagnostics.plomb",
+   "domaine": "pathologie",
+   "branche": "diagnostics",
+   "titre": "Plomb",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "pathologie.diagnostics.termites",
+   "domaine": "pathologie",
+   "branche": "diagnostics",
+   "titre": "Termites",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "pathologie.diagnostics.radon",
+   "domaine": "pathologie",
+   "branche": "diagnostics",
+   "titre": "Radon",
+   "niveau": 2,
+   "prerequis": [
+    "pathologie.diagnostics.amiante-et-dossier-technique-amiante",
+    "pathologie.diagnostics.plomb",
+    "pathologie.diagnostics.termites"
+   ],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "pathologie.diagnostics.tenir-a-jour-les-diagnostics",
+   "domaine": "pathologie",
+   "branche": "diagnostics",
+   "titre": "Tenir à jour les diagnostics",
+   "niveau": 3,
+   "prerequis": [
+    "pathologie.diagnostics.radon"
+   ],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 10,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "pathologie.visite.comment-on-regarde-un-immeuble",
+   "domaine": "pathologie",
+   "branche": "visite",
+   "titre": "Comment on regarde un immeuble",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "dessin",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "pathologie.visite.ce-qu-on-photographie-ce-qu-on-note",
+   "domaine": "pathologie",
+   "branche": "visite",
+   "titre": "Ce qu'on photographie, ce qu'on note",
+   "niveau": 2,
+   "prerequis": [
+    "pathologie.visite.comment-on-regarde-un-immeuble"
+   ],
+   "exercice_dominant": "dessin",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "pathologie.visite.le-compte-rendu-de-visite-technique",
+   "domaine": "pathologie",
+   "branche": "visite",
+   "titre": "Le compte rendu de visite technique",
+   "niveau": 3,
+   "prerequis": [
+    "pathologie.visite.ce-qu-on-photographie-ce-qu-on-note"
+   ],
+   "exercice_dominant": "dessin",
+   "cartes_cible": 10,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "equipements.ventilation.simple-flux-double-flux-hygro",
+   "domaine": "equipements",
+   "branche": "ventilation",
+   "titre": "Simple flux, double flux, hygro",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "dessin",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "equipements.ventilation.le-caisson-et-les-courroies",
+   "domaine": "equipements",
+   "branche": "ventilation",
+   "titre": "Le caisson et les courroies",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "dessin",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "equipements.ventilation.entretien-et-debits-reglementaires",
+   "domaine": "equipements",
+   "branche": "ventilation",
+   "titre": "Entretien et débits réglementaires",
+   "niveau": 2,
+   "prerequis": [
+    "equipements.ventilation.simple-flux-double-flux-hygro",
+    "equipements.ventilation.le-caisson-et-les-courroies"
+   ],
+   "exercice_dominant": "dessin",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "equipements.ventilation.lire-un-rapport-de-controle-vmc",
+   "domaine": "equipements",
+   "branche": "ventilation",
+   "titre": "Lire un rapport de contrôle VMC",
+   "niveau": 3,
+   "prerequis": [
+    "equipements.ventilation.entretien-et-debits-reglementaires"
+   ],
+   "exercice_dominant": "dessin",
+   "cartes_cible": 10,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "equipements.chauffage.chaudiere-gaz-fioul-condensation",
+   "domaine": "equipements",
+   "branche": "chauffage",
+   "titre": "Chaudière gaz, fioul, condensation",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "cas",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "equipements.chauffage.la-sous-station-de-reseau-de-chaleur",
+   "domaine": "equipements",
+   "branche": "chauffage",
+   "titre": "La sous-station de réseau de chaleur",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "cas",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "equipements.chauffage.les-contrats-p1-a-p4",
+   "domaine": "equipements",
+   "branche": "chauffage",
+   "titre": "Les contrats P1 à P4",
+   "niveau": 2,
+   "prerequis": [
+    "equipements.chauffage.chaudiere-gaz-fioul-condensation",
+    "equipements.chauffage.la-sous-station-de-reseau-de-chaleur"
+   ],
+   "exercice_dominant": "cas",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "equipements.chauffage.individualisation-des-frais",
+   "domaine": "equipements",
+   "branche": "chauffage",
+   "titre": "Individualisation des frais",
+   "niveau": 2,
+   "prerequis": [
+    "equipements.chauffage.chaudiere-gaz-fioul-condensation",
+    "equipements.chauffage.la-sous-station-de-reseau-de-chaleur"
+   ],
+   "exercice_dominant": "cas",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "equipements.chauffage.eau-chaude-sanitaire-et-legionelles",
+   "domaine": "equipements",
+   "branche": "chauffage",
+   "titre": "Eau chaude sanitaire et légionelles",
+   "niveau": 2,
+   "prerequis": [
+    "equipements.chauffage.chaudiere-gaz-fioul-condensation",
+    "equipements.chauffage.la-sous-station-de-reseau-de-chaleur"
+   ],
+   "exercice_dominant": "cas",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "equipements.chauffage.pompes-a-chaleur-et-hybrides",
+   "domaine": "equipements",
+   "branche": "chauffage",
+   "titre": "Pompes à chaleur et hybrides",
+   "niveau": 2,
+   "prerequis": [
+    "equipements.chauffage.chaudiere-gaz-fioul-condensation",
+    "equipements.chauffage.la-sous-station-de-reseau-de-chaleur"
+   ],
+   "exercice_dominant": "cas",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "equipements.chauffage.la-panne-de-janvier",
+   "domaine": "equipements",
+   "branche": "chauffage",
+   "titre": "La panne de janvier",
+   "niveau": 3,
+   "prerequis": [
+    "equipements.chauffage.les-contrats-p1-a-p4",
+    "equipements.chauffage.individualisation-des-frais",
+    "equipements.chauffage.eau-chaude-sanitaire-et-legionelles",
+    "equipements.chauffage.pompes-a-chaleur-et-hybrides"
+   ],
+   "exercice_dominant": "cas",
+   "cartes_cible": 10,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "equipements.chauffage.quelle-energie-pour-quel-immeuble",
+   "domaine": "equipements",
+   "branche": "chauffage",
+   "titre": "Quelle énergie pour quel immeuble",
+   "niveau": 4,
+   "prerequis": [
+    "equipements.chauffage.la-panne-de-janvier"
+   ],
+   "exercice_dominant": "cas",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "equipements.ascenseurs.les-organes-d-un-ascenseur",
+   "domaine": "equipements",
+   "branche": "ascenseurs",
+   "titre": "Les organes d'un ascenseur",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "photo",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "equipements.ascenseurs.le-contrat-de-maintenance",
+   "domaine": "equipements",
+   "branche": "ascenseurs",
+   "titre": "Le contrat de maintenance",
+   "niveau": 2,
+   "prerequis": [
+    "equipements.ascenseurs.les-organes-d-un-ascenseur"
+   ],
+   "exercice_dominant": "photo",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "equipements.ascenseurs.le-controle-technique-quinquennal",
+   "domaine": "equipements",
+   "branche": "ascenseurs",
+   "titre": "Le contrôle technique quinquennal",
+   "niveau": 2,
+   "prerequis": [
+    "equipements.ascenseurs.les-organes-d-un-ascenseur"
+   ],
+   "exercice_dominant": "photo",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "equipements.ascenseurs.la-mise-en-securite",
+   "domaine": "equipements",
+   "branche": "ascenseurs",
+   "titre": "La mise en sécurité",
+   "niveau": 2,
+   "prerequis": [
+    "equipements.ascenseurs.les-organes-d-un-ascenseur"
+   ],
+   "exercice_dominant": "photo",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "equipements.ascenseurs.l-ascenseur-a-l-arret",
+   "domaine": "equipements",
+   "branche": "ascenseurs",
+   "titre": "L'ascenseur à l'arrêt",
+   "niveau": 3,
+   "prerequis": [
+    "equipements.ascenseurs.le-contrat-de-maintenance",
+    "equipements.ascenseurs.le-controle-technique-quinquennal",
+    "equipements.ascenseurs.la-mise-en-securite"
+   ],
+   "exercice_dominant": "photo",
+   "cartes_cible": 10,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "equipements.plomberie.colonnes-eu-ev-ep",
+   "domaine": "equipements",
+   "branche": "plomberie",
+   "titre": "Colonnes EU, EV, EP",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "dessin",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "equipements.plomberie.ventilation-primaire-et-secondaire",
+   "domaine": "equipements",
+   "branche": "plomberie",
+   "titre": "Ventilation primaire et secondaire",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "dessin",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "equipements.plomberie.surpresseur-compteurs-disconnecteur",
+   "domaine": "equipements",
+   "branche": "plomberie",
+   "titre": "Surpresseur, compteurs, disconnecteur",
+   "niveau": 2,
+   "prerequis": [
+    "equipements.plomberie.colonnes-eu-ev-ep",
+    "equipements.plomberie.ventilation-primaire-et-secondaire"
+   ],
+   "exercice_dominant": "dessin",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "equipements.plomberie.la-recherche-de-fuite",
+   "domaine": "equipements",
+   "branche": "plomberie",
+   "titre": "La recherche de fuite",
+   "niveau": 2,
+   "prerequis": [
+    "equipements.plomberie.colonnes-eu-ev-ep",
+    "equipements.plomberie.ventilation-primaire-et-secondaire"
+   ],
+   "exercice_dominant": "dessin",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "equipements.plomberie.un-degat-des-eaux-vu-de-la-plomberie",
+   "domaine": "equipements",
+   "branche": "plomberie",
+   "titre": "Un dégât des eaux vu de la plomberie",
+   "niveau": 3,
+   "prerequis": [
+    "equipements.plomberie.surpresseur-compteurs-disconnecteur",
+    "equipements.plomberie.la-recherche-de-fuite"
+   ],
+   "exercice_dominant": "dessin",
+   "cartes_cible": 10,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "equipements.electricite.tgbt-et-colonnes-montantes",
+   "domaine": "equipements",
+   "branche": "electricite",
+   "titre": "TGBT et colonnes montantes",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "photo",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "equipements.electricite.la-nf-c-15-100-pour-un-gestionnaire",
+   "domaine": "equipements",
+   "branche": "electricite",
+   "titre": "La NF C 15-100 pour un gestionnaire",
+   "niveau": 2,
+   "prerequis": [
+    "equipements.electricite.tgbt-et-colonnes-montantes",
+    "equipements.electricite.eclairage-des-communs"
+   ],
+   "exercice_dominant": "photo",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "equipements.electricite.eclairage-des-communs",
+   "domaine": "equipements",
+   "branche": "electricite",
+   "titre": "Éclairage des communs",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "photo",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "equipements.electricite.bornes-de-recharge",
+   "domaine": "equipements",
+   "branche": "electricite",
+   "titre": "Bornes de recharge",
+   "niveau": 2,
+   "prerequis": [
+    "equipements.electricite.tgbt-et-colonnes-montantes",
+    "equipements.electricite.eclairage-des-communs"
+   ],
+   "exercice_dominant": "photo",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "equipements.electricite.lire-un-rapport-electrique",
+   "domaine": "equipements",
+   "branche": "electricite",
+   "titre": "Lire un rapport électrique",
+   "niveau": 3,
+   "prerequis": [
+    "equipements.electricite.la-nf-c-15-100-pour-un-gestionnaire",
+    "equipements.electricite.bornes-de-recharge"
+   ],
+   "exercice_dominant": "photo",
+   "cartes_cible": 10,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "equipements.acces.interphone-badges-ventouses-cellules",
+   "domaine": "equipements",
+   "branche": "acces",
+   "titre": "Interphone, badges, ventouses, cellules",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "photo",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "equipements.acces.portails-et-portes-de-garage",
+   "domaine": "equipements",
+   "branche": "acces",
+   "titre": "Portails et portes de garage",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "photo",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "equipements.acces.desenfumage-et-extincteurs",
+   "domaine": "equipements",
+   "branche": "acces",
+   "titre": "Désenfumage et extincteurs",
+   "niveau": 2,
+   "prerequis": [
+    "equipements.acces.interphone-badges-ventouses-cellules",
+    "equipements.acces.portails-et-portes-de-garage"
+   ],
+   "exercice_dominant": "photo",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "equipements.acces.la-porte-de-parking-en-panne",
+   "domaine": "equipements",
+   "branche": "acces",
+   "titre": "La porte de parking en panne",
+   "niveau": 3,
+   "prerequis": [
+    "equipements.acces.desenfumage-et-extincteurs"
+   ],
+   "exercice_dominant": "photo",
+   "cartes_cible": 10,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "equipements.contrats.les-obligations-d-entretien-par-equipement",
+   "domaine": "equipements",
+   "branche": "contrats",
+   "titre": "Les obligations d'entretien par équipement",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "cas",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "equipements.contrats.le-calendrier-des-controles",
+   "domaine": "equipements",
+   "branche": "contrats",
+   "titre": "Le calendrier des contrôles",
+   "niveau": 2,
+   "prerequis": [
+    "equipements.contrats.les-obligations-d-entretien-par-equipement"
+   ],
+   "exercice_dominant": "cas",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "equipements.contrats.comparer-deux-contrats",
+   "domaine": "equipements",
+   "branche": "contrats",
+   "titre": "Comparer deux contrats",
+   "niveau": 2,
+   "prerequis": [
+    "equipements.contrats.les-obligations-d-entretien-par-equipement"
+   ],
+   "exercice_dominant": "cas",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "equipements.contrats.renegocier-un-contrat",
+   "domaine": "equipements",
+   "branche": "contrats",
+   "titre": "Renégocier un contrat",
+   "niveau": 3,
+   "prerequis": [
+    "equipements.contrats.le-calendrier-des-controles",
+    "equipements.contrats.comparer-deux-contrats"
+   ],
+   "exercice_dominant": "cas",
+   "cartes_cible": 10,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "comptabilite.bases.debit-et-credit-la-partie-double",
+   "domaine": "comptabilite",
+   "branche": "bases",
+   "titre": "Débit et crédit, la partie double",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "feuille-blanche",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "comptabilite.bases.actif-et-passif",
+   "domaine": "comptabilite",
+   "branche": "bases",
+   "titre": "Actif et passif",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "feuille-blanche",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "comptabilite.bases.produits-et-charges",
+   "domaine": "comptabilite",
+   "branche": "bases",
+   "titre": "Produits et charges",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "feuille-blanche",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "comptabilite.bases.engagement-et-tresorerie",
+   "domaine": "comptabilite",
+   "branche": "bases",
+   "titre": "Engagement et trésorerie",
+   "niveau": 2,
+   "prerequis": [
+    "comptabilite.bases.debit-et-credit-la-partie-double",
+    "comptabilite.bases.actif-et-passif",
+    "comptabilite.bases.produits-et-charges",
+    "comptabilite.bases.l-exercice-comptable"
+   ],
+   "exercice_dominant": "feuille-blanche",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "comptabilite.bases.l-exercice-comptable",
+   "domaine": "comptabilite",
+   "branche": "bases",
+   "titre": "L'exercice comptable",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "feuille-blanche",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "comptabilite.bases.pourquoi-une-copropriete-n-a-pas-de-bilan",
+   "domaine": "comptabilite",
+   "branche": "bases",
+   "titre": "Pourquoi une copropriété n'a pas de bilan",
+   "niveau": 2,
+   "prerequis": [
+    "comptabilite.bases.debit-et-credit-la-partie-double",
+    "comptabilite.bases.actif-et-passif",
+    "comptabilite.bases.produits-et-charges",
+    "comptabilite.bases.l-exercice-comptable"
+   ],
+   "exercice_dominant": "feuille-blanche",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "comptabilite.bases.histoire-de-la-partie-double",
+   "domaine": "comptabilite",
+   "branche": "bases",
+   "titre": "Histoire de la partie double",
+   "niveau": 4,
+   "prerequis": [],
+   "exercice_dominant": "feuille-blanche",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "comptabilite.plan-comptable.les-classes-de-comptes",
+   "domaine": "comptabilite",
+   "branche": "plan-comptable",
+   "titre": "Les classes de comptes",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "comptabilite.plan-comptable.les-comptes-qu-on-lit-tous-les-jours",
+   "domaine": "comptabilite",
+   "branche": "plan-comptable",
+   "titre": "Les comptes qu'on lit tous les jours",
+   "niveau": 2,
+   "prerequis": [
+    "comptabilite.plan-comptable.les-classes-de-comptes"
+   ],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "comptabilite.plan-comptable.retrouver-une-ecriture",
+   "domaine": "comptabilite",
+   "branche": "plan-comptable",
+   "titre": "Retrouver une écriture",
+   "niveau": 3,
+   "prerequis": [
+    "comptabilite.plan-comptable.les-comptes-qu-on-lit-tous-les-jours"
+   ],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 10,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "comptabilite.budget.le-budget-previsionnel",
+   "domaine": "comptabilite",
+   "branche": "budget",
+   "titre": "Le budget prévisionnel",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "cas",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "comptabilite.budget.les-appels-de-fonds",
+   "domaine": "comptabilite",
+   "branche": "budget",
+   "titre": "Les appels de fonds",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "cas",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "comptabilite.budget.les-travaux-hors-budget",
+   "domaine": "comptabilite",
+   "branche": "budget",
+   "titre": "Les travaux hors budget",
+   "niveau": 2,
+   "prerequis": [
+    "comptabilite.budget.le-budget-previsionnel",
+    "comptabilite.budget.les-appels-de-fonds"
+   ],
+   "exercice_dominant": "cas",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "comptabilite.budget.le-fonds-de-travaux",
+   "domaine": "comptabilite",
+   "branche": "budget",
+   "titre": "Le fonds de travaux",
+   "niveau": 2,
+   "prerequis": [
+    "comptabilite.budget.le-budget-previsionnel",
+    "comptabilite.budget.les-appels-de-fonds"
+   ],
+   "exercice_dominant": "cas",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "comptabilite.budget.avances-et-emprunt-collectif",
+   "domaine": "comptabilite",
+   "branche": "budget",
+   "titre": "Avances et emprunt collectif",
+   "niveau": 2,
+   "prerequis": [
+    "comptabilite.budget.le-budget-previsionnel",
+    "comptabilite.budget.les-appels-de-fonds"
+   ],
+   "exercice_dominant": "cas",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "comptabilite.budget.construire-un-budget",
+   "domaine": "comptabilite",
+   "branche": "budget",
+   "titre": "Construire un budget",
+   "niveau": 3,
+   "prerequis": [
+    "comptabilite.budget.les-travaux-hors-budget",
+    "comptabilite.budget.le-fonds-de-travaux",
+    "comptabilite.budget.avances-et-emprunt-collectif"
+   ],
+   "exercice_dominant": "cas",
+   "cartes_cible": 10,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "comptabilite.annexes.l-annexe-1-l-etat-financier",
+   "domaine": "comptabilite",
+   "branche": "annexes",
+   "titre": "L'annexe 1 : l'état financier",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "lecture",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "comptabilite.annexes.l-annexe-2-le-compte-de-gestion-general",
+   "domaine": "comptabilite",
+   "branche": "annexes",
+   "titre": "L'annexe 2 : le compte de gestion général",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "lecture",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "comptabilite.annexes.l-annexe-3-par-cle-de-repartition",
+   "domaine": "comptabilite",
+   "branche": "annexes",
+   "titre": "L'annexe 3 : par clé de répartition",
+   "niveau": 2,
+   "prerequis": [
+    "comptabilite.annexes.l-annexe-1-l-etat-financier",
+    "comptabilite.annexes.l-annexe-2-le-compte-de-gestion-general"
+   ],
+   "exercice_dominant": "lecture",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "comptabilite.annexes.les-annexes-4-et-5-les-travaux",
+   "domaine": "comptabilite",
+   "branche": "annexes",
+   "titre": "Les annexes 4 et 5 : les travaux",
+   "niveau": 2,
+   "prerequis": [
+    "comptabilite.annexes.l-annexe-1-l-etat-financier",
+    "comptabilite.annexes.l-annexe-2-le-compte-de-gestion-general"
+   ],
+   "exercice_dominant": "lecture",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "comptabilite.annexes.les-trois-chiffres-a-regarder-d-abord",
+   "domaine": "comptabilite",
+   "branche": "annexes",
+   "titre": "Les trois chiffres à regarder d'abord",
+   "niveau": 2,
+   "prerequis": [
+    "comptabilite.annexes.l-annexe-1-l-etat-financier",
+    "comptabilite.annexes.l-annexe-2-le-compte-de-gestion-general"
+   ],
+   "exercice_dominant": "lecture",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "comptabilite.annexes.lire-une-annexe-pour-le-conseil-syndical",
+   "domaine": "comptabilite",
+   "branche": "annexes",
+   "titre": "Lire une annexe pour le conseil syndical",
+   "niveau": 3,
+   "prerequis": [
+    "comptabilite.annexes.l-annexe-3-par-cle-de-repartition",
+    "comptabilite.annexes.les-annexes-4-et-5-les-travaux",
+    "comptabilite.annexes.les-trois-chiffres-a-regarder-d-abord"
+   ],
+   "exercice_dominant": "lecture",
+   "cartes_cible": 10,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "comptabilite.annexes.les-limites-du-decret-comptable",
+   "domaine": "comptabilite",
+   "branche": "annexes",
+   "titre": "Les limites du décret comptable",
+   "niveau": 4,
+   "prerequis": [
+    "comptabilite.annexes.lire-une-annexe-pour-le-conseil-syndical"
+   ],
+   "exercice_dominant": "lecture",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "comptabilite.controle.approbation-et-quitus",
+   "domaine": "comptabilite",
+   "branche": "controle",
+   "titre": "Approbation et quitus",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "cas",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "comptabilite.controle.le-role-du-conseil-syndical",
+   "domaine": "comptabilite",
+   "branche": "controle",
+   "titre": "Le rôle du conseil syndical",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "cas",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "comptabilite.controle.les-anomalies-classiques",
+   "domaine": "comptabilite",
+   "branche": "controle",
+   "titre": "Les anomalies classiques",
+   "niveau": 2,
+   "prerequis": [
+    "comptabilite.controle.approbation-et-quitus",
+    "comptabilite.controle.le-role-du-conseil-syndical"
+   ],
+   "exercice_dominant": "cas",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "comptabilite.controle.l-audit-d-un-arrete-des-comptes",
+   "domaine": "comptabilite",
+   "branche": "controle",
+   "titre": "L'audit d'un arrêté des comptes",
+   "niveau": 3,
+   "prerequis": [
+    "comptabilite.controle.les-anomalies-classiques"
+   ],
+   "exercice_dominant": "cas",
+   "cartes_cible": 10,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "comptabilite.impayes.relance-et-mise-en-demeure",
+   "domaine": "comptabilite",
+   "branche": "impayes",
+   "titre": "Relance et mise en demeure",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "datation",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "comptabilite.impayes.les-frais-imputables",
+   "domaine": "comptabilite",
+   "branche": "impayes",
+   "titre": "Les frais imputables",
+   "niveau": 2,
+   "prerequis": [
+    "comptabilite.impayes.relance-et-mise-en-demeure"
+   ],
+   "exercice_dominant": "datation",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "comptabilite.impayes.du-comptable-au-juge",
+   "domaine": "comptabilite",
+   "branche": "impayes",
+   "titre": "Du comptable au juge",
+   "niveau": 2,
+   "prerequis": [
+    "comptabilite.impayes.relance-et-mise-en-demeure",
+    "procedure.avant-le-proces.mise-en-demeure-recommande-sommation"
+   ],
+   "exercice_dominant": "datation",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "comptabilite.impayes.le-plan-de-recouvrement",
+   "domaine": "comptabilite",
+   "branche": "impayes",
+   "titre": "Le plan de recouvrement",
+   "niveau": 3,
+   "prerequis": [
+    "comptabilite.impayes.les-frais-imputables",
+    "comptabilite.impayes.du-comptable-au-juge"
+   ],
+   "exercice_dominant": "datation",
+   "cartes_cible": 10,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "comptabilite.factures.les-mentions-obligatoires-d-une-facture",
+   "domaine": "comptabilite",
+   "branche": "factures",
+   "titre": "Les mentions obligatoires d'une facture",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "comptabilite.factures.les-mentions-d-un-devis",
+   "domaine": "comptabilite",
+   "branche": "factures",
+   "titre": "Les mentions d'un devis",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "comptabilite.factures.la-tva-a-20-10-et-5-5",
+   "domaine": "comptabilite",
+   "branche": "factures",
+   "titre": "La TVA à 20, 10 et 5,5 %",
+   "niveau": 2,
+   "prerequis": [
+    "comptabilite.factures.les-mentions-obligatoires-d-une-facture",
+    "comptabilite.factures.les-mentions-d-un-devis"
+   ],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "comptabilite.factures.refuser-une-facture",
+   "domaine": "comptabilite",
+   "branche": "factures",
+   "titre": "Refuser une facture",
+   "niveau": 3,
+   "prerequis": [
+    "comptabilite.factures.la-tva-a-20-10-et-5-5"
+   ],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 10,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "comptabilite.honoraires.le-contrat-type-et-le-forfait",
+   "domaine": "comptabilite",
+   "branche": "honoraires",
+   "titre": "Le contrat type et le forfait",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "comptabilite.honoraires.les-prestations-particulieres",
+   "domaine": "comptabilite",
+   "branche": "honoraires",
+   "titre": "Les prestations particulières",
+   "niveau": 2,
+   "prerequis": [
+    "comptabilite.honoraires.le-contrat-type-et-le-forfait"
+   ],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "comptabilite.honoraires.l-economie-d-un-cabinet",
+   "domaine": "comptabilite",
+   "branche": "honoraires",
+   "titre": "L'économie d'un cabinet",
+   "niveau": 4,
+   "prerequis": [],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "sinistres.contrat.assure-souscripteur-prime-franchise",
+   "domaine": "sinistres",
+   "branche": "contrat",
+   "titre": "Assuré, souscripteur, prime, franchise",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "sinistres.contrat.garantie-et-exclusion",
+   "domaine": "sinistres",
+   "branche": "contrat",
+   "titre": "Garantie et exclusion",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "sinistres.contrat.les-delais-de-declaration",
+   "domaine": "sinistres",
+   "branche": "contrat",
+   "titre": "Les délais de déclaration",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "sinistres.contrat.lire-des-conditions-particulieres",
+   "domaine": "sinistres",
+   "branche": "contrat",
+   "titre": "Lire des conditions particulières",
+   "niveau": 2,
+   "prerequis": [
+    "sinistres.contrat.assure-souscripteur-prime-franchise",
+    "sinistres.contrat.garantie-et-exclusion",
+    "sinistres.contrat.les-delais-de-declaration"
+   ],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "sinistres.mri.ce-que-la-mri-couvre",
+   "domaine": "sinistres",
+   "branche": "mri",
+   "titre": "Ce que la MRI couvre",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "cas",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "sinistres.mri.la-responsabilite-civile-du-syndicat",
+   "domaine": "sinistres",
+   "branche": "mri",
+   "titre": "La responsabilité civile du syndicat",
+   "niveau": 2,
+   "prerequis": [
+    "sinistres.mri.ce-que-la-mri-couvre",
+    "sinistres.mri.proprietaire-non-occupant-et-assurance-du-coproprietaire"
+   ],
+   "exercice_dominant": "cas",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "sinistres.mri.proprietaire-non-occupant-et-assurance-du-coproprietaire",
+   "domaine": "sinistres",
+   "branche": "mri",
+   "titre": "Propriétaire non occupant et assurance du copropriétaire",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "cas",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "sinistres.mri.verifier-une-police",
+   "domaine": "sinistres",
+   "branche": "mri",
+   "titre": "Vérifier une police",
+   "niveau": 3,
+   "prerequis": [
+    "sinistres.mri.la-responsabilite-civile-du-syndicat"
+   ],
+   "exercice_dominant": "cas",
+   "cartes_cible": 10,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "sinistres.degat-des-eaux.la-convention-irsi-et-ses-tranches",
+   "domaine": "sinistres",
+   "branche": "degat-des-eaux",
+   "titre": "La convention IRSI et ses tranches",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "cas",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "sinistres.degat-des-eaux.l-assureur-gestionnaire",
+   "domaine": "sinistres",
+   "branche": "degat-des-eaux",
+   "titre": "L'assureur gestionnaire",
+   "niveau": 2,
+   "prerequis": [
+    "sinistres.degat-des-eaux.la-convention-irsi-et-ses-tranches"
+   ],
+   "exercice_dominant": "cas",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "sinistres.degat-des-eaux.la-recherche-de-fuite",
+   "domaine": "sinistres",
+   "branche": "degat-des-eaux",
+   "titre": "La recherche de fuite",
+   "niveau": 2,
+   "prerequis": [
+    "sinistres.degat-des-eaux.la-convention-irsi-et-ses-tranches"
+   ],
+   "exercice_dominant": "cas",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "sinistres.degat-des-eaux.les-recours",
+   "domaine": "sinistres",
+   "branche": "degat-des-eaux",
+   "titre": "Les recours",
+   "niveau": 2,
+   "prerequis": [
+    "sinistres.degat-des-eaux.la-convention-irsi-et-ses-tranches"
+   ],
+   "exercice_dominant": "cas",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "sinistres.degat-des-eaux.derouler-un-degat-des-eaux-du-5e-au-2e",
+   "domaine": "sinistres",
+   "branche": "degat-des-eaux",
+   "titre": "Dérouler un dégât des eaux du 5e au 2e",
+   "niveau": 3,
+   "prerequis": [
+    "sinistres.degat-des-eaux.l-assureur-gestionnaire",
+    "sinistres.degat-des-eaux.la-recherche-de-fuite",
+    "sinistres.degat-des-eaux.les-recours"
+   ],
+   "exercice_dominant": "cas",
+   "cartes_cible": 10,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "sinistres.autres-sinistres.incendie",
+   "domaine": "sinistres",
+   "branche": "autres-sinistres",
+   "titre": "Incendie",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "sinistres.autres-sinistres.tempete-et-grele",
+   "domaine": "sinistres",
+   "branche": "autres-sinistres",
+   "titre": "Tempête et grêle",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "sinistres.autres-sinistres.catastrophe-naturelle",
+   "domaine": "sinistres",
+   "branche": "autres-sinistres",
+   "titre": "Catastrophe naturelle",
+   "niveau": 2,
+   "prerequis": [
+    "sinistres.autres-sinistres.incendie",
+    "sinistres.autres-sinistres.tempete-et-grele",
+    "sinistres.autres-sinistres.vol-et-vandalisme"
+   ],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "sinistres.autres-sinistres.vol-et-vandalisme",
+   "domaine": "sinistres",
+   "branche": "autres-sinistres",
+   "titre": "Vol et vandalisme",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "sinistres.autres-sinistres.les-mesures-conservatoires",
+   "domaine": "sinistres",
+   "branche": "autres-sinistres",
+   "titre": "Les mesures conservatoires",
+   "niveau": 3,
+   "prerequis": [
+    "sinistres.autres-sinistres.catastrophe-naturelle"
+   ],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 10,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "sinistres.construction.reception-et-parfait-achevement",
+   "domaine": "sinistres",
+   "branche": "construction",
+   "titre": "Réception et parfait achèvement",
+   "niveau": 1,
+   "prerequis": [
+    "travaux.chantier.reception-reserves-garanties"
+   ],
+   "exercice_dominant": "datation",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "sinistres.construction.biennale-et-decennale",
+   "domaine": "sinistres",
+   "branche": "construction",
+   "titre": "Biennale et décennale",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "datation",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "sinistres.construction.la-dommages-ouvrage",
+   "domaine": "sinistres",
+   "branche": "construction",
+   "titre": "La dommages-ouvrage",
+   "niveau": 2,
+   "prerequis": [
+    "sinistres.construction.reception-et-parfait-achevement",
+    "sinistres.construction.biennale-et-decennale"
+   ],
+   "exercice_dominant": "datation",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "sinistres.construction.l-expertise-judiciaire",
+   "domaine": "sinistres",
+   "branche": "construction",
+   "titre": "L'expertise judiciaire",
+   "niveau": 2,
+   "prerequis": [
+    "sinistres.construction.reception-et-parfait-achevement",
+    "sinistres.construction.biennale-et-decennale"
+   ],
+   "exercice_dominant": "datation",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "sinistres.construction.un-desordre-a-deux-ans",
+   "domaine": "sinistres",
+   "branche": "construction",
+   "titre": "Un désordre à deux ans",
+   "niveau": 3,
+   "prerequis": [
+    "sinistres.construction.la-dommages-ouvrage",
+    "sinistres.construction.l-expertise-judiciaire"
+   ],
+   "exercice_dominant": "datation",
+   "cartes_cible": 10,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "sinistres.expertise.amiable-contradictoire-judiciaire",
+   "domaine": "sinistres",
+   "branche": "expertise",
+   "titre": "Amiable, contradictoire, judiciaire",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "cas",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "sinistres.expertise.l-expert-d-assure",
+   "domaine": "sinistres",
+   "branche": "expertise",
+   "titre": "L'expert d'assuré",
+   "niveau": 2,
+   "prerequis": [
+    "sinistres.expertise.amiable-contradictoire-judiciaire"
+   ],
+   "exercice_dominant": "cas",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "sinistres.expertise.preparer-une-expertise",
+   "domaine": "sinistres",
+   "branche": "expertise",
+   "titre": "Préparer une expertise",
+   "niveau": 3,
+   "prerequis": [
+    "sinistres.expertise.l-expert-d-assure"
+   ],
+   "exercice_dominant": "cas",
+   "cartes_cible": 10,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "sinistres.gerer.de-la-declaration-a-l-indemnite",
+   "domaine": "sinistres",
+   "branche": "gerer",
+   "titre": "De la déclaration à l'indemnité",
+   "niveau": 2,
+   "prerequis": [],
+   "exercice_dominant": "datation",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "sinistres.gerer.la-methode-complete",
+   "domaine": "sinistres",
+   "branche": "gerer",
+   "titre": "La méthode complète",
+   "niveau": 3,
+   "prerequis": [
+    "sinistres.gerer.de-la-declaration-a-l-indemnite"
+   ],
+   "exercice_dominant": "datation",
+   "cartes_cible": 10,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "sinistres.gerer.les-contentieux-d-assurance",
+   "domaine": "sinistres",
+   "branche": "gerer",
+   "titre": "Les contentieux d'assurance",
+   "niveau": 4,
+   "prerequis": [
+    "sinistres.gerer.la-methode-complete"
+   ],
+   "exercice_dominant": "datation",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "procedure.organisation.tribunal-judiciaire-cour-d-appel-cour-de-cassation",
+   "domaine": "procedure",
+   "branche": "organisation",
+   "titre": "Tribunal judiciaire, cour d'appel, Cour de cassation",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "relier",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "procedure.organisation.le-juge-des-contentieux-de-la-protection",
+   "domaine": "procedure",
+   "branche": "organisation",
+   "titre": "Le juge des contentieux de la protection",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "relier",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "procedure.organisation.le-tribunal-de-commerce",
+   "domaine": "procedure",
+   "branche": "organisation",
+   "titre": "Le tribunal de commerce",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "relier",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "procedure.organisation.le-penal-procureur-et-tribunal-correctionnel",
+   "domaine": "procedure",
+   "branche": "organisation",
+   "titre": "Le pénal : procureur et tribunal correctionnel",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "relier",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "procedure.organisation.la-justice-administrative",
+   "domaine": "procedure",
+   "branche": "organisation",
+   "titre": "La justice administrative",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "relier",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "procedure.organisation.qui-juge-quoi-en-copropriete",
+   "domaine": "procedure",
+   "branche": "organisation",
+   "titre": "Qui juge quoi en copropriété",
+   "niveau": 2,
+   "prerequis": [
+    "procedure.organisation.tribunal-judiciaire-cour-d-appel-cour-de-cassation",
+    "procedure.organisation.le-juge-des-contentieux-de-la-protection",
+    "procedure.organisation.le-tribunal-de-commerce",
+    "procedure.organisation.le-penal-procureur-et-tribunal-correctionnel",
+    "procedure.organisation.la-justice-administrative"
+   ],
+   "exercice_dominant": "relier",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "procedure.acteurs.l-avocat-et-quand-il-est-obligatoire",
+   "domaine": "procedure",
+   "branche": "acteurs",
+   "titre": "L'avocat et quand il est obligatoire",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "relier",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "procedure.acteurs.le-commissaire-de-justice",
+   "domaine": "procedure",
+   "branche": "acteurs",
+   "titre": "Le commissaire de justice",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "relier",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "procedure.acteurs.notaire-expert-judiciaire-mediateur-greffe",
+   "domaine": "procedure",
+   "branche": "acteurs",
+   "titre": "Notaire, expert judiciaire, médiateur, greffe",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "relier",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "procedure.avant-le-proces.mise-en-demeure-recommande-sommation",
+   "domaine": "procedure",
+   "branche": "avant-le-proces",
+   "titre": "Mise en demeure, recommandé, sommation",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "datation",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "procedure.avant-le-proces.conciliation-et-mediation-prealables",
+   "domaine": "procedure",
+   "branche": "avant-le-proces",
+   "titre": "Conciliation et médiation préalables",
+   "niveau": 2,
+   "prerequis": [
+    "procedure.avant-le-proces.mise-en-demeure-recommande-sommation"
+   ],
+   "exercice_dominant": "datation",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "procedure.avant-le-proces.le-protocole-d-accord",
+   "domaine": "procedure",
+   "branche": "avant-le-proces",
+   "titre": "Le protocole d'accord",
+   "niveau": 2,
+   "prerequis": [
+    "procedure.avant-le-proces.mise-en-demeure-recommande-sommation"
+   ],
+   "exercice_dominant": "datation",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "procedure.urgence.le-refere-et-ses-cas",
+   "domaine": "procedure",
+   "branche": "urgence",
+   "titre": "Le référé et ses cas",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "cas",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "procedure.urgence.le-refere-expertise",
+   "domaine": "procedure",
+   "branche": "urgence",
+   "titre": "Le référé expertise",
+   "niveau": 2,
+   "prerequis": [
+    "procedure.urgence.le-refere-et-ses-cas"
+   ],
+   "exercice_dominant": "cas",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "procedure.urgence.la-provision",
+   "domaine": "procedure",
+   "branche": "urgence",
+   "titre": "La provision",
+   "niveau": 2,
+   "prerequis": [
+    "procedure.urgence.le-refere-et-ses-cas"
+   ],
+   "exercice_dominant": "cas",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "procedure.urgence.la-procedure-acceleree-au-fond",
+   "domaine": "procedure",
+   "branche": "urgence",
+   "titre": "La procédure accélérée au fond",
+   "niveau": 2,
+   "prerequis": [
+    "procedure.urgence.le-refere-et-ses-cas"
+   ],
+   "exercice_dominant": "cas",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "procedure.recouvrement.l-injonction-de-payer",
+   "domaine": "procedure",
+   "branche": "recouvrement",
+   "titre": "L'injonction de payer",
+   "niveau": 1,
+   "prerequis": [
+    "comptabilite.impayes.relance-et-mise-en-demeure"
+   ],
+   "exercice_dominant": "datation",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "procedure.recouvrement.l-assignation",
+   "domaine": "procedure",
+   "branche": "recouvrement",
+   "titre": "L'assignation",
+   "niveau": 2,
+   "prerequis": [
+    "procedure.recouvrement.l-injonction-de-payer"
+   ],
+   "exercice_dominant": "datation",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "procedure.recouvrement.hypotheque-legale-et-privilege",
+   "domaine": "procedure",
+   "branche": "recouvrement",
+   "titre": "Hypothèque légale et privilège",
+   "niveau": 2,
+   "prerequis": [
+    "procedure.recouvrement.l-injonction-de-payer"
+   ],
+   "exercice_dominant": "datation",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "procedure.recouvrement.saisie-attribution-et-saisie-immobiliere",
+   "domaine": "procedure",
+   "branche": "recouvrement",
+   "titre": "Saisie-attribution et saisie immobilière",
+   "niveau": 2,
+   "prerequis": [
+    "procedure.recouvrement.l-injonction-de-payer"
+   ],
+   "exercice_dominant": "datation",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "procedure.recouvrement.choisir-la-voie",
+   "domaine": "procedure",
+   "branche": "recouvrement",
+   "titre": "Choisir la voie",
+   "niveau": 3,
+   "prerequis": [
+    "procedure.recouvrement.l-assignation",
+    "procedure.recouvrement.hypotheque-legale-et-privilege",
+    "procedure.recouvrement.saisie-attribution-et-saisie-immobiliere"
+   ],
+   "exercice_dominant": "datation",
+   "cartes_cible": 10,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "procedure.contentieux-ag.la-nullite-d-assemblee",
+   "domaine": "procedure",
+   "branche": "contentieux-ag",
+   "titre": "La nullité d'assemblée",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "cas",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "procedure.contentieux-ag.opposant-et-defaillant",
+   "domaine": "procedure",
+   "branche": "contentieux-ag",
+   "titre": "Opposant et défaillant",
+   "niveau": 2,
+   "prerequis": [
+    "procedure.contentieux-ag.la-nullite-d-assemblee"
+   ],
+   "exercice_dominant": "cas",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "procedure.contentieux-ag.l-autorisation-d-agir-en-justice",
+   "domaine": "procedure",
+   "branche": "contentieux-ag",
+   "titre": "L'autorisation d'agir en justice",
+   "niveau": 2,
+   "prerequis": [
+    "procedure.contentieux-ag.la-nullite-d-assemblee"
+   ],
+   "exercice_dominant": "cas",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "procedure.contentieux-ag.repondre-a-une-assignation",
+   "domaine": "procedure",
+   "branche": "contentieux-ag",
+   "titre": "Répondre à une assignation",
+   "niveau": 3,
+   "prerequis": [
+    "procedure.contentieux-ag.opposant-et-defaillant",
+    "procedure.contentieux-ag.l-autorisation-d-agir-en-justice"
+   ],
+   "exercice_dominant": "cas",
+   "cartes_cible": 10,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "procedure.contentieux-batiment.refere-expertise-et-responsabilite-decennale",
+   "domaine": "procedure",
+   "branche": "contentieux-batiment",
+   "titre": "Référé expertise et responsabilité décennale",
+   "niveau": 2,
+   "prerequis": [],
+   "exercice_dominant": "cas",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "procedure.contentieux-batiment.l-appel-en-garantie",
+   "domaine": "procedure",
+   "branche": "contentieux-batiment",
+   "titre": "L'appel en garantie",
+   "niveau": 2,
+   "prerequis": [],
+   "exercice_dominant": "cas",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "procedure.penal.quand-une-affaire-devient-penale",
+   "domaine": "procedure",
+   "branche": "penal",
+   "titre": "Quand une affaire devient pénale",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "procedure.penal.la-plainte",
+   "domaine": "procedure",
+   "branche": "penal",
+   "titre": "La plainte",
+   "niveau": 2,
+   "prerequis": [
+    "procedure.penal.quand-une-affaire-devient-penale"
+   ],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "procedure.lire.visa-moyens-motifs-dispositif",
+   "domaine": "procedure",
+   "branche": "lire",
+   "titre": "Visa, moyens, motifs, dispositif",
+   "niveau": 2,
+   "prerequis": [],
+   "exercice_dominant": "lecture",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "procedure.lire.cassation-et-rejet-portee",
+   "domaine": "procedure",
+   "branche": "lire",
+   "titre": "Cassation et rejet, portée",
+   "niveau": 2,
+   "prerequis": [],
+   "exercice_dominant": "lecture",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "procedure.lire.le-commentaire-d-arret",
+   "domaine": "procedure",
+   "branche": "lire",
+   "titre": "Le commentaire d'arrêt",
+   "niveau": 4,
+   "prerequis": [],
+   "exercice_dominant": "lecture",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "travaux.vocabulaire.echafaudage-nacelle-et-les-moyens-d-acces",
+   "domaine": "travaux",
+   "branche": "vocabulaire",
+   "titre": "Échafaudage, nacelle et les moyens d'accès",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "relier",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "travaux.vocabulaire.moa-moe-bet-csps",
+   "domaine": "travaux",
+   "branche": "vocabulaire",
+   "titre": "MOA, MOE, BET, CSPS",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "relier",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "travaux.vocabulaire.doe-diuo-dpgf-cctp",
+   "domaine": "travaux",
+   "branche": "vocabulaire",
+   "titre": "DOE, DIUO, DPGF, CCTP",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "relier",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "travaux.vocabulaire.lot-corps-d-etat-reception-reserves",
+   "domaine": "travaux",
+   "branche": "vocabulaire",
+   "titre": "Lot, corps d'état, réception, réserves",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "relier",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "travaux.plans.echelles-et-types-de-plans",
+   "domaine": "travaux",
+   "branche": "plans",
+   "titre": "Échelles et types de plans",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "plan",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "travaux.plans.les-abreviations-eu-ev-ep-ecs-ef",
+   "domaine": "travaux",
+   "branche": "plans",
+   "titre": "Les abréviations : EU, EV, EP, ECS, EF",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "plan",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "travaux.plans.niveaux-cotes-symboles",
+   "domaine": "travaux",
+   "branche": "plans",
+   "titre": "Niveaux, cotes, symboles",
+   "niveau": 2,
+   "prerequis": [
+    "travaux.plans.echelles-et-types-de-plans",
+    "travaux.plans.les-abreviations-eu-ev-ep-ecs-ef"
+   ],
+   "exercice_dominant": "plan",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "travaux.plans.lire-un-plan-de-reseaux",
+   "domaine": "travaux",
+   "branche": "plans",
+   "titre": "Lire un plan de réseaux",
+   "niveau": 3,
+   "prerequis": [
+    "travaux.plans.niveaux-cotes-symboles"
+   ],
+   "exercice_dominant": "plan",
+   "cartes_cible": 10,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "travaux.du-besoin-au-devis.le-cahier-des-charges",
+   "domaine": "travaux",
+   "branche": "du-besoin-au-devis",
+   "titre": "Le cahier des charges",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "cas",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "travaux.du-besoin-au-devis.la-mise-en-concurrence",
+   "domaine": "travaux",
+   "branche": "du-besoin-au-devis",
+   "titre": "La mise en concurrence",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "cas",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "travaux.du-besoin-au-devis.comparer-des-devis",
+   "domaine": "travaux",
+   "branche": "du-besoin-au-devis",
+   "titre": "Comparer des devis",
+   "niveau": 2,
+   "prerequis": [
+    "travaux.du-besoin-au-devis.le-cahier-des-charges",
+    "travaux.du-besoin-au-devis.la-mise-en-concurrence"
+   ],
+   "exercice_dominant": "cas",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "travaux.du-besoin-au-devis.attestations-kbis-vigilance",
+   "domaine": "travaux",
+   "branche": "du-besoin-au-devis",
+   "titre": "Attestations, Kbis, vigilance",
+   "niveau": 2,
+   "prerequis": [
+    "travaux.du-besoin-au-devis.le-cahier-des-charges",
+    "travaux.du-besoin-au-devis.la-mise-en-concurrence"
+   ],
+   "exercice_dominant": "cas",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "travaux.du-besoin-au-devis.le-tableau-comparatif",
+   "domaine": "travaux",
+   "branche": "du-besoin-au-devis",
+   "titre": "Le tableau comparatif",
+   "niveau": 3,
+   "prerequis": [
+    "travaux.du-besoin-au-devis.comparer-des-devis",
+    "travaux.du-besoin-au-devis.attestations-kbis-vigilance"
+   ],
+   "exercice_dominant": "cas",
+   "cartes_cible": 10,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "travaux.marche-prive.ce-que-regle-la-norme-nf-p-03-001",
+   "domaine": "travaux",
+   "branche": "marche-prive",
+   "titre": "Ce que règle la norme NF P 03-001",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "travaux.marche-prive.acompte-retenue-de-garantie-penalites-revision",
+   "domaine": "travaux",
+   "branche": "marche-prive",
+   "titre": "Acompte, retenue de garantie, pénalités, révision",
+   "niveau": 2,
+   "prerequis": [
+    "travaux.marche-prive.ce-que-regle-la-norme-nf-p-03-001"
+   ],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "travaux.marche-prive.sous-traitance-et-avenants",
+   "domaine": "travaux",
+   "branche": "marche-prive",
+   "titre": "Sous-traitance et avenants",
+   "niveau": 2,
+   "prerequis": [
+    "travaux.marche-prive.ce-que-regle-la-norme-nf-p-03-001"
+   ],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "travaux.marche-prive.le-decompte-definitif",
+   "domaine": "travaux",
+   "branche": "marche-prive",
+   "titre": "Le décompte définitif",
+   "niveau": 2,
+   "prerequis": [
+    "travaux.marche-prive.ce-que-regle-la-norme-nf-p-03-001"
+   ],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "travaux.chantier.reunions-et-comptes-rendus",
+   "domaine": "travaux",
+   "branche": "chantier",
+   "titre": "Réunions et comptes rendus",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "datation",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "travaux.chantier.securite-et-affichage",
+   "domaine": "travaux",
+   "branche": "chantier",
+   "titre": "Sécurité et affichage",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "datation",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "travaux.chantier.reception-reserves-garanties",
+   "domaine": "travaux",
+   "branche": "chantier",
+   "titre": "Réception, réserves, garanties",
+   "niveau": 2,
+   "prerequis": [
+    "travaux.chantier.reunions-et-comptes-rendus",
+    "travaux.chantier.securite-et-affichage"
+   ],
+   "exercice_dominant": "datation",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "travaux.chantier.la-reception",
+   "domaine": "travaux",
+   "branche": "chantier",
+   "titre": "La réception",
+   "niveau": 3,
+   "prerequis": [
+    "travaux.chantier.reception-reserves-garanties"
+   ],
+   "exercice_dominant": "datation",
+   "cartes_cible": 10,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "travaux.urbanisme-des-travaux.declaration-prealable-et-permis",
+   "domaine": "travaux",
+   "branche": "urbanisme-des-travaux",
+   "titre": "Déclaration préalable et permis",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "travaux.urbanisme-des-travaux.le-plu-et-les-batiments-de-france",
+   "domaine": "travaux",
+   "branche": "urbanisme-des-travaux",
+   "titre": "Le PLU et les Bâtiments de France",
+   "niveau": 2,
+   "prerequis": [
+    "travaux.urbanisme-des-travaux.declaration-prealable-et-permis"
+   ],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "travaux.urbanisme-des-travaux.ravalement-obligatoire-et-enseignes",
+   "domaine": "travaux",
+   "branche": "urbanisme-des-travaux",
+   "titre": "Ravalement obligatoire et enseignes",
+   "niveau": 2,
+   "prerequis": [
+    "travaux.urbanisme-des-travaux.declaration-prealable-et-permis"
+   ],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "travaux.renovation-globale.audit-dpe-collectif-ppt",
+   "domaine": "travaux",
+   "branche": "renovation-globale",
+   "titre": "Audit, DPE collectif, PPT",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "cas",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "travaux.renovation-globale.les-scenarios",
+   "domaine": "travaux",
+   "branche": "renovation-globale",
+   "titre": "Les scénarios",
+   "niveau": 2,
+   "prerequis": [
+    "travaux.renovation-globale.audit-dpe-collectif-ppt"
+   ],
+   "exercice_dominant": "cas",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "travaux.renovation-globale.l-assistance-a-maitrise-d-ouvrage",
+   "domaine": "travaux",
+   "branche": "renovation-globale",
+   "titre": "L'assistance à maîtrise d'ouvrage",
+   "niveau": 2,
+   "prerequis": [
+    "travaux.renovation-globale.audit-dpe-collectif-ppt"
+   ],
+   "exercice_dominant": "cas",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "travaux.renovation-globale.aides-et-financement",
+   "domaine": "travaux",
+   "branche": "renovation-globale",
+   "titre": "Aides et financement",
+   "niveau": 2,
+   "prerequis": [
+    "travaux.renovation-globale.audit-dpe-collectif-ppt"
+   ],
+   "exercice_dominant": "cas",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "travaux.renovation-globale.renovation-performante-contre-renovation-par-gestes",
+   "domaine": "travaux",
+   "branche": "renovation-globale",
+   "titre": "Rénovation performante contre rénovation par gestes",
+   "niveau": 4,
+   "prerequis": [],
+   "exercice_dominant": "cas",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "travaux.honoraires-travaux.les-honoraires-du-syndic-sur-travaux",
+   "domaine": "travaux",
+   "branche": "honoraires-travaux",
+   "titre": "Les honoraires du syndic sur travaux",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "travaux.honoraires-travaux.les-conflits-d-interets",
+   "domaine": "travaux",
+   "branche": "honoraires-travaux",
+   "titre": "Les conflits d'intérêts",
+   "niveau": 2,
+   "prerequis": [
+    "travaux.honoraires-travaux.les-honoraires-du-syndic-sur-travaux"
+   ],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "travaux.honoraires-travaux.doctrine-et-deontologie-des-honoraires",
+   "domaine": "travaux",
+   "branche": "honoraires-travaux",
+   "titre": "Doctrine et déontologie des honoraires",
+   "niveau": 4,
+   "prerequis": [],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "energie.physique.deperditions-et-isolation",
+   "domaine": "energie",
+   "branche": "physique",
+   "titre": "Déperditions et isolation",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "dessin",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "energie.physique.ponts-thermiques-et-inertie",
+   "domaine": "energie",
+   "branche": "physique",
+   "titre": "Ponts thermiques et inertie",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "dessin",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "energie.physique.ventilation-et-humidite",
+   "domaine": "energie",
+   "branche": "physique",
+   "titre": "Ventilation et humidité",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "dessin",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "energie.physique.le-confort-d-ete",
+   "domaine": "energie",
+   "branche": "physique",
+   "titre": "Le confort d'été",
+   "niveau": 2,
+   "prerequis": [
+    "energie.physique.deperditions-et-isolation",
+    "energie.physique.ponts-thermiques-et-inertie",
+    "energie.physique.ventilation-et-humidite"
+   ],
+   "exercice_dominant": "dessin",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "energie.dpe.histoire-du-dpe",
+   "domaine": "energie",
+   "branche": "dpe",
+   "titre": "Histoire du DPE",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "energie.dpe.la-methode-de-calcul",
+   "domaine": "energie",
+   "branche": "dpe",
+   "titre": "La méthode de calcul",
+   "niveau": 2,
+   "prerequis": [
+    "energie.dpe.histoire-du-dpe",
+    "energie.dpe.les-etiquettes"
+   ],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "energie.dpe.les-etiquettes",
+   "domaine": "energie",
+   "branche": "dpe",
+   "titre": "Les étiquettes",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "energie.dpe.le-dpe-collectif-et-son-calendrier",
+   "domaine": "energie",
+   "branche": "dpe",
+   "titre": "Le DPE collectif et son calendrier",
+   "niveau": 2,
+   "prerequis": [
+    "energie.dpe.histoire-du-dpe",
+    "energie.dpe.les-etiquettes"
+   ],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "energie.dpe.fiabilite-et-contestation",
+   "domaine": "energie",
+   "branche": "dpe",
+   "titre": "Fiabilité et contestation",
+   "niveau": 3,
+   "prerequis": [
+    "energie.dpe.la-methode-de-calcul",
+    "energie.dpe.le-dpe-collectif-et-son-calendrier"
+   ],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 10,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "energie.dpe.le-dpe-en-debat",
+   "domaine": "energie",
+   "branche": "dpe",
+   "titre": "Le DPE en débat",
+   "niveau": 4,
+   "prerequis": [
+    "energie.dpe.fiabilite-et-contestation"
+   ],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "energie.calendrier.les-interdictions-de-location-par-etiquette",
+   "domaine": "energie",
+   "branche": "calendrier",
+   "titre": "Les interdictions de location par étiquette",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "energie.calendrier.ce-que-ca-change-pour-la-copropriete",
+   "domaine": "energie",
+   "branche": "calendrier",
+   "titre": "Ce que ça change pour la copropriété",
+   "niveau": 2,
+   "prerequis": [
+    "energie.calendrier.les-interdictions-de-location-par-etiquette"
+   ],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "energie.audit-et-ppt.l-audit-energetique",
+   "domaine": "energie",
+   "branche": "audit-et-ppt",
+   "titre": "L'audit énergétique",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "cas",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "energie.audit-et-ppt.le-ppt-et-le-dtg",
+   "domaine": "energie",
+   "branche": "audit-et-ppt",
+   "titre": "Le PPT et le DTG",
+   "niveau": 2,
+   "prerequis": [
+    "energie.audit-et-ppt.l-audit-energetique",
+    "energie.audit-et-ppt.le-fonds-de-travaux",
+    "droit.travaux.le-plan-pluriannuel-et-le-fonds-de-travaux"
+   ],
+   "exercice_dominant": "cas",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "energie.audit-et-ppt.le-fonds-de-travaux",
+   "domaine": "energie",
+   "branche": "audit-et-ppt",
+   "titre": "Le fonds de travaux",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "cas",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "energie.aides.les-aides-nationales",
+   "domaine": "energie",
+   "branche": "aides",
+   "titre": "Les aides nationales",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "energie.aides.les-certificats-d-economies-d-energie",
+   "domaine": "energie",
+   "branche": "aides",
+   "titre": "Les certificats d'économies d'énergie",
+   "niveau": 2,
+   "prerequis": [
+    "energie.aides.les-aides-nationales"
+   ],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "energie.aides.le-pret-collectif-et-les-aides-locales",
+   "domaine": "energie",
+   "branche": "aides",
+   "titre": "Le prêt collectif et les aides locales",
+   "niveau": 2,
+   "prerequis": [
+    "energie.aides.les-aides-nationales"
+   ],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "energie.contrats-energie.tarifs-reglementes-et-marche",
+   "domaine": "energie",
+   "branche": "contrats-energie",
+   "titre": "Tarifs réglementés et marché",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "energie.contrats-energie.gaz-et-electricite-pour-un-immeuble",
+   "domaine": "energie",
+   "branche": "contrats-energie",
+   "titre": "Gaz et électricité pour un immeuble",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "energie.contrats-energie.le-contrat-d-exploitation-de-chauffage",
+   "domaine": "energie",
+   "branche": "contrats-energie",
+   "titre": "Le contrat d'exploitation de chauffage",
+   "niveau": 2,
+   "prerequis": [
+    "energie.contrats-energie.tarifs-reglementes-et-marche",
+    "energie.contrats-energie.gaz-et-electricite-pour-un-immeuble"
+   ],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "energie.contrats-energie.les-prix",
+   "domaine": "energie",
+   "branche": "contrats-energie",
+   "titre": "Les prix",
+   "niveau": 2,
+   "prerequis": [
+    "energie.contrats-energie.tarifs-reglementes-et-marche",
+    "energie.contrats-energie.gaz-et-electricite-pour-un-immeuble"
+   ],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "energie.chauffage-collectif.individualisation-des-frais",
+   "domaine": "energie",
+   "branche": "chauffage-collectif",
+   "titre": "Individualisation des frais",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "cas",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "energie.chauffage-collectif.reseaux-de-chaleur",
+   "domaine": "energie",
+   "branche": "chauffage-collectif",
+   "titre": "Réseaux de chaleur",
+   "niveau": 2,
+   "prerequis": [
+    "energie.chauffage-collectif.individualisation-des-frais"
+   ],
+   "exercice_dominant": "cas",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "energie.chauffage-collectif.pompes-a-chaleur-collectives",
+   "domaine": "energie",
+   "branche": "chauffage-collectif",
+   "titre": "Pompes à chaleur collectives",
+   "niveau": 2,
+   "prerequis": [
+    "energie.chauffage-collectif.individualisation-des-frais"
+   ],
+   "exercice_dominant": "cas",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "energie.chauffage-collectif.quelle-energie-pour-quel-immeuble",
+   "domaine": "energie",
+   "branche": "chauffage-collectif",
+   "titre": "Quelle énergie pour quel immeuble",
+   "niveau": 4,
+   "prerequis": [],
+   "exercice_dominant": "cas",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "energie.irve.le-droit-a-la-prise",
+   "domaine": "energie",
+   "branche": "irve",
+   "titre": "Le droit à la prise",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "energie.irve.l-infrastructure-collective",
+   "domaine": "energie",
+   "branche": "irve",
+   "titre": "L'infrastructure collective",
+   "niveau": 2,
+   "prerequis": [
+    "energie.irve.le-droit-a-la-prise"
+   ],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "immobilier.propriete.la-propriete-et-ses-demembrements",
+   "domaine": "immobilier",
+   "branche": "propriete",
+   "titre": "La propriété et ses démembrements",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "immobilier.propriete.l-indivision",
+   "domaine": "immobilier",
+   "branche": "propriete",
+   "titre": "L'indivision",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "immobilier.propriete.les-servitudes",
+   "domaine": "immobilier",
+   "branche": "propriete",
+   "titre": "Les servitudes",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "immobilier.propriete.la-mitoyennete",
+   "domaine": "immobilier",
+   "branche": "propriete",
+   "titre": "La mitoyenneté",
+   "niveau": 2,
+   "prerequis": [
+    "immobilier.propriete.la-propriete-et-ses-demembrements",
+    "immobilier.propriete.l-indivision",
+    "immobilier.propriete.les-servitudes"
+   ],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "immobilier.propriete.troubles-anormaux-de-voisinage",
+   "domaine": "immobilier",
+   "branche": "propriete",
+   "titre": "Troubles anormaux de voisinage",
+   "niveau": 2,
+   "prerequis": [
+    "immobilier.propriete.la-propriete-et-ses-demembrements",
+    "immobilier.propriete.l-indivision",
+    "immobilier.propriete.les-servitudes"
+   ],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "immobilier.propriete.l-empietement",
+   "domaine": "immobilier",
+   "branche": "propriete",
+   "titre": "L'empiètement",
+   "niveau": 2,
+   "prerequis": [
+    "immobilier.propriete.la-propriete-et-ses-demembrements",
+    "immobilier.propriete.l-indivision",
+    "immobilier.propriete.les-servitudes"
+   ],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "immobilier.propriete.theories-de-la-propriete",
+   "domaine": "immobilier",
+   "branche": "propriete",
+   "titre": "Théories de la propriété",
+   "niveau": 4,
+   "prerequis": [],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "immobilier.vente.du-compromis-a-l-acte",
+   "domaine": "immobilier",
+   "branche": "vente",
+   "titre": "Du compromis à l'acte",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "datation",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "immobilier.vente.diagnostics-et-surface",
+   "domaine": "immobilier",
+   "branche": "vente",
+   "titre": "Diagnostics et surface",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "datation",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "immobilier.vente.etat-date-et-pre-etat-date",
+   "domaine": "immobilier",
+   "branche": "vente",
+   "titre": "État daté et pré-état daté",
+   "niveau": 2,
+   "prerequis": [
+    "immobilier.vente.du-compromis-a-l-acte",
+    "immobilier.vente.diagnostics-et-surface"
+   ],
+   "exercice_dominant": "datation",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "immobilier.vente.l-opposition-et-les-charges-au-prorata",
+   "domaine": "immobilier",
+   "branche": "vente",
+   "titre": "L'opposition et les charges au prorata",
+   "niveau": 2,
+   "prerequis": [
+    "immobilier.vente.du-compromis-a-l-acte",
+    "immobilier.vente.diagnostics-et-surface"
+   ],
+   "exercice_dominant": "datation",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "immobilier.vente.une-vente-avec-opposition",
+   "domaine": "immobilier",
+   "branche": "vente",
+   "titre": "Une vente avec opposition",
+   "niveau": 3,
+   "prerequis": [
+    "immobilier.vente.etat-date-et-pre-etat-date",
+    "immobilier.vente.l-opposition-et-les-charges-au-prorata"
+   ],
+   "exercice_dominant": "datation",
+   "cartes_cible": 10,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "immobilier.location.le-bail-d-habitation",
+   "domaine": "immobilier",
+   "branche": "location",
+   "titre": "Le bail d'habitation",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "immobilier.location.la-decence",
+   "domaine": "immobilier",
+   "branche": "location",
+   "titre": "La décence",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "immobilier.location.les-charges-recuperables",
+   "domaine": "immobilier",
+   "branche": "location",
+   "titre": "Les charges récupérables",
+   "niveau": 2,
+   "prerequis": [
+    "immobilier.location.le-bail-d-habitation",
+    "immobilier.location.la-decence"
+   ],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "immobilier.location.meuble-de-tourisme-et-reglement-de-copropriete",
+   "domaine": "immobilier",
+   "branche": "location",
+   "titre": "Meublé de tourisme et règlement de copropriété",
+   "niveau": 2,
+   "prerequis": [
+    "immobilier.location.le-bail-d-habitation",
+    "immobilier.location.la-decence"
+   ],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "immobilier.urbanisme.le-plu-et-ses-zones",
+   "domaine": "immobilier",
+   "branche": "urbanisme",
+   "titre": "Le PLU et ses zones",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "immobilier.urbanisme.les-autorisations",
+   "domaine": "immobilier",
+   "branche": "urbanisme",
+   "titre": "Les autorisations",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "immobilier.urbanisme.servitudes-d-utilite-publique-et-preemption",
+   "domaine": "immobilier",
+   "branche": "urbanisme",
+   "titre": "Servitudes d'utilité publique et préemption",
+   "niveau": 2,
+   "prerequis": [
+    "immobilier.urbanisme.le-plu-et-ses-zones",
+    "immobilier.urbanisme.les-autorisations"
+   ],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "immobilier.urbanisme.cadastre-et-division",
+   "domaine": "immobilier",
+   "branche": "urbanisme",
+   "titre": "Cadastre et division",
+   "niveau": 2,
+   "prerequis": [
+    "immobilier.urbanisme.le-plu-et-ses-zones",
+    "immobilier.urbanisme.les-autorisations"
+   ],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "immobilier.acteurs-et-formes.notaire-agent-promoteur-bailleur-social",
+   "domaine": "immobilier",
+   "branche": "acteurs-et-formes",
+   "titre": "Notaire, agent, promoteur, bailleur social",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "relier",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "immobilier.acteurs-et-formes.adil-mairie-prefecture",
+   "domaine": "immobilier",
+   "branche": "acteurs-et-formes",
+   "titre": "ADIL, mairie, préfecture",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "relier",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "immobilier.acteurs-et-formes.asl-aful-division-en-volumes-copropriete-horizontale",
+   "domaine": "immobilier",
+   "branche": "acteurs-et-formes",
+   "titre": "ASL, AFUL, division en volumes, copropriété horizontale",
+   "niveau": 2,
+   "prerequis": [
+    "immobilier.acteurs-et-formes.notaire-agent-promoteur-bailleur-social",
+    "immobilier.acteurs-et-formes.adil-mairie-prefecture"
+   ],
+   "exercice_dominant": "relier",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "immobilier.fiscalite.taxe-fonciere-et-enlevement-des-ordures",
+   "domaine": "immobilier",
+   "branche": "fiscalite",
+   "titre": "Taxe foncière et enlèvement des ordures",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "immobilier.fiscalite.la-plus-value",
+   "domaine": "immobilier",
+   "branche": "fiscalite",
+   "titre": "La plus-value",
+   "niveau": 2,
+   "prerequis": [
+    "immobilier.fiscalite.taxe-fonciere-et-enlevement-des-ordures"
+   ],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "immobilier.fiscalite.notions-d-ifi-et-de-tva-immobiliere",
+   "domaine": "immobilier",
+   "branche": "fiscalite",
+   "titre": "Notions d'IFI et de TVA immobilière",
+   "niveau": 2,
+   "prerequis": [
+    "immobilier.fiscalite.taxe-fonciere-et-enlevement-des-ordures"
+   ],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "immobilier.local.le-bati-d-angers-par-epoques",
+   "domaine": "immobilier",
+   "branche": "local",
+   "titre": "Le bâti d'Angers par époques",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "photo",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "immobilier.local.le-plui",
+   "domaine": "immobilier",
+   "branche": "local",
+   "titre": "Le PLUi",
+   "niveau": 2,
+   "prerequis": [
+    "immobilier.local.le-bati-d-angers-par-epoques"
+   ],
+   "exercice_dominant": "photo",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "immobilier.local.les-fragilites-observees",
+   "domaine": "immobilier",
+   "branche": "local",
+   "titre": "Les fragilités observées",
+   "niveau": 3,
+   "prerequis": [
+    "immobilier.local.le-plui"
+   ],
+   "exercice_dominant": "photo",
+   "cartes_cible": 10,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "cabinet.profession.carte-professionnelle-garantie-assurance",
+   "domaine": "cabinet",
+   "branche": "profession",
+   "titre": "Carte professionnelle, garantie, assurance",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "cabinet.profession.le-code-de-deontologie",
+   "domaine": "cabinet",
+   "branche": "profession",
+   "titre": "Le code de déontologie",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "cabinet.profession.la-formation-continue-obligatoire",
+   "domaine": "cabinet",
+   "branche": "profession",
+   "titre": "La formation continue obligatoire",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "cabinet.profession.histoire-et-critique-de-la-profession",
+   "domaine": "cabinet",
+   "branche": "profession",
+   "titre": "Histoire et critique de la profession",
+   "niveau": 4,
+   "prerequis": [],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "cabinet.contrat-de-syndic.le-contrat-type",
+   "domaine": "cabinet",
+   "branche": "contrat-de-syndic",
+   "titre": "Le contrat type",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "cabinet.contrat-de-syndic.forfait-et-prestations-particulieres",
+   "domaine": "cabinet",
+   "branche": "contrat-de-syndic",
+   "titre": "Forfait et prestations particulières",
+   "niveau": 2,
+   "prerequis": [
+    "cabinet.contrat-de-syndic.le-contrat-type"
+   ],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "cabinet.contrat-de-syndic.duree-revocation-mise-en-concurrence",
+   "domaine": "cabinet",
+   "branche": "contrat-de-syndic",
+   "titre": "Durée, révocation, mise en concurrence",
+   "niveau": 2,
+   "prerequis": [
+    "cabinet.contrat-de-syndic.le-contrat-type"
+   ],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "cabinet.cycle-annuel.de-la-cloture-a-l-assemblee",
+   "domaine": "cabinet",
+   "branche": "cycle-annuel",
+   "titre": "De la clôture à l'assemblée",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "datation",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "cabinet.cycle-annuel.de-l-assemblee-a-l-execution",
+   "domaine": "cabinet",
+   "branche": "cycle-annuel",
+   "titre": "De l'assemblée à l'exécution",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "datation",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "cabinet.cycle-annuel.les-obligations-annuelles",
+   "domaine": "cabinet",
+   "branche": "cycle-annuel",
+   "titre": "Les obligations annuelles",
+   "niveau": 2,
+   "prerequis": [
+    "cabinet.cycle-annuel.de-la-cloture-a-l-assemblee",
+    "cabinet.cycle-annuel.de-l-assemblee-a-l-execution"
+   ],
+   "exercice_dominant": "datation",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "cabinet.cycle-annuel.derouler-une-annee-sans-rien-oublier",
+   "domaine": "cabinet",
+   "branche": "cycle-annuel",
+   "titre": "Dérouler une année sans rien oublier",
+   "niveau": 3,
+   "prerequis": [
+    "cabinet.cycle-annuel.les-obligations-annuelles"
+   ],
+   "exercice_dominant": "datation",
+   "cartes_cible": 10,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "cabinet.conseil-syndical.role-et-reunion",
+   "domaine": "cabinet",
+   "branche": "conseil-syndical",
+   "titre": "Rôle et réunion",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "cas",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "cabinet.conseil-syndical.preparer-et-restituer",
+   "domaine": "cabinet",
+   "branche": "conseil-syndical",
+   "titre": "Préparer et restituer",
+   "niveau": 2,
+   "prerequis": [
+    "cabinet.conseil-syndical.role-et-reunion"
+   ],
+   "exercice_dominant": "cas",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "cabinet.conseil-syndical.la-psychologie-d-un-groupe",
+   "domaine": "cabinet",
+   "branche": "conseil-syndical",
+   "titre": "La psychologie d'un groupe",
+   "niveau": 2,
+   "prerequis": [
+    "cabinet.conseil-syndical.role-et-reunion"
+   ],
+   "exercice_dominant": "cas",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "cabinet.assemblee-en-pratique.animer-et-tenir-le-bureau",
+   "domaine": "cabinet",
+   "branche": "assemblee-en-pratique",
+   "titre": "Animer et tenir le bureau",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "cas",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "cabinet.assemblee-en-pratique.gerer-les-contestations-et-la-salle",
+   "domaine": "cabinet",
+   "branche": "assemblee-en-pratique",
+   "titre": "Gérer les contestations et la salle",
+   "niveau": 2,
+   "prerequis": [
+    "cabinet.assemblee-en-pratique.animer-et-tenir-le-bureau"
+   ],
+   "exercice_dominant": "cas",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "cabinet.assemblee-en-pratique.les-fausses-demandes-de-vote",
+   "domaine": "cabinet",
+   "branche": "assemblee-en-pratique",
+   "titre": "Les fausses demandes de vote",
+   "niveau": 2,
+   "prerequis": [
+    "cabinet.assemblee-en-pratique.animer-et-tenir-le-bureau"
+   ],
+   "exercice_dominant": "cas",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "cabinet.assemblee-en-pratique.le-proces-verbal-en-seance",
+   "domaine": "cabinet",
+   "branche": "assemblee-en-pratique",
+   "titre": "Le procès-verbal en séance",
+   "niveau": 2,
+   "prerequis": [
+    "cabinet.assemblee-en-pratique.animer-et-tenir-le-bureau"
+   ],
+   "exercice_dominant": "cas",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "cabinet.assemblee-en-pratique.une-assemblee-qui-tourne-mal",
+   "domaine": "cabinet",
+   "branche": "assemblee-en-pratique",
+   "titre": "Une assemblée qui tourne mal",
+   "niveau": 3,
+   "prerequis": [
+    "cabinet.assemblee-en-pratique.gerer-les-contestations-et-la-salle",
+    "cabinet.assemblee-en-pratique.les-fausses-demandes-de-vote",
+    "cabinet.assemblee-en-pratique.le-proces-verbal-en-seance"
+   ],
+   "exercice_dominant": "cas",
+   "cartes_cible": 10,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "cabinet.ecrire.courrier-mail-notification",
+   "domaine": "cabinet",
+   "branche": "ecrire",
+   "titre": "Courrier, mail, notification",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "synthese",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "cabinet.ecrire.ton-et-engagements",
+   "domaine": "cabinet",
+   "branche": "ecrire",
+   "titre": "Ton et engagements",
+   "niveau": 2,
+   "prerequis": [
+    "cabinet.ecrire.courrier-mail-notification"
+   ],
+   "exercice_dominant": "synthese",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "cabinet.ecrire.le-silence-n-est-pas-un-accord",
+   "domaine": "cabinet",
+   "branche": "ecrire",
+   "titre": "Le silence n'est pas un accord",
+   "niveau": 2,
+   "prerequis": [
+    "cabinet.ecrire.courrier-mail-notification"
+   ],
+   "exercice_dominant": "synthese",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "cabinet.negocier.avec-un-prestataire",
+   "domaine": "cabinet",
+   "branche": "negocier",
+   "titre": "Avec un prestataire",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "role",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "cabinet.negocier.methode-et-alternatives",
+   "domaine": "cabinet",
+   "branche": "negocier",
+   "titre": "Méthode et alternatives",
+   "niveau": 2,
+   "prerequis": [
+    "cabinet.negocier.avec-un-prestataire"
+   ],
+   "exercice_dominant": "role",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "cabinet.negocier.preparer-une-negociation",
+   "domaine": "cabinet",
+   "branche": "negocier",
+   "titre": "Préparer une négociation",
+   "niveau": 3,
+   "prerequis": [
+    "cabinet.negocier.methode-et-alternatives"
+   ],
+   "exercice_dominant": "role",
+   "cartes_cible": 10,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "cabinet.donnees.le-rgpd-au-cabinet",
+   "domaine": "cabinet",
+   "branche": "donnees",
+   "titre": "Le RGPD au cabinet",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "cabinet.donnees.pieces-jointes-et-donnees-personnelles",
+   "domaine": "cabinet",
+   "branche": "donnees",
+   "titre": "Pièces jointes et données personnelles",
+   "niveau": 2,
+   "prerequis": [
+    "cabinet.donnees.le-rgpd-au-cabinet",
+    "cabinet.donnees.lutte-contre-le-blanchiment",
+    "cabinet.donnees.securite-et-cyber"
+   ],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "cabinet.donnees.lutte-contre-le-blanchiment",
+   "domaine": "cabinet",
+   "branche": "donnees",
+   "titre": "Lutte contre le blanchiment",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "cabinet.donnees.securite-et-cyber",
+   "domaine": "cabinet",
+   "branche": "donnees",
+   "titre": "Sécurité et cyber",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "qcm",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "cabinet.charge.gerer-son-temps-et-deleguer",
+   "domaine": "cabinet",
+   "branche": "charge",
+   "titre": "Gérer son temps et déléguer",
+   "niveau": 1,
+   "prerequis": [],
+   "exercice_dominant": "synthese",
+   "cartes_cible": 6,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "cabinet.charge.les-echeances-qui-ne-se-ratent-pas",
+   "domaine": "cabinet",
+   "branche": "charge",
+   "titre": "Les échéances qui ne se ratent pas",
+   "niveau": 2,
+   "prerequis": [
+    "cabinet.charge.gerer-son-temps-et-deleguer"
+   ],
+   "exercice_dominant": "synthese",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "cabinet.cas-transverses.un-degat-des-eaux-du-5e-au-2e",
+   "domaine": "cabinet",
+   "branche": "cas-transverses",
+   "titre": "Un dégât des eaux du 5e au 2e",
+   "niveau": 3,
+   "prerequis": [
+    "sinistres.degat-des-eaux.la-convention-irsi-et-ses-tranches",
+    "equipements.plomberie.colonnes-eu-ev-ep",
+    "droit.responsabilites.la-responsabilite-du-syndicat",
+    "comptabilite.budget.les-travaux-hors-budget"
+   ],
+   "exercice_dominant": "cas",
+   "cartes_cible": 10,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "cabinet.cas-transverses.une-fissure-avant-l-assemblee",
+   "domaine": "cabinet",
+   "branche": "cas-transverses",
+   "titre": "Une fissure avant l'assemblée",
+   "niveau": 3,
+   "prerequis": [
+    "pathologie.structure.microfissure-fissure-lezarde",
+    "droit.travaux.travaux-votes-et-travaux-urgents",
+    "droit.majorites.l-article-25-et-la-passerelle",
+    "travaux.du-besoin-au-devis.comparer-des-devis"
+   ],
+   "exercice_dominant": "cas",
+   "cartes_cible": 10,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "cabinet.cas-transverses.un-impaye-de-dix-huit-mois",
+   "domaine": "cabinet",
+   "branche": "cas-transverses",
+   "titre": "Un impayé de dix-huit mois",
+   "niveau": 3,
+   "prerequis": [
+    "comptabilite.impayes.relance-et-mise-en-demeure",
+    "procedure.recouvrement.l-injonction-de-payer",
+    "droit.mutations.le-coproprietaire-defaillant"
+   ],
+   "exercice_dominant": "cas",
+   "cartes_cible": 10,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "cabinet.cas-transverses.le-chauffage-en-panne-en-janvier",
+   "domaine": "cabinet",
+   "branche": "cas-transverses",
+   "titre": "Le chauffage en panne en janvier",
+   "niveau": 3,
+   "prerequis": [
+    "equipements.chauffage.les-contrats-p1-a-p4",
+    "cabinet.negocier.avec-un-prestataire",
+    "droit.travaux.travaux-votes-et-travaux-urgents"
+   ],
+   "exercice_dominant": "cas",
+   "cartes_cible": 10,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "cabinet.cas-transverses.la-copropriete-classee-g-doit-renover",
+   "domaine": "cabinet",
+   "branche": "cas-transverses",
+   "titre": "La copropriété classée G doit rénover",
+   "niveau": 3,
+   "prerequis": [
+    "energie.dpe.les-etiquettes",
+    "energie.calendrier.les-interdictions-de-location-par-etiquette",
+    "travaux.renovation-globale.audit-dpe-collectif-ppt",
+    "droit.majorites.l-article-25-et-la-passerelle"
+   ],
+   "exercice_dominant": "cas",
+   "cartes_cible": 10,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "cabinet.cas-transverses.un-coproprietaire-ferme-sa-loggia",
+   "domaine": "cabinet",
+   "branche": "cas-transverses",
+   "titre": "Un copropriétaire ferme sa loggia",
+   "niveau": 3,
+   "prerequis": [
+    "droit.statut.lots-parties-privatives-parties-communes",
+    "droit.travaux.travaux-privatifs-affectant-les-communes",
+    "travaux.urbanisme-des-travaux.declaration-prealable-et-permis"
+   ],
+   "exercice_dominant": "cas",
+   "cartes_cible": 10,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "cabinet.cas-transverses.l-ascenseur-a-l-arret-et-une-personne-en-fauteuil",
+   "domaine": "cabinet",
+   "branche": "cas-transverses",
+   "titre": "L'ascenseur à l'arrêt et une personne en fauteuil",
+   "niveau": 3,
+   "prerequis": [
+    "equipements.ascenseurs.le-contrat-de-maintenance",
+    "droit.responsabilites.la-responsabilite-du-syndicat",
+    "cabinet.ecrire.courrier-mail-notification"
+   ],
+   "exercice_dominant": "cas",
+   "cartes_cible": 10,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "cabinet.cas-transverses.une-vente-avec-opposition",
+   "domaine": "cabinet",
+   "branche": "cas-transverses",
+   "titre": "Une vente avec opposition",
+   "niveau": 3,
+   "prerequis": [
+    "immobilier.vente.etat-date-et-pre-etat-date",
+    "droit.mutations.l-avis-de-mutation-et-l-opposition",
+    "comptabilite.impayes.les-frais-imputables"
+   ],
+   "exercice_dominant": "cas",
+   "cartes_cible": 10,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "culture.lectures.la-propriete-les-textes-fondateurs",
+   "domaine": "culture",
+   "branche": "lectures",
+   "titre": "La propriété : les textes fondateurs",
+   "niveau": 3,
+   "prerequis": [
+    "culture.lectures.l-architecture-et-ses-styles"
+   ],
+   "exercice_dominant": "lecture",
+   "cartes_cible": 10,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "culture.lectures.l-habiter-et-le-voisinage",
+   "domaine": "culture",
+   "branche": "lectures",
+   "titre": "L'habiter et le voisinage",
+   "niveau": 3,
+   "prerequis": [
+    "culture.lectures.l-architecture-et-ses-styles"
+   ],
+   "exercice_dominant": "lecture",
+   "cartes_cible": 10,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "culture.lectures.la-ville",
+   "domaine": "culture",
+   "branche": "lectures",
+   "titre": "La ville",
+   "niveau": 3,
+   "prerequis": [
+    "culture.lectures.l-architecture-et-ses-styles"
+   ],
+   "exercice_dominant": "lecture",
+   "cartes_cible": 10,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "culture.lectures.histoire-du-logement",
+   "domaine": "culture",
+   "branche": "lectures",
+   "titre": "Histoire du logement",
+   "niveau": 3,
+   "prerequis": [
+    "culture.lectures.l-architecture-et-ses-styles"
+   ],
+   "exercice_dominant": "lecture",
+   "cartes_cible": 10,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "culture.lectures.l-architecture-et-ses-styles",
+   "domaine": "culture",
+   "branche": "lectures",
+   "titre": "L'architecture et ses styles",
+   "niveau": 2,
+   "prerequis": [],
+   "exercice_dominant": "lecture",
+   "cartes_cible": 8,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "culture.lectures.histoire-de-la-copropriete",
+   "domaine": "culture",
+   "branche": "lectures",
+   "titre": "Histoire de la copropriété",
+   "niveau": 3,
+   "prerequis": [
+    "culture.lectures.l-architecture-et-ses-styles"
+   ],
+   "exercice_dominant": "lecture",
+   "cartes_cible": 10,
+   "satellite": false,
+   "statut": "a-ecrire"
+  }
+ ],
+ "compte": {
+  "chapitres": 371,
+  "par_niveau": {
+   "1": 146,
+   "2": 145,
+   "3": 59,
+   "4": 19,
+   "5": 2
+  },
+  "cartes_cible_total": 2790
+ }
+}

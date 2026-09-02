@@ -1,0 +1,67 @@
+# serveur/ : l'API d'état
+
+Squelette écrit le 02/09/2026 (`ARCHITECTURE.md` §6, `decisions/0006`).
+Rien n'est codé : ce dossier dit **quoi** coder et **contre quoi** le
+tester. Le chantier est `ACA-JOURNAL-SYNC-1`.
+
+## Ce que le serveur fait, et seulement ça
+
+1. **Reçoit et rend le journal** d'un joueur, par union. Il n'écrit
+   jamais une ligne de lui-même, ne corrige rien, ne supprime rien.
+2. **Reçoit les livraisons** de banque, les re-valide, les met en
+   quarantaine, les sert une fois acceptées.
+3. **Tient les profils, les cercles et leurs consentements** (plus tard,
+   après le gate du rituel et les comptes).
+4. **Efface** un profil et tout ce qui lui appartient en moins de 48 h.
+
+Ce qu'il ne fait jamais : appeler un modèle, lire une source, calculer
+un score qu'un client ne pourrait pas recalculer, envoyer un mail à
+quelqu'un d'autre que le joueur lui-même, parler à labor.
+
+## Stack
+
+- Python 3.12, un framework HTTP léger épinglé (FastAPI + uvicorn, ou
+  équivalent : la décision est prise au chantier, le contrat des routes
+  ne change pas), `sqlite3` de la stdlib en mode WAL.
+- Un seul processus, `academie-etat.service`, port local `8790`, derrière
+  Caddy sur `/academie/api/`.
+- Fichiers : `/var/lib/academie/etat.sqlite`,
+  `/var/lib/academie/banques/<joueur>/<domaine>/`, secrets dans
+  `/etc/academie/` (root, mode 600).
+- Tests : `serveur/tests/` (à créer) contre une base en mémoire ; un jeu
+  de fixtures rejoue `app/vecteurs_fsrs.py` pour vérifier que l'union du
+  journal redonne exactement l'état Python.
+
+## Arborescence cible
+
+```
+serveur/
+  README.md            ce fichier
+  API.md               les routes, opposables
+  schema.sql           les tables ; appliqué par migrations numérotées
+  academie_etat/       le paquet Python
+    __init__.py
+    app.py             création de l'application, routage
+    auth.py            jetons, magic links, cookies de session
+    journal.py         union append-only, export
+    livraisons.py      réception, re-validation, quarantaine
+    cercles.py         membres, visibilité, défis, ligue (plus tard)
+    db.py              connexion, migrations
+  migrations/
+    0001_initial.sql   = schema.sql au jour de la création
+  tests/
+    test_journal.py    union, idempotence, ordre, parité avec app/
+    test_livraisons.py refus, quarantaine, acceptation
+    test_auth.py       jetons, expiration, suppression
+```
+
+## Règles de codage
+
+- Chaque écriture est idempotente : rejouer la même requête ne change
+  rien.
+- Chaque refus a un motif court, lisible par un humain et par un agent.
+- Les identifiants de joueurs sont opaques ; aucun mail n'apparaît dans
+  une URL ni dans un journal.
+- La version du contrat (`carte-v2`, `journal-v1`) est vérifiée sur
+  chaque requête qui porte des données.
+- Aucune dépendance à labor, au socle PostGIS ni à un service tiers.

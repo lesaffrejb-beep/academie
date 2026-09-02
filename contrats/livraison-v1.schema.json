@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://academie.local/contrats/livraison-v1.schema.json",
+  "title": "Manifeste de livraison v1 (proposition du 02/09/2026)",
+  "description": "Ce qu'un joueur pousse vers le serveur de jeu : un manifeste et une banque. Le serveur re-passe le valideur, met en quarantaine, puis le propriétaire du domaine accepte. Les sources ne partent jamais.",
+  "type": "object",
+  "required": ["joueur", "domaine", "contrat", "banque_empreinte", "couches", "cartes", "chapitres", "registre_sources", "genere_le", "moteur_version"],
+  "additionalProperties": false,
+  "properties": {
+    "joueur": {"type": "string"},
+    "domaine": {"type": "string", "description": "clé du domaine ou du métier livré"},
+    "contrat": {"enum": ["carte-v1", "carte-v2"]},
+    "banque_empreinte": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "couches": {"type": "array", "items": {"enum": ["banque", "interne", "perso"]}, "minItems": 1},
+    "cartes": {"type": "integer", "minimum": 1},
+    "chapitres": {"type": "integer", "minimum": 0},
+    "registre_sources": {
+      "type": "array", "minItems": 1,
+      "items": {
+        "type": "object", "required": ["source", "nature", "fiabilite", "verifie"],
+        "properties": {
+          "source": {"type": "string"},
+          "nature": {"enum": ["texte-officiel", "jurisprudence", "institution", "norme", "doctrine", "presse-pro", "organisation-pro", "association", "editeur", "support-interne", "terrain"]},
+          "parti": {"type": "string"},
+          "fiabilite": {"enum": ["A", "B", "C"]},
+          "verifie": {"type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$"}
+        }
+      }
+    },
+    "genere_le": {"type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$"},
+    "moteur_version": {"type": "string"},
+    "note": {"type": "string", "maxLength": 500}
+  }
+}

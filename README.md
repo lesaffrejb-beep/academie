@@ -1,143 +1,74 @@
-# academie — L'Académie, l'apprentissage du matin
+# academie, l'école d'un métier jouée tous les jours
 
-Chantier posé le 28/08/2026 (brief dicté de JB : « 15 minutes
-d'apprentissage tous les matins avant le boulot, cadre l'idée, imagine
-le produit mais ne le construis pas encore ») ; renommé « L'Académie »
-et enrichi des ateliers le même jour (second brief JB). Le nom est
-« pour l'instant » : s'il change encore, le dossier suit.
+L'Académie transforme des sources vérifiées en un **arbre de
+compétences** qu'on conquiert par des exercices de rappel, de
+diagnostic et de synthèse, planifiés par un algorithme de mémoire
+(FSRS). Premier métier : gestionnaire de copropriété. Premier joueur :
+JB. Puis ses collègues, puis Arthur (concours IFSI), puis quiconque
+tient un dépôt de sources et un abonnement à un modèle. Personne ne
+paie jamais rien.
 
-**L'Académie** est l'école du matin du gestionnaire : chaque matin vers
-8h15, avant le travail, une séance de ~15 minutes qui rend JB meilleur
-professionnel — cartes à répétition espacée (FSRS) sur la pathologie du
-bâtiment, le droit, la comptabilité, la procédure, la technique des
-équipements ; et des ateliers de lecture et d'analyse (un arrêt de
-cassation avec sa méthode de lecture, un vrai devis du portefeuille à
-auditer, une annexe comptable, un texte de fond « comme au bac »),
-alimentés par son travail réel de la veille.
+Conception v2 posée le **02/09/2026** sur le brief de JB
+([`travail/2026-09-02-brief-jb.md`](travail/2026-09-02-brief-jb.md)).
+La conception d'août est archivée intacte dans
+[`archive/conception-2026-08/`](archive/conception-2026-08/README.md).
 
-## La chaîne : d'une donnée brute à l'écran du matin
+## Lire, dans cet ordre
+
+| Ordre | Document | Ce qu'il porte |
+|---|---|---|
+| 1 | [`DOCTRINE.md`](DOCTRINE.md) | ce qu'on est, ce qu'on refuse, les dix invariants, la précédence des documents |
+| 2 | [`BLUEPRINT.md`](BLUEPRINT.md) | ce que le joueur vit : séance, étude, journée, l'arbre, le chapitre, les épreuves, la boîte, les cercles |
+| 3 | [`PROGRAMME.md`](PROGRAMME.md) et [`programme/copro.json`](programme/copro.json) | ce qu'on enseigne au gestionnaire : dix domaines, branches, 371 chapitres, cinq niveaux, le socle |
+| 4 | [`METHODE.md`](METHODE.md) et [`CADRAGE-SCIENTIFIQUE.md`](CADRAGE-SCIENTIFIQUE.md) | pourquoi chaque mécanique existe, avec sa source vérifiée |
+| 5 | [`ARCHITECTURE.md`](ARCHITECTURE.md) | les quatre pièces, où est stocké quoi, le moteur, les contrats, le serveur, l'usine, l'archivage, l'audit, le déploiement |
+| 6 | [`DIRECTION-ARTISTIQUE.md`](DIRECTION-ARTISTIQUE.md) | à quoi ça ressemble, les écrans, la barre, le mouvement, l'accessibilité ; maquette : `travail/maquette-2026-09-02.html` |
+| 7 | [`ROADMAP.md`](ROADMAP.md) et `roadmap.json` | ce qu'on fait ensuite, avec la preuve attendue |
+| 8 | [`decisions/`](decisions/README.md) | les vingt décisions datées |
+| 9 | [`CONTRAT-CARTE-V1.md`](CONTRAT-CARTE-V1.md) (en vigueur), [`CONTRAT-CARTE-V2.md`](CONTRAT-CARTE-V2.md) (proposé), [`contrats/`](contrats/README.md) | les formats, le valideur fait foi |
+| 10 | [`gabarit-domaine/`](gabarit-domaine/README.md), [`sources/`](sources/README.md), [`boite/`](boite/README.md), [`CORPUS.md`](CORPUS.md) | fabriquer un domaine, trier ses sources, glisser une idée |
+| 11 | [`IDEES-EN-VOL.md`](IDEES-EN-VOL.md), [`lab/VEILLE.md`](lab/VEILLE.md), [`travail/`](travail/) | ce qui n'est pas perdu |
+
+## Ce qui existe et tourne (02/09/2026)
 
 ```
-  banque/<domaine>/<branche>.json      la donnée brute, versionnée
-        │                              une carte = source + date + statut + couche
-        ▼
-  app/valide_banque.py                 LE FILTRE — refuse et n'écrit rien si :
-        │                              pas de source ou pas de date de vérification,
-        │                              QCM sans distracteur expliqué, image sans licence,
-        │                              id dupliqué, prérequis fantôme, carte périmée,
-        │                              nom de copropriété réelle en couche partagée
-        ▼
-  app/genere.py                        le tri de sortie : --production ne sert que
-        │                              les cartes `valide`, --couches filtre ce qui
-        │                              a le droit de circuler (banque / interne / perso)
-        ▼
-  app/seance.py  ◄── etat/<profil>/revues.jsonl     FSRS décide de ce qui revient
-        │                              (journal append-only, l'état se RECALCULE)
-        ▼
-  un client autorisé       le pont vers le front
-                                       ← MAILLON CASSÉ au 29/08 : import
-                                       de build, pas un fetch (O1a de
-                                       SPEC-PRODUIT §7, priorité absolue)
+  banque/<domaine>/<branche>.json    84 cartes copro (80 valides), contrat carte-v1
         │
-        ▼
-  l'écran                              avec le statut affiché : une carte non
-                                       vérifiée se présente comme telle
+  app/valide_banque.py               refuse tout ce qui sort du contrat
+        │
+  app/genere.py                      publie banque.json (cartes valides, couche banque)
+        │
+  VPS : timer 05:15 → /academie/     Caddy sert le client
+        │
+  client/ (l'archipel, à remplacer)  joue les cartes ; état dans localStorage
 ```
 
-**Tout vérifier en une commande** (inclus dans `tooling/examen.py`) :
+Le moteur Python (`app/`) est la référence : FSRS-6 comparé à
+`py-fsrs`, composition de séance, carte de progression, quiz de
+positionnement, carnet d'erreurs, 47 tests et tests de mutation.
+
+Ce qui n'existe pas encore et que le squelette prépare : l'état
+synchronisé (`serveur/`), le client v2 (`web/`), les contrats v2
+(`contrats/`), le programme validé (`programme/`), la boîte, les
+épreuves, les cercles. L'ordre est dans `ROADMAP.md`.
+
+## Vérifier
 
 ```bash
 python3 app/tests.py
 ```
 
-Six étages : le moteur FSRS (comparé à `py-fsrs`), la composition de
-séance, la carte-monde (`app/progression.py` : régions, seuils,
-boss-examens, XP dérivée — GO socle du 29/08), le quiz de
-positionnement + le carnet d'erreurs (`app/quiz.py`,
-`app/erreurs.py`), la chaîne donnée → écran, et la validation de la
-banque réelle. La coquille d'un nouveau domaine (modèle A4) vit dans
-[`gabarit-domaine/`](gabarit-domaine/README.md).
-
-**Vérifier que les tests mordent vraiment** :
+```bash
+python3 tooling/check.py
+```
 
 ```bash
 python3 app/tests.py --mutation
 ```
 
-Casse huit garde-fous un par un et vérifie qu'un test s'en aperçoit. Un
-test qui reste vert pendant que le code est cassé donne confiance à
-tort : ce mode a trouvé, le 28/08/2026, que la vérification des champs
-obligatoires n'était couverte par aucun cas.
+## Règles qui ne bougent pas
 
----
-
-Les documents :
-
-- [`BLUEPRINT.md`](BLUEPRINT.md) — le produit imaginé : vision, socle
-  scientifique sourcé, modes d'exercice, ateliers, arbres de
-  compétence, architecture technique, généralisation à d'autres
-  métiers. **À lire en premier.**
-- [`ROADMAP.md`](ROADMAP.md) — la roadmap active par résultats, courte et
-  exécutable. Le cadrage historique M0-M11 reste disponible dans
-  [`archive/roadmaps/`](archive/roadmaps/README.md).
-- [`CADRAGE-SCIENTIFIQUE.md`](CADRAGE-SCIENTIFIQUE.md) — cadrage
-  neuroscientifique et sciences cognitives d'un système d'apprentissage
-  quotidien d'élite : les 7 lois fondamentales, tableau comparatif des
-  stratégies, architecture chronométrée de la séance de 15 min, matrice
-  de transposition par matière et bibliographie complète.
-- [`CORPUS.md`](CORPUS.md) — le contrat wiki → banque (28/08/2026) :
-  routage par type de matière (faits, images, news, articles, études,
-  sources), inventaire du gisement réel du repo (~100-120 cartes
-  extractibles, trous nommés), références scientifiques du BLUEPRINT
-  re-sourcées et vérifiées.
-- [`DESIGN.md`](DESIGN.md) — charte & architecture Design System de l'interface React : tokens stricts, règles ergonomiques, micro-interactions et checklist de contribution.
-- [`CONTRAT-CARTE-V1.md`](CONTRAT-CARTE-V1.md) — le format d'une carte,
-  engagé et opposable : champs obligatoires, les trois couches de
-  partage, la péremption, l'export Anki. Le valideur en est
-  l'application mécanique et **fait foi** en cas de divergence.
-- [`CADRAGE-PRODUIT.md`](CADRAGE-PRODUIT.md) — le questionnaire du
-  produit autonome (52 questions), **répondu le 29/08/2026** avec
-  Arthur (Partie 4 : réponses + arbitrages).
-- [`SPEC-PRODUIT.md`](SPEC-PRODUIT.md) — l'architecture arrêtée du
-  produit autonome (modèle A4 : un repo source par joueur, usine
-  locale, serveur de jeu VPS ; carte-monde, boss, quiz de
-  positionnement, carnet d'erreurs) et le **plan des sessions Opus**
-  (§7). Fait foi sur les briques de M9-M11.
-- [`METHODE.md`](METHODE.md) — la pédagogie lisible par tous : une
-  entrée par mécanique (ce qu'on fait / pourquoi / la source datée).
-  Une mécanique sans entrée n'entre pas dans le produit.
-- [`IDEES-EN-VOL.md`](IDEES-EN-VOL.md) — le registre append-only des
-  idées de JB lancées en route : gravée / différée / à creuser /
-  écartée, avec le pointeur. Rien ne se perd.
-- [`gabarit-domaine/DESSINER-LA-CARTE.md`](gabarit-domaine/DESSINER-LA-CARTE.md)
-  — la méthode réutilisable pour cartographier un nouveau métier
-  (régions, lieu-monde, difficulté, tri des sources, coûts mesurés).
-- Ce README — la porte d'entrée.
-
-Le pré-mortem du cadrage (agent frais, protocole
-`.agents/skills/erp-complete/references/pre-mortem.md` adapté) est dans
-`travail/relecture-2026-08-28-cadrage.md`.
-
-Règles héritées du repo qui s'appliquent ici sans exception : aucune
-donnée copro nommée dans la banque de cartes partagée (anti-pollution,
-AGENTS.md) — les ateliers sur pièces réelles vivent dans la couche
-personnelle ; toute carte porte sa source et sa date de vérification
-(règle dure 3 étendue) ; markdown + git, jamais de SaaS propriétaire
-(doctrine ERP, « on vole les patterns des géants, jamais leurs
-plateformes »).
-
-Statut (30/08/2026) : **l'espace de jeu autonome est jouable et déployé
-sur le VPS sous `/academie/`** — son client statique appartient à ce
-dépôt, charge la banque au runtime, conserve la progression sur
-l'appareil et reste disponible sur la dernière banque mise en cache.
-Les 8 types de cartes se jouent ; banque copro 80 valide / 4 brouillon
-après double passe Légifrance ; domaine test `domaines/arthur-ifsi`
-40 cartes. Les choix sont documentés : SPEC-PRODUIT (les décisions),
-METHODE (la pédagogie sourcée), `DESIGN.md`
-§2bis-2ter (la peau de l'espace de jeu et ses pièges techniques),
-`travail/benchmark-2026-08-30.md` (ce qu'on a volé et sous quelle
-licence), CREDITS des icônes affichés dans l'app. Le client historique
-dans ERP reste un adaptateur de transition. Prochains gestes :
-le rituel réel de JB (c'est lui le gate de tout), O2 (remplir les 5
-îles vides), la couleur d'île qui descend dans les exercices, puis le
-lieu-monde immeuble (v1.1).
+Aucune donnée client de labor. Aucune carte sans source, nature et date.
+Rien de rouge n'est servi. L'état joueur est un journal append-only,
+séparé de la banque, jamais dans git. Les actes irréversibles sont
+humains. Le détail : `DOCTRINE.md` §3.

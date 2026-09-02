@@ -168,9 +168,9 @@ porte sa date ; ici on ajoute qu'il porte sa **date de mort**.
 
 ## 4. L'export Anki (l'assurance-vie)
 
-`app/export_anki.py` (à construire — chantier O2 de SPEC-PRODUIT §7 ;
-au 29/08/2026 le script n'existe pas encore) produira un CSV lisible
-par Anki depuis n'importe
+`app/export_anki.py` (à construire, chantier `ACA-EXPORT-1` de
+`roadmap.json` ; au 02/09/2026 le script n'existe pas encore) produira
+un paquet lisible par Anki (`.apkg` via `genanki`, MIT) depuis n'importe
 quel sous-ensemble de la banque. Colonnes : `question`, `reponse`
 (explication et vigilance incluses), `source`, `tags`
 (`domaine::branche`). Contrat de réversibilité du BLUEPRINT §2 : si
