@@ -121,7 +121,7 @@ faite : les écrans existent, ils sont nus, et c'est voulu.
 - PWA : `vite-plugin-pwa` 0.21.1, manifeste, précache de la banque, de
   la voix, du JS, du CSS et des polices à venir ; la banque et la voix
   sont aussi en `StaleWhileRevalidate` à l'exécution.
-- Cinq tests verts, 152 cas : `src/moteur/parite.test.ts` lance
+- Cinq tests verts, 157 cas : `src/moteur/parite.test.ts` lance
   `python3 app/vecteurs_fsrs.py --json` et compare stabilité,
   difficulté, intervalle et récupérabilité à 1e-4 sur chaque étape de
   chaque séquence ; `tests/hotes.test.ts` vérifie qu'aucune URL de
@@ -138,7 +138,11 @@ faite : les écrans existent, ils sont nus, et c'est voulu.
   du jour, le quota de neuf et la branche du socle visée. Le tirage,
   lui, n'est pas comparé : Python tire avec Mersenne Twister, le client
   avec un mulberry32, et comparer l'ordre ferait un test du générateur
-  plutôt que du produit.
+  plutôt que du produit. Depuis le 03/09 au soir, ce fichier compare
+  aussi la **composition elle-même** sur cinq scènes (couleur du jour,
+  cap, branche du socle, nombre de révisions, de neuf, de rappels
+  d'ailleurs, arriéré). C'est ce qui manquait : les règles étaient
+  comparées une par une, leur emploi dans `compose()` ne l'était pas.
 - `LICENCES.md` : chaque dépendance, version exacte, licence.
 
 ### Ce qui reste
@@ -151,10 +155,26 @@ faite : les écrans existent, ils sont nus, et c'est voulu.
   une banque sans champ `contrat` comme `carte-v1`, mais la banque
   publiée est encore une v1 sans le champ ; les types de `carte-v2` sont
   transcrits, pas exercés.
-- **Les tests de bout en bout.** Playwright n'est pas installé, il n'y a
-  pas de `tests/e2e/`. Les preuves « première question en moins de trois
-  secondes hors-ligne » et « séance jouée réseau coupé, envoyée au
-  retour » ne sont donc pas encore mesurées.
+- ~~**Les tests de bout en bout.**~~ Faits le 03/09 au soir :
+  `tests/e2e/hors-ligne.spec.ts`, quatre preuves sur deux tailles
+  d'écran (375 et 1280). Mesuré : **première question en 530 ms réseau
+  coupé**, budget 3 000 ms ; une séance jouée hors-ligne s'écrit dans
+  IndexedDB avec sa ligne d'ouverture et attend en file ; au retour du
+  réseau la file part en entier vers `POST /journal` et se vide ; aucun
+  hôte tiers n'est contacté.
+
+  Ils tournent sur le **vrai build** servi par `vite preview` : sans
+  service worker, « hors-ligne » ne voudrait rien dire.
+
+  ```bash
+  npm run e2e              # les deux tailles d'écran
+  npm run e2e:telephone    # 375 px seulement
+  ```
+
+  Ils ne sont **pas** dans `npm test` ni dans la porte du dépôt : ils
+  demandent un navigateur et un build, la CI n'installe ni l'un ni
+  l'autre. Le chemin de Chromium se règle par `CHROMIUM_PATH` ; à
+  défaut, `/opt/pw-browsers/chromium`.
 - **La bascule** : build dans la publication, `client/` archivé,
   `tooling/check.py` débarrassé des marqueurs de l'archipel, et JB qui
   joue sept séances.

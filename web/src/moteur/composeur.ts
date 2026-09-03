@@ -13,7 +13,7 @@
 import type { EtatCarte } from "./etats";
 import { aujourdhuiOrdinal } from "./etats";
 import { noeudsEtBranches, reglages } from "./progression";
-import type { Banque, Carte } from "../donnees/types";
+import type { Banque, Carte, LigneJournal } from "../donnees/types";
 
 export type Alea = () => number;
 
@@ -159,6 +159,11 @@ export function brancheSocleLaPlusFaible(
 export interface Seance {
   date: string;
   graine: number;
+  jour: Couleur;
+  cap: string | null;
+  brancheSocle: string | null;
+  rappelsDAilleurs: string[];
+  pourquoi: string[];
   revisions: Carte[];
   nouveau: Carte[];
   arriereReetale: number;
@@ -167,10 +172,20 @@ export interface Seance {
 }
 
 export interface OptionsSeance {
-  /** Restreint la seance a un domaine (format `domaine`). */
+  /** Le domaine choisi par le joueur (format `domaine`, decisions/0013). */
   domaine?: string;
   graine?: number;
   aujourdhui?: number;
+  /** Le journal, pour le plafond de neuf du jour. */
+  journal?: LigneJournal[];
+}
+
+/** Combien de cartes neuves ont deja ete introduites aujourd hui. */
+function neufDuJour(journal: LigneJournal[], jourOrdinal: number): number {
+  const prefixe = new Date(jourOrdinal * 86400000).toISOString().slice(0, 10);
+  return journal.filter(
+    (e) => String(e.quand ?? "").startsWith(prefixe) && e.origine === "nouveau",
+  ).length;
 }
 
 export function compose(
@@ -185,31 +200,100 @@ export function compose(
   };
   const jour = options.aujourdhui ?? aujourdhuiOrdinal();
   const graine = options.graine ?? jour;
+  const journal = options.journal ?? [];
+  const cap = options.domaine;
+  const couleur = couleurDuJour(banque, jour);
+  const pourquoi: string[] = [];
 
-  let jouables = (banque.cartes ?? []).filter((c) => c.statut === "valide");
-  if (options.domaine) jouables = jouables.filter((c) => c.domaine === options.domaine);
+  // Le cap ne FILTRE plus les cartes jouables : il tient la seance, mais
+  // les revisions d ailleurs les plus en retard s y glissent quand meme
+  // (BLUEPRINT §3). Le filtre se fait plus bas, la ou il a un sens.
+  const jouables = (banque.cartes ?? []).filter((c) => c.statut === "valide");
 
   const dues: { carte: Carte; etat: EtatCarte }[] = [];
   const neuvesToutes: Carte[] = [];
   for (const carte of jouables) {
     const etat = etats.get(carte.id);
-    if (!etat) neuvesToutes.push(carte);
-    else if (etat.duLe <= jour) dues.push({ carte, etat });
+    if (!etat) {
+      neuvesToutes.push(carte);
+    } else if (etat.duLe <= jour) {
+      dues.push({ carte, etat });
+    }
   }
 
   // Les plus en retard d'abord : ce sont celles qui s'effacent.
   dues.sort((a, b) => a.etat.duLe - b.etat.duLe);
+
+  // Seance de domaine : le cap tient la seance, et au plus
+  // rappels_d_ailleurs_max revisions d ailleurs s y glissent, les plus
+  // en retard, annoncees.
+  let retenuesDues = dues;
+  let rappels: string[] = [];
+  if (cap) {
+    const duCap = dues.filter((x) => x.carte.domaine === cap);
+    const ailleurs = dues
+      .filter((x) => x.carte.domaine !== cap)
+      .slice(0, quotas.rappels_d_ailleurs_max ?? 2);
+    rappels = ailleurs.map((x) => x.carte.id);
+    retenuesDues = [...duCap, ...ailleurs].sort((a, b) => a.etat.duLe - b.etat.duLe);
+    if (rappels.length) {
+      pourquoi.push(`${rappels.length} rappel(s) d'ailleurs, les plus en retard`);
+    }
+  }
+
   const plafond = quotas.plafond_reprise ?? 20;
-  const arriere = Math.max(0, dues.length - plafond);
-  const retenues = dues.slice(0, plafond).map((x) => x.carte);
+  const duesAvantPlafond = retenuesDues.length;
+  const arriere = Math.max(0, retenuesDues.length - plafond);
+  const retenues = retenuesDues.slice(0, plafond).map((x) => x.carte);
 
   const rng = alea(graine);
   const revisions = entrelace(retenues, rng);
-  const nouveau = melange(neuvesToutes, rng).slice(0, quotas.nouveau_par_seance ?? 1);
+
+  // Combien de neuf : la couleur du jour et les plafonds decident, pas
+  // le quota brut (ACA-SEMAINE-1). Meme fonction que app/seance.py.
+  const decision = quotaDeNeuf(banque, couleur, duesAvantPlafond, neufDuJour(journal, jour));
+  pourquoi.push(...decision.pourquoi);
+
+  let candidates = melange(neuvesToutes, rng);
+  let brancheSocle: string | null = null;
+  if (cap) {
+    candidates = candidates.filter((c) => c.domaine === cap);
+    pourquoi.push(`domaine choisi : ${cap}, la pondération du socle se tait`);
+  } else {
+    const favoris = banque.calendrier_metier?.[String(new Date(jour * 86400000).getUTCMonth() + 1)];
+    if (favoris?.length && (couleur === "cours" || couleur === "terrain")) {
+      candidates = [
+        ...candidates.filter((c) => favoris.includes(c.domaine)),
+        ...candidates.filter((c) => !favoris.includes(c.domaine)),
+      ];
+      pourquoi.push(`calendrier du métier : ${favoris.join(", ")} passent devant ce mois-ci`);
+    }
+    brancheSocle = brancheSocleLaPlusFaible(banque.cartes ?? [], etats, banque, jour);
+    if (brancheSocle && decision.quota) {
+      const part = quotas.ponderation_socle ?? 0.5;
+      const vises = Math.max(1, Math.trunc(decision.quota * part + 0.5));
+      const prefixe = brancheSocle + ".";
+      const duSocle = candidates.filter((c) => String(c.chapitre ?? "").startsWith(prefixe));
+      const autres = candidates.filter((c) => !String(c.chapitre ?? "").startsWith(prefixe));
+      candidates = [...duSocle.slice(0, vises), ...autres, ...duSocle.slice(vises)];
+      if (duSocle.length) {
+        pourquoi.push(
+          `socle : ${Math.min(vises, duSocle.length)} carte(s) neuve(s) ` +
+            `sur la branche la moins avancée (${brancheSocle})`,
+        );
+      }
+    }
+  }
+  const nouveau = candidates.slice(0, decision.quota);
 
   return {
     date: new Date(jour * 86400000).toISOString().slice(0, 10),
     graine,
+    jour: couleur,
+    cap: cap ?? null,
+    brancheSocle,
+    rappelsDAilleurs: rappels,
+    pourquoi,
     revisions,
     nouveau,
     arriereReetale: arriere,

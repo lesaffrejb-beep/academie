@@ -7,13 +7,13 @@ import { compose } from "../moteur/composeur";
 import { Bouton, Feuille, Secondaire, Titre, pourcent } from "./Ui";
 
 export function Domaine({ cle }: { cle: string }) {
-  const { banque, monde, etats, jour } = useMagasin();
+  const { banque, monde, etats, jour, journal } = useMagasin();
   if (!banque || !monde) return null;
   const region =
     [...monde.regions, ...monde.horsCarte].find((r) => r.cle === cle) ?? null;
   if (!region) return <div className="p-4">{LIB.vide}</div>;
 
-  const seance = compose(banque, etats, { aujourdhui: jour, domaine: cle });
+  const seance = compose(banque, etats, { aujourdhui: jour, domaine: cle, journal });
   const noeuds = [
     ...new Set(
       banque.cartes.filter((c) => c.domaine === cle && c.statut === "valide")

@@ -17,7 +17,7 @@ import { fileURLToPath } from "node:url";
 
 import { describe, expect, it } from "vitest";
 
-import { brancheSocleLaPlusFaible, couleurDuJour, quotaDeNeuf } from "./composeur";
+import { brancheSocleLaPlusFaible, compose, couleurDuJour, quotaDeNeuf } from "./composeur";
 import { etatsCartes, jourOrdinal } from "./etats";
 import { Planificateur } from "./fsrs";
 import type { Banque, Carte, LigneJournal } from "../donnees/types";
@@ -40,6 +40,24 @@ interface SceneSocle {
   attendu: string | null;
 }
 
+interface SceneComposition {
+  nom: string;
+  date: string;
+  cap: string | null;
+  cartes: Carte[];
+  journal: LigneJournal[];
+  attendu: {
+    jour: string;
+    cap: string | null;
+    branche_socle: string | null;
+    nb_revisions: number;
+    nb_nouveau: number;
+    nb_rappels: number;
+    arriere_reetale: number;
+    total_jouable: number;
+  };
+}
+
 interface Vecteurs {
   config: {
     quotas: Banque["quotas"];
@@ -49,8 +67,10 @@ interface Vecteurs {
     semaine_type?: Record<string, string>;
     socle?: { niveaux?: Record<string, number> };
   };
+  programme?: { branches?: Banque["branches"]; chapitres?: Banque["chapitres"] };
   quotas: SceneQuota[];
   socle: SceneSocle[];
+  composition: SceneComposition[];
 }
 
 const vecteurs: Vecteurs = JSON.parse(
@@ -100,6 +120,38 @@ describe("parite de la semaine type avec app/seance.py", () => {
       );
       expect(obtenu.quota).toBe(scene.attendu.quota);
       expect(obtenu.pourquoi).toEqual(scene.attendu.pourquoi);
+    });
+  }
+
+  // La composition elle-meme : les regles employees, pas seulement
+  // definies. Ces scenes ont manque a la premiere livraison.
+  for (const scene of vecteurs.composition) {
+    it(`scene composition ${scene.nom} : memes decisions et memes comptes`, () => {
+      const b = banqueDe(scene.cartes, {
+        branches: vecteurs.socle[0]?.programme.branches,
+        chapitres: vecteurs.socle[0]?.programme.chapitres,
+      });
+      const sched = new Planificateur(
+        undefined,
+        vecteurs.config.fsrs?.retention_souhaitee ?? 0.9,
+      );
+      const etats = etatsCartes(scene.journal, sched);
+      const s = compose(b, etats, {
+        aujourdhui: jourOrdinal(scene.date) as number,
+        graine: 7,
+        journal: scene.journal,
+        ...(scene.cap ? { domaine: scene.cap } : {}),
+      });
+      expect({
+        jour: s.jour,
+        cap: s.cap,
+        branche_socle: s.brancheSocle,
+        nb_revisions: s.revisions.length,
+        nb_nouveau: s.nouveau.length,
+        nb_rappels: s.rappelsDAilleurs.length,
+        arriere_reetale: s.arriereReetale,
+        total_jouable: s.totalJouable,
+      }).toEqual(scene.attendu);
     });
   }
 

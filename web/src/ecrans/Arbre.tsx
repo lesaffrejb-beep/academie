@@ -8,10 +8,10 @@ import { compose } from "../moteur/composeur";
 import { Bouton, Feuille, Jauge, Secondaire, Titre, pourcent } from "./Ui";
 
 export function Arbre() {
-  const { banque, monde, etats, jour, points } = useMagasin();
+  const { banque, monde, etats, jour, points, journal } = useMagasin();
   if (!banque || !monde) return null;
 
-  const seance = compose(banque, etats, { aujourdhui: jour });
+  const seance = compose(banque, etats, { aujourdhui: jour, journal });
   const dues = seance.revisions.length;
   const socle = monde.horsCarte.reduce((a, r) => a + r.cartesTotales, 0);
 
