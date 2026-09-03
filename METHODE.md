@@ -411,6 +411,29 @@ dégrade le rituel mesuré, et aucun ne donne de points.
 28/08/2026 ; la mesure au journal (`rapport_rituel.py`) pour le reste ;
 `decisions/0014`, `0016`, `0020`.
 
+## 32. Le pas à pas imposé et les points de sauvegarde (ajouté le 03/09/2026)
+
+**Ce qu'on fait** : tout travail long d'un modèle (lire un document,
+écrire un lot, coder un chantier) est découpé par un script en unités
+que le modèle ne dimensionne pas ; chaque unité est jugée par la machine
+contre un témoin (le texte extrait de la page) avant que la suivante
+s'ouvre ; chaque unité validée est écrite sur disque avec un sceau, et
+les contrôles sont rejoués à chaque reprise. Le modèle se déclare
+(outil, modèle, classe) et la taille des unités suit ses résultats.
+**Pourquoi** : la lecture d'un long contexte se dégrade avec la position
+et la longueur, même quand la fenêtre annoncée suffit ; un résumé de
+modèle ajoute un fait absent de la source dans environ un cas sur dix,
+même pour les meilleurs ; et un modèle ne détecte pas ces deux défauts
+de l'intérieur. Le pas à pas rend chaque erreur locale et visible, le
+point de sauvegarde rend la coupure sans coût, la revérification rend
+l'autovalidation inutile.
+**Source** : Liu et al., « Lost in the Middle: How Language Models Use
+Long Contexts », TACL 2024 (arXiv 2307.03172), vérifié 03/09/2026 ;
+tableau Vectara des hallucinations (HHEM-2.3), mis à jour le
+11/05/2026, lu le 03/09/2026 ; MRCR à huit aiguilles (rapport Google
+Gemini 2.5, lu par yage.ai le 03/09/2026, `[À VÉRIFIER]` à la source) ;
+`MODELES.md` §4 ; `decisions/0027`.
+
 ---
 
 *Toute nouvelle mécanique ajoute son entrée ICI dans le même commit

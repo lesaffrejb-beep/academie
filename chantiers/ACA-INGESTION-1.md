@@ -11,15 +11,26 @@ lignes de registre et de journal, et un rapport de coût ; un test
 compare le pivot d'un PDF de fixture à un attendu.
 Dépend de : ACA-DOC-2. Bloque : ACA-BOITE-1, ACA-CONTENT-2.
 
+## État au 03/09/2026 au soir (decisions/0027)
+
+Existe : `app/usine/` (`pivot.py`, `transcription.py`, `etat.py`,
+`fiche.py`, `usine.py`), `app/tests_usine.py` (40 tests) et quatre
+mutations dans `app/tests.py` ; la clé `usine` d'`academie.json` ; les
+quatre documents du test préparés (pivots bruts, pages machine, pages
+rendues) ; la première unité du Focus du CAE relue et validée. Reste :
+les étapes 4 et 5 ci-dessous (les quatre documents relus de bout en
+bout, fiches, lignes de registre, rattachements, rapport de coût).
+
 ## Périmètre
 
-Peut créer ou modifier : `app/usine/` (nouveau : `pivot.py` qui appelle
-`pdftotext`, `pdftohtml -xml`, `pdftoppm`, `pdfimages` ; `fiche.py`
-qui écrit la fiche JSON de source ; `transcription.py` pour un `.vtt`
-ou un `.srt` : nettoyage, retrait des locuteurs et des horodatages,
-jamais un nom dans la sortie), `app/tests_usine.py`, `app/tests.py`
-(ajout de la suite), `tooling/requirements-usine.txt` (outils
-externes attendus, avec leur licence), `sources/README.md`,
+Peut créer ou modifier : `app/usine/` (`pivot.py` qui appelle
+`pdftotext`, `pdftohtml -xml`, `pdftoppm`, `pdfimages` ; `etat.py`, le
+pas à pas revérifiable ; `fiche.py`, la fiche et la ligne de registre ;
+`transcription.py` pour un `.vtt`, `.srt`, `.txt` : retrait des
+locuteurs et des horodatages ; `usine.py`, la ligne de commande),
+`app/tests_usine.py`, `app/tests.py` (suite et mutations), la clé
+`usine` d'`academie.json` et du gabarit, `tooling/requirements-usine.txt`
+(outils externes attendus, avec leur licence), `sources/README.md`,
 `gabarit-domaine/USINE.md` (étapes 1 et 4), `boite/GLISSER.md`
 (l'appel au pivot).
 Ne touche pas : le moteur, les contrats, `chapitres/`, le serveur.

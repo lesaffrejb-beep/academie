@@ -34,7 +34,7 @@ web/
   src/
     main.tsx                 amorçage, routage, thème
     app/
-      routes.tsx             /  /domaine/:cle  /noeud/:id  /salle/*  /profil  /confiance/:domaine  /cercle  /boite  /credits
+      routes.tsx             /  /arrivee  /domaine/:cle  /noeud/:id  /salle/*  /profil  /confiance/:domaine  /cercle  /boite  /credits
                              (/cercle est masqué, barre à trois entrées, tant qu'ACA-CERCLE-1 n'est pas livré)
       theme.ts               nuit | papier ; palette par rang de domaine
       i18n.ts                français seulement ; les chaînes vivent ici, pas dans les composants

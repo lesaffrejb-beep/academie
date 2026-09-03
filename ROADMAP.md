@@ -49,6 +49,9 @@ v2 proposés, squelette du serveur et du client, maquette du front.
 1. **Le client v2** (`ACA-FRONT-2`) : l'arbre, la séance, le profil,
    sur la maquette du 02/09 ; remplace l'archipel ; `check.py` mis à
    jour.
+   L'arrivée d'un élève (pseudo, catalogue, « Créer le vôtre » avec les
+   prompts à coller) suit dans `ACA-ONBOARDING-1` ; d'ici là, l'accueil
+   est `COMMENCER.md` (`decisions/0027`).
 2. **La semaine type et le socle** (`ACA-SEMAINE-1`) dans le composeur.
 3. **L'étude** (`ACA-ETUDE-1`) sur trois chapitres pilotes, puis
    **les épreuves** (`ACA-EXAMEN-1`), **la boîte** (`ACA-BOITE-1`),

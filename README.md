@@ -24,10 +24,11 @@ La conception d'août est archivée intacte dans
 | 5 | [`ARCHITECTURE.md`](ARCHITECTURE.md) | les quatre pièces, où est stocké quoi, le moteur, les contrats, le serveur, l'usine, l'archivage, l'audit, le déploiement |
 | 6 | [`DIRECTION-ARTISTIQUE.md`](DIRECTION-ARTISTIQUE.md) | à quoi ça ressemble, les écrans, la barre, le mouvement, l'accessibilité ; maquette : `travail/maquette-2026-09-02.html` |
 | 7 | [`ROADMAP.md`](ROADMAP.md) et `roadmap.json` | ce qu'on fait ensuite, avec la preuve attendue |
-| 8 | [`decisions/`](decisions/README.md) | les vingt-deux décisions datées |
+| 8 | [`decisions/`](decisions/README.md) | les vingt-sept décisions datées |
 | 9 | [`CONTRAT-CARTE-V1.md`](CONTRAT-CARTE-V1.md) (en vigueur), [`CONTRAT-CARTE-V2.md`](CONTRAT-CARTE-V2.md) (proposé), [`contrats/`](contrats/README.md) | les formats, le valideur fait foi |
 | 10 | [`gabarit-domaine/`](gabarit-domaine/README.md), [`sources/`](sources/README.md), [`boite/`](boite/README.md), [`CORPUS.md`](CORPUS.md) | fabriquer un domaine, trier ses sources, glisser une idée |
 | 11 | [`IDEES-EN-VOL.md`](IDEES-EN-VOL.md), [`lab/VEILLE.md`](lab/VEILLE.md), [`travail/`](travail/) | ce qui n'est pas perdu |
+| 12 | [`MODELES.md`](MODELES.md), [`COMMENCER.md`](COMMENCER.md), [`prompts/`](prompts/README.md) | ce qu'un modèle peut et ne peut pas faire ici ; l'arrivée d'un élève et les prompts à coller dans Claude Code, Codex, Antigravity ou Cursor |
 
 ## Ce qui existe et tourne (02/09/2026)
 
@@ -46,6 +47,13 @@ La conception d'août est archivée intacte dans
 Le moteur Python (`app/`) est la référence : FSRS-6 comparé à
 `py-fsrs`, composition de séance, carte de progression, quiz de
 positionnement, carnet d'erreurs, 47 tests et tests de mutation.
+
+L'usine (`app/usine/`, 03/09/2026) lit un document réel pas à pas :
+`preparer` extrait le texte par page et rend les pages à figures,
+`declarer` enregistre l'outil et le modèle, `suivant` et `valider`
+distribuent et jugent des unités de pages, `fiche` et `registre`
+ferment le document. Rien n'est cru sur parole : chaque `suivant`
+rejoue les contrôles (`decisions/0027`, `MODELES.md`).
 
 Ce qui n'existe pas encore et que le squelette prépare : l'état
 synchronisé (`serveur/`), le client v2 (`web/`), les contrats v2

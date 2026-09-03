@@ -4,7 +4,7 @@
     python3 app/tests.py
     python3 app/tests.py --mutation   # vérifie que les tests mordent
 
-Sept étages, du plus bas au plus haut :
+Huit étages, du plus bas au plus haut :
 
     planificateur  le moteur FSRS, comparé à py-fsrs
     seance         la composition du matin (dû, ré-étalement, entrelacement)
@@ -12,6 +12,7 @@ Sept étages, du plus bas au plus haut :
     quiz+erreurs   le positionnement et le carnet d'erreurs
     chaine         de la donnée brute à l'écran (cloisonnement, refus, contrat)
     chapitres      le valideur des chapitres v2 (contrat proposé, decisions 0021-0022)
+    usine          le pas à pas imposé sur un document réel (decisions 0026-0027)
     banque         la vraie banque respecte le contrat carte-v1, les vrais chapitres le v2
 
 Le mode `--mutation` casse volontairement des garde-fous, un par un, et
@@ -40,6 +41,7 @@ SUITES = [
     ("quiz + carnet d'erreurs", "tests_quiz_erreurs.py"),
     ("chaîne donnée → écran", "tests_chaine.py"),
     ("chapitres v2", "tests_chapitres.py"),
+    ("usine pas à pas", "tests_usine.py"),
 ]
 
 # (description, fichier, texte à remplacer, remplacement).
@@ -70,6 +72,16 @@ MUTATIONS = [
      "    return bool(RE_CHIFFRE.search(RE_REFERENCES.sub(\" \", texte)))", "    return False"),
     ("une carte valide sans relecture passe", "valide_chapitres.py",
      '    if carte["statut"] == "valide" and _vide(carte.get("verifie_par")):', "    if False:"),
+    ("l'usine ouvre l'unité suivante sans valider la précédente", "usine/etat.py",
+     '        if u["statut"] in STATUTS_A_REPRENDRE:\n            journaliser(etat, "unité reprise"',
+     '        if False:\n            journaliser(etat, "unité reprise"'),
+    ("l'usine accepte un résumé à la place du texte", "usine/etat.py",
+     '        if couverture < float(cfg["couverture_min"]):', "        if False:"),
+    ("l'usine laisse passer un chiffre absent de la page", "usine/etat.py",
+     "        absents = sorted(nombres(l) - connus)", "        absents = []"),
+    ("l'usine ne rejoue plus les contrôles des unités validées", "usine/etat.py",
+     '        if u["statut"] != "valide":\n            continue\n        err, sceau, _ = controler_unite',
+     '        if True:\n            continue\n        err, sceau, _ = controler_unite'),
 ]
 
 
@@ -129,6 +141,7 @@ def mode_mutation() -> int:
     try:
         for fichier in {m[1] for m in MUTATIONS}:
             sauvegardes[fichier] = tmp / fichier
+            sauvegardes[fichier].parent.mkdir(parents=True, exist_ok=True)
             shutil.copy(APP / fichier, sauvegardes[fichier])
 
         for description, fichier, avant, apres in MUTATIONS:

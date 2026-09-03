@@ -40,3 +40,4 @@ lisant le dépôt, une règle née d'un incident. Pas l'avancement
 | [0024](0024-la-voix-de-l-academie.md) | 03/09/2026 | La voix : un collègue plus avancé, tutoiement, faits et actions, jamais d'exclamation ni de mots du jeu |
 | [0025](0025-le-cadre-d-execution.md) | 03/09/2026 | Un LLM ne code pas sans cahier ; les règles vivent dans des contrôles ; le contrat avant le code |
 | [0026](0026-un-document-n-est-pas-un-chapitre.md) | 03/09/2026 | Un document n'est pas un chapitre : bibliothèque, pivot Markdown par page, figures rendues, abonnement d'abord, quatre voies vers l'arbre |
+| [0027](0027-pas-a-pas-impose-points-de-sauvegarde-classes-de-modeles.md) | 03/09/2026 | Le pas à pas imposé : un script distribue et juge les unités, points de sauvegarde sur disque, classes de modèles déclarées et ramenées à petit, rien sur parole ; MODELES.md, adaptateurs par outil, onboarding |

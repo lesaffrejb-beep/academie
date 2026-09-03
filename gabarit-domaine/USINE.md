@@ -19,7 +19,11 @@ et fiabilité par source (`decisions/0004`, `sources/README.md`) et
 s'appuie sur `sources/LISTE-BLANCHE.md` pour dire au joueur quoi
 déposer et où trouver le reste ; les entrées PDF scanné (OCR), vidéo
 (sous-titres ou transcription locale) et capture d'écran (vision, chez
-le joueur) sont admises à l'étape 1.
+le joueur) sont admises à l'étape 1. Depuis le 03/09/2026, la lecture
+d'un document se fait par `app/usine/usine.py` du dépôt produit, avec
+`ACADEMIE_RACINE` pointé sur le dépôt-domaine : pas à pas, unités jugées
+par la machine, points de sauvegarde (`decisions/0027`, `MODELES.md`,
+`prompts/creer-un-parcours.md`).
 
 ---
 

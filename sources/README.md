@@ -17,6 +17,15 @@ Le **pivot** d'un document lu (`decisions/0026`) : `sources/<empreinte>.md`
 et `sources/<empreinte>.figures/` (pages à figures rendues). Hors git
 comme le document. Les chapitres citent le pivot avec sa page.
 
+L'usine (`app/usine/usine.py`, `decisions/0027`) ajoute à côté :
+`<empreinte>.pages/` (le texte machine par page, témoin des contrôles),
+`<empreinte>.structure.json` (titres candidats par taille de police),
+`<empreinte>.etat.json` (unités, déclaration du modèle, sceaux, journal ;
+revérifié à chaque `suivant`), `<empreinte>.fiche.json` (la fiche, dont
+se déduit la ligne de registre) et, pour un document rattaché,
+`<empreinte>.rattachements.json`. Tout hors git. Un document interne a
+les mêmes fichiers sous `sources/interne/`.
+
 Fiabilité :
 
 | Note | Ce que ça veut dire |

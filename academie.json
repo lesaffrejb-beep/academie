@@ -67,5 +67,32 @@
     "nb_questions": 20,
     "stabilite_initiale_jours": 21,
     "seuil_ouverture_region_quiz": 0.8
+  },
+  "usine": {
+    "_": "Le pas à pas imposé (decisions/0027) : taille des unités par classe de modèle, seuils de contrôle du pivot. Aucun de ces seuils n'est dans le code.",
+    "classe_par_defaut": "petit",
+    "classes": {
+      "petit": {
+        "unite_initiale": 2,
+        "unite_max": 4
+      },
+      "moyen": {
+        "unite_initiale": 5,
+        "unite_max": 10
+      },
+      "grand": {
+        "unite_initiale": 12,
+        "unite_max": 25
+      }
+    },
+    "modeles_petits": "haiku|mini|nano|lite|flash-lite|oss|local|1b|3b|4b|7b|8b|9b|12b|14b",
+    "serie_pour_doubler": 3,
+    "couverture_min": 0.6,
+    "invention_max": 0.35,
+    "mots_page_texte": 40,
+    "mots_min_description": 6,
+    "lignes_par_page_transcription": 60,
+    "dpi_rendu": 110,
+    "resume_max": 1500
   }
 }

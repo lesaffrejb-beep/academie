@@ -246,7 +246,7 @@
         "max_minutes": 240,
         "max_tokens": 80000
       },
-      "proof": "Les quatre documents du test du 03/09 traversent la chaîne avec leurs pivots (hors git), leurs lignes de registre et de journal, un rapport de coût ; un test compare le pivot d'un PDF de fixture à un attendu ; aucun appel d'API.",
+      "proof": "Au 03/09/2026 au soir : app/usine/ existe (preparer, declarer, suivant, valider, etat, fiche, registre), 40 tests et 4 mutations, les quatre documents du test sont préparés (pivots bruts, pages machine, 120 pages rendues) et la première unité du Focus du CAE est relue et validée par le script. Reste : les quatre documents relus de bout en bout avec fiches, lignes de registre et rattachements, et le rapport de coût ; aucun appel d'API.",
       "parent_milestone": "ACADEMIE-V2-FONDATIONS"
     },
     {
@@ -722,6 +722,25 @@
       },
       "proof": "Journal exporté sans lignes origine=quiz ; paramètres versionnés ; rétention réelle avant/après.",
       "parent_milestone": "ACADEMIE-V2-OUVERTURE"
+    },
+    {
+      "id": "ACA-ONBOARDING-1",
+      "outcome": "Dans le client v2, un nouvel élève choisit un pseudo, voit le catalogue (programme/catalogue.json) et « Créer le vôtre », copie un prompt de prompts/ en un geste, puis passe au quiz de positionnement ; voix de VOIX.md ; aucune saisie de document dans l'app (COMMENCER.md, decisions/0027).",
+      "status": "blocked",
+      "mode": "agent-review",
+      "risk": "low",
+      "priority": 80,
+      "depends_on": [
+        "ACA-FRONT-2",
+        "ACA-PROGRAMME-1"
+      ],
+      "budget": {
+        "max_units": 1,
+        "max_minutes": 240,
+        "max_tokens": 80000
+      },
+      "proof": "Tests du cahier verts (pseudo vide refusé, une carte par parcours plus une, copie exacte du prompt, route vers le quiz) ; check.py vert ; JB entre un pseudo, copie un prompt, arrive au quiz.",
+      "parent_milestone": "ACADEMIE-V2-JOUEUR"
     }
   ]
 }

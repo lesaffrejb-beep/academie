@@ -45,7 +45,8 @@ quand la machine peut le voir : `python3 tooling/check.py`.
 - Écrire un texte affiché avec un point d'exclamation, un emoji, un mot
   du jeu, un tiret cadratin.
 - Publier, envoyer, dépenser, supprimer, migrer sans validation humaine.
-- Écrire « fait » sans preuve rejouable.
+- Écrire « fait » sans preuve rejouable ; écrire « relu » ou « validé »
+  sur un document sans le verdict de l'usine (`decisions/0027`).
 
 ## 3. Les contrôles mécaniques (ce que `check.py` vérifie)
 
@@ -61,13 +62,15 @@ quand la machine peut le voir : `python3 tooling/check.py`.
 | chantiers cités dans un document existent dans `roadmap.json` | tous les `.md` hors archive |
 | aucun import de labor ou d'ERP dans `app/`, `serveur/`, `web/`, `client/` | code |
 | l'archipel reste servi tant que `ACA-FRONT-2` ne l'a pas remplacé | `client/` |
+| la clé `usine` d'`academie.json` et celle du gabarit portent les mêmes seuils | `academie.json`, `gabarit-domaine/` |
+| `MODELES.md`, `COMMENCER.md`, `GEMINI.md`, `prompts/`, les adaptateurs par outil existent et sans tiret cadratin | racine, `prompts/`, `.agents/`, `.cursor/` |
 
 Un contrôle qui bloque un chantier légitime se discute par décision ;
 il ne se contourne pas.
 
 ## 4. Les tests (ce qu'`app/tests.py` vérifie)
 
-Sept suites, puis la banque réelle et les chapitres réels. Le mode
+Huit suites, puis la banque réelle et les chapitres réels. Le mode
 `--mutation` casse volontairement des garde-fous et vérifie que les
 tests le remarquent : un test vert sur un code cassé est pire qu'absent.
 Un chantier qui ajoute un garde-fou ajoute sa mutation.
@@ -107,3 +110,27 @@ pré-mortems (`travail/relecture-*.md`). « Aucun bloquant » est un
 verdict recevable. Un contenu généré passe la double passe qui remonte
 à la source avant `valide` ; un chapitre `valide` sans `verifie_par`
 est refusé par le valideur.
+
+## 8. Un travail long se fait pas à pas, et la machine juge
+
+Lire un document, écrire un lot de chapitres, coder un chantier : un
+modèle, petit ou grand, perd le début quand le contexte s'allonge et
+ajoute quelque chose quand il résume (`MODELES.md` §1). La règle
+([`decisions/0027`](decisions/0027-pas-a-pas-impose-points-de-sauvegarde-classes-de-modeles.md)) :
+
+1. **Se déclarer** : outil, modèle, classe (`petit`, `moyen`, `grand`) ;
+   en doute, petit. Un nom de petit modèle est ramené à petit.
+2. **Avancer par unités** que le script distribue : pour un document,
+   `python3 app/usine/usine.py suivant <empreinte>` donne des pages, la
+   consigne, les pages rendues ; `valider` juge ; la taille des unités
+   suit les résultats.
+3. **Écrire sur disque après chaque unité** : c'est le point de
+   sauvegarde. Après une coupure, `prompts/reprendre.md`.
+4. **Ne rien croire sur parole** : `suivant` et `etat` rejouent les
+   contrôles des unités validées ; un état trafiqué repasse à faire.
+5. **S'arrêter et le dire** après deux refus de suite sur la même unité,
+   ou quand la classe ne permet pas la tâche (§3 de `MODELES.md`).
+
+Pour le code, l'équivalent est le cahier : une étape numérotée à la
+fois, tests rouges d'abord, commit par étape. Un petit modèle exécute
+une étape ; un moyen prend un cahier ; un grand peut en écrire un.

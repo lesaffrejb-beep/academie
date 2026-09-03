@@ -106,7 +106,7 @@ corrige.
 | 7 | [`DIRECTION-ARTISTIQUE.md`](DIRECTION-ARTISTIQUE.md) | à quoi ça ressemble et comment ça bouge |
 | 8 | [`ROADMAP.md`](ROADMAP.md), `roadmap.json` | ce qu'on fait ensuite, avec la preuve attendue |
 | 9 | [`decisions/`](decisions/README.md) | pourquoi on a tranché comme ça, daté |
-| 10 | [`gabarit-domaine/`](gabarit-domaine/README.md), [`CORPUS.md`](CORPUS.md), [`boite/`](boite/README.md), [`sources/`](sources/README.md), [`programme/`](programme/README.md), [`serveur/`](serveur/README.md), [`web/`](web/README.md) | les guides opérationnels et les squelettes |
+| 10 | [`gabarit-domaine/`](gabarit-domaine/README.md), [`CORPUS.md`](CORPUS.md), [`boite/`](boite/README.md), [`sources/`](sources/README.md), [`programme/`](programme/README.md), [`serveur/`](serveur/README.md), [`web/`](web/README.md), [`MODELES.md`](MODELES.md), [`COMMENCER.md`](COMMENCER.md), [`prompts/`](prompts/README.md) | les guides opérationnels et les squelettes ; ce qu'un modèle peut faire ici, l'accueil d'un élève |
 | 11 | [`archive/`](archive/roadmaps/README.md) | l'histoire, non pilotante |
 
 ## 5. Qui fait quoi

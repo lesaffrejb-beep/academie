@@ -24,9 +24,10 @@ RE_IMPORT_LABOR = re.compile(r"(?:^|\n)\s*(?:from|import)\s+(?:labor|erp)\b|['\"
 
 # Documents v2 où le tiret cadratin est interdit (règle de la maison).
 DOCS_V2 = ["DOCTRINE.md", "BLUEPRINT.md", "PROGRAMME.md", "ARCHITECTURE.md", "DIRECTION-ARTISTIQUE.md",
-           "ROADMAP.md", "README.md", "AGENTS.md", "CONTRIBUER.md", "VOIX.md", "CONTRAT-CARTE-V2.md", "SYLLABUS.md"]
+           "ROADMAP.md", "README.md", "AGENTS.md", "CONTRIBUER.md", "VOIX.md", "CONTRAT-CARTE-V2.md", "SYLLABUS.md",
+           "MODELES.md", "COMMENCER.md", "GEMINI.md", "CLAUDE.md"]
 DOSSIERS_V2 = ["decisions", "chantiers", "contenu", "chapitres", "sources", "boite", "serveur", "web",
-               "programme", "contrats"]
+               "programme", "contrats", "prompts", ".agents", ".cursor", "app/usine"]
 # Ce que le produit affiche : voix contrôlée (exclamation, emoji, mots interdits).
 DOSSIERS_VOIX = ["contenu", "chapitres", "web"]
 
@@ -57,7 +58,10 @@ def controle_fichiers_requis(errors):
                      "ROADMAP.md", "roadmap.json", "context/giverny.md", "decisions/README.md",
                      "client/index.html", "client/style.css", "client/app.js", "client/sw.js",
                      "deploy/academie-publication.service", "deploy/academie-publication.timer",
-                     "contenu/voix.json", "contenu/citations.json", "programme/copro.json"):
+                     "contenu/voix.json", "contenu/citations.json", "programme/copro.json",
+                     "MODELES.md", "COMMENCER.md", "GEMINI.md", ".agents/rules/academie.md", ".cursor/rules/academie.mdc",
+                     "prompts/README.md", "prompts/creer-un-parcours.md", "prompts/ajouter-des-documents.md",
+                     "prompts/reprendre.md", "programme/catalogue.json", "app/usine/usine.py", "app/tests_usine.py"):
         if not (ROOT / required).is_file():
             errors.append(f"fichier requis absent : {required}")
 
@@ -179,6 +183,8 @@ def controle_tirets(errors):
     cibles = [ROOT / d for d in DOCS_V2 if (ROOT / d).is_file()]
     cibles += list(fichiers(DOSSIERS_V2, {".md", ".json", ".sql", ".ts", ".tsx"}))
     for f in cibles:
+        if "sources" in f.parts and re.fullmatch(r"[0-9a-f]{16}", f.name.split(".")[0] or ""):
+            continue  # un pivot ou une fiche cite le document tel quel ; ses tirets ne sont pas les nôtres
         txt = lit(f)
         if "—" in txt:
             n = txt.count("—")
@@ -240,6 +246,37 @@ def controle_imports(errors):
             continue
         if RE_IMPORT_LABOR.search(lit(f)):
             errors.append(f"import de labor ou d'ERP dans {rel(f)}")
+
+
+def controle_usine(errors):
+    """Les seuils du pas à pas vivent dans academie.json et dans le gabarit, identiques (decisions/0027)."""
+    try:
+        a = json.loads((ROOT / "academie.json").read_text(encoding="utf-8")).get("usine")
+        g = json.loads((ROOT / "gabarit-domaine" / "academie.json").read_text(encoding="utf-8")).get("usine")
+    except (OSError, json.JSONDecodeError):
+        return
+    if not a or not g:
+        errors.append("clé `usine` absente d'academie.json ou du gabarit (decisions/0027)")
+        return
+    for cle in ("classes", "classe_par_defaut", "modeles_petits", "serie_pour_doubler", "couverture_min",
+                "invention_max", "mots_page_texte", "mots_min_description", "lignes_par_page_transcription", "dpi_rendu", "resume_max"):
+        if cle not in a:
+            errors.append(f"academie.json : usine.{cle} manquant")
+        elif a.get(cle) != g.get(cle):
+            errors.append(f"usine.{cle} diffère entre academie.json et gabarit-domaine/academie.json")
+    if a.get("classe_par_defaut") not in (a.get("classes") or {}):
+        errors.append("usine.classe_par_defaut n'est pas une classe déclarée")
+    try:
+        cat = json.loads((ROOT / "programme" / "catalogue.json").read_text(encoding="utf-8"))
+        for parcours in cat.get("parcours", []):
+            for cle in ("programme", "sommaire"):
+                if not (ROOT / parcours.get(cle, "")).is_file():
+                    errors.append(f"catalogue : {parcours.get('cle')} renvoie à un fichier absent ({cle})")
+        for prompt in cat.get("creer_le_votre", {}).get("prompts", []):
+            if not (ROOT / prompt).is_file():
+                errors.append(f"catalogue : prompt absent {prompt}")
+    except (OSError, json.JSONDecodeError):
+        pass
 
 
 def controle_chapitres(errors):

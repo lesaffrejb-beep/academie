@@ -1,7 +1,9 @@
 # programme/
 
 Le programme d'un métier en données : `copro.json` pour le gestionnaire
-de copropriété. Un fichier par métier (`ifsi.json` viendra du domaine
+de copropriété. `catalogue.json` liste les parcours proposés à l'arrivée
+(`COMMENCER.md` §2) ; ses compteurs se mettent à jour à chaque lot de
+chapitres. Un fichier par métier (`ifsi.json` viendra du domaine
 d'Arthur). Le texte lisible est `../PROGRAMME.md` ; quand les deux
 divergent, **le JSON fait foi** et le texte se corrige.
 

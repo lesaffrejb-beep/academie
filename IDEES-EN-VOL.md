@@ -64,6 +64,9 @@ arbitrée) · **ÉCARTÉE** (dit pourquoi).
 | 03/09 | « PDF vers quoi ? les images ? périmé ? dispo depuis l'app ? » | GRAVÉE | `decisions/0026`, `travail/2026-09-03-test-ingestion.md` |
 | 03/09 | « Moi j'utilise des abonnements, jamais d'API » | GRAVÉE | `decisions/0026` §4 : l'usine tourne sur abonnement, l'API à titre indicatif |
 | 03/09 | « Un sujet carte blanche test : c'est quoi le prompt, la méthode, les contraintes » | GRAVÉE | `boite/GLISSER.md`, satellite témoin `chapitres/satellites/chaudiere-hybride.json` |
+| 03/09 | « Qu'un modèle plus petit ne puisse pas mal faire, mentir ou se planter ; forcé à faire petit à petit sans tricher ; des points de sauvegarde » | GRAVÉE | `decisions/0027`, `app/usine/`, `MODELES.md`, `CONTRIBUER.md` §8 |
+| 03/09 | « Documente les modèles actuels, forces et faiblesses selon nos benchmarks, humblement » | GRAVÉE | `MODELES.md` (à relire le 03/12/2026) |
+| 03/09 | « Un onboarding : nouveau pseudo, petit catalogue, créer le vôtre, le prompt à coller dans Claude Code, Codex, Antigravity, Cursor » | GRAVÉE | `COMMENCER.md`, `prompts/`, `programme/catalogue.json`, chantier `ACA-ONBOARDING-1` |
 
 *Toute session qui entend JB lancer une idée en route l'ajoute ici
 dans le commit du jour, même si elle est gravée ailleurs dans la

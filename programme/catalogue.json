@@ -1,0 +1,24 @@
+{
+  "_": "Le catalogue des parcours proposés à l'arrivée (COMMENCER.md §2). Une entrée par programme en données ; l'écran ACA-ONBOARDING-1 le lit tel quel. « Créer le vôtre » n'est pas une entrée : c'est un bouton fixe qui mène aux prompts.",
+  "version": "0.1",
+  "mis_a_jour_le": "2026-09-03",
+  "parcours": [
+    {
+      "cle": "copro",
+      "titre": "Gestion de copropriété",
+      "metier": "gestionnaire de copropriété",
+      "programme": "programme/copro.json",
+      "sommaire": "SYLLABUS.md",
+      "etat": "squelette",
+      "chapitres": 387,
+      "chapitres_ecrits": 2,
+      "cartes_jouables": 84,
+      "aujourd_hui": "Lire le programme et jouer les cartes existantes. Les chapitres se remplissent chantier par chantier.",
+      "ouvert_a": "tous"
+    }
+  ],
+  "creer_le_votre": {
+    "guide": "COMMENCER.md",
+    "prompts": ["prompts/creer-un-parcours.md", "prompts/ajouter-des-documents.md", "prompts/reprendre.md"]
+  }
+}

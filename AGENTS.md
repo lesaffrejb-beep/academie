@@ -16,9 +16,16 @@ Règles dures :
 6. Une mécanique nouvelle ajoute son entrée sourcée dans `METHODE.md` dans le même commit ; un arbitrage structurant ajoute un fichier dans `decisions/`.
 7. Avant de conclure : `python3 app/tests.py` puis `python3 tooling/check.py`.
 8. Tu ne codes pas sans cahier : un chantier de `roadmap.json` se fait depuis `chantiers/<id>.md`, dans son périmètre, tests rouges d'abord (`CONTRIBUER.md`, `decisions/0025`). L'app parle avec la voix de `VOIX.md`.
+9. Tu te déclares avant un travail long (`MODELES.md` : outil, modèle, classe ; en doute, petit) et tu avances par unités que `app/usine/usine.py` distribue et juge ; tu n'écris jamais « fait », « relu » ou « validé » sans le verdict du script (`decisions/0027`).
 
 La roadmap exécutable est `roadmap.json` ; la roadmap lisible, `ROADMAP.md`.
 Le domaine (carte des dépôts, décisions transverses, modèles) vit dans
 `labor/domaine/` sur le Mac ; `context/giverny.md` en est le paquet
 historique. La veille se note dans `lab/VEILLE.md`, format des quatre
 verdicts ; ce qu'on veut apprendre se glisse dans `boite/`.
+
+Adaptateurs par outil, tous muets : `CLAUDE.md` (Claude Code), `GEMINI.md`
+(Gemini CLI), `.agents/rules/academie.md` (Antigravity),
+`.cursor/rules/academie.mdc` (Cursor) ; Codex lit ce fichier tel quel.
+Ils renvoient ici et n'ajoutent rien. L'accueil d'un élève est
+`COMMENCER.md`, les prompts prêts à coller sont dans `prompts/`.

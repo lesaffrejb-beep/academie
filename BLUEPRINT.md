@@ -508,3 +508,17 @@ lui.
 Rien au 03/09/2026 : les noms des domaines, la semaine type et les
 licences ont été tranchés par délégation (`decisions/0023`). Le premier
 collègue invité, et quand, reste une décision de JB le jour venu.
+
+## 18. L'arrivée d'un élève (ajouté le 03/09/2026)
+
+Un pseudo, visible par défaut dans le cercle, jamais le carnet d'erreurs
+(§13). Puis le catalogue ([`programme/catalogue.json`](programme/catalogue.json)) :
+une carte par parcours avec son état et ce qu'on peut y faire
+aujourd'hui, et une carte « Créer le vôtre » qui mène à
+[`COMMENCER.md`](COMMENCER.md) et aux prompts de [`prompts/`](prompts/README.md)
+à coller dans l'outil de l'élève (Claude Code, Codex, Antigravity,
+Cursor). Les documents de l'élève ne passent jamais par l'app : ils
+restent sur sa machine, lus pas à pas par son agent
+([`decisions/0027`](decisions/0027-pas-a-pas-impose-points-de-sauvegarde-classes-de-modeles.md)).
+Le quiz de positionnement (§11) vient après le choix du parcours.
+Écran : chantier `ACA-ONBOARDING-1`.
