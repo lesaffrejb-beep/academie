@@ -19,8 +19,11 @@ VPS par `deploy/installer.sh`, geste humain) :
 Ce que `ACA-FRONT-2` ajoutera : `academie-publication.service` construit
 `web/` et copie `dist/` dans la publication.
 
-État au 03/09 au soir : tout est écrit et testé en local ; rien n'est
-encore installé sur le VPS (étape 7 du cahier, JB lance).
+État au 03/09 au soir : installé sur le VPS (`installer.sh` passé,
+`academie-etat.service` et `sauvegarde-academie.timer` actifs, bloc
+`/academie/api/*` dans le Caddyfile du socle, profil `JB` créé, lien
+magique généré). Reste l'étape 7 du cahier, la preuve téléphone-Mac,
+et l'import du journal v0 si JB en a un.
 
 ## Installer chez soi (un copain qui reprend le dépôt)
 
