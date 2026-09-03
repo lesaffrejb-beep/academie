@@ -156,6 +156,15 @@ nature apparente.
   boîte mail, un carnet type NotebookLM). Le joueur oublie toujours un
   gisement.
 
+**Le pivot** (`decisions/0026`, 03/09/2026) : chaque document retenu
+devient un Markdown par page (`sources/<empreinte>.md`, ancres `[p. n]`,
+titres, tableaux, figures décrites) avec ses pages à figures rendues en
+image à côté ; c'est ce pivot que l'agent lit et que les chapitres
+citent, jamais le PDF. Outils : `pdftotext`, `pdftohtml -xml`,
+`pdftoppm`, `pdfimages` ; la vision du modèle pour les figures ; l'OCR
+seulement pour un PDF sans couche texte. Le tout tourne sur l'abonnement
+du joueur, aucune clé d'API.
+
 **Porte.** Le joueur reconnaît son propre tas dans l'inventaire.
 
 ---

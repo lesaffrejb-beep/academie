@@ -505,10 +505,6 @@ lui.
 
 ## 17. Ce qui reste à trancher par JB
 
-1. Les noms des dix domaines tels qu'il les dirait à un collègue
-   (`PROGRAMME.md` §2 propose).
-2. Le premier collègue invité, et quand.
-3. La semaine type par défaut (§4) : garder, ou décaler l'étude au
-   dimanche.
-4. Les licences ([`decisions/0018`](decisions/0018-licences-du-code-et-du-contenu.md)) :
-   code MIT, contenu CC BY-SA. La bibliothèque commune les suppose.
+Rien au 03/09/2026 : les noms des domaines, la semaine type et les
+licences ont été tranchés par délégation (`decisions/0023`). Le premier
+collègue invité, et quand, reste une décision de JB le jour venu.

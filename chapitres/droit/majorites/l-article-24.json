@@ -1,0 +1,366 @@
+{
+  "id": "droit.majorites.l-article-24",
+  "titre": "L'article 24",
+  "domaine": "droit",
+  "branche": "majorites",
+  "niveau": 1,
+  "prerequis": [],
+  "ponts": [
+    "droit.assemblee.la-contestation-en-deux-mois",
+    "droit.majorites.l-article-25-et-la-passerelle"
+  ],
+  "objectifs": [
+    "Dire quelles décisions se votent à l'article 24 et lesquelles n'y sont pas.",
+    "Calculer une majorité de l'article 24 sur une feuille de présence, abstentions comprises.",
+    "Savoir qui compte parmi les votants : présents, représentés, votants par correspondance."
+  ],
+  "amorce": {
+    "question": "En assemblée, une résolution d'approbation des comptes recueille 250 tantièmes pour, 200 contre et 150 abstentions, sur 600 tantièmes présents ou représentés. Adoptée ou rejetée ?",
+    "aide": "Demande-toi ce qu'est une voix exprimée.",
+    "reponse_attendue": "Adoptée : à l'article 24 on compte la majorité des voix exprimées, et une abstention n'est pas une voix exprimée. 250 contre 200, la résolution passe."
+  },
+  "lecon": "L'article 24 de la loi du 10 juillet 1965 est la majorité par défaut de la copropriété : quand la loi ne dit rien d'autre, une décision d'assemblée se prend à cette majorité. Elle se définit ainsi : la majorité des voix exprimées des copropriétaires présents, représentés ou ayant voté par correspondance. Trois mots comptent.\n\nD'abord « voix » : en copropriété on ne compte pas des personnes mais des tantièmes, la quote-part de parties communes attachée à chaque lot (article 22 de la même loi). Un copropriétaire qui détient trois lots vote avec la somme de leurs tantièmes.\n\nEnsuite « exprimées » : depuis la réforme entrée en vigueur en 2020, on ne compte que les votes pour et les votes contre. Une abstention n'est pas une voix exprimée ; elle ne pèse ni d'un côté ni de l'autre. Avant cette réforme, la majorité se calculait sur les voix des présents et représentés, abstentions comprises, ce qui faisait de l'abstention un vote contre de fait. Ce n'est plus le cas, et c'est le piège le plus fréquent dans les anciens manuels.\n\nEnfin « présents, représentés ou ayant voté par correspondance » : l'article 24 ne regarde que ceux qui participent. Les absents qui n'ont donné ni pouvoir ni formulaire de vote par correspondance n'existent pas pour ce calcul. C'est ce qui distingue radicalement l'article 24 de l'article 25, qui compte les voix de tous les copropriétaires composant le syndicat, absents compris.\n\nCe qui se vote à l'article 24, c'est la gestion courante : l'approbation des comptes, le vote du budget prévisionnel, le quitus au syndic, les travaux nécessaires à la conservation de l'immeuble et à l'entretien des parties communes, l'autorisation d'agir en justice pour le syndicat dans les cas où elle est requise, la désignation des membres du conseil syndical selon les cas, et de nombreuses décisions que l'article 24 énumère lui-même ou que d'autres textes renvoient à cette majorité. La loi y a aussi placé des décisions qu'elle veut faciles, comme certains travaux d'accessibilité.\n\nUn exemple travaillé. Un immeuble de 1 000 tantièmes réunit une assemblée où 600 tantièmes sont présents, représentés ou votent par correspondance. La résolution d'approbation des comptes recueille 250 tantièmes pour, 200 contre, 150 abstentions. Les voix exprimées sont 250 plus 200, soit 450. La majorité est atteinte dès que le pour dépasse la moitié des voix exprimées, donc plus de 225. Avec 250, la résolution est adoptée. Si les 150 abstentionnistes avaient voté contre, elle aurait été rejetée : 250 contre 350.\n\nDeux vigilances de terrain. La première : le procès-verbal doit indiquer les noms des copropriétaires ou associés qui se sont opposés à la décision avec leurs tantièmes, ceux qui se sont abstenus et ceux qui n'ont pas pris part au vote ; c'est ce qui permet ensuite de savoir qui peut contester. La seconde : à l'article 24, les copropriétaires qui ont voté par correspondance sur un formulaire régulier comptent parmi les votants, mais un formulaire qui laisse une résolution sans réponse vaut abstention sur cette résolution, pas vote contre.\n\nDemain matin, devant une feuille de présence, tu sauras additionner les tantièmes exprimés, écarter les abstentions, et dire si la résolution passe.",
+  "synthese": {
+    "consigne": "Explique à un collègue en soixante secondes comment se calcule l'article 24 et pourquoi une abstention ne fait pas perdre une résolution.",
+    "attendus": [
+      "majorité des voix exprimées",
+      "tantièmes, pas têtes",
+      "présents, représentés, votants par correspondance",
+      "les absents sans pouvoir ne comptent pas",
+      "l'abstention n'est pas une voix exprimée depuis 2020",
+      "un exemple chiffré"
+    ]
+  },
+  "sources": [
+    {
+      "texte": "Art. 24, loi n° 65-557 du 10 juillet 1965 fixant le statut de la copropriété des immeubles bâtis",
+      "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000880200/",
+      "nature": "texte-officiel"
+    },
+    {
+      "texte": "Art. 22, loi n° 65-557 du 10 juillet 1965 (voix et tantièmes)",
+      "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000880200/",
+      "nature": "texte-officiel"
+    },
+    {
+      "texte": "Art. 17, décret n° 67-223 du 17 mars 1967 (contenu du procès-verbal)",
+      "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000880473/",
+      "nature": "texte-officiel"
+    },
+    {
+      "texte": "ANIL, fiche « Les majorités en assemblée générale de copropriété »",
+      "url": "https://www.anil.org/",
+      "nature": "institution"
+    }
+  ],
+  "provenance": {
+    "auteur": "modele",
+    "modele": "Claude Fable 5.1",
+    "genere_le": "2026-09-03",
+    "session": "lot-pilote-2026-09-03",
+    "sources_retrouvees": 4,
+    "sources_concordantes": 2,
+    "sans_source": false
+  },
+  "statut": "brouillon",
+  "partage": "banque",
+  "verifie": "2026-09-03",
+  "version": 1,
+  "cartes": [
+    {
+      "id": "droit-majorites-24-definition",
+      "chapitre": "droit.majorites.l-article-24",
+      "domaine": "droit",
+      "branche": "majorites",
+      "type": "flash",
+      "niveau": 1,
+      "question": "Quelle est la majorité de l'article 24 de la loi de 1965 ?",
+      "reponse": "La majorité des voix exprimées des copropriétaires présents, représentés ou ayant voté par correspondance.",
+      "explication": "C'est la majorité par défaut : elle s'applique quand la loi n'en prévoit pas une autre. Elle ne regarde que ceux qui participent à l'assemblée, et parmi eux, seulement les votes pour et contre.",
+      "vigilance": "Ne pas la confondre avec l'article 25, qui compte les voix de tous les copropriétaires, absents compris.",
+      "source": [
+        {
+          "texte": "Art. 24, loi n° 65-557 du 10 juillet 1965",
+          "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000880200/",
+          "nature": "texte-officiel"
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "modele": "Claude Fable 5.1",
+        "genere_le": "2026-09-03",
+        "session": "lot-pilote-2026-09-03",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 1,
+        "sans_source": false
+      },
+      "verifie": "2026-09-03",
+      "peremption": null,
+      "statut": "brouillon",
+      "partage": "banque"
+    },
+    {
+      "id": "droit-majorites-24-abstention",
+      "chapitre": "droit.majorites.l-article-24",
+      "domaine": "droit",
+      "branche": "majorites",
+      "type": "qcm",
+      "niveau": 1,
+      "question": "À l'article 24, comment pèse une abstention ?",
+      "reponse": "Elle ne pèse pas : une abstention n'est pas une voix exprimée, elle ne compte ni pour ni contre.",
+      "choix": [
+        {
+          "texte": "Elle ne compte ni pour ni contre : ce n'est pas une voix exprimée.",
+          "correct": true
+        },
+        {
+          "texte": "Elle compte comme un vote contre.",
+          "correct": false,
+          "pourquoi_faux": "C'était l'effet de l'ancienne rédaction, calculée sur les présents et représentés ; depuis 2020, on ne compte que les voix exprimées."
+        },
+        {
+          "texte": "Elle compte comme un vote pour.",
+          "correct": false,
+          "pourquoi_faux": "Aucune majorité ne transforme une abstention en approbation."
+        },
+        {
+          "texte": "Elle est répartie à parts égales entre le pour et le contre.",
+          "correct": false,
+          "pourquoi_faux": "Aucun texte ne prévoit une telle répartition ; l'abstention est simplement écartée du calcul."
+        }
+      ],
+      "explication": "Depuis la réforme de 2019 applicable en 2020, l'article 24 vise la majorité des voix exprimées. Le pour doit dépasser la moitié de la somme des pour et des contre. Les abstentions sont mentionnées au procès-verbal mais ne pèsent pas.",
+      "vigilance": "Un vieux modèle de procès-verbal ou un manuel d'avant 2020 peut encore compter l'abstention comme un contre : vérifier la date de ce qu'on lit.",
+      "confiance": true,
+      "source": [
+        {
+          "texte": "Art. 24, loi n° 65-557 du 10 juillet 1965 (rédaction issue de l'ordonnance n° 2019-1101)",
+          "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000880200/",
+          "nature": "texte-officiel"
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "modele": "Claude Fable 5.1",
+        "genere_le": "2026-09-03",
+        "session": "lot-pilote-2026-09-03",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 1,
+        "sans_source": false
+      },
+      "verifie": "2026-09-03",
+      "peremption": null,
+      "statut": "brouillon",
+      "partage": "banque"
+    },
+    {
+      "id": "droit-majorites-24-calcul",
+      "chapitre": "droit.majorites.l-article-24",
+      "domaine": "droit",
+      "branche": "majorites",
+      "type": "qcm",
+      "niveau": 1,
+      "question": "Sur 1 000 tantièmes, 600 participent. Une résolution de l'article 24 recueille 280 pour, 300 contre, 20 abstentions. Résultat ?",
+      "reponse": "Rejetée : 280 pour contre 300 contre, le pour ne dépasse pas la moitié des 580 voix exprimées.",
+      "choix": [
+        {
+          "texte": "Rejetée : le pour ne dépasse pas la moitié des voix exprimées.",
+          "correct": true
+        },
+        {
+          "texte": "Adoptée : 280 dépasse le quart des 1 000 tantièmes.",
+          "correct": false,
+          "pourquoi_faux": "Les 1 000 tantièmes du syndicat n'entrent pas dans le calcul de l'article 24 ; seuls les votants comptent, et on compare pour et contre."
+        },
+        {
+          "texte": "Adoptée : 280 dépasse la moitié des 600 tantièmes participants, une fois les abstentions retirées.",
+          "correct": false,
+          "pourquoi_faux": "580 voix exprimées, la moitié est 290 ; 280 est en dessous. Le calcul est juste dans son principe mais faux dans son chiffre."
+        },
+        {
+          "texte": "Il faut un second vote à l'article 25-1.",
+          "correct": false,
+          "pourquoi_faux": "La passerelle de l'article 25-1 ne concerne que les décisions de l'article 25 ; à l'article 24, une résolution rejetée est rejetée."
+        }
+      ],
+      "explication": "Voix exprimées : 280 plus 300, soit 580. La majorité exige plus de 290 pour. Avec 280, la résolution est rejetée. Les 20 abstentions et les 400 tantièmes absents ne pèsent pas.",
+      "vigilance": "Compter d'abord les voix exprimées, puis comparer : c'est l'ordre qui évite l'erreur.",
+      "confiance": true,
+      "source": [
+        {
+          "texte": "Art. 24, loi n° 65-557 du 10 juillet 1965",
+          "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000880200/",
+          "nature": "texte-officiel"
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "modele": "Claude Fable 5.1",
+        "genere_le": "2026-09-03",
+        "session": "lot-pilote-2026-09-03",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 1,
+        "sans_source": false
+      },
+      "verifie": "2026-09-03",
+      "peremption": null,
+      "statut": "brouillon",
+      "partage": "banque"
+    },
+    {
+      "id": "droit-majorites-24-qui-compte",
+      "chapitre": "droit.majorites.l-article-24",
+      "domaine": "droit",
+      "branche": "majorites",
+      "type": "flash",
+      "niveau": 1,
+      "question": "Un copropriétaire absent, sans pouvoir et sans formulaire de vote par correspondance : compte-t-il dans le calcul de l'article 24 ?",
+      "reponse": "Non. L'article 24 ne compte que les copropriétaires présents, représentés ou ayant voté par correspondance ; l'absent pur n'existe pas pour ce calcul.",
+      "explication": "C'est la différence avec l'article 25, où les voix de tous les copropriétaires composant le syndicat sont la base du calcul, ce qui fait peser les absents comme des contre.",
+      "vigilance": "Un absent qui a envoyé un pouvoir en blanc est représenté ; il compte, et son mandataire vote pour lui.",
+      "source": [
+        {
+          "texte": "Art. 24 et art. 25, loi n° 65-557 du 10 juillet 1965",
+          "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000880200/",
+          "nature": "texte-officiel"
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "modele": "Claude Fable 5.1",
+        "genere_le": "2026-09-03",
+        "session": "lot-pilote-2026-09-03",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 1,
+        "sans_source": false
+      },
+      "verifie": "2026-09-03",
+      "peremption": null,
+      "statut": "brouillon",
+      "partage": "banque"
+    },
+    {
+      "id": "droit-majorites-24-quelles-decisions",
+      "chapitre": "droit.majorites.l-article-24",
+      "domaine": "droit",
+      "branche": "majorites",
+      "type": "qcm",
+      "niveau": 1,
+      "question": "Laquelle de ces décisions ne se vote pas à l'article 24 ?",
+      "reponse": "La désignation du syndic : elle relève de l'article 25.",
+      "choix": [
+        {
+          "texte": "La désignation du syndic.",
+          "correct": true
+        },
+        {
+          "texte": "L'approbation des comptes de l'exercice.",
+          "correct": false,
+          "pourquoi_faux": "L'approbation des comptes est une décision de gestion courante, votée à l'article 24."
+        },
+        {
+          "texte": "Le vote du budget prévisionnel.",
+          "correct": false,
+          "pourquoi_faux": "Le budget prévisionnel se vote à l'article 24, chaque année."
+        },
+        {
+          "texte": "Les travaux nécessaires à la conservation de l'immeuble.",
+          "correct": false,
+          "pourquoi_faux": "Les travaux de conservation et d'entretien des parties communes relèvent de l'article 24."
+        }
+      ],
+      "explication": "L'article 24 porte la gestion courante ; la désignation et la révocation du syndic, comme la plupart des décisions qui engagent le syndicat au-delà de la gestion, sont à l'article 25, majorité des voix de tous les copropriétaires.",
+      "vigilance": "Quand tu prépares un ordre du jour, écris la majorité en face de chaque résolution : une erreur de majorité rend la décision contestable.",
+      "confiance": true,
+      "source": [
+        {
+          "texte": "Art. 24 et art. 25 c, loi n° 65-557 du 10 juillet 1965",
+          "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000880200/",
+          "nature": "texte-officiel"
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "modele": "Claude Fable 5.1",
+        "genere_le": "2026-09-03",
+        "session": "lot-pilote-2026-09-03",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 1,
+        "sans_source": false
+      },
+      "verifie": "2026-09-03",
+      "peremption": null,
+      "statut": "brouillon",
+      "partage": "banque"
+    },
+    {
+      "id": "droit-majorites-24-tantiemes",
+      "chapitre": "droit.majorites.l-article-24",
+      "domaine": "droit",
+      "branche": "majorites",
+      "type": "flash",
+      "niveau": 1,
+      "question": "En assemblée, un copropriétaire qui possède trois lots dispose de combien de voix ?",
+      "reponse": "De la somme des tantièmes de ses trois lots : on vote en quotes-parts de parties communes, pas par tête.",
+      "explication": "L'article 22 attache à chaque lot un nombre de voix correspondant à sa quote-part dans les parties communes. Le même article plafonne les voix d'un copropriétaire qui détiendrait plus de la moitié des tantièmes à la somme des voix des autres.",
+      "vigilance": "Le plafonnement du copropriétaire majoritaire se vérifie sur la feuille de présence avant de proclamer un résultat.",
+      "source": [
+        {
+          "texte": "Art. 22, loi n° 65-557 du 10 juillet 1965",
+          "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000880200/",
+          "nature": "texte-officiel"
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "modele": "Claude Fable 5.1",
+        "genere_le": "2026-09-03",
+        "session": "lot-pilote-2026-09-03",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 1,
+        "sans_source": false
+      },
+      "verifie": "2026-09-03",
+      "peremption": null,
+      "statut": "brouillon",
+      "partage": "banque"
+    },
+    {
+      "id": "droit-majorites-24-pv-opposants",
+      "chapitre": "droit.majorites.l-article-24",
+      "domaine": "droit",
+      "branche": "majorites",
+      "type": "flash",
+      "niveau": 1,
+      "question": "Que doit mentionner le procès-verbal pour chaque résolution, en plus du résultat du vote ?",
+      "reponse": "Le nom des copropriétaires qui se sont opposés à la décision avec leurs tantièmes, ceux qui se sont abstenus et ceux qui n'ont pas pris part au vote.",
+      "explication": "Ces mentions ne sont pas décoratives : seuls les copropriétaires opposants ou défaillants peuvent contester une décision devant le juge dans le délai de deux mois ; le procès-verbal est la preuve de qui a voté quoi.",
+      "vigilance": "Un procès-verbal qui note « adoptée à la majorité » sans nommer les opposants fragilise la copropriété en cas de contestation.",
+      "source": [
+        {
+          "texte": "Art. 17, décret n° 67-223 du 17 mars 1967",
+          "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000880473/",
+          "nature": "texte-officiel"
+        },
+        {
+          "texte": "Art. 42, loi n° 65-557 du 10 juillet 1965 (contestation par les opposants ou défaillants)",
+          "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000880200/",
+          "nature": "texte-officiel"
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "modele": "Claude Fable 5.1",
+        "genere_le": "2026-09-03",
+        "session": "lot-pilote-2026-09-03",
+        "sources_retrouvees": 2,
+        "sources_concordantes": 2,
+        "sans_source": false
+      },
+      "verifie": "2026-09-03",
+      "peremption": null,
+      "statut": "brouillon",
+      "partage": "banque"
+    }
+  ]
+}

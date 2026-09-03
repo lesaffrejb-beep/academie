@@ -12,6 +12,11 @@ Le registre des sources du domaine copropriété, et les copies locales.
   (`ARCHITECTURE.md` §3). Un fichier de ce dossier ne monte jamais sur
   le serveur ni dans une livraison.
 
+Le **pivot** d'un document lu (`decisions/0026`) : `sources/<empreinte>.md`
+(Markdown par page, ancres `[p. n]`, titres, tableaux, figures décrites)
+et `sources/<empreinte>.figures/` (pages à figures rendues). Hors git
+comme le document. Les chapitres citent le pivot avec sa page.
+
 Fiabilité :
 
 | Note | Ce que ça veut dire |

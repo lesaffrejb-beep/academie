@@ -1,0 +1,19 @@
+{
+  "_": "Citations des jalons (BLUEPRINT §12, VOIX.md). Chaque entrée porte une œuvre ou une lettre identifiable ; une traduction ou une paraphrase se dit dans `note`. Aucune citation dont l'attribution est douteuse n'entre ici : elle va dans `a_verifier`.",
+  "citations": [
+    {"texte": "Si j'ai vu plus loin, c'est en montant sur les épaules de géants.", "auteur": "Isaac Newton", "oeuvre": "Lettre à Robert Hooke", "date": "1675", "note": "traduction de « If I have seen further it is by standing on the shoulders of Giants »"},
+    {"texte": "Que sais-je ?", "auteur": "Michel de Montaigne", "oeuvre": "Essais, livre II, chapitre 12", "date": "1580", "note": ""},
+    {"texte": "Les hommes apprennent en enseignant.", "auteur": "Sénèque", "oeuvre": "Lettres à Lucilius, lettre 7", "date": "vers 64", "note": "traduction de « homines dum docent discunt »"},
+    {"texte": "Rien ne va de soi. Rien n'est donné. Tout est construit.", "auteur": "Gaston Bachelard", "oeuvre": "La formation de l'esprit scientifique", "date": "1938", "note": ""},
+    {"texte": "C'est en construisant qu'on devient constructeur.", "auteur": "Aristote", "oeuvre": "Éthique à Nicomaque, livre II, chapitre 1", "date": "IVe siècle av. J.-C.", "note": "paraphrase de l'exemple des bâtisseurs et des cithariste (1103a)"},
+    {"texte": "Savoir qu'on sait ce qu'on sait, et savoir qu'on ne sait pas ce qu'on ne sait pas : voilà le vrai savoir.", "auteur": "Confucius", "oeuvre": "Entretiens, II, 17", "date": "Ve siècle av. J.-C.", "note": "traduction courante"},
+    {"texte": "Le premier principe est de ne pas se tromper soi-même, et l'on est la personne la plus facile à tromper.", "auteur": "Richard Feynman", "oeuvre": "Discours de remise des diplômes, Caltech", "date": "1974", "note": "traduction de « The first principle is that you must not fool yourself, and you are the easiest person to fool »"},
+    {"texte": "La vie est courte, l'art est long, l'occasion fugitive, l'expérience trompeuse, le jugement difficile.", "auteur": "Hippocrate", "oeuvre": "Aphorismes, section I, 1", "date": "Ve siècle av. J.-C.", "note": "traduction courante"},
+    {"texte": "Solidité, utilité, beauté.", "auteur": "Vitruve", "oeuvre": "De architectura, livre I", "date": "Ier siècle av. J.-C.", "note": "traduction de « firmitas, utilitas, venustas »"},
+    {"texte": "Diviser chacune des difficultés en autant de parcelles qu'il se pourrait, et qu'il serait requis pour les mieux résoudre.", "auteur": "René Descartes", "oeuvre": "Discours de la méthode, deuxième partie", "date": "1637", "note": "texte original, orthographe modernisée"},
+    {"texte": "Je ne crois pas savoir ce que je ne sais pas.", "auteur": "Socrate, rapporté par Platon", "oeuvre": "Apologie de Socrate, 21d", "date": "vers 399 av. J.-C.", "note": "paraphrase du passage ; la formule « je sais que je ne sais rien » n'est pas dans le texte"}
+  ],
+  "a_verifier": [
+    {"texte": "Rien dans la vie n'est à craindre, tout doit être compris.", "auteur": "Marie Curie", "note": "attribution répandue, source primaire non retrouvée le 03/09/2026 ; n'entre pas dans l'app tant qu'elle n'est pas trouvée"}
+  ]
+}

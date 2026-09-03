@@ -26,7 +26,11 @@
    débutant ne voit pas.
 
 Wikimedia Commons reste utilisable quand la licence et la légende
-tiennent (mesuré maigre le 28/08).
+tiennent (mesuré maigre le 28/08). **Ajout du 03/09/2026**
+(`decisions/0026`) : une planche du domaine public reproduite dans un
+document (les dessins de Viollet-le-Duc dans le cahier du PSMV
+d'Angers) se réutilise avec sa mention ; un dessin d'agence, d'AQC ou
+d'éditeur, jamais.
 
 **Audio (plus tard, `ACA-MEDIA-1`)** : deux usages, l'**écoute** (une
 situation à écouter puis décider : un copropriétaire au téléphone, un

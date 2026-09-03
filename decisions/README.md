@@ -36,3 +36,7 @@ lisant le dépôt, une règle née d'un incident. Pas l'avancement
 | [0020](0020-telemetrie-zero-tiers.md) | 02/09/2026 | Le journal est la seule mesure, chez personne d'autre ; une notification par jour au plus, opt-in |
 | [0021](0021-le-modele-ecrit-la-provenance-s-affiche.md) | 02/09/2026 | Le modèle peut écrire s'il cherche, cite, avoue et se fait relire ; tampon de provenance ; runs de vérification |
 | [0022](0022-le-modele-pose-le-cadre-les-sources-corroborent-l-audit-mesure.md) | 02/09/2026 | Le modèle pose le cadre, les sources ont le dernier mot sur les faits, l'audit mesure : note A/B/C, page Confiance, audit croisé |
+| [0023](0023-les-restes-tranches.md) | 03/09/2026 | Licences acceptées (MIT, CC BY-SA), noms des domaines, semaine type : tranchés par délégation |
+| [0024](0024-la-voix-de-l-academie.md) | 03/09/2026 | La voix : un collègue plus avancé, tutoiement, faits et actions, jamais d'exclamation ni de mots du jeu |
+| [0025](0025-le-cadre-d-execution.md) | 03/09/2026 | Un LLM ne code pas sans cahier ; les règles vivent dans des contrôles ; le contrat avant le code |
+| [0026](0026-un-document-n-est-pas-un-chapitre.md) | 03/09/2026 | Un document n'est pas un chapitre : bibliothèque, pivot Markdown par page, figures rendues, abonnement d'abord, quatre voies vers l'arbre |

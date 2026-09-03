@@ -79,3 +79,31 @@ Un tableau par ligne avec la licence lue à la source et sa date, le
 verdict, et pour chaque « reprendre le code » : le fichier de
 provenance, la taille ajoutée au bundle, et ce qu'on a adapté. Rien
 n'est installé avant ce tableau.
+
+## Banques d'éléments 2026 (ajouté le 03/09/2026, licences lues en ligne le jour même)
+
+| Candidat | Ce que c'est | Licence lue le 03/09 | Verdict |
+|---|---|---|---|
+| GSAP (et ses plugins ScrollTrigger, SplitText, MorphSVG, DrawSVG) | animation JavaScript | gratuit pour tout usage y compris commercial depuis avril 2025 (licence « no charge » de GSAP, pas une licence OSI) | **utilisable** pour les moments de conquête (anneau, brouillard, insigne qui se dessine) ; Motion reste la base ; ne pas empiler les deux |
+| Rive (runtimes web, React) | animations vectorielles interactives | runtimes MIT ; éditeur propriétaire | **à considérer** pour les insignes animés ; les fichiers .riv sont à nous |
+| Lottie / LottieFiles | animations vectorielles JSON | Lottie Simple License sur les animations du site : usage commercial libre, attribution encouragée, dérivés sous les mêmes termes, pas de compilation en bibliothèque concurrente | **utilisable** au cas par cas, chaque fichier avec sa mention ; préférer nos propres SVG animés |
+| Phosphor, Iconoir, Tabler, Lucide | icônes d'interface | MIT, MIT, MIT, ISC | **reprendre** l'une d'elles pour l'interface ; game-icons (CC BY) reste pour les glyphes de chapitre |
+| Open Peeps (Pablo Stanley) | illustrations de personnages | CC0 | écarté par la DA (pas de personnage) ; noté pour un autre métier scolaire |
+| unDraw | illustrations | licence propre : gratuit, sans attribution, pas de redistribution en bibliothèque, pas d'entraînement de modèle | **écarté** : style générique, contraire à « la planche » |
+| Radix Primitives, Base UI, Ark UI | composants accessibles sans style | MIT | **reprendre** l'un d'eux pour `Ui/` (feuilles, onglets, dialogues) |
+| auto-animate (FormKit) | transitions de listes en une ligne | MIT | **utilisable** pour les listes (file de la boîte, fil du cercle) |
+| Fraunces, Source Sans 3, JetBrains Mono | polices | OFL | **reprendre**, auto-hébergées |
+| Kenney (sons d'interface) | sons | CC0 | quatre sons discrets au plus, coupés par défaut |
+
+## Outils d'ingestion (ajouté le 03/09/2026, à vérifier à la source au chantier ACA-INGESTION-1)
+
+| Candidat | Ce qu'il fait | Licence annoncée (à vérifier) | Verdict provisoire |
+|---|---|---|---|
+| poppler (`pdftotext`, `pdftohtml`, `pdftoppm`, `pdfimages`) | texte, structure, rendu, images | GPL, utilisé en ligne de commande, jamais lié | **la base**, testée le 03/09 |
+| ocrmypdf, tesseract | OCR d'un PDF sans couche texte | MPL-2.0, Apache-2.0 | **à installer** le jour d'un PDF scanné |
+| docling (IBM) | mise en page, tableaux, figures vers Markdown | MIT | **à essayer** si poppler plus vision ne suffit pas sur les tableaux |
+| marker, MinerU, PyMuPDF | conversion PDF vers Markdown | GPL / AGPL / AGPL | idées seulement ; pas dans le produit |
+| pdfplumber, pypdf | extraction Python | MIT, BSD | admis si un script en a besoin |
+| faster-whisper, yt-dlp | transcription locale, sous-titres | MIT, Unlicense | l'usine, pour les vidéos |
+| Firecrawl | crawl et extraction web | AGPL (cœur), API payante | **écarté** : pas de crawl ; lecture directe des domaines fiables |
+| L'entrée PDF native de l'API Claude (600 pages, citations par page) | lecture par le modèle | service | **à titre indicatif** : JB travaille sur abonnement ; dans Claude Code, la lecture de PDF par pages rendues fait le même travail |

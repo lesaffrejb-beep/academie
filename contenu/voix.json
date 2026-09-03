@@ -1,0 +1,146 @@
+{
+  "_": "Micro-textes de l'Académie (VOIX.md, decisions/0024). Chaque clé a au moins trois variantes ; le client en choisit une par la graine de la séance. Les crochets {} sont des variables fournies par le client. Aucun point d'exclamation, aucun emoji, aucun mot du jeu.",
+  "version": "1",
+  "textes": {
+    "cap.jour": [
+      "{jour}, {couleur}. {dues} cartes t'attendent, dont {socle} du socle.",
+      "{jour}, {couleur}. {dues} cartes dues, {socle} viennent du socle.",
+      "{jour}, {couleur}. Ce matin, {dues} cartes, {socle} pour le socle."
+    ],
+    "cap.rien": [
+      "Rien n'est dû ce matin. Une étude, ou au hasard ?",
+      "Aucune carte due. Tu peux ouvrir une étude, ou tirer au hasard.",
+      "Ce matin, rien ne revient. Le temps d'une étude, si tu en as."
+    ],
+    "cap.reprise": [
+      "{dues} cartes t'attendent ; le reste se ré-étale.",
+      "{dues} cartes ce matin, plafonnées ; la suite revient les jours suivants.",
+      "Reprise en douceur : {dues} cartes, pas plus. Le reste attendra."
+    ],
+    "cap.sans_envie": [
+      "Cinq cartes valent une séance.",
+      "Trois cartes, et c'est une séance.",
+      "S'arrêter tôt reste une séance."
+    ],
+    "domaine.bandeau": [
+      "Ce matin, {domaine}. {dues} cartes dues, {neuves} neuves sur {chapitre}.",
+      "{domaine}, ce matin. {dues} à revoir, {neuves} à découvrir dans {chapitre}.",
+      "Cap sur {domaine} : {dues} cartes dues et {neuves} neuves ({chapitre})."
+    ],
+    "reponse.juste": [
+      "C'est ça.",
+      "Juste.",
+      "Oui."
+    ],
+    "reponse.fausse": [
+      "Pas ça.",
+      "Non.",
+      "Pas celle-là."
+    ],
+    "reponse.confiante": [
+      "Tu étais sûr : c'est le moment où la correction s'imprime le mieux. Elle reviendra vite.",
+      "Tu étais sûr. Une erreur sûre se corrige mieux qu'une erreur hésitante ; la carte revient bientôt.",
+      "Sûr et faux : c'est là que la mémoire se réécrit. Elle repasse dans quelques jours."
+    ],
+    "reponse.carnet": [
+      "Pourquoi je me suis trompé ? Une ligne, privée, si tu veux.",
+      "Une ligne pour toi seul : pourquoi cette erreur ?",
+      "Note privée, facultative : ce qui t'a fait choisir ça."
+    ],
+    "cloture.stabilisees": [
+      "{n} cartes stabilisées.",
+      "{n} cartes qui tiendront.",
+      "{n} cartes de plus dans la durée."
+    ],
+    "cloture.action": [
+      "{domaine} est ta branche la plus en retard ; une étude de {minutes} minutes la fait passer à {apres} %.",
+      "La branche la plus en retard, c'est {domaine} : {minutes} minutes d'étude, et elle passe à {apres} %.",
+      "{domaine} attend : une étude de {minutes} minutes, de {avant} à {apres} %."
+    ],
+    "cloture.demain": [
+      "{n} cartes reviennent demain.",
+      "Demain, {n} cartes.",
+      "{n} cartes à revoir demain."
+    ],
+    "cloture.socle": [
+      "Socle à {pct} %.",
+      "Le socle est à {pct} %.",
+      "Socle : {pct} %."
+    ],
+    "etude.amorce": [
+      "Avant de lire quoi que ce soit : {question}",
+      "Essaie d'abord. {question}",
+      "Réponds de mémoire, l'explication vient après. {question}"
+    ],
+    "etude.synthese": [
+      "À toi : {consigne} Coche ensuite ce que tu avais.",
+      "Maintenant, produis. {consigne} Puis relis-toi contre la liste.",
+      "{consigne} La liste de contrôle vient après, pas avant."
+    ],
+    "epreuve.ouverture": [
+      "{n} cartes à froid. Les sources viendront à la fin.",
+      "Épreuve : {n} cartes, sans aide. Les sources, à la fin.",
+      "{n} cartes à froid, dans tout le domaine. On se retrouve à la fin."
+    ],
+    "epreuve.reussie": [
+      "{domaine} validé. {score} % à froid.",
+      "Épreuve réussie : {score} %. {domaine} est validé.",
+      "{score} % à froid. {domaine} passe validé."
+    ],
+    "epreuve.ratee": [
+      "{score} % à froid. Pas cette fois ; l'épreuve se retente demain au plus tôt.",
+      "{score} %. L'épreuve reste ouverte, à partir de demain.",
+      "Pas cette fois : {score} %. Rien n'est perdu ; on y revient demain ou plus tard."
+    ],
+    "noeud.a_revoir": [
+      "Vu il y a {jours} jours. À revoir.",
+      "Dernière visite il y a {jours} jours : le remplissage n'est plus sûr.",
+      "{jours} jours sans revue. Relis la fiche trois minutes, puis cinq cartes."
+    ],
+    "noeud.inconnu": [
+      "Pas encore à portée.",
+      "Plus loin sur la branche.",
+      "Hors de portée pour l'instant ; tu peux y aller quand même."
+    ],
+    "source.sans_source": [
+      "Sans source retrouvée : cette carte dit ce que le modèle sait, pas ce qu'un texte dit. Elle sera vérifiée en priorité.",
+      "Aucune source n'a été retrouvée pour cette carte. Elle est servie telle quelle, marquée, et passe en tête des vérifications.",
+      "Cette carte n'a pas de source : elle vient de la mémoire du modèle, et le dit. Vérification prioritaire."
+    ],
+    "source.a_recouper": [
+      "À recouper : cette carte ne repose que sur une source qui a un parti ou qui vend quelque chose.",
+      "Source à recouper : un éditeur, une organisation ou une association, pas un texte officiel.",
+      "À recouper. La seule source connue défend un intérêt."
+    ],
+    "source.signaler": [
+      "Cette carte est fausse",
+      "Signaler cette carte",
+      "Dire que c'est faux"
+    ],
+    "boite.glisse": [
+      "Glissé. Le Mac s'en occupe.",
+      "Dans la boîte. Le chapitre viendra du Mac.",
+      "Reçu. Ça devient un chapitre à la prochaine fabrication."
+    ],
+    "cercle.jalon": [
+      "{joueur} a validé {domaine}.",
+      "{domaine} : validé par {joueur}.",
+      "{joueur} vient de valider {domaine}."
+    ],
+    "notification.dues": [
+      "{n} cartes t'attendent.",
+      "{n} cartes ce matin.",
+      "{n} cartes dues."
+    ],
+    "erreur.reseau": [
+      "Pas de réseau. La séance se joue quand même ; tes réponses partiront plus tard.",
+      "Hors ligne. Tout se joue ici ; la synchronisation attendra le réseau.",
+      "Réseau coupé. Rien n'est perdu : la séance continue sur l'appareil."
+    ],
+    "erreur.banque": [
+      "La banque n'est pas disponible. La dernière version chargée reste jouable.",
+      "Impossible de charger la banque ; on joue sur la dernière connue.",
+      "Banque injoignable. La copie de l'appareil fait la séance."
+    ]
+  }
+}

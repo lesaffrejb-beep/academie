@@ -15,6 +15,7 @@ Règles dures :
 5. Les envois, publications, dépenses, suppressions et migrations irréversibles demandent une validation humaine.
 6. Une mécanique nouvelle ajoute son entrée sourcée dans `METHODE.md` dans le même commit ; un arbitrage structurant ajoute un fichier dans `decisions/`.
 7. Avant de conclure : `python3 app/tests.py` puis `python3 tooling/check.py`.
+8. Tu ne codes pas sans cahier : un chantier de `roadmap.json` se fait depuis `chantiers/<id>.md`, dans son périmètre, tests rouges d'abord (`CONTRIBUER.md`, `decisions/0025`). L'app parle avec la voix de `VOIX.md`.
 
 La roadmap exécutable est `roadmap.json` ; la roadmap lisible, `ROADMAP.md`.
 Le domaine (carte des dépôts, décisions transverses, modèles) vit dans

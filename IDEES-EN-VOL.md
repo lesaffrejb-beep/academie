@@ -56,6 +56,15 @@ arbitrée) · **ÉCARTÉE** (dit pourquoi).
 | 02/09 | « Une fois les fiches générées par les autres, les stocker sur le VPS pour les suivants » | GRAVÉE | bibliothèque commune, ARCHITECTURE §6, `ACA-BIBLIOTHEQUE-1` |
 | 02/09 | Le lieu-monde (l'immeuble en coupe) comme habillage de l'arbre | DIFFÉRÉE | derrière l'arbre lui-même ; METHODE §11 |
 
+| 03/09 | « Que ce soit tellement cadré qu'un autre LLM ne puisse pas dévier en codant » | GRAVÉE | `decisions/0025`, `CONTRIBUER.md`, `chantiers/`, `tooling/check.py` |
+| 03/09 | « Trancher la voix du site, pas infantilisant, comment l'app nous parle » | GRAVÉE | `decisions/0024`, `VOIX.md`, `contenu/voix.json` |
+| 03/09 | « Trouver des modules, banques d'éléments, animations, icônes 2026 » | GRAVÉE (candidats) | `travail/2026-09-02-reutilisation-a-verifier.md` § banques d'éléments ; `ACA-REUSE-1` |
+| 03/09 | « Imaginer l'arbre sur trois mois, les compétences, les étapes, comme le programme d'une formation en ligne, sans rédiger » | GRAVÉE | `SYLLABUS.md`, `programme/genere_copro.py` (parcours trimestre-1, sous-branches, compétences, notions, mots-clés) |
+| 03/09 | « Les docs viennent peut-être à côté du programme, en étude de docs » | GRAVÉE | `decisions/0026` : bibliothèque, quatre voies vers l'arbre |
+| 03/09 | « PDF vers quoi ? les images ? périmé ? dispo depuis l'app ? » | GRAVÉE | `decisions/0026`, `travail/2026-09-03-test-ingestion.md` |
+| 03/09 | « Moi j'utilise des abonnements, jamais d'API » | GRAVÉE | `decisions/0026` §4 : l'usine tourne sur abonnement, l'API à titre indicatif |
+| 03/09 | « Un sujet carte blanche test : c'est quoi le prompt, la méthode, les contraintes » | GRAVÉE | `boite/GLISSER.md`, satellite témoin `chapitres/satellites/chaudiere-hybride.json` |
+
 *Toute session qui entend JB lancer une idée en route l'ajoute ici
 dans le commit du jour, même si elle est gravée ailleurs dans la
 foulée : ce tableau est l'index de traçabilité.*

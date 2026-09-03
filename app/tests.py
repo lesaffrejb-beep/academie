@@ -11,7 +11,8 @@ Sept étages, du plus bas au plus haut :
     progression    la carte-monde (régions, seuils, boss-examens, XP dérivée)
     quiz+erreurs   le positionnement et le carnet d'erreurs
     chaine         de la donnée brute à l'écran (cloisonnement, refus, contrat)
-    banque         la vraie banque respecte le contrat carte-v1
+    chapitres      le valideur des chapitres v2 (contrat proposé, decisions 0021-0022)
+    banque         la vraie banque respecte le contrat carte-v1, les vrais chapitres le v2
 
 Le mode `--mutation` casse volontairement des garde-fous, un par un, et
 vérifie que les tests le remarquent. Un test qui reste vert pendant que
@@ -38,6 +39,7 @@ SUITES = [
     ("carte-monde", "tests_progression.py"),
     ("quiz + carnet d'erreurs", "tests_quiz_erreurs.py"),
     ("chaîne donnée → écran", "tests_chaine.py"),
+    ("chapitres v2", "tests_chapitres.py"),
 ]
 
 # (description, fichier, texte à remplacer, remplacement).
@@ -62,6 +64,12 @@ MUTATIONS = [
     ("une mauvaise réponse au quiz écrit quand même au journal", "quiz.py",
      '        if not res.get("juste") or not res.get("carte"):',
      '        if not res.get("carte"):'),
+    ("un chapitre sans provenance passe", "valide_chapitres.py",
+     "    if not isinstance(prov, dict):", "    if False:"),
+    ("une carte sans source avouée peut porter un chiffre", "valide_chapitres.py",
+     "    return bool(RE_CHIFFRE.search(RE_REFERENCES.sub(\" \", texte)))", "    return False"),
+    ("une carte valide sans relecture passe", "valide_chapitres.py",
+     '    if carte["statut"] == "valide" and _vide(carte.get("verifie_par")):', "    if False:"),
 ]
 
 
@@ -73,6 +81,12 @@ def lance(fichier: str) -> tuple[bool, str]:
 
 def valide_vraie_banque() -> tuple[bool, str]:
     res = subprocess.run([sys.executable, str(APP / "valide_banque.py")],
+                         capture_output=True, text=True)
+    return res.returncode == 0, res.stdout + res.stderr
+
+
+def valide_vrais_chapitres() -> tuple[bool, str]:
+    res = subprocess.run([sys.executable, str(APP / "valide_chapitres.py")],
                          capture_output=True, text=True)
     return res.returncode == 0, res.stdout + res.stderr
 
@@ -91,6 +105,13 @@ def mode_normal() -> int:
     print(f"{'✓' if ok else '✗'} banque réelle — {resume}")
     if not ok:
         echecs.append("banque réelle")
+        print("\n".join("    " + l for l in sortie.splitlines()[-10:]))
+
+    ok, sortie = valide_vrais_chapitres()
+    resume = next((l for l in sortie.splitlines() if l.startswith("chapitres :")), "")
+    print(f"{'✓' if ok else '✗'} chapitres réels — {resume}")
+    if not ok:
+        echecs.append("chapitres réels")
         print("\n".join("    " + l for l in sortie.splitlines()[-10:]))
 
     if echecs:

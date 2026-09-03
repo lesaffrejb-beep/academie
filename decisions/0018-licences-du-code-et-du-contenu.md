@@ -1,6 +1,6 @@
 # 0018, Les licences du code et du contenu
 
-- Statut : recommandée (JB tranche ; question oubliée n° 3)
+- Statut : acceptée par délégation le 03/09/2026 (`decisions/0023`) ; question oubliée n° 3
 - Date : 02/09/2026
 - Décideur : JB
 

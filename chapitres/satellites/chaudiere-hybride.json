@@ -1,0 +1,92 @@
+{
+  "id": "satellite.equipements.chaudiere-hybride",
+  "titre": "La chaudière hybride (satellite témoin, à retirer)",
+  "domaine": "equipements",
+  "branche": "chauffage",
+  "niveau": 1,
+  "prerequis": [],
+  "ponts": ["equipements.chauffage.pompes-a-chaleur-et-hybrides", "energie.chauffage-collectif.pompes-a-chaleur-collectives"],
+  "satellite": true,
+  "rattachement_propose": "equipements.chauffage.pompes-a-chaleur-et-hybrides",
+  "objectifs": [
+    "Dire ce qu'est une chaudière hybride et ce que chacun de ses deux organes fait.",
+    "Expliquer pourquoi la pompe à chaleur ne fait pas tout et quand la chaudière prend le relais.",
+    "Poser les bonnes questions à un installateur qui propose une hybride en copropriété."
+  ],
+  "amorce": {
+    "question": "Un chauffagiste propose de remplacer la chaudière gaz de l'immeuble par une « hybride ». Le conseil syndical demande : on garde le gaz ou pas ?",
+    "aide": "Pense à ce que « hybride » veut dire pour une voiture.",
+    "reponse_attendue": "On garde une chaudière gaz, mais comme appoint : une pompe à chaleur fait l'essentiel du chauffage et la chaudière prend le relais quand il fait trop froid ou qu'il faut beaucoup de puissance."
+  },
+  "lecon": "Une chaudière hybride associe deux générateurs de chaleur dans un même système : une pompe à chaleur, le plus souvent air-eau, et une chaudière à combustible, le plus souvent au gaz, à condensation. Une régulation commune décide à chaque instant lequel des deux travaille, ou les deux.\n\nLa pompe à chaleur prend la chaleur dans l'air extérieur et la transfère à l'eau du circuit de chauffage. Elle consomme de l'électricité pour cela, mais elle en restitue plusieurs fois plus en chaleur : c'est son coefficient de performance. Ce coefficient baisse quand la température extérieure baisse, parce qu'il y a moins de chaleur à prendre dehors et que la machine doit travailler davantage. Par grand froid, ou quand le circuit demande une eau très chaude, la pompe à chaleur devient moins efficace, voire insuffisante.\n\nC'est là que la chaudière intervient. La régulation bascule sur le gaz, ou ajoute le gaz à la pompe à chaleur, selon la logique choisie à l'installation : bascule à une température extérieure donnée, ou bascule au coût, quand l'électricité consommée par la pompe reviendrait plus cher que le gaz pour la même chaleur. Le reste de l'année, la chaudière dort et la pompe à chaleur fait le travail.\n\nPour un immeuble, l'hybride se présente comme une solution de transition : elle réduit la consommation de gaz sans exiger de remplacer les radiateurs, qui ont souvent été dimensionnés pour une eau très chaude que la pompe à chaleur seule ne fournirait pas efficacement. Elle conserve aussi la puissance de la chaudière pour les pointes. En contrepartie, elle garde deux équipements à entretenir, un raccordement gaz, une place pour l'unité extérieure de la pompe à chaleur avec son bruit et son emprise, et une régulation dont le réglage fait toute la performance réelle.\n\nUn exemple travaillé. Une chaufferie collective au gaz d'un immeuble des années soixante-dix, avec des radiateurs en fonte, reçoit une proposition d'hybride. Les questions à poser, dans l'ordre : à quelle température de départ d'eau les radiateurs chauffent-ils l'immeuble par temps froid, et la pompe à chaleur peut-elle la fournir ; quelle est la température de bascule prévue et sur quel critère ; où se placent les unités extérieures et à quelle distance des fenêtres ; quel contrat d'exploitation couvre les deux générateurs ; quelle part de la chaleur annuelle l'installateur s'engage-t-il à produire par la pompe à chaleur, et comment on le vérifiera. Sans réponse chiffrée à la dernière question, on ne sait pas ce qu'on achète.\n\nUne vigilance de terrain : le gain d'une hybride dépend de la régulation et de l'isolation de l'immeuble. Sur un bâtiment mal isolé, la pompe à chaleur passera son hiver à demander de l'aide au gaz. L'ordre raisonnable reste isoler, puis régler, puis changer le générateur ; une hybride posée avant l'isolation se justifie quand la chaudière est en fin de vie et qu'il faut décider maintenant.\n\nDemain matin, devant un devis d'hybride, tu sauras dire ce que fait chaque organe, demander la température de bascule et la part de chaleur attendue de la pompe, et situer la proposition dans le plan de rénovation de l'immeuble.",
+  "synthese": {
+    "consigne": "Explique à un membre du conseil syndical, en soixante secondes, ce qu'est une hybride et la première question à poser à l'installateur.",
+    "attendus": ["deux générateurs : pompe à chaleur et chaudière", "la pompe fait l'essentiel, la chaudière l'appoint", "la performance de la pompe baisse par grand froid", "la température de bascule", "la part de chaleur attendue de la pompe", "isoler avant de changer le générateur"]
+  },
+  "sources": [
+    {"texte": "ADEME, fiches sur les pompes à chaleur et le chauffage des logements collectifs", "url": "https://www.ademe.fr/", "nature": "institution"}
+  ],
+  "provenance": {"auteur": "modele", "modele": "Claude Fable 5.1", "genere_le": "2026-09-03", "session": "test-boite-2026-09-03", "sources_retrouvees": 1, "sources_concordantes": 0, "sans_source": false},
+  "statut": "brouillon",
+  "partage": "banque",
+  "verifie": "2026-09-03",
+  "version": 1,
+  "cartes": [
+    {
+      "id": "sat-chaudiere-hybride-definition",
+      "chapitre": "satellite.equipements.chaudiere-hybride",
+      "domaine": "equipements", "branche": "chauffage", "type": "flash", "niveau": 1,
+      "question": "Qu'est-ce qu'une chaudière hybride ?",
+      "reponse": "Un système qui associe une pompe à chaleur et une chaudière à combustible, avec une régulation commune qui décide lequel des deux chauffe selon les conditions.",
+      "explication": "La pompe à chaleur fait l'essentiel de l'année ; la chaudière prend le relais par grand froid ou quand il faut beaucoup de puissance.",
+      "vigilance": "Deux générateurs, deux entretiens, et une régulation dont le réglage fait la performance réelle.",
+      "source": [{"texte": "ADEME, fiches sur les pompes à chaleur", "url": "https://www.ademe.fr/", "nature": "institution"}],
+      "provenance": {"auteur": "modele", "modele": "Claude Fable 5.1", "genere_le": "2026-09-03", "session": "test-boite-2026-09-03", "sources_retrouvees": 1, "sources_concordantes": 0, "sans_source": false},
+      "verifie": "2026-09-03", "peremption": null, "statut": "brouillon", "partage": "banque"
+    },
+    {
+      "id": "sat-chaudiere-hybride-bascule",
+      "chapitre": "satellite.equipements.chaudiere-hybride",
+      "domaine": "equipements", "branche": "chauffage", "type": "qcm", "niveau": 1,
+      "question": "Dans une hybride, quand la chaudière gaz prend-elle le relais de la pompe à chaleur ?",
+      "reponse": "Quand la régulation le décide : par grand froid, quand la pompe à chaleur devient trop peu efficace, ou quand il faut plus de puissance ou une eau plus chaude.",
+      "choix": [
+        {"texte": "Par grand froid ou quand il faut plus de puissance, selon le réglage de la régulation.", "correct": true},
+        {"texte": "Jamais : la chaudière n'est là qu'en secours en cas de panne.", "correct": false, "pourquoi_faux": "La chaudière est un appoint prévu et régulé, pas un secours."},
+        {"texte": "Toujours : la pompe à chaleur ne sert qu'à préchauffer l'eau.", "correct": false, "pourquoi_faux": "C'est l'inverse : la pompe à chaleur fait l'essentiel, la chaudière complète."},
+        {"texte": "Seulement la nuit, quand l'électricité est moins chère.", "correct": false, "pourquoi_faux": "Le critère est la température ou le coût de la chaleur, pas l'heure."}
+      ],
+      "explication": "Le coefficient de performance d'une pompe à chaleur air-eau baisse quand l'air extérieur se refroidit. La régulation fixe une bascule, par température ou par coût.",
+      "vigilance": "Demander la température de bascule et son critère à l'installateur : c'est le réglage qui décide de la part de gaz.",
+      "confiance": true,
+      "source": [{"texte": "ADEME, fiches sur les pompes à chaleur", "url": "https://www.ademe.fr/", "nature": "institution"}],
+      "provenance": {"auteur": "modele", "modele": "Claude Fable 5.1", "genere_le": "2026-09-03", "session": "test-boite-2026-09-03", "sources_retrouvees": 1, "sources_concordantes": 0, "sans_source": false},
+      "verifie": "2026-09-03", "peremption": null, "statut": "brouillon", "partage": "banque"
+    },
+    {
+      "id": "sat-chaudiere-hybride-questions",
+      "chapitre": "satellite.equipements.chaudiere-hybride",
+      "domaine": "equipements", "branche": "chauffage", "type": "feuille-blanche", "niveau": 1,
+      "question": "Sur une feuille, en trois minutes : les cinq questions à poser à un installateur qui propose une hybride pour une chaufferie collective.",
+      "reponse": "Température de départ d'eau nécessaire et capacité de la pompe à la fournir ; température ou critère de bascule ; emplacement et bruit des unités extérieures ; contrat d'exploitation couvrant les deux générateurs ; part de chaleur annuelle attendue de la pompe et façon de la vérifier.",
+      "explication": "Ces questions séparent une proposition sérieuse d'un devis générique : la dernière, chiffrée, dit ce qu'on achète vraiment.",
+      "vigilance": "Sans engagement chiffré sur la part de chaleur produite par la pompe, le gain est une promesse.",
+      "attendus": ["température de départ d'eau et radiateurs", "critère de bascule", "unités extérieures : place et bruit", "contrat d'exploitation des deux générateurs", "part de chaleur attendue de la pompe, vérifiable"],
+      "source": [{"texte": "ADEME, fiches sur les pompes à chaleur", "url": "https://www.ademe.fr/", "nature": "institution"}],
+      "provenance": {"auteur": "modele", "modele": "Claude Fable 5.1", "genere_le": "2026-09-03", "session": "test-boite-2026-09-03", "sources_retrouvees": 1, "sources_concordantes": 0, "sans_source": false},
+      "verifie": "2026-09-03", "peremption": null, "statut": "brouillon", "partage": "banque"
+    },
+    {
+      "id": "sat-chaudiere-hybride-ordre",
+      "chapitre": "satellite.equipements.chaudiere-hybride",
+      "domaine": "equipements", "branche": "chauffage", "type": "flash", "niveau": 1,
+      "question": "Pourquoi une hybride posée sur un immeuble mal isolé déçoit-elle souvent ?",
+      "reponse": "Parce que la pompe à chaleur, peu efficace par grand froid et devant fournir une eau très chaude, passe l'hiver à demander de l'aide au gaz : le gain attendu ne vient pas.",
+      "explication": "L'ordre raisonnable reste isoler, régler, puis changer le générateur. Une hybride avant l'isolation se justifie surtout quand la chaudière est en fin de vie et qu'il faut décider maintenant.",
+      "vigilance": "Situer toujours le devis dans le plan de rénovation de l'immeuble, pas comme une décision isolée.",
+      "source": [{"texte": "ADEME, fiches sur les pompes à chaleur et la rénovation des logements collectifs", "url": "https://www.ademe.fr/", "nature": "institution"}],
+      "provenance": {"auteur": "modele", "modele": "Claude Fable 5.1", "genere_le": "2026-09-03", "session": "test-boite-2026-09-03", "sources_retrouvees": 1, "sources_concordantes": 0, "sans_source": false},
+      "verifie": "2026-09-03", "peremption": null, "statut": "brouillon", "partage": "banque"
+    }
+  ]
+}

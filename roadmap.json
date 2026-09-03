@@ -107,6 +107,24 @@
       "parent_milestone": "ACADEMIE-V2-FONDATIONS"
     },
     {
+      "id": "ACA-SQUELETTE-1",
+      "outcome": "Le squelette qui empêche de dévier est posé : cadre d'exécution (CONTRIBUER.md, cahiers de chantier, check.py étendu), voix (VOIX.md, contenu/), valideur des chapitres v2 avec ses tests et mutations, programme v0.2 avec sous-branches, compétences, notions, parcours de trois mois et mots-clés (SYLLABUS.md), chapitre témoin et satellite témoin, test d'ingestion sur quatre documents réels.",
+      "status": "done",
+      "mode": "agent-review",
+      "risk": "low",
+      "priority": 97,
+      "depends_on": [
+        "ACA-DOC-2"
+      ],
+      "budget": {
+        "max_units": 1,
+        "max_minutes": 300,
+        "max_tokens": 250000
+      },
+      "proof": "check.py et tests.py verts (suite chapitres v2 incluse, mutations détectées), programme généré sans prérequis de niveau supérieur, décisions 0023-0026, rapport travail/2026-09-03-test-ingestion.md, commit poussé.",
+      "parent_milestone": "ACADEMIE-V2-FONDATIONS"
+    },
+    {
       "id": "ACA-JOURNAL-SYNC-1",
       "outcome": "L'état joueur vit sur le VPS et le client joue hors-ligne : API d'état (serveur/API.md), SQLite (serveur/schema.sql), client qui écrit localement et synchronise par union, FSRS en parité des deux côtés.",
       "status": "ready",
@@ -211,6 +229,24 @@
         "max_tokens": 40000
       },
       "proof": "Tableau daté avec URL de licence par ligne ; taille ajoutée au bundle estimée pour chaque reprise ; aucune AGPL en code.",
+      "parent_milestone": "ACADEMIE-V2-FONDATIONS"
+    },
+    {
+      "id": "ACA-INGESTION-1",
+      "outcome": "Un script local transforme un document (PDF texte, PDF image, transcription) en pivot Markdown par page avec figures rendues et fiche de source ; un agent, sur abonnement, en tire registre, rattachements, lectures, satellites, corrections et coût (decisions/0026).",
+      "status": "ready",
+      "mode": "agent-review",
+      "risk": "medium",
+      "priority": 90,
+      "depends_on": [
+        "ACA-DOC-2"
+      ],
+      "budget": {
+        "max_units": 1,
+        "max_minutes": 240,
+        "max_tokens": 80000
+      },
+      "proof": "Les quatre documents du test du 03/09 traversent la chaîne avec leurs pivots (hors git), leurs lignes de registre et de journal, un rapport de coût ; un test compare le pivot d'un PDF de fixture à un attendu ; aucun appel d'API.",
       "parent_milestone": "ACADEMIE-V2-FONDATIONS"
     },
     {
@@ -353,8 +389,9 @@
       "risk": "medium",
       "priority": 78,
       "depends_on": [
-        "ACA-CONTRAT-2",
         "ACA-CONTENT-MAP-1",
+        "ACA-CONTRAT-2",
+        "ACA-INGESTION-1",
         "ACA-RITUAL-1"
       ],
       "budget": {
@@ -393,7 +430,8 @@
       "risk": "medium",
       "priority": 86,
       "depends_on": [
-        "ACA-CONTRAT-2"
+        "ACA-CONTRAT-2",
+        "ACA-INGESTION-1"
       ],
       "budget": {
         "max_units": 2,
