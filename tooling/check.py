@@ -139,44 +139,12 @@ def controle_decisions(errors):
 
 
 def controle_programme(errors):
-    for f in (ROOT / "programme").glob("*.json"):
-        try:
-            p = json.loads(f.read_text(encoding="utf-8"))
-        except (OSError, json.JSONDecodeError):
-            continue
-        chapitres = p.get("chapitres", [])
-        ids = {}
-        for ch in chapitres:
-            if ch["id"] in ids:
-                errors.append(f"{rel(f)} : identifiant de chapitre dupliqué {ch['id']}")
-            ids[ch["id"]] = ch
-        domaines = p.get("domaines", {})
-        branches = p.get("branches", {})
-        for ch in chapitres:
-            if ch["domaine"] not in domaines:
-                errors.append(f"{rel(f)} : {ch['id']} dans un domaine non déclaré")
-            if ch["branche"] not in {b["cle"] for b in branches.get(ch["domaine"], [])}:
-                errors.append(f"{rel(f)} : {ch['id']} dans une branche non déclarée")
-            for pre in ch.get("prerequis", []):
-                if pre not in ids:
-                    errors.append(f"{rel(f)} : {ch['id']} a un prérequis inconnu {pre}")
-                elif ids[pre]["niveau"] > ch["niveau"]:
-                    errors.append(f"{rel(f)} : {ch['id']} a un prérequis de niveau supérieur ({pre})")
-        # pas de cycle
-        etat = {}
-        def visite(cid, pile):
-            if etat.get(cid) == 1:
-                errors.append(f"{rel(f)} : cycle de prérequis via {cid}")
-                return
-            if etat.get(cid) == 2:
-                return
-            etat[cid] = 1
-            for pre in ids.get(cid, {}).get("prerequis", []):
-                if pre in ids:
-                    visite(pre, pile + [cid])
-            etat[cid] = 2
-        for cid in ids:
-            visite(cid, [])
+    """Le programme et son alignement avec academie.json : app/valide_programme.py (ACA-PROGRAMME-1)."""
+    res = subprocess.run([sys.executable, str(ROOT / "app" / "valide_programme.py")],
+                         capture_output=True, text=True)
+    if res.returncode != 0:
+        for l in (res.stdout + res.stderr).splitlines()[-8:]:
+            errors.append(f"programme : {l}")
 
 
 def controle_tirets(errors):

@@ -42,6 +42,7 @@ SUITES = [
     ("chaîne donnée → écran", "tests_chaine.py"),
     ("chapitres v2", "tests_chapitres.py"),
     ("usine pas à pas", "tests_usine.py"),
+    ("programme", "tests_programme.py"),
 ]
 
 # (description, fichier, texte à remplacer, remplacement).
@@ -79,6 +80,8 @@ MUTATIONS = [
      '        if couverture < float(cfg["couverture_min"]):', "        if False:"),
     ("l'usine laisse passer un chiffre absent de la page", "usine/etat.py",
      "        absents = sorted(nombres(l) - connus)", "        absents = []"),
+    ("le programme accepte un prérequis de niveau supérieur", "valide_programme.py",
+     '            elif ids[pre].get("niveau", 0) > niv:', "            elif False:"),
     ("l'usine ne rejoue plus les contrôles des unités validées", "usine/etat.py",
      '        if u["statut"] != "valide":\n            continue\n        err, sceau, _ = controler_unite',
      '        if True:\n            continue\n        err, sceau, _ = controler_unite'),

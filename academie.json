@@ -3,41 +3,49 @@
   "metier": "gestionnaire de copropriété",
   "profil_defaut": "jb",
   "domaines": {
-    "pathologie": {
-      "titre": "Pathologie du bâtiment",
+    "droit": {
+      "titre": "Droit de la copropriété",
       "ordre": 1
+    },
+    "pathologie": {
+      "titre": "Bâtiment et pathologie",
+      "ordre": 2
     },
     "equipements": {
       "titre": "Technique des équipements",
-      "ordre": 2
-    },
-    "droit": {
-      "titre": "Droit de la copropriété",
       "ordre": 3
     },
-    "procedure": {
-      "titre": "Procédure et contentieux",
+    "comptabilite": {
+      "titre": "Comptabilité et finances de copropriété",
       "ordre": 4
     },
     "sinistres": {
       "titre": "Sinistres et assurances",
       "ordre": 5
     },
-    "comptabilite": {
-      "titre": "Comptabilité de copropriété",
+    "procedure": {
+      "titre": "Procédure et justice",
       "ordre": 6
     },
-    "energie": {
-      "titre": "Énergie et réglementation",
+    "travaux": {
+      "titre": "Travaux, marchés et lecture de plans",
       "ordre": 7
     },
-    "plans": {
-      "titre": "Lecture de plans et vocabulaire pro",
+    "energie": {
+      "titre": "Énergie et rénovation",
       "ordre": 8
+    },
+    "immobilier": {
+      "titre": "Propriété, immobilier et urbanisme",
+      "ordre": 9
+    },
+    "cabinet": {
+      "titre": "Le cabinet : déontologie, contrats, relation",
+      "ordre": 10
     },
     "culture": {
       "titre": "Culture",
-      "ordre": 9,
+      "ordre": 11,
       "arbre": false
     }
   },

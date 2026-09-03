@@ -55,8 +55,8 @@ programme commence là.
 ## 2. Les domaines
 
 Dix domaines dans l'arbre, un hors arbre. Les clés sont celles que
-`academie.json` portera après le chantier `ACA-PROGRAMME-1` (au 02/09 il
-porte encore `plans`, et ni `immobilier` ni `cabinet`) : trois changements
+`academie.json` porte depuis le chantier `ACA-PROGRAMME-1` (03/09, le
+valideur `app/valide_programme.py` refuse tout écart) : trois changements
 par rapport au 30/08, `plans` devient `travaux`, `immobilier` et `cabinet`
 s'ajoutent ; `pathologie` garde sa clé et change de titre ; l'ordre des
 domaines change aussi (le droit passe premier). L'ordre est le chemin recommandé, pas

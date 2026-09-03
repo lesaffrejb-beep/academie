@@ -9,11 +9,11 @@ Généré le 03/09/2026 par `programme/genere_copro.py` depuis `programme/copro.
 - **Prérequis** : un chapitre de niveau n suppose les chapitres de niveau n-1 de sa sous-branche ; les ponts vers d'autres domaines sont nommés.
 - **Sous-branches** : quand une branche se spécialise nettement (gaz contre réseau de chaleur, garanties contre dommages-ouvrage), la subdivision est dite.
 
-Compte : 387 chapitres (147 de niveau 1, 157 de niveau 2, 61 de niveau 3, 20 de niveau 4, 2 de niveau 5), 18 sous-branches, 2920 cartes cibles ; socle : 330 chapitres, 2400 cartes cibles.
+Compte : 387 chapitres (117 de niveau 1, 191 de niveau 2, 58 de niveau 3, 19 de niveau 4, 2 de niveau 5), 18 sous-branches, 2974 cartes cibles ; socle : 331 chapitres, 2470 cartes cibles.
 
 ## Le parcours des trois premiers mois
 
-Quatre séances et une étude par semaine, tout en niveau I, dans l'ordre du socle. Chaque semaine ouvre quatre à cinq chapitres en neuf ; l'étude du samedi prend le chapitre marqué. Après le trimestre, l'arbre est libre : la séance protège le socle, l'étude va où on veut.
+Quatre séances et une étude par semaine, en niveaux I et II (quinze chapitres du trimestre sont passés en II au calibrage du 03/09), dans l'ordre du socle. Chaque semaine ouvre quatre à cinq chapitres en neuf ; l'étude du samedi prend le chapitre marqué. Après le trimestre, l'arbre est libre : la séance protège le socle, l'étude va où on veut.
 
 | Semaine | Thème | Chapitres ouverts | Étude du samedi |
 |---|---|---|---|
@@ -61,12 +61,12 @@ La grammaire du métier : sans elle rien ne se vote ni ne s'exécute. Socle : ni
 
 Exercice dominant : qcm. 9 chapitres.
 
-- **I · Fiche synthétique et immatriculation** : Tenir à jour la fiche synthétique et l'immatriculation au registre. Notions : fiche synthétique, registre national, immatriculation. Exercices : qcm, flash, relier · étude 45 min.
 - **I · Lots, parties privatives, parties communes** : Ranger n'importe quel élément de l'immeuble dans privatif ou commun. Notions : article 2, article 3, présomption, usage exclusif. Exercices : qcm, flash, relier · étude 45 min.
 - **I · Qu'est-ce qu'une copropriété** : Dire quand un immeuble est en copropriété et ce que ça déclenche. Notions : article 1, lot, immeuble bâti, ordre public. Exercices : qcm, flash, relier · étude 45 min.
-- **I · Tantièmes et quotes-parts** : Expliquer d'où viennent les tantièmes d'un lot et à quoi ils servent. Notions : article 5, quote-part, tantième, millièmes, valeur relative. Exercices : qcm, flash, relier · étude 45 min.
+- **II · Fiche synthétique et immatriculation** : Tenir à jour la fiche synthétique et l'immatriculation au registre. Notions : fiche synthétique, registre national, immatriculation. Exercices : qcm, cas, flash · étude 60 min.
 - **II · Le règlement de copropriété et l'état descriptif de division** : Trouver dans un règlement la clause qui répond à une question courante. Notions : règlement, état descriptif, clause, destination de l'immeuble. Exercices : qcm, cas, flash · étude 60 min.
 - **II · Parties communes spéciales et à jouissance privative** : Distinguer une partie commune spéciale d'une partie commune à jouissance privative et dire qui paie. Notions : articles 6-2 et 6-3, ELAN, charges spéciales. Exercices : qcm, cas, flash · étude 60 min.
+- **II · Tantièmes et quotes-parts** : Expliquer d'où viennent les tantièmes d'un lot et à quoi ils servent. Notions : article 5, quote-part, tantième, millièmes, valeur relative. Exercices : qcm, cas, flash · étude 60 min.
 - **III · Diagnostiquer un règlement de copropriété ancien** : Repérer les clauses réputées non écrites et proposer une mise en conformité. Notions : clause non écrite, adaptation, article 24 f, mise en conformité. Exercices : qcm, cas, libre · étude 75 min.
 - **IV · Histoire de la loi de 1965** : Situer les grandes réformes et ce qu'elles ont changé. Notions : 1938, 1965, SRU, ALUR, ELAN, Climat. Exercices : qcm, lecture, synthese · étude 90 min.
 - **V · La réforme permanente : controverses** : Lire un rapport ou une proposition de réforme et en dire les enjeux. Notions : codification, rapport, controverse. Exercices : qcm, lecture, synthese · étude 90 min.
@@ -91,31 +91,31 @@ Exercice dominant : cas. 11 chapitres.
 
 **Préparer**
 
-- **I · La convocation : forme et délai** : Convoquer une assemblée régulière, dans les délais, par les bons moyens. Notions : décret art. 9, vingt et un jours, recommandé, notification électronique. Exercices : cas, flash, qcm · étude 45 min.
 - **II · L'ordre du jour et les inscriptions** : Construire un ordre du jour et traiter les demandes d'inscription. Notions : décret art. 10, question inscrite, projet de résolution. Exercices : cas, qcm, flash · étude 60 min.
+- **II · La convocation : forme et délai** : Convoquer une assemblée régulière, dans les délais, par les bons moyens. Notions : décret art. 9, vingt et un jours, recommandé, notification électronique. Exercices : cas, qcm, flash · étude 60 min.
 - **II · Les pièces jointes obligatoires** : Joindre à chaque résolution la pièce que le décret exige. Notions : décret art. 11, devis, contrat, annexes. Exercices : cas, qcm, flash · étude 60 min.
 - **III · Diagnostiquer une convocation irrégulière** : Trouver le vice d'une convocation et dire s'il est fatal. Notions : délai, destinataire, pièce manquante, nullité. Exercices : cas, libre, feuille-blanche · étude 75 min.
 - **III · Préparer une assemblée à risque** : Anticiper une assemblée conflictuelle : ordre du jour, pièces, majorités, scénarios. Notions : risque, scénario, majorités, conseil syndical. Exercices : cas, libre, feuille-blanche · étude 75 min.
 
 **Tenir**
 
-- **I · Tenue de séance, bureau, feuille de présence** : Ouvrir une assemblée et tenir la feuille de présence. Notions : bureau, président, scrutateur, feuille de présence. Exercices : cas, flash, qcm · étude 45 min.
 - **II · Pouvoirs et représentation** : Vérifier les pouvoirs et appliquer les plafonds de mandats. Notions : article 22, mandat, trois pouvoirs, cinq pour cent, pouvoir en blanc. Exercices : cas, qcm, flash · étude 60 min.
+- **II · Tenue de séance, bureau, feuille de présence** : Ouvrir une assemblée et tenir la feuille de présence. Notions : bureau, président, scrutateur, feuille de présence. Exercices : cas, qcm, flash · étude 60 min.
 - **II · Vote par correspondance et visioconférence** : Organiser le vote par correspondance et la participation à distance. Notions : article 17-1 A, formulaire, visioconférence, abstention. Exercices : cas, qcm, flash · étude 60 min.
 - **IV · L'assemblée dématérialisée : doctrine** : Discuter les limites juridiques de l'assemblée à distance. Notions : dématérialisation, jurisprudence, doctrine. Exercices : cas, lecture, synthese · étude 90 min.
 
 **Après**
 
-- **I · Le procès-verbal et sa notification** : Rédiger un procès-verbal complet et le notifier dans le délai. Notions : décret art. 17, décret art. 18, opposants, défaillants, un mois. Exercices : cas, flash, qcm · étude 45 min.
 - **II · La contestation en deux mois** : Dire qui peut contester, quoi, et jusqu'à quand. Notions : article 42, deux mois, opposant, défaillant, nullité. Exercices : cas, qcm, flash · étude 60 min.
+- **II · Le procès-verbal et sa notification** : Rédiger un procès-verbal complet et le notifier dans le délai. Notions : décret art. 17, décret art. 18, opposants, défaillants, un mois. Exercices : cas, qcm, flash · étude 60 min.
 
 ### 1.4 Les majorités
 
 Exercice dominant : qcm. 6 chapitres.
 
 - **I · L'article 24** : Calculer une majorité simple, abstentions comprises, et dire ce qui s'y vote. Notions : voix exprimées, présents et représentés, gestion courante. Exercices : qcm, flash, relier · étude 45 min.
-- **I · L'article 25 et la passerelle** : Calculer une majorité absolue et appliquer la passerelle du second vote. Notions : tous les copropriétaires, tiers, second vote, article 25-1. Exercices : qcm, flash, relier · étude 45 min.
 - **I · L'article 26 et l'unanimité** : Reconnaître une décision à double majorité ou à l'unanimité. Notions : double majorité, deux tiers, unanimité, aliénation. Exercices : qcm, flash, relier · étude 45 min.
+- **II · L'article 25 et la passerelle** : Calculer une majorité absolue et appliquer la passerelle du second vote. Notions : tous les copropriétaires, tiers, second vote, article 25-1. Exercices : qcm, cas, flash · étude 60 min.
 - **II · Les cas particuliers** : Trouver la majorité dérogatoire d'une décision atypique. Notions : accessibilité, surélévation, travaux d'intérêt collectif, individualisation. Exercices : qcm, cas, flash · étude 60 min.
 - **III · Le tableau des majorités par décision** : Donner la majorité de n'importe quelle résolution courante sans regarder. Notions : tableau, ordre du jour, erreur de majorité. Exercices : qcm, cas, libre · étude 75 min.
 - **IV · L'abus de majorité** : Reconnaître une décision régulière mais abusive et ce que le juge en fait. Notions : abus, intérêt collectif, rupture d'égalité, jurisprudence. Exercices : qcm, lecture, synthese · étude 90 min.
@@ -137,10 +137,10 @@ Exercice dominant : cas. 7 chapitres.
 
 **Travaux collectifs**
 
-- **I · Travaux votés et travaux urgents** : Distinguer un travail voté, un travail urgent et un travail d'entretien. Notions : article 18, décret art. 37, urgence, conservation. Exercices : cas, flash, qcm · étude 45 min.
 - **II · La surélévation et le droit de surélever** : Expliquer qui décide une surélévation et à qui appartient le droit de surélever. Notions : article 35, surélévation, cession du droit, majorité. Exercices : cas, qcm, flash · étude 60 min.
 - **II · Le diagnostic technique global** : Dire quand un DTG est obligatoire et ce qu'il contient. Notions : DTG, article L731-1, contenu. Exercices : cas, qcm, flash · étude 60 min.
 - **II · Le plan pluriannuel et le fonds de travaux** : Expliquer le plan pluriannuel, le fonds et leurs obligations. Notions : article 14-2, PPT, fonds de travaux, cotisation. Exercices : cas, qcm, flash · étude 60 min.
+- **II · Travaux votés et travaux urgents** : Distinguer un travail voté, un travail urgent et un travail d'entretien. Notions : article 18, décret art. 37, urgence, conservation. Exercices : cas, qcm, flash · étude 60 min.
 
 **Travaux privatifs**
 
@@ -181,8 +181,8 @@ Exercice dominant : photo. 7 chapitres.
 - **I · Briques et enduits** : Reconnaître les enduits et les briques et leurs désordres. Notions : enduit, chaux, ciment, brique, faïençage. Exercices : photo, flash, qcm · étude 45 min.
 - **I · Béton, ciment, mortier** : Distinguer béton, ciment et mortier et dire à quoi chacun sert. Notions : liant, granulat, béton armé, chaux. Exercices : photo, flash, qcm · étude 45 min.
 - **I · Les aciers et la corrosion** : Reconnaître une corrosion d'armature et son mécanisme. Notions : carbonatation, enrobage, éclatement, rouille. Exercices : photo, flash, qcm · étude 45 min.
-- **II · Les isolants** : Nommer les isolants courants et leurs défauts. Notions : laine, polystyrène, isolation par l'extérieur, humidité. Exercices : photo, qcm, cas · étude 60 min.
-- **III · Reconnaître un matériau sur photo** : Identifier un matériau sur une photo de chantier et dire son âge probable. Notions : diagnostic visuel, époque, matériau. Exercices : photo, cas, libre · étude 75 min.
+- **I · Les isolants** : Nommer les isolants courants et leurs défauts. Notions : laine, polystyrène, isolation par l'extérieur, humidité. Exercices : photo, flash, qcm · étude 45 min.
+- **II · Reconnaître un matériau sur photo** : Identifier un matériau sur une photo de chantier et dire son âge probable. Notions : diagnostic visuel, époque, matériau. Exercices : photo, qcm, cas · étude 60 min.
 - **V · Durabilité : l'état de la recherche** : Lire une publication sur la durabilité et en tirer une vigilance. Notions : durabilité, recherche, bas carbone. Exercices : photo, lecture, synthese · étude 90 min.
 
 ### 2.2 Structure et fondations
@@ -191,9 +191,9 @@ Exercice dominant : photo. 8 chapitres.
 
 **Fissures**
 
-- **I · Fondations et tassements** : Expliquer un tassement et ses signes. Notions : fondation, tassement différentiel, argile, sécheresse. Exercices : photo, flash, qcm · étude 45 min.
 - **I · Microfissure, fissure, lézarde** : Qualifier une fissure avec les bons mots, sans inventer de seuil. Notions : microfissure, fissure, lézarde, traversante. Exercices : photo, flash, qcm · étude 45 min.
 - **II · Fissures structurelles et leur lecture** : Lire l'orientation et la position d'une fissure pour en soupçonner la cause. Notions : orientation, escalier, horizontale, cause probable. Exercices : photo, qcm, cas · étude 60 min.
+- **II · Fondations et tassements** : Expliquer un tassement et ses signes. Notions : fondation, tassement différentiel, argile, sécheresse. Exercices : photo, qcm, cas · étude 60 min.
 - **II · Témoins et suivi d'une fissure** : Poser et lire un témoin, décider d'un suivi. Notions : témoin, jauge, évolution, surveillance. Exercices : photo, qcm, cas · étude 60 min.
 - **III · Quand appeler un bureau d'études** : Décider quand un désordre structurel dépasse le gestionnaire. Notions : bureau d'études, diagnostic, urgence, sécurité. Exercices : photo, cas, libre · étude 75 min.
 - **IV · Seuils et normes : ce qui est publié** : Dire ce que les normes disent vraiment des fissures et ce qui relève du commerce. Notions : DTU, norme, seuil, source. Exercices : photo, lecture, synthese · étude 90 min.
@@ -277,9 +277,9 @@ Les vrais mots : VMC, ascenseur, chaufferie, colonnes, sous-station. Socle : niv
 
 Exercice dominant : dessin. 4 chapitres.
 
-- **I · Le caisson et les courroies** : Nommer les organes d'un caisson et expliquer pourquoi une courroie se détend. Notions : caisson, courroie, turbine, moteur, débit. Exercices : dessin, flash, qcm · étude 45 min.
 - **I · Simple flux, double flux, hygro** : Distinguer les systèmes de ventilation et leurs organes. Notions : simple flux, double flux, hygroréglable, bouche, entrée d'air. Exercices : dessin, flash, qcm · étude 45 min.
 - **II · Entretien et débits réglementaires** : Dire ce qu'un contrat d'entretien VMC doit couvrir et les débits attendus. Notions : arrêté de 1982, débits, entretien, nettoyage. Exercices : dessin, qcm, cas · étude 60 min.
+- **II · Le caisson et les courroies** : Nommer les organes d'un caisson et expliquer pourquoi une courroie se détend. Notions : caisson, courroie, turbine, moteur, débit. Exercices : dessin, qcm, cas · étude 60 min.
 - **III · Lire un rapport de contrôle VMC** : Lire un rapport de contrôle et décider des suites. Notions : rapport, mesure, anomalie, devis. Exercices : dessin, cas, libre · étude 75 min.
 
 ### 3.2 Chauffage collectif et eau chaude
@@ -331,18 +331,18 @@ Exercice dominant : dessin. 5 chapitres.
 Exercice dominant : photo. 5 chapitres.
 
 - **I · TGBT et colonnes montantes** : Nommer le tableau général et les colonnes montantes et dire à qui elles appartiennent. Notions : TGBT, colonne montante, Enedis, transfert. Exercices : photo, flash, qcm · étude 45 min.
-- **I · Éclairage des communs** : Choisir un éclairage des communs et en réduire la consommation. Notions : détecteur, LED, minuterie, TRV. Exercices : photo, flash, qcm · étude 45 min.
 - **II · Bornes de recharge** : Expliquer une installation de recharge dans un parking collectif. Notions : IRVE, droit à la prise, infrastructure collective, opérateur. Exercices : photo, qcm, cas · étude 60 min. Ponts : L'infrastructure collective (energie).
 - **II · La NF C 15-100 pour un gestionnaire** : Dire ce que la norme électrique impose dans les communs. Notions : NF C 15-100, mise en conformité, diagnostic. Exercices : photo, qcm, cas · étude 60 min.
+- **II · Éclairage des communs** : Choisir un éclairage des communs et en réduire la consommation. Notions : détecteur, LED, minuterie, TRV. Exercices : photo, qcm, cas · étude 60 min.
 - **III · Lire un rapport électrique** : Lire un rapport de contrôle électrique et prioriser les travaux. Notions : rapport, anomalie, priorité. Exercices : photo, cas, libre · étude 75 min.
 
 ### 3.6 Contrôle d'accès et sécurité
 
 Exercice dominant : photo. 4 chapitres.
 
+- **I · Désenfumage et extincteurs** : Dire ce que la sécurité incendie impose dans un immeuble d'habitation. Notions : arrêté de 1986, désenfumage, extincteur, porte coupe-feu. Exercices : photo, flash, qcm · étude 45 min.
 - **I · Interphone, badges, ventouses, cellules** : Nommer les organes d'un contrôle d'accès et leurs pannes courantes. Notions : interphone, badge, ventouse, cellule, gâche. Exercices : photo, flash, qcm · étude 45 min.
 - **I · Portails et portes de garage** : Nommer les organes d'une porte automatique et ses obligations. Notions : moteur, cellule, sécurité, entretien. Exercices : photo, flash, qcm · étude 45 min.
-- **II · Désenfumage et extincteurs** : Dire ce que la sécurité incendie impose dans un immeuble d'habitation. Notions : arrêté de 1986, désenfumage, extincteur, porte coupe-feu. Exercices : photo, qcm, cas · étude 60 min.
 - **III · La porte de parking en panne** : Gérer une porte de parking en panne : sécurité, dépannage, communication. Notions : panne, sécurité, dépannage. Exercices : photo, cas, libre · étude 75 min.
 
 ### 3.7 Les contrats d'entretien
@@ -363,12 +363,12 @@ Débit, crédit, budget, annexes, excédents, impayés, factures. Socle : niveau
 Exercice dominant : feuille-blanche. 8 chapitres.
 
 - **I · Actif et passif** : Dire ce qui est à l'actif et au passif d'un syndicat. Notions : actif, passif, créances, dettes. Exercices : feuille-blanche, flash, qcm · étude 45 min.
-- **I · Débit et crédit, la partie double** : Passer une écriture simple en partie double. Notions : débit, crédit, partie double, compte. Exercices : feuille-blanche, flash, qcm · étude 45 min.
 - **I · L'exercice comptable** : Dire ce qu'est un exercice, sa clôture et son approbation. Notions : exercice, clôture, approbation, période. Exercices : feuille-blanche, flash, qcm · étude 45 min.
-- **I · Produits et charges** : Distinguer un produit d'une charge et d'un encaissement. Notions : produit, charge, encaissement, décaissement. Exercices : feuille-blanche, flash, qcm · étude 45 min.
+- **II · Débit et crédit, la partie double** : Passer une écriture simple en partie double. Notions : débit, crédit, partie double, compte. Exercices : feuille-blanche, qcm, cas · étude 60 min.
 - **II · Engagement et trésorerie** : Expliquer la comptabilité d'engagement et ses effets sur les comptes. Notions : engagement, trésorerie, facture non parvenue. Exercices : feuille-blanche, qcm, cas · étude 60 min.
 - **II · Excédent, insuffisance et régularisation** : Expliquer un excédent ou une insuffisance et son affectation. Notions : excédent, insuffisance, régularisation, affectation. Exercices : feuille-blanche, qcm, cas · étude 60 min. Ponts : La régularisation annuelle (droit).
 - **II · Pourquoi une copropriété n'a pas de bilan** : Expliquer ce que les annexes remplacent et pourquoi. Notions : annexes, bilan, décret 2005. Exercices : feuille-blanche, qcm, cas · étude 60 min.
+- **II · Produits et charges** : Distinguer un produit d'une charge et d'un encaissement. Notions : produit, charge, encaissement, décaissement. Exercices : feuille-blanche, qcm, cas · étude 60 min.
 - **IV · Histoire de la partie double** : Situer la partie double dans l'histoire et dire ce qu'elle a permis. Notions : Pacioli, histoire, comptabilité. Exercices : feuille-blanche, lecture, synthese · étude 90 min.
 
 ### 4.2 Le plan comptable de la copropriété
@@ -376,7 +376,7 @@ Exercice dominant : feuille-blanche. 8 chapitres.
 Exercice dominant : qcm. 3 chapitres.
 
 - **I · Les classes de comptes** : Nommer les classes du plan comptable et ce qu'elles contiennent. Notions : classe 1, classe 4, classe 5, classe 6, classe 7. Exercices : qcm, flash, relier · étude 45 min.
-- **II · Les comptes qu'on lit tous les jours** : Reconnaître les comptes courants d'un grand livre de copropriété. Notions : 450, 401, 512, 103, 105. Exercices : qcm, cas, flash · étude 60 min.
+- **I · Les comptes qu'on lit tous les jours** : Reconnaître les comptes courants d'un grand livre de copropriété. Notions : 450, 401, 512, 103, 105. Exercices : qcm, flash, relier · étude 45 min.
 - **III · Retrouver une écriture** : Retrouver une écriture dans un grand livre à partir d'une question. Notions : grand livre, écriture, lettrage. Exercices : qcm, cas, libre · étude 75 min.
 
 ### 4.3 Budget, appels de fonds et financement
@@ -385,16 +385,16 @@ Exercice dominant : cas. 8 chapitres.
 
 **Le courant**
 
-- **I · Le budget prévisionnel** : Expliquer ce que couvre le budget prévisionnel et comment il se vote. Notions : article 14-1, budget, dépenses courantes, vote. Exercices : cas, flash, qcm · étude 45 min.
 - **I · Les appels de fonds** : Expliquer un appel de fonds trimestriel et sa date d'exigibilité. Notions : appel, provision, exigibilité, trimestre. Exercices : cas, flash, qcm · étude 45 min.
 - **II · Avances et emprunt collectif** : Distinguer avance de trésorerie, fonds de travaux et emprunt. Notions : avance, fonds de roulement, emprunt, remboursement. Exercices : cas, qcm, flash · étude 60 min.
+- **II · Le budget prévisionnel** : Expliquer ce que couvre le budget prévisionnel et comment il se vote. Notions : article 14-1, budget, dépenses courantes, vote. Exercices : cas, qcm, flash · étude 60 min.
 - **III · Construire un budget** : Construire un budget prévisionnel défendable devant le conseil syndical. Notions : construction, historique, indexation, présentation. Exercices : cas, libre, feuille-blanche · étude 75 min.
 
 **Le financement des travaux**
 
+- **I · Le prêt avance mutation et les financements nouveaux** : Dire ce qu'est le prêt avance mutation et à qui il sert. Notions : prêt avance mutation, décret 2024-887, financement. Exercices : cas, flash, qcm · étude 45 min.
 - **II · L'emprunt collectif à adhésion individuelle** : Expliquer l'emprunt collectif à adhésion individuelle et la caution. Notions : emprunt collectif, adhésion, caution, article 26-4. Exercices : cas, qcm, flash · étude 60 min.
 - **II · Le fonds de travaux** : Expliquer le fonds de travaux, son taux et son usage. Notions : fonds de travaux, cotisation, cinq pour cent, affectation. Exercices : cas, qcm, flash · étude 60 min.
-- **II · Le prêt avance mutation et les financements nouveaux** : Dire ce qu'est le prêt avance mutation et à qui il sert. Notions : prêt avance mutation, décret 2024-887, financement. Exercices : cas, qcm, flash · étude 60 min.
 - **II · Les travaux hors budget** : Expliquer comment se financent les travaux hors budget. Notions : article 14-2, appel spécial, échéancier. Exercices : cas, qcm, flash · étude 60 min.
 
 ### 4.4 Les cinq annexes
@@ -402,7 +402,7 @@ Exercice dominant : cas. 8 chapitres.
 Exercice dominant : lecture. 7 chapitres.
 
 - **I · L'annexe 1 : l'état financier** : Lire l'état financier et y trouver la trésorerie et les dettes. Notions : annexe 1, état financier, trésorerie. Exercices : lecture, flash, qcm · étude 45 min.
-- **I · L'annexe 2 : le compte de gestion général** : Lire le compte de gestion et comparer au budget. Notions : annexe 2, compte de gestion, budget réalisé. Exercices : lecture, flash, qcm · étude 45 min.
+- **II · L'annexe 2 : le compte de gestion général** : Lire le compte de gestion et comparer au budget. Notions : annexe 2, compte de gestion, budget réalisé. Exercices : lecture, qcm, cas · étude 60 min.
 - **II · L'annexe 3 : par clé de répartition** : Lire la répartition des charges par clé. Notions : annexe 3, clé, répartition. Exercices : lecture, qcm, cas · étude 60 min.
 - **II · Les annexes 4 et 5 : les travaux** : Lire les annexes travaux et repérer un chantier non clôturé. Notions : annexe 4, annexe 5, travaux, clôture. Exercices : lecture, qcm, cas · étude 60 min.
 - **II · Les trois chiffres à regarder d'abord** : Donner en trois chiffres l'état d'une copropriété. Notions : trésorerie, impayés, écart budget. Exercices : lecture, qcm, cas · étude 60 min.
@@ -413,8 +413,8 @@ Exercice dominant : lecture. 7 chapitres.
 
 Exercice dominant : cas. 4 chapitres.
 
-- **I · Approbation et quitus** : Distinguer l'approbation des comptes du quitus et leurs effets. Notions : approbation, quitus, responsabilité. Exercices : cas, flash, qcm · étude 45 min.
 - **I · Le rôle du conseil syndical** : Dire ce que le conseil syndical contrôle et comment. Notions : contrôle, pièces, accès. Exercices : cas, flash, qcm · étude 45 min.
+- **II · Approbation et quitus** : Distinguer l'approbation des comptes du quitus et leurs effets. Notions : approbation, quitus, responsabilité. Exercices : cas, qcm, flash · étude 60 min.
 - **II · Les anomalies classiques** : Repérer les anomalies fréquentes d'un arrêté des comptes. Notions : anomalie, doublon, compte d'attente, régularisation. Exercices : cas, qcm, flash · étude 60 min.
 - **III · L'audit d'un arrêté des comptes** : Auditer un arrêté des comptes avec une grille et écrire le rapport. Notions : audit, grille, rapport. Exercices : cas, libre, feuille-blanche · étude 75 min.
 
@@ -422,18 +422,18 @@ Exercice dominant : cas. 4 chapitres.
 
 Exercice dominant : datation. 4 chapitres.
 
-- **I · Relance et mise en demeure** : Dérouler la relance amiable jusqu'à la mise en demeure. Notions : relance, mise en demeure, recommandé, trente jours. Exercices : datation, flash, qcm · étude 45 min.
 - **II · Du comptable au juge** : Dire quand un impayé passe du recouvrement amiable au judiciaire. Notions : seuil, délai, avocat, article 19-2. Exercices : datation, qcm, cas · étude 60 min. Ponts : Mise en demeure, recommandé, sommation (procedure).
 - **II · Les frais imputables** : Dire quels frais de recouvrement s'imputent au seul débiteur. Notions : article 10-1, frais, imputation. Exercices : datation, qcm, cas · étude 60 min.
+- **II · Relance et mise en demeure** : Dérouler la relance amiable jusqu'à la mise en demeure. Notions : relance, mise en demeure, recommandé, trente jours. Exercices : datation, qcm, cas · étude 60 min.
 - **III · Le plan de recouvrement** : Construire le plan de recouvrement d'un immeuble et le présenter au conseil. Notions : plan, priorité, budget, conseil syndical. Exercices : datation, cas, libre · étude 75 min.
 
 ### 4.7 Factures, devis et TVA
 
 Exercice dominant : qcm. 4 chapitres.
 
-- **I · Les mentions d'un devis** : Vérifier qu'un devis est complet avant de le présenter. Notions : devis, validité, assurance, délai. Exercices : qcm, flash, relier · étude 45 min.
-- **I · Les mentions obligatoires d'une facture** : Vérifier qu'une facture est conforme avant de la payer. Notions : mentions, SIREN, TVA, date, numéro. Exercices : qcm, flash, relier · étude 45 min.
 - **II · La TVA à 20, 10 et 5,5 %** : Appliquer le bon taux de TVA à des travaux en copropriété. Notions : taux, attestation, rénovation énergétique, logement. Exercices : qcm, cas, flash · étude 60 min.
+- **II · Les mentions d'un devis** : Vérifier qu'un devis est complet avant de le présenter. Notions : devis, validité, assurance, délai. Exercices : qcm, cas, flash · étude 60 min.
+- **II · Les mentions obligatoires d'une facture** : Vérifier qu'une facture est conforme avant de la payer. Notions : mentions, SIREN, TVA, date, numéro. Exercices : qcm, cas, flash · étude 60 min.
 - **III · Refuser une facture** : Refuser ou contester une facture sans casser la relation. Notions : contestation, réserve, paiement partiel. Exercices : qcm, cas, libre · étude 75 min.
 
 ### 4.8 Les honoraires du syndic
@@ -480,10 +480,10 @@ Exercice dominant : cas. 5 chapitres.
 
 Exercice dominant : qcm. 5 chapitres.
 
-- **I · Incendie** : Dérouler les premières mesures après un incendie. Notions : incendie, mise en sécurité, expertise, relogement. Exercices : qcm, flash, relier · étude 45 min.
-- **I · Tempête et grêle** : Déclarer un sinistre tempête et faire les mesures conservatoires. Notions : tempête, grêle, bâchage, délai. Exercices : qcm, flash, relier · étude 45 min.
-- **I · Vol et vandalisme** : Traiter un vol ou un vandalisme dans les communs. Notions : vol, vandalisme, plainte, franchise. Exercices : qcm, flash, relier · étude 45 min.
 - **II · Catastrophe naturelle** : Expliquer l'arrêté de catastrophe naturelle et le délai de déclaration. Notions : arrêté, catastrophe naturelle, sécheresse, délai. Exercices : qcm, cas, flash · étude 60 min.
+- **II · Incendie** : Dérouler les premières mesures après un incendie. Notions : incendie, mise en sécurité, expertise, relogement. Exercices : qcm, cas, flash · étude 60 min.
+- **II · Tempête et grêle** : Déclarer un sinistre tempête et faire les mesures conservatoires. Notions : tempête, grêle, bâchage, délai. Exercices : qcm, cas, flash · étude 60 min.
+- **II · Vol et vandalisme** : Traiter un vol ou un vandalisme dans les communs. Notions : vol, vandalisme, plainte, franchise. Exercices : qcm, cas, flash · étude 60 min.
 - **III · Les mesures conservatoires** : Décider et faire exécuter des mesures conservatoires sans dépasser ses pouvoirs. Notions : mesures conservatoires, article 18, urgence, budget. Exercices : qcm, cas, libre · étude 75 min.
 
 ### 5.5 Les garanties de construction
@@ -515,7 +515,7 @@ Exercice dominant : datation. 3 chapitres.
 
 - **II · De la déclaration à l'indemnité** : Dérouler les étapes d'un sinistre de la déclaration à l'indemnité. Notions : déclaration, expertise, indemnité, franchise. Exercices : datation, qcm, cas · étude 60 min.
 - **III · La méthode complète** : Gérer un sinistre complexe avec plusieurs assureurs et plusieurs lots. Notions : méthode, coordination, suivi. Exercices : datation, cas, libre · étude 75 min.
-- **IV · Les contentieux d'assurance** : Reconnaître un contentieux d'assurance et ses arguments. Notions : contentieux, déchéance, prescription biennale. Exercices : datation, lecture, synthese · étude 90 min.
+- **III · Les contentieux d'assurance** : Reconnaître un contentieux d'assurance et ses arguments. Notions : contentieux, déchéance, prescription biennale. Exercices : datation, cas, libre · étude 75 min.
 
 ## 6. Procédure et justice
 
@@ -544,9 +544,9 @@ Exercice dominant : relier. 3 chapitres.
 
 Exercice dominant : datation. 3 chapitres.
 
-- **I · Mise en demeure, recommandé, sommation** : Écrire une mise en demeure qui vaut. Notions : mise en demeure, recommandé, sommation, délai. Exercices : datation, flash, qcm · étude 45 min.
 - **II · Conciliation et médiation préalables** : Dire quand une conciliation est obligatoire et comment elle se fait. Notions : conciliation, médiation, article 750-1, petits litiges. Exercices : datation, qcm, cas · étude 60 min.
 - **II · Le protocole d'accord** : Rédiger ou faire rédiger un protocole d'accord qui tient. Notions : protocole, transaction, concessions. Exercices : datation, qcm, cas · étude 60 min.
+- **II · Mise en demeure, recommandé, sommation** : Écrire une mise en demeure qui vaut. Notions : mise en demeure, recommandé, sommation, délai. Exercices : datation, qcm, cas · étude 60 min.
 
 ### 6.4 Le référé et l'urgence
 
@@ -563,8 +563,8 @@ Exercice dominant : datation. 5 chapitres.
 
 **Obtenir un titre**
 
-- **I · L'injonction de payer** : Déposer une injonction de payer et gérer l'opposition. Notions : injonction, requête, opposition, ordonnance. Exercices : datation, flash, qcm · étude 45 min. Ponts : Relance et mise en demeure (comptabilite).
 - **II · L'assignation** : Lancer une assignation en paiement et suivre l'audience. Notions : assignation, audience, conclusions, jugement. Exercices : datation, qcm, cas · étude 60 min.
+- **II · L'injonction de payer** : Déposer une injonction de payer et gérer l'opposition. Notions : injonction, requête, opposition, ordonnance. Exercices : datation, qcm, cas · étude 60 min. Ponts : Relance et mise en demeure (comptabilite).
 - **III · Choisir la voie** : Choisir la voie de recouvrement adaptée à un dossier. Notions : choix, montant, solvabilité, délai. Exercices : datation, cas, libre · étude 75 min.
 
 **Exécuter**
@@ -599,8 +599,8 @@ Exercice dominant : qcm. 2 chapitres.
 
 Exercice dominant : lecture. 3 chapitres.
 
+- **I · Visa, moyens, motifs, dispositif** : Repérer les parties d'un arrêt et où se trouve la règle. Notions : visa, moyens, motifs, dispositif. Exercices : lecture, flash, qcm · étude 45 min.
 - **II · Cassation et rejet, portée** : Dire ce que signifie une cassation, un rejet, et la portée d'un arrêt. Notions : cassation, rejet, portée, revirement. Exercices : lecture, qcm, cas · étude 60 min.
-- **II · Visa, moyens, motifs, dispositif** : Repérer les parties d'un arrêt et où se trouve la règle. Notions : visa, moyens, motifs, dispositif. Exercices : lecture, qcm, cas · étude 60 min.
 - **IV · Le commentaire d'arrêt** : Commenter un arrêt de copropriété en une page. Notions : commentaire, plan, portée. Exercices : lecture, synthese · étude 90 min.
 
 ## 7. Travaux, marchés et lecture de plans
@@ -630,9 +630,9 @@ Exercice dominant : plan. 4 chapitres.
 Exercice dominant : cas. 5 chapitres.
 
 - **I · La mise en concurrence** : Dire quand la mise en concurrence est obligatoire et comment la faire. Notions : article 21, mise en concurrence, seuil, conseil syndical. Exercices : cas, flash, qcm · étude 45 min.
-- **I · Le cahier des charges** : Écrire un cahier des charges court pour un travail courant. Notions : cahier des charges, besoin, périmètre. Exercices : cas, flash, qcm · étude 45 min.
 - **II · Attestations, Kbis, vigilance** : Vérifier les pièces d'une entreprise avant de signer. Notions : attestation d'assurance, Kbis, vigilance URSSAF, décennale. Exercices : cas, qcm, flash · étude 60 min.
 - **II · Comparer des devis** : Comparer trois devis sur ce qui compte. Notions : comparaison, périmètre, options, prix. Exercices : cas, qcm, flash · étude 60 min.
+- **II · Le cahier des charges** : Écrire un cahier des charges court pour un travail courant. Notions : cahier des charges, besoin, périmètre. Exercices : cas, qcm, flash · étude 60 min.
 - **III · Le tableau comparatif** : Présenter un tableau comparatif au conseil syndical. Notions : tableau, critères, recommandation. Exercices : cas, libre, feuille-blanche · étude 75 min.
 
 ### 7.4 Le marché privé de travaux
@@ -648,9 +648,9 @@ Exercice dominant : qcm. 4 chapitres.
 
 Exercice dominant : datation. 4 chapitres.
 
-- **I · Réunions et comptes rendus** : Tenir une réunion de chantier et son compte rendu. Notions : réunion, compte rendu, planning. Exercices : datation, flash, qcm · étude 45 min.
 - **I · Sécurité et affichage** : Dire ce qu'un chantier doit afficher et respecter. Notions : affichage, sécurité, CSPS, panneau. Exercices : datation, flash, qcm · étude 45 min.
 - **II · Réception, réserves, garanties** : Réceptionner un chantier et lever les réserves. Notions : réception, réserves, levée, garanties. Exercices : datation, qcm, cas · étude 60 min.
+- **II · Réunions et comptes rendus** : Tenir une réunion de chantier et son compte rendu. Notions : réunion, compte rendu, planning. Exercices : datation, qcm, cas · étude 60 min.
 - **III · La réception** : Conduire une réception avec la maîtrise d'œuvre et le conseil syndical. Notions : réception, procès-verbal, réserves. Exercices : datation, cas, libre · étude 75 min.
 
 ### 7.6 L'urbanisme des travaux
@@ -687,10 +687,10 @@ DPE, audit, PPT, aides, chauffage, réseaux, bornes de recharge. Socle : niveau 
 
 Exercice dominant : dessin. 4 chapitres.
 
-- **I · Déperditions et isolation** : Expliquer où un immeuble perd sa chaleur et comment on l'isole. Notions : déperdition, U, R, isolation. Exercices : dessin, flash, qcm · étude 45 min.
-- **I · Ponts thermiques et inertie** : Expliquer un pont thermique et l'inertie d'un bâtiment. Notions : pont thermique, inertie, confort. Exercices : dessin, flash, qcm · étude 45 min.
 - **I · Ventilation et humidité** : Relier ventilation, humidité et qualité de l'air. Notions : ventilation, humidité, qualité de l'air. Exercices : dessin, flash, qcm · étude 45 min.
+- **II · Déperditions et isolation** : Expliquer où un immeuble perd sa chaleur et comment on l'isole. Notions : déperdition, U, R, isolation. Exercices : dessin, qcm, cas · étude 60 min.
 - **II · Le confort d'été** : Expliquer le confort d'été et les gestes qui le protègent. Notions : confort d'été, protection solaire, surchauffe. Exercices : dessin, qcm, cas · étude 60 min.
+- **II · Ponts thermiques et inertie** : Expliquer un pont thermique et l'inertie d'un bâtiment. Notions : pont thermique, inertie, confort. Exercices : dessin, qcm, cas · étude 60 min.
 
 ### 8.2 Le DPE
 
@@ -760,10 +760,10 @@ Propriété, servitudes, vente d'un lot, location, PLU, acteurs, le 49. Socle : 
 
 Exercice dominant : qcm. 7 chapitres.
 
-- **I · L'indivision** : Expliquer l'indivision et qui vote en assemblée. Notions : indivision, mandataire commun, quote-part. Exercices : qcm, flash, relier · étude 45 min.
 - **I · La propriété et ses démembrements** : Distinguer propriété, usufruit et nue-propriété. Notions : article 544, usufruit, nue-propriété. Exercices : qcm, flash, relier · étude 45 min.
 - **I · Les servitudes** : Reconnaître une servitude et ses effets. Notions : servitude, fonds servant, passage, vue. Exercices : qcm, flash, relier · étude 45 min.
 - **II · L'empiètement** : Traiter un empiètement sur une partie commune. Notions : empiètement, démolition, prescription. Exercices : qcm, cas, flash · étude 60 min.
+- **II · L'indivision** : Expliquer l'indivision et qui vote en assemblée. Notions : indivision, mandataire commun, quote-part. Exercices : qcm, cas, flash · étude 60 min.
 - **II · La mitoyenneté** : Expliquer la mitoyenneté d'un mur et son entretien. Notions : mitoyenneté, mur, présomption, frais. Exercices : qcm, cas, flash · étude 60 min.
 - **II · Troubles anormaux de voisinage** : Qualifier un trouble de voisinage et ses recours. Notions : trouble anormal, article 1253, antériorité. Exercices : qcm, cas, flash · étude 60 min.
 - **IV · Théories de la propriété** : Discuter les fondements de la propriété et les communs. Notions : propriété, communs, Ostrom, Olson. Exercices : qcm, lecture, synthese · étude 90 min.
@@ -810,9 +810,9 @@ Exercice dominant : relier. 4 chapitres.
 
 Exercice dominant : qcm. 3 chapitres.
 
-- **I · Taxe foncière et enlèvement des ordures** : Expliquer la taxe foncière et la TEOM et qui les paie. Notions : taxe foncière, TEOM, locataire. Exercices : qcm, flash, relier · étude 45 min.
 - **II · La plus-value** : Expliquer la plus-value immobilière et ses exonérations. Notions : plus-value, résidence principale, abattement. Exercices : qcm, cas, flash · étude 60 min.
 - **II · Notions d'IFI et de TVA immobilière** : Situer l'IFI et la TVA immobilière sans entrer dans le calcul. Notions : IFI, TVA, notions. Exercices : qcm, cas, flash · étude 60 min.
+- **II · Taxe foncière et enlèvement des ordures** : Expliquer la taxe foncière et la TEOM et qui les paie. Notions : taxe foncière, TEOM, locataire. Exercices : qcm, cas, flash · étude 60 min.
 
 ### 9.7 Angers et le 49
 
@@ -833,7 +833,7 @@ Exercice dominant : qcm. 4 chapitres.
 
 - **I · Carte professionnelle, garantie, assurance** : Dire ce que la loi Hoguet exige pour exercer. Notions : loi Hoguet, carte, garantie financière, RC pro. Exercices : qcm, flash, relier · étude 45 min.
 - **I · La formation continue obligatoire** : Dire l'obligation de formation continue et comment la satisfaire. Notions : formation continue, heures, renouvellement. Exercices : qcm, flash, relier · étude 45 min.
-- **I · Le code de déontologie** : Appliquer les règles du code de déontologie aux cas courants. Notions : déontologie, décret 2015-1090, conflit d'intérêts. Exercices : qcm, flash, relier · étude 45 min.
+- **II · Le code de déontologie** : Appliquer les règles du code de déontologie aux cas courants. Notions : déontologie, décret 2015-1090, conflit d'intérêts. Exercices : qcm, cas, flash · étude 60 min.
 - **IV · Histoire et critique de la profession** : Situer la profession de syndic et les critiques qui lui sont faites. Notions : histoire, critique, associations, réputation. Exercices : qcm, lecture, synthese · étude 90 min.
 
 ### 10.2 Le contrat de syndic
@@ -857,15 +857,15 @@ Exercice dominant : datation. 4 chapitres.
 
 Exercice dominant : cas. 3 chapitres.
 
-- **I · Rôle et réunion** : Préparer et tenir une réunion de conseil syndical. Notions : réunion, ordre du jour, compte rendu. Exercices : cas, flash, qcm · étude 45 min.
 - **II · La psychologie d'un groupe** : Reconnaître les dynamiques d'un conseil syndical et les canaliser. Notions : dynamique, leader, opposant, consensus. Exercices : cas, qcm, flash · étude 60 min.
 - **II · Préparer et restituer** : Préparer un conseil syndical avec un dossier et restituer après. Notions : dossier, restitution, décisions. Exercices : cas, qcm, flash · étude 60 min.
+- **II · Rôle et réunion** : Préparer et tenir une réunion de conseil syndical. Notions : réunion, ordre du jour, compte rendu. Exercices : cas, qcm, flash · étude 60 min.
 
 ### 10.5 L'assemblée en pratique
 
 Exercice dominant : cas. 5 chapitres.
 
-- **I · Animer et tenir le bureau** : Animer une assemblée et tenir le bureau sans perdre le fil. Notions : animation, bureau, temps, vote. Exercices : cas, flash, qcm · étude 45 min.
+- **II · Animer et tenir le bureau** : Animer une assemblée et tenir le bureau sans perdre le fil. Notions : animation, bureau, temps, vote. Exercices : cas, qcm, flash · étude 60 min.
 - **II · Gérer les contestations et la salle** : Répondre à une contestation en séance sans casser la séance. Notions : contestation, salle, réponse, procès-verbal. Exercices : cas, qcm, flash · étude 60 min.
 - **II · Le procès-verbal en séance** : Rédiger le procès-verbal en séance et le faire signer. Notions : procès-verbal, séance, signature, mentions. Exercices : cas, qcm, flash · étude 60 min.
 - **II · Les fausses demandes de vote** : Reconnaître une demande de vote qui n'en est pas une et la traiter. Notions : question diverse, vœu, décision, résolution. Exercices : cas, qcm, flash · étude 60 min.
@@ -875,7 +875,7 @@ Exercice dominant : cas. 5 chapitres.
 
 Exercice dominant : synthese. 3 chapitres.
 
-- **I · Courrier, mail, notification** : Choisir le bon support et la bonne forme pour écrire à un copropriétaire. Notions : courrier, mail, notification, recommandé. Exercices : synthese, flash, qcm · étude 45 min.
+- **II · Courrier, mail, notification** : Choisir le bon support et la bonne forme pour écrire à un copropriétaire. Notions : courrier, mail, notification, recommandé. Exercices : synthese, qcm, cas · étude 60 min.
 - **II · Le silence n'est pas un accord** : Traiter l'absence de réponse sans l'interpréter. Notions : silence, relance, accord. Exercices : synthese, qcm, cas · étude 60 min.
 - **II · Ton et engagements** : Écrire sans s'engager au-delà de ce qu'on peut tenir. Notions : ton, engagement, réserve, délai. Exercices : synthese, qcm, cas · étude 60 min.
 
@@ -883,7 +883,7 @@ Exercice dominant : synthese. 3 chapitres.
 
 Exercice dominant : role. 3 chapitres.
 
-- **I · Avec un prestataire** : Négocier un devis ou un contrat avec un prestataire. Notions : prestataire, prix, délai, pénalités. Exercices : role, flash, qcm · étude 45 min.
+- **II · Avec un prestataire** : Négocier un devis ou un contrat avec un prestataire. Notions : prestataire, prix, délai, pénalités. Exercices : role, qcm, cas · étude 60 min.
 - **II · Méthode et alternatives** : Préparer une négociation avec ses alternatives et ses limites. Notions : alternative, limite, intérêts, positions. Exercices : role, qcm, cas · étude 60 min.
 - **III · Préparer une négociation** : Préparer et débriefer une négociation difficile. Notions : préparation, débrief, scénarios. Exercices : role, cas, libre · étude 75 min.
 
@@ -892,16 +892,16 @@ Exercice dominant : role. 3 chapitres.
 Exercice dominant : qcm. 5 chapitres.
 
 - **I · L'espace client en ligne** : Dire ce que la loi impose comme accès en ligne et ce qu'un bon espace client contient. Notions : extranet, article 18, accès sécurisé, documents. Exercices : qcm, flash, relier · étude 45 min.
-- **I · Le RGPD au cabinet** : Appliquer le RGPD aux données des copropriétaires. Notions : RGPD, registre, durée, droits. Exercices : qcm, flash, relier · étude 45 min.
 - **I · Lutte contre le blanchiment** : Dire les obligations de vigilance du syndic. Notions : TRACFIN, vigilance, déclaration. Exercices : qcm, flash, relier · étude 45 min.
 - **I · Sécurité et cyber** : Reconnaître une tentative d'hameçonnage et protéger les comptes. Notions : hameçonnage, mot de passe, fraude au virement. Exercices : qcm, flash, relier · étude 45 min.
+- **II · Le RGPD au cabinet** : Appliquer le RGPD aux données des copropriétaires. Notions : RGPD, registre, durée, droits. Exercices : qcm, cas, flash · étude 60 min.
 - **II · Pièces jointes et données personnelles** : Diffuser une convocation sans exposer des données personnelles. Notions : pièces jointes, données, notification collective. Exercices : qcm, cas, flash · étude 60 min.
 
 ### 10.9 Gérer sa charge et son équipe
 
 Exercice dominant : synthese. 3 chapitres.
 
-- **I · Gérer son temps et déléguer** : Organiser une semaine de gestionnaire et déléguer aux assistants. Notions : priorité, délégation, assistant, binôme. Exercices : synthese, flash, qcm · étude 45 min.
+- **II · Gérer son temps et déléguer** : Organiser une semaine de gestionnaire et déléguer aux assistants. Notions : priorité, délégation, assistant, binôme. Exercices : synthese, qcm, cas · étude 60 min.
 - **II · Les échéances qui ne se ratent pas** : Tenir les échéances légales avec un système, pas de tête. Notions : échéance, système, rappel, Red Path. Exercices : synthese, qcm, cas · étude 60 min.
 - **III · Manager un binôme et une équipe** : Animer un binôme gestionnaire-assistant et faire monter une équipe. Notions : management, feedback, objectifs, charge. Exercices : synthese, cas, libre · étude 75 min.
 
@@ -927,12 +927,12 @@ Le texte du bac : la propriété, l'habiter, la ville, l'histoire du logement. S
 
 Exercice dominant : lecture. 7 chapitres.
 
-- **II · L'architecture et ses styles** : Reconnaître les grands styles du bâti français. Notions : style, haussmannien, art déco, moderne. Exercices : lecture, qcm, cas · étude 60 min.
+- **I · L'architecture et ses styles** : Reconnaître les grands styles du bâti français. Notions : style, haussmannien, art déco, moderne. Exercices : lecture, flash, qcm · étude 45 min.
+- **II · L'habiter et le voisinage** : Restituer un texte sur l'habiter et le voisinage. Notions : habiter, voisinage, sociologie. Exercices : lecture, qcm, cas · étude 60 min.
+- **II · La propriété : les textes fondateurs** : Restituer la thèse d'un texte fondateur sur la propriété. Notions : propriété, Locke, Proudhon, Code civil. Exercices : lecture, qcm, cas · étude 60 min.
+- **II · La ville** : Restituer un texte sur la ville et sa fabrique. Notions : ville, urbanisme, densité. Exercices : lecture, qcm, cas · étude 60 min.
 - **III · Histoire de la copropriété** : Raconter d'où vient la copropriété et ce qu'elle a changé. Notions : 1938, 1965, histoire, communs. Exercices : lecture, cas, libre · étude 75 min.
 - **III · Histoire du logement** : Situer les grandes étapes du logement en France. Notions : Haussmann, HBM, grands ensembles, logement social. Exercices : lecture, cas, libre · étude 75 min.
-- **III · L'habiter et le voisinage** : Restituer un texte sur l'habiter et le voisinage. Notions : habiter, voisinage, sociologie. Exercices : lecture, cas, libre · étude 75 min.
-- **III · La propriété : les textes fondateurs** : Restituer la thèse d'un texte fondateur sur la propriété. Notions : propriété, Locke, Proudhon, Code civil. Exercices : lecture, cas, libre · étude 75 min.
-- **III · La ville** : Restituer un texte sur la ville et sa fabrique. Notions : ville, urbanisme, densité. Exercices : lecture, cas, libre · étude 75 min.
 - **IV · Les communs et le passager clandestin** : Relier la gestion d'un immeuble aux théories de l'action collective. Notions : Ostrom, Olson, passager clandestin, communs. Exercices : lecture, synthese · étude 90 min.
 
 ## Ce que ce squelette attend des prochains agents

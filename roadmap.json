@@ -180,7 +180,7 @@
     {
       "id": "ACA-PROGRAMME-1",
       "outcome": "Le programme copro est validé mécaniquement et branché : app/valide_programme.py (prérequis existants et de niveau ≤, pas de cycle, clés cohérentes), academie.json aligné (plans → travaux, immobilier et cabinet ajoutés), niveaux calibrés par un agent frais contre PROGRAMME.md §5.",
-      "status": "ready",
+      "status": "done",
       "mode": "agent-review",
       "risk": "low",
       "priority": 93,
@@ -193,7 +193,8 @@
         "max_tokens": 40000
       },
       "proof": "Valideur vert en CI sur programme/copro.json ; rapport de calibrage listant les chapitres reclassés et pourquoi ; tests existants verts avec les nouvelles clés.",
-      "parent_milestone": "ACADEMIE-V2-FONDATIONS"
+      "parent_milestone": "ACADEMIE-V2-FONDATIONS",
+      "done_on": "2026-09-03"
     },
     {
       "id": "ACA-SOURCES-1",

@@ -21,11 +21,12 @@ Ce que porte le fichier :
 - `semaine_type` : la couleur des jours par défaut.
 
 Ce que le fichier n'est pas : une banque. Il ne contient ni leçon ni
-carte. Le moteur ne le lit pas encore ; le chantier `ACA-PROGRAMME-1`
-écrit son valideur (`app/valide_programme.py`) et le branche sur
-`academie.json` (les clés de `domaines` doivent coïncider). Tant que ce
-valideur n'existe pas, ce fichier est un **brouillon instruit**, pas un
-contrat.
+carte. Le moteur ne le lit pas encore. Depuis le 03/09, `app/valide_programme.py`
+(chantier `ACA-PROGRAMME-1`) le valide et le confronte à `academie.json`
+(mêmes clés, même ordre, même statut hors arbre) ; `tooling/check.py`
+l'appelle. Ce fichier est donc un contrat, plus un brouillon. Les niveaux
+ont été calibrés par deux agents frais le 03/09
+(`travail/calibrage-programme-2026-09-03.md`).
 
 État au 02/09/2026 : `copro.json` porte les dix domaines et Culture,
 leurs branches et 371 chapitres (niveaux 1 à 3 pour chaque branche,

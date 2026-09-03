@@ -24,8 +24,8 @@
    "immobilier": 2,
    "cabinet": 3
   },
-  "chapitres": 330,
-  "cartes_cible": 2400
+  "chapitres": 331,
+  "cartes_cible": 2470
  },
  "semaine_type": {
   "_": "Couleur des jours (BLUEPRINT §4, decisions/0016).",
@@ -47,7 +47,7 @@
  },
  "parcours": {
   "trimestre-1": {
-   "_": "Les trois premiers mois : quatre séances et une étude par semaine, niveau 1, dans l'ordre du socle. Après, l'arbre est libre et la séance protège le socle.",
+   "_": "Les trois premiers mois : quatre séances et une étude par semaine, niveaux 1 et 2 (calibrage du 03/09), dans l'ordre du socle. Après, l'arbre est libre et la séance protège le socle.",
    "semaines": [
     {
      "n": 1,
@@ -1147,9 +1147,7 @@
    ],
    "prerequis": [
     "droit.statut.qu-est-ce-qu-une-copropriete",
-    "droit.statut.lots-parties-privatives-parties-communes",
-    "droit.statut.tantiemes-et-quotes-parts",
-    "droit.statut.fiche-synthetique-et-immatriculation"
+    "droit.statut.lots-parties-privatives-parties-communes"
    ],
    "ponts": [],
    "exercices": [
@@ -1169,8 +1167,8 @@
    "branche": "statut",
    "sous_branche": null,
    "titre": "Tantièmes et quotes-parts",
-   "niveau": 1,
-   "niveau_nom": "Repères",
+   "niveau": 2,
+   "niveau_nom": "Mécanismes",
    "competence": "Expliquer d'où viennent les tantièmes d'un lot et à quoi ils servent",
    "notions": [
     "article 5",
@@ -1179,16 +1177,19 @@
     "millièmes",
     "valeur relative"
    ],
-   "prerequis": [],
+   "prerequis": [
+    "droit.statut.qu-est-ce-qu-une-copropriete",
+    "droit.statut.lots-parties-privatives-parties-communes"
+   ],
    "ponts": [],
    "exercices": [
     "qcm",
-    "flash",
-    "relier"
+    "cas",
+    "flash"
    ],
    "exercice_dominant": "qcm",
-   "cartes_cible": 6,
-   "etude_minutes": 45,
+   "cartes_cible": 8,
+   "etude_minutes": 60,
    "satellite": false,
    "statut": "a-ecrire"
   },
@@ -1209,9 +1210,7 @@
    ],
    "prerequis": [
     "droit.statut.qu-est-ce-qu-une-copropriete",
-    "droit.statut.lots-parties-privatives-parties-communes",
-    "droit.statut.tantiemes-et-quotes-parts",
-    "droit.statut.fiche-synthetique-et-immatriculation"
+    "droit.statut.lots-parties-privatives-parties-communes"
    ],
    "ponts": [],
    "exercices": [
@@ -1231,24 +1230,27 @@
    "branche": "statut",
    "sous_branche": null,
    "titre": "Fiche synthétique et immatriculation",
-   "niveau": 1,
-   "niveau_nom": "Repères",
+   "niveau": 2,
+   "niveau_nom": "Mécanismes",
    "competence": "Tenir à jour la fiche synthétique et l'immatriculation au registre",
    "notions": [
     "fiche synthétique",
     "registre national",
     "immatriculation"
    ],
-   "prerequis": [],
+   "prerequis": [
+    "droit.statut.qu-est-ce-qu-une-copropriete",
+    "droit.statut.lots-parties-privatives-parties-communes"
+   ],
    "ponts": [],
    "exercices": [
     "qcm",
-    "flash",
-    "relier"
+    "cas",
+    "flash"
    ],
    "exercice_dominant": "qcm",
-   "cartes_cible": 6,
-   "etude_minutes": 45,
+   "cartes_cible": 8,
+   "etude_minutes": 60,
    "satellite": false,
    "statut": "a-ecrire"
   },
@@ -1269,7 +1271,9 @@
    ],
    "prerequis": [
     "droit.statut.parties-communes-speciales-et-a-jouissance-privative",
-    "droit.statut.le-reglement-de-copropriete-et-l-etat-descriptif-de-division"
+    "droit.statut.tantiemes-et-quotes-parts",
+    "droit.statut.le-reglement-de-copropriete-et-l-etat-descriptif-de-division",
+    "droit.statut.fiche-synthetique-et-immatriculation"
    ],
    "ponts": [],
    "exercices": [
@@ -1622,8 +1626,8 @@
    "branche": "assemblee",
    "sous_branche": "preparer",
    "titre": "La convocation : forme et délai",
-   "niveau": 1,
-   "niveau_nom": "Repères",
+   "niveau": 2,
+   "niveau_nom": "Mécanismes",
    "competence": "Convoquer une assemblée régulière, dans les délais, par les bons moyens",
    "notions": [
     "décret art. 9",
@@ -1635,12 +1639,12 @@
    "ponts": [],
    "exercices": [
     "cas",
-    "flash",
-    "qcm"
+    "qcm",
+    "flash"
    ],
    "exercice_dominant": "cas",
-   "cartes_cible": 6,
-   "etude_minutes": 45,
+   "cartes_cible": 8,
+   "etude_minutes": 60,
    "satellite": false,
    "statut": "a-ecrire"
   },
@@ -1658,9 +1662,7 @@
     "question inscrite",
     "projet de résolution"
    ],
-   "prerequis": [
-    "droit.assemblee.la-convocation-forme-et-delai"
-   ],
+   "prerequis": [],
    "ponts": [],
    "exercices": [
     "cas",
@@ -1688,9 +1690,7 @@
     "contrat",
     "annexes"
    ],
-   "prerequis": [
-    "droit.assemblee.la-convocation-forme-et-delai"
-   ],
+   "prerequis": [],
    "ponts": [],
    "exercices": [
     "cas",
@@ -1719,9 +1719,7 @@
     "cinq pour cent",
     "pouvoir en blanc"
    ],
-   "prerequis": [
-    "droit.assemblee.tenue-de-seance-bureau-feuille-de-presence"
-   ],
+   "prerequis": [],
    "ponts": [],
    "exercices": [
     "cas",
@@ -1740,8 +1738,8 @@
    "branche": "assemblee",
    "sous_branche": "tenir",
    "titre": "Tenue de séance, bureau, feuille de présence",
-   "niveau": 1,
-   "niveau_nom": "Repères",
+   "niveau": 2,
+   "niveau_nom": "Mécanismes",
    "competence": "Ouvrir une assemblée et tenir la feuille de présence",
    "notions": [
     "bureau",
@@ -1753,12 +1751,12 @@
    "ponts": [],
    "exercices": [
     "cas",
-    "flash",
-    "qcm"
+    "qcm",
+    "flash"
    ],
    "exercice_dominant": "cas",
-   "cartes_cible": 6,
-   "etude_minutes": 45,
+   "cartes_cible": 8,
+   "etude_minutes": 60,
    "satellite": false,
    "statut": "a-ecrire"
   },
@@ -1777,9 +1775,7 @@
     "visioconférence",
     "abstention"
    ],
-   "prerequis": [
-    "droit.assemblee.tenue-de-seance-bureau-feuille-de-presence"
-   ],
+   "prerequis": [],
    "ponts": [],
    "exercices": [
     "cas",
@@ -1798,8 +1794,8 @@
    "branche": "assemblee",
    "sous_branche": "apres",
    "titre": "Le procès-verbal et sa notification",
-   "niveau": 1,
-   "niveau_nom": "Repères",
+   "niveau": 2,
+   "niveau_nom": "Mécanismes",
    "competence": "Rédiger un procès-verbal complet et le notifier dans le délai",
    "notions": [
     "décret art. 17",
@@ -1812,12 +1808,12 @@
    "ponts": [],
    "exercices": [
     "cas",
-    "flash",
-    "qcm"
+    "qcm",
+    "flash"
    ],
    "exercice_dominant": "cas",
-   "cartes_cible": 6,
-   "etude_minutes": 45,
+   "cartes_cible": 8,
+   "etude_minutes": 60,
    "satellite": false,
    "statut": "a-ecrire"
   },
@@ -1837,9 +1833,7 @@
     "défaillant",
     "nullité"
    ],
-   "prerequis": [
-    "droit.assemblee.le-proces-verbal-et-sa-notification"
-   ],
+   "prerequis": [],
    "ponts": [],
    "exercices": [
     "cas",
@@ -1868,6 +1862,7 @@
     "nullité"
    ],
    "prerequis": [
+    "droit.assemblee.la-convocation-forme-et-delai",
     "droit.assemblee.l-ordre-du-jour-et-les-inscriptions",
     "droit.assemblee.les-pieces-jointes-obligatoires"
    ],
@@ -1899,6 +1894,7 @@
     "conseil syndical"
    ],
    "prerequis": [
+    "droit.assemblee.la-convocation-forme-et-delai",
     "droit.assemblee.l-ordre-du-jour-et-les-inscriptions",
     "droit.assemblee.les-pieces-jointes-obligatoires"
    ],
@@ -1930,6 +1926,7 @@
    ],
    "prerequis": [
     "droit.assemblee.pouvoirs-et-representation",
+    "droit.assemblee.tenue-de-seance-bureau-feuille-de-presence",
     "droit.assemblee.vote-par-correspondance-et-visioconference"
    ],
    "ponts": [],
@@ -1977,8 +1974,8 @@
    "branche": "majorites",
    "sous_branche": null,
    "titre": "L'article 25 et la passerelle",
-   "niveau": 1,
-   "niveau_nom": "Repères",
+   "niveau": 2,
+   "niveau_nom": "Mécanismes",
    "competence": "Calculer une majorité absolue et appliquer la passerelle du second vote",
    "notions": [
     "tous les copropriétaires",
@@ -1986,16 +1983,19 @@
     "second vote",
     "article 25-1"
    ],
-   "prerequis": [],
+   "prerequis": [
+    "droit.majorites.l-article-24",
+    "droit.majorites.l-article-26-et-l-unanimite"
+   ],
    "ponts": [],
    "exercices": [
     "qcm",
-    "flash",
-    "relier"
+    "cas",
+    "flash"
    ],
    "exercice_dominant": "qcm",
-   "cartes_cible": 6,
-   "etude_minutes": 45,
+   "cartes_cible": 8,
+   "etude_minutes": 60,
    "satellite": false,
    "statut": "a-ecrire"
   },
@@ -2044,7 +2044,6 @@
    ],
    "prerequis": [
     "droit.majorites.l-article-24",
-    "droit.majorites.l-article-25-et-la-passerelle",
     "droit.majorites.l-article-26-et-l-unanimite"
    ],
    "ponts": [],
@@ -2074,6 +2073,7 @@
     "erreur de majorité"
    ],
    "prerequis": [
+    "droit.majorites.l-article-25-et-la-passerelle",
     "droit.majorites.les-cas-particuliers"
    ],
    "ponts": [],
@@ -2303,8 +2303,8 @@
    "branche": "travaux",
    "sous_branche": "collectifs",
    "titre": "Travaux votés et travaux urgents",
-   "niveau": 1,
-   "niveau_nom": "Repères",
+   "niveau": 2,
+   "niveau_nom": "Mécanismes",
    "competence": "Distinguer un travail voté, un travail urgent et un travail d'entretien",
    "notions": [
     "article 18",
@@ -2316,12 +2316,12 @@
    "ponts": [],
    "exercices": [
     "cas",
-    "flash",
-    "qcm"
+    "qcm",
+    "flash"
    ],
    "exercice_dominant": "cas",
-   "cartes_cible": 6,
-   "etude_minutes": 45,
+   "cartes_cible": 8,
+   "etude_minutes": 60,
    "satellite": false,
    "statut": "a-ecrire"
   },
@@ -2340,9 +2340,7 @@
     "fonds de travaux",
     "cotisation"
    ],
-   "prerequis": [
-    "droit.travaux.travaux-votes-et-travaux-urgents"
-   ],
+   "prerequis": [],
    "ponts": [],
    "exercices": [
     "cas",
@@ -2369,9 +2367,7 @@
     "article L731-1",
     "contenu"
    ],
-   "prerequis": [
-    "droit.travaux.travaux-votes-et-travaux-urgents"
-   ],
+   "prerequis": [],
    "ponts": [],
    "exercices": [
     "cas",
@@ -2485,9 +2481,7 @@
     "cession du droit",
     "majorité"
    ],
-   "prerequis": [
-    "droit.travaux.travaux-votes-et-travaux-urgents"
-   ],
+   "prerequis": [],
    "ponts": [],
    "exercices": [
     "cas",
@@ -2946,8 +2940,8 @@
    "branche": "materiaux",
    "sous_branche": null,
    "titre": "Les isolants",
-   "niveau": 2,
-   "niveau_nom": "Mécanismes",
+   "niveau": 1,
+   "niveau_nom": "Repères",
    "competence": "Nommer les isolants courants et leurs défauts",
    "notions": [
     "laine",
@@ -2955,11 +2949,39 @@
     "isolation par l'extérieur",
     "humidité"
    ],
+   "prerequis": [],
+   "ponts": [],
+   "exercices": [
+    "photo",
+    "flash",
+    "qcm"
+   ],
+   "exercice_dominant": "photo",
+   "cartes_cible": 6,
+   "etude_minutes": 45,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
+   "id": "pathologie.materiaux.reconnaitre-un-materiau-sur-photo",
+   "domaine": "pathologie",
+   "branche": "materiaux",
+   "sous_branche": null,
+   "titre": "Reconnaître un matériau sur photo",
+   "niveau": 2,
+   "niveau_nom": "Mécanismes",
+   "competence": "Identifier un matériau sur une photo de chantier et dire son âge probable",
+   "notions": [
+    "diagnostic visuel",
+    "époque",
+    "matériau"
+   ],
    "prerequis": [
     "pathologie.materiaux.beton-ciment-mortier",
     "pathologie.materiaux.les-aciers-et-la-corrosion",
     "pathologie.materiaux.bois-et-pierre",
-    "pathologie.materiaux.briques-et-enduits"
+    "pathologie.materiaux.briques-et-enduits",
+    "pathologie.materiaux.les-isolants"
    ],
    "ponts": [],
    "exercices": [
@@ -2970,35 +2992,6 @@
    "exercice_dominant": "photo",
    "cartes_cible": 8,
    "etude_minutes": 60,
-   "satellite": false,
-   "statut": "a-ecrire"
-  },
-  {
-   "id": "pathologie.materiaux.reconnaitre-un-materiau-sur-photo",
-   "domaine": "pathologie",
-   "branche": "materiaux",
-   "sous_branche": null,
-   "titre": "Reconnaître un matériau sur photo",
-   "niveau": 3,
-   "niveau_nom": "Praticien",
-   "competence": "Identifier un matériau sur une photo de chantier et dire son âge probable",
-   "notions": [
-    "diagnostic visuel",
-    "époque",
-    "matériau"
-   ],
-   "prerequis": [
-    "pathologie.materiaux.les-isolants"
-   ],
-   "ponts": [],
-   "exercices": [
-    "photo",
-    "cas",
-    "libre"
-   ],
-   "exercice_dominant": "photo",
-   "cartes_cible": 10,
-   "etude_minutes": 75,
    "satellite": false,
    "statut": "a-ecrire"
   },
@@ -3037,8 +3030,8 @@
    "branche": "structure",
    "sous_branche": "fissures",
    "titre": "Fondations et tassements",
-   "niveau": 1,
-   "niveau_nom": "Repères",
+   "niveau": 2,
+   "niveau_nom": "Mécanismes",
    "competence": "Expliquer un tassement et ses signes",
    "notions": [
     "fondation",
@@ -3046,16 +3039,18 @@
     "argile",
     "sécheresse"
    ],
-   "prerequis": [],
+   "prerequis": [
+    "pathologie.structure.microfissure-fissure-lezarde"
+   ],
    "ponts": [],
    "exercices": [
     "photo",
-    "flash",
-    "qcm"
+    "qcm",
+    "cas"
    ],
    "exercice_dominant": "photo",
-   "cartes_cible": 6,
-   "etude_minutes": 45,
+   "cartes_cible": 8,
+   "etude_minutes": 60,
    "satellite": false,
    "statut": "a-ecrire"
   },
@@ -3103,7 +3098,6 @@
     "cause probable"
    ],
    "prerequis": [
-    "pathologie.structure.fondations-et-tassements",
     "pathologie.structure.microfissure-fissure-lezarde"
    ],
    "ponts": [],
@@ -3134,7 +3128,6 @@
     "surveillance"
    ],
    "prerequis": [
-    "pathologie.structure.fondations-et-tassements",
     "pathologie.structure.microfissure-fissure-lezarde"
    ],
    "ponts": [],
@@ -3221,6 +3214,7 @@
     "sécurité"
    ],
    "prerequis": [
+    "pathologie.structure.fondations-et-tassements",
     "pathologie.structure.fissures-structurelles-et-leur-lecture",
     "pathologie.structure.temoins-et-suivi-d-une-fissure"
    ],
@@ -4209,8 +4203,8 @@
    "branche": "ventilation",
    "sous_branche": null,
    "titre": "Le caisson et les courroies",
-   "niveau": 1,
-   "niveau_nom": "Repères",
+   "niveau": 2,
+   "niveau_nom": "Mécanismes",
    "competence": "Nommer les organes d'un caisson et expliquer pourquoi une courroie se détend",
    "notions": [
     "caisson",
@@ -4219,16 +4213,18 @@
     "moteur",
     "débit"
    ],
-   "prerequis": [],
+   "prerequis": [
+    "equipements.ventilation.simple-flux-double-flux-hygro"
+   ],
    "ponts": [],
    "exercices": [
     "dessin",
-    "flash",
-    "qcm"
+    "qcm",
+    "cas"
    ],
    "exercice_dominant": "dessin",
-   "cartes_cible": 6,
-   "etude_minutes": 45,
+   "cartes_cible": 8,
+   "etude_minutes": 60,
    "satellite": false,
    "statut": "a-ecrire"
   },
@@ -4248,8 +4244,7 @@
     "nettoyage"
    ],
    "prerequis": [
-    "equipements.ventilation.simple-flux-double-flux-hygro",
-    "equipements.ventilation.le-caisson-et-les-courroies"
+    "equipements.ventilation.simple-flux-double-flux-hygro"
    ],
    "ponts": [],
    "exercices": [
@@ -4279,6 +4274,7 @@
     "devis"
    ],
    "prerequis": [
+    "equipements.ventilation.le-caisson-et-les-courroies",
     "equipements.ventilation.entretien-et-debits-reglementaires"
    ],
    "ponts": [],
@@ -4972,8 +4968,7 @@
     "diagnostic"
    ],
    "prerequis": [
-    "equipements.electricite.tgbt-et-colonnes-montantes",
-    "equipements.electricite.eclairage-des-communs"
+    "equipements.electricite.tgbt-et-colonnes-montantes"
    ],
    "ponts": [],
    "exercices": [
@@ -4993,8 +4988,8 @@
    "branche": "electricite",
    "sous_branche": null,
    "titre": "Éclairage des communs",
-   "niveau": 1,
-   "niveau_nom": "Repères",
+   "niveau": 2,
+   "niveau_nom": "Mécanismes",
    "competence": "Choisir un éclairage des communs et en réduire la consommation",
    "notions": [
     "détecteur",
@@ -5002,16 +4997,18 @@
     "minuterie",
     "TRV"
    ],
-   "prerequis": [],
+   "prerequis": [
+    "equipements.electricite.tgbt-et-colonnes-montantes"
+   ],
    "ponts": [],
    "exercices": [
     "photo",
-    "flash",
-    "qcm"
+    "qcm",
+    "cas"
    ],
    "exercice_dominant": "photo",
-   "cartes_cible": 6,
-   "etude_minutes": 45,
+   "cartes_cible": 8,
+   "etude_minutes": 60,
    "satellite": false,
    "statut": "a-ecrire"
   },
@@ -5031,8 +5028,7 @@
     "opérateur"
    ],
    "prerequis": [
-    "equipements.electricite.tgbt-et-colonnes-montantes",
-    "equipements.electricite.eclairage-des-communs"
+    "equipements.electricite.tgbt-et-colonnes-montantes"
    ],
    "ponts": [
     "energie.irve.l-infrastructure-collective"
@@ -5064,6 +5060,7 @@
    ],
    "prerequis": [
     "equipements.electricite.la-nf-c-15-100-pour-un-gestionnaire",
+    "equipements.electricite.eclairage-des-communs",
     "equipements.electricite.bornes-de-recharge"
    ],
    "ponts": [],
@@ -5141,8 +5138,8 @@
    "branche": "acces",
    "sous_branche": null,
    "titre": "Désenfumage et extincteurs",
-   "niveau": 2,
-   "niveau_nom": "Mécanismes",
+   "niveau": 1,
+   "niveau_nom": "Repères",
    "competence": "Dire ce que la sécurité incendie impose dans un immeuble d'habitation",
    "notions": [
     "arrêté de 1986",
@@ -5150,19 +5147,16 @@
     "extincteur",
     "porte coupe-feu"
    ],
-   "prerequis": [
-    "equipements.acces.interphone-badges-ventouses-cellules",
-    "equipements.acces.portails-et-portes-de-garage"
-   ],
+   "prerequis": [],
    "ponts": [],
    "exercices": [
     "photo",
-    "qcm",
-    "cas"
+    "flash",
+    "qcm"
    ],
    "exercice_dominant": "photo",
-   "cartes_cible": 8,
-   "etude_minutes": 60,
+   "cartes_cible": 6,
+   "etude_minutes": 45,
    "satellite": false,
    "statut": "a-ecrire"
   },
@@ -5181,6 +5175,8 @@
     "dépannage"
    ],
    "prerequis": [
+    "equipements.acces.interphone-badges-ventouses-cellules",
+    "equipements.acces.portails-et-portes-de-garage",
     "equipements.acces.desenfumage-et-extincteurs"
    ],
    "ponts": [],
@@ -5319,8 +5315,8 @@
    "branche": "bases",
    "sous_branche": null,
    "titre": "Débit et crédit, la partie double",
-   "niveau": 1,
-   "niveau_nom": "Repères",
+   "niveau": 2,
+   "niveau_nom": "Mécanismes",
    "competence": "Passer une écriture simple en partie double",
    "notions": [
     "débit",
@@ -5328,16 +5324,19 @@
     "partie double",
     "compte"
    ],
-   "prerequis": [],
+   "prerequis": [
+    "comptabilite.bases.actif-et-passif",
+    "comptabilite.bases.l-exercice-comptable"
+   ],
    "ponts": [],
    "exercices": [
     "feuille-blanche",
-    "flash",
-    "qcm"
+    "qcm",
+    "cas"
    ],
    "exercice_dominant": "feuille-blanche",
-   "cartes_cible": 6,
-   "etude_minutes": 45,
+   "cartes_cible": 8,
+   "etude_minutes": 60,
    "satellite": false,
    "statut": "a-ecrire"
   },
@@ -5375,8 +5374,8 @@
    "branche": "bases",
    "sous_branche": null,
    "titre": "Produits et charges",
-   "niveau": 1,
-   "niveau_nom": "Repères",
+   "niveau": 2,
+   "niveau_nom": "Mécanismes",
    "competence": "Distinguer un produit d'une charge et d'un encaissement",
    "notions": [
     "produit",
@@ -5384,16 +5383,19 @@
     "encaissement",
     "décaissement"
    ],
-   "prerequis": [],
+   "prerequis": [
+    "comptabilite.bases.actif-et-passif",
+    "comptabilite.bases.l-exercice-comptable"
+   ],
    "ponts": [],
    "exercices": [
     "feuille-blanche",
-    "flash",
-    "qcm"
+    "qcm",
+    "cas"
    ],
    "exercice_dominant": "feuille-blanche",
-   "cartes_cible": 6,
-   "etude_minutes": 45,
+   "cartes_cible": 8,
+   "etude_minutes": 60,
    "satellite": false,
    "statut": "a-ecrire"
   },
@@ -5412,9 +5414,7 @@
     "facture non parvenue"
    ],
    "prerequis": [
-    "comptabilite.bases.debit-et-credit-la-partie-double",
     "comptabilite.bases.actif-et-passif",
-    "comptabilite.bases.produits-et-charges",
     "comptabilite.bases.l-exercice-comptable"
    ],
    "ponts": [],
@@ -5472,9 +5472,7 @@
     "décret 2005"
    ],
    "prerequis": [
-    "comptabilite.bases.debit-et-credit-la-partie-double",
     "comptabilite.bases.actif-et-passif",
-    "comptabilite.bases.produits-et-charges",
     "comptabilite.bases.l-exercice-comptable"
    ],
    "ponts": [],
@@ -5505,9 +5503,7 @@
     "affectation"
    ],
    "prerequis": [
-    "comptabilite.bases.debit-et-credit-la-partie-double",
     "comptabilite.bases.actif-et-passif",
-    "comptabilite.bases.produits-et-charges",
     "comptabilite.bases.l-exercice-comptable"
    ],
    "ponts": [
@@ -5539,6 +5535,8 @@
     "comptabilité"
    ],
    "prerequis": [
+    "comptabilite.bases.debit-et-credit-la-partie-double",
+    "comptabilite.bases.produits-et-charges",
     "comptabilite.bases.engagement-et-tresorerie",
     "comptabilite.bases.pourquoi-une-copropriete-n-a-pas-de-bilan",
     "comptabilite.bases.excedent-insuffisance-et-regularisation"
@@ -5590,8 +5588,8 @@
    "branche": "plan-comptable",
    "sous_branche": null,
    "titre": "Les comptes qu'on lit tous les jours",
-   "niveau": 2,
-   "niveau_nom": "Mécanismes",
+   "niveau": 1,
+   "niveau_nom": "Repères",
    "competence": "Reconnaître les comptes courants d'un grand livre de copropriété",
    "notions": [
     "450",
@@ -5600,18 +5598,16 @@
     "103",
     "105"
    ],
-   "prerequis": [
-    "comptabilite.plan-comptable.les-classes-de-comptes"
-   ],
+   "prerequis": [],
    "ponts": [],
    "exercices": [
     "qcm",
-    "cas",
-    "flash"
+    "flash",
+    "relier"
    ],
    "exercice_dominant": "qcm",
-   "cartes_cible": 8,
-   "etude_minutes": 60,
+   "cartes_cible": 6,
+   "etude_minutes": 45,
    "satellite": false,
    "statut": "a-ecrire"
   },
@@ -5630,6 +5626,7 @@
     "lettrage"
    ],
    "prerequis": [
+    "comptabilite.plan-comptable.les-classes-de-comptes",
     "comptabilite.plan-comptable.les-comptes-qu-on-lit-tous-les-jours"
    ],
    "ponts": [],
@@ -5650,8 +5647,8 @@
    "branche": "budget",
    "sous_branche": "courant",
    "titre": "Le budget prévisionnel",
-   "niveau": 1,
-   "niveau_nom": "Repères",
+   "niveau": 2,
+   "niveau_nom": "Mécanismes",
    "competence": "Expliquer ce que couvre le budget prévisionnel et comment il se vote",
    "notions": [
     "article 14-1",
@@ -5659,16 +5656,18 @@
     "dépenses courantes",
     "vote"
    ],
-   "prerequis": [],
+   "prerequis": [
+    "comptabilite.budget.les-appels-de-fonds"
+   ],
    "ponts": [],
    "exercices": [
     "cas",
-    "flash",
-    "qcm"
+    "qcm",
+    "flash"
    ],
    "exercice_dominant": "cas",
-   "cartes_cible": 6,
-   "etude_minutes": 45,
+   "cartes_cible": 8,
+   "etude_minutes": 60,
    "satellite": false,
    "statut": "a-ecrire"
   },
@@ -5714,7 +5713,9 @@
     "appel spécial",
     "échéancier"
    ],
-   "prerequis": [],
+   "prerequis": [
+    "comptabilite.budget.le-pret-avance-mutation-et-les-financements-nouveaux"
+   ],
    "ponts": [],
    "exercices": [
     "cas",
@@ -5742,7 +5743,9 @@
     "cinq pour cent",
     "affectation"
    ],
-   "prerequis": [],
+   "prerequis": [
+    "comptabilite.budget.le-pret-avance-mutation-et-les-financements-nouveaux"
+   ],
    "ponts": [],
    "exercices": [
     "cas",
@@ -5771,7 +5774,6 @@
     "remboursement"
    ],
    "prerequis": [
-    "comptabilite.budget.le-budget-previsionnel",
     "comptabilite.budget.les-appels-de-fonds"
    ],
    "ponts": [],
@@ -5801,7 +5803,9 @@
     "caution",
     "article 26-4"
    ],
-   "prerequis": [],
+   "prerequis": [
+    "comptabilite.budget.le-pret-avance-mutation-et-les-financements-nouveaux"
+   ],
    "ponts": [],
    "exercices": [
     "cas",
@@ -5820,8 +5824,8 @@
    "branche": "budget",
    "sous_branche": "travaux",
    "titre": "Le prêt avance mutation et les financements nouveaux",
-   "niveau": 2,
-   "niveau_nom": "Mécanismes",
+   "niveau": 1,
+   "niveau_nom": "Repères",
    "competence": "Dire ce qu'est le prêt avance mutation et à qui il sert",
    "notions": [
     "prêt avance mutation",
@@ -5832,12 +5836,12 @@
    "ponts": [],
    "exercices": [
     "cas",
-    "qcm",
-    "flash"
+    "flash",
+    "qcm"
    ],
    "exercice_dominant": "cas",
-   "cartes_cible": 8,
-   "etude_minutes": 60,
+   "cartes_cible": 6,
+   "etude_minutes": 45,
    "satellite": false,
    "statut": "a-ecrire"
   },
@@ -5857,6 +5861,7 @@
     "présentation"
    ],
    "prerequis": [
+    "comptabilite.budget.le-budget-previsionnel",
     "comptabilite.budget.avances-et-emprunt-collectif"
    ],
    "ponts": [],
@@ -5904,24 +5909,26 @@
    "branche": "annexes",
    "sous_branche": null,
    "titre": "L'annexe 2 : le compte de gestion général",
-   "niveau": 1,
-   "niveau_nom": "Repères",
+   "niveau": 2,
+   "niveau_nom": "Mécanismes",
    "competence": "Lire le compte de gestion et comparer au budget",
    "notions": [
     "annexe 2",
     "compte de gestion",
     "budget réalisé"
    ],
-   "prerequis": [],
+   "prerequis": [
+    "comptabilite.annexes.l-annexe-1-l-etat-financier"
+   ],
    "ponts": [],
    "exercices": [
     "lecture",
-    "flash",
-    "qcm"
+    "qcm",
+    "cas"
    ],
    "exercice_dominant": "lecture",
-   "cartes_cible": 6,
-   "etude_minutes": 45,
+   "cartes_cible": 8,
+   "etude_minutes": 60,
    "satellite": false,
    "statut": "a-ecrire"
   },
@@ -5940,8 +5947,7 @@
     "répartition"
    ],
    "prerequis": [
-    "comptabilite.annexes.l-annexe-1-l-etat-financier",
-    "comptabilite.annexes.l-annexe-2-le-compte-de-gestion-general"
+    "comptabilite.annexes.l-annexe-1-l-etat-financier"
    ],
    "ponts": [],
    "exercices": [
@@ -5971,8 +5977,7 @@
     "clôture"
    ],
    "prerequis": [
-    "comptabilite.annexes.l-annexe-1-l-etat-financier",
-    "comptabilite.annexes.l-annexe-2-le-compte-de-gestion-general"
+    "comptabilite.annexes.l-annexe-1-l-etat-financier"
    ],
    "ponts": [],
    "exercices": [
@@ -6001,8 +6006,7 @@
     "écart budget"
    ],
    "prerequis": [
-    "comptabilite.annexes.l-annexe-1-l-etat-financier",
-    "comptabilite.annexes.l-annexe-2-le-compte-de-gestion-general"
+    "comptabilite.annexes.l-annexe-1-l-etat-financier"
    ],
    "ponts": [],
    "exercices": [
@@ -6031,6 +6035,7 @@
     "questions"
    ],
    "prerequis": [
+    "comptabilite.annexes.l-annexe-2-le-compte-de-gestion-general",
     "comptabilite.annexes.l-annexe-3-par-cle-de-repartition",
     "comptabilite.annexes.les-annexes-4-et-5-les-travaux",
     "comptabilite.annexes.les-trois-chiffres-a-regarder-d-abord"
@@ -6081,24 +6086,26 @@
    "branche": "controle",
    "sous_branche": null,
    "titre": "Approbation et quitus",
-   "niveau": 1,
-   "niveau_nom": "Repères",
+   "niveau": 2,
+   "niveau_nom": "Mécanismes",
    "competence": "Distinguer l'approbation des comptes du quitus et leurs effets",
    "notions": [
     "approbation",
     "quitus",
     "responsabilité"
    ],
-   "prerequis": [],
+   "prerequis": [
+    "comptabilite.controle.le-role-du-conseil-syndical"
+   ],
    "ponts": [],
    "exercices": [
     "cas",
-    "flash",
-    "qcm"
+    "qcm",
+    "flash"
    ],
    "exercice_dominant": "cas",
-   "cartes_cible": 6,
-   "etude_minutes": 45,
+   "cartes_cible": 8,
+   "etude_minutes": 60,
    "satellite": false,
    "statut": "a-ecrire"
   },
@@ -6145,7 +6152,6 @@
     "régularisation"
    ],
    "prerequis": [
-    "comptabilite.controle.approbation-et-quitus",
     "comptabilite.controle.le-role-du-conseil-syndical"
    ],
    "ponts": [],
@@ -6175,6 +6181,7 @@
     "rapport"
    ],
    "prerequis": [
+    "comptabilite.controle.approbation-et-quitus",
     "comptabilite.controle.les-anomalies-classiques"
    ],
    "ponts": [],
@@ -6195,8 +6202,8 @@
    "branche": "impayes",
    "sous_branche": null,
    "titre": "Relance et mise en demeure",
-   "niveau": 1,
-   "niveau_nom": "Repères",
+   "niveau": 2,
+   "niveau_nom": "Mécanismes",
    "competence": "Dérouler la relance amiable jusqu'à la mise en demeure",
    "notions": [
     "relance",
@@ -6208,12 +6215,12 @@
    "ponts": [],
    "exercices": [
     "datation",
-    "flash",
-    "qcm"
+    "qcm",
+    "cas"
    ],
    "exercice_dominant": "datation",
-   "cartes_cible": 6,
-   "etude_minutes": 45,
+   "cartes_cible": 8,
+   "etude_minutes": 60,
    "satellite": false,
    "statut": "a-ecrire"
   },
@@ -6231,9 +6238,7 @@
     "frais",
     "imputation"
    ],
-   "prerequis": [
-    "comptabilite.impayes.relance-et-mise-en-demeure"
-   ],
+   "prerequis": [],
    "ponts": [],
    "exercices": [
     "datation",
@@ -6262,7 +6267,6 @@
     "article 19-2"
    ],
    "prerequis": [
-    "comptabilite.impayes.relance-et-mise-en-demeure",
     "procedure.avant-le-proces.mise-en-demeure-recommande-sommation"
    ],
    "ponts": [],
@@ -6293,6 +6297,7 @@
     "conseil syndical"
    ],
    "prerequis": [
+    "comptabilite.impayes.relance-et-mise-en-demeure",
     "comptabilite.impayes.les-frais-imputables",
     "comptabilite.impayes.du-comptable-au-juge"
    ],
@@ -6314,8 +6319,8 @@
    "branche": "factures",
    "sous_branche": null,
    "titre": "Les mentions obligatoires d'une facture",
-   "niveau": 1,
-   "niveau_nom": "Repères",
+   "niveau": 2,
+   "niveau_nom": "Mécanismes",
    "competence": "Vérifier qu'une facture est conforme avant de la payer",
    "notions": [
     "mentions",
@@ -6328,12 +6333,12 @@
    "ponts": [],
    "exercices": [
     "qcm",
-    "flash",
-    "relier"
+    "cas",
+    "flash"
    ],
    "exercice_dominant": "qcm",
-   "cartes_cible": 6,
-   "etude_minutes": 45,
+   "cartes_cible": 8,
+   "etude_minutes": 60,
    "satellite": false,
    "statut": "a-ecrire"
   },
@@ -6343,8 +6348,8 @@
    "branche": "factures",
    "sous_branche": null,
    "titre": "Les mentions d'un devis",
-   "niveau": 1,
-   "niveau_nom": "Repères",
+   "niveau": 2,
+   "niveau_nom": "Mécanismes",
    "competence": "Vérifier qu'un devis est complet avant de le présenter",
    "notions": [
     "devis",
@@ -6356,12 +6361,12 @@
    "ponts": [],
    "exercices": [
     "qcm",
-    "flash",
-    "relier"
+    "cas",
+    "flash"
    ],
    "exercice_dominant": "qcm",
-   "cartes_cible": 6,
-   "etude_minutes": 45,
+   "cartes_cible": 8,
+   "etude_minutes": 60,
    "satellite": false,
    "statut": "a-ecrire"
   },
@@ -6380,10 +6385,7 @@
     "rénovation énergétique",
     "logement"
    ],
-   "prerequis": [
-    "comptabilite.factures.les-mentions-obligatoires-d-une-facture",
-    "comptabilite.factures.les-mentions-d-un-devis"
-   ],
+   "prerequis": [],
    "ponts": [],
    "exercices": [
     "qcm",
@@ -6411,6 +6413,8 @@
     "paiement partiel"
    ],
    "prerequis": [
+    "comptabilite.factures.les-mentions-obligatoires-d-une-facture",
+    "comptabilite.factures.les-mentions-d-un-devis",
     "comptabilite.factures.la-tva-a-20-10-et-5-5"
    ],
    "ponts": [],
@@ -6895,8 +6899,8 @@
    "branche": "autres-sinistres",
    "sous_branche": null,
    "titre": "Incendie",
-   "niveau": 1,
-   "niveau_nom": "Repères",
+   "niveau": 2,
+   "niveau_nom": "Mécanismes",
    "competence": "Dérouler les premières mesures après un incendie",
    "notions": [
     "incendie",
@@ -6908,12 +6912,12 @@
    "ponts": [],
    "exercices": [
     "qcm",
-    "flash",
-    "relier"
+    "cas",
+    "flash"
    ],
    "exercice_dominant": "qcm",
-   "cartes_cible": 6,
-   "etude_minutes": 45,
+   "cartes_cible": 8,
+   "etude_minutes": 60,
    "satellite": false,
    "statut": "a-ecrire"
   },
@@ -6923,8 +6927,8 @@
    "branche": "autres-sinistres",
    "sous_branche": null,
    "titre": "Tempête et grêle",
-   "niveau": 1,
-   "niveau_nom": "Repères",
+   "niveau": 2,
+   "niveau_nom": "Mécanismes",
    "competence": "Déclarer un sinistre tempête et faire les mesures conservatoires",
    "notions": [
     "tempête",
@@ -6936,12 +6940,12 @@
    "ponts": [],
    "exercices": [
     "qcm",
-    "flash",
-    "relier"
+    "cas",
+    "flash"
    ],
    "exercice_dominant": "qcm",
-   "cartes_cible": 6,
-   "etude_minutes": 45,
+   "cartes_cible": 8,
+   "etude_minutes": 60,
    "satellite": false,
    "statut": "a-ecrire"
   },
@@ -6960,11 +6964,7 @@
     "sécheresse",
     "délai"
    ],
-   "prerequis": [
-    "sinistres.autres-sinistres.incendie",
-    "sinistres.autres-sinistres.tempete-et-grele",
-    "sinistres.autres-sinistres.vol-et-vandalisme"
-   ],
+   "prerequis": [],
    "ponts": [],
    "exercices": [
     "qcm",
@@ -6983,8 +6983,8 @@
    "branche": "autres-sinistres",
    "sous_branche": null,
    "titre": "Vol et vandalisme",
-   "niveau": 1,
-   "niveau_nom": "Repères",
+   "niveau": 2,
+   "niveau_nom": "Mécanismes",
    "competence": "Traiter un vol ou un vandalisme dans les communs",
    "notions": [
     "vol",
@@ -6996,12 +6996,12 @@
    "ponts": [],
    "exercices": [
     "qcm",
-    "flash",
-    "relier"
+    "cas",
+    "flash"
    ],
    "exercice_dominant": "qcm",
-   "cartes_cible": 6,
-   "etude_minutes": 45,
+   "cartes_cible": 8,
+   "etude_minutes": 60,
    "satellite": false,
    "statut": "a-ecrire"
   },
@@ -7021,7 +7021,10 @@
     "budget"
    ],
    "prerequis": [
-    "sinistres.autres-sinistres.catastrophe-naturelle"
+    "sinistres.autres-sinistres.incendie",
+    "sinistres.autres-sinistres.tempete-et-grele",
+    "sinistres.autres-sinistres.catastrophe-naturelle",
+    "sinistres.autres-sinistres.vol-et-vandalisme"
    ],
    "ponts": [],
    "exercices": [
@@ -7328,8 +7331,8 @@
    "branche": "gerer",
    "sous_branche": null,
    "titre": "Les contentieux d'assurance",
-   "niveau": 4,
-   "niveau_nom": "Doctrine",
+   "niveau": 3,
+   "niveau_nom": "Praticien",
    "competence": "Reconnaître un contentieux d'assurance et ses arguments",
    "notions": [
     "contentieux",
@@ -7337,17 +7340,17 @@
     "prescription biennale"
    ],
    "prerequis": [
-    "sinistres.gerer.la-methode-complete"
+    "sinistres.gerer.de-la-declaration-a-l-indemnite"
    ],
    "ponts": [],
    "exercices": [
     "datation",
-    "lecture",
-    "synthese"
+    "cas",
+    "libre"
    ],
    "exercice_dominant": "datation",
-   "cartes_cible": 8,
-   "etude_minutes": 90,
+   "cartes_cible": 10,
+   "etude_minutes": 75,
    "satellite": false,
    "statut": "a-ecrire"
   },
@@ -7612,8 +7615,8 @@
    "branche": "avant-le-proces",
    "sous_branche": null,
    "titre": "Mise en demeure, recommandé, sommation",
-   "niveau": 1,
-   "niveau_nom": "Repères",
+   "niveau": 2,
+   "niveau_nom": "Mécanismes",
    "competence": "Écrire une mise en demeure qui vaut",
    "notions": [
     "mise en demeure",
@@ -7625,12 +7628,12 @@
    "ponts": [],
    "exercices": [
     "datation",
-    "flash",
-    "qcm"
+    "qcm",
+    "cas"
    ],
    "exercice_dominant": "datation",
-   "cartes_cible": 6,
-   "etude_minutes": 45,
+   "cartes_cible": 8,
+   "etude_minutes": 60,
    "satellite": false,
    "statut": "a-ecrire"
   },
@@ -7649,9 +7652,7 @@
     "article 750-1",
     "petits litiges"
    ],
-   "prerequis": [
-    "procedure.avant-le-proces.mise-en-demeure-recommande-sommation"
-   ],
+   "prerequis": [],
    "ponts": [],
    "exercices": [
     "datation",
@@ -7678,9 +7679,7 @@
     "transaction",
     "concessions"
    ],
-   "prerequis": [
-    "procedure.avant-le-proces.mise-en-demeure-recommande-sommation"
-   ],
+   "prerequis": [],
    "ponts": [],
    "exercices": [
     "datation",
@@ -7814,8 +7813,8 @@
    "branche": "recouvrement",
    "sous_branche": "titre",
    "titre": "L'injonction de payer",
-   "niveau": 1,
-   "niveau_nom": "Repères",
+   "niveau": 2,
+   "niveau_nom": "Mécanismes",
    "competence": "Déposer une injonction de payer et gérer l'opposition",
    "notions": [
     "injonction",
@@ -7829,12 +7828,12 @@
    "ponts": [],
    "exercices": [
     "datation",
-    "flash",
-    "qcm"
+    "qcm",
+    "cas"
    ],
    "exercice_dominant": "datation",
-   "cartes_cible": 6,
-   "etude_minutes": 45,
+   "cartes_cible": 8,
+   "etude_minutes": 60,
    "satellite": false,
    "statut": "a-ecrire"
   },
@@ -7853,9 +7852,7 @@
     "conclusions",
     "jugement"
    ],
-   "prerequis": [
-    "procedure.recouvrement.l-injonction-de-payer"
-   ],
+   "prerequis": [],
    "ponts": [],
    "exercices": [
     "datation",
@@ -7939,6 +7936,7 @@
     "délai"
    ],
    "prerequis": [
+    "procedure.recouvrement.l-injonction-de-payer",
     "procedure.recouvrement.l-assignation"
    ],
    "ponts": [],
@@ -8187,8 +8185,8 @@
    "branche": "lire",
    "sous_branche": null,
    "titre": "Visa, moyens, motifs, dispositif",
-   "niveau": 2,
-   "niveau_nom": "Mécanismes",
+   "niveau": 1,
+   "niveau_nom": "Repères",
    "competence": "Repérer les parties d'un arrêt et où se trouve la règle",
    "notions": [
     "visa",
@@ -8200,12 +8198,12 @@
    "ponts": [],
    "exercices": [
     "lecture",
-    "qcm",
-    "cas"
+    "flash",
+    "qcm"
    ],
    "exercice_dominant": "lecture",
-   "cartes_cible": 8,
-   "etude_minutes": 60,
+   "cartes_cible": 6,
+   "etude_minutes": 45,
    "satellite": false,
    "statut": "a-ecrire"
   },
@@ -8224,7 +8222,9 @@
     "portée",
     "revirement"
    ],
-   "prerequis": [],
+   "prerequis": [
+    "procedure.lire.visa-moyens-motifs-dispositif"
+   ],
    "ponts": [],
    "exercices": [
     "lecture",
@@ -8252,7 +8252,6 @@
     "portée"
    ],
    "prerequis": [
-    "procedure.lire.visa-moyens-motifs-dispositif",
     "procedure.lire.cassation-et-rejet-portee"
    ],
    "ponts": [],
@@ -8504,24 +8503,26 @@
    "branche": "du-besoin-au-devis",
    "sous_branche": null,
    "titre": "Le cahier des charges",
-   "niveau": 1,
-   "niveau_nom": "Repères",
+   "niveau": 2,
+   "niveau_nom": "Mécanismes",
    "competence": "Écrire un cahier des charges court pour un travail courant",
    "notions": [
     "cahier des charges",
     "besoin",
     "périmètre"
    ],
-   "prerequis": [],
+   "prerequis": [
+    "travaux.du-besoin-au-devis.la-mise-en-concurrence"
+   ],
    "ponts": [],
    "exercices": [
     "cas",
-    "flash",
-    "qcm"
+    "qcm",
+    "flash"
    ],
    "exercice_dominant": "cas",
-   "cartes_cible": 6,
-   "etude_minutes": 45,
+   "cartes_cible": 8,
+   "etude_minutes": 60,
    "satellite": false,
    "statut": "a-ecrire"
   },
@@ -8569,7 +8570,6 @@
     "prix"
    ],
    "prerequis": [
-    "travaux.du-besoin-au-devis.le-cahier-des-charges",
     "travaux.du-besoin-au-devis.la-mise-en-concurrence"
    ],
    "ponts": [],
@@ -8600,7 +8600,6 @@
     "décennale"
    ],
    "prerequis": [
-    "travaux.du-besoin-au-devis.le-cahier-des-charges",
     "travaux.du-besoin-au-devis.la-mise-en-concurrence"
    ],
    "ponts": [],
@@ -8630,6 +8629,7 @@
     "recommandation"
    ],
    "prerequis": [
+    "travaux.du-besoin-au-devis.le-cahier-des-charges",
     "travaux.du-besoin-au-devis.comparer-des-devis",
     "travaux.du-besoin-au-devis.attestations-kbis-vigilance"
    ],
@@ -8766,24 +8766,26 @@
    "branche": "chantier",
    "sous_branche": null,
    "titre": "Réunions et comptes rendus",
-   "niveau": 1,
-   "niveau_nom": "Repères",
+   "niveau": 2,
+   "niveau_nom": "Mécanismes",
    "competence": "Tenir une réunion de chantier et son compte rendu",
    "notions": [
     "réunion",
     "compte rendu",
     "planning"
    ],
-   "prerequis": [],
+   "prerequis": [
+    "travaux.chantier.securite-et-affichage"
+   ],
    "ponts": [],
    "exercices": [
     "datation",
-    "flash",
-    "qcm"
+    "qcm",
+    "cas"
    ],
    "exercice_dominant": "datation",
-   "cartes_cible": 6,
-   "etude_minutes": 45,
+   "cartes_cible": 8,
+   "etude_minutes": 60,
    "satellite": false,
    "statut": "a-ecrire"
   },
@@ -8831,7 +8833,6 @@
     "garanties"
    ],
    "prerequis": [
-    "travaux.chantier.reunions-et-comptes-rendus",
     "travaux.chantier.securite-et-affichage"
    ],
    "ponts": [],
@@ -8861,6 +8862,7 @@
     "réserves"
    ],
    "prerequis": [
+    "travaux.chantier.reunions-et-comptes-rendus",
     "travaux.chantier.reception-reserves-garanties"
    ],
    "ponts": [],
@@ -9199,8 +9201,8 @@
    "branche": "physique",
    "sous_branche": null,
    "titre": "Déperditions et isolation",
-   "niveau": 1,
-   "niveau_nom": "Repères",
+   "niveau": 2,
+   "niveau_nom": "Mécanismes",
    "competence": "Expliquer où un immeuble perd sa chaleur et comment on l'isole",
    "notions": [
     "déperdition",
@@ -9208,16 +9210,18 @@
     "R",
     "isolation"
    ],
-   "prerequis": [],
+   "prerequis": [
+    "energie.physique.ventilation-et-humidite"
+   ],
    "ponts": [],
    "exercices": [
     "dessin",
-    "flash",
-    "qcm"
+    "qcm",
+    "cas"
    ],
    "exercice_dominant": "dessin",
-   "cartes_cible": 6,
-   "etude_minutes": 45,
+   "cartes_cible": 8,
+   "etude_minutes": 60,
    "satellite": false,
    "statut": "a-ecrire"
   },
@@ -9227,24 +9231,26 @@
    "branche": "physique",
    "sous_branche": null,
    "titre": "Ponts thermiques et inertie",
-   "niveau": 1,
-   "niveau_nom": "Repères",
+   "niveau": 2,
+   "niveau_nom": "Mécanismes",
    "competence": "Expliquer un pont thermique et l'inertie d'un bâtiment",
    "notions": [
     "pont thermique",
     "inertie",
     "confort"
    ],
-   "prerequis": [],
+   "prerequis": [
+    "energie.physique.ventilation-et-humidite"
+   ],
    "ponts": [],
    "exercices": [
     "dessin",
-    "flash",
-    "qcm"
+    "qcm",
+    "cas"
    ],
    "exercice_dominant": "dessin",
-   "cartes_cible": 6,
-   "etude_minutes": 45,
+   "cartes_cible": 8,
+   "etude_minutes": 60,
    "satellite": false,
    "statut": "a-ecrire"
   },
@@ -9290,8 +9296,6 @@
     "surchauffe"
    ],
    "prerequis": [
-    "energie.physique.deperditions-et-isolation",
-    "energie.physique.ponts-thermiques-et-inertie",
     "energie.physique.ventilation-et-humidite"
    ],
    "ponts": [],
@@ -10066,24 +10070,27 @@
    "branche": "propriete",
    "sous_branche": null,
    "titre": "L'indivision",
-   "niveau": 1,
-   "niveau_nom": "Repères",
+   "niveau": 2,
+   "niveau_nom": "Mécanismes",
    "competence": "Expliquer l'indivision et qui vote en assemblée",
    "notions": [
     "indivision",
     "mandataire commun",
     "quote-part"
    ],
-   "prerequis": [],
+   "prerequis": [
+    "immobilier.propriete.la-propriete-et-ses-demembrements",
+    "immobilier.propriete.les-servitudes"
+   ],
    "ponts": [],
    "exercices": [
     "qcm",
-    "flash",
-    "relier"
+    "cas",
+    "flash"
    ],
    "exercice_dominant": "qcm",
-   "cartes_cible": 6,
-   "etude_minutes": 45,
+   "cartes_cible": 8,
+   "etude_minutes": 60,
    "satellite": false,
    "statut": "a-ecrire"
   },
@@ -10132,7 +10139,6 @@
    ],
    "prerequis": [
     "immobilier.propriete.la-propriete-et-ses-demembrements",
-    "immobilier.propriete.l-indivision",
     "immobilier.propriete.les-servitudes"
    ],
    "ponts": [],
@@ -10163,7 +10169,6 @@
    ],
    "prerequis": [
     "immobilier.propriete.la-propriete-et-ses-demembrements",
-    "immobilier.propriete.l-indivision",
     "immobilier.propriete.les-servitudes"
    ],
    "ponts": [],
@@ -10194,7 +10199,6 @@
    ],
    "prerequis": [
     "immobilier.propriete.la-propriete-et-ses-demembrements",
-    "immobilier.propriete.l-indivision",
     "immobilier.propriete.les-servitudes"
    ],
    "ponts": [],
@@ -10225,6 +10229,7 @@
     "Olson"
    ],
    "prerequis": [
+    "immobilier.propriete.l-indivision",
     "immobilier.propriete.la-mitoyennete",
     "immobilier.propriete.troubles-anormaux-de-voisinage",
     "immobilier.propriete.l-empietement"
@@ -10778,8 +10783,8 @@
    "branche": "fiscalite",
    "sous_branche": null,
    "titre": "Taxe foncière et enlèvement des ordures",
-   "niveau": 1,
-   "niveau_nom": "Repères",
+   "niveau": 2,
+   "niveau_nom": "Mécanismes",
    "competence": "Expliquer la taxe foncière et la TEOM et qui les paie",
    "notions": [
     "taxe foncière",
@@ -10790,12 +10795,12 @@
    "ponts": [],
    "exercices": [
     "qcm",
-    "flash",
-    "relier"
+    "cas",
+    "flash"
    ],
    "exercice_dominant": "qcm",
-   "cartes_cible": 6,
-   "etude_minutes": 45,
+   "cartes_cible": 8,
+   "etude_minutes": 60,
    "satellite": false,
    "statut": "a-ecrire"
   },
@@ -10813,9 +10818,7 @@
     "résidence principale",
     "abattement"
    ],
-   "prerequis": [
-    "immobilier.fiscalite.taxe-fonciere-et-enlevement-des-ordures"
-   ],
+   "prerequis": [],
    "ponts": [],
    "exercices": [
     "qcm",
@@ -10842,9 +10845,7 @@
     "TVA",
     "notions"
    ],
-   "prerequis": [
-    "immobilier.fiscalite.taxe-fonciere-et-enlevement-des-ordures"
-   ],
+   "prerequis": [],
    "ponts": [],
    "exercices": [
     "qcm",
@@ -11010,24 +11011,27 @@
    "branche": "profession",
    "sous_branche": null,
    "titre": "Le code de déontologie",
-   "niveau": 1,
-   "niveau_nom": "Repères",
+   "niveau": 2,
+   "niveau_nom": "Mécanismes",
    "competence": "Appliquer les règles du code de déontologie aux cas courants",
    "notions": [
     "déontologie",
     "décret 2015-1090",
     "conflit d'intérêts"
    ],
-   "prerequis": [],
+   "prerequis": [
+    "cabinet.profession.carte-professionnelle-garantie-assurance",
+    "cabinet.profession.la-formation-continue-obligatoire"
+   ],
    "ponts": [],
    "exercices": [
     "qcm",
-    "flash",
-    "relier"
+    "cas",
+    "flash"
    ],
    "exercice_dominant": "qcm",
-   "cartes_cible": 6,
-   "etude_minutes": 45,
+   "cartes_cible": 8,
+   "etude_minutes": 60,
    "satellite": false,
    "statut": "a-ecrire"
   },
@@ -11074,9 +11078,7 @@
     "réputation"
    ],
    "prerequis": [
-    "cabinet.profession.carte-professionnelle-garantie-assurance",
-    "cabinet.profession.le-code-de-deontologie",
-    "cabinet.profession.la-formation-continue-obligatoire"
+    "cabinet.profession.le-code-de-deontologie"
    ],
    "ponts": [],
    "exercices": [
@@ -11297,8 +11299,8 @@
    "branche": "conseil-syndical",
    "sous_branche": null,
    "titre": "Rôle et réunion",
-   "niveau": 1,
-   "niveau_nom": "Repères",
+   "niveau": 2,
+   "niveau_nom": "Mécanismes",
    "competence": "Préparer et tenir une réunion de conseil syndical",
    "notions": [
     "réunion",
@@ -11309,12 +11311,12 @@
    "ponts": [],
    "exercices": [
     "cas",
-    "flash",
-    "qcm"
+    "qcm",
+    "flash"
    ],
    "exercice_dominant": "cas",
-   "cartes_cible": 6,
-   "etude_minutes": 45,
+   "cartes_cible": 8,
+   "etude_minutes": 60,
    "satellite": false,
    "statut": "a-ecrire"
   },
@@ -11332,9 +11334,7 @@
     "restitution",
     "décisions"
    ],
-   "prerequis": [
-    "cabinet.conseil-syndical.role-et-reunion"
-   ],
+   "prerequis": [],
    "ponts": [],
    "exercices": [
     "cas",
@@ -11362,9 +11362,7 @@
     "opposant",
     "consensus"
    ],
-   "prerequis": [
-    "cabinet.conseil-syndical.role-et-reunion"
-   ],
+   "prerequis": [],
    "ponts": [],
    "exercices": [
     "cas",
@@ -11383,8 +11381,8 @@
    "branche": "assemblee-en-pratique",
    "sous_branche": null,
    "titre": "Animer et tenir le bureau",
-   "niveau": 1,
-   "niveau_nom": "Repères",
+   "niveau": 2,
+   "niveau_nom": "Mécanismes",
    "competence": "Animer une assemblée et tenir le bureau sans perdre le fil",
    "notions": [
     "animation",
@@ -11396,12 +11394,12 @@
    "ponts": [],
    "exercices": [
     "cas",
-    "flash",
-    "qcm"
+    "qcm",
+    "flash"
    ],
    "exercice_dominant": "cas",
-   "cartes_cible": 6,
-   "etude_minutes": 45,
+   "cartes_cible": 8,
+   "etude_minutes": 60,
    "satellite": false,
    "statut": "a-ecrire"
   },
@@ -11420,9 +11418,7 @@
     "réponse",
     "procès-verbal"
    ],
-   "prerequis": [
-    "cabinet.assemblee-en-pratique.animer-et-tenir-le-bureau"
-   ],
+   "prerequis": [],
    "ponts": [],
    "exercices": [
     "cas",
@@ -11450,9 +11446,7 @@
     "décision",
     "résolution"
    ],
-   "prerequis": [
-    "cabinet.assemblee-en-pratique.animer-et-tenir-le-bureau"
-   ],
+   "prerequis": [],
    "ponts": [],
    "exercices": [
     "cas",
@@ -11480,9 +11474,7 @@
     "signature",
     "mentions"
    ],
-   "prerequis": [
-    "cabinet.assemblee-en-pratique.animer-et-tenir-le-bureau"
-   ],
+   "prerequis": [],
    "ponts": [],
    "exercices": [
     "cas",
@@ -11511,6 +11503,7 @@
     "police"
    ],
    "prerequis": [
+    "cabinet.assemblee-en-pratique.animer-et-tenir-le-bureau",
     "cabinet.assemblee-en-pratique.gerer-les-contestations-et-la-salle",
     "cabinet.assemblee-en-pratique.les-fausses-demandes-de-vote",
     "cabinet.assemblee-en-pratique.le-proces-verbal-en-seance"
@@ -11533,8 +11526,8 @@
    "branche": "ecrire",
    "sous_branche": null,
    "titre": "Courrier, mail, notification",
-   "niveau": 1,
-   "niveau_nom": "Repères",
+   "niveau": 2,
+   "niveau_nom": "Mécanismes",
    "competence": "Choisir le bon support et la bonne forme pour écrire à un copropriétaire",
    "notions": [
     "courrier",
@@ -11546,12 +11539,12 @@
    "ponts": [],
    "exercices": [
     "synthese",
-    "flash",
-    "qcm"
+    "qcm",
+    "cas"
    ],
    "exercice_dominant": "synthese",
-   "cartes_cible": 6,
-   "etude_minutes": 45,
+   "cartes_cible": 8,
+   "etude_minutes": 60,
    "satellite": false,
    "statut": "a-ecrire"
   },
@@ -11570,9 +11563,7 @@
     "réserve",
     "délai"
    ],
-   "prerequis": [
-    "cabinet.ecrire.courrier-mail-notification"
-   ],
+   "prerequis": [],
    "ponts": [],
    "exercices": [
     "synthese",
@@ -11599,9 +11590,7 @@
     "relance",
     "accord"
    ],
-   "prerequis": [
-    "cabinet.ecrire.courrier-mail-notification"
-   ],
+   "prerequis": [],
    "ponts": [],
    "exercices": [
     "synthese",
@@ -11620,8 +11609,8 @@
    "branche": "negocier",
    "sous_branche": null,
    "titre": "Avec un prestataire",
-   "niveau": 1,
-   "niveau_nom": "Repères",
+   "niveau": 2,
+   "niveau_nom": "Mécanismes",
    "competence": "Négocier un devis ou un contrat avec un prestataire",
    "notions": [
     "prestataire",
@@ -11633,12 +11622,12 @@
    "ponts": [],
    "exercices": [
     "role",
-    "flash",
-    "qcm"
+    "qcm",
+    "cas"
    ],
    "exercice_dominant": "role",
-   "cartes_cible": 6,
-   "etude_minutes": 45,
+   "cartes_cible": 8,
+   "etude_minutes": 60,
    "satellite": false,
    "statut": "a-ecrire"
   },
@@ -11657,9 +11646,7 @@
     "intérêts",
     "positions"
    ],
-   "prerequis": [
-    "cabinet.negocier.avec-un-prestataire"
-   ],
+   "prerequis": [],
    "ponts": [],
    "exercices": [
     "role",
@@ -11687,6 +11674,7 @@
     "scénarios"
    ],
    "prerequis": [
+    "cabinet.negocier.avec-un-prestataire",
     "cabinet.negocier.methode-et-alternatives"
    ],
    "ponts": [],
@@ -11707,8 +11695,8 @@
    "branche": "donnees",
    "sous_branche": null,
    "titre": "Le RGPD au cabinet",
-   "niveau": 1,
-   "niveau_nom": "Repères",
+   "niveau": 2,
+   "niveau_nom": "Mécanismes",
    "competence": "Appliquer le RGPD aux données des copropriétaires",
    "notions": [
     "RGPD",
@@ -11716,16 +11704,20 @@
     "durée",
     "droits"
    ],
-   "prerequis": [],
+   "prerequis": [
+    "cabinet.donnees.lutte-contre-le-blanchiment",
+    "cabinet.donnees.securite-et-cyber",
+    "cabinet.donnees.l-espace-client-en-ligne"
+   ],
    "ponts": [],
    "exercices": [
     "qcm",
-    "flash",
-    "relier"
+    "cas",
+    "flash"
    ],
    "exercice_dominant": "qcm",
-   "cartes_cible": 6,
-   "etude_minutes": 45,
+   "cartes_cible": 8,
+   "etude_minutes": 60,
    "satellite": false,
    "statut": "a-ecrire"
   },
@@ -11744,7 +11736,6 @@
     "notification collective"
    ],
    "prerequis": [
-    "cabinet.donnees.le-rgpd-au-cabinet",
     "cabinet.donnees.lutte-contre-le-blanchiment",
     "cabinet.donnees.securite-et-cyber",
     "cabinet.donnees.l-espace-client-en-ligne"
@@ -11849,8 +11840,8 @@
    "branche": "charge",
    "sous_branche": null,
    "titre": "Gérer son temps et déléguer",
-   "niveau": 1,
-   "niveau_nom": "Repères",
+   "niveau": 2,
+   "niveau_nom": "Mécanismes",
    "competence": "Organiser une semaine de gestionnaire et déléguer aux assistants",
    "notions": [
     "priorité",
@@ -11862,12 +11853,12 @@
    "ponts": [],
    "exercices": [
     "synthese",
-    "flash",
-    "qcm"
+    "qcm",
+    "cas"
    ],
    "exercice_dominant": "synthese",
-   "cartes_cible": 6,
-   "etude_minutes": 45,
+   "cartes_cible": 8,
+   "etude_minutes": 60,
    "satellite": false,
    "statut": "a-ecrire"
   },
@@ -11886,9 +11877,7 @@
     "rappel",
     "Red Path"
    ],
-   "prerequis": [
-    "cabinet.charge.gerer-son-temps-et-deleguer"
-   ],
+   "prerequis": [],
    "ponts": [],
    "exercices": [
     "synthese",
@@ -11917,6 +11906,7 @@
     "charge"
    ],
    "prerequis": [
+    "cabinet.charge.gerer-son-temps-et-deleguer",
     "cabinet.charge.les-echeances-qui-ne-se-ratent-pas"
    ],
    "ponts": [],
@@ -12230,8 +12220,8 @@
    "branche": "lectures",
    "sous_branche": null,
    "titre": "La propriété : les textes fondateurs",
-   "niveau": 3,
-   "niveau_nom": "Praticien",
+   "niveau": 2,
+   "niveau_nom": "Mécanismes",
    "competence": "Restituer la thèse d'un texte fondateur sur la propriété",
    "notions": [
     "propriété",
@@ -12245,12 +12235,12 @@
    "ponts": [],
    "exercices": [
     "lecture",
-    "cas",
-    "libre"
+    "qcm",
+    "cas"
    ],
    "exercice_dominant": "lecture",
-   "cartes_cible": 10,
-   "etude_minutes": 75,
+   "cartes_cible": 8,
+   "etude_minutes": 60,
    "satellite": false,
    "statut": "a-ecrire"
   },
@@ -12260,8 +12250,8 @@
    "branche": "lectures",
    "sous_branche": null,
    "titre": "L'habiter et le voisinage",
-   "niveau": 3,
-   "niveau_nom": "Praticien",
+   "niveau": 2,
+   "niveau_nom": "Mécanismes",
    "competence": "Restituer un texte sur l'habiter et le voisinage",
    "notions": [
     "habiter",
@@ -12274,12 +12264,12 @@
    "ponts": [],
    "exercices": [
     "lecture",
-    "cas",
-    "libre"
+    "qcm",
+    "cas"
    ],
    "exercice_dominant": "lecture",
-   "cartes_cible": 10,
-   "etude_minutes": 75,
+   "cartes_cible": 8,
+   "etude_minutes": 60,
    "satellite": false,
    "statut": "a-ecrire"
   },
@@ -12289,8 +12279,8 @@
    "branche": "lectures",
    "sous_branche": null,
    "titre": "La ville",
-   "niveau": 3,
-   "niveau_nom": "Praticien",
+   "niveau": 2,
+   "niveau_nom": "Mécanismes",
    "competence": "Restituer un texte sur la ville et sa fabrique",
    "notions": [
     "ville",
@@ -12303,12 +12293,12 @@
    "ponts": [],
    "exercices": [
     "lecture",
-    "cas",
-    "libre"
+    "qcm",
+    "cas"
    ],
    "exercice_dominant": "lecture",
-   "cartes_cible": 10,
-   "etude_minutes": 75,
+   "cartes_cible": 8,
+   "etude_minutes": 60,
    "satellite": false,
    "statut": "a-ecrire"
   },
@@ -12328,7 +12318,9 @@
     "logement social"
    ],
    "prerequis": [
-    "culture.lectures.l-architecture-et-ses-styles"
+    "culture.lectures.la-propriete-les-textes-fondateurs",
+    "culture.lectures.l-habiter-et-le-voisinage",
+    "culture.lectures.la-ville"
    ],
    "ponts": [],
    "exercices": [
@@ -12348,8 +12340,8 @@
    "branche": "lectures",
    "sous_branche": null,
    "titre": "L'architecture et ses styles",
-   "niveau": 2,
-   "niveau_nom": "Mécanismes",
+   "niveau": 1,
+   "niveau_nom": "Repères",
    "competence": "Reconnaître les grands styles du bâti français",
    "notions": [
     "style",
@@ -12361,12 +12353,12 @@
    "ponts": [],
    "exercices": [
     "lecture",
-    "qcm",
-    "cas"
+    "flash",
+    "qcm"
    ],
    "exercice_dominant": "lecture",
-   "cartes_cible": 8,
-   "etude_minutes": 60,
+   "cartes_cible": 6,
+   "etude_minutes": 45,
    "satellite": false,
    "statut": "a-ecrire"
   },
@@ -12386,7 +12378,9 @@
     "communs"
    ],
    "prerequis": [
-    "culture.lectures.l-architecture-et-ses-styles"
+    "culture.lectures.la-propriete-les-textes-fondateurs",
+    "culture.lectures.l-habiter-et-le-voisinage",
+    "culture.lectures.la-ville"
    ],
    "ponts": [],
    "exercices": [
@@ -12416,9 +12410,6 @@
     "communs"
    ],
    "prerequis": [
-    "culture.lectures.la-propriete-les-textes-fondateurs",
-    "culture.lectures.l-habiter-et-le-voisinage",
-    "culture.lectures.la-ville",
     "culture.lectures.histoire-du-logement",
     "culture.lectures.histoire-de-la-copropriete"
    ],
@@ -12437,13 +12428,13 @@
  "compte": {
   "chapitres": 387,
   "par_niveau": {
-   "1": 147,
-   "2": 157,
-   "3": 61,
-   "4": 20,
+   "1": 117,
+   "2": 191,
+   "3": 58,
+   "4": 19,
    "5": 2
   },
-  "cartes_cible_total": 2920,
+  "cartes_cible_total": 2974,
   "sous_branches": 18
  }
 }
