@@ -38,7 +38,7 @@ def fichiers(dossiers, suffixes):
         if not p.exists():
             continue
         for f in p.rglob("*"):
-            if f.is_file() and f.suffix in suffixes and "node_modules" not in f.parts:
+            if f.is_file() and f.suffix in suffixes and not {"node_modules", "dist", "dev-dist"} & set(f.parts):
                 yield f
 
 
@@ -78,7 +78,7 @@ def controle_json(errors):
 
 def controle_ancien_couplage(errors):
     for path in ROOT.rglob("*"):
-        if path == Path(__file__) or not path.is_file() or ".git" in path.parts or "node_modules" in path.parts:
+        if path == Path(__file__) or not path.is_file() or ".git" in path.parts or {"node_modules", "dist", "dev-dist"} & set(path.parts):
             continue
         if path.suffix not in {".md", ".py", ".json", ".yaml", ".yml", ".ts", ".tsx", ".js"}:
             continue
@@ -120,7 +120,7 @@ def controle_roadmap(errors):
     # Chantiers cités dans les documents : ils existent.
     cites = set()
     for f in ROOT.rglob("*.md"):
-        if ".git" in f.parts or "archive" in f.parts or "node_modules" in f.parts:
+        if ".git" in f.parts or "archive" in f.parts or {"node_modules", "dist", "dev-dist"} & set(f.parts):
             continue
         cites |= set(RE_CHANTIER.findall(lit(f)))
     for c in sorted(cites - ids):

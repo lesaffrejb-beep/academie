@@ -1,9 +1,9 @@
 # web/ : le client v2
 
 Squelette écrit le 02/09/2026 (`DIRECTION-ARTISTIQUE.md`,
-`ARCHITECTURE.md` §1 et §5, `decisions/0007`). Rien n'est initialisé :
-ce dossier dit quoi construire, écran par écran, et contre quoi le
-vérifier. Le chantier est `ACA-FRONT-2`. Le client est **jetable** : il
+`ARCHITECTURE.md` §1 et §5, `decisions/0007`), initialisé le
+03/09/2026. Ce dossier dit quoi construire, écran par écran, et contre
+quoi le vérifier ; la section « État au 03/09/2026 » dit où on en est. Le chantier est `ACA-FRONT-2`. Le client est **jetable** : il
 peut être réécrit sans toucher au moteur, à la banque ni au journal.
 Il remplace `client/` (l'archipel), qui reste servi jusqu'à sa
 bascule.
@@ -90,3 +90,91 @@ web/
 Appeler un modèle avec une clé embarquée ; envoyer une source ; calculer
 un score qu'il stocke ; afficher l'état d'un autre joueur sans la
 visibilité accordée ; envoyer un mail.
+
+## État au 03/09/2026
+
+Le squelette technique est posé et vert. La couche visuelle n'est pas
+faite : les écrans existent, ils sont nus, et c'est voulu.
+
+### Ce qui existe
+
+- Vite 5, React 18, TypeScript strict, Tailwind avec les tokens en
+  variables CSS (`src/index.css` est le seul fichier qui porte des
+  hexadécimaux).
+- `src/moteur/` : `fsrs.ts` (miroir écrit à la main de
+  `app/planificateur.py`), `etats.ts` (rejeu du journal, y compris
+  `stabilite_forcee`), `progression.ts`, `composeur.ts`, `points.ts`,
+  `journal.ts` (Dexie, file d'envoi, union sur `quand|mode|nonce`).
+- `src/donnees/` : chargement de la banque avec cache Dexie et refus
+  d'un contrat inconnu, client d'API, types transcrits des contrats.
+- `src/app/` : routage sur le fragment, thème Nuit et Papier, palette
+  par rang de domaine, `i18n.ts` (le seul fichier qui porte des chaînes
+  d'interface ; la voix vient de `contenu/voix.json`).
+- Neuf écrans nus : Arbre, Domaine, Nœud, Séance, Clôture, Profil,
+  Boîte, Crédits, Confiance, plus la barre.
+- La banque et la voix ne sont **pas** copiées dans `public/`. Un plugin
+  Vite (`vite.config.ts`, `academie-donnees-du-depot`) lit
+  `../site/banque.json` et `../contenu/voix.json`, les sert en
+  développement et les écrit dans `dist/` au build. Une copie dans
+  `web/` divergerait, et ces deux fichiers portent des caractères que
+  `tooling/check.py` n'accepte qu'à leur place d'origine.
+- PWA : `vite-plugin-pwa` 0.21.1, manifeste, précache de la banque, de
+  la voix, du JS, du CSS et des polices à venir ; la banque et la voix
+  sont aussi en `StaleWhileRevalidate` à l'exécution.
+- Trois tests verts, 95 cas : `src/moteur/parite.test.ts` lance
+  `python3 app/vecteurs_fsrs.py --json` et compare stabilité,
+  difficulté, intervalle et récupérabilité à 1e-4 sur chaque étape de
+  chaque séquence ; `tests/hotes.test.ts` vérifie qu'aucune URL de
+  `src/` ni de `index.html` ne sort de localhost et que la CSP tient ;
+  `tests/voix.test.ts` vérifie que chaque clé affichée existe dans
+  `contenu/voix.json` avec trois variantes et les mêmes variables.
+- `LICENCES.md` : chaque dépendance, version exacte, licence.
+
+### Ce qui reste
+
+- **La couche visuelle.** `public/icone.svg`, les valeurs de
+  `src/index.css` et `tailwind.config.ts` tiennent la place. La
+  `DIRECTION-ARTISTIQUE.md` et la maquette du 02/09 n'ont pas été
+  appliquées. Rien du moteur n'a besoin d'être touché pour la faire.
+- **ACA-CONTRAT-2.** Le client sait refuser un contrat inconnu et lire
+  une banque sans champ `contrat` comme `carte-v1`, mais la banque
+  publiée est encore une v1 sans le champ ; les types de `carte-v2` sont
+  transcrits, pas exercés.
+- **Les tests de bout en bout.** Playwright n'est pas installé, il n'y a
+  pas de `tests/e2e/`. Les preuves « première question en moins de trois
+  secondes hors-ligne » et « séance jouée réseau coupé, envoyée au
+  retour » ne sont donc pas encore mesurées.
+- **La bascule** : build dans la publication, `client/` archivé,
+  `tooling/check.py` débarrassé des marqueurs de l'archipel, et JB qui
+  joue sept séances.
+- Étude et épreuve complètes (ACA-ETUDE-1, ACA-EXAMEN-1), Cercle
+  (ACA-CERCLE-1) : masqués, les boutons disent « bientôt ».
+
+### Comment lancer
+
+```bash
+cd web
+npm install
+npm run dev      # http://localhost:5173/academie/
+npm test         # parité, hôtes, voix
+npm run build    # tsc --noEmit puis vite build vers dist/
+npm run preview  # sert dist/ pour vérifier la PWA
+```
+
+Depuis la racine du dépôt, la porte reste la même :
+
+```bash
+python3 app/tests.py && python3 tooling/check.py
+```
+
+À savoir : `tooling/check.py` parcourt tout `web/` et n'ignore que
+`node_modules`. Après un `npm run build`, `web/dist/banque.json` porte
+les tirets cadratins de la banque et fait sortir `check.py` en erreur.
+Efface `dist/` avant de lancer la porte, ou ajoute `dist` et `dev-dist`
+à côté de `node_modules` dans `tooling/check.py` (le périmètre du
+cahier `ACA-FRONT-2` le permet ; ce n'était pas dans la mission du
+03/09).
+
+Le développement a besoin de `../site/banque.json` et de
+`../contenu/voix.json` : le client se lance depuis le dépôt, pas depuis
+une copie isolée de `web/`.

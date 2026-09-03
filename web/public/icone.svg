@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Academie">
+  <title>Academie</title>
+  <rect width="512" height="512" rx="96" fill="#0d1117"/>
+  <rect x="242" y="150" width="28" height="230" rx="14" fill="#b07d3a"/>
+  <path d="M256 150 L166 262 M256 150 L346 262 M256 236 L186 320 M256 236 L326 320"
+        stroke="#b07d3a" stroke-width="24" stroke-linecap="round" fill="none"/>
+</svg>

@@ -307,7 +307,8 @@
         "max_tokens": 250000
       },
       "proof": "Première question en moins de trois secondes réseau coupé sur téléphone ; checklist DA §9 ; aucun hôte tiers contacté ; JB joue sept séances dessus.",
-      "parent_milestone": "ACADEMIE-V2-JOUEUR"
+      "parent_milestone": "ACADEMIE-V2-JOUEUR",
+      "note": "Squelette technique posé le 03/09 (web/ : moteur en parité, écrans nus, PWA, 95 tests, build vert). Reste : couche visuelle (autre main), e2e hors-ligne, bascule de client/, et ACA-CONTRAT-2."
     },
     {
       "id": "ACA-ARBRE-1",

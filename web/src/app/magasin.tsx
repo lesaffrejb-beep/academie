@@ -1,0 +1,118 @@
+/**
+ * Le magasin : banque, journal, etats, carte-monde. Tout est recalcule a
+ * chaque changement du journal ; rien n'est stocke a part les lignes.
+ */
+
+import {
+  createContext, useCallback, useContext, useEffect, useMemo, useState,
+  type ReactNode,
+} from "react";
+import { chargeBanque, ContratInconnu } from "../donnees/banque";
+import type { Banque, LigneJournal } from "../donnees/types";
+import { planificateurDe, type Planificateur } from "../moteur/fsrs";
+import { aujourdhuiOrdinal, etatsCartes, type EtatCarte } from "../moteur/etats";
+import { carteMonde, type CarteMonde } from "../moteur/progression";
+import { points, type Points } from "../moteur/points";
+import { brancheReprise, ecris, litJournal, synchronise, type Bilan } from "../moteur/journal";
+import { chargeVoix } from "./i18n";
+
+interface Magasin {
+  pret: boolean;
+  panne: string | null;
+  banque: Banque | null;
+  journal: LigneJournal[];
+  etats: Map<string, EtatCarte>;
+  monde: CarteMonde | null;
+  points: Points | null;
+  sched: Planificateur | null;
+  jour: number;
+  bilan: Bilan | null;
+  note: (ligne: Parameters<typeof ecris>[0]) => Promise<void>;
+  rafraichis: () => Promise<void>;
+}
+
+const Contexte = createContext<Magasin | null>(null);
+
+export function FournisseurMagasin({ enfants }: { enfants: ReactNode }) {
+  const [pret, setPret] = useState(false);
+  const [panne, setPanne] = useState<string | null>(null);
+  const [banque, setBanque] = useState<Banque | null>(null);
+  const [journal, setJournal] = useState<LigneJournal[]>([]);
+  const [bilan, setBilan] = useState<Bilan | null>(null);
+  const jour = aujourdhuiOrdinal();
+
+  const rafraichis = useCallback(async () => {
+    setJournal(await litJournal());
+  }, []);
+
+  useEffect(() => {
+    let vivant = true;
+    void (async () => {
+      await chargeVoix();
+      try {
+        const b = await chargeBanque();
+        if (!vivant) return;
+        setBanque(b);
+      } catch (e) {
+        if (!vivant) return;
+        setPanne(
+          e instanceof ContratInconnu
+            ? `Cette banque annonce le contrat "${e.contrat}", que ce client ne sait pas lire. Rien ne sera joue tant qu'il n'est pas mis a jour.`
+            : "La banque n'a pas pu etre chargee, ni depuis le reseau ni depuis le cache.",
+        );
+      }
+      try {
+        setJournal(await litJournal());
+      } catch {
+        // Pas d'IndexedDB : on joue, rien ne se garde.
+      }
+      if (vivant) setPret(true);
+      brancheReprise((b) => {
+        setBilan(b);
+        void litJournal().then(setJournal).catch(() => undefined);
+      });
+      void synchronise().then(setBilan).catch(() => undefined);
+    })();
+    return () => {
+      vivant = false;
+    };
+  }, []);
+
+  const sched = useMemo(
+    () => (banque ? planificateurDe(banque.fsrs) : null),
+    [banque],
+  );
+  const etats = useMemo(
+    () => (sched ? etatsCartes(journal, sched) : new Map<string, EtatCarte>()),
+    [journal, sched],
+  );
+  const monde = useMemo(
+    () => (banque ? carteMonde(banque.cartes, journal, banque, etats) : null),
+    [banque, journal, etats],
+  );
+  const pts = useMemo(
+    () => (monde ? points(journal, monde, jour) : null),
+    [journal, monde, jour],
+  );
+
+  const note = useCallback(
+    async (ligne: Parameters<typeof ecris>[0]) => {
+      await ecris(ligne);
+      setJournal(await litJournal());
+      void synchronise().then(setBilan).catch(() => undefined);
+    },
+    [],
+  );
+
+  const valeur: Magasin = {
+    pret, panne, banque, journal, etats, monde, points: pts, sched, jour, bilan,
+    note, rafraichis,
+  };
+  return <Contexte.Provider value={valeur}>{enfants}</Contexte.Provider>;
+}
+
+export function useMagasin(): Magasin {
+  const m = useContext(Contexte);
+  if (!m) throw new Error("useMagasin hors du fournisseur");
+  return m;
+}

@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * Les tokens de DIRECTION-ARTISTIQUE.md, 2. C'est le SEUL fichier du
+ * client qui porte des hexadecimaux. La couche visuelle se refait ici.
+ * Valeurs posees au 03/09/2026 : elles tiennent la place, elles ne
+ * pretendent pas etre la direction artistique finale.
+ */
+:root {
+  --f-titre: Georgia, "Times New Roman", serif;
+  --f-texte: system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  /* Nuit, le theme par defaut. */
+  --c-fond: #0d1117;
+  --c-surface: #161b22;
+  --c-encre: #f2ece1;
+  --c-encre-2: #f2ece19e;
+  --c-trait: #f2ece124;
+  --c-succes: #6f8f5f;
+  --c-erreur: #a8592f;
+
+  /* Palette par rang de domaine, jamais par nom (DA, 2). */
+  --c-rang-1: #b07d3a;
+  --c-rang-2: #a45f3c;
+  --c-rang-3: #7c8f6b;
+  --c-rang-4: #8b7fa8;
+  --c-rang-5: #5a7d99;
+  --c-rang-6: #9c5548;
+  --c-rang-7: #77804a;
+  --c-rang-8: #7a5470;
+  --c-rang-9: #b09a72;
+  --c-rang-10: #6c7580;
+  --c-accent: var(--c-rang-1);
+}
+
+:root[data-theme="papier"] {
+  --c-fond: #f6f3ec;
+  --c-surface: #ffffff;
+  --c-encre: #23262b;
+  --c-encre-2: #23262b9e;
+  --c-trait: #23262b24;
+}
+
+* { box-sizing: border-box; }
+
+html, body, #racine { height: 100%; }
+
+body {
+  margin: 0;
+  background: var(--c-fond);
+  color: var(--c-encre);
+  font-family: var(--f-texte);
+  font-size: 17px;
+  line-height: 1.5;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (min-width: 768px) { body { font-size: 16px; } }
+
+/* Zero animation : consigne du 03/09. Reste vrai meme si un composant
+   ajoutait une transition par inadvertance. */
+*, *::before, *::after {
+  animation: none !important;
+  transition: none !important;
+}
+
+:focus-visible { outline: 2px solid var(--c-accent); outline-offset: 2px; }
