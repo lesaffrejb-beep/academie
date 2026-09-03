@@ -17,6 +17,7 @@ Onze étages, du plus bas au plus haut :
     serveur        l'API d'état : union, idempotence, jetons (ACA-JOURNAL-SYNC-1)
     sources        le registre et la nature de chaque source (ACA-SOURCES-1)
     rituel         l'habitude mesurée depuis le journal (ACA-RITUAL-METRICS-1)
+    export         l'export Anki, assurance-vie de réversibilité (ACA-EXPORT-1)
     banque         la vraie banque respecte le contrat carte-v1, les vrais chapitres le v2
 
 Le mode `--mutation` casse volontairement des garde-fous, un par un, et
@@ -50,6 +51,7 @@ SUITES = [
     ("serveur d'état", "tests_serveur.py"),
     ("registre des sources", "tests_sources.py"),
     ("rituel", "tests_rituel.py"),
+    ("export Anki", "tests_export.py"),
 ]
 
 # (description, fichier, texte à remplacer, remplacement).
@@ -93,6 +95,12 @@ MUTATIONS = [
      "    if len(lignes) > LOT_MAX:", "    if False:"),
     ("le programme accepte un prérequis de niveau supérieur", "valide_programme.py",
      '            elif ids[pre].get("niveau", 0) > niv:', "            elif False:"),
+    ("l'export Anki oublie la source de la carte", "export_anki.py",
+     "    lignes = []\n    for s in (carte.get(\"source\") or []):",
+     "    lignes = []\n    for s in []:"),
+    ("l'export Anki perd les distracteurs d'un QCM", "export_anki.py",
+     '    faux = [c for c in (carte.get("choix") or []) if not c.get("correct")]',
+     "    faux = []"),
     ("la pondération du socle est neutralisée", "seance.py",
      "            neuves = du_socle[:vises] + autres + du_socle[vises:]",
      "            neuves = autres + du_socle"),

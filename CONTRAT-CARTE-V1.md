@@ -168,15 +168,36 @@ porte sa date ; ici on ajoute qu'il porte sa **date de mort**.
 
 ## 4. L'export Anki (l'assurance-vie)
 
-`app/export_anki.py` (à construire, chantier `ACA-EXPORT-1` de
-`roadmap.json` ; au 02/09/2026 le script n'existe pas encore) produira
-un paquet lisible par Anki (`.apkg` via `genanki`, MIT) depuis n'importe
-quel sous-ensemble de la banque. Colonnes : `question`, `reponse`
-(explication et vigilance incluses), `source`, `tags`
-(`domaine::branche`). Contrat de réversibilité du BLUEPRINT §2 : si
-l'app maison s'arrête, le contenu se joue ailleurs le lendemain.
-L'inverse n'est pas vrai et c'est assumé : Anki ne saura pas rejouer
-les ateliers ni la boucle terrain.
+`app/export_anki.py` (écrit le 03/09/2026, chantier `ACA-EXPORT-1`)
+produit un paquet lisible par Anki (`.apkg` via `genanki`, MIT, lue à
+la source le 03/09/2026) depuis n'importe quel sous-ensemble de la
+banque. Trois champs : `Recto` (la question), `Verso` (la réponse,
+explication et vigilance incluses, plus les distracteurs d'un QCM avec
+leur `pourquoi_faux`), `Source` (les sources avec leur nature et leur
+parti, l'URL, la date de vérification, et le statut quand la carte
+n'est pas `valide`). Étiquettes : `domaine::branche`, plus
+`chapitre::<id>` et `statut::<statut>` quand ils s'appliquent.
+
+Par défaut, seule la couche `banque` et les cartes `valide` partent ;
+`--couches` et `--avec-brouillons` sont explicites. Le `guid` d'une
+note est dérivé de l'identifiant de carte : réimporter un export mis à
+jour remplace la note, il n'en crée pas une deuxième.
+
+Ce qui ne part pas : **les images**. Les cartes `photo`, `relier`,
+`datation` et `plan` sortent avec leur texte seul, parce que les images
+de la banque ont des licences par fichier (`decisions/0017`) et qu'un
+paquet parti chez un tiers ne les respecte pas par construction. La
+question se rouvrira si le besoin se présente.
+
+`genanki` est une dépendance d'**usine**, jamais du produit joué :
+elle vit dans `tooling/requirements-usine.txt`, le moteur ne la charge
+pas, et `app/tests_export.py` passe sans elle (la mise en forme est de
+la stdlib pure ; seul l'empaquetage est sauté, et le dit).
+
+Contrat de réversibilité du BLUEPRINT §2 : si l'app maison s'arrête, le
+contenu se joue ailleurs le lendemain. L'inverse n'est pas vrai et
+c'est assumé : Anki ne saura pas rejouer les ateliers ni la boucle
+terrain.
 
 ## 5. Indépendance du métier (BLUEPRINT §11)
 
