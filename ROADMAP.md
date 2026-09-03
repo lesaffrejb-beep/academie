@@ -33,9 +33,10 @@ v2 proposés, squelette du serveur et du client, maquette du front. Le
 sources (`ACA-SOURCES-1`), les licences de réutilisation lues à la
 source (`ACA-REUSE-1`), le tableau de bord du rituel
 (`ACA-RITUAL-METRICS-1`). Sont ouverts : le contrat v2
-(`ACA-CONTRAT-2`), le client v2 (`ACA-FRONT-2`), l'arbre
-(`ACA-ARBRE-1`), la semaine type (`ACA-SEMAINE-1`), et les trente
-séances de JB (`ACA-RITUAL-1`), qui n'attendent plus que lui.
+(`ACA-CONTRAT-2`), le client v2 (`ACA-FRONT-2`), la semaine type
+(`ACA-SEMAINE-1`), et les trente séances de JB (`ACA-RITUAL-1`), qui
+n'attendent plus que lui. L'arbre (`ACA-ARBRE-1`) est fait : nœuds,
+branches, états et parité Python/TypeScript.
 
 1. **L'état synchronisé** (`ACA-JOURNAL-SYNC-1`) : API d'état, SQLite,
    client hors-ligne, parité FSRS. C'est le maillon manquant depuis

@@ -4,11 +4,17 @@
  * comptabilite propre, aucun score stocke.
  */
 
+import { jourOrdinal, aujourdhuiOrdinal } from "./etats";
 import type { EtatCarte } from "./etats";
-import type { Banque, Carte, Domaine, LigneJournal, ReglagesProgression } from "../donnees/types";
+import type {
+  Banque, BrancheProgramme, Carte, Chapitre, Domaine, LigneJournal, ReglagesProgression,
+} from "../donnees/types";
 
 /** Pas un reglage : la regle : le 100 % n existe pas sans son examen. */
 export const PLAFOND_SANS_EXAMEN = 0.99;
+
+/** Defaut quand la banque est anterieure a ACA-ARBRE-1 (decisions/0028). */
+export const SEUIL_FRAICHEUR_DEFAUT = 21;
 
 export const XP_PAR_REVUE = 10;
 export const XP_PAR_REGION = 500;
@@ -64,6 +70,10 @@ export interface CarteMonde {
   regionsOuvertes: string[];
   regionsConquises: string[];
   xp: number;
+  noeuds: Noeud[];
+  branches: Branche[];
+  seuilFraicheurJours: number;
+  cartesSansChapitre: number;
 }
 
 function tri(entrees: [string, Domaine][]): [string, Domaine][] {
@@ -149,12 +159,207 @@ export function xpAffichee(
 
 const arrondi4 = (x: number) => Math.round(x * 10000) / 10000;
 
+/* --- les noeuds et les branches (ACA-ARBRE-1, decisions/0028) -------- */
+
+export type EtatNoeud = "inconnu" | "ouvert" | "en-cours" | "solide" | "valide" | "a-revoir";
+
+export interface Noeud {
+  id: string;
+  titre: string;
+  domaine: string;
+  branche: string;
+  sousBranche: string | null;
+  niveau: number | null;
+  satellite: boolean;
+  prerequis: string[];
+  etat: EtatNoeud;
+  remplissage: number;
+  cartesTotales: number;
+  cartesAcquises: number;
+  derniereRevue: string | null;
+  joursDepuisDerniereRevue: number | null;
+  aRevoir: boolean;
+  prerequisSatisfaits: boolean;
+  /** Regle 1 de BLUEPRINT §5 : toujours vrai, sans exception. */
+  jouable: true;
+}
+
+export interface Branche {
+  domaine: string;
+  cle: string;
+  titre: string;
+  rang: number;
+  remplissage: number;
+  noeuds: number;
+  noeudsServis: number;
+  noeudsValides: number;
+  ouverte: boolean;
+  explorable: true;
+}
+
+export function seuilFraicheur(banque: Banque): number {
+  return banque.progression?.seuil_fraicheur_jours ?? SEUIL_FRAICHEUR_DEFAUT;
+}
+
+/** Les cartes jouables groupees par noeud. Sans `chapitre`, pas de noeud. */
+export function cartesParChapitre(cartes: Carte[]): Map<string, Carte[]> {
+  const par = new Map<string, Carte[]>();
+  for (const c of cartes) {
+    if (c.statut !== "valide") continue;
+    const ch = c.chapitre;
+    if (typeof ch !== "string" || !ch) continue;
+    const liste = par.get(ch);
+    if (liste) liste.push(c);
+    else par.set(ch, [c]);
+  }
+  return par;
+}
+
+/** Combien de cartes jouables n'ont encore aucun noeud (ACA-CONTRAT-2). */
+export function cartesSansChapitre(cartes: Carte[]): number {
+  return cartes.filter((c) => c.statut === "valide" && !c.chapitre).length;
+}
+
+// Les jours ordinaux viennent de etats.ts (origine epoque Unix), la
+// meme echelle que `duLe`. Melanger deux origines rendrait tout echu.
+
+/**
+ * L'etat d'un noeud (decisions/0028). `valide` se gagne a l'epreuve du
+ * domaine, pas au remplissage : c'est ce qui rend vraie la regle 3 de
+ * BLUEPRINT §5 sans rien stocker. La fraicheur ne declasse pas.
+ */
+export function etatNoeud(
+  remplissage: number,
+  joue: boolean,
+  aDesCartes: boolean,
+  examenReussi: boolean,
+  aRevoir: boolean,
+  banque: Banque,
+): EtatNoeud {
+  if (!aDesCartes) return "inconnu";
+  if (joue && examenReussi) return "valide";
+  if (!joue) return "ouvert";
+  if (aRevoir) return "a-revoir";
+  if (remplissage >= reglages(banque).seuil_ouverture_region) return "solide";
+  return "en-cours";
+}
+
+export function noeudsEtBranches(
+  cartes: Carte[],
+  journal: LigneJournal[],
+  banque: Banque,
+  etats: Map<string, EtatCarte>,
+  reussis: Set<string>,
+  jourCourant: number,
+): { noeuds: Noeud[]; branches: Branche[] } {
+  const r = reglages(banque);
+  const seuilStab = r.seuil_stabilite_acquise_jours;
+  const seuilOuv = r.seuil_ouverture_region;
+  const fraicheur = seuilFraicheur(banque);
+  const parChapitre = cartesParChapitre(cartes);
+
+  const noeuds: Noeud[] = [];
+  const etatsParId = new Map<string, EtatNoeud>();
+
+  for (const ch of (banque.chapitres ?? []) as Chapitre[]) {
+    const siennes = parChapitre.get(ch.id) ?? [];
+    const ids = new Set(siennes.map((c) => c.id));
+    const acquises = siennes.filter((c) => (etats.get(c.id)?.stabilite ?? 0) >= seuilStab).length;
+    const remplissage = siennes.length ? acquises / siennes.length : 0;
+
+    let derniere: string | null = null;
+    for (const e of journal) {
+      if (e.carte && ids.has(e.carte) && e.quand && (derniere === null || e.quand > derniere)) {
+        derniere = e.quand;
+      }
+    }
+    const joue = derniere !== null;
+    const jours =
+      derniere === null ? null : jourCourant - (jourOrdinal(derniere) ?? jourCourant);
+    // Seules les cartes DEJA VUES peuvent etre echues : une carte neuve
+    // est a decouvrir, pas a revoir.
+    const echue = siennes.some((c) => {
+      const e = etats.get(c.id);
+      return e !== undefined && e.duLe <= jourCourant;
+    });
+    const aRevoir = joue && jours !== null && jours > fraicheur && echue;
+    const reussi = reussis.has(ch.domaine);
+    const etat = etatNoeud(remplissage, joue, siennes.length > 0, reussi, aRevoir, banque);
+    etatsParId.set(ch.id, etat);
+
+    noeuds.push({
+      id: ch.id,
+      titre: ch.titre ?? ch.id,
+      domaine: ch.domaine,
+      branche: ch.branche,
+      sousBranche: ch.sous_branche ?? null,
+      niveau: ch.niveau ?? null,
+      satellite: Boolean(ch.satellite),
+      prerequis: [...(ch.prerequis ?? [])],
+      etat,
+      remplissage: arrondi4(remplissage),
+      cartesTotales: siennes.length,
+      cartesAcquises: acquises,
+      derniereRevue: derniere,
+      joursDepuisDerniereRevue: jours,
+      aRevoir,
+      prerequisSatisfaits: true,
+      jouable: true,
+    });
+  }
+
+  // Le prerequis informe l'affichage, il n'interdit rien : satisfait
+  // quand son noeud est solide ou mieux.
+  for (const n of noeuds) {
+    n.prerequisSatisfaits = n.prerequis.every((p) => {
+      const e = etatsParId.get(p);
+      return e === "solide" || e === "valide";
+    });
+  }
+
+  const branches: Branche[] = [];
+  for (const [domaine, liste] of Object.entries(banque.branches ?? {})) {
+    let precedentAtteint = true;
+    let rang = 0;
+    const triees = [...(liste as BrancheProgramme[])].sort((a, b) => {
+      const oa = a.ordre ?? 999;
+      const ob = b.ordre ?? 999;
+      return oa !== ob ? oa - ob : (a.cle ?? "").localeCompare(b.cle ?? "");
+    });
+    for (const b of triees) {
+      rang += 1;
+      const siens = noeuds.filter((n) => n.domaine === domaine && n.branche === b.cle);
+      const avec = siens.filter((n) => n.cartesTotales > 0);
+      const remplissage = avec.length
+        ? avec.reduce((a, n) => a + n.remplissage, 0) / avec.length
+        : 0;
+      branches.push({
+        domaine,
+        cle: b.cle,
+        titre: b.titre ?? b.cle,
+        rang,
+        remplissage: arrondi4(remplissage),
+        noeuds: siens.length,
+        noeudsServis: avec.length,
+        noeudsValides: siens.filter((n) => n.etat === "valide").length,
+        ouverte: rang === 1 || precedentAtteint,
+        explorable: true,
+      });
+      precedentAtteint = remplissage >= seuilOuv;
+    }
+  }
+
+  return { noeuds, branches };
+}
+
+
 export function carteMonde(
   cartes: Carte[],
   journal: LigneJournal[],
   banque: Banque,
   etats: Map<string, EtatCarte>,
   regionsOuvertesForcees: readonly string[] = [],
+  jourCourant: number = aujourdhuiOrdinal(),
 ): CarteMonde {
   const r = reglages(banque);
   const forcees = new Set(regionsOuvertesForcees);
@@ -240,5 +445,12 @@ export function carteMonde(
     regionsOuvertes: regions.filter((x) => x.ouverte).map((x) => x.cle),
     regionsConquises: regions.filter((x) => x.conquise).map((x) => x.cle),
     xp: xpAffichee(journal, remplissages, banque),
+    // L'arbre n'existe que si la banque publie un programme : sans lui,
+    // la carte-monde est exactement celle d'avant ACA-ARBRE-1.
+    ...(banque.chapitres?.length
+      ? noeudsEtBranches(cartes, journal, banque, etats, reussis, jourCourant)
+      : { noeuds: [] as Noeud[], branches: [] as Branche[] }),
+    seuilFraicheurJours: seuilFraicheur(banque),
+    cartesSansChapitre: cartesSansChapitre(cartes),
   };
 }

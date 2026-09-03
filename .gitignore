@@ -6,3 +6,9 @@ __pycache__/
 .claude/
 etat/*
 !etat/.gitignore
+
+# Vecteurs de parité : régénérés par les tests à l'instant du test
+# (app/vecteurs_fsrs.py, app/vecteurs_progression.py). Un fichier
+# commité daterait, et la parité serait jugée sur du vieux.
+site/vecteurs-fsrs.json
+site/vecteurs-progression.json

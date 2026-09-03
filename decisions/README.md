@@ -41,3 +41,4 @@ lisant le dépôt, une règle née d'un incident. Pas l'avancement
 | [0025](0025-le-cadre-d-execution.md) | 03/09/2026 | Un LLM ne code pas sans cahier ; les règles vivent dans des contrôles ; le contrat avant le code |
 | [0026](0026-un-document-n-est-pas-un-chapitre.md) | 03/09/2026 | Un document n'est pas un chapitre : bibliothèque, pivot Markdown par page, figures rendues, abonnement d'abord, quatre voies vers l'arbre |
 | [0027](0027-pas-a-pas-impose-points-de-sauvegarde-classes-de-modeles.md) | 03/09/2026 | Le pas à pas imposé : un script distribue et juge les unités, points de sauvegarde sur disque, classes de modèles déclarées et ramenées à petit, rien sur parole ; MODELES.md, adaptateurs par outil, onboarding |
+| [0028](0028-l-etat-d-un-noeud-et-la-fraicheur.md) | 03/09/2026 | L'état d'un nœud : `valide` se gagne à l'épreuve du domaine, la fraîcheur s'affiche à côté et ne déclasse jamais ; une carte se rattache par `chapitre`, le trou v1 s'écrit |

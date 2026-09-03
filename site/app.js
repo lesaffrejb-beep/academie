@@ -43,9 +43,64 @@ function litRevues(){
 
 function ecritRevue(carte, note){
   const revues = litRevues();
-  revues.push({carte:carte.id,note:Number(note),date:new Date().toISOString()});
+  const quand = new Date().toISOString();
+  revues.push({carte:carte.id,note:Number(note),date:quand});
   localStorage.setItem(CLE, JSON.stringify(revues.slice(-4000)));
+  Journal.ecrire({quand, mode:'revision', format:'seance', carte:carte.id, note:Number(note)});
 }
+
+// Journal v1 local + envoi par lots (ACA-JOURNAL-SYNC-1, serveur/API.md).
+// Chaque réponse est écrite ici à l'instant, puis part vers
+// /academie/api/v1/journal quand le réseau le permet. Une ligne refusée
+// va dans `rejets` et le reste repart : la file ne se bloque jamais.
+const Journal = (() => {
+  const API = '/academie/api/v1';
+  const K = {journal:'academie:journal:v1', file:'academie:journal:file', rejets:'academie:journal:rejets', depuis:'academie:journal:depuis'};
+  const lit = k => { try { return JSON.parse(localStorage.getItem(k) || '[]'); } catch { return []; } };
+  const ecrit = (k, v) => localStorage.setItem(k, JSON.stringify(v));
+  const nonce = () => { const b = new Uint8Array(12); crypto.getRandomValues(b); return Array.from(b, x => x.toString(16).padStart(2, '0')).join(''); };
+  const cle = l => `${l.quand}|${l.mode}|${l.nonce}`;
+  let enCours = false;
+  function ecrire(ligne){
+    const l = {...ligne, nonce: nonce()};
+    const journal = lit(K.journal); journal.push(l); ecrit(K.journal, journal.slice(-20000));
+    const file = lit(K.file); file.push(l); ecrit(K.file, file);
+    envoyer();
+  }
+  async function envoyer(){
+    if (enCours || !navigator.onLine) return;
+    const file = lit(K.file);
+    if (!file.length && localStorage.getItem(K.depuis) !== null) return;
+    enCours = true;
+    try {
+      const lot = file.slice(0, 500);
+      const reponse = await fetch(API + '/journal', {method:'POST', credentials:'include', headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({depuis: localStorage.getItem(K.depuis), lignes: lot})});
+      if (reponse.status === 422) {
+        const r = await reponse.json();
+        if (typeof r.index === 'number' && r.index >= 0) {
+          const rejets = lit(K.rejets); rejets.push({ligne: lot[r.index], motif: r.motif}); ecrit(K.rejets, rejets);
+          ecrit(K.file, file.filter((_, i) => i !== r.index));
+          enCours = false; return envoyer();
+        }
+        return;
+      }
+      if (!reponse.ok) return;
+      const r = await reponse.json();
+      const connues = new Set(lit(K.journal).map(cle));
+      const journal = lit(K.journal);
+      for (const l of r.manquantes || []) if (!connues.has(cle(l))) journal.push(l);
+      journal.sort((a, b) => a.quand < b.quand ? -1 : a.quand > b.quand ? 1 : 0);
+      ecrit(K.journal, journal.slice(-20000));
+      ecrit(K.file, lit(K.file).filter(l => !lot.some(x => cle(x) === cle(l))));
+      if (r.jusqu_a) localStorage.setItem(K.depuis, r.jusqu_a);
+      if (lit(K.file).length) { enCours = false; return envoyer(); }
+    } catch { /* hors-ligne ou serveur absent : on réessaie au retour du réseau */ }
+    finally { enCours = false; }
+  }
+  window.addEventListener('online', envoyer);
+  return {ecrire, envoyer, lit: () => lit(K.journal), rejets: () => lit(K.rejets)};
+})();
 
 function texte(el, valeur){ el.textContent = valeur == null ? '' : String(valeur); }
 function titreDomaine(id){ return banque?.domaines?.[id]?.titre || id; }
@@ -256,3 +311,6 @@ $('notes').addEventListener('click',e=>{const n=e.target.closest('[data-note]')?
 document.addEventListener('keydown',e=>{if($('session').hidden)return;if(e.key==='Escape')quitte();if(e.key===' '&&!$('reveler').hidden){e.preventDefault();revele()}});
 if('serviceWorker' in navigator)navigator.serviceWorker.register('sw.js').catch(()=>{});
 dessineEtoiles(); appliqueAmbiance({derniere:null}); charge();
+
+// Au chargement : ce qui attend dans la file part si le réseau est là.
+window.addEventListener('load', () => Journal.envoyer());
