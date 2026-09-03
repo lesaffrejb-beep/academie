@@ -2,7 +2,13 @@
 
 Le registre des sources du domaine copropriété, et les copies locales.
 
-- `REGISTRE.md` : **versionné**. Une ligne par source : nature, parti,
+- `registre.json` : **versionné, il fait foi**. La forme machine du
+  registre : une entrée par source, avec son `domaine_web` ou son
+  `motif` (ce qui rattache une source de carte à sa ligne). Le
+  générateur y lira `fiabilite` ; `app/tests_sources.py` refuse une
+  source de carte qui n'a pas de ligne.
+- `REGISTRE.md` : **versionné, régénéré**, jamais corrigé à la main :
+  `python3 app/registre.py --md > sources/REGISTRE.md`. Une ligne par source : nature, parti,
   fiabilité (A, B, C), date de vérification, ce qu'on en tire, ce qu'on
   n'en tire pas. Les cartes héritent de la nature et du parti posés
   ici ([`decisions/0004`](../decisions/0004-la-source-porte-sa-nature-et-son-parti.md)).
@@ -38,6 +44,9 @@ Le tri du carnet NotebookLM du 29/08 (`NOTEBOOKLM-A-RETIRER.md`) est la
 première matière de ce registre. Dans un dépôt-domaine fabriqué avec le
 gabarit, le même tableau s'appelle `sources/INVENTAIRE.md` (il porte en
 plus le tas et les trous nommés) ; les colonnes nature, parti et
-fiabilité y sont les mêmes. Le chantier `ACA-SOURCES-1` produit aussi la
-forme machine `sources/registre.json` (versionnée), que le générateur lit
-pour hériter `fiabilite` sur chaque source de carte.
+fiabilité y sont les mêmes.
+
+Le chantier `ACA-SOURCES-1` a rempli le registre le 03/09/2026 : 22
+lignes, les 154 entrées de source des 84 cartes rattachées, `nature` (et
+`parti` quand il existe) écrite sur chacune. L'héritage de `fiabilite`
+au moment de la publication reste à faire : c'est `ACA-CONTRAT-2`.

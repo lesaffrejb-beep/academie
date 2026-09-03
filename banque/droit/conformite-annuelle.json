@@ -32,7 +32,8 @@
     "vigilance": "Un champ coché dans une fiche de mémoire interne ne vaut pas vérification : la ligne se vérifie sur la pièce qui fait foi. Les obligations qui ne visent pas cet immeuble se marquent N/A et sortent aussi du calcul.",
     "source": [
       {
-        "texte": "Radar de conformité annuelle (13 obligations), § 1 — trois statuts, jamais deux"
+        "texte": "Radar de conformité annuelle (13 obligations), § 1 — trois statuts, jamais deux",
+        "nature": "terrain"
       }
     ],
     "verifie": "2026-08-28",
@@ -54,14 +55,17 @@
     "source": [
       {
         "texte": "Art. 14-1 loi n° 65-557 du 10 juillet 1965 (assemblée qui vote le budget réunie dans les six mois du dernier jour de l'exercice précédent)",
-        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000043977299"
+        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000043977299",
+        "nature": "texte-officiel"
       },
       {
         "texte": "Art. 43 al. 1 décret n° 67-223 du 17 mars 1967 (« Le budget prévisionnel couvre un exercice comptable de douze mois. Il est voté avant le début de l'exercice qu'il concerne. »)",
-        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000006488753"
+        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000006488753",
+        "nature": "texte-officiel"
       },
       {
-        "texte": "Art. 7 et 9 décret n° 67-223 (assemblée tenue au moins une fois chaque année ; convocation notifiée au moins vingt et un jours avant)"
+        "texte": "Art. 7 et 9 décret n° 67-223 (assemblée tenue au moins une fois chaque année ; convocation notifiée au moins vingt et un jours avant)",
+        "nature": "texte-officiel"
       }
     ],
     "verifie": "2026-08-28",
@@ -107,7 +111,8 @@
     "source": [
       {
         "texte": "Art. 43 al. 2 décret n° 67-223 du 17 mars 1967 (et non l'art. 14-1 de la loi : le dispositif est réglementaire)",
-        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000006488753"
+        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000006488753",
+        "nature": "texte-officiel"
       }
     ],
     "verifie": "2026-08-28",
@@ -129,7 +134,8 @@
     "source": [
       {
         "texte": "Art. 14-1 loi n° 65-557 du 10 juillet 1965 (provisions égales au quart du budget voté, exigibles le premier jour de chaque trimestre ou de la période fixée par l'assemblée)",
-        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000043977299"
+        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000043977299",
+        "nature": "texte-officiel"
       }
     ],
     "verifie": "2026-08-28",
@@ -172,7 +178,8 @@
     "source": [
       {
         "texte": "Art. 14-2-1 loi n° 65-557 du 10 juillet 1965 (cotisation annuelle : pas moins de 2,5 % du montant des travaux du plan adopté ET pas moins de 5 % du budget de l'art. 14-1 ; suspension possible quand le fonds excède le budget prévisionnel ou 50 % du montant des travaux du plan)",
-        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000043967792"
+        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000043967792",
+        "nature": "texte-officiel"
       }
     ],
     "verifie": "2026-08-28",
@@ -218,11 +225,13 @@
     "source": [
       {
         "texte": "Art. 14-2-1 loi n° 65-557 du 10 juillet 1965, version en vigueur vérifiée le 28/08/2026 : aucune dispense de cotisation n'y figure plus",
-        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000043967792"
+        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000043967792",
+        "nature": "texte-officiel"
       },
       {
         "texte": "Art. 171 VI loi n° 2021-1104 du 22 août 2021 (calendrier d'entrée en vigueur)",
-        "url": "https://www.legifrance.gouv.fr/jorf/article_jo/JORFARTI000043957111"
+        "url": "https://www.legifrance.gouv.fr/jorf/article_jo/JORFARTI000043957111",
+        "nature": "texte-officiel"
       }
     ],
     "verifie": "2026-08-28",
@@ -265,10 +274,12 @@
     "source": [
       {
         "texte": "Art. 28 décret n° 67-223 du 17 mars 1967 (durée des fonctions du syndic : trois ans au plus ; un an au plus pendant la période de l'art. 1792 du code civil en cas de participation à la construction)",
-        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000042078751"
+        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000042078751",
+        "nature": "texte-officiel"
       },
       {
-        "texte": "Art. 1792 du code civil (période de garantie visée par l'art. 28 ; la carte citait à tort l'art. 1792-4-1)"
+        "texte": "Art. 1792 du code civil (période de garantie visée par l'art. 28 ; la carte citait à tort l'art. 1792-4-1)",
+        "nature": "texte-officiel"
       }
     ],
     "verifie": "2026-08-28",
@@ -311,10 +322,12 @@
     "source": [
       {
         "texte": "Art. R711-10 du code de la construction et de l'habitation (déclaration annuelle des données financières dans les deux mois suivant l'assemblée d'approbation des comptes)",
-        "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000033073009"
+        "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000033073009",
+        "nature": "texte-officiel"
       },
       {
-        "texte": "Art. L711-6 du code de la construction et de l'habitation (astreinte plafonnée à 20 € par lot et par semaine, à la charge du syndic ; subventions publiques subordonnées à l'immatriculation)"
+        "texte": "Art. L711-6 du code de la construction et de l'habitation (astreinte plafonnée à 20 € par lot et par semaine, à la charge du syndic ; subventions publiques subordonnées à l'immatriculation)",
+        "nature": "texte-officiel"
       }
     ],
     "verifie": "2026-08-28",
@@ -336,7 +349,8 @@
     "source": [
       {
         "texte": "Art. 9-1 loi n° 65-557 du 10 juillet 1965 (obligation d'assurance de responsabilité civile du syndicat ; en cas de refus de l'assemblée, souscription par le syndic pour le compte du syndicat)",
-        "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000028779136"
+        "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000028779136",
+        "nature": "texte-officiel"
       }
     ],
     "verifie": "2026-08-28",
@@ -379,10 +393,12 @@
     "source": [
       {
         "texte": "Art. L126-31 du code de la construction et de l'habitation (permis de construire déposé avant le 01/01/2013 ; renouvellement ou mise à jour tous les dix ans, sauf classe A, B ou C établie par un diagnostic postérieur au 01/07/2021)",
-        "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043976972"
+        "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043976972",
+        "nature": "texte-officiel"
       },
       {
-        "texte": "Art. 158 loi n° 2021-1104 du 22 août 2021 (calendrier : 01/01/2024, 01/01/2025, 01/01/2026)"
+        "texte": "Art. 158 loi n° 2021-1104 du 22 août 2021 (calendrier : 01/01/2024, 01/01/2025, 01/01/2026)",
+        "nature": "texte-officiel"
       }
     ],
     "verifie": "2026-08-28",
@@ -404,11 +420,13 @@
     "source": [
       {
         "texte": "Art. R1334-29-5 du code de la santé publique (constitution, conservation, mise à jour ; III : communication de la fiche récapitulative aux occupants dans le mois suivant la constitution ou la mise à jour)",
-        "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043841389"
+        "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043841389",
+        "nature": "texte-officiel"
       },
       {
         "texte": "Art. R1334-14 du code de la santé publique (champ : immeubles bâtis dont le permis de construire a été délivré avant le 1er juillet 1997)",
-        "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000024140895"
+        "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000024140895",
+        "nature": "texte-officiel"
       }
     ],
     "verifie": "2026-08-28",
@@ -454,11 +472,13 @@
     "source": [
       {
         "texte": "Art. 14-2 loi n° 65-557 du 10 juillet 1965 (« A l'expiration d'un délai de quinze ans à compter de la date de réception des travaux de construction… Il est actualisé tous les dix ans. »)",
-        "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043977289"
+        "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043977289",
+        "nature": "texte-officiel"
       },
       {
         "texte": "Art. 14-2-1 loi n° 65-557 (fonds de travaux : au terme d'une période de dix ans à compter de la réception)",
-        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000043967792"
+        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000043967792",
+        "nature": "texte-officiel"
       }
     ],
     "verifie": "2026-08-28",
@@ -480,10 +500,12 @@
     "source": [
       {
         "texte": "Art. 171 VI loi n° 2021-1104 du 22 août 2021 (fonds de travaux et projet de plan pluriannuel : plus de 200 lots au 01/01/2023, 51 à 200 lots au 01/01/2024, au plus 50 lots au 01/01/2025)",
-        "url": "https://www.legifrance.gouv.fr/jorf/article_jo/JORFARTI000043957111"
+        "url": "https://www.legifrance.gouv.fr/jorf/article_jo/JORFARTI000043957111",
+        "nature": "texte-officiel"
       },
       {
-        "texte": "Art. 158 loi n° 2021-1104 du 22 août 2021 (diagnostic de performance énergétique collectif : un an plus tard à chaque étage, 01/01/2024, 01/01/2025, 01/01/2026)"
+        "texte": "Art. 158 loi n° 2021-1104 du 22 août 2021 (diagnostic de performance énergétique collectif : un an plus tard à chaque étage, 01/01/2024, 01/01/2025, 01/01/2026)",
+        "nature": "texte-officiel"
       }
     ],
     "verifie": "2026-08-28",
@@ -505,7 +527,8 @@
     "source": [
       {
         "texte": "Art. 41-8 loi n° 65-557 du 10 juillet 1965 (« au plus cinq lots à usage de logements, de bureaux ou de commerces » ou budget prévisionnel moyen sur trois exercices consécutifs inférieur à 15 000 €)",
-        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000039301997"
+        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000039301997",
+        "nature": "texte-officiel"
       }
     ],
     "verifie": "2026-08-28",
@@ -527,10 +550,12 @@
     "source": [
       {
         "texte": "Art. 14-3 loi n° 65-557 du 10 juillet 1965 (charges et produits enregistrés dès leur engagement juridique par le syndic, indépendamment de leur règlement ; comptes présentés avec le comparatif de l'exercice précédent approuvé)",
-        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000006471590"
+        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000006471590",
+        "nature": "texte-officiel"
       },
       {
-        "texte": "Décret n° 2005-240 du 14 mars 2005 et arrêté du 14 mars 2005 relatifs aux comptes du syndicat des copropriétaires"
+        "texte": "Décret n° 2005-240 du 14 mars 2005 et arrêté du 14 mars 2005 relatifs aux comptes du syndicat des copropriétaires",
+        "nature": "texte-officiel"
       }
     ],
     "verifie": "2026-08-28",

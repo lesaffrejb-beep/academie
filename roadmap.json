@@ -201,7 +201,7 @@
     {
       "id": "ACA-SOURCES-1",
       "outcome": "Chaque source des 84 cartes a une ligne au registre (nature, parti, fiabilité, date) et chaque carte porte source[].nature ; la liste blanche copro est complète en v1.",
-      "status": "ready",
+      "status": "done",
       "mode": "agent-safe",
       "risk": "low",
       "priority": 92,
@@ -255,7 +255,7 @@
     {
       "id": "ACA-CONTRAT-2",
       "outcome": "Le contrat carte-v2 et chapitre-v1 sont opposables : valideur v2 dans le même commit, banque migrée à la disposition par chapitre sans renumérotage, péremption par défaut du droit, a_recouper dérivé.",
-      "status": "blocked",
+      "status": "ready",
       "mode": "agent-review",
       "risk": "medium",
       "priority": 90,

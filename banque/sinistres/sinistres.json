@@ -12,10 +12,13 @@
     "source": [
       {
         "texte": "Art. L113-2, 4° du code des assurances (déclaration dès que l'assuré en a eu connaissance et au plus tard dans le délai fixé par le contrat, qui ne peut être inférieur à cinq jours ouvrés)",
-        "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000035731302"
+        "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000035731302",
+        "nature": "texte-officiel"
       },
       {
-        "texte": "Convention IRSI, convention inter-assureurs non publiée (sinistres survenus à compter du 01/06/2018, version révisée au 01/07/2020)"
+        "texte": "Convention IRSI, convention inter-assureurs non publiée (sinistres survenus à compter du 01/06/2018, version révisée au 01/07/2020)",
+        "nature": "organisation-pro",
+        "parti": "défend les assureurs"
       }
     ],
     "verifie": "2026-08-28",
@@ -61,7 +64,8 @@
     "source": [
       {
         "texte": "Art. L113-2, 4° du code des assurances (délai contractuel de déclaration réduit à deux jours ouvrés en cas de vol)",
-        "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000035731302"
+        "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000035731302",
+        "nature": "texte-officiel"
       }
     ],
     "verifie": "2026-08-28",
@@ -83,10 +87,12 @@
     "source": [
       {
         "texte": "Art. L125-2 du code des assurances (déclaration au plus tard trente jours après la publication de l'arrêté interministériel de reconnaissance de l'état de catastrophe naturelle)",
-        "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000047109081"
+        "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000047109081",
+        "nature": "texte-officiel"
       },
       {
-        "texte": "Loi n° 2021-1837 du 28 décembre 2021 (délai porté de dix à trente jours, en vigueur au 01/01/2023)"
+        "texte": "Loi n° 2021-1837 du 28 décembre 2021 (délai porté de dix à trente jours, en vigueur au 01/01/2023)",
+        "nature": "texte-officiel"
       }
     ],
     "verifie": "2026-08-28",
@@ -111,11 +117,13 @@
     "source": [
       {
         "texte": "Art. L113-2 du code des assurances (la déchéance pour déclaration tardive ne peut être opposée à l'assuré que si l'assureur établit que le retard lui a causé un préjudice)",
-        "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000035731302"
+        "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000035731302",
+        "nature": "texte-officiel"
       },
       {
         "texte": "Art. 18 loi n° 65-557 du 10 juillet 1965 (obligation de diligence du syndic)",
-        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000044074302"
+        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000044074302",
+        "nature": "texte-officiel"
       }
     ],
     "verifie": "2026-08-28",
@@ -157,7 +165,9 @@
     "vigilance": "Ces montants sont des seuils conventionnels révisables, en euros HT, et ils s'apprécient PAR LOCAL sinistré : trois logements touchés à 2 000 € chacun ne font pas un dossier à 6 000 €. Vérifier le seuil en vigueur avant de l'annoncer à un copropriétaire.",
     "source": [
       {
-        "texte": "Convention IRSI, convention inter-assureurs NON PUBLIÉE (sinistres survenus à compter du 01/06/2018, version révisée au 01/07/2020) : tranche 1 jusqu'à 1 600 € HT par local, tranche 2 de 1 601 à 5 000 € HT par local, avec expertise pour compte commun obligatoire en tranche 2. Seuils recoupés le 28/08/2026 sur des sources professionnelles concordantes, le texte conventionnel n'étant pas consultable publiquement."
+        "texte": "Convention IRSI, convention inter-assureurs NON PUBLIÉE (sinistres survenus à compter du 01/06/2018, version révisée au 01/07/2020) : tranche 1 jusqu'à 1 600 € HT par local, tranche 2 de 1 601 à 5 000 € HT par local, avec expertise pour compte commun obligatoire en tranche 2. Seuils recoupés le 28/08/2026 sur des sources professionnelles concordantes, le texte conventionnel n'étant pas consultable publiquement.",
+        "nature": "organisation-pro",
+        "parti": "défend les assureurs"
       }
     ],
     "verifie": "2026-08-28",
@@ -181,7 +191,9 @@
     "vigilance": "Un locataire victime déclare à sa propre assurance habitation ; le syndicat déclare de son côté à la multirisque immeuble si les parties communes sont touchées. Les deux déclarations coexistent, l'une ne dispense pas de l'autre.",
     "source": [
       {
-        "texte": "Convention IRSI, convention inter-assureurs non publiée (sinistres survenus à compter du 01/06/2018, version révisée au 01/07/2020), désignation de l'assureur gestionnaire par le local sinistré"
+        "texte": "Convention IRSI, convention inter-assureurs non publiée (sinistres survenus à compter du 01/06/2018, version révisée au 01/07/2020), désignation de l'assureur gestionnaire par le local sinistré",
+        "nature": "organisation-pro",
+        "parti": "défend les assureurs"
       }
     ],
     "verifie": "2026-08-28",
@@ -205,7 +217,9 @@
     "vigilance": "Ne rien faire réparer d'irréversible avant l'expertise, et ne rien jeter. Une remise en état spontanée fait disparaître la preuve de l'origine et bascule le dossier sur la parole du sinistré.",
     "source": [
       {
-        "texte": "Convention IRSI, version applicable aux sinistres survenus à compter du 01/07/2020 : la recherche de fuite est réputée garantie, sans franchise ni plafond, par tout contrat garantissant le local des investigations, quelles que soient les responsabilités engagées. Convention inter-assureurs non publiée, point recoupé le 28/08/2026 sur des sources professionnelles concordantes."
+        "texte": "Convention IRSI, version applicable aux sinistres survenus à compter du 01/07/2020 : la recherche de fuite est réputée garantie, sans franchise ni plafond, par tout contrat garantissant le local des investigations, quelles que soient les responsabilités engagées. Convention inter-assureurs non publiée, point recoupé le 28/08/2026 sur des sources professionnelles concordantes.",
+        "nature": "organisation-pro",
+        "parti": "défend les assureurs"
       }
     ],
     "verifie": "2026-08-28",
@@ -226,7 +240,9 @@
     "vigilance": "Un sinistre ancien peut légitimement relever du régime antérieur : le critère est la date de survenance du sinistre, pas la date à laquelle on en parle.",
     "source": [
       {
-        "texte": "Convention IRSI (applicable aux sinistres survenus à compter du 01/06/2018, en remplacement de la CIDRE)"
+        "texte": "Convention IRSI (applicable aux sinistres survenus à compter du 01/06/2018, en remplacement de la CIDRE)",
+        "nature": "organisation-pro",
+        "parti": "défend les assureurs"
       }
     ],
     "verifie": "2026-08-28",
@@ -247,10 +263,12 @@
     "vigilance": "Le critère de tri le plus opérationnel est le délai restant : moins de quarante-huit heures, on agit dans la journée. Ce chiffre se calcule à partir de la date de découverte notée à l'ouverture du dossier, ce qui suppose qu'elle ait été notée.",
     "source": [
       {
-        "texte": "Matrice de décision urgence sinistre, grille de priorité opérationnelle (méthode interne)"
+        "texte": "Matrice de décision urgence sinistre, grille de priorité opérationnelle (méthode interne)",
+        "nature": "terrain"
       },
       {
-        "texte": "Loi n° 65-557 du 10 juillet 1965, art. 18 (obligation de diligence du syndic)"
+        "texte": "Loi n° 65-557 du 10 juillet 1965, art. 18 (obligation de diligence du syndic)",
+        "nature": "texte-officiel"
       }
     ],
     "verifie": "2026-08-28",
@@ -272,7 +290,8 @@
     "source": [
       {
         "texte": "Art. 18 loi n° 65-557 du 10 juillet 1965 (« en cas d'urgence, de faire procéder de sa propre initiative à l'exécution de tous travaux nécessaires à la sauvegarde de l'immeuble »)",
-        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000044074302"
+        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000044074302",
+        "nature": "texte-officiel"
       }
     ],
     "verifie": "2026-08-28",

@@ -44,6 +44,7 @@ SUITES = [
     ("usine pas à pas", "tests_usine.py"),
     ("programme", "tests_programme.py"),
     ("serveur d'état", "tests_serveur.py"),
+    ("registre des sources", "tests_sources.py"),
 ]
 
 # (description, fichier, texte à remplacer, remplacement).
@@ -87,6 +88,12 @@ MUTATIONS = [
      "    if len(lignes) > LOT_MAX:", "    if False:"),
     ("le programme accepte un prérequis de niveau supérieur", "valide_programme.py",
      '            elif ids[pre].get("niveau", 0) > niv:', "            elif False:"),
+    ("une source de carte peut se passer de ligne au registre", "registre.py",
+     "            if dom and (hote == dom or hote.endswith(\".\" + dom)):",
+     "            if True:"),
+    ("le valideur laisse passer une nature de source inventée", "valide_banque.py",
+     '            elif src.get("nature") not in (None, "") and src["nature"] not in NATURES:',
+     "            elif False:"),
     ("l'usine ne rejoue plus les contrôles des unités validées", "usine/etat.py",
      '        if u["statut"] != "valide":\n            continue\n        err, sceau, _ = controler_unite',
      '        if True:\n            continue\n        err, sceau, _ = controler_unite'),

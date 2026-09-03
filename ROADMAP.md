@@ -27,7 +27,10 @@ cette roadmap sont dans [`decisions/`](decisions/README.md).
 ## Maintenant : prouver le rituel et poser les fondations v2
 
 Ce qui est fait le 02/09 : doctrine v2, programme en données, contrats
-v2 proposés, squelette du serveur et du client, maquette du front.
+v2 proposés, squelette du serveur et du client, maquette du front. Le
+03/09 : l'état synchronisé (`ACA-JOURNAL-SYNC-1`), le programme validé
+(`ACA-PROGRAMME-1`), le squelette technique du client, le registre des
+sources (`ACA-SOURCES-1`). Le contrat v2 (`ACA-CONTRAT-2`) est ouvert.
 
 1. **L'état synchronisé** (`ACA-JOURNAL-SYNC-1`) : API d'état, SQLite,
    client hors-ligne, parité FSRS. C'est le maillon manquant depuis
@@ -37,8 +40,11 @@ v2 proposés, squelette du serveur et du client, maquette du front.
    tout ce qui est multi-joueur.
 3. **Le programme validé** (`ACA-PROGRAMME-1`) : valideur, clés de
    `academie.json` alignées, calibrage des niveaux par agent frais.
-4. **Le registre des sources** (`ACA-SOURCES-1`) : nature et parti sur
-   les 84 cartes, liste blanche v1.
+4. **Le registre des sources** (`ACA-SOURCES-1`, fait le 03/09) : nature
+   et parti sur les 154 sources des 84 cartes, `sources/registre.json`
+   qui fait foi, liste blanche v1. Deux trous nommés en sont sortis : le
+   référentiel qui fonde P1 à P5, et l'arrêt du 18/06/2026 sans numéro
+   de pourvoi.
 5. **La réutilisation** (`ACA-REUSE-1`) : licences lues à la source,
    verdict par candidat, avant la première ligne du client.
 6. **Le contrat v2** (`ACA-CONTRAT-2`) : cartes, chapitres, valideur,

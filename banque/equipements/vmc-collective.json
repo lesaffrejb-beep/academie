@@ -12,10 +12,12 @@
     "source": [
       {
         "texte": "Agence qualité construction, fiche pathologie bâtiment G.06 « Les VMC simple et double flux » (janvier 2024) : opérations de maintenance annuelles du caisson, courroie, pales, galets, manchettes antivibratiles",
-        "url": "https://qualiteconstruction.com/ressource/fiches-pathologie-batiment/entretien-maintenance-vmc-simple-double-flux/"
+        "url": "https://qualiteconstruction.com/ressource/fiches-pathologie-batiment/entretien-maintenance-vmc-simple-double-flux/",
+        "nature": "norme"
       },
       {
-        "texte": "NF DTU 68.3, installations de ventilation mécanique (règles de conception et de mise en œuvre) ; norme non librement consultable, citée pour mémoire"
+        "texte": "NF DTU 68.3, installations de ventilation mécanique (règles de conception et de mise en œuvre) ; norme non librement consultable, citée pour mémoire",
+        "nature": "norme"
       }
     ],
     "verifie": "2026-08-30",
@@ -46,10 +48,12 @@
     "source": [
       {
         "texte": "Agence qualité construction, fiche pathologie bâtiment G.06 « Les VMC simple et double flux » (janvier 2024) : contrôle de la tension de la courroie de transmission et remplacement préventif éventuel",
-        "url": "https://qualiteconstruction.com/ressource/fiches-pathologie-batiment/entretien-maintenance-vmc-simple-double-flux/"
+        "url": "https://qualiteconstruction.com/ressource/fiches-pathologie-batiment/entretien-maintenance-vmc-simple-double-flux/",
+        "nature": "norme"
       },
       {
-        "texte": "NF DTU 68.3, installations de ventilation mécanique ; norme non librement consultable, citée pour mémoire"
+        "texte": "NF DTU 68.3, installations de ventilation mécanique ; norme non librement consultable, citée pour mémoire",
+        "nature": "norme"
       }
     ],
     "verifie": "2026-08-30",
@@ -80,10 +84,12 @@
     "source": [
       {
         "texte": "Agence qualité construction, fiche pathologie bâtiment G.06 « Les VMC simple et double flux » (janvier 2024) : manchettes de liaison antivibratiles entre le caisson d'extraction et les gaines",
-        "url": "https://qualiteconstruction.com/ressource/fiches-pathologie-batiment/entretien-maintenance-vmc-simple-double-flux/"
+        "url": "https://qualiteconstruction.com/ressource/fiches-pathologie-batiment/entretien-maintenance-vmc-simple-double-flux/",
+        "nature": "norme"
       },
       {
-        "texte": "NF DTU 68.3, installations de ventilation mécanique ; norme non librement consultable, citée pour mémoire"
+        "texte": "NF DTU 68.3, installations de ventilation mécanique ; norme non librement consultable, citée pour mémoire",
+        "nature": "norme"
       }
     ],
     "verifie": "2026-08-30",
@@ -129,10 +135,12 @@
     "source": [
       {
         "texte": "Agence qualité construction, fiche pathologie bâtiment G.06 « Les VMC simple et double flux » (janvier 2024) : opérations de maintenance annuelles, contrôle de la tension de la courroie de transmission et remplacement préventif éventuel",
-        "url": "https://qualiteconstruction.com/ressource/fiches-pathologie-batiment/entretien-maintenance-vmc-simple-double-flux/"
+        "url": "https://qualiteconstruction.com/ressource/fiches-pathologie-batiment/entretien-maintenance-vmc-simple-double-flux/",
+        "nature": "norme"
       },
       {
-        "texte": "NF DTU 68.3, installations de ventilation mécanique (maintenance des installations) ; norme non librement consultable, citée pour mémoire"
+        "texte": "NF DTU 68.3, installations de ventilation mécanique (maintenance des installations) ; norme non librement consultable, citée pour mémoire",
+        "nature": "norme"
       }
     ],
     "verifie": "2026-08-30",
@@ -154,11 +162,13 @@
     "source": [
       {
         "texte": "Arrêté du 23 février 2018 relatif aux règles techniques et de sécurité applicables aux installations de gaz combustible des bâtiments d'habitation, art. 26, paragraphe 26.5 (entretien et vérification des installations collectives de VMC-gaz, certificat au propriétaire ou au syndic)",
-        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000036669978/"
+        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000036669978/",
+        "nature": "texte-officiel"
       },
       {
         "texte": "Arrêté du 25 avril 1985 relatif à la vérification et à l'entretien des installations collectives de ventilation mécanique contrôlée-gaz : ABROGÉ depuis le 05/03/2018 par l'art. 32 de l'arrêté du 23 février 2018",
-        "url": "https://www.legifrance.gouv.fr/loda/id/LEGITEXT000006074174/"
+        "url": "https://www.legifrance.gouv.fr/loda/id/LEGITEXT000006074174/",
+        "nature": "texte-officiel"
       }
     ],
     "verifie": "2026-08-30",

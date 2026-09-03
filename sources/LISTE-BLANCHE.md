@@ -37,7 +37,8 @@ Règles :
 | CRE | institution | prix et tarifs (péremption) | lecture directe |
 | CNIL | institution | RGPD au cabinet | lecture directe |
 | Agence Qualité Construction (fiches pathologie) | norme | texte des fiches ; **aucune image** | PDF pour usage documentaire, `pdftotext` |
-| Cerema | institution | guides techniques | lecture directe |
+| Cerema (dont le portail réseaux de chaleur) | institution | guides techniques, chauffage urbain | lecture directe |
+| Agences régionales de santé (ars.sante.fr) | institution | risque sanitaire des installations collectives, dont la légionelle | lecture directe |
 | CSTB, AFNOR (DTU, NF P 03-001) | norme | références payantes : on cite, on résume la doctrine, on ne recopie pas | achat par le joueur si besoin |
 | data.gouv.fr (DVF, RNC, cadastre) | institution | données ouvertes, le socle PostGIS du VPS | déjà chargé dans `socle` |
 | France Assureurs (convention IRSI) | organisation-pro, défend les assureurs | le texte de la convention | lecture directe, à recouper |
@@ -49,6 +50,34 @@ Règles :
 
 Ce qu'on ne touche jamais : les sites de cours, les blogs anonymes, les
 pages d'un autre droit (Québec, Belgique) qui partagent le vocabulaire.
+
+### Ce que l'extraction des 84 cartes a révélé (03/09/2026)
+
+Le chantier `ACA-SOURCES-1` a rattaché les 154 entrées de source des
+cartes à `sources/registre.json`. Six domaines web seulement portent le
+tout : `legifrance.gouv.fr` (114), `qualiteconstruction.com` (13),
+`cerema.fr` (3), `courdecassation.fr` (3), `ecologie.gouv.fr` (1),
+`ars.sante.fr` (1). Trois familles de sources sans URL sont apparues, et
+sont désormais des lignes de registre à part entière :
+
+- les **normes NF DTU**, citées pour mémoire, jamais recopiées : le
+  texte est payant et non consultable ;
+- la **convention IRSI**, `organisation-pro`, parti « défend les
+  assureurs », **jamais lue à la source** : ses seuils ont été recoupés
+  le 28/08/2026 sur des sources professionnelles concordantes. C'est le
+  premier trou nommé du domaine ;
+- les **grilles et radars de méthode de JB** (relecture des comptes,
+  conformité annuelle, urgence sinistre), nature `terrain`, fiabilité C :
+  un ordre de lecture, jamais une règle de droit.
+
+Deux trous nommés en sortent, à instruire :
+
+1. le **référentiel d'exploitation en copropriété** qui fonde la
+   décomposition P1 à P5 n'a pas été retrouvé. Trois cartes reposent sur
+   lui, classées `editeur` et fiabilité C en attendant un guide Cerema
+   ou un NF DTU ;
+2. l'arrêt **Cass. 3e civ. du 18 juin 2026** est cité sans numéro de
+   pourvoi. Il est à retrouver sur Judilibre avant d'être servi.
 
 ## Concours et études en soins infirmiers (le domaine d'Arthur)
 
