@@ -4,7 +4,7 @@
     python3 app/tests.py
     python3 app/tests.py --mutation   # vérifie que les tests mordent
 
-Huit étages, du plus bas au plus haut :
+Onze étages, du plus bas au plus haut :
 
     planificateur  le moteur FSRS, comparé à py-fsrs
     seance         la composition du matin (dû, ré-étalement, entrelacement)
@@ -13,6 +13,10 @@ Huit étages, du plus bas au plus haut :
     chaine         de la donnée brute à l'écran (cloisonnement, refus, contrat)
     chapitres      le valideur des chapitres v2 (contrat proposé, decisions 0021-0022)
     usine          le pas à pas imposé sur un document réel (decisions 0026-0027)
+    programme      le valideur du programme et son alignement (ACA-PROGRAMME-1)
+    serveur        l'API d'état : union, idempotence, jetons (ACA-JOURNAL-SYNC-1)
+    sources        le registre et la nature de chaque source (ACA-SOURCES-1)
+    rituel         l'habitude mesurée depuis le journal (ACA-RITUAL-METRICS-1)
     banque         la vraie banque respecte le contrat carte-v1, les vrais chapitres le v2
 
 Le mode `--mutation` casse volontairement des garde-fous, un par un, et
@@ -45,6 +49,7 @@ SUITES = [
     ("programme", "tests_programme.py"),
     ("serveur d'état", "tests_serveur.py"),
     ("registre des sources", "tests_sources.py"),
+    ("rituel", "tests_rituel.py"),
 ]
 
 # (description, fichier, texte à remplacer, remplacement).
@@ -88,6 +93,11 @@ MUTATIONS = [
      "    if len(lignes) > LOT_MAX:", "    if False:"),
     ("le programme accepte un prérequis de niveau supérieur", "valide_programme.py",
      '            elif ids[pre].get("niveau", 0) > niv:', "            elif False:"),
+    ("le rapport du rituel compte une séance abandonnée comme finie", "rituel.py",
+     "    elif set(annoncees).issubset(set(distinctes)):", "    elif True:"),
+    ("le rapport du rituel lit le contenu des réponses", "rituel.py",
+     '        propre = {c: ligne[c] for c in CHAMPS_LUS if c in ligne}',
+     "        propre = dict(ligne)"),
     ("une source de carte peut se passer de ligne au registre", "registre.py",
      "            if dom and (hote == dom or hote.endswith(\".\" + dom)):",
      "            if True:"),

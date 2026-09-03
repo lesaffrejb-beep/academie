@@ -147,7 +147,7 @@
     {
       "id": "ACA-RITUAL-METRICS-1",
       "outcome": "Un rapport déterministe mesure le rituel depuis le journal sans lire le contenu des réponses : séances commencées et finies, abandons, durée, formats, jours de la semaine.",
-      "status": "blocked",
+      "status": "done",
       "mode": "deterministic",
       "risk": "low",
       "priority": 94,
@@ -165,7 +165,7 @@
     {
       "id": "ACA-RITUAL-1",
       "outcome": "JB réalise environ trente séances réelles et un test de rétention à froid de vingt cartes sans dette ni culpabilisation.",
-      "status": "blocked",
+      "status": "ready",
       "mode": "human-only",
       "risk": "low",
       "priority": 95,
