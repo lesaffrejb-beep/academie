@@ -21,6 +21,21 @@ rendues) ; la première unité du Focus du CAE relue et validée. Reste :
 les étapes 4 et 5 ci-dessous (les quatre documents relus de bout en
 bout, fiches, lignes de registre, rattachements, rapport de coût).
 
+## Et pourquoi le Cloud ne peut pas le finir (03/09/2026)
+
+Les étapes 4 et 5 demandent de relire **les quatre documents** de bout
+en bout. Or ces documents, leurs pivots et leurs pages rendues vivent
+dans `sources/`, qui est hors git par construction (`sources/README.md`,
+`ARCHITECTURE.md` §3) : un clone n'en contient aucun, et c'est voulu.
+
+Vérifié le 03/09 dans l'environnement Cloud : `sources/` ne porte que
+ses quatre fichiers versionnés. Il n'y a rien à relire.
+
+Ce qui peut se faire en Cloud sur ce chantier : le code de l'usine et
+ses tests, qui existent déjà et sont verts. Ce qui ne le peut pas : la
+traversée des documents réels. **À finir depuis le Mac**, où les
+documents sont.
+
 ## Périmètre
 
 Peut créer ou modifier : `app/usine/` (`pivot.py` qui appelle
