@@ -127,7 +127,7 @@
     {
       "id": "ACA-JOURNAL-SYNC-1",
       "outcome": "L'état joueur vit sur le VPS et le client joue hors-ligne : API d'état (serveur/API.md), SQLite (serveur/schema.sql), client qui écrit localement et synchronise par union, FSRS en parité des deux côtés.",
-      "status": "ready",
+      "status": "done",
       "mode": "agent-review",
       "risk": "medium",
       "priority": 96,
@@ -140,7 +140,9 @@
         "max_tokens": 120000
       },
       "proof": "Une réponse jouée sur téléphone réseau coupé est relisible sur le Mac le soir, et l'inverse ; test de parité contre app/vecteurs_fsrs.py vert ; rejouer un lot ne change rien.",
-      "parent_milestone": "ACADEMIE-V2-FONDATIONS"
+      "parent_milestone": "ACADEMIE-V2-FONDATIONS",
+      "done_on": "2026-09-03",
+      "note": "Code, tests et déploiement écrits le 03/09 ; l'étape 7 (installation sur le VPS, preuve téléphone-Mac) reste un geste de JB."
     },
     {
       "id": "ACA-RITUAL-METRICS-1",

@@ -1,0 +1,11 @@
+[Unit]
+Description=Académie, sauvegarde nocturne de /var/lib/academie
+
+[Service]
+Type=oneshot
+User=academie
+Group=academie
+ExecStart=/bin/sh -c 'd=/var/lib/academie/sauvegardes/$(date +%%F); mkdir -p "$d" && python3 -c "import sqlite3;sqlite3.connect(\"/var/lib/academie/etat.sqlite\").execute(\"VACUUM INTO \x27$d/etat.sqlite\x27\")" && cp -r /var/lib/academie/banques /var/lib/academie/publication "$d"/ 2>/dev/null; find /var/lib/academie/sauvegardes -maxdepth 1 -mtime +30 -exec rm -rf {} +'
+ProtectSystem=strict
+ReadWritePaths=/var/lib/academie/sauvegardes
+ReadOnlyPaths=/var/lib/academie

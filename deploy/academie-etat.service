@@ -1,0 +1,26 @@
+[Unit]
+Description=Académie, API d'état (journal, profils, boîte)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=academie
+Group=academie
+WorkingDirectory=/home/academie/repo/serveur
+Environment=ACADEMIE_ETAT_BASE=/var/lib/academie/etat.sqlite
+ExecStart=/usr/bin/python3 -m academie_etat servir --hote 127.0.0.1 --port 8790
+Restart=on-failure
+RestartSec=3
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=read-only
+ReadOnlyPaths=/home/academie/repo
+ReadWritePaths=/var/lib/academie
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+
+[Install]
+WantedBy=multi-user.target

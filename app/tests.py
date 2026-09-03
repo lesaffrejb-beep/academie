@@ -43,6 +43,7 @@ SUITES = [
     ("chapitres v2", "tests_chapitres.py"),
     ("usine pas à pas", "tests_usine.py"),
     ("programme", "tests_programme.py"),
+    ("serveur d'état", "tests_serveur.py"),
 ]
 
 # (description, fichier, texte à remplacer, remplacement).
@@ -80,6 +81,10 @@ MUTATIONS = [
      '        if couverture < float(cfg["couverture_min"]):', "        if False:"),
     ("l'usine laisse passer un chiffre absent de la page", "usine/etat.py",
      "        absents = sorted(nombres(l) - connus)", "        absents = []"),
+    ("le serveur remplace une ligne de journal au lieu de l'ignorer", "../serveur/academie_etat/journal.py",
+     '"INSERT OR IGNORE INTO journal', '"INSERT OR REPLACE INTO journal'),
+    ("le serveur accepte un lot de plus de 500 lignes", "../serveur/academie_etat/journal.py",
+     "    if len(lignes) > LOT_MAX:", "    if False:"),
     ("le programme accepte un prérequis de niveau supérieur", "valide_programme.py",
      '            elif ids[pre].get("niveau", 0) > niv:', "            elif False:"),
     ("l'usine ne rejoue plus les contrôles des unités validées", "usine/etat.py",

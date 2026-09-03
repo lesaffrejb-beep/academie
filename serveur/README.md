@@ -1,8 +1,17 @@
 # serveur/ : l'API d'état
 
-Squelette écrit le 02/09/2026 (`ARCHITECTURE.md` §6, `decisions/0006`).
-Rien n'est codé : ce dossier dit **quoi** coder et **contre quoi** le
-tester. Le chantier est `ACA-JOURNAL-SYNC-1`.
+Squelette écrit le 02/09/2026 (`ARCHITECTURE.md` §6, `decisions/0006`),
+codé le 03/09/2026 par le chantier `ACA-JOURNAL-SYNC-1` : paquet
+`academie_etat/` (stdlib seule : `http.server`, `sqlite3`), migrations,
+21 tests dans `tests/` (union, idempotence, lot de 501, ligne fautive
+indexée, jetons hachés, expiration, révocation, lien magique à usage
+unique, suppression sous 48 h, import v0 vers v1, parité FSRS sur les
+vecteurs, socket réelle). Lancer : `python3 -m unittest discover -s serveur/tests`,
+ou `python3 app/tests.py` qui l'inclut. Routes servies : `/sante`,
+`/journal`, `/journal/export`, `/auth/lien`, `/auth/deconnexion`,
+`/profil` (GET, PATCH, DELETE), `/boite`. Le reste d'`API.md` (banques,
+livraisons, bibliothèque, cercles) attend son chantier. Reste du
+cahier : l'installation sur le VPS et la preuve téléphone-Mac (JB).
 
 ## Ce que le serveur fait, et seulement ça
 
@@ -24,9 +33,12 @@ recalculent depuis le journal, elles ne sont pas une seconde vérité.
 
 ## Stack
 
-- Python 3.12, un framework HTTP léger épinglé (FastAPI + uvicorn, ou
-  équivalent : la décision est prise au chantier, le contrat des routes
-  ne change pas), `sqlite3` de la stdlib en mode WAL.
+- Python 3.12+, stdlib seule (`http.server` en threads derrière Caddy,
+  `sqlite3` en mode WAL). Tranché au chantier le 03/09/2026 : le cahier
+  admettait FastAPI ou un équivalent épinglé ; zéro dépendance vaut
+  mieux pour un service qui doit répondre à 7 h. Si les cookies, la
+  validation ou la charge l'exigent un jour, un framework s'ajoute sans
+  changer le contrat des routes.
 - Un seul processus, `academie-etat.service`, port local `8790`, derrière
   Caddy sur `/academie/api/`.
 - Fichiers : `/var/lib/academie/etat.sqlite`,

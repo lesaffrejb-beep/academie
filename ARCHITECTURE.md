@@ -158,8 +158,8 @@ assignation de chaque carte à un chapitre, sans renumérotage.
 Squelette dans [`serveur/`](serveur/README.md) : `API.md` (les routes),
 `schema.sql` (les tables), `README.md` (le pourquoi et le comment).
 
-- **Stack** : Python, framework HTTP léger épinglé (FastAPI ou
-  équivalent), SQLite en mode WAL, un seul processus sous systemd,
+- **Stack** : Python stdlib (`http.server`, `sqlite3` en mode WAL ;
+  choix du 03/09, `serveur/README.md`), un seul processus sous systemd,
   derrière Caddy sur `/academie/api/`.
 - **Identité** : un profil par joueur, créé par JB à la main tant qu'il
   n'y a pas de comptes ; ensuite magic link à l'inscription et sur un

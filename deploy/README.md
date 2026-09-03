@@ -6,15 +6,21 @@ publient chaque jour à 05:15 la banque validée
 que Caddy sert sous `/academie/` (`socle/infra/Caddyfile`). C'est ce
 qui existe et tourne.
 
-Ce que le chantier `ACA-JOURNAL-SYNC-1` puis `ACA-FRONT-2` ajoutent :
+Ce que `ACA-JOURNAL-SYNC-1` a ajouté le 03/09/2026 (à installer sur le
+VPS par `deploy/installer.sh`, geste humain) :
 
-| Fichier à créer | Rôle |
+| Fichier | Rôle |
 |---|---|
-| `academie-etat.service` | l'API d'état (`serveur/`), utilisateur `academie`, port `8790`, `ProtectSystem=strict`, `ReadWritePaths=/var/lib/academie` |
-| `academie-publication.service` (modifié) | après `genere.py`, construire `web/` et copier `dist/` dans la publication |
-| `Caddyfile.academie` | l'extrait à coller dans le Caddyfile du socle : `/academie/api/*` vers `127.0.0.1:8790`, le reste statique, en-têtes de cache, `Content-Security-Policy` sans tiers |
-| `sauvegarde-academie.service` et `.timer` | copie nocturne de `/var/lib/academie/` (SQLite en `VACUUM INTO`, banques, publication) vers le dossier de sauvegarde du socle |
+| `academie-etat.service` | l'API d'état (`serveur/`, stdlib), utilisateur `academie`, port `8790`, `ProtectSystem=strict`, base `/var/lib/academie/etat.sqlite` |
+| `Caddyfile.academie` | l'extrait à coller dans le Caddyfile du socle : `/academie/api/*` vers `127.0.0.1:8790`, le reste statique, CSP sans tiers |
+| `sauvegarde-academie.service` et `.timer` | copie nocturne à 04:30 de `/var/lib/academie/` (SQLite en `VACUUM INTO`, banques, publication), trente jours gardés |
 | `installer.sh` | l'installation en cinq étapes ci-dessous, idempotente |
+
+Ce que `ACA-FRONT-2` ajoutera : `academie-publication.service` construit
+`web/` et copie `dist/` dans la publication.
+
+État au 03/09 au soir : tout est écrit et testé en local ; rien n'est
+encore installé sur le VPS (étape 7 du cahier, JB lance).
 
 ## Installer chez soi (un copain qui reprend le dépôt)
 

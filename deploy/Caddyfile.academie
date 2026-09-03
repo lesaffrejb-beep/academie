@@ -1,0 +1,15 @@
+# À coller dans le bloc du site du Caddyfile du socle, AVANT le
+# `handle_path /academie/*` existant. L'API est servie par
+# academie-etat.service sur 127.0.0.1:8790 ; le reste est statique.
+handle /academie/api/* {
+	reverse_proxy 127.0.0.1:8790
+}
+
+handle_path /academie/* {
+	root * /var/lib/academie/publication
+	header Cache-Control "no-cache, must-revalidate"
+	header Content-Security-Policy "default-src 'self'; connect-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; font-src 'self'; frame-ancestors 'none'"
+	header Referrer-Policy "no-referrer"
+	try_files {path} /index.html
+	file_server
+}
