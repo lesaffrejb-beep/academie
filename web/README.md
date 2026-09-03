@@ -121,7 +121,7 @@ faite : les écrans existent, ils sont nus, et c'est voulu.
 - PWA : `vite-plugin-pwa` 0.21.1, manifeste, précache de la banque, de
   la voix, du JS, du CSS et des polices à venir ; la banque et la voix
   sont aussi en `StaleWhileRevalidate` à l'exécution.
-- Quatre tests verts, 127 cas : `src/moteur/parite.test.ts` lance
+- Cinq tests verts, 152 cas : `src/moteur/parite.test.ts` lance
   `python3 app/vecteurs_fsrs.py --json` et compare stabilité,
   difficulté, intervalle et récupérabilité à 1e-4 sur chaque étape de
   chaque séquence ; `tests/hotes.test.ts` vérifie qu'aucune URL de
@@ -133,7 +133,12 @@ faite : les écrans existent, ils sont nus, et c'est voulu.
   **stricte** des états de nœud, des branches et des drapeaux de
   fraîcheur sur dix scènes, dont les deux pièges de `decisions/0028` :
   un nœud validé qui le reste quand on lui ajoute des cartes, et un
-  nœud mûr revu il y a trente jours qui n'est pas « à revoir ».
+  nœud mûr revu il y a trente jours qui n'est pas « à revoir » ;
+  `src/moteur/parite-semaine.test.ts` (ACA-SEMAINE-1) compare la couleur
+  du jour, le quota de neuf et la branche du socle visée. Le tirage,
+  lui, n'est pas comparé : Python tire avec Mersenne Twister, le client
+  avec un mulberry32, et comparer l'ordre ferait un test du générateur
+  plutôt que du produit.
 - `LICENCES.md` : chaque dépendance, version exacte, licence.
 
 ### Ce qui reste

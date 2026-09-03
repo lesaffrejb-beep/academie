@@ -332,7 +332,7 @@
     {
       "id": "ACA-SEMAINE-1",
       "outcome": "Le composeur applique la semaine type, la pondération du socle, la séance de domaine avec rappels d'ailleurs, et journalise la graine et le jour.",
-      "status": "ready",
+      "status": "done",
       "mode": "deterministic",
       "risk": "low",
       "priority": 88,
