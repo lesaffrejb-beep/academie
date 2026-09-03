@@ -97,7 +97,7 @@ MUTATIONS = [
      "            neuves = du_socle[:vises] + autres + du_socle[vises:]",
      "            neuves = autres + du_socle"),
     ("un lundi chargé pousse quand même du neuf", "seance.py",
-     "        if dues_avant_plafond > seuil:", "        if False:"),
+     "        if dues > seuil:", "        if False:"),
     ("un nœud validé retombe quand on lui ajoute des cartes", "progression.py",
      '    if joue and examen_reussi:\n        return "valide"',
      '    if False:\n        return "valide"'),
