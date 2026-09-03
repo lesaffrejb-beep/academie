@@ -106,11 +106,17 @@ def main() -> int:
     verifie("un chapitre conforme passe", code == 0, sortie)
 
     code, sortie = lance([chapitre(provenance=None)])
-    verifie("un chapitre sans provenance est refusé", code == 1 and "`provenance` manquante" in sortie, sortie)
+    verifie("un chapitre sans provenance est refusé", code == 1 and "manquant ou vide `provenance`" in sortie, sortie)
+
+    code, sortie = lance([chapitre(provenance="texte")])
+    verifie("une provenance qui n'est pas un objet est refusée", code == 1 and "`provenance` manquante" in sortie, sortie)
 
     c = carte(); del c["provenance"]
     code, sortie = lance([chapitre(cartes=[c])])
-    verifie("une carte sans provenance est refusée", code == 1 and "`provenance` manquante" in sortie, sortie)
+    verifie("une carte sans provenance est refusée", code == 1 and "manquant ou vide `provenance`" in sortie, sortie)
+
+    code, sortie = lance([chapitre(cartes=[carte(provenance="texte")])])
+    verifie("une carte dont la provenance n'est pas un objet est refusée", code == 1 and "`provenance` manquante" in sortie, sortie)
 
     code, sortie = lance([chapitre(cartes=[carte(source=[])])])
     verifie("une carte sans source ni aveu est refusée", code == 1 and "sans_source" in sortie, sortie)
