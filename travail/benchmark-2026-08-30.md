@@ -717,6 +717,28 @@ rencontrée** dans ce périmètre. Le piège du 29/08 (3DGS) ne s'est pas
 reproduit : le risque ici est ailleurs, c'est **l'AGPL** — trois
 ressources parmi les plus tentantes en sont porteuses.
 
+### Extension du 03/09/2026 (chantier `ACA-REUSE-1`)
+
+Quarante-huit dépôts de plus, chaque fichier `LICENSE` lu à son URL
+brute le jour même. Le tableau complet, avec les URL et les verdicts,
+est dans `travail/2026-09-02-reutilisation-a-verifier.md`. Ce qui change
+ici :
+
+| Ressource | Licence lue le 03/09 | Conduite |
+|---|---|---|
+| **H5P** | **GPL-3.0** (la liste du 02/09 disait MIT à tort) | **Idées seulement, aucun code** |
+| **AnkiDroid** | **GPL-3.0** | **Idées seulement** |
+| Khan Academy Perseus, Kolibri, Excalidraw, Plyr, Vidstack, Milkdown, Tiptap, shadcn/ui, Radix, Motion, Rive (runtimes), xyflow, dagre, panzoom, react-activity-calendar, cal-heatmap, faster-whisper, Phosphor, Iconoir, Tabler, genanki, ts-fsrs, py-fsrs, vite-plugin-pwa, Workbox, halflife-regression | **MIT** | Verdict au cas par cas ; la plupart écartées pour le poids ou la DA |
+| Oppia, pdf.js, Video.js, tesseract, Playwright, Dexie | **Apache-2.0** | Idem |
+| d3-zoom, d3-hierarchy, d3-shape, Lucide | **ISC** | **Reprendre** : les briques de l'arbre et les glyphes |
+| wavesurfer.js, fsrs-optimizer | **BSD-3-Clause** | À connaître |
+| svg-pan-zoom | **BSD-2-Clause** | Écarté, `d3-zoom` suffit |
+| OCRmyPDF | **MPL-2.0** | Outil d'usine, sur le Mac, jamais lié |
+| elkjs | **EPL-2.0** (npm : `EPL-2.0 OR GPL-3.0-or-later`) | Écarté (8 Mo, placement inutile) |
+| yt-dlp | **Unlicense** | Outil d'usine |
+| game-icons | **CC BY 3.0, ou CC0 selon le contributeur** | Confirmé à la source (`license.txt`) |
+| **GSAP**, **Lottie** | **NON LUES** | `gsap.com` et `lottiefiles.com` sont injoignables depuis l'environnement Cloud, et GSAP ne publie pas de `LICENSE` dans son dépôt. **À vérifier depuis le Mac**, pas « libres » |
+
 ---
 
 ## Partie 5 — La courte liste (5 recommandations, valeur/effort décroissant)

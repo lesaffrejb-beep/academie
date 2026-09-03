@@ -219,7 +219,7 @@
     {
       "id": "ACA-REUSE-1",
       "outcome": "Chaque candidat de travail/2026-09-02-reutilisation-a-verifier.md a sa licence lue à la source et un verdict (reprendre, voler le pattern, écarter) ; rien n'est installé avant.",
-      "status": "ready",
+      "status": "done",
       "mode": "agent-safe",
       "risk": "low",
       "priority": 91,
@@ -292,7 +292,7 @@
     {
       "id": "ACA-FRONT-2",
       "outcome": "Le client v2 (web/) remplace l'archipel : arbre global et vue domaine, séance, fiche de nœud, clôture, profil, boîte, crédits ; hors-ligne d'abord ; DA appliquée ; check.py mis à jour.",
-      "status": "blocked",
+      "status": "ready",
       "mode": "agent-review",
       "risk": "medium",
       "priority": 89,
@@ -313,7 +313,7 @@
     {
       "id": "ACA-ARBRE-1",
       "outcome": "progression.py v2 descend au niveau du chapitre et de la branche : états de nœud (inconnu, ouvert, en cours, solide, validé, à revoir par seuil de fraîcheur), ouverture de branche à 75 %, règle de croissance ; genere.py publie chapitres et prérequis dans banque.json ; le client recalcule la même chose (parité).",
-      "status": "blocked",
+      "status": "ready",
       "mode": "deterministic",
       "risk": "low",
       "priority": 88,
@@ -332,7 +332,7 @@
     {
       "id": "ACA-SEMAINE-1",
       "outcome": "Le composeur applique la semaine type, la pondération du socle, la séance de domaine avec rappels d'ailleurs, et journalise la graine et le jour.",
-      "status": "blocked",
+      "status": "ready",
       "mode": "deterministic",
       "risk": "low",
       "priority": 88,
