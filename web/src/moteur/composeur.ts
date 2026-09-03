@@ -12,6 +12,7 @@
 
 import type { EtatCarte } from "./etats";
 import { aujourdhuiOrdinal } from "./etats";
+import { noeudsEtBranches, reglages } from "./progression";
 import type { Banque, Carte } from "../donnees/types";
 
 export type Alea = () => number;
@@ -59,6 +60,100 @@ export function entrelace(cartes: Carte[], rng: Alea): Carte[] {
     }
   }
   return ordre;
+}
+
+
+/* --- la semaine type et le socle (ACA-SEMAINE-1) --------------------- */
+//
+// La couleur du jour ne pese QUE sur le neuf : les revisions dues sont
+// servies tous les jours, dimanche compris (BLUEPRINT §4). Rien ici ne
+// bloque quoi que ce soit.
+
+export const JOURS_SEMAINE = [
+  "lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi", "dimanche",
+] as const;
+
+export type Couleur =
+  | "fondations" | "cours" | "terrain" | "exploration" | "etude" | "libre";
+
+/** La couleur d un jour ordinal selon `semaine_type`. Defaut : cours. */
+export function couleurDuJour(banque: Banque, jourOrdinal: number): Couleur {
+  // 1970-01-01 etait un jeudi : indice 3 dans JOURS_SEMAINE.
+  const index = (((jourOrdinal + 3) % 7) + 7) % 7;
+  const nom = JOURS_SEMAINE[index] as string;
+  const table = (banque.semaine_type ?? {}) as Record<string, string>;
+  return (table[nom] as Couleur) ?? "cours";
+}
+
+/** Combien de cartes neuves ce matin, et pourquoi. Fonction pure. */
+export function quotaDeNeuf(
+  banque: Banque,
+  couleur: Couleur,
+  dues: number,
+  dejaDuJour: number,
+): { quota: number; pourquoi: string[] } {
+  const q = banque.quotas ?? ({} as Banque["quotas"]);
+  const pourquoi: string[] = [];
+  let quota = q.nouveau_par_seance ?? 1;
+  if (couleur === "cours" || couleur === "terrain") {
+    quota = q.nouveau_par_seance_max ?? quota;
+  }
+  if (couleur === "libre") {
+    quota = 0;
+    pourquoi.push("dimanche libre : rien de neuf n'est poussé");
+  }
+  if (couleur === "fondations") {
+    const seuil = q.fondations_dues_sans_neuf ?? 15;
+    if (dues > seuil) {
+      quota = 0;
+      pourquoi.push(
+        `lundi fondations : ${dues} cartes dues, plus de ${seuil}, ` +
+          "on rattrape avant d'ouvrir du neuf",
+      );
+    }
+  }
+  const parJour = q.nouveau_par_jour ?? 20;
+  const reste = Math.max(0, parJour - dejaDuJour);
+  if (reste < quota) {
+    pourquoi.push(
+      reste === 0
+        ? `plafond de ${parJour} cartes neuves par jour atteint`
+        : "plafond de neuf du jour presque atteint",
+    );
+  }
+  return { quota: Math.min(quota, reste), pourquoi };
+}
+
+/**
+ * `<domaine>.<branche>` du socle la moins avancee, ou null.
+ *
+ * Reutilise noeudsEtBranches : une seule mesure de remplissage dans tout
+ * le moteur. Rend null quand le socle est tenu partout (la ponderation
+ * s eteint, decisions/0013 §5) ou qu il n y a rien a mesurer.
+ */
+export function brancheSocleLaPlusFaible(
+  cartes: Carte[],
+  etats: Map<string, EtatCarte>,
+  banque: Banque,
+  jourCourant: number,
+): string | null {
+  if (!banque.chapitres?.length || !banque.socle) return null;
+  const domainesSocle = new Set(Object.keys(banque.socle.niveaux ?? {}));
+  if (!domainesSocle.size) return null;
+  const { branches } = noeudsEtBranches(
+    cartes, [], banque, etats, new Set<string>(), jourCourant,
+  );
+  const candidates = branches.filter(
+    (b) => domainesSocle.has(b.domaine) && b.noeudsServis > 0,
+  );
+  if (!candidates.length) return null;
+  const faible = candidates.reduce((a, b) => {
+    if (b.remplissage !== a.remplissage) return b.remplissage < a.remplissage ? b : a;
+    if (b.domaine !== a.domaine) return b.domaine < a.domaine ? b : a;
+    return b.cle < a.cle ? b : a;
+  });
+  if (faible.remplissage >= reglages(banque).seuil_ouverture_region) return null;
+  return `${faible.domaine}.${faible.cle}`;
 }
 
 export interface Seance {

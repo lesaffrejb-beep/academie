@@ -33,10 +33,11 @@ v2 proposés, squelette du serveur et du client, maquette du front. Le
 sources (`ACA-SOURCES-1`), les licences de réutilisation lues à la
 source (`ACA-REUSE-1`), le tableau de bord du rituel
 (`ACA-RITUAL-METRICS-1`). Sont ouverts : le contrat v2
-(`ACA-CONTRAT-2`), le client v2 (`ACA-FRONT-2`), la semaine type
-(`ACA-SEMAINE-1`), et les trente séances de JB (`ACA-RITUAL-1`), qui
-n'attendent plus que lui. L'arbre (`ACA-ARBRE-1`) est fait : nœuds,
-branches, états et parité Python/TypeScript.
+(`ACA-CONTRAT-2`), le client v2 (`ACA-FRONT-2`), et les trente séances
+de JB (`ACA-RITUAL-1`), qui n'attendent plus que lui. L'arbre
+(`ACA-ARBRE-1`) et la semaine type (`ACA-SEMAINE-1`) sont faits :
+nœuds, branches, états, couleurs des jours, pondération du socle, et la
+parité Python/TypeScript sur chacun.
 
 1. **L'état synchronisé** (`ACA-JOURNAL-SYNC-1`) : API d'état, SQLite,
    client hors-ligne, parité FSRS. C'est le maillon manquant depuis
@@ -65,7 +66,10 @@ branches, états et parité Python/TypeScript.
    L'arrivée d'un élève (pseudo, catalogue, « Créer le vôtre » avec les
    prompts à coller) suit dans `ACA-ONBOARDING-1` ; d'ici là, l'accueil
    est `COMMENCER.md` (`decisions/0027`).
-2. **La semaine type et le socle** (`ACA-SEMAINE-1`) dans le composeur.
+2. **La semaine type et le socle** (`ACA-SEMAINE-1`, fait le 03/09) :
+   le composeur applique la couleur du jour, la pondération du socle, la
+   séance de domaine avec ses rappels d'ailleurs, et ouvre la séance par
+   une ligne de journal qui la rend rejouable.
 3. **L'étude** (`ACA-ETUDE-1`) sur trois chapitres pilotes, puis
    **les épreuves** (`ACA-EXAMEN-1`), **la boîte** (`ACA-BOITE-1`),
    **la journée** (`ACA-JOURNEE-1`), **le papier** (`ACA-PAPIER-1`).

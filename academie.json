@@ -50,12 +50,17 @@
     }
   },
   "quotas": {
-    "_": "Arbitrage JB du 28/08/2026, ajustable au bilan des 30 séances.",
+    "_": "Arbitrage JB du 28/08/2026, ajustable au bilan des 30 séances. Les cinq dernières clés viennent d'ACA-SEMAINE-1 : le neuf par séance peut monter à nouveau_par_seance_max selon la couleur du jour ; nouveau_par_jour plafonne le neuf introduit dans une journée (decisions/0005) ; ponderation_socle est la part du neuf réservée à la branche du socle la moins avancée tant que le socle n'est pas validé, et elle s'éteint quand le joueur choisit un domaine (decisions/0013) ; rappels_d_ailleurs_max borne les révisions d'autres domaines glissées dans une séance de domaine (BLUEPRINT §3) ; fondations_dues_sans_neuf : un lundi qui a plus de dues que ça ne sert aucune carte neuve (BLUEPRINT §4).",
     "revisions_par_seance": 10,
     "nouveau_par_seance": 1,
     "ateliers_par_semaine": 2,
     "plafond_reprise": 20,
-    "revisions_min_jour_atelier": 5
+    "revisions_min_jour_atelier": 5,
+    "nouveau_par_seance_max": 3,
+    "nouveau_par_jour": 20,
+    "ponderation_socle": 0.5,
+    "rappels_d_ailleurs_max": 2,
+    "fondations_dues_sans_neuf": 15
   },
   "fsrs": {
     "_": "Valeurs vérifiées le 28/08/2026 (CORPUS §3) : défaut Anki 0,90, plage 0,80-0,95 ; optimiseur personnalisé à partir de ~400 revues. poids : les 21 paramètres FSRS-6 servis au client (ACA-ARBRE-1), identiques à app/planificateur.py PARAMS_DEFAUT ; un test refuse toute divergence.",
@@ -126,5 +131,71 @@
     "lignes_par_page_transcription": 60,
     "dpi_rendu": 110,
     "resume_max": 1500
+  },
+  "semaine_type": {
+    "_": "La couleur des jours (BLUEPRINT §4, decisions/0016). Les révisions dues sont servies tous les jours : la couleur ne pèse que sur le neuf. Copiée du programme, elle se règle par joueur.",
+    "lundi": "fondations",
+    "mardi": "cours",
+    "mercredi": "terrain",
+    "jeudi": "cours",
+    "vendredi": "exploration",
+    "samedi": "etude",
+    "dimanche": "libre"
+  },
+  "socle": {
+    "_": "Le niveau à tenir par domaine pour valider le socle (BLUEPRINT §6, decisions/0013). Tant qu'il n'est pas validé, ponderation_socle du neuf va à la branche la moins avancée ; un domaine choisi l'emporte, et la pondération reprend le lendemain.",
+    "niveaux": {
+      "droit": 3,
+      "pathologie": 2,
+      "equipements": 2,
+      "comptabilite": 3,
+      "sinistres": 2,
+      "procedure": 2,
+      "travaux": 2,
+      "energie": 2,
+      "immobilier": 2,
+      "cabinet": 3
+    }
+  },
+  "calendrier_metier": {
+    "_": "Le calendrier du métier pèse en silence sur les jours cours et terrain (BLUEPRINT §4) : le neuf est tiré d'abord dans les domaines du mois. Clé = numéro de mois. Il n'interdit jamais rien, et le « pourquoi cette carte » le dit quand on le demande.",
+    "3": [
+      "droit",
+      "cabinet"
+    ],
+    "4": [
+      "droit",
+      "cabinet"
+    ],
+    "5": [
+      "droit",
+      "cabinet"
+    ],
+    "6": [
+      "droit",
+      "cabinet"
+    ],
+    "9": [
+      "comptabilite",
+      "energie"
+    ],
+    "10": [
+      "comptabilite",
+      "energie"
+    ],
+    "11": [
+      "comptabilite",
+      "energie",
+      "equipements"
+    ],
+    "12": [
+      "equipements"
+    ],
+    "1": [
+      "equipements"
+    ],
+    "2": [
+      "equipements"
+    ]
   }
 }

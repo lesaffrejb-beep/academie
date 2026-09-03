@@ -72,6 +72,12 @@ export interface Quotas {
   plafond_reprise: number;
   ateliers_par_semaine?: number;
   revisions_min_jour_atelier?: number;
+  /** ACA-SEMAINE-1 : absents sur une banque publiee avant, d ou les defauts. */
+  nouveau_par_seance_max?: number;
+  nouveau_par_jour?: number;
+  ponderation_socle?: number;
+  rappels_d_ailleurs_max?: number;
+  fondations_dues_sans_neuf?: number;
 }
 
 export interface ReglagesProgression {
@@ -104,6 +110,10 @@ export interface Banque {
   };
   progression: ReglagesProgression;
   quiz?: { nb_questions?: number; stabilite_initiale_jours?: number };
+  /** La semaine type et le socle (ACA-SEMAINE-1). */
+  semaine_type?: Record<string, string>;
+  socle?: { niveaux?: Record<string, number> };
+  calendrier_metier?: Record<string, string[]>;
   /** L'arbre, publie depuis programme/<metier>.json (ACA-ARBRE-1). */
   chapitres?: Chapitre[];
   branches?: Record<string, BrancheProgramme[]>;

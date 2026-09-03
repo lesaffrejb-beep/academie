@@ -71,7 +71,11 @@ FICHIERS_CLIENT = ("index.html", "style.css", "app.js", "sw.js")
 # à `academie.json` : sans eux, il devrait coder les seuils en dur, ce
 # qui est exactement ce que `progression.reglages()` interdit côté
 # Python. On ne sert QUE des réglages, jamais un chemin ni un secret.
-BLOCS_CONFIG = ("domaines", "quotas", "fsrs", "progression", "quiz")
+BLOCS_CONFIG = ("domaines", "quotas", "fsrs", "progression", "quiz",
+                # ACA-SEMAINE-1 : sans eux le client ne peut pas décider la
+                # couleur du jour, le quota de neuf ni la branche du socle,
+                # et la parité demandée par le cahier serait impossible.
+                "semaine_type", "socle", "calendrier_metier")
 
 # Ce qu'un nœud publie. Le client recalcule l'arbre avec exactement ces
 # champs et pas un de plus (ACA-ARBRE-1) : le reste du programme (les
