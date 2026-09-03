@@ -183,7 +183,7 @@ def valide_sources(sources, ref: str) -> list[str]:
 
 def derive(objet: dict, sources: list, aujourdhui: date) -> tuple[bool, str]:
     """`a_recouper` et `note_confiance` (decisions/0022), jamais écrits à la main."""
-    prov = objet.get("provenance") or {}
+    prov = objet.get("provenance") if isinstance(objet.get("provenance"), dict) else {}
     fiabilites = [s.get("fiabilite") or FIABILITE_PAR_NATURE.get(s.get("nature"), "C")
                   for s in sources if isinstance(s, dict)]
     solides = [f for f in fiabilites if f in ("A", "B")]
