@@ -9,7 +9,10 @@ unique, suppression sous 48 h, import v0 vers v1, parité FSRS sur les
 vecteurs, socket réelle). Lancer : `python3 -m unittest discover -s serveur/tests`,
 ou `python3 app/tests.py` qui l'inclut. Routes servies : `/sante`,
 `/journal`, `/journal/export`, `/auth/lien`, `/auth/deconnexion`,
-`/profil` (GET, PATCH, DELETE), `/boite`. Le reste d'`API.md` (banques,
+`/profil` (GET, PATCH, DELETE), `/boite`. `GET /journal/export` sort le
+journal en JSONL : c'est l'entrée de `python3 app/rituel.py <fichier>`,
+le tableau de bord du rituel (`ACA-RITUAL-METRICS-1`), qui lit sans rien
+écrire et n'appelle personne. Le reste d'`API.md` (banques,
 livraisons, bibliothèque, cercles) attend son chantier. Reste du
 cahier : l'installation sur le VPS et la preuve téléphone-Mac (JB).
 

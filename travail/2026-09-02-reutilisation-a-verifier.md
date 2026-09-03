@@ -80,6 +80,137 @@ verdict, et pour chaque « reprendre le code » : le fichier de
 provenance, la taille ajoutée au bundle, et ce qu'on a adapté. Rien
 n'est installé avant ce tableau.
 
+---
+
+# VERDICTS, chantier `ACA-REUSE-1` (03/09/2026)
+
+Chaque licence ci-dessous a été **lue dans le fichier `LICENSE` du dépôt
+lui-même**, à l'URL donnée, le 03/09/2026. Aucun badge GitHub, aucune
+mémoire de modèle, aucune page d'agrégateur. Les licences déclarées dans
+le registre npm ont servi de contre-épreuve : quand les deux divergent,
+c'est écrit.
+
+**Poids** : la colonne donne le **paquet npm décompressé**
+(`registry.npmjs.org`, version courante du 03/09/2026). Ce n'est pas la
+taille ajoutée au bundle gzippé : ce cahier interdit `npm install` et
+toute écriture dans `web/`. Le poids gzippé réel se mesure au moment de
+l'adoption, dans `ACA-FRONT-2`, contre le budget de 400 Ko
+(`decisions/0007`). Le paquet décompressé sert à écarter d'emblée ce qui
+est manifestement hors budget.
+
+## Deux corrections à la liste des candidats
+
+1. **H5P n'est pas MIT.** `h5p/h5p-php-library/LICENSE.txt` est la **GNU
+   GPL version 3**. La ligne « MIT (core) » du 02/09 était fausse. H5P
+   passe donc en **idées seulement**, au même rang qu'Anki. C'est la
+   raison d'être de la règle « pas de verdict de mémoire ».
+2. **wavesurfer.js est BSD-3-Clause** (le fichier le dit en toutes
+   lettres), et **AnkiDroid est GPL-3.0**, pas AGPL. **elkjs** est en
+   double licence : son `LICENSE.md` est l'**EPL-2.0**, son paquet npm
+   déclare `EPL-2.0 OR GPL-3.0-or-later`.
+
+## Exercices et rendu d'apprentissage
+
+| Candidat | Licence lue le 03/09 | URL lue | Poids npm | Verdict |
+|---|---|---|---|---|
+| Khan Academy Perseus | MIT | `raw.githubusercontent.com/Khan/perseus/main/LICENSE` | monorepo | **voler le pattern** : la notation par widget et la validation d'une réponse partielle. Le rendu est couplé à leur contrat de contenu, pas au nôtre |
+| H5P (h5p-php-library) | **GPL-3.0** | `.../h5p/h5p-php-library/master/LICENSE.txt` | PHP | **idées seulement** : zones sur image et appariement. Aucun code |
+| Oppia | Apache-2.0 | `.../oppia/oppia/master/LICENSE` | plateforme | **voler le pattern** : l'exercice en pas, avec relance sur l'erreur |
+| Kolibri | MIT | `.../learningequality/kolibri/master/LICENSE` | plateforme | **voler le pattern** : hors-ligne d'abord, synchronisation par lots. Notre `serveur/` fait déjà l'union |
+| Anki | **AGPL-3.0 ou ultérieure** | `.../ankitects/anki/main/LICENSE` | app | **idées seulement** (déjà tranché le 30/08) |
+| AnkiDroid | **GPL-3.0** | `.../ankidroid/Anki-Android/main/COPYING` | app | **idées seulement** |
+| ts-fsrs | MIT | `.../open-spaced-repetition/ts-fsrs/main/LICENSE` | 706 Ko | **repris** : déjà dans `web/LICENCES.md`. Le miroir écrit à la main dans `web/src/moteur/fsrs.ts` reste la référence, la parité est testée |
+| py-fsrs | MIT | `.../open-spaced-repetition/py-fsrs/main/LICENSE` | PyPI | **écarter de la production** : `app/planificateur.py` est maison et testé. Gardé comme oracle de comparaison |
+| fsrs-optimizer | BSD-3-Clause | `.../open-spaced-repetition/fsrs-optimizer/main/LICENSE` | PyPI | **à connaître**, pour `ACA-OPTIMISEUR-1` seulement (quatre cents révisions) |
+| genanki | MIT | `.../kerrickstaley/genanki/main/LICENSE.txt` | PyPI | **reprendre** à `ACA-EXPORT-1`. Outil d'usine, jamais lié au client |
+
+## Le graphe, l'arbre, les cartes
+
+L'arbre est **dessiné**, pas disposé à l'exécution : le programme porte
+déjà la disposition. Ce qu'on cherche ici, c'est le zoom et les courbes,
+pas un moteur de graphe.
+
+| Candidat | Licence lue le 03/09 | URL lue | Poids npm | Verdict |
+|---|---|---|---|---|
+| xyflow (React Flow) | MIT | `.../xyflow/xyflow/main/LICENSE` | 1,2 Mo | **écarter** : c'est un éditeur de graphe (nœuds déplaçables, poignées, mini-carte). L'arbre de l'Académie ne s'édite pas, il se conquiert |
+| d3-zoom | ISC | `.../d3/d3-zoom/main/LICENSE` | 87 Ko | **reprendre** : le zoom et le déplacement de l'arbre |
+| d3-hierarchy | ISC | `.../d3/d3-hierarchy/main/LICENSE` | 136 Ko | **reprendre** : disposition de repli quand une branche n'a pas de `disposition` |
+| d3-shape | ISC | `.../d3/d3-shape/main/LICENSE` | 247 Ko | **reprendre** : les courbes des liens entre nœuds |
+| elkjs | **EPL-2.0** (npm : `EPL-2.0 OR GPL-3.0-or-later`) | `.../kieler/elkjs/master/LICENSE.md` | 8,0 Mo | **écarter** : 8 Mo pour un placement qu'on ne calcule pas à l'exécution |
+| dagre | MIT | `.../dagrejs/dagre/master/LICENSE` | 845 Ko | **écarter** : même motif ; `d3-hierarchy` suffit au repli |
+| svg-pan-zoom | BSD-2-Clause | `.../bumbu/svg-pan-zoom/master/LICENSE` | 2,0 Mo | **écarter** : `d3-zoom` fait la même chose pour 87 Ko |
+| panzoom | MIT | `.../anvaka/panzoom/main/LICENSE` | 719 Ko | **écarter** : même motif |
+
+## Lecteurs et médias
+
+Rien de tout cela n'entre avant `ACA-MEDIA-1`. Les licences sont lues
+maintenant pour que le chantier n'ait plus à le faire.
+
+| Candidat | Licence lue le 03/09 | URL lue | Poids npm | Verdict |
+|---|---|---|---|---|
+| Plyr | MIT | `.../sampotts/plyr/master/LICENSE.md` | 5,3 Mo | **à connaître** : candidat du type `ecoute` |
+| Vidstack | MIT | `.../vidstack/player/main/LICENSE` | monorepo | **à connaître** : même case, plus moderne |
+| Video.js | Apache-2.0 | `.../videojs/video.js/main/LICENSE` | lourd | **écarter** : trop gros pour de l'audio de chapitre |
+| wavesurfer.js | **BSD-3-Clause** | `.../katspaugh/wavesurfer.js/main/LICENSE` | 1,4 Mo | **à connaître** : l'écoute avec repères, si le podcast de chapitre existe un jour |
+| pdf.js | Apache-2.0 | `.../mozilla/pdf.js/master/LICENSE` | 34,8 Mo | **écarter du client** : l'usine lit les PDF sur le Mac et le type `lecture` sert le pivot Markdown, pas le PDF |
+| Excalidraw | MIT | `.../excalidraw/excalidraw/master/LICENSE` | 46,8 Mo | **écarter** : le `dessin` se fait sur papier (`ACA-PAPIER-1`), pas dans le navigateur |
+| OCRmyPDF | **MPL-2.0** | `.../ocrmypdf/OCRmyPDF/main/LICENSE` | PyPI | **pris pour l'usine**, sur le Mac, jamais lié au produit |
+| tesseract | Apache-2.0 | `.../tesseract-ocr/tesseract/main/LICENSE` | binaire | **pris pour l'usine**, même conduite |
+| yt-dlp | Unlicense | `.../yt-dlp/yt-dlp/master/LICENSE` | binaire | **pris pour l'usine** |
+| faster-whisper | MIT | `.../SYSTRAN/faster-whisper/master/LICENSE` | PyPI | **pris pour l'usine** : transcription locale, aucun tiers |
+
+## Profil, régularité, journal, éditeur
+
+| Candidat | Licence lue le 03/09 | URL lue | Poids npm | Verdict |
+|---|---|---|---|---|
+| react-activity-calendar | MIT | `.../grubersjoe/react-activity-calendar/main/LICENSE` | 178 Ko | **écarter** : la heatmap tient en quarante lignes de SVG (déjà noté le 30/08), et la DA veut nos couleurs |
+| cal-heatmap | MIT | `.../wa0x6e/cal-heatmap/master/LICENCE` | 6,9 Mo | **écarter** : hors budget pour un carré par jour |
+| Tiptap | MIT | `.../ueberdosis/tiptap/main/LICENSE.md` | 2,9 Mo (core seul) | **à connaître**, décidé à `ACA-RESPONSE-1` : la synthèse écrite commence en texte simple |
+| Milkdown | MIT | `.../Milkdown/milkdown/main/LICENSE` | monorepo | **écarter** : même case que Tiptap, sans avantage |
+| Radix Primitives | MIT | `.../radix-ui/primitives/main/LICENSE` | 99 Ko par primitive | **reprendre à la carte** : seulement les primitives dont `web/src/ecrans/Ui.tsx` a besoin (dialogue, onglets), jamais le paquet entier, jamais leur style |
+| shadcn/ui | MIT | `.../shadcn-ui/ui/main/LICENSE.md` | copier-coller | **voler le pattern** : c'est du code à copier par construction, pas une dépendance. En-tête de provenance obligatoire |
+| Motion | MIT | `.../motiondivision/motion/main/LICENSE.md` | 718 Ko | **repris** (déjà tranché) |
+| Dexie | Apache-2.0 | `.../dexie/Dexie.js/master/LICENSE` | 3,2 Mo | **repris** (déjà tranché, en usage dans `web/src/moteur/journal.ts`) |
+
+## Icônes et animation
+
+| Candidat | Licence lue le 03/09 | URL lue | Poids npm | Verdict |
+|---|---|---|---|---|
+| Lucide | ISC | `.../lucide-icons/lucide/main/LICENSE` | 31,8 Mo (paquet entier, import par icône) | **repris** : les glyphes d'interface. Import nommé seulement, jamais le paquet |
+| Phosphor Icons | MIT | `.../phosphor-icons/core/main/LICENSE` | 33,0 Mo | **écarter** : une seule famille d'interface |
+| Iconoir | MIT | `.../iconoir-icons/iconoir/main/LICENSE` | 6,4 Mo | **écarter** : même motif |
+| Tabler Icons | MIT | `.../tabler/tabler-icons/main/LICENSE` | 66,0 Mo | **écarter** : même motif |
+| game-icons | **CC BY 3.0, ou CC0 pour certains contributeurs** | `.../game-icons/icons/master/license.txt` | assets | **repris** : les glyphes de chapitre, attribution visible dans Crédits |
+| Rive (rive-react, rive-wasm) | MIT (les deux runtimes) | `.../rive-app/rive-react/main/LICENSE` et `.../rive-app/rive-wasm/master/LICENSE` | 48 Ko (react) | **à connaître** : les runtimes sont libres, l'éditeur est propriétaire et les `.riv` sont à nous |
+| GSAP | **à vérifier** | non lue : le dépôt `greensock/GSAP` n'a pas de fichier `LICENSE` à sa racine, et `gsap.com` est injoignable depuis l'environnement Cloud (proxy, 403) | 6,3 Mo | **suspendu** : le registre npm déclare « Standard 'no charge' license: https://gsap.com/standard-license », ce n'est pas une licence OSI et le texte n'a pas été lu. À lire depuis le Mac avant tout usage. Motion (MIT) couvre le besoin en attendant |
+| Lottie / LottieFiles | **à vérifier** | non lue : `lottiefiles.com` injoignable depuis le Cloud | assets | **suspendu**, même motif. Chaque fichier porterait sa mention |
+
+## Outillage du client, déjà en place
+
+| Candidat | Licence lue le 03/09 | URL lue | Verdict |
+|---|---|---|---|
+| vite-plugin-pwa | MIT | `.../vite-pwa/vite-plugin-pwa/main/LICENSE` | **repris** (en usage) |
+| Workbox | MIT | `.../GoogleChrome/workbox/main/LICENSE` | **repris** (via le plugin) |
+| Playwright | Apache-2.0 | `.../microsoft/playwright/main/LICENSE` | **à prendre** pour les tests de bout en bout qui manquent à `web/` |
+
+## Ce qui reste à faire à la main, hors Cloud
+
+Deux licences n'ont pas pu être lues à leur source depuis cet
+environnement : **GSAP** et **Lottie**. Le proxy sortant refuse
+`gsap.com` et `lottiefiles.com`, et GSAP ne publie pas de fichier de
+licence dans son dépôt. Elles restent « à vérifier », pas « libres ».
+Tant que le texte n'est pas lu depuis le Mac, ni l'une ni l'autre
+n'entre dans `web/`.
+
+## Aucune AGPL en code
+
+Vérifié sur les 48 dépôts lus ce jour : la seule AGPL est **Anki**
+(les deux autres AGPL du domaine, Anki Review Heatmap et
+exercism/website, avaient été relevées le 30/08 et sont déjà écartées).
+**H5P** et **AnkiDroid** sont GPL, ce qui est le même refus pour du code
+lié. Aucune de ces quatre n'est retenue autrement qu'en idées, et aucun
+« reprendre » de ce tableau n'est sous une licence à contamination.
+
 ## Banques d'éléments 2026 (ajouté le 03/09/2026, licences lues en ligne le jour même)
 
 | Candidat | Ce que c'est | Licence lue le 03/09 | Verdict |

@@ -33,7 +33,8 @@
     "source": [
       {
         "texte": "Décret n° 2025-1292 du 22 décembre 2025 modifiant le décret n° 67-223 du 17 mars 1967 (art. 64 : la voie électronique devient le principe ; art. 64-1 : le postal sur demande du copropriétaire)",
-        "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000053159903"
+        "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000053159903",
+        "nature": "texte-officiel"
       }
     ],
     "verifie": "2026-08-28",
@@ -58,7 +59,8 @@
     "source": [
       {
         "texte": "Art. 64 du décret n° 67-223 du 17 mars 1967, dans sa rédaction issue du décret n° 2025-1292 du 22 décembre 2025 (lettre recommandée électronique des art. R. 53 à R. 53-4 du code des postes et des communications électroniques, ou procédé électronique d'un prestataire de service de confiance qualifié)",
-        "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000053159903"
+        "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000053159903",
+        "nature": "texte-officiel"
       }
     ],
     "verifie": "2026-08-28",
@@ -83,7 +85,8 @@
     "source": [
       {
         "texte": "Art. 64-2 du décret n° 67-223 du 17 mars 1967, modifié par le décret n° 2025-1292 du 22 décembre 2025 (le syndic accompagne les appels de fonds et les convocations de la mention de la possibilité de recevoir les notifications et mises en demeure par voie postale)",
-        "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000053159903"
+        "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000053159903",
+        "nature": "texte-officiel"
       }
     ],
     "verifie": "2026-08-28",
@@ -126,7 +129,8 @@
     "source": [
       {
         "texte": "Art. 64 et 64-1 du décret n° 67-223 du 17 mars 1967, dans leur rédaction issue du décret n° 2025-1292 du 22 décembre 2025 (électronique : lendemain de la transmission par le prestataire de l'avis électronique ; postal : lendemain de la première présentation de la lettre recommandée au domicile)",
-        "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000053159903"
+        "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000053159903",
+        "nature": "texte-officiel"
       }
     ],
     "verifie": "2026-08-28",
@@ -171,7 +175,8 @@
     "vigilance": "La durée d'accessibilité fait partie de la mention obligatoire : écrire « les pièces sont sur l'espace en ligne » ne suffit pas, il faut dire jusqu'à quand elles y restent.",
     "source": [
       {
-        "texte": "Décret n° 2025-1292 du 22 décembre 2025, sur la notification des documents de l'art. 11 du décret n° 67-223"
+        "texte": "Décret n° 2025-1292 du 22 décembre 2025, sur la notification des documents de l'art. 11 du décret n° 67-223",
+        "nature": "texte-officiel"
       }
     ],
     "verifie": "2026-08-10",
@@ -215,11 +220,13 @@
     "source": [
       {
         "texte": "Cass. 3e civ., 15 janvier 2026, n° 23-23.534, publié au bulletin (le syndicat ne peut réclamer les provisions des exercices postérieurs qu'en justifiant, pour chacun, d'une nouvelle mise en demeure, et ne peut réclamer des sommes d'exercices dont les comptes ne sont pas approuvés)",
-        "url": "https://www.legifrance.gouv.fr/juri/id/JURITEXT000053384326"
+        "url": "https://www.legifrance.gouv.fr/juri/id/JURITEXT000053384326",
+        "nature": "texte-officiel"
       },
       {
         "texte": "Art. 19-2 loi n° 65-557 du 10 juillet 1965",
-        "url": "https://www.legifrance.gouv.fr/loda/id/LEGITEXT000006068256"
+        "url": "https://www.legifrance.gouv.fr/loda/id/LEGITEXT000006068256",
+        "nature": "texte-officiel"
       }
     ],
     "verifie": "2026-08-28",
@@ -244,10 +251,12 @@
     "source": [
       {
         "texte": "Art. 19-2 loi n° 65-557 du 10 juillet 1965",
-        "url": "https://www.legifrance.gouv.fr/loda/id/LEGITEXT000006068256"
+        "url": "https://www.legifrance.gouv.fr/loda/id/LEGITEXT000006068256",
+        "nature": "texte-officiel"
       },
       {
-        "texte": "Cass. 3e civ., 18 juin 2026 — numéro de pourvoi non recoupé à la source : retrouver la référence avant de la citer en séance ou par écrit"
+        "texte": "Cass. 3e civ., 18 juin 2026 — numéro de pourvoi non recoupé à la source : retrouver la référence avant de la citer en séance ou par écrit",
+        "nature": "jurisprudence"
       }
     ],
     "verifie": "2026-08-10",
@@ -291,11 +300,13 @@
     "source": [
       {
         "texte": "Cass. 3e civ., 29 février 2024, n° 22-24.558, publié au bulletin (le vote du quitus ne prive pas le copropriétaire d'agir en responsabilité délictuelle contre le syndic pour son préjudice personnel)",
-        "url": "https://www.legifrance.gouv.fr/juri/id/JURITEXT000049290779"
+        "url": "https://www.legifrance.gouv.fr/juri/id/JURITEXT000049290779",
+        "nature": "texte-officiel"
       },
       {
         "texte": "Art. 42 al. 2 loi n° 65-557 du 10 juillet 1965 (recevabilité de l'action en annulation réservée aux opposants et défaillants)",
-        "url": "https://www.legifrance.gouv.fr/loda/id/LEGITEXT000006068256"
+        "url": "https://www.legifrance.gouv.fr/loda/id/LEGITEXT000006068256",
+        "nature": "texte-officiel"
       }
     ],
     "verifie": "2026-08-28",
@@ -338,13 +349,16 @@
     "source": [
       {
         "texte": "Art. 26 d) loi n° 65-557 du 10 juillet 1965, créé par la loi n° 2024-1039 du 19 novembre 2024 (interdiction possible seulement dans les copropriétés dont le règlement interdit toute activité commerciale dans les lots non spécifiquement destinés à un usage commercial ; majorité des membres du syndicat représentant au moins les deux tiers des voix ; lots autres que ceux constituant une résidence principale)",
-        "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000050612711"
+        "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000050612711",
+        "nature": "texte-officiel"
       },
       {
-        "texte": "Cons. const., décision QPC du 19 mars 2026 (dispositif déclaré conforme à la Constitution)"
+        "texte": "Cons. const., décision QPC du 19 mars 2026 (dispositif déclaré conforme à la Constitution)",
+        "nature": "jurisprudence"
       },
       {
-        "texte": "Cass. 3e civ., 25 janvier 2024 (la location meublée de courte durée sans prestations de services accessoires n'est pas, par elle-même, de nature commerciale)"
+        "texte": "Cass. 3e civ., 25 janvier 2024 (la location meublée de courte durée sans prestations de services accessoires n'est pas, par elle-même, de nature commerciale)",
+        "nature": "jurisprudence"
       }
     ],
     "verifie": "2026-08-28",
@@ -366,11 +380,13 @@
     "source": [
       {
         "texte": "Art. 25-2-1 loi n° 65-557 du 10 juillet 1965 (majorité des articles 25 et 25-1 ; conditions tenant à la structure, aux éléments d'équipement essentiels, à la sécurité, à la salubrité, aux modalités de jouissance des parties privatives d'autres copropriétaires et au plan pluriannuel adopté)",
-        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000049396722"
+        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000049396722",
+        "nature": "texte-officiel"
       },
       {
         "texte": "Art. 10-4 du décret n° 67-223 du 17 mars 1967 (inscription à l'ordre du jour de l'assemblée qui suit la notification de la demande ; exécution après le délai de deux mois du deuxième alinéa de l'art. 42 de la loi)",
-        "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000053182694"
+        "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000053182694",
+        "nature": "texte-officiel"
       }
     ],
     "verifie": "2026-08-28",

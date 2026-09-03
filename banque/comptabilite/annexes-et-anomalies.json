@@ -12,11 +12,13 @@
     "source": [
       {
         "texte": "Arrêté du 14 mars 2005 relatif aux comptes du syndicat des copropriétaires (modèles obligatoires des annexes 1 à 5)",
-        "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000258165"
+        "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000258165",
+        "nature": "texte-officiel"
       },
       {
         "texte": "Décret n° 2005-240 du 14 mars 2005 relatif aux comptes du syndicat des copropriétaires",
-        "url": "https://www.legifrance.gouv.fr/loda/id/LEGITEXT000006051416"
+        "url": "https://www.legifrance.gouv.fr/loda/id/LEGITEXT000006051416",
+        "nature": "texte-officiel"
       }
     ],
     "verifie": "2026-08-28",
@@ -62,7 +64,8 @@
     "source": [
       {
         "texte": "Arrêté du 14 mars 2005 relatif aux comptes du syndicat des copropriétaires, annexe 3 (compte de gestion pour opérations courantes de l'exercice clos, réalisé et budgets prévisionnels)",
-        "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000258165"
+        "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000258165",
+        "nature": "texte-officiel"
       }
     ],
     "verifie": "2026-08-28",
@@ -87,11 +90,13 @@
     "source": [
       {
         "texte": "Arrêté du 14 mars 2005 relatif aux comptes du syndicat des copropriétaires, annexe 4 (compte de gestion pour travaux de l'article 14-2 et opérations exceptionnelles hors budget)",
-        "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000258165"
+        "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000258165",
+        "nature": "texte-officiel"
       },
       {
         "texte": "Art. 14-2 loi n° 65-557 du 10 juillet 1965, rédaction issue de la loi n° 2021-1104 (projet de plan pluriannuel de travaux)",
-        "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043977289"
+        "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043977289",
+        "nature": "texte-officiel"
       }
     ],
     "verifie": "2026-08-28",
@@ -112,10 +117,12 @@
     "vigilance": "Un écart de quelques euros n'est jamais « négligeable » : il signale presque toujours une écriture égarée, pas un arrondi. On demande l'explication, on ne l'invente pas.",
     "source": [
       {
-        "texte": "Arrêté du 14 mars 2005 relatif aux comptes du syndicat des copropriétaires (annexes 1 et 2)"
+        "texte": "Arrêté du 14 mars 2005 relatif aux comptes du syndicat des copropriétaires (annexes 1 et 2)",
+        "nature": "texte-officiel"
       },
       {
-        "texte": "Grille interne de relecture des comptes, blocs A et B"
+        "texte": "Grille interne de relecture des comptes, blocs A et B",
+        "nature": "terrain"
       }
     ],
     "verifie": "2026-08-28",
@@ -139,10 +146,12 @@
     "vigilance": "Ces deux pourcentages sont des seuils de vigilance internes, pas des seuils légaux : aucun texte ne fixe de taux de dépassement du budget. Les présenter en séance comme une règle de droit est indéfendable.",
     "source": [
       {
-        "texte": "Grille interne de relecture des comptes, bloc C (comparaison budget voté / réalisé)"
+        "texte": "Grille interne de relecture des comptes, bloc C (comparaison budget voté / réalisé)",
+        "nature": "terrain"
       },
       {
-        "texte": "Arrêté du 14 mars 2005 relatif aux comptes du syndicat des copropriétaires (annexe 3)"
+        "texte": "Arrêté du 14 mars 2005 relatif aux comptes du syndicat des copropriétaires (annexe 3)",
+        "nature": "texte-officiel"
       }
     ],
     "verifie": "2026-08-28",
@@ -185,7 +194,8 @@
     "source": [
       {
         "texte": "Art. 14-2-1 loi n° 65-557 du 10 juillet 1965 (cotisation annuelle : pas moins de 2,5 % du montant des travaux du plan adopté ET pas moins de 5 % du budget de l'art. 14-1)",
-        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000043967792"
+        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000043967792",
+        "nature": "texte-officiel"
       }
     ],
     "verifie": "2026-08-28",
@@ -207,10 +217,12 @@
     "source": [
       {
         "texte": "Art. 18 loi n° 65-557 du 10 juillet 1965 (compte bancaire séparé ouvert au nom du syndicat ; compte séparé rémunéré pour le fonds de travaux)",
-        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000044074302"
+        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000044074302",
+        "nature": "texte-officiel"
       },
       {
-        "texte": "Grille interne de relecture des comptes, bloc G (trésorerie et banque)"
+        "texte": "Grille interne de relecture des comptes, bloc G (trésorerie et banque)",
+        "nature": "terrain"
       }
     ],
     "verifie": "2026-08-28",
@@ -253,11 +265,13 @@
     "source": [
       {
         "texte": "Art. 10-1 loi n° 65-557 du 10 juillet 1965 (frais nécessaires de recouvrement imputables au seul copropriétaire défaillant à compter de la mise en demeure ; honoraires du syndic pour l'état daté à l'occasion de la mutation, plafonnés par décret)",
-        "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000039313543"
+        "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000039313543",
+        "nature": "texte-officiel"
       },
       {
         "texte": "Cass. 3e civ., 10 septembre 2020, n° 19-17.045, publié au bulletin (seuls les frais nécessaires au recouvrement d'une créance justifiée sont imputables au copropriétaire défaillant)",
-        "url": "https://www.legifrance.gouv.fr/juri/id/JURITEXT000042348745"
+        "url": "https://www.legifrance.gouv.fr/juri/id/JURITEXT000042348745",
+        "nature": "texte-officiel"
       }
     ],
     "verifie": "2026-08-28",
@@ -278,10 +292,12 @@
     "vigilance": "Le contrôle miroir se fait sur l'annexe 5 : une opération votée non encore clôturée doit y figurer avec sa provision conservée. Une opération disparue des annexes sans avoir été soldée est un signal fort.",
     "source": [
       {
-        "texte": "Décret n° 67-223, art. 45-1 (comptabilité du syndicat, opérations de travaux)"
+        "texte": "Décret n° 67-223, art. 45-1 (comptabilité du syndicat, opérations de travaux)",
+        "nature": "texte-officiel"
       },
       {
-        "texte": "Arrêté du 14 mars 2005 relatif aux comptes du syndicat des copropriétaires (annexes 4 et 5)"
+        "texte": "Arrêté du 14 mars 2005 relatif aux comptes du syndicat des copropriétaires (annexes 4 et 5)",
+        "nature": "texte-officiel"
       }
     ],
     "verifie": "2026-04-12",
@@ -304,14 +320,17 @@
     "source": [
       {
         "texte": "Décret n° 2005-240 du 14 mars 2005, art. 2 et 4 (produits acquis et charges engagées de l'exercice ; charges de travaux enregistrées au fur et à mesure de l'exécution des travaux ou des prestations, même à cheval sur plusieurs exercices)",
-        "url": "https://www.legifrance.gouv.fr/loda/id/LEGITEXT000006051416"
+        "url": "https://www.legifrance.gouv.fr/loda/id/LEGITEXT000006051416",
+        "nature": "texte-officiel"
       },
       {
         "texte": "Art. 14-3 loi n° 65-557 du 10 juillet 1965 (comptabilité d'engagement)",
-        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000006471590"
+        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000006471590",
+        "nature": "texte-officiel"
       },
       {
-        "texte": "Grille interne de relecture des comptes, bloc H (pièges)"
+        "texte": "Grille interne de relecture des comptes, bloc H (pièges)",
+        "nature": "terrain"
       }
     ],
     "verifie": "2026-08-28",
@@ -333,10 +352,12 @@
     "source": [
       {
         "texte": "Art. 10 loi n° 65-557 du 10 juillet 1965 (participation aux charges des services collectifs et éléments d'équipement commun en fonction de l'utilité objective que ces services et éléments présentent à l'égard de chaque lot ; le règlement fixe la quote-part de chaque lot)",
-        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000043977284"
+        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000043977284",
+        "nature": "texte-officiel"
       },
       {
-        "texte": "Grille interne de relecture des comptes, bloc F (ventilation par clé de charges)"
+        "texte": "Grille interne de relecture des comptes, bloc F (ventilation par clé de charges)",
+        "nature": "terrain"
       }
     ],
     "verifie": "2026-08-28",

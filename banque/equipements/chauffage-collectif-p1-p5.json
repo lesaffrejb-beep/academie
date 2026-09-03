@@ -12,11 +12,13 @@
     "source": [
       {
         "texte": "Arrêté du 14 mars 2005 relatif aux comptes du syndicat des copropriétaires, nomenclature des comptes : 603 « Chauffage, énergie et combustibles » (en vigueur au 30/08/2026)",
-        "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000258165"
+        "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000258165",
+        "nature": "texte-officiel"
       },
       {
         "texte": "Cerema et ADEME, « Raccordement des copropriétés aux réseaux de chaleur, guide méthodologique » (2019) : définition des postes P1 achat d'énergie, P2 entretien et maintenance, P3 gros entretien et renouvellement, P4 amortissement",
-        "url": "https://reseaux-chaleur.cerema.fr/sites/reseaux-chaleur-v2/files/fichiers/2022/03/Guide-Copro_RCU_2019.pdf"
+        "url": "https://reseaux-chaleur.cerema.fr/sites/reseaux-chaleur-v2/files/fichiers/2022/03/Guide-Copro_RCU_2019.pdf",
+        "nature": "institution"
       }
     ],
     "verifie": "2026-08-30",
@@ -62,15 +64,18 @@
     "source": [
       {
         "texte": "Art. 45 du décret n° 67-223 du 17 mars 1967 : travaux de maintenance et assimilation du remplacement d'éléments d'équipement communs compris forfaitairement au contrat",
-        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000006488770/"
+        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000006488770/",
+        "nature": "texte-officiel"
       },
       {
         "texte": "Arrêté du 14 mars 2005 relatif aux comptes du syndicat des copropriétaires, nomenclature des comptes : 614 « Contrats de maintenance »",
-        "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000258165"
+        "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000258165",
+        "nature": "texte-officiel"
       },
       {
         "texte": "Cerema et ADEME, « Raccordement des copropriétés aux réseaux de chaleur, guide méthodologique » (2019) : P2 entretien et maintenance, P3 gros entretien et renouvellement",
-        "url": "https://reseaux-chaleur.cerema.fr/sites/reseaux-chaleur-v2/files/fichiers/2022/03/Guide-Copro_RCU_2019.pdf"
+        "url": "https://reseaux-chaleur.cerema.fr/sites/reseaux-chaleur-v2/files/fichiers/2022/03/Guide-Copro_RCU_2019.pdf",
+        "nature": "institution"
       }
     ],
     "verifie": "2026-08-30",
@@ -116,10 +121,12 @@
     "source": [
       {
         "texte": "Cerema et ADEME, « Raccordement des copropriétés aux réseaux de chaleur, guide méthodologique » (2019) : P4, amortissement du financement d'un investissement remboursé par annuités",
-        "url": "https://reseaux-chaleur.cerema.fr/sites/reseaux-chaleur-v2/files/fichiers/2022/03/Guide-Copro_RCU_2019.pdf"
+        "url": "https://reseaux-chaleur.cerema.fr/sites/reseaux-chaleur-v2/files/fichiers/2022/03/Guide-Copro_RCU_2019.pdf",
+        "nature": "institution"
       },
       {
-        "texte": "Décomposition contractuelle P1 à P5, usage des marchés d'exploitation de chauffage ; provenance : référentiel d'exploitation en copropriété, carnet documentaire"
+        "texte": "Décomposition contractuelle P1 à P5, usage des marchés d'exploitation de chauffage ; provenance : référentiel d'exploitation en copropriété, carnet documentaire",
+        "nature": "editeur"
       }
     ],
     "verifie": "2026-08-30",
@@ -144,10 +151,12 @@
     "source": [
       {
         "texte": "Art. 45 du décret n° 67-223 du 17 mars 1967 : remplacement d'éléments d'équipement communs assimilé à la maintenance lorsque son prix est compris forfaitairement au contrat",
-        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000006488770/"
+        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000006488770/",
+        "nature": "texte-officiel"
       },
       {
-        "texte": "Provenance : référentiel d'exploitation en copropriété, carnet documentaire"
+        "texte": "Provenance : référentiel d'exploitation en copropriété, carnet documentaire",
+        "nature": "editeur"
       }
     ],
     "verifie": "2026-08-30",
@@ -172,10 +181,12 @@
     "source": [
       {
         "texte": "Art. 45 du décret n° 67-223 du 17 mars 1967, travaux de maintenance",
-        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000006488770/"
+        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000006488770/",
+        "nature": "texte-officiel"
       },
       {
-        "texte": "Provenance : référentiel d'exploitation en copropriété, carnet documentaire"
+        "texte": "Provenance : référentiel d'exploitation en copropriété, carnet documentaire",
+        "nature": "editeur"
       }
     ],
     "verifie": "2026-08-30",

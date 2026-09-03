@@ -52,6 +52,13 @@ PARTAGES = {"banque", "interne", "perso"}
 PARTAGES_SCANNES = {"banque", "interne"}
 OBLIGATOIRES = ("id", "domaine", "branche", "type", "question", "reponse",
                 "source", "verifie", "statut", "partage")
+# Liste fermée de decisions/0004. Le contrat v1 tolère qu'une source n'ait
+# pas de nature ; il refuse une nature inventée. Le v2 la rendra obligatoire
+# (CONTRAT-CARTE-V2.md) ; d'ici là c'est app/tests_sources.py qui vérifie
+# qu'aucune source de la banque n'en manque.
+NATURES = {"texte-officiel", "jurisprudence", "institution", "norme", "doctrine",
+           "presse-pro", "organisation-pro", "association", "editeur",
+           "support-interne", "terrain"}
 
 RE_DATE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 RE_ID = re.compile(r"^[a-z0-9]+(-[a-z0-9]+)*$")
@@ -146,6 +153,9 @@ def valide_carte(carte: dict, fichier: Path, config: dict,
         for i, src in enumerate(sources):
             if not isinstance(src, dict) or not str(src.get("texte") or "").strip():
                 err.append(f"{ref} : source[{i}] sans `texte`")
+            elif src.get("nature") not in (None, "") and src["nature"] not in NATURES:
+                err.append(f"{ref} : source[{i}] nature `{src['nature']}` hors "
+                           f"de la liste fermée (decisions/0004)")
     if not RE_DATE.match(str(carte.get("verifie") or "")):
         err.append(f"{ref} : `verifie` absent ou hors format AAAA-MM-JJ")
 

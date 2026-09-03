@@ -167,13 +167,10 @@ Depuis la racine du dépôt, la porte reste la même :
 python3 app/tests.py && python3 tooling/check.py
 ```
 
-À savoir : `tooling/check.py` parcourt tout `web/` et n'ignore que
-`node_modules`. Après un `npm run build`, `web/dist/banque.json` porte
-les tirets cadratins de la banque et fait sortir `check.py` en erreur.
-Efface `dist/` avant de lancer la porte, ou ajoute `dist` et `dev-dist`
-à côté de `node_modules` dans `tooling/check.py` (le périmètre du
-cahier `ACA-FRONT-2` le permet ; ce n'était pas dans la mission du
-03/09).
+À savoir : `tooling/check.py` parcourt tout `web/` et ignore
+`node_modules`, `dist` et `dev-dist`. Un `npm run build` ne fait donc
+plus sortir la porte en erreur sur les tirets cadratins de
+`web/dist/banque.json`.
 
 Le développement a besoin de `../site/banque.json` et de
 `../contenu/voix.json` : le client se lance depuis le dépôt, pas depuis

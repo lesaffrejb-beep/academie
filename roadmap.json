@@ -147,7 +147,7 @@
     {
       "id": "ACA-RITUAL-METRICS-1",
       "outcome": "Un rapport déterministe mesure le rituel depuis le journal sans lire le contenu des réponses : séances commencées et finies, abandons, durée, formats, jours de la semaine.",
-      "status": "blocked",
+      "status": "done",
       "mode": "deterministic",
       "risk": "low",
       "priority": 94,
@@ -165,7 +165,7 @@
     {
       "id": "ACA-RITUAL-1",
       "outcome": "JB réalise environ trente séances réelles et un test de rétention à froid de vingt cartes sans dette ni culpabilisation.",
-      "status": "blocked",
+      "status": "ready",
       "mode": "human-only",
       "risk": "low",
       "priority": 95,
@@ -201,7 +201,7 @@
     {
       "id": "ACA-SOURCES-1",
       "outcome": "Chaque source des 84 cartes a une ligne au registre (nature, parti, fiabilité, date) et chaque carte porte source[].nature ; la liste blanche copro est complète en v1.",
-      "status": "ready",
+      "status": "done",
       "mode": "agent-safe",
       "risk": "low",
       "priority": 92,
@@ -219,7 +219,7 @@
     {
       "id": "ACA-REUSE-1",
       "outcome": "Chaque candidat de travail/2026-09-02-reutilisation-a-verifier.md a sa licence lue à la source et un verdict (reprendre, voler le pattern, écarter) ; rien n'est installé avant.",
-      "status": "ready",
+      "status": "done",
       "mode": "agent-safe",
       "risk": "low",
       "priority": 91,
@@ -255,7 +255,7 @@
     {
       "id": "ACA-CONTRAT-2",
       "outcome": "Le contrat carte-v2 et chapitre-v1 sont opposables : valideur v2 dans le même commit, banque migrée à la disposition par chapitre sans renumérotage, péremption par défaut du droit, a_recouper dérivé.",
-      "status": "blocked",
+      "status": "ready",
       "mode": "agent-review",
       "risk": "medium",
       "priority": 90,
@@ -292,7 +292,7 @@
     {
       "id": "ACA-FRONT-2",
       "outcome": "Le client v2 (web/) remplace l'archipel : arbre global et vue domaine, séance, fiche de nœud, clôture, profil, boîte, crédits ; hors-ligne d'abord ; DA appliquée ; check.py mis à jour.",
-      "status": "blocked",
+      "status": "ready",
       "mode": "agent-review",
       "risk": "medium",
       "priority": 89,
@@ -313,7 +313,7 @@
     {
       "id": "ACA-ARBRE-1",
       "outcome": "progression.py v2 descend au niveau du chapitre et de la branche : états de nœud (inconnu, ouvert, en cours, solide, validé, à revoir par seuil de fraîcheur), ouverture de branche à 75 %, règle de croissance ; genere.py publie chapitres et prérequis dans banque.json ; le client recalcule la même chose (parité).",
-      "status": "blocked",
+      "status": "ready",
       "mode": "deterministic",
       "risk": "low",
       "priority": 88,
@@ -332,7 +332,7 @@
     {
       "id": "ACA-SEMAINE-1",
       "outcome": "Le composeur applique la semaine type, la pondération du socle, la séance de domaine avec rappels d'ailleurs, et journalise la graine et le jour.",
-      "status": "blocked",
+      "status": "ready",
       "mode": "deterministic",
       "risk": "low",
       "priority": 88,

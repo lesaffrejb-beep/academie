@@ -53,17 +53,37 @@ def rel(path: Path) -> str:
     return str(path.relative_to(ROOT))
 
 
+REQUIS = ("AGENTS.md", "CLAUDE.md", "DOCTRINE.md", "CONTRIBUER.md", "VOIX.md", "project.yaml",
+          "ROADMAP.md", "roadmap.json", "context/giverny.md", "decisions/README.md",
+          "client/index.html", "client/style.css", "client/app.js", "client/sw.js",
+          "deploy/academie-publication.service", "deploy/academie-publication.timer",
+          "contenu/voix.json", "contenu/citations.json", "programme/copro.json",
+          "MODELES.md", "COMMENCER.md", "GEMINI.md", ".agents/rules/academie.md", ".cursor/rules/academie.mdc",
+          "prompts/README.md", "prompts/creer-un-parcours.md", "prompts/ajouter-des-documents.md",
+          "prompts/reprendre.md", "programme/catalogue.json", "app/usine/usine.py", "app/tests_usine.py",
+          "sources/README.md", "sources/REGISTRE.md", "sources/LISTE-BLANCHE.md", "sources/registre.json")
+
+
 def controle_fichiers_requis(errors):
-    for required in ("AGENTS.md", "CLAUDE.md", "DOCTRINE.md", "CONTRIBUER.md", "VOIX.md", "project.yaml",
-                     "ROADMAP.md", "roadmap.json", "context/giverny.md", "decisions/README.md",
-                     "client/index.html", "client/style.css", "client/app.js", "client/sw.js",
-                     "deploy/academie-publication.service", "deploy/academie-publication.timer",
-                     "contenu/voix.json", "contenu/citations.json", "programme/copro.json",
-                     "MODELES.md", "COMMENCER.md", "GEMINI.md", ".agents/rules/academie.md", ".cursor/rules/academie.mdc",
-                     "prompts/README.md", "prompts/creer-un-parcours.md", "prompts/ajouter-des-documents.md",
-                     "prompts/reprendre.md", "programme/catalogue.json", "app/usine/usine.py", "app/tests_usine.py"):
+    for required in REQUIS:
         if not (ROOT / required).is_file():
             errors.append(f"fichier requis absent : {required}")
+
+
+def controle_fichiers_suivis(errors):
+    """Un fichier requis qui existe sur le disque mais qu'aucun commit ne
+    porte est un piège : la porte est verte en local et rouge partout
+    ailleurs. `sources/.gitignore` masque tout son dossier par défaut,
+    et c'est exactement là que le cas s'est produit le 03/09/2026.
+    """
+    res = subprocess.run(["git", "ls-files", "-z"], cwd=ROOT, capture_output=True, text=True)
+    if res.returncode != 0:
+        return  # hors dépôt git : rien à vérifier
+    suivis = set(res.stdout.split("\0"))
+    for required in REQUIS:
+        if (ROOT / required).is_file() and required not in suivis:
+            errors.append(f"fichier requis présent mais non versionné : {required} "
+                          f"(un .gitignore le masque ; il n'existera pas en CI)")
 
 
 def controle_json(errors):
@@ -257,7 +277,8 @@ def controle_chapitres(errors):
 
 def main() -> int:
     errors: list[str] = []
-    for controle in (controle_fichiers_requis, controle_json, controle_ancien_couplage, controle_client_archipel,
+    for controle in (controle_fichiers_requis, controle_fichiers_suivis,
+                     controle_json, controle_ancien_couplage, controle_client_archipel,
                      controle_roadmap, controle_decisions, controle_programme, controle_tirets, controle_voix,
                      controle_contenu, controle_imports, controle_chapitres):
         controle(errors)
