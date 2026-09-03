@@ -5,7 +5,7 @@
  * seance) avant tout affichage suivant.
  */
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { LIB, voix } from "../app/i18n";
 import { useMagasin } from "../app/magasin";
 import { va } from "../app/routage";
@@ -16,21 +16,26 @@ import { Bouton, Feuille, Jauge, Secondaire, Titre } from "./Ui";
 const MOTEUR_VERSION = "web-2.0.0";
 
 export function Seance({ portee }: { portee?: string }) {
-  const { banque, etats, jour, note } = useMagasin();
+  const { banque, etats, jour, note, journal } = useMagasin();
   const [index, setIndex] = useState(0);
   const [revele, setRevele] = useState(false);
   const [confiance, setConfiance] = useState(false);
   const [choisi, setChoisi] = useState<number | null>(null);
   const [debut, setDebut] = useState(() => Date.now());
   const [ouverte, setOuverte] = useState(false);
+  const neuves = useRef<Set<string>>(new Set());
 
   const cartes = useMemo<Carte[]>(() => {
     if (!banque) return [];
     if (portee === "hasard") return auHasard(banque, 10, jour);
     const s = compose(banque, etats, {
       aujourdhui: jour,
+      journal,
       ...(portee ? { domaine: portee } : {}),
     });
+    // On retient QUI est neuf : sans ce marquage au journal, le plafond
+    // `nouveau_par_jour` ne mordrait jamais cote client (ACA-SEMAINE-1).
+    neuves.current = new Set(s.nouveau.map((c) => c.id));
     return [...s.revisions, ...s.nouveau];
     // etats change a chaque reponse : la seance est figee au montage.
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -74,6 +79,7 @@ export function Seance({ portee }: { portee?: string }) {
       note: valeur,
       duree_ms: Math.max(0, Date.now() - debut),
       confiance,
+      ...(neuves.current.has(carte.id) ? { origine: "nouveau" } : {}),
     });
     if (index + 1 >= cartes.length) {
       va("/salle/cloture");

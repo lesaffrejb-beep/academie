@@ -40,7 +40,8 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from planificateur import FACILE, Planificateur  # noqa: E402
 from seance import (  # noqa: E402
-    branche_socle_la_plus_faible, couleur_du_jour, etats_cartes, quota_de_neuf)
+    branche_socle_la_plus_faible, compose, couleur_du_jour, etats_cartes,
+    quota_de_neuf)
 
 RACINE = Path(__file__).resolve().parents[1]
 SORTIE = RACINE / "site" / "vecteurs-semaine.json"
@@ -137,6 +138,58 @@ def scenes_socle() -> list[dict]:
     return sorties
 
 
+def scenes_composition() -> list[dict]:
+    """La composition elle-même : ce que le client doit décider pareil.
+
+    On compare les COMPTES et les décisions, jamais l'ordre : les deux
+    générateurs pseudo-aléatoires diffèrent (`composeur.ts` en tête de
+    fichier). Ces scènes ont manqué à la première livraison
+    d'ACA-SEMAINE-1 : les règles étaient comparées une par une, leur
+    emploi dans `compose()` ne l'était pas, et le client servait encore
+    le quota brut. C'est un test de bout en bout des règles.
+    """
+    b1 = [carte(f"s{i}", "droit.b1.n1") for i in range(4)]
+    b2 = [carte(f"f{i}", "droit.b2.n2") for i in range(6)]
+    c1 = [carte(f"a{i}", "compta.c1.n3", "compta") for i in range(6)]
+    toutes = b1 + b2 + c1
+    sched = Planificateur(retention=0.9)
+
+    # b1 acquise et échue depuis longtemps : elle fournit les révisions dues.
+    vieux = [{"quand": f"{(LUNDI - timedelta(days=d)).isoformat()}T07:00:00+00:00",
+              "carte": f"s{i}", "note": 1, "mode": "revision", "format": "seance"}
+             for i in range(4) for d in (40, 39)]
+
+    sorties = []
+    for nom, jour, journal, cap in (
+        ("mardi-cours-sans-cap", LUNDI + timedelta(days=1), [], None),
+        ("mardi-cours-avec-cap-compta", LUNDI + timedelta(days=1), [], "compta"),
+        ("dimanche-libre", LUNDI + timedelta(days=6), [], None),
+        ("lundi-fondations-charge", LUNDI, vieux, None),
+        ("mardi-avec-rappels-d-ailleurs", LUNDI + timedelta(days=1), vieux, "compta"),
+    ):
+        etats = etats_cartes(journal, sched)
+        s = compose(toutes, etats, CONFIG, jour, sched, graine=7,
+                    cap=cap, programme=PROGRAMME, journal=journal)
+        sorties.append({
+            "nom": nom,
+            "date": jour.isoformat(),
+            "cap": cap,
+            "cartes": toutes,
+            "journal": journal,
+            "attendu": {
+                "jour": s["jour"],
+                "cap": s["cap"],
+                "branche_socle": s["branche_socle"],
+                "nb_revisions": len(s["revisions"]),
+                "nb_nouveau": len(s["nouveau"]),
+                "nb_rappels": len(s["rappels_d_ailleurs"]),
+                "arriere_reetale": s["arriere_reetale"],
+                "total_jouable": s["total_jouable"],
+            },
+        })
+    return sorties
+
+
 def vecteurs() -> dict:
     quotas = []
     for nom, jour, dues, deja in SCENES_QUOTA:
@@ -155,6 +208,7 @@ def vecteurs() -> dict:
         "config": CONFIG,
         "quotas": quotas,
         "socle": scenes_socle(),
+        "composition": scenes_composition(),
     }
 
 
@@ -171,8 +225,8 @@ def main() -> int:
     SORTIE.parent.mkdir(parents=True, exist_ok=True)
     SORTIE.write_text(texte, encoding="utf-8")
     couleurs = sorted({q["attendu"]["couleur"] for q in data["quotas"]})
-    print(f"{len(data['quotas'])} scène(s) de quota, {len(data['socle'])} de socle "
-          f"→ {SORTIE.relative_to(RACINE)}")
+    print(f"{len(data['quotas'])} scène(s) de quota, {len(data['socle'])} de socle, "
+          f"{len(data['composition'])} de composition → {SORTIE.relative_to(RACINE)}")
     print(f"  couleurs couvertes : {', '.join(couleurs)}")
     return 0
 
