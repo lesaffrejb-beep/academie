@@ -14,6 +14,40 @@ Dépend de : ACA-PROGRAMME-1, ACA-SOURCES-1. Bloque : ACA-ETUDE-1,
 ACA-BOITE-1, ACA-EXAMEN-1, ACA-PAPIER-1, ACA-AUDIT-1, ACA-CONTENT-2,
 ACA-BIBLIOTHEQUE-1, ACA-VERIF-1.
 
+## État au 03/09/2026 : l'étape 2 attend un arbitrage de JB
+
+L'étape 2 demande « une table d'assignation écrite à la main (une
+carte, un chapitre) ». Elle a été préparée en entier :
+[`travail/assignation-cartes-chapitres-2026-09-03.md`](../travail/assignation-cartes-chapitres-2026-09-03.md).
+
+Elle n'a pas été appliquée, et voici pourquoi. Les fichiers de la
+banque v1 ont été écrits par thème de travail, pas par domaine du
+programme. Conséquence mesurée sur les 84 cartes :
+
+- **21 cartes changent de domaine.** `droit/conformite-annuelle.json`
+  disperse à lui seul huit de ses quinze cartes vers `comptabilite`,
+  `energie`, `pathologie` et `cabinet`.
+- 56 assignations sont sûres, 24 sont défendables autrement, 4 n'ont
+  pas de chapitre qui les porte.
+
+Changer le `domaine` d'une carte change la carte-monde : le
+remplissage des régions, l'ouverture de la suivante, la branche du
+socle que la séance protège (`ACA-ARBRE-1`, `ACA-SEMAINE-1`). Une
+carte mal rangée ne casse aucun test et déplace pourtant ce que JB
+révise le matin. C'est un arbitrage de contenu, pas une migration.
+
+Trois questions à JB, listées en fin du document de travail : les
+changements de domaine, les quatre cartes sans chapitre, et trois
+trous du programme que l'assignation a révélés (la notification n'a
+pas de chapitre, la déchéance du terme non plus, et le chapitre des
+marchés d'exploitation s'appelle « P1 à P4 » alors que les cartes vont
+jusqu'à P5).
+
+**Une fois ces réponses données, le reste du chantier est mécanique** :
+la table se recopie dans `app/migre_banque.py`, les fichiers de
+chapitre s'écrivent, le valideur v2 juge le résultat, `genere.py` lit
+`chapitres/`, et `banque/` s'archive.
+
 ## Périmètre
 
 Peut créer ou modifier : `app/valide_chapitres.py`, `app/valide_banque.py`
