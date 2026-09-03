@@ -70,6 +70,7 @@ import argparse
 import json
 import random
 import sys
+from datetime import date
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -83,6 +84,15 @@ CLES_REGLAGES = (
     "examen_nb_cartes",
     "examen_score_reussite",
 )
+
+# `seuil_fraicheur_jours` est lu à part : une config d'avant ACA-ARBRE-1
+# n'en a pas, et une carte-monde v1 doit continuer de se calculer sans.
+# Défaut égal au seuil de stabilité : ce qui n'est plus mûr est ce qu'on
+# n'a pas revu depuis qu'il aurait dû l'être (decisions/0028).
+SEUIL_FRAICHEUR_DEFAUT = 21
+
+# Les états d'un nœud, dans l'ordre du tableau de BLUEPRINT.md §5.
+ETATS_NOEUD = ("inconnu", "ouvert", "en-cours", "solide", "valide", "a-revoir")
 
 # Plafond d'une région dont le boss n'est pas tombé. Ce n'est pas un
 # réglage : c'est la règle « le 100 % n'existe pas sans son examen ».
@@ -240,11 +250,177 @@ def xp_affichee(journal: list[dict], remplissages: dict[str, float] | None = Non
     return int(round(par_revue * reussies + par_region * somme + par_examen * boss))
 
 
+# --- les nœuds et les branches (ACA-ARBRE-1, decisions/0028) ----------
+#
+# Un nœud est un chapitre du programme. Une carte lui appartient par son
+# champ `chapitre` (contrat carte-v2). Les cartes v1 ne le portent pas :
+# elles sont comptées orphelines et le trou s'écrit, il ne se devine
+# pas. C'est `ACA-CONTRAT-2` qui le comblera.
+
+def seuil_fraicheur(config: dict) -> int:
+    bloc = config.get("progression") or {}
+    return int(bloc.get("seuil_fraicheur_jours", SEUIL_FRAICHEUR_DEFAUT))
+
+
+def cartes_par_chapitre(cartes: list[dict]) -> dict[str, list[dict]]:
+    """Les cartes jouables groupées par nœud. Sans `chapitre`, pas de nœud."""
+    par: dict[str, list[dict]] = {}
+    for c in cartes:
+        if c.get("statut") != "valide":
+            continue
+        chapitre = c.get("chapitre")
+        if isinstance(chapitre, str) and chapitre:
+            par.setdefault(chapitre, []).append(c)
+    return par
+
+
+def cartes_sans_chapitre(cartes: list[dict]) -> int:
+    """Combien de cartes jouables n'ont encore aucun nœud."""
+    return sum(1 for c in cartes
+               if c.get("statut") == "valide" and not c.get("chapitre"))
+
+
+def _derniere_revue(journal: list[dict], ids: set[str]) -> str | None:
+    """L'horodatage de la dernière révision portant sur l'une de ces cartes."""
+    quands = [str(e.get("quand")) for e in journal
+              if e.get("carte") in ids and e.get("quand")]
+    return max(quands) if quands else None
+
+
+def _jours_depuis(quand: str | None, aujourdhui: date) -> int | None:
+    if not quand:
+        return None
+    try:
+        vu = date.fromisoformat(str(quand)[:10])
+    except ValueError:
+        return None
+    return (aujourdhui - vu).days
+
+
+def etat_noeud(remplissage: float, joue: bool, a_des_cartes: bool,
+               examen_reussi: bool, a_revoir: bool, config: dict) -> str:
+    """L'état d'un nœud, dans l'ordre de `decisions/0028`.
+
+    `valide` ne se calcule pas sur le remplissage mais sur l'épreuve du
+    domaine : c'est ce qui rend vraie la règle 3 de `BLUEPRINT.md` §5
+    (« un nœud validé le reste ») sans rien stocker. Ajouter des cartes
+    fait baisser le remplissage, jamais l'insigne.
+
+    La fraîcheur ne déclasse pas un nœud validé : elle voyage à côté,
+    dans `a_revoir`, et l'écran la rend en grisant et en datant.
+    """
+    if not a_des_cartes:
+        return "inconnu"
+    if joue and examen_reussi:
+        return "valide"
+    if not joue:
+        return "ouvert"
+    if a_revoir:
+        return "a-revoir"
+    if remplissage >= reglages(config)["seuil_ouverture_region"]:
+        return "solide"
+    return "en-cours"
+
+
+def noeuds_et_branches(cartes: list[dict], journal: list[dict], config: dict,
+                       programme: dict, etats: dict, reussis: set[str],
+                       aujourdhui: date) -> tuple[list[dict], list[dict]]:
+    """Les nœuds du programme et les branches qui les portent."""
+    r = reglages(config)
+    seuil_stab = r["seuil_stabilite_acquise_jours"]
+    seuil_ouv = r["seuil_ouverture_region"]
+    fraicheur = seuil_fraicheur(config)
+    par_chapitre = cartes_par_chapitre(cartes)
+
+    noeuds: list[dict] = []
+    etats_par_id: dict[str, str] = {}
+    for ch in programme.get("chapitres", []) or []:
+        cid = str(ch.get("id"))
+        siennes = par_chapitre.get(cid, [])
+        ids = {str(c.get("id")) for c in siennes}
+        acquises = sum(1 for c in siennes
+                       if (etats.get(c.get("id")) or {}).get("stabilite", 0.0) >= seuil_stab)
+        remplissage = (acquises / len(siennes)) if siennes else 0.0
+        derniere = _derniere_revue(journal, ids)
+        jours = _jours_depuis(derniere, aujourdhui)
+        joue = derniere is not None
+        # « À revoir » demande DEUX choses (decisions/0028) : le seuil de
+        # fraîcheur dépassé, et au moins une carte réellement échue selon
+        # FSRS. Le seuil seul grise un nœud mûr dont l'intervalle est de
+        # trois mois, ce qui est exactement le contraire de ce que la
+        # répétition espacée promet.
+        # Seules les cartes DÉJÀ VUES peuvent être échues : une carte
+        # neuve est à découvrir, pas à revoir.
+        echue = any(etats[c["id"]]["du_le"] <= aujourdhui.toordinal()
+                    for c in siennes if c.get("id") in etats)
+        a_revoir = joue and jours is not None and jours > fraicheur and echue
+        reussi = ch.get("domaine") in reussis
+        etat = etat_noeud(remplissage, joue, bool(siennes), reussi, a_revoir, config)
+        etats_par_id[cid] = etat
+        noeuds.append({
+            "id": cid,
+            "titre": ch.get("titre", cid),
+            "domaine": ch.get("domaine"),
+            "branche": ch.get("branche"),
+            "sous_branche": ch.get("sous_branche"),
+            "niveau": ch.get("niveau"),
+            "satellite": bool(ch.get("satellite")),
+            "prerequis": list(ch.get("prerequis") or []),
+            "etat": etat,
+            "remplissage": round(remplissage, 4),
+            "cartes_totales": len(siennes),
+            "cartes_acquises": acquises,
+            "derniere_revue": derniere,
+            "jours_depuis_derniere_revue": jours,
+            "a_revoir": a_revoir,
+            # Règle 1 de BLUEPRINT §5 : tout nœud visible est jouable.
+            # Aucune condition, jamais. « Fermé » est un mot d'affichage.
+            "jouable": True,
+        })
+
+    # Les prérequis informent l'affichage, ils n'interdisent rien : un
+    # prérequis est satisfait quand son nœud est solide ou mieux.
+    acquis = {"solide", "valide"}
+    for n in noeuds:
+        n["prerequis_satisfaits"] = all(
+            etats_par_id.get(p) in acquis for p in n["prerequis"])
+
+    # Les branches : remplissage moyen de leurs nœuds, ouverture en
+    # cascade dans le domaine (règle 2, le même seuil que les régions).
+    branches: list[dict] = []
+    for domaine, liste in (programme.get("branches") or {}).items():
+        precedent_atteint = True
+        for rang, b in enumerate(sorted(liste, key=lambda x: (x.get("ordre", 999),
+                                                              x.get("cle", ""))), 1):
+            cle = b.get("cle")
+            siens = [n for n in noeuds
+                     if n["domaine"] == domaine and n["branche"] == cle]
+            avec = [n for n in siens if n["cartes_totales"]]
+            remplissage = (sum(n["remplissage"] for n in avec) / len(avec)) if avec else 0.0
+            ouverte = rang == 1 or precedent_atteint
+            branches.append({
+                "domaine": domaine,
+                "cle": cle,
+                "titre": b.get("titre", cle),
+                "rang": rang,
+                "remplissage": round(remplissage, 4),
+                "noeuds": len(siens),
+                "noeuds_servis": len(avec),
+                "noeuds_valides": sum(1 for n in siens if n["etat"] == "valide"),
+                "ouverte": ouverte,
+                "explorable": True,
+            })
+            precedent_atteint = remplissage >= seuil_ouv
+    return noeuds, branches
+
+
 # --- la carte complète ------------------------------------------------
 
 def carte_monde(cartes: list[dict], journal: list[dict], config: dict,
                 regions_ouvertes: list[str] | tuple[str, ...] = (),
-                sched: Planificateur | None = None) -> dict:
+                sched: Planificateur | None = None,
+                programme: dict | None = None,
+                aujourdhui: date | None = None) -> dict:
     """L'état complet de la carte-monde d'un profil, JSON-sérialisable.
 
     `regions_ouvertes` : les régions débloquées autrement que par le
@@ -322,8 +498,22 @@ def carte_monde(cartes: list[dict], journal: list[dict], config: dict,
             "statut": "hors_carte",
         })
 
+    # Les nœuds n'existent que si un programme est fourni. Sans lui, la
+    # carte-monde est exactement celle d'avant ACA-ARBRE-1 : le chantier
+    # ajoute un étage, il n'en retire aucun.
+    if programme:
+        noeuds, branches = noeuds_et_branches(
+            cartes, journal, config, programme, etats, reussis,
+            aujourdhui or date.today())
+    else:
+        noeuds, branches = [], []
+
     global_ = (sum(remplissages.values()) / len(remplissages)) if remplissages else 0.0
     return {
+        "noeuds": noeuds,
+        "branches": branches,
+        "seuil_fraicheur_jours": seuil_fraicheur(config),
+        "cartes_sans_chapitre": cartes_sans_chapitre(cartes),
         "seuil_stabilite_jours": r["seuil_stabilite_acquise_jours"],
         "seuil_ouverture": r["seuil_ouverture_region"],
         "examen_nb_cartes": r["examen_nb_cartes"],
@@ -338,6 +528,7 @@ def carte_monde(cartes: list[dict], journal: list[dict], config: dict,
 
 
 def main() -> int:
+    from genere import charge_programme  # noqa: PLC0415
     from valide_banque import charge_banque, charge_config  # noqa: PLC0415
 
     ap = argparse.ArgumentParser(description="La carte-monde du profil.")
@@ -353,7 +544,8 @@ def main() -> int:
         print(f"banque illisible ({len(erreurs)} erreur(s)) : "
               f"python3 app/valide_banque.py", file=sys.stderr)
         return 1
-    monde = carte_monde([c for c, _ in paires], lit_journal(profil), config)
+    monde = carte_monde([c for c, _ in paires], lit_journal(profil), config,
+                        programme=charge_programme() or None)
 
     if args.sortie:
         args.sortie.parent.mkdir(parents=True, exist_ok=True)
@@ -375,6 +567,17 @@ def main() -> int:
     for region in monde["hors_carte"]:
         print(f"  · {region['titre']:<38} {region['remplissage']:6.0%}"
               f"  (hors carte-monde)")
+    if monde["noeuds"]:
+        par_etat: dict[str, int] = {}
+        for n in monde["noeuds"]:
+            par_etat[n["etat"]] = par_etat.get(n["etat"], 0) + 1
+        print(f"  arbre : {len(monde['noeuds'])} nœud(s), "
+              f"{len(monde['branches'])} branche(s) — "
+              + ", ".join(f"{e} {n}" for e, n in sorted(par_etat.items())))
+    if monde["cartes_sans_chapitre"]:
+        print(f"  {monde['cartes_sans_chapitre']} carte(s) sans chapitre : "
+              f"elles comptent dans leur région, pas encore dans un nœud "
+              f"(ACA-CONTRAT-2)")
     return 0
 
 

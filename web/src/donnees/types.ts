@@ -77,6 +77,8 @@ export interface Quotas {
 export interface ReglagesProgression {
   seuil_stabilite_acquise_jours: number;
   seuil_ouverture_region: number;
+  /** Absent sur une banque publiee avant ACA-ARBRE-1 : defaut 21. */
+  seuil_fraicheur_jours?: number;
   examen_obligatoire_pour_100: boolean;
   examen_nb_cartes: number;
   examen_score_reussite: number;
@@ -93,9 +95,39 @@ export interface Banque {
   domaines: Record<string, Domaine>;
   quotas: Quotas;
   cartes: Carte[];
-  fsrs?: { retention_souhaitee?: number; params?: number[]; seuil_optimiseur?: number };
+  fsrs?: {
+    retention_souhaitee?: number;
+    params?: number[];
+    /** Les 21 poids FSRS-6 servis par app/genere.py (ACA-ARBRE-1). */
+    poids?: number[];
+    seuil_optimiseur?: number;
+  };
   progression: ReglagesProgression;
   quiz?: { nb_questions?: number; stabilite_initiale_jours?: number };
+  /** L'arbre, publie depuis programme/<metier>.json (ACA-ARBRE-1). */
+  chapitres?: Chapitre[];
+  branches?: Record<string, BrancheProgramme[]>;
+  niveaux?: Record<string, string>;
+}
+
+/** Un noeud de l'arbre, tel que app/genere.py le publie. */
+export interface Chapitre {
+  id: string;
+  titre?: string;
+  domaine: string;
+  branche: string;
+  sous_branche?: string | null;
+  niveau?: number;
+  prerequis?: string[];
+  ponts?: string[];
+  satellite?: boolean;
+  statut?: string;
+}
+
+export interface BrancheProgramme {
+  cle: string;
+  titre?: string;
+  ordre?: number;
 }
 
 /* --- journal-v1 ---------------------------------------------------- */

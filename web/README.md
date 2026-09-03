@@ -42,7 +42,7 @@ web/
       fsrs.ts                enveloppe ts-fsrs, paramètres de academie.json
       journal.ts             écriture locale (Dexie) + file d'envoi + union
       etats.ts               rejoue le journal → état par carte (parité avec app/seance.py)
-      progression.ts         remplissage, ouverture, états de nœud (parité avec app/progression.py)
+      progression.ts         remplissage, ouverture, états de nœud et branches (parité avec app/progression.py)
       composeur.ts           séance / domaine / au hasard, semaine type, pondération socle, graine
       points.ts              points de savoir, niveau, titre, calibration (dérivés)
       parite.test.ts         rejoue app/vecteurs_fsrs.py : écart < 1e-4 sinon échec
@@ -121,13 +121,19 @@ faite : les écrans existent, ils sont nus, et c'est voulu.
 - PWA : `vite-plugin-pwa` 0.21.1, manifeste, précache de la banque, de
   la voix, du JS, du CSS et des polices à venir ; la banque et la voix
   sont aussi en `StaleWhileRevalidate` à l'exécution.
-- Trois tests verts, 95 cas : `src/moteur/parite.test.ts` lance
+- Quatre tests verts, 127 cas : `src/moteur/parite.test.ts` lance
   `python3 app/vecteurs_fsrs.py --json` et compare stabilité,
   difficulté, intervalle et récupérabilité à 1e-4 sur chaque étape de
   chaque séquence ; `tests/hotes.test.ts` vérifie qu'aucune URL de
   `src/` ni de `index.html` ne sort de localhost et que la CSP tient ;
   `tests/voix.test.ts` vérifie que chaque clé affichée existe dans
-  `contenu/voix.json` avec trois variantes et les mêmes variables.
+  `contenu/voix.json` avec trois variantes et les mêmes variables ;
+  `src/moteur/parite-arbre.test.ts` (ACA-ARBRE-1) lance
+  `python3 app/vecteurs_progression.py --json` et exige l'égalité
+  **stricte** des états de nœud, des branches et des drapeaux de
+  fraîcheur sur dix scènes, dont les deux pièges de `decisions/0028` :
+  un nœud validé qui le reste quand on lui ajoute des cartes, et un
+  nœud mûr revu il y a trente jours qui n'est pas « à revoir ».
 - `LICENCES.md` : chaque dépendance, version exacte, licence.
 
 ### Ce qui reste

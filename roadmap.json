@@ -313,7 +313,7 @@
     {
       "id": "ACA-ARBRE-1",
       "outcome": "progression.py v2 descend au niveau du chapitre et de la branche : états de nœud (inconnu, ouvert, en cours, solide, validé, à revoir par seuil de fraîcheur), ouverture de branche à 75 %, règle de croissance ; genere.py publie chapitres et prérequis dans banque.json ; le client recalcule la même chose (parité).",
-      "status": "ready",
+      "status": "done",
       "mode": "deterministic",
       "risk": "low",
       "priority": 88,

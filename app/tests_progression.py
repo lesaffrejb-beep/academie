@@ -49,15 +49,40 @@ CONFIG = {
         "examen_obligatoire_pour_100": True,
         "examen_nb_cartes": 12,
         "examen_score_reussite": 0.8,
+        "seuil_fraicheur_jours": 21,
     },
 }
 
+# Un programme minuscule, aux mêmes clés que programme/copro.json : deux
+# branches dans r1, une dans r2, et des prérequis qui traversent.
+PROGRAMME = {
+    "branches": {
+        "r1": [{"cle": "b1", "titre": "Branche une", "ordre": 1},
+               {"cle": "b2", "titre": "Branche deux", "ordre": 2}],
+        "r2": [{"cle": "b3", "titre": "Branche trois", "ordre": 1}],
+    },
+    "chapitres": [
+        {"id": "r1.b1.n1", "domaine": "r1", "branche": "b1", "titre": "Nœud un",
+         "niveau": 1, "prerequis": [], "statut": "brouillon"},
+        {"id": "r1.b1.n2", "domaine": "r1", "branche": "b1", "titre": "Nœud deux",
+         "niveau": 2, "prerequis": ["r1.b1.n1"], "statut": "brouillon"},
+        {"id": "r1.b2.n3", "domaine": "r1", "branche": "b2", "titre": "Nœud trois",
+         "niveau": 1, "prerequis": [], "statut": "a-ecrire"},
+        {"id": "r2.b3.n4", "domaine": "r2", "branche": "b3", "titre": "Nœud quatre",
+         "niveau": 1, "prerequis": [], "statut": "brouillon"},
+    ],
+}
 
-def carte(cid: str, domaine: str = "r1", statut: str = "valide") -> dict:
-    return {"id": cid, "domaine": domaine, "branche": "b", "type": "flash",
-            "question": f"question {cid}", "reponse": "r",
-            "source": [{"texte": "s"}], "verifie": "2026-08-28",
-            "statut": statut, "partage": "banque"}
+
+def carte(cid: str, domaine: str = "r1", statut: str = "valide",
+          chapitre: str | None = None) -> dict:
+    c = {"id": cid, "domaine": domaine, "branche": "b", "type": "flash",
+         "question": f"question {cid}", "reponse": "r",
+         "source": [{"texte": "s"}], "verifie": "2026-08-28",
+         "statut": statut, "partage": "banque"}
+    if chapitre:
+        c["chapitre"] = chapitre
+    return c
 
 
 def revue(cid: str, note: int, jour: date) -> dict:
@@ -304,6 +329,241 @@ def test_seuil_vient_de_la_config() -> list[str]:
     return err
 
 
+
+# --- les nœuds et les branches (ACA-ARBRE-1, decisions/0028) ----------
+
+def _monde_noeuds(cartes, journal, programme=None):
+    return carte_monde(cartes, journal, CONFIG,
+                       programme=programme if programme is not None else PROGRAMME,
+                       aujourdhui=AUJ)
+
+
+def _noeud(monde, nid):
+    return next((n for n in monde["noeuds"] if n["id"] == nid), None)
+
+
+def test_noeud_sans_carte_est_inconnu() -> list[str]:
+    """Un chapitre que personne n'a écrit est une silhouette, pas une porte."""
+    monde = _monde_noeuds([], [])
+    n = _noeud(monde, "r1.b2.n3")
+    if n is None:
+        return ["le nœud r1.b2.n3 n'est pas rendu"]
+    err = []
+    if n["etat"] != "inconnu":
+        err.append(f"nœud sans carte : état {n['etat']}, attendu inconnu")
+    if n["cartes_totales"] != 0:
+        err.append(f"nœud sans carte : {n['cartes_totales']} carte(s)")
+    if not n["jouable"]:
+        err.append("un nœud inconnu doit rester jouable (BLUEPRINT §5, règle 1)")
+    return err
+
+
+def test_noeud_avec_cartes_jamais_joue_est_ouvert() -> list[str]:
+    cartes = [carte("a1", "r1", chapitre="r1.b1.n1"),
+              carte("a2", "r1", chapitre="r1.b1.n1")]
+    monde = _monde_noeuds(cartes, [])
+    n = _noeud(monde, "r1.b1.n1")
+    err = []
+    if n["etat"] != "ouvert":
+        err.append(f"nœud jamais joué : état {n['etat']}, attendu ouvert")
+    if n["cartes_totales"] != 2:
+        err.append(f"{n['cartes_totales']} carte(s) rattachée(s), attendu 2")
+    return err
+
+
+def test_noeud_joue_passe_en_cours_puis_solide() -> list[str]:
+    """En dessous du seuil : en cours. Au-dessus : solide. Une seule mesure."""
+    cartes = [carte(f"a{i}", "r1", chapitre="r1.b1.n1") for i in range(1, 5)]
+    err = []
+    # une seule carte acquise sur quatre = 25 %
+    monde = _monde_noeuds(cartes, acquise("a1"))
+    n = _noeud(monde, "r1.b1.n1")
+    if n["etat"] != "en-cours":
+        err.append(f"25 % : état {n['etat']}, attendu en-cours")
+    if round(n["remplissage"], 4) != 0.25:
+        err.append(f"remplissage {n['remplissage']}, attendu 0.25")
+    # trois sur quatre = 75 %, le seuil
+    monde = _monde_noeuds(cartes, acquise("a1") + acquise("a2") + acquise("a3"))
+    n = _noeud(monde, "r1.b1.n1")
+    if n["etat"] != "solide":
+        err.append(f"75 % : état {n['etat']}, attendu solide")
+    return err
+
+
+def test_noeud_valide_par_l_epreuve_du_domaine() -> list[str]:
+    """`validé` se gagne à l'épreuve du domaine (BLUEPRINT §5, decisions/0028)."""
+    cartes = [carte(f"a{i}", "r1", chapitre="r1.b1.n1") for i in range(1, 5)]
+    journal = acquise("a1") + [examen("r1", 0.9)]
+    n = _noeud(_monde_noeuds(cartes, journal), "r1.b1.n1")
+    err = []
+    if n["etat"] != "valide":
+        err.append(f"épreuve réussie : état {n['etat']}, attendu valide")
+    # un nœud jamais joué du même domaine ne devient pas validé pour autant
+    cartes2 = cartes + [carte("z1", "r1", chapitre="r1.b1.n2")]
+    n2 = _noeud(_monde_noeuds(cartes2, journal), "r1.b1.n2")
+    if n2["etat"] == "valide":
+        err.append("un nœud jamais joué est devenu valide par l'épreuve du domaine")
+    return err
+
+
+def test_noeud_valide_le_reste_apres_ajout() -> list[str]:
+    """Règle 3 : ajouter des cartes ou des chapitres ne déclasse pas un acquis."""
+    cartes = [carte("a1", "r1", chapitre="r1.b1.n1")]
+    journal = acquise("a1") + [examen("r1", 0.9)]
+    avant = _noeud(_monde_noeuds(cartes, journal), "r1.b1.n1")
+
+    # on ajoute six cartes neuves au même nœud : le remplissage s'effondre
+    apres_cartes = cartes + [carte(f"neuf{i}", "r1", chapitre="r1.b1.n1")
+                             for i in range(6)]
+    apres = _noeud(_monde_noeuds(apres_cartes, journal), "r1.b1.n1")
+
+    # et on ajoute des chapitres au programme
+    prog = {"branches": PROGRAMME["branches"],
+            "chapitres": PROGRAMME["chapitres"] + [
+                {"id": "r1.b1.n9", "domaine": "r1", "branche": "b1",
+                 "titre": "Nœud neuf", "niveau": 3, "prerequis": ["r1.b1.n1"],
+                 "statut": "a-ecrire"}]}
+    apres2 = _noeud(_monde_noeuds(apres_cartes, journal, prog), "r1.b1.n1")
+
+    err = []
+    if avant["etat"] != "valide":
+        err.append(f"état de départ {avant['etat']}, attendu valide")
+    if apres["etat"] != "valide":
+        err.append(f"six cartes ajoutées ont déclassé le nœud en {apres['etat']}")
+    if apres2["etat"] != "valide":
+        err.append(f"un chapitre ajouté a déclassé le nœud en {apres2['etat']}")
+    if apres["remplissage"] >= avant["remplissage"]:
+        err.append("le remplissage devrait avoir baissé : la mesure doit rester honnête")
+    return err
+
+
+def test_fraicheur_marque_sans_declasser() -> list[str]:
+    """Au-delà du seuil de fraîcheur : marqué et daté. Un validé garde son insigne."""
+    cartes = [carte("a1", "r1", chapitre="r1.b1.n1")]
+    vieux = [revue("a1", BIEN, AUJ - timedelta(days=47))]
+    err = []
+
+    n = _noeud(_monde_noeuds(cartes, vieux), "r1.b1.n1")
+    if n["etat"] != "a-revoir":
+        err.append(f"joué il y a 47 j : état {n['etat']}, attendu a-revoir")
+    if n["jours_depuis_derniere_revue"] != 47:
+        err.append(f"{n['jours_depuis_derniere_revue']} j, attendu 47")
+    if not n["a_revoir"]:
+        err.append("a_revoir devrait être vrai")
+
+    # le même nœud, mais l'épreuve du domaine est passée : il reste validé
+    nv = _noeud(_monde_noeuds(cartes, vieux + [examen("r1", 0.9)]), "r1.b1.n1")
+    if nv["etat"] != "valide":
+        err.append(f"un nœud validé et périmé est passé en {nv['etat']} (règle 3)")
+    if not nv["a_revoir"]:
+        err.append("un nœud validé et périmé doit quand même porter a_revoir")
+
+    # dans le seuil : pas de marque
+    frais = _noeud(_monde_noeuds(cartes, fraiche("a1")), "r1.b1.n1")
+    if frais["a_revoir"]:
+        err.append("une carte vue il y a 3 jours est marquée à revoir")
+    return err
+
+
+def test_branche_suivante_s_ouvre_a_75() -> list[str]:
+    """Règle 2 : la branche suivante s'ouvre à 75 % de la précédente."""
+    cartes = [carte(f"a{i}", "r1", chapitre="r1.b1.n1") for i in range(1, 5)]
+    err = []
+
+    def branche(monde, cle):
+        return next((b for b in monde["branches"]
+                     if b["domaine"] == "r1" and b["cle"] == cle), None)
+
+    monde = _monde_noeuds(cartes, acquise("a1"))            # 25 %
+    if not branche(monde, "b1")["ouverte"]:
+        err.append("la première branche d'un domaine doit être ouverte")
+    if branche(monde, "b2")["ouverte"]:
+        err.append("b2 s'est ouverte alors que b1 est à 25 %")
+
+    monde = _monde_noeuds(cartes, acquise("a1") + acquise("a2") + acquise("a3"))
+    if not branche(monde, "b2")["ouverte"]:
+        err.append("b1 à 75 % n'a pas ouvert b2")
+    return err
+
+
+def test_noeuds_toujours_jouables_et_prerequis_informatifs() -> list[str]:
+    """Règle 1 : rien n'est verrouillé. Le prérequis informe, il n'interdit pas."""
+    cartes = [carte("a1", "r1", chapitre="r1.b1.n1"),
+              carte("b1", "r1", chapitre="r1.b1.n2")]
+    monde = _monde_noeuds(cartes, [])
+    err = [f"nœud {n['id']} non jouable" for n in monde["noeuds"] if not n["jouable"]]
+    n2 = _noeud(monde, "r1.b1.n2")
+    if n2["prerequis_satisfaits"]:
+        err.append("r1.b1.n2 déclare ses prérequis satisfaits alors que n1 est vierge")
+    if n2["etat"] != "ouvert":
+        err.append(f"un nœud avec cartes doit être ouvert, pas {n2['etat']}")
+    return err
+
+
+def test_cartes_sans_chapitre_sont_comptees() -> list[str]:
+    """Le trou v1 s'écrit, il ne se devine pas (decisions/0028)."""
+    cartes = [carte("a1", "r1", chapitre="r1.b1.n1"),
+              carte("orphe1", "r1"), carte("orphe2", "r2")]
+    monde = _monde_noeuds(cartes, [])
+    err = []
+    if monde["cartes_sans_chapitre"] != 2:
+        err.append(f"{monde['cartes_sans_chapitre']} orpheline(s), attendu 2")
+    # et la mesure par région ne change pas d'un pouce
+    if len(monde["regions"]) != 3:
+        err.append("les régions ont bougé alors que le chantier ne les touche pas")
+    return err
+
+
+def test_sans_programme_la_carte_v1_est_intacte() -> list[str]:
+    """Sans programme, `carte_monde` rend exactement ce qu'elle rendait."""
+    cartes = [carte("a1", "r1"), carte("b1", "r2")]
+    journal = acquise("a1")
+    monde = carte_monde(cartes, journal, CONFIG)
+    err = []
+    if monde["noeuds"] or monde["branches"]:
+        err.append("sans programme, ni nœuds ni branches ne doivent sortir")
+    if len(monde["regions"]) != 3:
+        err.append("les régions ont changé")
+    if "remplissage_global" not in monde or "xp" not in monde:
+        err.append("la carte v1 a perdu des clés")
+    return err
+
+
+def test_poids_fsrs_publies_sans_derive() -> list[str]:
+    """Les poids d'academie.json sont ceux du moteur, à la virgule près.
+
+    Le client lit ses poids dans `banque.json` ; s'ils divergeaient de
+    `PARAMS_DEFAUT`, la parité serait fausse sans que rien ne le dise.
+    """
+    from planificateur import PARAMS_DEFAUT                       # noqa: PLC0415
+    racine = Path(__file__).resolve().parents[1]
+    config = json.loads((racine / "academie.json").read_text(encoding="utf-8"))
+    poids = config.get("fsrs", {}).get("poids")
+    if poids is None:
+        return ["academie.json : fsrs.poids absent (ACA-ARBRE-1)"]
+    if [float(x) for x in poids] != [float(x) for x in PARAMS_DEFAUT]:
+        return ["academie.json : fsrs.poids diverge de planificateur.PARAMS_DEFAUT"]
+    return []
+
+
+def test_genere_publie_l_arbre() -> list[str]:
+    """La charge servie porte les nœuds, les branches et les poids."""
+    from genere import chapitre_public, charge_programme          # noqa: PLC0415
+    programme = charge_programme()
+    err = []
+    if not programme.get("chapitres"):
+        return ["le programme du dépôt n'a pas de chapitres"]
+    publie = chapitre_public(programme["chapitres"][0])
+    interdits = set(publie) - {"id", "titre", "domaine", "branche", "sous_branche",
+                               "niveau", "prerequis", "ponts", "satellite", "statut"}
+    if interdits:
+        err.append(f"un nœud publie des champs de fabrication : {sorted(interdits)}")
+    for cle in ("id", "domaine", "branche", "niveau"):
+        if cle not in publie:
+            err.append(f"un nœud publié n'a pas de `{cle}`")
+    return err
+
+
 def main() -> int:
     tests = [
         ("région sans carte vaut 0", test_region_vide_vaut_zero),
@@ -319,6 +579,27 @@ def main() -> int:
         ("XP dérivée et pure", test_xp_pure_et_derivee),
         ("synthèse sérialisable pour le front", test_synthese_serialisable),
         ("les seuils viennent de la config", test_seuil_vient_de_la_config),
+        ("un nœud sans carte est inconnu", test_noeud_sans_carte_est_inconnu),
+        ("un nœud avec cartes jamais joué est ouvert",
+         test_noeud_avec_cartes_jamais_joue_est_ouvert),
+        ("un nœud joué passe en cours puis solide",
+         test_noeud_joue_passe_en_cours_puis_solide),
+        ("un nœud se valide à l'épreuve du domaine",
+         test_noeud_valide_par_l_epreuve_du_domaine),
+        ("un nœud validé le reste après ajout",
+         test_noeud_valide_le_reste_apres_ajout),
+        ("la fraîcheur marque sans déclasser", test_fraicheur_marque_sans_declasser),
+        ("la branche suivante s'ouvre à 75 %", test_branche_suivante_s_ouvre_a_75),
+        ("tout nœud reste jouable, le prérequis informe",
+         test_noeuds_toujours_jouables_et_prerequis_informatifs),
+        ("les cartes sans chapitre sont comptées",
+         test_cartes_sans_chapitre_sont_comptees),
+        ("sans programme, la carte v1 est intacte",
+         test_sans_programme_la_carte_v1_est_intacte),
+        ("les poids FSRS publiés ne dérivent pas du moteur",
+         test_poids_fsrs_publies_sans_derive),
+        ("genere publie l'arbre sans la matière de fabrication",
+         test_genere_publie_l_arbre),
     ]
     total = []
     for nom, fn in tests:

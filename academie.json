@@ -58,14 +58,38 @@
     "revisions_min_jour_atelier": 5
   },
   "fsrs": {
-    "_": "Valeurs vérifiées le 28/08/2026 (CORPUS §3) : défaut Anki 0,90, plage 0,80-0,95 ; optimiseur personnalisé à partir de ~400 revues.",
+    "_": "Valeurs vérifiées le 28/08/2026 (CORPUS §3) : défaut Anki 0,90, plage 0,80-0,95 ; optimiseur personnalisé à partir de ~400 revues. poids : les 21 paramètres FSRS-6 servis au client (ACA-ARBRE-1), identiques à app/planificateur.py PARAMS_DEFAUT ; un test refuse toute divergence.",
     "retention_souhaitee": 0.9,
-    "seuil_optimiseur": 400
+    "seuil_optimiseur": 400,
+    "poids": [
+      0.212,
+      1.2931,
+      2.3065,
+      8.2956,
+      6.4133,
+      0.8334,
+      3.0194,
+      0.001,
+      1.8722,
+      0.1666,
+      0.796,
+      1.4835,
+      0.0614,
+      0.2629,
+      1.6483,
+      0.6014,
+      1.8729,
+      0.5425,
+      0.0912,
+      0.0658,
+      0.1542
+    ]
   },
   "progression": {
-    "_": "La carte-monde (SPEC-PRODUIT §3, GO socle 29/08/2026). Une région = un domaine ici ; remplissage = % des cartes valide de la région dont la stabilité FSRS >= seuil_stabilite_acquise_jours. L'XP affichée est dérivée de cette mesure, jamais une seconde comptabilité.",
+    "_": "La carte-monde (SPEC-PRODUIT §3, GO socle 29/08/2026). Une région = un domaine ici ; remplissage = % des cartes valide de la région dont la stabilité FSRS >= seuil_stabilite_acquise_jours. L'XP affichée est dérivée de cette mesure, jamais une seconde comptabilité. seuil_fraicheur_jours (ACA-ARBRE-1, decisions/0028) : au-delà, un nœud joué dont une carte est échue se marque « à revoir » ; la marque ne déclasse jamais un nœud validé.",
     "seuil_stabilite_acquise_jours": 21,
     "seuil_ouverture_region": 0.75,
+    "seuil_fraicheur_jours": 21,
     "examen_obligatoire_pour_100": true,
     "examen_nb_cartes": 12,
     "examen_score_reussite": 0.8

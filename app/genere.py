@@ -52,7 +52,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from valide_banque import (  # noqa: E402
-    BANQUE, charge_banque, charge_config, noms_du_parc, valide_carte)
+    ACADEMIE, BANQUE, charge_banque, charge_config, noms_du_parc, valide_carte)
 from datetime import date  # noqa: E402
 
 RACINE = Path(__file__).resolve().parents[1]
@@ -73,6 +73,13 @@ FICHIERS_CLIENT = ("index.html", "style.css", "app.js", "sw.js")
 # Python. On ne sert QUE des réglages, jamais un chemin ni un secret.
 BLOCS_CONFIG = ("domaines", "quotas", "fsrs", "progression", "quiz")
 
+# Ce qu'un nœud publie. Le client recalcule l'arbre avec exactement ces
+# champs et pas un de plus (ACA-ARBRE-1) : le reste du programme (les
+# notions, la compétence, les exercices, l'étude) est de la matière de
+# fabrication, elle ne traverse pas.
+CHAMPS_CHAPITRE = ("id", "titre", "domaine", "branche", "sous_branche",
+                   "niveau", "prerequis", "ponts", "satellite", "statut")
+
 # Champs servis au front. On n'expose pas `origine` (chemin interne du
 # repo, sans intérêt pour le joueur) ni les champs de travail.
 CHAMPS = ("id", "domaine", "branche", "niveau", "prerequis", "type",
@@ -83,6 +90,27 @@ CHAMPS = ("id", "domaine", "branche", "niveau", "prerequis", "type",
 def carte_publique(carte: dict) -> dict:
     """La carte telle que le front la reçoit : sans les champs de travail."""
     return {c: carte[c] for c in CHAMPS if c in carte and carte[c] not in (None, [], "")}
+
+
+def charge_programme(racine: Path | None = None) -> dict:
+    """Le programme du métier : `programme/<metier>.json`, sans le catalogue.
+
+    Résolu depuis `ACADEMIE` (donc depuis `ACADEMIE_RACINE` quand il est
+    posé), comme la banque : une racine jetable de test n'emprunte jamais
+    le programme du dépôt. Rend `{}` s'il n'y en a pas : la banque reste
+    servable sans arbre, exactement comme avant `ACA-ARBRE-1`.
+    """
+    dossier = (racine or ACADEMIE) / "programme"
+    fichiers = sorted(f for f in dossier.glob("*.json") if f.name != "catalogue.json")
+    if not fichiers:
+        return {}
+    return json.loads(fichiers[0].read_text(encoding="utf-8"))
+
+
+def chapitre_public(chapitre: dict) -> dict:
+    """Le nœud tel que le client le reçoit : la forme de l'arbre, rien d'autre."""
+    return {c: chapitre[c] for c in CHAMPS_CHAPITRE
+            if c in chapitre and chapitre[c] not in (None, [], "")}
 
 
 def publie_images(retenues: list[dict], dossier_sortie: Path) -> tuple[list[str], list[str]]:
@@ -194,6 +222,21 @@ def main() -> int:
     for bloc in BLOCS_CONFIG:
         if bloc in config:
             charge[bloc] = config[bloc]
+
+    # L'arbre : les nœuds, leurs prérequis, les branches qui les portent
+    # (ACA-ARBRE-1). Le client recalcule les états avec ça et le journal,
+    # sans jamais rien demander au serveur.
+    programme = charge_programme()
+    if programme:
+        charge["chapitres"] = [chapitre_public(c) for c in programme.get("chapitres", [])]
+        charge["branches"] = programme.get("branches", {})
+        charge["niveaux"] = programme.get("niveaux", {})
+    # Les poids FSRS servis au client, pour que sa parité ne dépende pas
+    # d'une constante recopiée à la main de l'autre côté.
+    charge.setdefault("fsrs", {})
+    if "poids" not in charge["fsrs"]:
+        from planificateur import PARAMS_DEFAUT  # noqa: PLC0415
+        charge["fsrs"] = {**charge["fsrs"], "poids": list(PARAMS_DEFAUT)}
 
     sorties = [args.sortie]
 
