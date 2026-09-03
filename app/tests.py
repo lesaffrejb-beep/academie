@@ -126,6 +126,14 @@ MUTATIONS = [
     ("l'usine ne rejoue plus les contrôles des unités validées", "usine/etat.py",
      '        if u["statut"] != "valide":\n            continue\n        err, sceau, _ = controler_unite',
      '        if True:\n            continue\n        err, sceau, _ = controler_unite'),
+    ("un chapitre retiré sert quand même ses cartes", "genere.py",
+     '    if chapitre.get("statut") in ("signale", "perime"):\n        return "chapitre"',
+     '    if False:\n        return "chapitre"'),
+    ("la publication ne juge plus les chapitres v2", "genere.py",
+     "        erreurs.extend(v2.valide_chapitre(ch, fichier, programme, parc, aujourdhui))",
+     "        pass"),
+    ("un lot mixte s'annonce quand même en carte-v2", "genere.py",
+     "    if cartes_v2 and nb_v1 == 0:", "    if cartes_v2:"),
 ]
 
 

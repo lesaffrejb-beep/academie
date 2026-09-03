@@ -26,6 +26,7 @@ Quatre garanties, dans l'ordre de gravité si elles cassent :
 
 from __future__ import annotations
 
+import copy
 import json
 import shutil
 import subprocess
@@ -262,6 +263,243 @@ def test_contrat_de_sortie() -> list[str]:
     return err
 
 
+# --- 5. La chaîne v2 : chapitres/ → genere → écran -------------------
+#
+# ACA-CONTRAT-2 étape 1. Ces tests décrivent ce que `genere.py` doit
+# faire de `chapitres/` AVANT que la migration des 84 cartes v1 soit
+# faite : ils ne dépendent d'aucune table d'assignation, donc ils se
+# tiennent pendant que l'étape 2 attend l'arbitrage de JB.
+#
+# La règle de transition est celle du cahier : un chapitre `brouillon`
+# ne se joue pas, MAIS ses cartes `valide` et relues sont servies, pour
+# ne pas priver JB de son contenu vérifié pendant la migration. Elle est
+# datée et se retire à la fin d'ACA-CONTENT-2.
+
+AUJ_ISO = date.today().isoformat()
+PROV = {"auteur": "modele", "modele": "test-modele", "genere_le": AUJ_ISO,
+        "session": "tests_chaine", "sources_retrouvees": 1,
+        "sources_concordantes": 1, "sans_source": False}
+SRC_A = {"texte": "Art. 24, loi du 10 juillet 1965", "nature": "texte-officiel"}
+PROGRAMME_V2 = {
+    "version": "test", "metier": "test", "genere_le": AUJ_ISO,
+    "domaines": {"droit": {"titre": "Droit", "ordre": 1}},
+    "branches": {"droit": [{"cle": "majorites", "titre": "Majorités", "ordre": 1}]},
+    "niveaux": {"1": "Découverte"},
+    "chapitres": [
+        {"id": "droit.majorites.article-24", "domaine": "droit", "branche": "majorites",
+         "titre": "L'article 24", "niveau": 1, "prerequis": [], "statut": "a-ecrire"},
+        {"id": "droit.majorites.tableau", "domaine": "droit", "branche": "majorites",
+         "titre": "Le tableau", "niveau": 2,
+         "prerequis": ["droit.majorites.article-24"], "statut": "a-ecrire"},
+    ],
+}
+
+
+def carte_v2(cid: str, **maj) -> dict:
+    base = {
+        "id": cid, "chapitre": "droit.majorites.article-24", "domaine": "droit",
+        "branche": "majorites", "type": "flash", "niveau": 1,
+        "question": f"Question {cid} sur l'article 24 ?",
+        "reponse": "La majorité des voix exprimées.",
+        "source": [copy.deepcopy(SRC_A)], "provenance": copy.deepcopy(PROV),
+        "verifie": AUJ_ISO, "statut": "valide", "partage": "banque",
+        "verifie_par": "agent frais, tests_chaine",
+    }
+    base.update(maj)
+    return base
+
+
+def chapitre_v2(**maj) -> dict:
+    base = {
+        "id": "droit.majorites.article-24", "titre": "L'article 24",
+        "domaine": "droit", "branche": "majorites", "niveau": 1, "prerequis": [],
+        "objectifs": ["Dire ce que vote l'article 24.", "Calculer une majorité."],
+        "amorce": {"question": "250 pour, 200 contre, 150 abstentions : adoptée ?",
+                   "reponse_attendue": "Oui : les abstentions ne comptent pas."},
+        "lecon": "x" * 1600,
+        "synthese": {"consigne": "Explique l'article 24 en une phrase.",
+                     "attendus": ["voix exprimées", "présents ou représentés",
+                                  "abstentions exclues"]},
+        "cartes": [carte_v2("droit-majorites-definition")],
+        "sources": [copy.deepcopy(SRC_A)], "provenance": copy.deepcopy(PROV),
+        "statut": "brouillon", "partage": "banque", "verifie": AUJ_ISO, "version": 1,
+    }
+    base.update(maj)
+    return base
+
+
+def genere_v2(chapitres: list[dict], banque_v1: list[dict] | None = None,
+              *args: str) -> tuple[dict | None, str, int]:
+    """Lance genere.py sur une racine jetable qui porte `chapitres/`.
+
+    Même geste que `genere()`, avec un programme et des chapitres v2. La
+    banque v1 est facultative : c'est ce qui permet d'observer la
+    disposition mixte, celle de la migration en cours.
+    """
+    tmp = Path(tempfile.mkdtemp(prefix="academie-v2-"))
+    try:
+        (tmp / "programme").mkdir()
+        (tmp / "programme" / "test.json").write_text(
+            json.dumps(PROGRAMME_V2, ensure_ascii=False), encoding="utf-8")
+        dossier = tmp / "chapitres" / "droit" / "majorites"
+        dossier.mkdir(parents=True)
+        for i, ch in enumerate(chapitres):
+            (dossier / f"ch{i}.json").write_text(
+                json.dumps(ch, ensure_ascii=False), encoding="utf-8")
+        (tmp / "banque" / "droit").mkdir(parents=True)
+        (tmp / "banque" / "droit" / "t.json").write_text(
+            json.dumps(banque_v1 or [], ensure_ascii=False), encoding="utf-8")
+        shutil.copy(RACINE / "academie.json", tmp / "academie.json")
+        sortie = tmp / "out.json"
+        res = subprocess.run(
+            [sys.executable, str(APP / "genere.py"), "--sortie", str(sortie), *args],
+            capture_output=True, text=True, env={"PATH": "/usr/bin:/bin",
+                                                 "ACADEMIE_RACINE": str(tmp)})
+        charge = json.loads(sortie.read_text(encoding="utf-8")) if sortie.exists() else None
+        return charge, res.stderr + res.stdout, res.returncode
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+
+def test_v2_traverse_la_chaine() -> list[str]:
+    """Une carte v2 part de `chapitres/` et arrive à l'écran entière."""
+    charge, sortie, code = genere_v2([chapitre_v2(statut="valide",
+                                                  verifie_par="agent frais")])
+    if charge is None:
+        return [f"aucune sortie pour une banque v2 valide (code {code}) : {sortie[-400:]}"]
+    err = []
+    if charge.get("contrat") != "carte-v2":
+        err.append(f"une banque servie entièrement depuis chapitres/ publie "
+                   f"`contrat` = {charge.get('contrat')!r}, attendu 'carte-v2'")
+    servies = {c["id"]: c for c in charge["cartes"]}
+    if "droit-majorites-definition" not in servies:
+        return err + [f"la carte du chapitre n'est pas servie : {sorted(servies)}"]
+    c = servies["droit-majorites-definition"]
+    for champ in ("chapitre", "provenance", "note_confiance", "a_recouper"):
+        if champ not in c:
+            err.append(f"la carte v2 servie n'a pas `{champ}` : le joueur ne peut "
+                       f"pas voir d'où elle vient ni ce qu'elle vaut")
+    if c.get("note_confiance") not in ("A", "B", "C"):
+        err.append(f"note_confiance dérivée invalide : {c.get('note_confiance')!r}")
+    if not charge.get("chapitres"):
+        err.append("l'arbre n'est pas publié : pas de `chapitres`")
+    else:
+        avec_prerequis = [ch for ch in charge["chapitres"] if ch.get("prerequis")]
+        if not avec_prerequis:
+            err.append("aucun prérequis publié : l'arbre n'a plus d'ordre")
+    if not (charge.get("fsrs") or {}).get("poids"):
+        err.append("les poids FSRS ne sont pas publiés : la parité du client "
+                   "reposerait sur une constante recopiée")
+    return err
+
+
+def test_regle_de_transition_du_chapitre_brouillon() -> list[str]:
+    """Un chapitre `brouillon` ne se joue pas, ses cartes relues si.
+
+    Règle de transition datée du cahier ACA-CONTRAT-2 : sans elle, la
+    migration priverait JB de son contenu vérifié tant que la leçon
+    n'est pas écrite (ACA-CONTENT-2).
+    """
+    ch = chapitre_v2(cartes=[
+        carte_v2("droit-majorites-relue"),
+        carte_v2("droit-majorites-non-relue", statut="brouillon"),
+    ])
+    charge, sortie, code = genere_v2([ch])
+    if charge is None:
+        return [f"aucune sortie (code {code}) : {sortie[-400:]}"]
+    servies = {c["id"] for c in charge["cartes"]}
+    err = []
+    if "droit-majorites-relue" not in servies:
+        err.append("une carte `valide` et relue d'un chapitre `brouillon` n'est "
+                   "pas servie : la règle de transition ne s'applique pas")
+    if "droit-majorites-non-relue" in servies:
+        err.append("une carte `brouillon` est servie par défaut")
+    return err
+
+
+def test_chapitre_signale_ne_sert_rien() -> list[str]:
+    """Un chapitre retiré emporte ses cartes, quel que soit leur statut."""
+    charge, sortie, code = genere_v2([chapitre_v2(statut="signale")])
+    if charge is None:
+        return [f"aucune sortie (code {code}) : {sortie[-400:]}"]
+    if {c["id"] for c in charge["cartes"]} & {"droit-majorites-definition"}:
+        return ["un chapitre `signale` sert quand même ses cartes"]
+    return []
+
+
+def test_v2_invalide_arrete_la_chaine() -> list[str]:
+    """Le valideur v2 garde la porte, exactement comme le v1."""
+    cas = {
+        "source sans nature": chapitre_v2(cartes=[
+            carte_v2("droit-majorites-sans-nature",
+                     source=[{"texte": "quelque part"}])]),
+        "carte sans provenance": chapitre_v2(cartes=[
+            {k: v for k, v in carte_v2("droit-majorites-orpheline").items()
+             if k != "provenance"}]),
+        "chapitre absent du programme": chapitre_v2(
+            id="droit.majorites.nulle-part",
+            cartes=[carte_v2("droit-majorites-x", chapitre="droit.majorites.nulle-part")]),
+    }
+    err = []
+    for nom, ch in cas.items():
+        charge, _, code = genere_v2([ch])
+        if code == 0:
+            err.append(f"« {nom} » : la génération réussit au lieu d'échouer")
+        if charge is not None:
+            err.append(f"« {nom} » : un fichier a été écrit malgré l'erreur v2")
+    return err
+
+
+def test_disposition_mixte_reste_en_v1() -> list[str]:
+    """Tant qu'une carte v1 est servie, la banque n'est pas une v2.
+
+    Le champ `contrat` n'est pas un vœu : il dit au client ce qu'il peut
+    supposer de CHAQUE carte servie. Une carte v1 n'a ni `chapitre` ni
+    `provenance` ; annoncer `carte-v2` sur un lot mixte serait un
+    mensonge que le client paierait à l'écran. Le champ bascule tout
+    seul quand `banque/` ne fournit plus rien : la migration flippe le
+    contrat par construction, sans drapeau à ne pas oublier.
+    """
+    charge, sortie, code = genere_v2(
+        [chapitre_v2(statut="valide", verifie_par="agent frais")],
+        [carte("v1-restante")])
+    if charge is None:
+        return [f"aucune sortie en disposition mixte (code {code}) : {sortie[-400:]}"]
+    err = []
+    if charge.get("contrat") is not None:
+        err.append(f"lot mixte publié en `contrat` = {charge['contrat']!r} : "
+                   f"une carte v1 y est pourtant servie")
+    servies = {c["id"] for c in charge["cartes"]}
+    for attendue in ("v1-restante", "droit-majorites-definition"):
+        if attendue not in servies:
+            err.append(f"la disposition mixte perd `{attendue}` : {sorted(servies)}")
+    return err
+
+
+def test_id_duplique_entre_les_deux_dispositions() -> list[str]:
+    """Le même identifiant des deux côtés : une carte en écrase une autre."""
+    charge, _, code = genere_v2(
+        [chapitre_v2(cartes=[carte_v2("doublon")])],
+        [carte("doublon")])
+    if code == 0:
+        return ["un identifiant présent dans banque/ ET dans chapitres/ passe : "
+                "l'état du joueur se rejoue sur deux cartes différentes"]
+    if charge is not None:
+        return ["un fichier a été écrit malgré l'identifiant dupliqué"]
+    return []
+
+
+def test_couche_perso_ne_sort_pas_dun_chapitre() -> list[str]:
+    """Le cloisonnement des couches vaut aussi pour la v2."""
+    ch = chapitre_v2(cartes=[carte_v2("droit-majorites-privee", partage="perso")])
+    charge, sortie, code = genere_v2([ch], None, "--couches", "banque")
+    if charge is None:
+        return [f"aucune sortie (code {code}) : {sortie[-400:]}"]
+    if "droit-majorites-privee" in {c["id"] for c in charge["cartes"]}:
+        return ["une carte `perso` d'un chapitre part en distribution externe"]
+    return []
+
+
 def main() -> int:
     groupes = [
         ("1. cloisonnement des couches", test_cloisonnement_des_couches),
@@ -272,6 +510,15 @@ def main() -> int:
         ("3. donnée malformée arrête tout", test_donnee_malformee_arrete_la_chaine),
         ("3. JSON cassé ne produit rien", test_json_casse_ne_produit_rien),
         ("4. contrat de sortie vers le front", test_contrat_de_sortie),
+        ("5. la chaîne v2 de bout en bout", test_v2_traverse_la_chaine),
+        ("5. règle de transition du chapitre brouillon",
+         test_regle_de_transition_du_chapitre_brouillon),
+        ("5. un chapitre signalé ne sert rien", test_chapitre_signale_ne_sert_rien),
+        ("5. banque v2 invalide arrête tout", test_v2_invalide_arrete_la_chaine),
+        ("5. disposition mixte : contrat v1", test_disposition_mixte_reste_en_v1),
+        ("5. identifiant dupliqué entre dispositions",
+         test_id_duplique_entre_les_deux_dispositions),
+        ("5. couche perso d'un chapitre", test_couche_perso_ne_sort_pas_dun_chapitre),
     ]
     total = []
     for nom, fn in groupes:

@@ -90,10 +90,30 @@ CHAMPS = ("id", "domaine", "branche", "niveau", "prerequis", "type",
           "question", "reponse", "choix", "explication", "vigilance",
           "image", "source", "verifie", "peremption", "statut")
 
+# Ce qu'une carte v2 emporte en plus (CONTRAT-CARTE-V2.md §2). Trois
+# familles : le rattachement (`chapitre`), le dossier de la carte
+# (`provenance`, `verifie_par`, et les deux dérivés que le valideur
+# calcule et que personne n'écrit à la main), et les charges des types
+# que la v1 ne connaissait pas.
+CHAMPS_V2 = CHAMPS + (
+    "chapitre", "provenance", "verifie_par", "a_recouper", "note_confiance",
+    "pas", "attendus", "document", "audio", "chrono", "confiance")
+
 
 def carte_publique(carte: dict) -> dict:
     """La carte telle que le front la reçoit : sans les champs de travail."""
     return {c: carte[c] for c in CHAMPS if c in carte and carte[c] not in (None, [], "")}
+
+
+def carte_publique_v2(carte: dict) -> dict:
+    """Idem pour une carte v2 : le rattachement et le dossier voyagent.
+
+    `a_recouper` et `note_confiance` sont posés par l'appelant depuis la
+    dérivation du valideur (`decisions/0022`) : ils ne viennent jamais du
+    fichier, le valideur refuse qu'on les y écrive.
+    """
+    return {c: carte[c] for c in CHAMPS_V2
+            if c in carte and carte[c] not in (None, [], "")}
 
 
 def charge_programme(racine: Path | None = None) -> dict:
@@ -115,6 +135,77 @@ def chapitre_public(chapitre: dict) -> dict:
     """Le nœud tel que le client le reçoit : la forme de l'arbre, rien d'autre."""
     return {c: chapitre[c] for c in CHAMPS_CHAPITRE
             if c in chapitre and chapitre[c] not in (None, [], "")}
+
+
+def sert_la_carte_v2(carte: dict, chapitre: dict, couches: set[str],
+                     avec_brouillons: bool) -> str | None:
+    """Rend le motif d'écartement d'une carte v2, ou None si elle se joue.
+
+    Trois filtres, dans cet ordre, et un seul est une nouveauté de la v2.
+
+    1. La couche, mécanique comme en v1.
+    2. Le statut de la carte, sûr par défaut comme en v1.
+    3. **Le statut du chapitre.** Un chapitre `signale` ou `perime` est
+       retiré : il emporte ses cartes, quel que soit leur propre statut,
+       parce que c'est la leçon qui est en cause. Un chapitre
+       `brouillon`, lui, ne se joue pas comme chapitre — sa leçon n'est
+       pas écrite — mais ses cartes `valide` et relues sont servies.
+       C'est la RÈGLE DE TRANSITION du cahier ACA-CONTRAT-2, datée du
+       03/09/2026 : sans elle, migrer la banque priverait JB de ses
+       cartes vérifiées jusqu'à la fin d'ACA-CONTENT-2. Elle se retire
+       à ce moment-là, et ce commentaire avec.
+    """
+    if carte.get("partage") not in couches:
+        return "couche"
+    if carte.get("statut") in ("signale", "perime"):
+        return "statut"
+    if carte.get("statut") != "valide" and not avec_brouillons:
+        return "statut"
+    if chapitre.get("statut") in ("signale", "perime"):
+        return "chapitre"
+    if chapitre.get("statut") != "valide" and not avec_brouillons:
+        # Règle de transition : la carte relue passe, l'autre non.
+        if not (carte.get("statut") == "valide" and carte.get("verifie_par")):
+            return "chapitre"
+    return None
+
+
+def charge_cartes_v2(couches: set[str], avec_brouillons: bool,
+                     aujourdhui: date) -> tuple[list[dict], list[str], dict[str, int]]:
+    """Lit `chapitres/`, juge, dérive, et rend les cartes v2 à servir.
+
+    Le juge est `valide_chapitres.py`, le même que la porte du dépôt :
+    `genere.py` ne rejuge rien à sa façon, il refuse de publier quand le
+    valideur parle. Les dérivés (`a_recouper`, `note_confiance`) sont
+    calculés ici parce qu'ils doivent atteindre l'écran ; ils ne sont
+    jamais lus du fichier.
+    """
+    import valide_chapitres as v2  # noqa: PLC0415  (import tardif : ACADEMIE_RACINE)
+
+    chapitres, erreurs = v2.charge_chapitres()
+    if not chapitres:
+        return [], erreurs, {"couche": 0, "statut": 0, "chapitre": 0}
+
+    programme = v2.charge_programme()
+    parc = v2.noms_du_parc()
+    retenues: list[dict] = []
+    ecartees = {"couche": 0, "statut": 0, "chapitre": 0}
+    for ch, fichier in chapitres:
+        if not isinstance(ch, dict):
+            erreurs.append(f"{fichier.name} : un chapitre est un objet, pas un tableau")
+            continue
+        erreurs.extend(v2.valide_chapitre(ch, fichier, programme, parc, aujourdhui))
+        for carte in ch.get("cartes") or []:
+            if not isinstance(carte, dict):
+                continue
+            motif = sert_la_carte_v2(carte, ch, couches, avec_brouillons)
+            if motif:
+                ecartees[motif] += 1
+                continue
+            a_recouper, note = v2.derive(carte, carte.get("source") or [], aujourdhui)
+            retenues.append(carte_publique_v2(
+                {**carte, "a_recouper": a_recouper, "note_confiance": note}))
+    return retenues, erreurs, ecartees
 
 
 def publie_images(retenues: list[dict], dossier_sortie: Path) -> tuple[list[str], list[str]]:
@@ -197,7 +288,7 @@ def main() -> int:
         return 1
 
     retenues = []
-    ecartees = {"couche": 0, "statut": 0}
+    ecartees = {"couche": 0, "statut": 0, "chapitre": 0}
     for carte, _ in cartes:
         if carte["partage"] not in couches:
             ecartees["couche"] += 1
@@ -209,6 +300,36 @@ def main() -> int:
             ecartees["statut"] += 1
             continue
         retenues.append(carte_publique(carte))
+
+    # ACA-CONTRAT-2 étape 3 : la seconde disposition. `chapitres/` et
+    # `banque/` coexistent le temps de la migration ; les deux passent
+    # par leur valideur et se versent dans le même lot.
+    nb_v1 = len(retenues)
+    cartes_v2, erreurs_v2, ecartees_v2 = charge_cartes_v2(
+        couches, args.avec_brouillons, aujourdhui)
+    for motif, combien in ecartees_v2.items():
+        ecartees[motif] += combien
+    if erreurs_v2:
+        print(f"chapitres v2 invalides ({len(erreurs_v2)} erreur(s)), rien n'est généré.")
+        for e in erreurs_v2[:10]:
+            print(f"  - {e}")
+        print("→ python3 app/valide_chapitres.py")
+        return 1
+    retenues.extend(cartes_v2)
+
+    # Un identifiant des deux côtés, c'est un état de joueur rejoué sur
+    # deux cartes différentes : la migration doit déplacer, jamais copier.
+    vus: dict[str, int] = {}
+    doublons = []
+    for c in retenues:
+        vus[c["id"]] = vus.get(c["id"], 0) + 1
+        if vus[c["id"]] == 2:
+            doublons.append(c["id"])
+    if doublons:
+        print(f"identifiant(s) servi(s) deux fois ({len(doublons)}), rien n'est généré :")
+        for d in doublons[:10]:
+            print(f"  - {d} (présent dans banque/ ET dans chapitres/)")
+        return 1
 
     charge = {
         "_": ("Généré par app/genere.py — ne pas éditer à la main. "
@@ -235,6 +356,17 @@ def main() -> int:
         charge["chapitres"] = [chapitre_public(c) for c in programme.get("chapitres", [])]
         charge["branches"] = programme.get("branches", {})
         charge["niveaux"] = programme.get("niveaux", {})
+    # Le contrat de la charge servie. Il n'est pas un vœu : il dit au
+    # client ce qu'il peut supposer de CHAQUE carte du lot. Tant qu'une
+    # carte v1 est servie — sans `chapitre`, sans `provenance` —
+    # annoncer `carte-v2` serait un mensonge que le client paierait à
+    # l'écran. Le champ bascule donc tout seul le jour où `banque/` ne
+    # fournit plus rien : la fin de la migration flippe le contrat par
+    # construction, sans drapeau à ne pas oublier. Le client lit une
+    # charge sans `contrat` comme une `carte-v1` (CONTRAT-CARTE-V2 §5.4).
+    if cartes_v2 and nb_v1 == 0:
+        charge["contrat"] = "carte-v2"
+
     # Les poids FSRS servis au client, pour que sa parité ne dépende pas
     # d'une constante recopiée à la main de l'autre côté.
     charge.setdefault("fsrs", {})
@@ -273,6 +405,10 @@ def main() -> int:
             ou.append(str(cible))
     print(f"{len(retenues)} carte(s) servie(s) → {' + '.join(ou)}")
     print(f"  couches : {', '.join(sorted(couches))}")
+    if cartes_v2:
+        print(f"  dispositions : {nb_v1} carte(s) v1 (banque/), "
+              f"{len(cartes_v2)} carte(s) v2 (chapitres/) ; "
+              f"contrat servi : {charge.get('contrat', 'carte-v1 (champ absent)')}")
     if images:
         print(f"  {len(images)} image(s) publiée(s) → "
               f"{args.sortie.parent}/ : {', '.join(sorted(set(images)))}")
@@ -280,9 +416,10 @@ def main() -> int:
     if brouillons:
         print(f"  dont {brouillons} en `brouillon` : à revérifier à la source "
               f"avant de compter dessus")
-    if ecartees["couche"] or ecartees["statut"]:
+    if any(ecartees.values()):
         print(f"  écartées : {ecartees['couche']} hors couche, "
-              f"{ecartees['statut']} par statut")
+              f"{ecartees['statut']} par statut, "
+              f"{ecartees['chapitre']} par statut de chapitre")
     return 0
 
 
