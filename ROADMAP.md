@@ -34,7 +34,12 @@ sources (`ACA-SOURCES-1`), les licences de réutilisation lues à la
 source (`ACA-REUSE-1`), le tableau de bord du rituel
 (`ACA-RITUAL-METRICS-1`). Sont ouverts : le contrat v2
 (`ACA-CONTRAT-2`), le client v2 (`ACA-FRONT-2`), et les trente séances
-de JB (`ACA-RITUAL-1`), qui n'attendent plus que lui. L'arbre
+de JB (`ACA-RITUAL-1`), qui n'attendent plus que lui. L'export Anki
+(`ACA-EXPORT-1`) est fait : l'assurance-vie de réversibilité tourne.
+La carte des sources des domaines vides (`ACA-CONTENT-MAP-1`) est
+**bloquée en Cloud** et attend le Mac : la politique réseau y refuse
+tous les sites institutionnels, et le chantier interdit un inventaire
+de mémoire (le détail est dans son cahier). L'arbre
 (`ACA-ARBRE-1`) et la semaine type (`ACA-SEMAINE-1`) sont faits :
 nœuds, branches, états, couleurs des jours, pondération du socle, et la
 parité Python/TypeScript sur chacun.

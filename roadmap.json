@@ -274,7 +274,7 @@
     {
       "id": "ACA-EXPORT-1",
       "outcome": "app/export_anki.py produit un .apkg de n'importe quel sous-ensemble de la banque (assurance-vie de réversibilité).",
-      "status": "ready",
+      "status": "done",
       "mode": "deterministic",
       "risk": "low",
       "priority": 70,

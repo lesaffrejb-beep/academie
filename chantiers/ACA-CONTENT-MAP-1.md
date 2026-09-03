@@ -8,6 +8,25 @@ labor, avec critères d'abandon de chaque source, lignes ajoutées au
 registre.
 Dépend de : ACA-PORT-1. Bloque : ACA-CONTENT-2.
 
+## État au 03/09/2026 : infaisable depuis le Cloud
+
+Ce chantier demande des licences, des dates de mise à jour et des
+péremptions **lues à la source**, et le dépôt interdit un verdict de
+mémoire (`decisions/0021`, et la règle de `ACA-REUSE-1` : une licence
+non lue est « à vérifier », pas « MIT »).
+
+Or la politique réseau de l'environnement Cloud refuse tous les hôtes
+dont ce chantier a besoin. Vérifié le 03/09/2026 : `legifrance.gouv.fr`,
+`ademe.fr`, `anil.org`, `service-public.fr`, `cerema.fr`, `anah.gouv.fr`,
+`ecologie.gouv.fr` et `data.gouv.fr` répondent tous par un refus de
+politique du proxy sortant (403 sur CONNECT). Seuls quelques hôtes de
+paquets et de code sont ouverts.
+
+Un agent en Cloud ne peut donc produire ici qu'un inventaire de
+mémoire, c'est-à-dire exactement ce que le chantier interdit. **À faire
+depuis le Mac**, où les sources sont joignables. Le reste du cahier est
+inchangé et reste valable tel quel.
+
 ## Périmètre
 
 Peut créer ou modifier : `travail/sources-<domaine>-AAAA-MM-JJ.md` (un

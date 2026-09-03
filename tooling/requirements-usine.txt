@@ -1,0 +1,16 @@
+# Dépendances de l'USINE, jamais du produit joué.
+#
+# Le moteur (app/), le serveur (serveur/) et le client (web/) n'en
+# chargent aucune : le produit tient en stdlib côté Python, et la CI
+# n'installe rien. Ce fichier sert aux outils qui fabriquent ou
+# exportent, et qui tournent à la main sur le Mac.
+#
+#     python3 -m pip install -r tooling/requirements-usine.txt
+#
+# Chaque ligne porte sa licence, lue à la source, avec sa date.
+# Une dépendance dont la licence n'a pas été lue n'entre pas ici.
+
+# Export Anki (ACA-EXPORT-1, assurance-vie de réversibilité).
+# MIT, lue le 03/09/2026 :
+# https://raw.githubusercontent.com/kerrickstaley/genanki/main/LICENSE.txt
+genanki==0.13.1
