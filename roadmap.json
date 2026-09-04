@@ -165,19 +165,21 @@
     {
       "id": "ACA-RITUAL-1",
       "outcome": "JB réalise environ trente séances réelles et un test de rétention à froid de vingt cartes sans dette ni culpabilisation.",
-      "status": "ready",
+      "status": "blocked",
       "mode": "human-only",
       "risk": "low",
       "priority": 95,
       "depends_on": [
-        "ACA-JOURNAL-SYNC-1"
+        "ACA-JOURNAL-SYNC-1",
+        "ACA-FRONT-2"
       ],
       "budget": {
         "max_units": 30,
         "max_minutes": 600
       },
       "proof": "Bilan usage et savoir depuis le journal synchronisé : fréquence, abandons, formats, score à froid, calibration, verbatim JB et décision continuer, corriger ou geler.",
-      "parent_milestone": "ACADEMIE-RITUAL-1"
+      "parent_milestone": "ACADEMIE-RITUAL-1",
+      "note": "Le 04/09, JB : il joue quand le client v2 est fini, propre et pro. Dépend donc d'ACA-FRONT-2."
     },
     {
       "id": "ACA-PROGRAMME-1",
@@ -310,7 +312,7 @@
       },
       "proof": "Première question en moins de trois secondes réseau coupé sur téléphone ; checklist DA §9 ; aucun hôte tiers contacté ; JB joue sept séances dessus.",
       "parent_milestone": "ACADEMIE-V2-JOUEUR",
-      "note": "Squelette technique posé le 03/09 (web/ : moteur en parité, écrans nus, PWA, 95 tests, build vert). Reste : couche visuelle (autre main), e2e hors-ligne, bascule de client/, et ACA-CONTRAT-2. FSRS à la main plutôt que ts-fsrs : decisions/0029. Bascule de client/ après ACA-CONTRAT-2 (le format de carte bouge)."
+      "note": "Squelette technique posé le 03/09 (web/ : moteur en parité, écrans nus, PWA, 95 tests, build vert). Reste : couche visuelle (autre main), e2e hors-ligne, bascule de client/, et ACA-CONTRAT-2. FSRS à la main plutôt que ts-fsrs : decisions/0029. Bascule de client/ après ACA-CONTRAT-2 (le format de carte bouge). Le 04/09, JB : l'archipel est archivé (archive/client-archipel-2026-09-04), rien n'est servi en attendant ; JB ne joue que sur un client fini, propre, pro. La publication doit construire web/ et copier dist/ (deploy/academie-publication.service)."
     },
     {
       "id": "ACA-ARBRE-1",

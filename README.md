@@ -41,7 +41,7 @@ La conception d'août est archivée intacte dans
         │
   VPS : timer 05:15 → /academie/     Caddy sert le client
         │
-  client/ (l'archipel, à remplacer)  joue les cartes ; état dans localStorage
+  web/ (client v2, en construction)  joue les cartes ; l'archipel est archivé
 ```
 
 Le moteur Python (`app/`) est la référence : FSRS-6 comparé à

@@ -5,8 +5,8 @@ Squelette écrit le 02/09/2026 (`DIRECTION-ARTISTIQUE.md`,
 03/09/2026. Ce dossier dit quoi construire, écran par écran, et contre
 quoi le vérifier ; la section « État au 03/09/2026 » dit où on en est. Le chantier est `ACA-FRONT-2`. Le client est **jetable** : il
 peut être réécrit sans toucher au moteur, à la banque ni au journal.
-Il remplace `client/` (l'archipel), qui reste servi jusqu'à sa
-bascule.
+Il remplace l'archipel, archivé le 04/09 dans
+`archive/client-archipel-2026-09-04` ; rien n'est servi en attendant.
 
 ## Stack
 

@@ -248,6 +248,10 @@ def publie_client(dossier_sortie: Path) -> list[str]:
     Python seul, sans npm ni chaîne de compilation implicite.
     """
     publies: list[str] = []
+    if not CLIENT.is_dir():
+        # 04/09 : l'archipel est archivé (archive/client-archipel-2026-09-04) ;
+        # la publication du client v2 (web/dist) arrive avec ACA-FRONT-2.
+        return publies
     for nom in FICHIERS_CLIENT:
         source = CLIENT / nom
         if not source.is_file():
@@ -412,7 +416,7 @@ def main() -> int:
     if images:
         print(f"  {len(images)} image(s) publiée(s) → "
               f"{args.sortie.parent}/ : {', '.join(sorted(set(images)))}")
-    print(f"  client autonome publié : {', '.join(client)}")
+    print(f"  client autonome publié : {', '.join(client) if client else 'aucun (archipel archivé, client v2 à venir)'}")
     if brouillons:
         print(f"  dont {brouillons} en `brouillon` : à revérifier à la source "
               f"avant de compter dessus")

@@ -63,7 +63,7 @@ quand la machine peut le voir : `python3 tooling/check.py`.
 | tiret cadratin absent des documents v2 et des décisions | racine, `decisions/`, `chantiers/` |
 | chantiers cités dans un document existent dans `roadmap.json` | tous les `.md` hors archive |
 | aucun import de labor ou d'ERP dans `app/`, `serveur/`, `web/`, `client/` | code |
-| l'archipel reste servi tant que `ACA-FRONT-2` ne l'a pas remplacé | `client/` |
+| l'archipel est archivé (`archive/client-archipel-2026-09-04`), `client/` ne revient pas | `web/` |
 | la clé `usine` d'`academie.json` et celle du gabarit portent les mêmes seuils | `academie.json`, `gabarit-domaine/` |
 | `MODELES.md`, `COMMENCER.md`, `GEMINI.md`, `prompts/`, les adaptateurs par outil existent et sans tiret cadratin | racine, `prompts/`, `.agents/`, `.cursor/` |
 

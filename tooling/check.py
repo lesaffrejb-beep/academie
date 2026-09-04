@@ -55,7 +55,6 @@ def rel(path: Path) -> str:
 
 REQUIS = ("AGENTS.md", "CLAUDE.md", "DOCTRINE.md", "CONTRIBUER.md", "VOIX.md", "project.yaml",
           "ROADMAP.md", "roadmap.json", "context/giverny.md", "decisions/README.md",
-          "client/index.html", "client/style.css", "client/app.js", "client/sw.js",
           "deploy/academie-publication.service", "deploy/academie-publication.timer",
           "contenu/voix.json", "contenu/citations.json", "programme/copro.json",
           "MODELES.md", "COMMENCER.md", "GEMINI.md", ".agents/rules/academie.md", ".cursor/rules/academie.mdc",
@@ -110,15 +109,9 @@ def controle_ancien_couplage(errors):
 
 
 def controle_client_archipel(errors):
-    """L'archipel reste servi tant qu'ACA-FRONT-2 ne l'a pas remplacé (cahier)."""
-    client = "\n".join(lit(ROOT / "client" / n) for n in ("index.html", "style.css", "app.js", "sw.js"))
-    if re.search(r"(?:^|[/'\"])(?:erp|etude)(?:[/'\"]|$)", client, re.MULTILINE | re.IGNORECASE):
-        errors.append("le client Académie ne doit importer ni ERP ni Etude")
-    for marker in ('id="archipel"', 'id="phare"', 'id="routes"', 'id="iles"'):
-        if marker not in client:
-            errors.append(f"archipel autonome incomplet : marqueur absent {marker}")
-    if "academie-v2" not in lit(ROOT / "client" / "sw.js"):
-        errors.append("le cache du client n'a pas été invalidé pour l'archipel")
+    """L'archipel est archivé depuis le 04/09 (archive/client-archipel-2026-09-04) : il ne revient pas."""
+    if (ROOT / "client").exists():
+        errors.append("client/ ne doit pas revenir : l'archipel est archivé, le client v2 est web/ (ACA-FRONT-2)")
 
 
 def controle_roadmap(errors):
