@@ -373,7 +373,7 @@
       "id": "ACA-CONTENT-MAP-1",
       "outcome": "Énergie, travaux, immobilier, cabinet et culture disposent chacun d'une carte de sources primaires, licences, péremptions et premier lot proposé.",
       "status": "ready",
-      "mode": "agent-safe",
+      "mode": "agent-review",
       "risk": "low",
       "priority": 80,
       "depends_on": [
@@ -386,7 +386,7 @@
       },
       "proof": "Inventaire sourcé sans création de carte et sans contenu labor, avec critères d'abandon de chaque source, lignes ajoutées au registre.",
       "parent_milestone": "ACADEMIE-V2-CONTENU",
-      "note": "Infaisable depuis le Cloud (sources officielles refusées par le proxy). À faire depuis le Mac."
+      "note": "Infaisable depuis le Cloud (sources officielles refusées par le proxy) : passé en agent-review le 04/09 pour sortir de la sélection automatique. À lancer à la main depuis le Mac."
     },
     {
       "id": "ACA-CONTENT-2",
