@@ -44,7 +44,7 @@ La conception d'août est archivée intacte dans
         │
   web/ : build Vite → dist/          client React, arbre, salle, profil, boîte
         │
-  publication autorisée → VPS        bascule et usage réel encore à prouver
+  VPS à jour                         client transféré ; accès Caddy bloqué par les droits
 ```
 
 Le moteur Python (`app/`) est la référence : FSRS-6 comparé à
@@ -80,8 +80,9 @@ localement : 375 chapitres, 600 capacités de cadrage, syllabus régénéré,
 contrôles verts. La [révision copro](travail/2026-09-04-revision-copro.md)
 conserve 389 chapitres, précise 34 objectifs et corrige les cartes
 concernées ; quatre cartes IRSI/CIDRE sont signalées en attente de source.
-Lot copro mis en pause à la demande de JB : relecture finale des
-retouches AG et régénération de la banque locale encore à terminer.
+Les cinq retouches v1 AG ont été contre-lues avant le push et la banque
+a été régénérée. Restent la relecture du chapitre v2 brouillon et la
+clôture générale du lot copro.
 Les pilotes suivent les gates de rituel et de contenu existants.
 
 ## Vérifier

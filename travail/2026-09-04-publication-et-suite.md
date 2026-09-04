@@ -84,4 +84,54 @@ installer les assets avant l'index et le service worker en dernier,
 redémarrer l'API sur son code courant, contrôler santé et protection HTTP.
 La base joueur est sauvegardée, jamais réécrite par cette opération.
 
-Résultat de la bascule : à compléter après les contrôles distants.
+### Résultat constaté
+
+- Commit de travail **8e8be64** poussé sur `origin/main`, puis récupéré
+  en fast-forward dans `/home/academie/repo`. Clone distant propre.
+- Client construit sur Mac, transféré et installé dans
+  `/var/lib/academie/publication` : 15 fichiers du manifeste vérifiés,
+  76 cartes. Les empreintes de `index.html`, `banque.json` et `sw.js`
+  sont identiques entre le Mac et le VPS.
+- Manifeste SHA-256 :
+  `5556a43ee4afa1a7b849b53a48e7eaaa7e0657741c5df4b7ed783c208012f0ff`.
+- Sauvegarde distante :
+  `/var/lib/academie/sauvegardes/avant-client-v2-20260904/`, avec
+  `publication.tgz`, unité de publication antérieure et copie SQLite
+  dont `PRAGMA integrity_check` renvoie `ok`.
+- API redémarrée, santé `ok: true` ; service d'état et deux timers
+  actifs. Aucune migration de base ou réécriture du journal.
+- HTTPS renvoie 401 sans authentification, protection conservée.
+  **La consultation effective du nouveau client reste bloquée** :
+  Caddy ne peut pas traverser `/var/lib/academie` ni lire le dossier
+  `publication`, tous deux en 750, et son utilisateur n'appartient pas
+  au groupe `academie`. Le contrôle `test -r` sous Caddy échoue.
+  Une réponse 401 ne prouve donc pas que le client est consultable
+  après connexion.
+
+### Autorisation encore nécessaire
+
+La revue automatique a refusé la commande de modification des ACL :
+modification durable de sécurité sur un VPS partagé, accès statique et
+ACL par défaut dont le périmètre n'avait pas été explicitement autorisé.
+**La commande n'a pas été exécutée ; aucun droit n'a été modifié.**
+Ne pas contourner ce refus par un changement indirect de groupe,
+une ouverture globale des permissions ou un changement de racine web.
+
+Demander à JB l'autorisation d'accorder à Caddy la traversée du parent
+et la lecture des seuls fichiers publiés, tout en lui refusant l'accès
+à `etat.sqlite` et à ses fichiers auxiliaires présents ou futurs. La
+base est actuellement en 644 à l'intérieur du parent fermé : ouvrir
+la traversée sans cette protection exposerait sa lecture à Caddy.
+Conserver les données joueurs privées et sauvegarder les ACL avant
+application. Puis contrôler : index et banque lisibles sous Caddy,
+SQLite illisible, API saine et consultation HTTPS authentifiée.
+
+### Retour arrière préparé
+
+L'archive `publication.tgz` contient l'ancien index, service worker,
+banque, styles et images. Sa restauration dans `/var/lib/academie`
+ramène les fichiers précédents ; les nouveaux assets peuvent rester
+inutilisés, sans suppression nécessaire. L'ancienne unité installée
+n'a pas été remplacée. Pour le code API, le commit précédent du clone
+était `13a7344` ; ne pas réinitialiser le clone sans demande de retour
+arrière, ni restaurer la base joueur si seule l'interface est en cause.

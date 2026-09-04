@@ -18,8 +18,13 @@ VPS par `deploy/installer.sh`, geste humain) :
 | `sauvegarde-academie.service` et `.timer` | copie nocturne à 04:30 de `/var/lib/academie/` (SQLite en `VACUUM INTO`, banques, publication), trente jours gardés |
 | `installer.sh` | l'installation en cinq étapes ci-dessous, idempotente |
 
-Ce que `ACA-FRONT-2` ajoutera : `academie-publication.service` construit
-`web/` et copie `dist/` dans la publication.
+Le service Node présent dans le dépôt prépare désormais le client complet.
+Il n’est pas installé sur le VPS, où Node est absent : le client a été
+construit sur le Mac et transféré le 04/09. Le service Python existant
+continue à générer uniquement la banque. L’accès de Caddy au dossier
+reste bloqué par les permissions ; modification des ACL refusée par la
+revue automatique, en attente d’autorisation explicite de JB. Voir le
+point de publication lié en tête pour les preuves et le périmètre.
 
 État au 03/09 au soir : installé sur le VPS (`installer.sh` passé,
 `academie-etat.service` et `sauvegarde-academie.timer` actifs, bloc
