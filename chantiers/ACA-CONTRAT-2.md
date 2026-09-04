@@ -45,8 +45,37 @@ jusqu'à P5).
 
 **Une fois ces réponses données, le reste du chantier est mécanique** :
 la table se recopie dans `app/migre_banque.py`, les fichiers de
-chapitre s'écrivent, le valideur v2 juge le résultat, `genere.py` lit
-`chapitres/`, et `banque/` s'archive.
+chapitre s'écrivent, le valideur v2 juge le résultat, et `banque/`
+s'archive.
+
+## État au 03/09/2026 au soir : les étapes 1, 3 et 4 sont faites
+
+Ce qui ne dépendait pas de l'arbitrage a été livré pendant qu'il
+attend. `genere.py` lit maintenant `chapitres/`, le fait juger par
+`valide_chapitres.py`, dérive `a_recouper` et `note_confiance`, et sert
+les cartes v2 à côté des v1, avec leur `chapitre` et leur `provenance`.
+
+Deux choix méritent d'être dits, parce qu'ils changent la suite :
+
+- **Le champ `contrat` bascule par construction, pas par drapeau.** Il
+  vaut `carte-v2` quand plus aucune carte ne vient de `banque/`, et
+  reste absent avant (le client lit alors `carte-v1`,
+  `CONTRAT-CARTE-V2.md` §5.4). Le champ dit au client ce qu'il peut
+  supposer de CHAQUE carte du lot : l'annoncer v2 sur un lot mixte
+  serait un mensonge payé à l'écran. Conséquence pratique : l'étape 2,
+  le jour où elle se fera, fera basculer le contrat toute seule.
+- **Un identifiant présent des deux côtés arrête la publication.** La
+  migration doit déplacer, jamais copier : deux cartes de même
+  identifiant, c'est un état de joueur rejoué sur deux contenus
+  différents. Le garde-fou est en place avant la migration, pas après.
+
+Effet mesuré le jour même : **la banque servie n'a pas changé d'un
+octet**. Les 11 cartes des deux chapitres pilotes sont `brouillon`, donc
+écartées en production ; elles se jouent en `--avec-brouillons`. La
+machinerie est là, elle attend le contenu.
+
+Reste de l'étape 3 et 4 : rien côté publication. `valide_banque.py` ne
+se retirera qu'à la fin de l'étape 2, quand `banque/` sera vide.
 
 ## Périmètre
 
