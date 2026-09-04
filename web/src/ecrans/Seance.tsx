@@ -5,7 +5,7 @@
  * seance) avant tout affichage suivant.
  */
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { LIB, voix } from "../app/i18n";
 import { useMagasin } from "../app/magasin";
 import { va } from "../app/routage";
@@ -55,22 +55,10 @@ export function Seance({ portee }: { portee?: string }) {
     });
   }, [banque, cartes.length, jour, note, ouverte, portee]);
 
-  if (!banque) return null;
-  if (!cartes.length) {
-    return (
-      <div className="flex flex-col gap-4 p-4">
-        <Titre enfants={LIB.seance} />
-        <Feuille enfants={<p>{voix("cap.rien", {}, jour)}</p>} />
-        <Bouton onClick={() => va("/")} enfants={LIB.quitter} />
-      </div>
-    );
-  }
-
   const carte = cartes[index];
-  if (!carte) return null;
-  const correct = carte.choix?.findIndex((c) => c.correct) ?? -1;
+  const correct = carte?.choix?.findIndex((c) => c.correct) ?? -1;
 
-  async function noter(valeur: 1 | 2 | 3 | 4) {
+  const noter = useCallback(async (valeur: 1 | 2 | 3 | 4) => {
     if (!carte) return;
     await note({
       mode: "revision",
@@ -90,6 +78,56 @@ export function Seance({ portee }: { portee?: string }) {
     setChoisi(null);
     setConfiance(false);
     setDebut(Date.now());
+  }, [carte, cartes.length, confiance, debut, index, note, portee]);
+
+  /*
+   * Le clavier de la DA §8 ter : Espace revele, 1 a 4 notent, Echap sort.
+   * « La souris n'est jamais necessaire dans une salle » n'est pas un
+   * confort : c'est la promesse d'accessibilite du §7, et elle ne tient
+   * que si les touches existent avant les jolis ecrans.
+   *
+   * Deux precautions. On ne detourne rien quand la frappe va dans un
+   * champ ou quand une combinaison est en cours (Ctrl+1 change d'onglet,
+   * ce n'est pas a nous). Et Espace ne fait rien si le focus est deja sur
+   * un bouton : le navigateur l'active tout seul, l'intercepter le
+   * declencherait deux fois.
+   */
+  useEffect(() => {
+    function surTouche(e: KeyboardEvent) {
+      if (e.altKey || e.ctrlKey || e.metaKey) return;
+      const cible = e.target as HTMLElement | null;
+      const balise = cible?.tagName;
+      if (balise === "INPUT" || balise === "TEXTAREA" || cible?.isContentEditable) return;
+      if (e.key === "Escape") {
+        e.preventDefault();
+        va("/");
+        return;
+      }
+      if (!carte) return;
+      if (e.key === " " && !revele) {
+        if (balise === "BUTTON") return;
+        e.preventDefault();
+        setRevele(true);
+        return;
+      }
+      if (revele && ["1", "2", "3", "4"].includes(e.key)) {
+        e.preventDefault();
+        void noter(Number(e.key) as 1 | 2 | 3 | 4);
+      }
+    }
+    window.addEventListener("keydown", surTouche);
+    return () => window.removeEventListener("keydown", surTouche);
+  }, [carte, noter, revele]);
+
+  if (!banque) return null;
+  if (!cartes.length || !carte) {
+    return (
+      <div className="flex flex-col gap-4 p-4">
+        <Titre enfants={LIB.seance} />
+        <Feuille enfants={<p>{voix("cap.rien", {}, jour)}</p>} />
+        <Bouton onClick={() => va("/")} enfants={LIB.quitter} />
+      </div>
+    );
   }
 
   return (
@@ -102,7 +140,9 @@ export function Seance({ portee }: { portee?: string }) {
         </button>
       </div>
 
-      <Feuille enfants={
+      {/* La carte en cours FLOTTE : c'est la seule chose en avant de
+          l'ecran de seance (DA §2 et §8 bis). */}
+      <Feuille flottante enfants={
         <>
           <p className="font-titre text-xl">{carte.question}</p>
 
@@ -179,28 +219,67 @@ export function Seance({ portee }: { portee?: string }) {
   );
 }
 
+/**
+ * La ligne de provenance de la DA §5 : « Généré par Claude Opus le
+ * 21/08/2026 · 2 sources concordantes · relu le 22/08 ».
+ *
+ * Elle se construit sur les champs du contrat v2, pas sur des champs
+ * inventes : `auteur`, `modele`, `genere_le`, `sources_concordantes`,
+ * plus le `verifie_par` de la carte. Un champ absent disparait de la
+ * ligne au lieu d'y ecrire « inconnue » : dire « generee par inconnue »
+ * serait pire que ne rien dire.
+ */
+export function ligneProvenance(carte: Carte): string {
+  const p = carte.provenance;
+  if (!p) return "";
+  const morceaux: string[] = [];
+  const auteur = p.modele ?? (p.auteur === "humain" ? "une personne" : undefined) ?? p.par;
+  const quand = p.genere_le ?? p.le;
+  if (auteur) morceaux.push(quand ? `${auteur}, ${quand}` : String(auteur));
+  else if (quand) morceaux.push(String(quand));
+  if (typeof p.sources_concordantes === "number" && p.sources_concordantes > 0) {
+    morceaux.push(`${p.sources_concordantes} ${LIB.sourcesConcordantes}`);
+  }
+  if (carte.verifie_par) morceaux.push(`${LIB.relueLe} ${carte.verifie}`);
+  if (!morceaux.length) return "";
+  return `${LIB.provenance} : ${morceaux.join(" · ")}`;
+}
+
 function Sources({ carte, graine }: { carte: Carte; graine: number }) {
   const { note } = useMagasin();
   const sources = carte.source ?? [];
+  const provenance = ligneProvenance(carte);
   return (
-    <Feuille titre={LIB.sources} enfants={
+    <Feuille flottante titre={LIB.sources} enfants={
       <>
+        {/* La note de confiance en lettre, en tete : c'est ce que le
+            joueur lit avant de croire la carte (decisions/0022, DA §5). */}
+        {carte.note_confiance ? (
+          <p className="mb-2">
+            <span className="font-titre text-lg" aria-hidden="true">
+              {carte.note_confiance}
+            </span>
+            <span className="sr-only">{`Note de confiance ${carte.note_confiance}`}</span>
+            <span className="ml-2 text-encre-2">{`${LIB.verifieLe} ${carte.verifie}`}</span>
+          </p>
+        ) : null}
         {sources.length ? (
           <ul className="flex flex-col gap-2">
             {sources.map((s) => (
-              <li key={s.texte} className="text-encre-2">{s.texte}</li>
+              <li key={s.texte} className="text-encre-2">
+                {s.texte}
+                {/* La NATURE de la source, pas seulement son titre : une
+                    fiche d'editeur et un texte officiel ne se croient pas
+                    pareil (decisions/0004). */}
+                {s.nature ? <span className="ml-2 text-encre-2">· {s.nature}</span> : null}
+              </li>
             ))}
           </ul>
         ) : (
           <p>{voix("source.sans_source", {}, graine)}</p>
         )}
         {carte.a_recouper ? <p className="mt-2">{voix("source.a_recouper", {}, graine)}</p> : null}
-        {carte.provenance ? (
-          <Secondaire enfants={
-            `${LIB.provenance} : ${String(carte.provenance.par ?? "inconnue")}` +
-            (carte.provenance.le ? `, ${String(carte.provenance.le)}` : "")
-          } />
-        ) : null}
+        {provenance ? <Secondaire enfants={provenance} /> : null}
         <div className="mt-3">
           <Bouton
             onClick={() => void note({ mode: "signalement", carte: carte.id })}

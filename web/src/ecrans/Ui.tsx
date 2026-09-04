@@ -1,7 +1,15 @@
 /**
- * Briques nues. Mise en page minimale, tokens seulement, zero animation,
- * zero illustration : la couche visuelle se refait ici sans toucher au
- * moteur (consigne JB du 03/09/2026).
+ * Briques nues. Tokens seulement, aucun hexadecimal, aucune illustration :
+ * la couche visuelle se refait ici sans toucher au moteur.
+ *
+ * Ce qui vient de DIRECTION-ARTISTIQUE.md §8 ter et §2 depuis le 03/09
+ * au soir : le bouton principal est PLEIN de l'accent, les autres sont
+ * creux ; un bouton n'a jamais d'ombre ; hauteur 48 px sur telephone,
+ * 40 sur ordinateur (au-dessus des 44 px de cible tactile du §7 la ou ca
+ * compte, le doigt) ; l'etat presse est une echelle de 98 % en 120 ms,
+ * pose dans `index.css` pour tous les boutons a la fois.
+ *
+ * L'ombre unique et douce est reservee a ce qui FLOTTE : la feuille.
  */
 
 import type { ButtonHTMLAttributes, ReactNode } from "react";
@@ -14,9 +22,9 @@ export function Bouton({
       type="button"
       {...reste}
       className={
-        "min-h-11 rounded-int border px-4 py-2 text-left disabled:opacity-50 " +
+        "min-h-12 rounded-int border px-4 py-2 text-left disabled:opacity-50 md:min-h-10 " +
         (primaire
-          ? "border-accent bg-surface text-encre"
+          ? "border-accent bg-accent font-medium text-sur-accent"
           : "border-trait bg-surface text-encre")
       }
     >
@@ -25,9 +33,16 @@ export function Bouton({
   );
 }
 
-export function Feuille({ enfants, titre }: { enfants: ReactNode; titre?: string }) {
+export function Feuille({ enfants, titre, flottante }: {
+  enfants: ReactNode; titre?: string; flottante?: boolean;
+}) {
   return (
-    <section className="rounded-ext border border-trait bg-surface p-4">
+    <section
+      className={
+        "rounded-ext border border-trait bg-surface p-4 "
+        + (flottante ? "shadow-flottante" : "")
+      }
+    >
       {titre ? <h2 className="mb-2 font-titre text-lg">{titre}</h2> : null}
       {enfants}
     </section>

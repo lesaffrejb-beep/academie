@@ -17,6 +17,22 @@ tout est empaqueté par Vite et servi par l'Académie elle-même
 | `react` | 18.3.1 | MIT | rendu des écrans |
 | `react-dom` | 18.3.1 | MIT | montage dans le navigateur |
 | `dexie` | 4.0.11 | Apache-2.0 | IndexedDB : journal, file d'envoi, cache de banque |
+| `@fontsource-variable/fraunces` | 5.3.0 | OFL-1.1 | la serif à empattements, titres (DA §2) |
+| `@fontsource-variable/source-sans-3` | 5.3.0 | OFL-1.1 | la sans humaniste, texte et interface (DA §2) |
+
+Les deux polices sont **auto-hébergées**, comme la DA l'exige : rien
+n'est chargé de `fonts.googleapis.com` ni d'ailleurs. Le `LICENSE` de
+chaque paquet porte la SIL Open Font License 1.1 (relevé le 03/09/2026
+dans `node_modules/@fontsource-variable/*/LICENSE`) : Fraunces est
+© 2020 The Fraunces Project Authors (Undercase Type), Source Sans 3 est
+© Google Inc. L'OFL autorise l'usage et la redistribution embarquée ;
+elle interdit la vente des fichiers de police seuls et impose de ne pas
+réutiliser le nom réservé pour une version modifiée ; nous ne modifions
+rien.
+
+Seul le sous-ensemble `latin` de chaque famille est servi
+(`src/polices.css` explique pourquoi) : deux fichiers, 65 ko au total,
+contre dix fichiers et 340 ko si on importait les paquets tels quels.
 
 Le moteur FSRS n'est pas une dépendance : `src/moteur/fsrs.ts` est un
 miroir écrit à la main de `app/planificateur.py`, jugé par
@@ -32,6 +48,7 @@ section « Écart avec le cahier » plus bas.
 | `@vitejs/plugin-react` | 4.3.4 | MIT | JSX et rafraîchissement rapide |
 | `vite-plugin-pwa` | 0.21.1 | MIT | manifeste, service worker, précache (Workbox) |
 | `vitest` | 2.1.8 | MIT | tests de parité, d'hôtes et de voix |
+| `@playwright/test` | 1.62.1 | Apache-2.0 | `tests/e2e/` : hors-ligne, checklist de la DA |
 | `typescript` | 5.6.3 | Apache-2.0 | typage strict, `tsc --noEmit` avant le build |
 | `tailwindcss` | 3.4.17 | MIT | utilitaires de mise en page, tokens en variables CSS |
 | `postcss` | 8.4.49 | MIT | chaîne CSS |
@@ -46,17 +63,19 @@ finit dans `dist/workbox-*.js`.
 
 ## Dépendances transitives
 
-428 paquets au total dans `node_modules` au 03/09/2026. Répartition des
-licences déclarées :
+434 paquets au total dans `node_modules` au 03/09/2026 au soir (428 le
+matin, plus Playwright et les deux polices). Répartition des licences
+déclarées :
 
 | Licence | Paquets |
 | --- | --- |
-| MIT | 383 |
+| MIT | 384 |
 | ISC | 18 |
-| Apache-2.0 | 10 |
+| Apache-2.0 | 13 |
 | BlueOak-1.0.0 | 7 |
 | BSD-2-Clause | 4 |
 | BSD-3-Clause | 4 |
+| OFL-1.1 | 2 |
 | CC-BY-4.0 | 1 |
 | MIT ou CC0-1.0 | 1 |
 
@@ -93,8 +112,6 @@ sont relevées ici pour que la vérification de licence soit déjà faite.
 | `motion` | à figer | MIT | animations, sous la seconde |
 | `lucide-react` | à figer | ISC | glyphes d'interface |
 | game-icons.net | sans version | CC BY 3.0 | glyphes de chapitre, attribution visible dans Crédits |
-| `@playwright/test` | à figer | Apache-2.0 | `tests/e2e/` : hors-ligne, séance complète, export |
-| polices | à figer | OFL | auto-hébergées, jamais chargées d'un tiers |
 
 ## Écart avec le cahier
 
