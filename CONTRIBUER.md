@@ -10,6 +10,8 @@ quand la machine peut le voir : `python3 tooling/check.py`.
 
 1. **Prendre un item** : `python3 tooling/roadmap.py next` donne l'item
    sûr suivant ; un humain peut en choisir un autre parmi les `ready`.
+   Un item `blocked` ne se commence pas, même pour un squelette
+   technique : on fait d'abord ce qui le bloque.
 2. **Ouvrir son cahier** : `chantiers/<id>.md`. Pas de cahier, pas de
    code. Le cahier dit le résultat, la preuve, le périmètre, ce qui est
    tranché, les étapes, ce qu'on ne fait pas.

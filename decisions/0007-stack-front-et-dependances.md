@@ -45,6 +45,8 @@ qu'un canvas vanilla n'atteindra pas à coût raisonnable.
 - `tooling/check.py` cesse de vérifier l'archipel et vérifie que le
   client compilé n'importe rien de labor.
 
+Amendée le 04/09/2026 par `0029` : `ts-fsrs` n'entre pas, le client porte un miroir à la main.
+
 ## Réouverture
 
 Si le bundle client dépasse 400 Ko gzippé ou si le temps jusqu'à la

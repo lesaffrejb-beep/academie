@@ -250,7 +250,8 @@
         "max_tokens": 80000
       },
       "proof": "Au 03/09/2026 au soir : app/usine/ existe (preparer, declarer, suivant, valider, etat, fiche, registre), 40 tests et 4 mutations, les quatre documents du test sont préparés (pivots bruts, pages machine, 120 pages rendues) et la première unité du Focus du CAE est relue et validée par le script. Reste : les quatre documents relus de bout en bout avec fiches, lignes de registre et rattachements, et le rapport de coût ; aucun appel d'API.",
-      "parent_milestone": "ACADEMIE-V2-FONDATIONS"
+      "parent_milestone": "ACADEMIE-V2-FONDATIONS",
+      "note": "Le code est vert ; la traversée des quatre documents réels ne peut se faire que depuis le Mac (sources/ hors git)."
     },
     {
       "id": "ACA-CONTRAT-2",
@@ -269,7 +270,8 @@
         "max_tokens": 100000
       },
       "proof": "Valideur v2 vert sur la banque migrée ; tests de mutation étendus ; genere.py publie contrat: carte-v2 ; l'archipel joue encore la banque v2 ou est retiré au même moment.",
-      "parent_milestone": "ACADEMIE-V2-FONDATIONS"
+      "parent_milestone": "ACADEMIE-V2-FONDATIONS",
+      "note": "Étapes 1, 3 et 4 faites le 03/09. L'étape 2 attend trois réponses de JB (travail/assignation-cartes-chapitres-2026-09-03.md, fin du document) : 21 changements de domaine, 4 cartes sans chapitre, 3 trous du programme. Ensuite mécanique."
     },
     {
       "id": "ACA-EXPORT-1",
@@ -308,7 +310,7 @@
       },
       "proof": "Première question en moins de trois secondes réseau coupé sur téléphone ; checklist DA §9 ; aucun hôte tiers contacté ; JB joue sept séances dessus.",
       "parent_milestone": "ACADEMIE-V2-JOUEUR",
-      "note": "Squelette technique posé le 03/09 (web/ : moteur en parité, écrans nus, PWA, 95 tests, build vert). Reste : couche visuelle (autre main), e2e hors-ligne, bascule de client/, et ACA-CONTRAT-2."
+      "note": "Squelette technique posé le 03/09 (web/ : moteur en parité, écrans nus, PWA, 95 tests, build vert). Reste : couche visuelle (autre main), e2e hors-ligne, bascule de client/, et ACA-CONTRAT-2. FSRS à la main plutôt que ts-fsrs : decisions/0029. Bascule de client/ après ACA-CONTRAT-2 (le format de carte bouge)."
     },
     {
       "id": "ACA-ARBRE-1",
@@ -383,7 +385,8 @@
         "max_tokens": 30000
       },
       "proof": "Inventaire sourcé sans création de carte et sans contenu labor, avec critères d'abandon de chaque source, lignes ajoutées au registre.",
-      "parent_milestone": "ACADEMIE-V2-CONTENU"
+      "parent_milestone": "ACADEMIE-V2-CONTENU",
+      "note": "Infaisable depuis le Cloud (sources officielles refusées par le proxy). À faire depuis le Mac."
     },
     {
       "id": "ACA-CONTENT-2",
