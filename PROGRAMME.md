@@ -8,6 +8,12 @@ niveaux, socle, sources primaires, trous nommés. La version en données
 est [`programme/copro.json`](programme/copro.json) ; quand les deux
 divergent, le JSON fait foi et ce texte se corrige.
 
+Le second métier, l'infirmier, a son programme en données depuis le
+04/09/2026 : [`programme/ifsi.json`](programme/ifsi.json), lisible dans
+[`SYLLABUS-IFSI.md`](SYLLABUS-IFSI.md), tranché par
+[`decisions/0031`](decisions/0031-un-programme-par-metier-ifsi.md).
+Même forme, même règle des niveaux ; son socle est l'entrée en IFSI.
+
 Qui l'a écrit : **le modèle**, à partir du brief de JB, de sa
 connaissance du métier et des ancres publiques (§5), sans manuel de
 référence, parce qu'il n'en existe pas pour ce métier. C'est le régime

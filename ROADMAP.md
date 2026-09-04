@@ -100,7 +100,8 @@ parité Python/TypeScript sur chacun.
 3. **La bibliothèque commune** (`ACA-BIBLIOTHEQUE-1`) : livraisons,
    quarantaine, licence du contenu, un domaine fabriqué par l'un
    adoptable par l'autre.
-4. **Le kit de domaine** (`ACA-DOMAIN-KIT-1`) éprouvé avec Arthur ;
+4. **Le kit de domaine** (`ACA-DOMAIN-KIT-1`) éprouvé avec Arthur, sur
+   le squelette infirmier posé le 04/09 (`programme/ifsi.json`) ;
    **l'auto-hébergement** (`ACA-SELFHOST-1`) éprouvé par un copain.
 5. **Les médias** (`ACA-MEDIA-1`) : photothèque de terrain, écoute,
    podcast de chapitre. **Le canal labor** (`ACA-ERP-1`) : anonymisé,

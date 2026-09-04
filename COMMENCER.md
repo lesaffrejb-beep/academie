@@ -26,6 +26,7 @@ Au 03/09/2026, il tient en une ligne :
 | Parcours | État | Ce qu'on peut faire aujourd'hui |
 |---|---|---|
 | Gestion de copropriété | squelette : dix domaines, 387 chapitres, cinq niveaux, parcours de treize semaines ([`SYLLABUS.md`](SYLLABUS.md)) ; 84 cartes v1 jouables, 2 chapitres v2 témoins | lire le programme, jouer les cartes existantes ; les chapitres se remplissent chantier par chantier (`ACA-CONTENT-2`) |
+| Entrer en IFSI, puis devenir infirmier | squelette : dix domaines, 310 chapitres, cinq niveaux, douze semaines vers l'entrée ([`SYLLABUS-IFSI.md`](SYLLABUS-IFSI.md)) ; aucune carte encore | lire le programme ; les chapitres arrivent avec le kit de domaine (`ACA-DOMAIN-KIT-1`) |
 
 Tu prends un parcours du catalogue : il est à tous, personne ne paie
 rien, et ce que tu fais remonter (une carte fausse signalée, une fiche
