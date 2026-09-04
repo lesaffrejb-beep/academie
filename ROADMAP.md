@@ -1,5 +1,7 @@
 # Roadmap Académie, active (réécrite le 02/09/2026)
 
+**Reprise du 04/09, publication demandée par JB :** [état livré, limites et suite](travail/2026-09-04-publication-et-suite.md). Ce point actualise les mentions historiques de pause et de publication ci-dessous.
+
 L'Académie transforme des sources vérifiées en un arbre de compétences
 qu'on conquiert chaque jour. Elle échoue si elle est belle et n'est pas
 ouverte le matin, si elle récompense des clics sans améliorer la
@@ -25,6 +27,14 @@ cette roadmap sont dans [`decisions/`](decisions/README.md).
 - le coût de fabrication d'un chapitre connu avant d'en promettre.
 
 ## Maintenant : prouver le rituel et poser les fondations v2
+
+**Point d'arrêt du 04/09 :** l'[audit et la reprise](travail/audit-froid-2026-09-04.md)
+priment pour l'état d'avancement sur le récit historique ci-dessous.
+Le front et la préparation locale de publication ont progressé ;
+54 scénarios navigateur passent. Le tri chronologique des révisions
+reste à corriger avant bascule, le contrat v2 manque de provenance et
+les preuves humaines restent ouvertes. Les sources sont maintenant
+repérées depuis le Mac : le blocage Cloud n'est plus le blocage actuel.
 
 Ce qui est fait le 02/09 : doctrine v2, programme en données, contrats
 v2 proposés, squelette du serveur et du client, maquette du front. Le
@@ -64,6 +74,28 @@ parité Python/TypeScript sur chacun.
    migration, dans le même commit.
 
 ## Ensuite : le produit v2 pour un joueur
+
+Le programme infirmier suit le cap confirmé le 04/09 : entrer en école,
+devenir infirmier, continuer sans plafond. `ACA-IFSI-1` corrige
+l'inventaire et les préparations : référentiel 2026, historique conservé,
+Parcoursup/FPC/accès spécifiques, étapes de formation et spécialités.
+Le [rapport de révision](travail/2026-09-04-revision-ifsi.md) distingue
+ces données des futures cartes et du moteur de cas. Le premier lot de
+contenu traversera diabète, médicaments, calcul, alerte, communication
+et retour à domicile ; les branches s'étendront par les sources, la boîte
+et les cas nouveaux, sans niveau final.
+
+**Reprise du 04/09 :** les [trois rapports](travail/rapports-chatgpt-pro/README.md)
+sont classés avec provenance et variantes. Le troisième recentre le
+[plan commun](travail/rapports-chatgpt-pro/PLAN.md) sur les corrections,
+l'usage réel, puis les extensions minimales nécessaires aux pilotes.
+`ACA-IFSI-1` est terminé localement : 375 chapitres, 600 capacités de
+cadrage, syllabus et catalogue alignés, 21 tests IFSI et contrôles du
+dépôt verts. Le [point de reprise](travail/2026-09-04-revision-ifsi.md)
+conserve les preuves et limites. `ACA-COPRO-1` porte les corrections
+ciblées copro : [état, sources et suite](travail/2026-09-04-revision-copro.md).
+Ce lot est en pause à la demande de JB, avant clôture des relectures.
+Les gates d'usage et les chantiers front/journal restent ouverts.
 
 1. **Le client v2** (`ACA-FRONT-2`) : l'arbre, la séance, le profil,
    sur la maquette du 02/09 ; remplace l'archipel ; `check.py` mis à

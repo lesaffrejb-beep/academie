@@ -11,7 +11,7 @@
   ],
   "objectifs": [
     "Dire quelles décisions se votent à l'article 24 et lesquelles n'y sont pas.",
-    "Calculer une majorité de l'article 24 sur une feuille de présence, abstentions comprises.",
+    "Calculer une majorité de l’article 24 sur une feuille de présence, en excluant les abstentions des voix exprimées.",
     "Savoir qui compte parmi les votants : présents, représentés, votants par correspondance."
   ],
   "amorce": {
@@ -19,7 +19,7 @@
     "aide": "Demande-toi ce qu'est une voix exprimée.",
     "reponse_attendue": "Adoptée : à l'article 24 on compte la majorité des voix exprimées, et une abstention n'est pas une voix exprimée. 250 contre 200, la résolution passe."
   },
-  "lecon": "L'article 24 de la loi du 10 juillet 1965 est la majorité par défaut de la copropriété : quand la loi ne dit rien d'autre, une décision d'assemblée se prend à cette majorité. Elle se définit ainsi : la majorité des voix exprimées des copropriétaires présents, représentés ou ayant voté par correspondance. Trois mots comptent.\n\nD'abord « voix » : en copropriété on ne compte pas des personnes mais des tantièmes, la quote-part de parties communes attachée à chaque lot (article 22 de la même loi). Un copropriétaire qui détient trois lots vote avec la somme de leurs tantièmes.\n\nEnsuite « exprimées » : depuis la réforme entrée en vigueur en 2020, on ne compte que les votes pour et les votes contre. Une abstention n'est pas une voix exprimée ; elle ne pèse ni d'un côté ni de l'autre. Avant cette réforme, la majorité se calculait sur les voix des présents et représentés, abstentions comprises, ce qui faisait de l'abstention un vote contre de fait. Ce n'est plus le cas, et c'est le piège le plus fréquent dans les anciens manuels.\n\nEnfin « présents, représentés ou ayant voté par correspondance » : l'article 24 ne regarde que ceux qui participent. Les absents qui n'ont donné ni pouvoir ni formulaire de vote par correspondance n'existent pas pour ce calcul. C'est ce qui distingue radicalement l'article 24 de l'article 25, qui compte les voix de tous les copropriétaires composant le syndicat, absents compris.\n\nCe qui se vote à l'article 24, c'est la gestion courante : l'approbation des comptes, le vote du budget prévisionnel, le quitus au syndic, les travaux nécessaires à la conservation de l'immeuble et à l'entretien des parties communes, l'autorisation d'agir en justice pour le syndicat dans les cas où elle est requise, la désignation des membres du conseil syndical selon les cas, et de nombreuses décisions que l'article 24 énumère lui-même ou que d'autres textes renvoient à cette majorité. La loi y a aussi placé des décisions qu'elle veut faciles, comme certains travaux d'accessibilité.\n\nUn exemple travaillé. Un immeuble de 1 000 tantièmes réunit une assemblée où 600 tantièmes sont présents, représentés ou votent par correspondance. La résolution d'approbation des comptes recueille 250 tantièmes pour, 200 contre, 150 abstentions. Les voix exprimées sont 250 plus 200, soit 450. La majorité est atteinte dès que le pour dépasse la moitié des voix exprimées, donc plus de 225. Avec 250, la résolution est adoptée. Si les 150 abstentionnistes avaient voté contre, elle aurait été rejetée : 250 contre 350.\n\nDeux vigilances de terrain. La première : le procès-verbal doit indiquer les noms des copropriétaires ou associés qui se sont opposés à la décision avec leurs tantièmes, ceux qui se sont abstenus et ceux qui n'ont pas pris part au vote ; c'est ce qui permet ensuite de savoir qui peut contester. La seconde : à l'article 24, les copropriétaires qui ont voté par correspondance sur un formulaire régulier comptent parmi les votants, mais un formulaire qui laisse une résolution sans réponse vaut abstention sur cette résolution, pas vote contre.\n\nDemain matin, devant une feuille de présence, tu sauras additionner les tantièmes exprimés, écarter les abstentions, et dire si la résolution passe.",
+  "lecon": "L'article 24 de la loi du 10 juillet 1965 fixe la majorité par défaut : quand la loi ne prévoit pas une autre majorité, une décision d'assemblée se prend à la majorité des voix exprimées des copropriétaires présents, représentés ou ayant voté par correspondance. Ce chapitre présente le régime général ; les copropriétés à deux copropriétaires ont des règles particulières à vérifier séparément.\n\nD'abord « voix » : le calcul se fait en quotes-parts de parties communes, pas en nombre de personnes. Dans le régime général, on additionne les tantièmes des lots d'un copropriétaire, sous réserve notamment de la réduction prévue par l'article 22 pour celui qui possède plus de la moitié des voix : ses voix sont ramenées à la somme de celles des autres copropriétaires.\n\nEnsuite « exprimées » : seuls les votes pour et contre entrent dans le dénominateur. Une abstention n'est pas une voix exprimée ; elle ne pèse ni pour ni contre. Le pour doit dépasser la moitié des voix exprimées. À égalité entre pour et contre, la résolution n'est pas adoptée. Il faut donc séparer la participation à l'assemblée et l'expression d'un vote sur chaque résolution.\n\nEnfin « présents, représentés ou ayant voté par correspondance » : les absents qui n'ont ni mandataire participant au vote ni vote par correspondance ne comptent pas dans les voix exprimées. L'article 25, lui, se calcule sur les voix de tous les copropriétaires du syndicat. Un pouvoir envoyé sans nom de mandataire n'établit pas à lui seul qu'un vote a été exprimé : il faut vérifier sa prise en charge régulière.\n\nPour déterminer la majorité d'une décision, on vérifie son objet et le texte applicable. L'approbation des comptes et le budget prévisionnel relèvent de l'article 24. Cet article vise aussi les travaux nécessaires à la conservation de l'immeuble et à la préservation de la santé et de la sécurité, ainsi que certains travaux d'accessibilité sous les conditions qu'il précise. En revanche, la désignation ou la révocation du syndic et des membres du conseil syndical relève de l'article 25 c. Une éventuelle passerelle de l'article 25-1 exige ses propres conditions : elle ne transforme pas ces décisions en décisions directement soumises à l'article 24.\n\nUn exemple travaillé. Un immeuble de 1 000 tantièmes réunit une assemblée où 600 tantièmes sont présents, représentés ou votent par correspondance. La résolution d'approbation des comptes recueille 250 tantièmes pour, 200 contre, 150 abstentions. Les voix exprimées sont 250 plus 200, soit 450. Il faut plus de 225 voix pour : avec 250, la résolution est adoptée. Si les 150 abstentionnistes avaient voté contre, elle aurait été rejetée : 250 contre 350.\n\nLe procès-verbal indique le résultat du vote pour chaque question. L'article 17 du décret du 17 mars 1967 exige, avec leur nombre de voix, les noms des copropriétaires ou associés opposés à la décision, abstentionnistes ou assimilés à des copropriétaires défaillants selon le deuxième alinéa de l'article 17-1 A de la loi. Cette dernière catégorie ne se remplace pas par une mention générale de tous ceux qui n'ont pas pris part au vote.\n\nDevant la feuille de présence et le relevé des votes, commence par vérifier la majorité applicable, puis additionne les voix pour et contre, écarte les abstentions et compare. Le résultat et les mentions du procès-verbal doivent pouvoir être rapprochés de ce calcul.",
   "synthese": {
     "consigne": "Explique à un collègue en soixante secondes comment se calcule l'article 24 et pourquoi une abstention ne fait pas perdre une résolution.",
     "attendus": [
@@ -27,45 +27,50 @@
       "tantièmes, pas têtes",
       "présents, représentés, votants par correspondance",
       "les absents sans pouvoir ne comptent pas",
-      "l'abstention n'est pas une voix exprimée depuis 2020",
+      "l'abstention n'est pas une voix exprimée",
       "un exemple chiffré"
     ]
   },
   "sources": [
     {
-      "texte": "Art. 24, loi n° 65-557 du 10 juillet 1965 fixant le statut de la copropriété des immeubles bâtis",
-      "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000880200/",
+      "texte": "Loi n° 65-557 du 10 juillet 1965, article 24, version en vigueur depuis le 18 juin 2025 ; consultée le 4 septembre 2026",
+      "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000051749514",
       "nature": "texte-officiel"
     },
     {
-      "texte": "Art. 22, loi n° 65-557 du 10 juillet 1965 (voix et tantièmes)",
-      "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000880200/",
+      "texte": "Loi n° 65-557 du 10 juillet 1965, article 22, version en vigueur depuis le 1er juin 2020 ; consultée le 4 septembre 2026",
+      "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000039313531",
       "nature": "texte-officiel"
     },
     {
-      "texte": "Art. 17, décret n° 67-223 du 17 mars 1967 (contenu du procès-verbal)",
-      "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000880473/",
+      "texte": "Loi n° 65-557 du 10 juillet 1965, article 25 c, version en vigueur depuis le 18 juin 2025 ; consultée le 4 septembre 2026",
+      "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000051749507/2026-03-10",
       "nature": "texte-officiel"
     },
     {
-      "texte": "ANIL, fiche « Les majorités en assemblée générale de copropriété »",
-      "url": "https://www.anil.org/",
-      "nature": "institution"
+      "texte": "Loi n° 65-557 du 10 juillet 1965, article 25-1, version en vigueur depuis le 11 avril 2024 ; consultée le 4 septembre 2026",
+      "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000049398359",
+      "nature": "texte-officiel"
+    },
+    {
+      "texte": "Décret n° 67-223 du 17 mars 1967, article 17, version en vigueur depuis le 4 juillet 2020 ; consultée le 4 septembre 2026",
+      "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000042078689/2026-04-15",
+      "nature": "texte-officiel"
     }
   ],
   "provenance": {
     "auteur": "modele",
-    "modele": "Claude Fable 5.1",
-    "genere_le": "2026-09-03",
-    "session": "lot-pilote-2026-09-03",
-    "sources_retrouvees": 4,
-    "sources_concordantes": 2,
+    "modele": "gpt-5.6-sol",
+    "genere_le": "2026-09-04",
+    "session": "ACA-COPRO-1-correction-2026-09-04",
+    "sources_retrouvees": 5,
+    "sources_concordantes": 0,
     "sans_source": false
   },
   "statut": "brouillon",
   "partage": "banque",
-  "verifie": "2026-09-03",
-  "version": 1,
+  "verifie": "2026-09-04",
+  "version": 2,
   "cartes": [
     {
       "id": "droit-majorites-24-definition",
@@ -116,7 +121,7 @@
         {
           "texte": "Elle compte comme un vote contre.",
           "correct": false,
-          "pourquoi_faux": "C'était l'effet de l'ancienne rédaction, calculée sur les présents et représentés ; depuis 2020, on ne compte que les voix exprimées."
+          "pourquoi_faux": "Une abstention est exclue des voix exprimées. Elle ne s’ajoute pas aux voix contre à l’article 24."
         },
         {
           "texte": "Elle compte comme un vote pour.",
@@ -129,26 +134,31 @@
           "pourquoi_faux": "Aucun texte ne prévoit une telle répartition ; l'abstention est simplement écartée du calcul."
         }
       ],
-      "explication": "Depuis la réforme de 2019 applicable en 2020, l'article 24 vise la majorité des voix exprimées. Le pour doit dépasser la moitié de la somme des pour et des contre. Les abstentions sont mentionnées au procès-verbal mais ne pèsent pas.",
-      "vigilance": "Un vieux modèle de procès-verbal ou un manuel d'avant 2020 peut encore compter l'abstention comme un contre : vérifier la date de ce qu'on lit.",
+      "explication": "Le pour doit dépasser la moitié de la somme des voix pour et contre. Les abstentions sont mentionnées au procès-verbal mais ne pèsent pas dans ce calcul.",
+      "vigilance": "Vérifier que le tableau de vote distingue les participants, les abstentions et les voix exprimées sur la résolution.",
       "confiance": true,
       "source": [
         {
-          "texte": "Art. 24, loi n° 65-557 du 10 juillet 1965 (rédaction issue de l'ordonnance n° 2019-1101)",
-          "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000880200/",
+          "texte": "Loi n° 65-557 du 10 juillet 1965, article 24, version en vigueur depuis le 18 juin 2025 ; consultée le 4 septembre 2026",
+          "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000051749514",
+          "nature": "texte-officiel"
+        },
+        {
+          "texte": "Décret n° 67-223 du 17 mars 1967, article 17, version en vigueur depuis le 4 juillet 2020 ; consultée le 4 septembre 2026",
+          "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000042078689/2026-04-15",
           "nature": "texte-officiel"
         }
       ],
       "provenance": {
         "auteur": "modele",
-        "modele": "Claude Fable 5.1",
-        "genere_le": "2026-09-03",
-        "session": "lot-pilote-2026-09-03",
-        "sources_retrouvees": 1,
-        "sources_concordantes": 1,
+        "modele": "gpt-5.6-sol",
+        "genere_le": "2026-09-04",
+        "session": "ACA-COPRO-1-correction-2026-09-04",
+        "sources_retrouvees": 2,
+        "sources_concordantes": 0,
         "sans_source": false
       },
-      "verifie": "2026-09-03",
+      "verifie": "2026-09-04",
       "peremption": null,
       "statut": "brouillon",
       "partage": "banque"
@@ -217,24 +227,34 @@
       "question": "Un copropriétaire absent, sans pouvoir et sans formulaire de vote par correspondance : compte-t-il dans le calcul de l'article 24 ?",
       "reponse": "Non. L'article 24 ne compte que les copropriétaires présents, représentés ou ayant voté par correspondance ; l'absent pur n'existe pas pour ce calcul.",
       "explication": "C'est la différence avec l'article 25, où les voix de tous les copropriétaires composant le syndicat sont la base du calcul, ce qui fait peser les absents comme des contre.",
-      "vigilance": "Un absent qui a envoyé un pouvoir en blanc est représenté ; il compte, et son mandataire vote pour lui.",
+      "vigilance": "Un pouvoir en blanc doit être régulièrement attribué à un mandataire participant au vote. Le syndic ne peut ni le conserver pour voter lui-même ni choisir son bénéficiaire.",
       "source": [
         {
-          "texte": "Art. 24 et art. 25, loi n° 65-557 du 10 juillet 1965",
-          "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000880200/",
+          "texte": "Loi n° 65-557 du 10 juillet 1965, article 24, version en vigueur depuis le 18 juin 2025 ; consultée le 4 septembre 2026",
+          "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000051749514",
+          "nature": "texte-officiel"
+        },
+        {
+          "texte": "Loi n° 65-557 du 10 juillet 1965, article 25 c, version en vigueur depuis le 18 juin 2025 ; consultée le 4 septembre 2026",
+          "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000051749507/2026-03-10",
+          "nature": "texte-officiel"
+        },
+        {
+          "texte": "Loi n° 65-557 du 10 juillet 1965, article 22, version en vigueur depuis le 1er juin 2020 ; consultée le 4 septembre 2026",
+          "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000039313531",
           "nature": "texte-officiel"
         }
       ],
       "provenance": {
         "auteur": "modele",
-        "modele": "Claude Fable 5.1",
-        "genere_le": "2026-09-03",
-        "session": "lot-pilote-2026-09-03",
-        "sources_retrouvees": 1,
-        "sources_concordantes": 1,
+        "modele": "gpt-5.6-sol",
+        "genere_le": "2026-09-04",
+        "session": "ACA-COPRO-1-correction-2026-09-04",
+        "sources_retrouvees": 3,
+        "sources_concordantes": 0,
         "sans_source": false
       },
-      "verifie": "2026-09-03",
+      "verifie": "2026-09-04",
       "peremption": null,
       "statut": "brouillon",
       "partage": "banque"
@@ -246,7 +266,7 @@
       "branche": "majorites",
       "type": "qcm",
       "niveau": 1,
-      "question": "Laquelle de ces décisions ne se vote pas à l'article 24 ?",
+      "question": "Dans le régime général, hors passerelle, laquelle de ces décisions relève de l’article 25 plutôt que de l’article 24 ?",
       "reponse": "La désignation du syndic : elle relève de l'article 25.",
       "choix": [
         {
@@ -269,26 +289,31 @@
           "pourquoi_faux": "Les travaux de conservation et d'entretien des parties communes relèvent de l'article 24."
         }
       ],
-      "explication": "L'article 24 porte la gestion courante ; la désignation et la révocation du syndic, comme la plupart des décisions qui engagent le syndicat au-delà de la gestion, sont à l'article 25, majorité des voix de tous les copropriétaires.",
+      "explication": "L’article 25 c soumet la désignation ou la révocation du syndic et des membres du conseil syndical à la majorité des voix de tous les copropriétaires. Les exemples relevant de l’article 24 ne permettent pas de déduire la majorité d’une autre décision sans vérifier son texte.",
       "vigilance": "Quand tu prépares un ordre du jour, écris la majorité en face de chaque résolution : une erreur de majorité rend la décision contestable.",
       "confiance": true,
       "source": [
         {
-          "texte": "Art. 24 et art. 25 c, loi n° 65-557 du 10 juillet 1965",
-          "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000880200/",
+          "texte": "Loi n° 65-557 du 10 juillet 1965, article 24, version en vigueur depuis le 18 juin 2025 ; consultée le 4 septembre 2026",
+          "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000051749514",
+          "nature": "texte-officiel"
+        },
+        {
+          "texte": "Loi n° 65-557 du 10 juillet 1965, article 25 c, version en vigueur depuis le 18 juin 2025 ; consultée le 4 septembre 2026",
+          "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000051749507/2026-03-10",
           "nature": "texte-officiel"
         }
       ],
       "provenance": {
         "auteur": "modele",
-        "modele": "Claude Fable 5.1",
-        "genere_le": "2026-09-03",
-        "session": "lot-pilote-2026-09-03",
-        "sources_retrouvees": 1,
-        "sources_concordantes": 1,
+        "modele": "gpt-5.6-sol",
+        "genere_le": "2026-09-04",
+        "session": "ACA-COPRO-1-correction-2026-09-04",
+        "sources_retrouvees": 2,
+        "sources_concordantes": 0,
         "sans_source": false
       },
-      "verifie": "2026-09-03",
+      "verifie": "2026-09-04",
       "peremption": null,
       "statut": "brouillon",
       "partage": "banque"
@@ -300,27 +325,27 @@
       "branche": "majorites",
       "type": "flash",
       "niveau": 1,
-      "question": "En assemblée, un copropriétaire qui possède trois lots dispose de combien de voix ?",
-      "reponse": "De la somme des tantièmes de ses trois lots : on vote en quotes-parts de parties communes, pas par tête.",
+      "question": "Dans le régime général, comment détermine-t-on les voix d’un copropriétaire qui possède trois lots ?",
+      "reponse": "On additionne les tantièmes de ses trois lots. S’il possède plus de la moitié des voix du syndicat, l’article 22 réduit ses voix à la somme de celles des autres copropriétaires.",
       "explication": "L'article 22 attache à chaque lot un nombre de voix correspondant à sa quote-part dans les parties communes. Le même article plafonne les voix d'un copropriétaire qui détiendrait plus de la moitié des tantièmes à la somme des voix des autres.",
       "vigilance": "Le plafonnement du copropriétaire majoritaire se vérifie sur la feuille de présence avant de proclamer un résultat.",
       "source": [
         {
-          "texte": "Art. 22, loi n° 65-557 du 10 juillet 1965",
-          "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000880200/",
+          "texte": "Loi n° 65-557 du 10 juillet 1965, article 22, version en vigueur depuis le 1er juin 2020 ; consultée le 4 septembre 2026",
+          "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000039313531",
           "nature": "texte-officiel"
         }
       ],
       "provenance": {
         "auteur": "modele",
-        "modele": "Claude Fable 5.1",
-        "genere_le": "2026-09-03",
-        "session": "lot-pilote-2026-09-03",
+        "modele": "gpt-5.6-sol",
+        "genere_le": "2026-09-04",
+        "session": "ACA-COPRO-1-correction-2026-09-04",
         "sources_retrouvees": 1,
-        "sources_concordantes": 1,
+        "sources_concordantes": 0,
         "sans_source": false
       },
-      "verifie": "2026-09-03",
+      "verifie": "2026-09-04",
       "peremption": null,
       "statut": "brouillon",
       "partage": "banque"
@@ -333,31 +358,26 @@
       "type": "flash",
       "niveau": 1,
       "question": "Que doit mentionner le procès-verbal pour chaque résolution, en plus du résultat du vote ?",
-      "reponse": "Le nom des copropriétaires qui se sont opposés à la décision avec leurs tantièmes, ceux qui se sont abstenus et ceux qui n'ont pas pris part au vote.",
-      "explication": "Ces mentions ne sont pas décoratives : seuls les copropriétaires opposants ou défaillants peuvent contester une décision devant le juge dans le délai de deux mois ; le procès-verbal est la preuve de qui a voté quoi.",
+      "reponse": "Les noms et le nombre de voix des copropriétaires ou associés opposés à la décision, abstentionnistes ou assimilés à des copropriétaires défaillants selon le deuxième alinéa de l’article 17-1 A de la loi.",
+      "explication": "L’article 17 du décret précise ces catégories. La formule « ceux qui n’ont pas pris part au vote » ne les restitue pas exactement. Ces mentions retracent le vote ; les conditions d’une éventuelle contestation se vérifient séparément.",
       "vigilance": "Un procès-verbal qui note « adoptée à la majorité » sans nommer les opposants fragilise la copropriété en cas de contestation.",
       "source": [
         {
-          "texte": "Art. 17, décret n° 67-223 du 17 mars 1967",
-          "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000880473/",
-          "nature": "texte-officiel"
-        },
-        {
-          "texte": "Art. 42, loi n° 65-557 du 10 juillet 1965 (contestation par les opposants ou défaillants)",
-          "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000880200/",
+          "texte": "Décret n° 67-223 du 17 mars 1967, article 17, version en vigueur depuis le 4 juillet 2020 ; consultée le 4 septembre 2026",
+          "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000042078689/2026-04-15",
           "nature": "texte-officiel"
         }
       ],
       "provenance": {
         "auteur": "modele",
-        "modele": "Claude Fable 5.1",
-        "genere_le": "2026-09-03",
-        "session": "lot-pilote-2026-09-03",
-        "sources_retrouvees": 2,
-        "sources_concordantes": 2,
+        "modele": "gpt-5.6-sol",
+        "genere_le": "2026-09-04",
+        "session": "ACA-COPRO-1-correction-2026-09-04",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 0,
         "sans_source": false
       },
-      "verifie": "2026-09-03",
+      "verifie": "2026-09-04",
       "peremption": null,
       "statut": "brouillon",
       "partage": "banque"

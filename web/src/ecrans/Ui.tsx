@@ -22,7 +22,7 @@ export function Bouton({
       type="button"
       {...reste}
       className={
-        "min-h-12 rounded-int border px-4 py-2 text-left disabled:opacity-50 md:min-h-10 " +
+        "bouton min-h-12 rounded-int border px-4 py-2 text-left disabled:opacity-50 md:min-h-10 " +
         (primaire
           ? "border-accent bg-accent font-medium text-sur-accent"
           : "border-trait bg-surface text-encre")
@@ -39,8 +39,7 @@ export function Feuille({ enfants, titre, flottante }: {
   return (
     <section
       className={
-        "rounded-ext border border-trait bg-surface p-4 "
-        + (flottante ? "shadow-flottante" : "")
+        flottante ? "feuille-flottante" : "section-simple"
       }
     >
       {titre ? <h2 className="mb-2 font-titre text-lg">{titre}</h2> : null}
@@ -68,7 +67,7 @@ export function Jauge({ part, accent }: { part: number; accent?: string }) {
 }
 
 export function Titre({ enfants }: { enfants: ReactNode }) {
-  return <h1 className="mb-4 font-titre text-2xl">{enfants}</h1>;
+  return <h1 className="titre-page font-titre">{enfants}</h1>;
 }
 
 export function Secondaire({ enfants }: { enfants: ReactNode }) {

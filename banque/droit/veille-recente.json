@@ -5,43 +5,77 @@
     "branche": "veille-recente",
     "niveau": 1,
     "type": "qcm",
-    "question": "Depuis le décret du 22 décembre 2025, quel est le mode de notification de principe entre le syndic et les copropriétaires ?",
-    "reponse": "L'électronique. Le postal est devenu l'exception, réservée au copropriétaire qui le demande expressément, et le syndic n'a plus à recueillir d'accord préalable pour notifier par voie électronique.",
+    "question": "Pour choisir entre notification électronique et envoi postal, quel principe s’applique depuis l’entrée en vigueur du décret du 22 décembre 2025 ?",
+    "reponse": "La voie électronique s’applique sans accord préalable. Le copropriétaire peut demander à tout moment les notifications et mises en demeure par voie postale ; le syndic l’informe de cette possibilité.",
     "choix": [
       {
-        "texte": "L'électronique ; le papier ne subsiste que pour le copropriétaire qui le demande expressément",
+        "texte": "La voie électronique sans accord préalable ; le copropriétaire peut demander la voie postale",
         "correct": true
       },
       {
         "texte": "L'électronique, mais seulement pour les copropriétaires ayant donné leur accord préalable",
         "correct": false,
-        "pourquoi_faux": "C'est exactement le régime d'avant, que le décret a renversé. L'accord préalable n'est plus requis : continuer à le collecter ralentit le passage au numérique sans rien sécuriser."
+        "pourquoi_faux": "L’article 42-1 de la loi, dans sa version en vigueur depuis le 11 avril 2024, ne subordonne plus la notification électronique à l’accord préalable du copropriétaire."
       },
       {
         "texte": "Le papier, l'électronique restant une option à faire accepter",
         "correct": false,
-        "pourquoi_faux": "Le principe s'est inversé fin 2025. C'est le changement le plus structurant de la période, et celui qui met le plus de temps à entrer dans les habitudes de cabinet."
+        "pourquoi_faux": "L’article 42-1 prévoit la notification électronique et la faculté de demander la voie postale. Les modalités du décret modifié sont applicables depuis le 25 décembre 2025."
       },
       {
         "texte": "Le papier pour les convocations et procès-verbaux, l'électronique pour le reste",
         "correct": false,
-        "pourquoi_faux": "Le périmètre du décret ne se découpe pas ainsi : convocations, procès-verbaux, mises en demeure et appels de fonds sont tous concernés."
+        "pourquoi_faux": "Les convocations et procès-verbaux ne sont pas réservés à la voie postale. Il faut appliquer le régime de notification propre au document ; la mention jointe aux avis d’appels de charge ne transforme pas tous ces avis en notifications formelles."
       }
     ],
-    "explication": "Le renversement porte sur le principe, pas sur la liberté du copropriétaire : il peut toujours obtenir le papier, mais c'est à lui de le demander. Le coût de l'envoi et la charge de la démarche changent donc de côté, ce qui est tout l'objet de la réforme.",
-    "vigilance": "Le renversement a une contrepartie, et c'est un contrôle nouveau : chaque appel de fonds et chaque convocation doit rappeler la possibilité de recevoir les notifications et mises en demeure par voie postale.",
+    "explication": "Deux dates sont à distinguer : le principe légal figure à l’article 42-1 depuis le 11 avril 2024 ; le décret du 22 décembre 2025, publié le 24 décembre, règle les modalités applicables depuis le 25 décembre 2025. Le copropriétaire conserve le choix de la voie postale. La voie électronique doit respecter l’article 64 : un simple courriel ne suffit pas.",
+    "vigilance": "Les avis d’appels de charge et les convocations sont accompagnés de la mention de la possibilité de recevoir les notifications et mises en demeure par voie postale. Cette information ne dispense pas de vérifier les formalités applicables au document envoyé.",
     "source": [
       {
-        "texte": "Décret n° 2025-1292 du 22 décembre 2025 modifiant le décret n° 67-223 du 17 mars 1967 (art. 64 : la voie électronique devient le principe ; art. 64-1 : le postal sur demande du copropriétaire)",
-        "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000053159903",
+        "texte": "Loi n° 65-557 du 10 juillet 1965, article 42-1, version en vigueur depuis le 11 avril 2024 ; consultée le 4 septembre 2026",
+        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000049398877",
+        "nature": "texte-officiel"
+      },
+      {
+        "texte": "Décret n° 2025-1292 du 22 décembre 2025, publié le 24 décembre et entré en vigueur le 25 décembre 2025 ; consulté le 4 septembre 2026",
+        "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000053159903/2025-12-25",
+        "nature": "texte-officiel"
+      },
+      {
+        "texte": "Décret n° 67-223 du 17 mars 1967, article 64 : modalités électroniques et départ du délai, version en vigueur depuis le 25 décembre 2025 ; consultée le 4 septembre 2026",
+        "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000053191373",
+        "nature": "texte-officiel"
+      },
+      {
+        "texte": "Décret n° 67-223 du 17 mars 1967, article 64-1 : voie postale et départ du délai, version en vigueur depuis le 25 décembre 2025 ; consultée le 4 septembre 2026",
+        "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000053191378/",
+        "nature": "texte-officiel"
+      },
+      {
+        "texte": "Décret n° 67-223 du 17 mars 1967, article 64-2 : mention accompagnant les avis d’appels de charge et les convocations, version en vigueur depuis le 25 décembre 2025 ; consultée le 4 septembre 2026",
+        "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000053191386",
         "nature": "texte-officiel"
       }
     ],
-    "verifie": "2026-08-28",
+    "verifie": "2026-09-04",
     "peremption": "2027-08-10",
     "statut": "valide",
     "origine": ".agents/skills/erp-juridique/references/veille-2024-2026.md",
-    "partage": "banque"
+    "partage": "banque",
+    "historique": [
+      {
+        "date": "2026-09-04",
+        "statut": "valide",
+        "motif": "ACA-COPRO-1 : Correction de la chronologie loi 2024 / décret 2025 et du périmètre des notifications ; remplacement des références générales par les articles précis. Relecture indépendante en attente.",
+        "par": "Codex / gpt-5.6-sol"
+      },
+      {
+        "date": "2026-09-04",
+        "statut": "valide",
+        "motif": "Contre-lecture des retouches v1 contre les articles 24, 25-1, 42-1 et 64 à 64-2 applicables selon la carte ; aucune réserve sur ce périmètre. Le chapitre v2 et la revue globale du programme restent ouverts.",
+        "par": "Codex / gpt-5.6-sol / agent principal, non auteur des retouches AG"
+      }
+    ]
   },
   {
     "id": "droit-veille-lre-prestataire-qualifie",
@@ -54,20 +88,34 @@
     "type": "flash",
     "question": "Que recouvre exactement la « voie électronique » au sens de l'article 64 du décret du 17 mars 1967, dans sa rédaction issue du décret du 22 décembre 2025 ?",
     "reponse": "Deux modalités, et deux seulement : la lettre recommandée électronique dans les conditions des articles R. 53 à R. 53-4 du code des postes et des communications électroniques, ou un procédé électronique mis en œuvre par un prestataire de service de confiance qualifié garantissant l'intégrité des données, la sécurité et la traçabilité. Un simple courriel ne vaut pas notification.",
-    "explication": "Le décret ne dématérialise pas la notification, il en change le support tout en gardant l'exigence de preuve : c'est la lettre recommandée électronique ou la qualification du prestataire qui produit l'équivalent du recommandé papier, horodatage et traçabilité compris. Un envoi depuis une boîte professionnelle, même avec accusé de lecture, ne fournit rien de tel.",
-    "vigilance": "C'est la confusion la plus coûteuse du nouveau régime : envoyer une convocation par courriel ordinaire en croyant appliquer le décret produit une convocation non notifiée, donc une assemblée attaquable.",
+    "explication": "L’article 64 impose soit une lettre recommandée électronique conforme aux articles R. 53 à R. 53-4 du code des postes et des communications électroniques, soit le procédé d’un prestataire de service de confiance qualifié répondant aux exigences du décret. Une adresse professionnelle ou un accusé de lecture ne suffisent pas à établir cette conformité.",
+    "vigilance": "Vérifier la modalité utilisée et les preuves produites par le prestataire : un simple courriel ne remplit pas, à lui seul, les conditions de l’article 64.",
     "source": [
       {
-        "texte": "Art. 64 du décret n° 67-223 du 17 mars 1967, dans sa rédaction issue du décret n° 2025-1292 du 22 décembre 2025 (lettre recommandée électronique des art. R. 53 à R. 53-4 du code des postes et des communications électroniques, ou procédé électronique d'un prestataire de service de confiance qualifié)",
-        "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000053159903",
+        "texte": "Décret n° 67-223 du 17 mars 1967, article 64 : modalités électroniques et départ du délai, version en vigueur depuis le 25 décembre 2025 ; consultée le 4 septembre 2026",
+        "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000053191373",
         "nature": "texte-officiel"
       }
     ],
-    "verifie": "2026-08-28",
+    "verifie": "2026-09-04",
     "peremption": "2027-08-10",
     "statut": "valide",
     "origine": ".agents/skills/erp-juridique/references/veille-2024-2026.md",
-    "partage": "banque"
+    "partage": "banque",
+    "historique": [
+      {
+        "date": "2026-09-04",
+        "statut": "valide",
+        "motif": "ACA-COPRO-1 : Précision de la source des modalités électroniques et suppression d’une conclusion automatique sur la contestation de l’assemblée. Relecture indépendante en attente.",
+        "par": "Codex / gpt-5.6-sol"
+      },
+      {
+        "date": "2026-09-04",
+        "statut": "valide",
+        "motif": "Contre-lecture des retouches v1 contre les articles 24, 25-1, 42-1 et 64 à 64-2 applicables selon la carte ; aucune réserve sur ce périmètre. Le chapitre v2 et la revue globale du programme restent ouverts.",
+        "par": "Codex / gpt-5.6-sol / agent principal, non auteur des retouches AG"
+      }
+    ]
   },
   {
     "id": "droit-veille-mention-voie-postale",
@@ -79,21 +127,40 @@
     ],
     "type": "flash",
     "question": "Quelle mention le décret du 22 décembre 2025 impose-t-il d'ajouter, et sur quels documents ?",
-    "reponse": "Le rappel de la possibilité de recevoir les notifications et mises en demeure par voie postale, sur chaque appel de fonds et sur chaque convocation d'assemblée.",
-    "explication": "C'est la contrepartie du renversement : puisque le copropriétaire n'a plus à consentir au numérique, il faut au moins l'informer, à chaque envoi, qu'il peut revenir au papier. L'obligation porte sur deux documents précis et récurrents, pas sur une information générale donnée une fois.",
+    "reponse": "Le rappel de la possibilité de recevoir les notifications et mises en demeure par voie postale, qui accompagne les avis d’appels de charge et les convocations aux assemblées générales.",
+    "explication": "L’article 64-2 précise les documents accompagnés de cette mention. L’information rappelle le choix postal prévu par l’article 42-1 ; elle ne se réduit pas à une information générale donnée une seule fois.",
     "vigilance": "Une mention absente n'est pas un incident isolé mais une anomalie de process : elle vit dans les gabarits de l'outil de gestion et se répète sur tout le portefeuille jusqu'à correction du gabarit. C'est là qu'on va la vérifier, pas envoi par envoi.",
     "source": [
       {
-        "texte": "Art. 64-2 du décret n° 67-223 du 17 mars 1967, modifié par le décret n° 2025-1292 du 22 décembre 2025 (le syndic accompagne les appels de fonds et les convocations de la mention de la possibilité de recevoir les notifications et mises en demeure par voie postale)",
-        "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000053159903",
+        "texte": "Décret n° 67-223 du 17 mars 1967, article 64-2 : mention accompagnant les avis d’appels de charge et les convocations, version en vigueur depuis le 25 décembre 2025 ; consultée le 4 septembre 2026",
+        "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000053191386",
+        "nature": "texte-officiel"
+      },
+      {
+        "texte": "Loi n° 65-557 du 10 juillet 1965, article 42-1, version en vigueur depuis le 11 avril 2024 ; consultée le 4 septembre 2026",
+        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000049398877",
         "nature": "texte-officiel"
       }
     ],
-    "verifie": "2026-08-28",
+    "verifie": "2026-09-04",
     "peremption": "2027-08-10",
     "statut": "valide",
     "origine": ".agents/skills/erp-juridique/references/veille-2024-2026.md",
-    "partage": "banque"
+    "partage": "banque",
+    "historique": [
+      {
+        "date": "2026-09-04",
+        "statut": "valide",
+        "motif": "ACA-COPRO-1 : Reprise du champ exact de la mention du choix postal : avis d’appels de charge et convocations. Relecture indépendante en attente.",
+        "par": "Codex / gpt-5.6-sol"
+      },
+      {
+        "date": "2026-09-04",
+        "statut": "valide",
+        "motif": "Contre-lecture des retouches v1 contre les articles 24, 25-1, 42-1 et 64 à 64-2 applicables selon la carte ; aucune réserve sur ce périmètre. Le chapitre v2 et la revue globale du programme restent ouverts.",
+        "par": "Codex / gpt-5.6-sol / agent principal, non auteur des retouches AG"
+      }
+    ]
   },
   {
     "id": "droit-veille-point-depart-des-delais",
@@ -101,17 +168,17 @@
     "branche": "veille-recente",
     "niveau": 2,
     "type": "qcm",
-    "question": "Une convocation est notifiée. À compter de quand le délai court-il ?",
-    "reponse": "Papier : le lendemain de la première présentation au domicile. Électronique : le lendemain de la transmission de l'avis électronique par le prestataire qualifié.",
+    "question": "Une convocation est notifiée par lettre recommandée postale ou par voie électronique conforme à l’article 64. À compter de quand le délai court-il ?",
+    "reponse": "Voie postale : le lendemain de la première présentation de la lettre recommandée au domicile du destinataire. Voie électronique : le lendemain de la transmission de l’avis électronique d’envoi par le prestataire qualifié.",
     "choix": [
       {
-        "texte": "Le lendemain de la première présentation pour le papier, le lendemain de la transmission de l'avis électronique pour l'électronique",
+        "texte": "Le lendemain de la première présentation pour la lettre recommandée postale, le lendemain de la transmission de l’avis électronique d’envoi pour l’électronique",
         "correct": true
       },
       {
         "texte": "Le jour de l'envoi, dans les deux cas",
         "correct": false,
-        "pourquoi_faux": "La date d'envoi ne commande rien. C'est l'erreur qui fait croire un délai tenu alors qu'il manque plusieurs jours d'acheminement."
+        "pourquoi_faux": "Pour la lettre recommandée postale, la date d’expédition ne constitue pas la première présentation. Pour la voie électronique, le texte retient le lendemain de la transmission de l’avis électronique d’envoi."
       },
       {
         "texte": "Le jour du retrait du pli par le destinataire",
@@ -124,20 +191,39 @@
         "pourquoi_faux": "Le délai court à compter du lendemain. Un jour d'écart suffit à rendre une convocation tardive et l'assemblée attaquable."
       }
     ],
-    "explication": "Les deux modes suivent la même logique : le délai part du moment où le destinataire a été mis en mesure de prendre connaissance du pli, pas du moment où l'expéditeur s'en est débarrassé, ni du moment où le destinataire a bien voulu s'en saisir. Le nouveau régime électronique n'a fait que transposer cette règle à l'avis du prestataire.",
-    "vigilance": "Ce qui prouve le point de départ est la trace de première présentation dans le suivi de l'envoi, pas la date de signature de l'accusé de réception. C'est cette pièce-là qu'on conserve au dossier.",
+    "explication": "Les articles 64 et 64-1 fixent chacun un événement de départ du délai. Il faut identifier le mode de notification puis la date de l’événement prévu par le texte ; la lecture effective du message ou le retrait du pli ne remplacent pas cet événement.",
+    "vigilance": "Conserver la preuve de première présentation pour la lettre recommandée postale, ou la preuve de transmission de l’avis électronique d’envoi pour la voie électronique. La remise en main propre relève d’un autre mode, hors de cette question.",
     "source": [
       {
-        "texte": "Art. 64 et 64-1 du décret n° 67-223 du 17 mars 1967, dans leur rédaction issue du décret n° 2025-1292 du 22 décembre 2025 (électronique : lendemain de la transmission par le prestataire de l'avis électronique ; postal : lendemain de la première présentation de la lettre recommandée au domicile)",
-        "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000053159903",
+        "texte": "Décret n° 67-223 du 17 mars 1967, article 64 : modalités électroniques et départ du délai, version en vigueur depuis le 25 décembre 2025 ; consultée le 4 septembre 2026",
+        "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000053191373",
+        "nature": "texte-officiel"
+      },
+      {
+        "texte": "Décret n° 67-223 du 17 mars 1967, article 64-1 : voie postale et départ du délai, version en vigueur depuis le 25 décembre 2025 ; consultée le 4 septembre 2026",
+        "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000053191378/",
         "nature": "texte-officiel"
       }
     ],
-    "verifie": "2026-08-28",
+    "verifie": "2026-09-04",
     "peremption": "2027-08-10",
     "statut": "valide",
     "origine": ".agents/skills/erp-juridique/references/veille-2024-2026.md",
-    "partage": "banque"
+    "partage": "banque",
+    "historique": [
+      {
+        "date": "2026-09-04",
+        "statut": "valide",
+        "motif": "ACA-COPRO-1 : Question bornée aux deux modes étudiés, sources précises et distinction des preuves du point de départ des délais. Relecture indépendante en attente.",
+        "par": "Codex / gpt-5.6-sol"
+      },
+      {
+        "date": "2026-09-04",
+        "statut": "valide",
+        "motif": "Contre-lecture des retouches v1 contre les articles 24, 25-1, 42-1 et 64 à 64-2 applicables selon la carte ; aucune réserve sur ce périmètre. Le chapitre v2 et la revue globale du programme restent ouverts.",
+        "par": "Codex / gpt-5.6-sol / agent principal, non auteur des retouches AG"
+      }
+    ]
   },
   {
     "id": "droit-veille-pieces-espace-en-ligne",

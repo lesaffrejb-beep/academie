@@ -22,12 +22,17 @@ const DONNEES = [
 ] as const;
 
 function donneesDuDepot(): Plugin {
+  function medias() {
+    const banque = JSON.parse(readFileSync(DONNEES[0].source, "utf8")) as { cartes: { image?: { fichier?: string } }[] };
+    return [...new Set(banque.cartes.map((c) => c.image?.fichier).filter((f): f is string =>
+      typeof f === "string" && /^images\/[a-zA-Z0-9_-]+\.(svg|png|jpe?g|webp)$/.test(f)))].map((nom) => ({ nom, source: new URL(`../site/${nom}`, import.meta.url) }));
+  }
   return {
     name: "academie-donnees-du-depot",
     configureServer(serveur) {
       serveur.middlewares.use((requete, reponse, suite) => {
         const chemin = (requete.url ?? "").split("?")[0] ?? "";
-        const trouve = DONNEES.find((d) => chemin.endsWith(`/${d.nom}`));
+        const trouve = [...DONNEES, ...medias()].find((d) => chemin === `/${d.nom}` || chemin === `/academie/${d.nom}`);
         if (!trouve) return suite();
         let corps: Buffer;
         try {
@@ -37,17 +42,20 @@ function donneesDuDepot(): Plugin {
           reponse.end();
           return;
         }
-        reponse.setHeader("Content-Type", "application/json; charset=utf-8");
+        const extension = trouve.nom.split(".").at(-1);
+        const type = extension === "svg" ? "image/svg+xml" : extension === "png" ? "image/png"
+          : extension === "webp" ? "image/webp" : extension === "jpg" || extension === "jpeg" ? "image/jpeg" : "application/json";
+        reponse.setHeader("Content-Type", `${type}; charset=utf-8`);
         reponse.setHeader("Cache-Control", "no-store");
         reponse.end(corps);
       });
     },
     buildStart() {
       // Un changement de la banque ou de la voix redemarre le build.
-      for (const d of DONNEES) this.addWatchFile(fileURLToPath(d.source));
+      for (const d of [...DONNEES, ...medias()]) this.addWatchFile(fileURLToPath(d.source));
     },
     generateBundle() {
-      for (const d of DONNEES) {
+      for (const d of [...DONNEES, ...medias()]) {
         this.emitFile({
           type: "asset",
           fileName: d.nom,
@@ -90,7 +98,7 @@ export default defineConfig({
         // La banque fait environ 200 ko : le defaut de Workbox (2 Mo)
         // suffit, on le dit pour que personne ne cherche.
         maximumFileSizeToCacheInBytes: 4 * 1024 * 1024,
-        globPatterns: ["**/*.{js,css,html,svg,json,woff2}"],
+        globPatterns: ["**/*.{js,css,html,svg,png,jpg,jpeg,webp,json,woff2}"],
         navigateFallback: "/academie/index.html",
         cleanupOutdatedCaches: true,
         runtimeCaching: [

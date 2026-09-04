@@ -238,3 +238,9 @@ lié. Aucune de ces quatre n'est retenue autrement qu'en idées, et aucun
 | faster-whisper, yt-dlp | transcription locale, sous-titres | MIT, Unlicense | l'usine, pour les vidéos |
 | Firecrawl | crawl et extraction web | AGPL (cœur), API payante | **écarté** : pas de crawl ; lecture directe des domaines fiables |
 | L'entrée PDF native de l'API Claude (600 pages, citations par page) | lecture par le modèle | service | **à titre indicatif** : JB travaille sur abonnement ; dans Claude Code, la lecture de PDF par pages rendues fait le même travail |
+# Complément du 04/09/2026
+
+`lucide-react` 1.40.0 ajouté au client pour la navigation et les contrôles
+prévus par la DA. Licence ISC et MIT pour les icônes héritées de Feather,
+[texte officiel](https://github.com/lucide-icons/lucide/blob/main/LICENSE)
+consulté le 04/09/2026. Bundle local, aucune requête tierce au jeu.

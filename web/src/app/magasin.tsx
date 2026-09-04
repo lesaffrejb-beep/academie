@@ -29,9 +29,30 @@ interface Magasin {
   bilan: Bilan | null;
   note: (ligne: Parameters<typeof ecris>[0]) => Promise<void>;
   rafraichis: () => Promise<void>;
+  synchronise: () => Promise<void>;
 }
 
 const Contexte = createContext<Magasin | null>(null);
+
+export function observeJour(surJour: (jour: number) => void): () => void {
+  let minuterie: ReturnType<typeof setTimeout>;
+  const actualise = () => {
+    surJour(aujourdhuiOrdinal());
+    clearTimeout(minuterie);
+    const instant = new Date();
+    const minuit = new Date(instant.getFullYear(), instant.getMonth(), instant.getDate() + 1);
+    minuterie = setTimeout(actualise, Math.max(1, minuit.getTime() - instant.getTime()));
+  };
+  const auRetour = () => {
+    if (document.visibilityState === "visible") actualise();
+  };
+  actualise();
+  document.addEventListener("visibilitychange", auRetour);
+  return () => {
+    clearTimeout(minuterie);
+    document.removeEventListener("visibilitychange", auRetour);
+  };
+}
 
 export function FournisseurMagasin({ enfants }: { enfants: ReactNode }) {
   const [pret, setPret] = useState(false);
@@ -39,7 +60,9 @@ export function FournisseurMagasin({ enfants }: { enfants: ReactNode }) {
   const [banque, setBanque] = useState<Banque | null>(null);
   const [journal, setJournal] = useState<LigneJournal[]>([]);
   const [bilan, setBilan] = useState<Bilan | null>(null);
-  const jour = aujourdhuiOrdinal();
+  const [jour, setJour] = useState(aujourdhuiOrdinal);
+
+  useEffect(() => observeJour(setJour), []);
 
   const rafraichis = useCallback(async () => {
     setJournal(await litJournal());
@@ -47,6 +70,7 @@ export function FournisseurMagasin({ enfants }: { enfants: ReactNode }) {
 
   useEffect(() => {
     let vivant = true;
+    let detacheReprise: () => void = () => undefined;
     void (async () => {
       await chargeVoix();
       try {
@@ -66,15 +90,19 @@ export function FournisseurMagasin({ enfants }: { enfants: ReactNode }) {
       } catch {
         // Pas d'IndexedDB : on joue, rien ne se garde.
       }
-      if (vivant) setPret(true);
-      brancheReprise((b) => {
+      if (!vivant) return;
+      setPret(true);
+      detacheReprise = brancheReprise((b) => {
+        if (!vivant) return;
         setBilan(b);
-        void litJournal().then(setJournal).catch(() => undefined);
+        void litJournal().then((lignes) => {
+          if (vivant) setJournal(lignes);
+        }).catch(() => undefined);
       });
-      void synchronise().then(setBilan).catch(() => undefined);
     })();
     return () => {
       vivant = false;
+      detacheReprise();
     };
   }, []);
 
@@ -87,8 +115,8 @@ export function FournisseurMagasin({ enfants }: { enfants: ReactNode }) {
     [journal, sched],
   );
   const monde = useMemo(
-    () => (banque ? carteMonde(banque.cartes, journal, banque, etats) : null),
-    [banque, journal, etats],
+    () => (banque ? carteMonde(banque.cartes, journal, banque, etats, [], jour) : null),
+    [banque, journal, etats, jour],
   );
   const pts = useMemo(
     () => (monde ? points(journal, monde, jour) : null),
@@ -99,14 +127,22 @@ export function FournisseurMagasin({ enfants }: { enfants: ReactNode }) {
     async (ligne: Parameters<typeof ecris>[0]) => {
       await ecris(ligne);
       setJournal(await litJournal());
-      void synchronise().then(setBilan).catch(() => undefined);
+      void synchronise().then(async (b) => {
+        setBilan(b);
+        setJournal(await litJournal());
+      }).catch(() => undefined);
     },
     [],
   );
 
+  const relance = useCallback(async () => {
+    setBilan(await synchronise());
+    setJournal(await litJournal());
+  }, []);
+
   const valeur: Magasin = {
     pret, panne, banque, journal, etats, monde, points: pts, sched, jour, bilan,
-    note, rafraichis,
+    note, rafraichis, synchronise: relance,
   };
   return <Contexte.Provider value={valeur}>{enfants}</Contexte.Provider>;
 }

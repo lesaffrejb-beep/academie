@@ -3,12 +3,34 @@
 Squelette écrit le 02/09/2026 (`DIRECTION-ARTISTIQUE.md`,
 `ARCHITECTURE.md` §1 et §5, `decisions/0007`), initialisé le
 03/09/2026. Ce dossier dit quoi construire, écran par écran, et contre
-quoi le vérifier ; la section « État au 03/09/2026 » dit où on en est. Le chantier est `ACA-FRONT-2`. Le client est **jetable** : il
+quoi le vérifier. Le chantier est `ACA-FRONT-2`. Le client est **jetable** : il
 peut être réécrit sans toucher au moteur, à la banque ni au journal.
 Il remplace l'archipel, archivé le 04/09 dans
 `archive/client-archipel-2026-09-04` ; rien n'est servi en attendant.
 
-## Stack
+## État au 04/09/2026
+
+L'arbre radial, les branches, la fiche de chapitre, la salle de révision,
+la clôture, le profil et la boîte ont leur rendu Nuit/Papier. Les règles
+de finition sont dans `AGENTS.md` : Impeccable appliqué dans la DA,
+pas une nouvelle direction tirée d'un skill. Lucide est installé ;
+Motion, ts-fsrs et game-icons ne le sont pas. Le moteur FSRS reste le
+miroir Python décidé dans `decisions/0029`.
+
+La banque, la voix et les images sont injectées depuis leurs sources
+au build. Les cartes invalides, périmées ou signalées sont écartées du
+service, y compris après minuit dans une salle ouverte. Le journal
+attend honnêtement une API indisponible et ne transforme plus une panne
+HTTP en rejet de toutes les réponses.
+
+Les tests navigateur couvrent ordinateur et téléphone, Nuit/Papier,
+texte agrandi, clavier, réseau coupé, reprise, images et panne de stockage.
+Cela ne remplace pas l'essai sur un vrai téléphone ni la preuve de
+synchronisation avec le VPS. Le détail actuel et les limites figurent
+dans l'[audit](../travail/audit-froid-2026-09-04.md). Les sections datées
+du 03/09 ci-dessous sont un état historique, pas le reste à faire actuel.
+
+## Stack prévue (voir l'état actuel ci-dessus)
 
 Vite, React, TypeScript strict, Tailwind (tokens en variables CSS, aucun
 hexadécimal dans un composant), Motion pour les animations, `ts-fsrs`
@@ -254,3 +276,63 @@ plus sortir la porte en erreur sur les tirets cadratins de
 Le développement a besoin de `../site/banque.json` et de
 `../contenu/voix.json` : le client se lance depuis le dépôt, pas depuis
 une copie isolée de `web/`.
+
+### Préparation de la publication
+
+Le script `preparer-publication.mjs` prépare le client complet, et pas
+seulement `banque.json`. Sa présence dans le dépôt ne prouve pas que le
+service correspondant a été installé ou exécuté sur le VPS.
+
+Prérequis : Node 20 ou plus, Python 3.12, et les dépendances de construction
+installées par `npm ci --include=dev` dans `web/`. Leur installation est
+une opération préalable : le service ne lance ni `npm install` ni un
+téléchargement. Il faut notamment TypeScript, Vite et le générateur PWA.
+Les chemins de Node et Python du service sont `/usr/bin/node` et
+`/usr/bin/python3` ; ils doivent être vérifiés sur la machine cible avant
+toute activation humaine.
+
+Pour préparer seulement une sortie locale jetable, depuis le dépôt :
+
+```bash
+node web/preparer-publication.mjs --sortie /tmp/academie-publication-locale
+cd web
+npm run test:publication
+```
+
+La préparation utilise un dossier de travail hors du dépôt, choisi avec
+`--travail` ou, par défaut, le dossier temporaire du système. Elle copie
+les sources du client et les seules familles de données nécessaires
+(`academie.json`, `banque/`, `chapitres/`, `programme/`, `contenu/voix.json`).
+Les tests TypeScript font partie de la copie car `tsconfig.json` les
+inclut. Les dépendances installées sont consultées par lien, sans copie
+ni écriture. Aucun état joueur n'entre dans la construction.
+
+Le générateur tourne avec `--couches banque` et `-B`, puis TypeScript et
+Vite construisent dans ce dossier temporaire. Cela fonctionne avec les
+sources en lecture seule : Vite peut y écrire sa configuration compilée
+et Python peut recopier une image partagée sans modifier le dépôt.
+
+Avant de changer la destination, le script contrôle l'inventaire SHA-256
+complet, les fichiers indispensables à la PWA, les références du
+manifeste Vite et toutes les images des cartes publiées. Un échec de
+génération, de build ou de contrôle laisse la publication existante
+intacte. Les ressources passent ensuite avant `index.html`, remplacé par
+renommage atomique ; `sw.js` vient en dernier. Les anciens assets hachés
+restent disponibles pour les onglets encore ouverts. Ce n'est pas un
+remplacement atomique de tout le dossier : une erreur d'E/S pendant la
+distribution peut laisser une partie des ressources actualisée.
+
+Le service préparé dans `deploy/academie-publication.service` conserve
+`ProtectSystem=strict` et crée son atelier sous
+`/run/academie-publication`. Seuls cet atelier et la destination
+`/var/lib/academie/publication` sont déclarés inscriptibles. L'installation
+du service, sa relance, l'archivage de `client/` et toute bascule du VPS
+restent soumis à validation humaine.
+
+Retour arrière à préparer avant une bascule : conserver une copie
+complète de la publication précédente et de l'unité systemd installée.
+Un humain suspend le timer, rétablit les ressources sauvegardées avant
+l'ancien `index.html`, puis l'ancien `sw.js`, et remet l'unité précédente.
+Il vérifie ensuite l'ouverture en ligne et hors ligne avant de réactiver
+le timer. Le script n'efface ni anciens assets ni sauvegardes ; leur
+nettoyage est une opération distincte, jamais implicite.

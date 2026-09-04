@@ -89,3 +89,46 @@ python3 app/tests.py && python3 tooling/check.py
 JB voit : une réponse jouée dans le tram, relisible le soir sur le Mac
 dans l'export du journal, avec la même stabilité FSRS calculée par
 `python3 app/progression.py`.
+
+## Reprise prioritaire : ordre chronologique (04/09/2026)
+
+Defaut reproduit, correctif non commence lors de l'arret demande par JB.
+Le client ecrit maintenant la date locale avec son decalage ISO pour
+conserver le jour joue. Les lecteurs trient encore `quand` comme du
+texte : deux decalages peuvent inverser les revisions. La parite actuelle
+Python/TypeScript ne detecte pas ce defaut commun.
+
+Reproduction executee sur les vraies fonctions des deux moteurs : meme
+carte, note 4 a `2026-10-25T02:50:00+02:00` (00:50 UTC), puis note 1 a
+`2026-10-25T02:10:00+01:00` (01:10 UTC). Le tri actuel rejoue [1, 4],
+donne une derniere note 4, une stabilite 0,42437996387663374, une
+difficulte 5,200020369516838 et une echeance le 26 octobre. L'ordre reel
+[4, 1] donne une derniere note 1, une stabilite 2,5625081682260777, une
+difficulte 7,0269895692968385 et une echeance le 28 octobre.
+
+Ajustement cible du perimetre, autorise pour la reprise :
+
+1. Ecrire les tests rouges de changement d'heure, de melange UTC/local et
+   d'evenements simultanes recus dans des ordres differents. Verifier les
+   lecteurs et le rejeu FSRS Python/TypeScript, pas seulement un tri isole.
+2. Corriger `app/seance.py` (`lit_journal`, `etats_cartes`),
+   `app/erreurs.py` (`lit_carnet`), `serveur/importer_journal.py`
+   (`migrer_fichier`), `serveur/academie_etat/journal.py` (`exporter`),
+   `web/src/moteur/journal.ts` (`litJournal`) et
+   `web/src/moteur/etats.ts` (`trieJournal`), avec leurs tests associes.
+   Cet ajustement borne remplace les exclusions historiques de
+   `app/seance.py` et `web/` ci-dessus pour ce correctif uniquement.
+3. Trier par instant reel puis departager par `(quand, mode, nonce)`
+   dans un ordre de caracteres identique des deux cotes, sans collation
+   dependante de la langue. Traiter explicitement les fractions de
+   seconde : le contrat les accepte au-dela de la milliseconde, que
+   `Date.parse` seul ne distingue pas. Definir et tester le traitement
+   des anciens horodatages sans decalage, sans dependre du fuseau machine.
+4. Ne modifier aucune ligne append-only, identite, nonce ni date portee.
+   `jourOrdinal` continue de lire la date locale de la chaine. Le curseur
+   de transport `recu_le` est distinct du tri de rejeu et reste inchange.
+   Aucun changement de parametres FSRS ni nouvelle mecanique.
+5. Exiger les preuves rouges puis vertes, les tests de parite,
+   `python3 app/tests.py` puis `python3 tooling/check.py` avant de
+   considerer ce correctif termine. Pas de publication avec ce defaut
+   presente comme resolu.

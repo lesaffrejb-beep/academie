@@ -20,11 +20,17 @@ outils). Toute réponse d'erreur : `{"erreur": "<code>", "motif": "<phrase>"}`.
 Sémantique : le serveur ajoute chaque ligne dont le quadruplet (profil,
 `quand`, `mode`, `nonce`) est inconnu, ignore les autres, et renvoie
 toutes les lignes du profil dont `recu_le` (horodatage serveur) est
-postérieur à `depuis` et que le client n'a pas envoyées. Aucune mise à
+supérieur ou égal à `depuis` et que le client n'a pas envoyées. La borne
+est incluse pour ne perdre aucune ligne reçue dans la même seconde : le
+client absorbe les doublons par union. Un lot vide récupère les lignes
+distantes même lorsque le client n'a rien à envoyer. Aucune mise à
 jour, aucune suppression. Un lot fait au plus 500 lignes ; il est
 accepté ou refusé en entier si une ligne ne respecte pas `journal-v1`,
 avec l'index de la ligne fautive : le client la met de côté dans un
 magasin local `rejets` et renvoie le reste, la file ne se bloque jamais.
+Seul un refus `422 ligne-invalide` avec un index de ligne valide provoque
+cette mise à l'écart ; tout autre refus conserve la file pour un nouvel
+essai après retour du service ou de la session.
 
 ## Banques
 

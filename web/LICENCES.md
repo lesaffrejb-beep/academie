@@ -17,6 +17,7 @@ tout est empaqueté par Vite et servi par l'Académie elle-même
 | `react` | 18.3.1 | MIT | rendu des écrans |
 | `react-dom` | 18.3.1 | MIT | montage dans le navigateur |
 | `dexie` | 4.0.11 | Apache-2.0 | IndexedDB : journal, file d'envoi, cache de banque |
+| `lucide-react` | 1.40.0 | ISC, MIT pour les glyphes hérités de Feather | navigation et boutons, licence officielle consultée le 04/09/2026 |
 | `@fontsource-variable/fraunces` | 5.3.0 | OFL-1.1 | la serif à empattements, titres (DA §2) |
 | `@fontsource-variable/source-sans-3` | 5.3.0 | OFL-1.1 | la sans humaniste, texte et interface (DA §2) |
 
@@ -110,7 +111,6 @@ sont relevées ici pour que la vérification de licence soit déjà faite.
 | Paquet | Version visée | Licence | Pour quoi |
 | --- | --- | --- | --- |
 | `motion` | à figer | MIT | animations, sous la seconde |
-| `lucide-react` | à figer | ISC | glyphes d'interface |
 | game-icons.net | sans version | CC BY 3.0 | glyphes de chapitre, attribution visible dans Crédits |
 
 ## Écart avec le cahier

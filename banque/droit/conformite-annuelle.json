@@ -174,10 +174,10 @@
       }
     ],
     "explication": "Deux planchers de nature différente : l'un indexe l'effort d'épargne sur le train de vie courant de la copropriété, l'autre sur ce que le plan a chiffré comme travaux à venir. Le second existe parce que le premier, seul, laisse une copropriété à petit budget cotiser une somme sans rapport avec ses besoins réels.",
-    "vigilance": "La cotisation peut être suspendue quand le fonds dépasse le budget prévisionnel, ou 50 % du montant des travaux du plan adopté. Suspension n'est pas dispense, et elle suppose le seuil atteint et constaté. La pièce qui fait foi est le relevé du compte séparé du fonds, pas la ligne du grand livre seule.",
+    "vigilance": "Avec un plan adopté, l'assemblée générale se prononce sur la suspension lorsque le fonds excède le budget prévisionnel ET 50 % du montant des travaux du plan. Les deux conditions sont cumulatives ; la suspension n'est pas automatique. Sans plan adopté, seul le dépassement du budget prévisionnel déclenche cette question à l'assemblée. La pièce financière se recoupe avec la résolution : atteindre les seuils ne suspend pas les appels.",
     "source": [
       {
-        "texte": "Art. 14-2-1 loi n° 65-557 du 10 juillet 1965 (cotisation annuelle : pas moins de 2,5 % du montant des travaux du plan adopté ET pas moins de 5 % du budget de l'art. 14-1 ; suspension possible quand le fonds excède le budget prévisionnel ou 50 % du montant des travaux du plan)",
+        "texte": "Art. 14-2-1 I et II, loi n° 65-557 du 10 juillet 1965 : planchers annuels cumulatifs avec un plan adopté ; suspension soumise à l'assemblée générale lorsque le fonds excède le budget prévisionnel et, en présence d'un plan adopté, excède aussi 50 % du montant de ses travaux.",
         "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000043967792",
         "nature": "texte-officiel"
       }
@@ -186,7 +186,22 @@
     "peremption": null,
     "statut": "valide",
     "origine": ".agents/skills/erp-pieces/references/radar-conformite-annuelle.md",
-    "partage": "banque"
+    "partage": "banque",
+    "corrections": [
+      {
+        "date": "2026-09-04",
+        "auteur": "Codex / gpt-5.6-sol",
+        "objet": "Correction ciblée de la suspension : conditions cumulatives en présence de PPT et décision de l’assemblée générale.",
+        "champs": [
+          "vigilance",
+          "source"
+        ],
+        "source_urls": [
+          "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000043967792"
+        ],
+        "relecture": "en-attente"
+      }
+    ]
   },
   {
     "id": "droit-conformite-fonds-travaux-dispenses",
@@ -365,8 +380,8 @@
     "branche": "conformite-annuelle",
     "niveau": 2,
     "type": "qcm",
-    "question": "Quels bâtiments d'habitation collective sont soumis au diagnostic de performance énergétique collectif, et à quelle fréquence se renouvelle-t-il ?",
-    "reponse": "Ceux dont le permis de construire a été déposé avant le 01/01/2013 ; renouvelé tous les dix ans, sauf si un diagnostic postérieur au 01/07/2021 a établi une classe A, B ou C.",
+    "question": "En France métropolitaine, quels bâtiments d'habitation collective sont soumis au diagnostic de performance énergétique collectif, et à quelle fréquence se renouvelle-t-il ?",
+    "reponse": "En France métropolitaine, ceux dont le permis de construire a été déposé avant le 01/01/2013 ; renouvelé tous les dix ans, sauf si un diagnostic postérieur au 01/07/2021 a établi une classe A, B ou C.",
     "choix": [
       {
         "texte": "Permis de construire déposé avant le 01/01/2013 ; renouvellement décennal, sauf classe A, B ou C établie par un diagnostic postérieur au 01/07/2021",
@@ -385,10 +400,10 @@
       {
         "texte": "Les copropriétés de plus de cinquante lots seulement",
         "correct": false,
-        "pourquoi_faux": "La taille a commandé le calendrier d'entrée en vigueur, jamais le champ de l'obligation. Les trois vagues étant passées, toutes les tailles sont désormais concernées."
+        "pourquoi_faux": "En France métropolitaine, la taille a commandé le calendrier d'entrée en vigueur, pas le champ lié à l'ancienneté. Les trois vagues étant passées, toutes les tailles sont désormais concernées dans ce périmètre."
       }
     ],
-    "explication": "Deux critères se superposent et se confondent : l'ancienneté du bâtiment détermine s'il est visé, la taille de la copropriété a seulement déterminé à quelle date l'obligation lui est devenue opposable. Une fois toutes les vagues passées, seul le critère d'ancienneté subsiste.",
+    "explication": "En France métropolitaine, l'ancienneté du bâtiment détermine s'il est visé et la taille de la copropriété a déterminé la date d'entrée en vigueur. Le territoire se vérifie avant d'appliquer ce calendrier : cette carte ne transpose pas les échéances métropolitaines aux territoires ultramarins.",
     "vigilance": "Le diagnostic collectif se contrôle par son numéro ADEME, vérifiable sur l'observatoire. Sans numéro, on tient un document, pas une preuve.",
     "source": [
       {
@@ -397,7 +412,8 @@
         "nature": "texte-officiel"
       },
       {
-        "texte": "Art. 158 loi n° 2021-1104 du 22 août 2021 (calendrier : 01/01/2024, 01/01/2025, 01/01/2026)",
+        "texte": "Art. 158 VI et IX, loi n° 2021-1104 du 22 août 2021 : calendrier du DPE collectif et dérogation territoriale ; la carte est limitée à la France métropolitaine.",
+        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000043957918/2026-06-20",
         "nature": "texte-officiel"
       }
     ],
@@ -405,7 +421,26 @@
     "peremption": null,
     "statut": "valide",
     "origine": ".agents/skills/erp-pieces/references/radar-conformite-annuelle.md",
-    "partage": "banque"
+    "partage": "banque",
+    "corrections": [
+      {
+        "date": "2026-09-04",
+        "auteur": "Codex / gpt-5.6-sol",
+        "objet": "Correction ciblée du champ territorial du calendrier : France métropolitaine.",
+        "champs": [
+          "question",
+          "reponse",
+          "choix",
+          "explication",
+          "source"
+        ],
+        "source_urls": [
+          "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043976972",
+          "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000043957918/2026-06-20"
+        ],
+        "relecture": "en-attente"
+      }
+    ]
   },
   {
     "id": "droit-conformite-dta-parties-communes",

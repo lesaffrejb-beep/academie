@@ -1,0 +1,553 @@
+{
+  "version": 1,
+  "classe_le": "2026-09-04",
+  "classe_par": {
+    "outil": "Codex",
+    "modele": "gpt-5.6-sol",
+    "classe": "grand"
+  },
+  "rapports": [
+    {
+      "id": "ifsi",
+      "fourni_le": "2026-09-04",
+      "produit_auteur": "ChatGPT Pro",
+      "modele_auteur": null,
+      "provenance_auteur": "Identification de ChatGPT Pro par JB dans sa demande ; modèle sous-jacent non précisé.",
+      "brut": "sources/f34fc8af2597118f.txt",
+      "sha256": "f34fc8af2597118ff2d3e6274223ac16a86387a0bb5e5b77d0a6adf8536a27ba",
+      "octets": 111197,
+      "lignes": 1380,
+      "unite_ligne": "str.splitlines(), dernière ligne sans saut final comptée",
+      "empreinte_usine": "f34fc8af2597118f",
+      "pivot": "sources/f34fc8af2597118f.md",
+      "fiche": "sources/f34fc8af2597118f.fiche.json",
+      "etat": "sources/f34fc8af2597118f.etat.json",
+      "nature": "editeur",
+      "fiabilite": "C",
+      "statut_contenu": "critique-a-confronter-aux-sources-et-au-depot",
+      "segments": [
+        {
+          "nature": "syllabus-et-contexte-copies",
+          "de": 1,
+          "a": 568
+        },
+        {
+          "nature": "critique",
+          "de": 569,
+          "a": 1380
+        }
+      ],
+      "sections": [
+        {
+          "titre": "Mon verdict",
+          "de": 569,
+          "a": 586
+        },
+        {
+          "titre": "1. Le problème bloquant : le programme repose surtout sur le référentiel de 2009",
+          "de": 587,
+          "a": 607
+        },
+        {
+          "titre": "2. La nouvelle colonne vertébrale officielle",
+          "de": 608,
+          "a": 630
+        },
+        {
+          "titre": "3. Ton arbre doit en réalité être un graphe",
+          "de": 631,
+          "a": 659
+        },
+        {
+          "titre": "4. Je remplacerais complètement tes cinq niveaux",
+          "de": 660,
+          "a": 731
+        },
+        {
+          "titre": "5. L’expertise doit être locale, pas globale",
+          "de": 732,
+          "a": 756
+        },
+        {
+          "titre": "6. Il faut séparer immédiatement les voies d’entrée",
+          "de": 757,
+          "a": 808
+        },
+        {
+          "titre": "7. Je referais le programme des douze semaines",
+          "de": 809,
+          "a": 827
+        },
+        {
+          "titre": "8. Les principales modifications de contenu à effectuer",
+          "de": 828,
+          "a": 844
+        },
+        {
+          "titre": "9. Les stages doivent être reconstruits",
+          "de": 845,
+          "a": 877
+        },
+        {
+          "titre": "10. Les domaines 2026 actuellement trop faibles",
+          "de": 878,
+          "a": 934
+        },
+        {
+          "titre": "11. La granularité de tes chapitres est trop irrégulière",
+          "de": 935,
+          "a": 967
+        },
+        {
+          "titre": "12. Ne pas confondre savoir numérique et compétence gestuelle",
+          "de": 968,
+          "a": 1000
+        },
+        {
+          "titre": "13. L’arbre doit être fini ; l’entraînement peut être infini",
+          "de": 1001,
+          "a": 1031
+        },
+        {
+          "titre": "14. Le moteur pédagogique que je construirais",
+          "de": 1032,
+          "a": 1068
+        },
+        {
+          "titre": "15. Il faut beaucoup plus de types d’exercices",
+          "de": 1069,
+          "a": 1091
+        },
+        {
+          "titre": "16. Le calcul de doses doit être traité comme une discipline verticale",
+          "de": 1092,
+          "a": 1121
+        },
+        {
+          "titre": "17. « Doctrine » et « Frontière » devraient devenir des modes, pas des niveaux",
+          "de": 1122,
+          "a": 1150
+        },
+        {
+          "titre": "18. Les spécialités doivent être des surcouches",
+          "de": 1151,
+          "a": 1190
+        },
+        {
+          "titre": "19. La provenance doit exister au niveau de chaque affirmation",
+          "de": 1191,
+          "a": 1222
+        },
+        {
+          "titre": "20. « Faire relire par un agent frais » est insuffisant pour les contenus critiques",
+          "de": 1223,
+          "a": 1267
+        },
+        {
+          "titre": "21. Les métriques doivent changer",
+          "de": 1268,
+          "a": 1284
+        },
+        {
+          "titre": "22. Ce que je garderais presque tel quel",
+          "de": 1285,
+          "a": 1314
+        },
+        {
+          "titre": "23. Ordre de reconstruction recommandé",
+          "de": 1315,
+          "a": 1380
+        }
+      ],
+      "controle_usine": {
+        "pages": 20,
+        "pages_acceptees": 20,
+        "unites": 2,
+        "fiche_acceptee_le": "2026-09-04T11:35:39+02:00",
+        "limite": "Contrôles du pivot normalisé et de sa fiche, sans certification de la justesse des affirmations. Le brut fait foi."
+      }
+    },
+    {
+      "id": "copro",
+      "fourni_le": "2026-09-04",
+      "produit_auteur": "ChatGPT Pro",
+      "modele_auteur": null,
+      "provenance_auteur": "Identification de ChatGPT Pro par JB dans sa demande ; modèle sous-jacent non précisé.",
+      "brut": "sources/a708271c820f9311.txt",
+      "sha256": "a708271c820f9311eb165f4c99329ae298164a6231e829e88f5043d14dd6d73c",
+      "octets": 116331,
+      "lignes": 3584,
+      "unite_ligne": "str.splitlines(), dernière ligne sans saut final comptée",
+      "empreinte_usine": "a708271c820f9311",
+      "pivot": "sources/a708271c820f9311.md",
+      "fiche": "sources/a708271c820f9311.fiche.json",
+      "etat": "sources/a708271c820f9311.etat.json",
+      "nature": "editeur",
+      "fiabilite": "C",
+      "statut_contenu": "critique-a-confronter-aux-sources-et-au-depot",
+      "segments": [
+        {
+          "nature": "audit-variante-A",
+          "de": 1,
+          "a": 1388
+        },
+        {
+          "nature": "audit-variante-B",
+          "de": 1389,
+          "a": 3584
+        }
+      ],
+      "sections": [
+        {
+          "titre": "# Audit complet du syllabus — état au 4 septembre 2026",
+          "de": 1,
+          "a": 32
+        },
+        {
+          "titre": "# 1. Le diagnostic quantitatif : ton « socle » n’est pas un socle",
+          "de": 33,
+          "a": 72
+        },
+        {
+          "titre": "# 2. Les corrections juridiques à effectuer avant toute production",
+          "de": 73,
+          "a": 383
+        },
+        {
+          "titre": "# 3. Les principales lacunes de couverture métier",
+          "de": 384,
+          "a": 581
+        },
+        {
+          "titre": "# 4. Audit domaine par domaine",
+          "de": 582,
+          "a": 600
+        },
+        {
+          "titre": "# 5. Pathologie : conserver l’ambition, supprimer l’illusion diagnostique",
+          "de": 601,
+          "a": 644
+        },
+        {
+          "titre": "# 6. Tes niveaux actuels ne mesurent pas correctement la difficulté",
+          "de": 645,
+          "a": 691
+        },
+        {
+          "titre": "# 7. Les changements de niveau que je ferais concrètement",
+          "de": 692,
+          "a": 811
+        },
+        {
+          "titre": "# 8. Remplacer l’arbre disciplinaire par un graphe de missions",
+          "de": 812,
+          "a": 865
+        },
+        {
+          "titre": "# 9. Les cas intégrateurs doivent devenir le cœur du produit",
+          "de": 866,
+          "a": 940
+        },
+        {
+          "titre": "# 10. Refonte des modalités pédagogiques",
+          "de": 941,
+          "a": 1013
+        },
+        {
+          "titre": "# 11. Le parcours de treize semaines que je construirais",
+          "de": 1014,
+          "a": 1045
+        },
+        {
+          "titre": "# 12. Nouvelle organisation du « socle »",
+          "de": 1046,
+          "a": 1116
+        },
+        {
+          "titre": "# 13. Refonte du modèle de données",
+          "de": 1117,
+          "a": 1183
+        },
+        {
+          "titre": "# 14. Gouvernance des sources : ta liste blanche est bonne, mais insuffisante",
+          "de": 1184,
+          "a": 1282
+        },
+        {
+          "titre": "# 15. Les métriques à suivre",
+          "de": 1283,
+          "a": 1320
+        },
+        {
+          "titre": "# 16. Ce que je conserverais absolument",
+          "de": 1321,
+          "a": 1346
+        },
+        {
+          "titre": "# 17. Ce que je changerais immédiatement dans `copro.json`",
+          "de": 1347,
+          "a": 1363
+        },
+        {
+          "titre": "# Conclusion nette",
+          "de": 1364,
+          "a": 1388
+        },
+        {
+          "titre": "# Audit complet du syllabus « Gestionnaire de copropriété »",
+          "de": 1389,
+          "a": 1450
+        },
+        {
+          "titre": "# 1. Les chiffres révèlent une contradiction structurelle",
+          "de": 1451,
+          "a": 1489
+        },
+        {
+          "titre": "# 2. Ce que je garderais",
+          "de": 1490,
+          "a": 1603
+        },
+        {
+          "titre": "# 3. Les corrections juridiques bloquantes",
+          "de": 1604,
+          "a": 1911
+        },
+        {
+          "titre": "# 4. La liste blanche de sources doit devenir une hiérarchie",
+          "de": 1912,
+          "a": 1950
+        },
+        {
+          "titre": "# 5. Tes cinq niveaux doivent être remplacés",
+          "de": 1951,
+          "a": 2034
+        },
+        {
+          "titre": "# 6. Il ne faut pas donner un niveau global à l’utilisateur",
+          "de": 2035,
+          "a": 2065
+        },
+        {
+          "titre": "# 7. « Doctrine » et « Frontière » doivent devenir des modes",
+          "de": 2066,
+          "a": 2099
+        },
+        {
+          "titre": "# 8. L’arbre visible doit reposer sur un graphe",
+          "de": 2100,
+          "a": 2136
+        },
+        {
+          "titre": "# 9. La véritable colonne vertébrale : les trois horloges du métier",
+          "de": 2137,
+          "a": 2180
+        },
+        {
+          "titre": "# 10. Je reconstruirais le parcours autour de douze boucles opérationnelles",
+          "de": 2181,
+          "a": 2199
+        },
+        {
+          "titre": "# 11. Il faut séparer les parcours utilisateurs",
+          "de": 2200,
+          "a": 2299
+        },
+        {
+          "titre": "# 12. La granularité actuelle reste trop irrégulière",
+          "de": 2300,
+          "a": 2350
+        },
+        {
+          "titre": "# 13. Le gestionnaire n’est pas un diagnostiqueur du bâtiment",
+          "de": 2351,
+          "a": 2396
+        },
+        {
+          "titre": "# 14. Audit par grand domaine",
+          "de": 2397,
+          "a": 2918
+        },
+        {
+          "titre": "# 15. Il manque une vraie branche « personnel du syndicat »",
+          "de": 2919,
+          "a": 2957
+        },
+        {
+          "titre": "# 16. Ce qu’il faut rendre plus accessible",
+          "de": 2958,
+          "a": 3004
+        },
+        {
+          "titre": "# 17. Ce qu’il faut rendre plus difficile",
+          "de": 3005,
+          "a": 3047
+        },
+        {
+          "titre": "# 18. Il faut distinguer connaissance, production et performance",
+          "de": 3048,
+          "a": 3081
+        },
+        {
+          "titre": "# 19. Le moteur pédagogique à construire",
+          "de": 3082,
+          "a": 3144
+        },
+        {
+          "titre": "# 20. Les types d’exercices doivent être beaucoup plus précis",
+          "de": 3145,
+          "a": 3172
+        },
+        {
+          "titre": "# 21. Les erreurs critiques ne doivent pas être compensables",
+          "de": 3173,
+          "a": 3212
+        },
+        {
+          "titre": "# 22. L’infini doit être dans les situations, pas dans les règles",
+          "de": 3213,
+          "a": 3270
+        },
+        {
+          "titre": "# 23. La provenance doit exister au niveau de chaque affirmation",
+          "de": 3271,
+          "a": 3311
+        },
+        {
+          "titre": "# 24. « Faire relire par un agent frais » est insuffisant",
+          "de": 3312,
+          "a": 3372
+        },
+        {
+          "titre": "# 25. Les métriques doivent changer",
+          "de": 3373,
+          "a": 3395
+        },
+        {
+          "titre": "# 26. Le parcours des douze premières semaines que je construirais",
+          "de": 3396,
+          "a": 3447
+        },
+        {
+          "titre": "# 27. Les deux premiers prototypes à construire",
+          "de": 3448,
+          "a": 3492
+        },
+        {
+          "titre": "# 28. Ordre de reconstruction recommandé",
+          "de": 3493,
+          "a": 3565
+        },
+        {
+          "titre": "# Conclusion",
+          "de": 3566,
+          "a": 3584
+        }
+      ],
+      "controle_usine": {
+        "pages": 43,
+        "pages_acceptees": 43,
+        "unites": 4,
+        "fiche_acceptee_le": "2026-09-04T11:35:39+02:00",
+        "limite": "Contrôles du pivot normalisé et de sa fiche, sans certification de la justesse des affirmations. Le brut fait foi."
+      }
+    },
+    {
+      "id": "strategie-agents",
+      "fourni_le": "2026-09-04",
+      "produit_auteur": null,
+      "modele_auteur": null,
+      "provenance_auteur": "Troisième rapport transmis par JB après les deux rapports ChatGPT Pro ; auteur exact non indiqué dans la pièce.",
+      "brut": "sources/3a763bd084d6ee3e.txt",
+      "sha256": "3a763bd084d6ee3e9d9e62f4f922c6fa57386adb9caa656e9a75ebb6c56c5754",
+      "octets": 40434,
+      "lignes": 726,
+      "unite_ligne": "str.splitlines(), dernière ligne sans saut final comptée",
+      "empreinte_usine": "3a763bd084d6ee3e",
+      "pivot": "sources/3a763bd084d6ee3e.md",
+      "fiche": "sources/3a763bd084d6ee3e.fiche.json",
+      "etat": "sources/3a763bd084d6ee3e.etat.json",
+      "nature": "editeur",
+      "fiabilite": "C",
+      "statut_contenu": "avis-strategique-a-confronter-au-contexte",
+      "segments": [
+        {
+          "nature": "rapport-strategique-unique",
+          "de": 1,
+          "a": 726
+        }
+      ],
+      "sections": [
+        {
+          "titre": "# Mon verdict",
+          "de": 1,
+          "a": 28
+        },
+        {
+          "titre": "# 0. L’alerte prioritaire : ne rends pas `labor` public",
+          "de": 29,
+          "a": 47
+        },
+        {
+          "titre": "# 1. Ce qui vient réellement de sortir",
+          "de": 48,
+          "a": 67
+        },
+        {
+          "titre": "# 2. Ton intuition « cerveau → mains → argent → monde physique » est correcte",
+          "de": 68,
+          "a": 100
+        },
+        {
+          "titre": "# 3. Ce qui va devenir bon marché — et ce qui restera rare",
+          "de": 101,
+          "a": 130
+        },
+        {
+          "titre": "# 4. Audit de `labor`",
+          "de": 131,
+          "a": 317
+        },
+        {
+          "titre": "# 5. Audit de l’Académie",
+          "de": 318,
+          "a": 462
+        },
+        {
+          "titre": "# 6. Les scénarios à un an et cinq ans",
+          "de": 463,
+          "a": 481
+        },
+        {
+          "titre": "# 7. La trajectoire que je choisirais sur douze mois",
+          "de": 482,
+          "a": 581
+        },
+        {
+          "titre": "# 8. La trajectoire à cinq ans que je privilégierais",
+          "de": 582,
+          "a": 640
+        },
+        {
+          "titre": "# 9. Ce qu’il ne faut pas construire maintenant",
+          "de": 641,
+          "a": 686
+        },
+        {
+          "titre": "# 10. Le compromis que je tranche comme meilleur",
+          "de": 687,
+          "a": 726
+        }
+      ],
+      "controle_usine": {
+        "pages": 8,
+        "pages_acceptees": 8,
+        "unites": 1,
+        "fiche_acceptee_le": "2026-09-04T12:39:05+02:00",
+        "limite": "Contrôles du pivot normalisé et de la fiche ; le brut fait foi, aucune adoption automatique des préconisations."
+      },
+      "analyse": "travail/rapports-chatgpt-pro/STRATEGIE.md"
+    }
+  ],
+  "mis_a_jour_le": "2026-09-04"
+}

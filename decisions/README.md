@@ -46,3 +46,4 @@ lisant le dépôt, une règle née d'un incident. Pas l'avancement
 | [0030](0030-la-banque-se-range-par-le-programme.md) | 04/09/2026 | Les 84 cartes se rangent par le programme (21 changements de domaine acceptés) ; un trou se comble par un chapitre neuf ; P1 à P5 |
 | [0031](0031-un-programme-par-metier-ifsi.md) | 04/09/2026 | Un programme par métier ; `ifsi.json` : l'arbre de l'infirmier, socle = entrée en IFSI, III = formation, IV et V au-delà |
 | [0032](0032-arrivee-compte-cursus-unique-demande-de-cursus.md) | 04/09/2026 | L'arrivée : mail pro et mot de passe, choix d'un cursus (un seul à la fois, sauvegarde automatique), « nouveau cursus » = demande à JB |
+| [0033](0033-ifsi-referentiel-2026.md) | 04/09/2026 | IFSI : référentiel 2026, voies distinctes, axes séparés et progression sans plafond ; amende 0031 |

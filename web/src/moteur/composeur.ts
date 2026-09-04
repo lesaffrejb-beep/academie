@@ -13,6 +13,7 @@
 import type { EtatCarte } from "./etats";
 import { aujourdhuiOrdinal } from "./etats";
 import { noeudsEtBranches, reglages } from "./progression";
+import { cartesServiables } from "./serviceabilite";
 import type { Banque, Carte, LigneJournal } from "../donnees/types";
 
 export type Alea = () => number;
@@ -208,7 +209,7 @@ export function compose(
   // Le cap ne FILTRE plus les cartes jouables : il tient la seance, mais
   // les revisions d ailleurs les plus en retard s y glissent quand meme
   // (BLUEPRINT §3). Le filtre se fait plus bas, la ou il a un sens.
-  const jouables = (banque.cartes ?? []).filter((c) => c.statut === "valide");
+  const jouables = cartesServiables(banque.cartes ?? [], journal, jour);
 
   const dues: { carte: Carte; etat: EtatCarte }[] = [];
   const neuvesToutes: Carte[] = [];
@@ -268,7 +269,7 @@ export function compose(
       ];
       pourquoi.push(`calendrier du métier : ${favoris.join(", ")} passent devant ce mois-ci`);
     }
-    brancheSocle = brancheSocleLaPlusFaible(banque.cartes ?? [], etats, banque, jour);
+    brancheSocle = brancheSocleLaPlusFaible(jouables, etats, banque, jour);
     if (brancheSocle && decision.quota) {
       const part = quotas.ponderation_socle ?? 0.5;
       const vises = Math.max(1, Math.trunc(decision.quota * part + 0.5));
@@ -307,16 +308,22 @@ export function composeExamen(
   banque: Banque,
   region: string,
   graine = 0,
+  options: Pick<OptionsSeance, "aujourdhui" | "journal"> = {},
 ): Carte[] {
   const nb = banque.progression?.examen_nb_cartes ?? 12;
-  const pool = (banque.cartes ?? [])
-    .filter((c) => c.domaine === region && c.statut === "valide")
+  const pool = cartesServiables(banque.cartes ?? [], options.journal, options.aujourdhui)
+    .filter((c) => c.domaine === region)
     .sort((a, b) => String(a.id).localeCompare(String(b.id)));
   return melange(pool, alea(graine)).slice(0, nb);
 }
 
 /** Au hasard : n cartes jouables, toutes regions confondues. */
-export function auHasard(banque: Banque, n: number, graine: number): Carte[] {
-  const pool = (banque.cartes ?? []).filter((c) => c.statut === "valide");
+export function auHasard(
+  banque: Banque,
+  n: number,
+  graine: number,
+  options: Pick<OptionsSeance, "aujourdhui" | "journal"> = {},
+): Carte[] {
+  const pool = cartesServiables(banque.cartes ?? [], options.journal, options.aujourdhui);
   return melange(pool, alea(graine)).slice(0, n);
 }

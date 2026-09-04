@@ -98,7 +98,7 @@ async function tailleDeLaFile(page: Page): Promise<number> {
 /** Charge une fois en ligne et attend que tout soit en cache. */
 async function amorce(page: Page): Promise<void> {
   await page.goto("./");
-  await expect(page.getByRole("button", { name: "Séance" })).toBeVisible();
+  await expect(page.getByRole("button", { name: "Séance", exact: true })).toBeVisible();
   // Le service worker doit avoir pris la main : sans lui, « hors-ligne »
   // ne mesurerait que le cache HTTP du navigateur.
   await page.waitForFunction(

@@ -2,7 +2,7 @@
  "_": "Programme du gestionnaire de copropriété en données. GÉNÉRÉ par programme/genere_copro.py : ne pas éditer à la main, éditer les données du script. Fait foi sur PROGRAMME.md et SYLLABUS.md. Les identifiants de chapitres sont immuables une fois une carte publiée dessus.",
  "version": "0.2",
  "metier": "gestionnaire de copropriété",
- "genere_le": "2026-09-03",
+ "genere_le": "2026-09-04",
  "niveaux": {
   "1": "Repères",
   "2": "Mécanismes",
@@ -24,8 +24,8 @@
    "immobilier": 2,
    "cabinet": 3
   },
-  "chapitres": 331,
-  "cartes_cible": 2470
+  "chapitres": 333,
+  "cartes_cible": 2486
  },
  "semaine_type": {
   "_": "Couleur des jours (BLUEPRINT §4, decisions/0016).",
@@ -211,7 +211,7 @@
   ],
   "Dalkia (exploitant)": [
    "equipements.chauffage.les-exploitants-de-chauffage",
-   "equipements.chauffage.les-contrats-p1-a-p4"
+   "equipements.chauffage.les-contrats-p1-a-p5"
   ],
   "WAAT (opérateur de recharge)": [
    "energie.irve.les-operateurs-et-leurs-contrats",
@@ -1356,11 +1356,13 @@
    "titre": "Le syndicat des copropriétaires",
    "niveau": 1,
    "niveau_nom": "Repères",
-   "competence": "Dire ce qu'est le syndicat, sa personnalité et sa responsabilité",
+   "competence": "Expliquer la personnalité et la responsabilité du syndicat, puis repérer les régimes des petites copropriétés et des syndicats à deux copropriétaires",
    "notions": [
     "article 14",
     "personnalité civile",
-    "responsabilité"
+    "responsabilité",
+    "articles 41-8 et suivants",
+    "lots et nombre de copropriétaires"
    ],
    "prerequis": [],
    "ponts": [],
@@ -1444,12 +1446,14 @@
    "titre": "Le conseil syndical",
    "niveau": 1,
    "niveau_nom": "Repères",
-   "competence": "Dire ce que fait et ne fait pas le conseil syndical",
+   "competence": "Distinguer missions, désignation et dérogations relatives au conseil syndical",
    "notions": [
     "article 21",
+    "article 25 c",
     "assistance",
     "contrôle",
-    "consultation"
+    "consultation",
+    "petites copropriétés"
    ],
    "prerequis": [],
    "ponts": [],
@@ -1649,6 +1653,39 @@
    "statut": "a-ecrire"
   },
   {
+   "id": "droit.assemblee.la-notification",
+   "domaine": "droit",
+   "branche": "assemblee",
+   "sous_branche": "preparer",
+   "titre": "La notification",
+   "niveau": 2,
+   "niveau_nom": "Mécanismes",
+   "competence": "Choisir un procédé de notification admis, respecter la demande postale et déterminer le point de départ du délai",
+   "notions": [
+    "article 42-1",
+    "décret articles 64 à 64-4",
+    "notification électronique",
+    "prestataire qualifié",
+    "choix postal et prise d’effet",
+    "preuve de réception",
+    "remise contre récépissé"
+   ],
+   "prerequis": [
+    "droit.assemblee.la-convocation-forme-et-delai"
+   ],
+   "ponts": [],
+   "exercices": [
+    "cas",
+    "qcm",
+    "flash"
+   ],
+   "exercice_dominant": "cas",
+   "cartes_cible": 8,
+   "etude_minutes": 60,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
    "id": "droit.assemblee.l-ordre-du-jour-et-les-inscriptions",
    "domaine": "droit",
    "branche": "assemblee",
@@ -1711,13 +1748,15 @@
    "titre": "Pouvoirs et représentation",
    "niveau": 2,
    "niveau_nom": "Mécanismes",
-   "competence": "Vérifier les pouvoirs et appliquer les plafonds de mandats",
+   "competence": "Vérifier les délégations, le cumul des voix et les exceptions de l’article 22",
    "notions": [
     "article 22",
-    "mandat",
-    "trois pouvoirs",
-    "cinq pour cent",
-    "pouvoir en blanc"
+    "trois délégations",
+    "dix pour cent au-delà de trois",
+    "voix propres et déléguées",
+    "exception du syndicat secondaire",
+    "pouvoir en blanc",
+    "interdictions de mandat"
    ],
    "prerequis": [],
    "ponts": [],
@@ -1863,6 +1902,7 @@
    ],
    "prerequis": [
     "droit.assemblee.la-convocation-forme-et-delai",
+    "droit.assemblee.la-notification",
     "droit.assemblee.l-ordre-du-jour-et-les-inscriptions",
     "droit.assemblee.les-pieces-jointes-obligatoires"
    ],
@@ -1895,6 +1935,7 @@
    ],
    "prerequis": [
     "droit.assemblee.la-convocation-forme-et-delai",
+    "droit.assemblee.la-notification",
     "droit.assemblee.l-ordre-du-jour-et-les-inscriptions",
     "droit.assemblee.les-pieces-jointes-obligatoires"
    ],
@@ -1949,10 +1990,12 @@
    "titre": "L'article 24",
    "niveau": 1,
    "niveau_nom": "Repères",
-   "competence": "Calculer une majorité simple, abstentions comprises, et dire ce qui s'y vote",
+   "competence": "Calculer la majorité de l’article 24 en excluant les abstentions des voix exprimées et identifier les décisions concernées",
    "notions": [
-    "voix exprimées",
+    "voix exprimées pour et contre",
     "présents et représentés",
+    "vote par correspondance",
+    "abstentions exclues",
     "gestion courante"
    ],
    "prerequis": [],
@@ -1976,12 +2019,14 @@
    "titre": "L'article 25 et la passerelle",
    "niveau": 2,
    "niveau_nom": "Mécanismes",
-   "competence": "Calculer une majorité absolue et appliquer la passerelle du second vote",
+   "competence": "Calculer la majorité absolue et distinguer le second vote immédiat de la nouvelle assemblée réservée aux travaux visés par l’article 25 f",
    "notions": [
-    "tous les copropriétaires",
-    "tiers",
-    "second vote",
-    "article 25-1"
+    "toutes les voix du syndicat",
+    "tiers des voix",
+    "article 25-1",
+    "second vote immédiat",
+    "travaux article 25 f",
+    "projet identique et délai de trois mois"
    ],
    "prerequis": [
     "droit.majorites.l-article-24",
@@ -2007,12 +2052,15 @@
    "titre": "L'article 26 et l'unanimité",
    "niveau": 1,
    "niveau_nom": "Repères",
-   "competence": "Reconnaître une décision à double majorité ou à l'unanimité",
+   "competence": "Reconnaître une décision à double majorité ou à l’unanimité et vérifier les conditions de la passerelle de l’article 26-1",
    "notions": [
     "double majorité",
     "deux tiers",
     "unanimité",
-    "aliénation"
+    "aliénation",
+    "article 26-1",
+    "seuils en membres et en voix",
+    "second vote à la majorité de toutes les voix"
    ],
    "prerequis": [],
    "ponts": [],
@@ -2035,12 +2083,14 @@
    "titre": "Les cas particuliers",
    "niveau": 2,
    "niveau_nom": "Mécanismes",
-   "competence": "Trouver la majorité dérogatoire d'une décision atypique",
+   "competence": "Identifier le régime de la copropriété et la majorité dérogatoire applicable à une décision atypique",
    "notions": [
     "accessibilité",
     "surélévation",
-    "travaux d'intérêt collectif",
-    "individualisation"
+    "travaux d’intérêt collectif",
+    "individualisation",
+    "petites copropriétés",
+    "syndicats à deux copropriétaires"
    ],
    "prerequis": [
     "droit.majorites.l-article-24",
@@ -2333,12 +2383,14 @@
    "titre": "Le plan pluriannuel et le fonds de travaux",
    "niveau": 2,
    "niveau_nom": "Mécanismes",
-   "competence": "Expliquer le plan pluriannuel, le fonds et leurs obligations",
+   "competence": "Distinguer les obligations de projet de plan, son adoption et le fonds de travaux selon le champ de chaque texte",
    "notions": [
-    "article 14-2",
-    "PPT",
-    "fonds de travaux",
-    "cotisation"
+    "article 14-2 : PPT",
+    "article 14-2-1 : fonds",
+    "habitation",
+    "âge de l’immeuble",
+    "adoption du plan",
+    "cotisation et suspension décidées en AG"
    ],
    "prerequis": [],
    "ponts": [],
@@ -3296,12 +3348,13 @@
    "titre": "Le ravalement",
    "niveau": 1,
    "niveau_nom": "Repères",
-   "competence": "Dire ce qu'est un ravalement, quand il est obligatoire et ce qu'il comprend",
+   "competence": "Vérifier le dispositif local applicable puis distinguer entretien, ravalement et injonction",
    "notions": [
     "ravalement",
-    "obligation",
-    "injonction",
-    "dix ans"
+    "champ territorial",
+    "CCH L126-2 et L126-3",
+    "obligation locale",
+    "injonction"
    ],
    "prerequis": [],
    "ponts": [],
@@ -3537,11 +3590,14 @@
    "titre": "La visite de toiture",
    "niveau": 3,
    "niveau_nom": "Praticien",
-   "competence": "Conduire une visite de toiture en sécurité et en écrire le compte rendu",
+   "competence": "Préparer, faire réaliser et exploiter une inspection de toiture en vérifiant les conditions d’accès et les limites de son intervention",
    "notions": [
-    "sécurité",
+    "professionnel compétent",
+    "accès sécurisé",
+    "protections collectives",
     "points de contrôle",
-    "compte rendu"
+    "compte rendu",
+    "limites du repérage visuel"
    ],
    "prerequis": [
     "pathologie.toitures.cheneaux-et-eaux-pluviales"
@@ -3800,12 +3856,14 @@
    "titre": "1950-1975 : béton, amiante, plomb",
    "niveau": 1,
    "niveau_nom": "Repères",
-   "competence": "Reconnaître le bâti des Trente Glorieuses et ses risques",
+   "competence": "Reconnaître le bâti des Trente Glorieuses sans déduire de cette période seule la présence de matériaux dangereux ni les obligations de diagnostic",
    "notions": [
     "préfabrication",
+    "matériaux à vérifier",
     "amiante",
     "plomb",
-    "balcons"
+    "balcons",
+    "période historique distincte du champ réglementaire"
    ],
    "prerequis": [],
    "ponts": [],
@@ -3946,12 +4004,14 @@
    "titre": "Amiante et dossier technique amiante",
    "niveau": 1,
    "niveau_nom": "Repères",
-   "competence": "Dire ce que contient un DTA et quand il s'impose",
+   "competence": "Identifier le champ du DTA selon le bâtiment et son permis, puis le distinguer du repérage adapté aux travaux envisagés",
    "notions": [
     "amiante",
     "DTA",
-    "repérage",
-    "avant travaux"
+    "date du permis",
+    "champ documentaire",
+    "repérage avant travaux",
+    "professionnel compétent"
    ],
    "prerequis": [],
    "ponts": [],
@@ -3974,11 +4034,13 @@
    "titre": "Plomb",
    "niveau": 1,
    "niveau_nom": "Repères",
-   "competence": "Dire quand un diagnostic plomb s'impose et ce qu'il déclenche",
+   "competence": "Vérifier le champ du CREP selon l’usage, la date de construction et les parties concernées, puis distinguer les investigations liées aux travaux",
    "notions": [
     "plomb",
     "CREP",
-    "parties communes"
+    "parties communes",
+    "construction avant 1949 pour le champ du CREP",
+    "risque avant travaux"
    ],
    "prerequis": [],
    "ponts": [],
@@ -4409,19 +4471,20 @@
    "statut": "a-ecrire"
   },
   {
-   "id": "equipements.chauffage.les-contrats-p1-a-p4",
+   "id": "equipements.chauffage.les-contrats-p1-a-p5",
    "domaine": "equipements",
    "branche": "chauffage",
    "sous_branche": "gaz-fioul",
-   "titre": "Les contrats P1 à P4",
+   "titre": "Les contrats P1 à P5",
    "niveau": 2,
    "niveau_nom": "Mécanismes",
-   "competence": "Expliquer P1, P2, P3, P4 et ce que chacun couvre",
+   "competence": "Expliquer P1, P2, P3, P4, P5 et ce que chacun couvre",
    "notions": [
     "P1",
     "P2",
     "P3",
     "P4",
+    "P5",
     "exploitant",
     "intéressement"
    ],
@@ -4578,7 +4641,7 @@
     "responsabilité"
    ],
    "prerequis": [
-    "equipements.chauffage.les-contrats-p1-a-p4",
+    "equipements.chauffage.les-contrats-p1-a-p5",
     "equipements.chauffage.les-exploitants-de-chauffage",
     "equipements.chauffage.individualisation-des-frais",
     "equipements.chauffage.eau-chaude-sanitaire-et-legionelles"
@@ -4902,12 +4965,14 @@
    "titre": "Un dégât des eaux vu de la plomberie",
    "niveau": 3,
    "niveau_nom": "Praticien",
-   "competence": "Diagnostiquer l'origine probable d'un dégât des eaux à partir des réseaux",
+   "competence": "Formuler des hypothèses sur l’origine d’un dégât des eaux à partir des réseaux et demander les investigations qui permettent de les vérifier",
    "notions": [
-    "origine",
+    "hypothèse",
     "colonne",
     "joint",
-    "étanchéité"
+    "étanchéité",
+    "professionnel compétent",
+    "confirmation de l’origine"
    ],
    "prerequis": [
     "equipements.plomberie.surpresseur-compteurs-disconnecteur",
@@ -4961,11 +5026,14 @@
    "titre": "La NF C 15-100 pour un gestionnaire",
    "niveau": 2,
    "niveau_nom": "Mécanismes",
-   "competence": "Dire ce que la norme électrique impose dans les communs",
+   "competence": "Lire le champ d’un contrôle électrique et distinguer réparation, mise en sécurité et conformité applicable aux travaux envisagés",
    "notions": [
     "NF C 15-100",
-    "mise en conformité",
-    "diagnostic"
+    "édition applicable",
+    "neuf et existant",
+    "champ du contrôle",
+    "mise en sécurité",
+    "professionnel compétent"
    ],
    "prerequis": [
     "equipements.electricite.tgbt-et-colonnes-montantes"
@@ -5140,9 +5208,11 @@
    "titre": "Désenfumage et extincteurs",
    "niveau": 1,
    "niveau_nom": "Repères",
-   "competence": "Dire ce que la sécurité incendie impose dans un immeuble d'habitation",
+   "competence": "Identifier la famille, la date et les équipements du bâtiment pour rechercher les obligations incendie applicables et orienter les contrôles",
    "notions": [
     "arrêté de 1986",
+    "famille du bâtiment",
+    "date et champ",
     "désenfumage",
     "extincteur",
     "porte coupe-feu"
@@ -5736,11 +5806,13 @@
    "titre": "Le fonds de travaux",
    "niveau": 2,
    "niveau_nom": "Mécanismes",
-   "competence": "Expliquer le fonds de travaux, son taux et son usage",
+   "competence": "Calculer la cotisation minimale selon l’adoption du PPT et vérifier les conditions d’une suspension décidée par l’assemblée",
    "notions": [
-    "fonds de travaux",
-    "cotisation",
-    "cinq pour cent",
+    "article 14-2-1",
+    "cinq pour cent du budget",
+    "PPT adopté : maximum des deux planchers",
+    "deux et demi pour cent du montant des travaux du plan",
+    "conditions cumulatives de suspension avec PPT",
     "affectation"
    ],
    "prerequis": [
@@ -5766,12 +5838,14 @@
    "titre": "Avances et emprunt collectif",
    "niveau": 2,
    "niveau_nom": "Mécanismes",
-   "competence": "Distinguer avance de trésorerie, fonds de travaux et emprunt",
+   "competence": "Distinguer avances, fonds de travaux et régimes d’emprunt collectif selon leur champ et leurs modalités d’adhésion",
    "notions": [
     "avance",
     "fonds de roulement",
     "emprunt",
-    "remboursement"
+    "remboursement",
+    "article 26-4",
+    "adhésion individuelle ou présumée"
    ],
    "prerequis": [
     "comptabilite.budget.les-appels-de-fonds"
@@ -5796,12 +5870,14 @@
    "titre": "L'emprunt collectif à adhésion individuelle",
    "niveau": 2,
    "niveau_nom": "Mécanismes",
-   "competence": "Expliquer l'emprunt collectif à adhésion individuelle et la caution",
+   "competence": "Expliquer l’adhésion individuelle et la caution, puis les distinguer de l’adhésion présumée aux emprunts entrant dans l’article 26-4 III",
    "notions": [
-    "emprunt collectif",
-    "adhésion",
+    "article 26-4",
+    "adhésion individuelle",
     "caution",
-    "article 26-4"
+    "champ du III",
+    "refus notifié et paiement intégral de la quote-part",
+    "délais depuis notification du PV"
    ],
    "prerequis": [
     "comptabilite.budget.le-pret-avance-mutation-et-les-financements-nouveaux"
@@ -6321,13 +6397,17 @@
    "titre": "Les mentions obligatoires d'une facture",
    "niveau": 2,
    "niveau_nom": "Mécanismes",
-   "competence": "Vérifier qu'une facture est conforme avant de la payer",
+   "competence": "Vérifier les mentions d’une facture et identifier l’entité facturée, son assujettissement et la nature du flux pour déterminer le circuit applicable",
    "notions": [
     "mentions",
     "SIREN",
     "TVA",
     "date",
-    "numéro"
+    "numéro",
+    "entité facturée",
+    "assujettissement",
+    "facturation électronique",
+    "appel de charges distinct d’une facture"
    ],
    "prerequis": [],
    "ponts": [],
@@ -6580,12 +6660,15 @@
    "titre": "Les délais de déclaration",
    "niveau": 1,
    "niveau_nom": "Repères",
-   "competence": "Déclarer un sinistre dans le délai qui s'applique",
+   "competence": "Déclarer dès connaissance du sinistre, déterminer le délai contractuel applicable et vérifier les conditions d’une déchéance pour retard",
    "notions": [
-    "cinq jours",
-    "deux jours",
-    "dix jours",
-    "déchéance"
+    "article L113-2",
+    "plancher de cinq jours ouvrés",
+    "vol : deux jours ouvrés minimum",
+    "CatNat : trente jours après publication",
+    "article L125-2",
+    "clause de déchéance",
+    "préjudice et force majeure"
    ],
    "prerequis": [],
    "ponts": [],
@@ -6754,12 +6837,15 @@
    "titre": "La convention IRSI et ses tranches",
    "niveau": 1,
    "niveau_nom": "Repères",
-   "competence": "Dire à qui revient la gestion d'un dégât des eaux selon son montant",
+   "competence": "Vérifier le champ de la convention avant d’identifier gestionnaire, recherche de fuite, indemnisation et responsabilités",
    "notions": [
-    "IRSI",
-    "tranche",
+    "convention entre assureurs",
+    "champ et exclusions",
+    "montant par local",
+    "occupation",
     "assureur gestionnaire",
-    "montant"
+    "droits légaux distincts",
+    "texte conventionnel actuel à retrouver"
    ],
    "prerequis": [],
    "ponts": [],
@@ -7533,12 +7619,14 @@
    "titre": "L'avocat et quand il est obligatoire",
    "niveau": 1,
    "niveau_nom": "Repères",
-   "competence": "Dire quand l'avocat est obligatoire et comment on le mandate",
+   "competence": "Identifier la juridiction, la matière et la procédure pour vérifier la représentation obligatoire et ses dispenses avant d’appliquer un seuil",
    "notions": [
     "avocat",
-    "représentation obligatoire",
-    "dix mille euros",
-    "honoraires"
+    "CPC articles 760 et 761",
+    "compétence exclusive",
+    "dix mille euros selon procédure",
+    "dispenses",
+    "mandat et honoraires"
    ],
    "prerequis": [],
    "ponts": [],
@@ -7808,6 +7896,36 @@
    "statut": "a-ecrire"
   },
   {
+   "id": "procedure.recouvrement.la-decheance-du-terme",
+   "domaine": "procedure",
+   "branche": "recouvrement",
+   "sous_branche": "titre",
+   "titre": "La déchéance du terme",
+   "niveau": 2,
+   "niveau_nom": "Mécanismes",
+   "competence": "Identifier l'assiette et le déclenchement de la déchéance du terme",
+   "notions": [
+    "article 19-2",
+    "mise en demeure",
+    "exigibilité",
+    "déchéance du terme"
+   ],
+   "prerequis": [
+    "procedure.avant-le-proces.mise-en-demeure-recommande-sommation"
+   ],
+   "ponts": [],
+   "exercices": [
+    "datation",
+    "qcm",
+    "cas"
+   ],
+   "exercice_dominant": "datation",
+   "cartes_cible": 8,
+   "etude_minutes": 60,
+   "satellite": false,
+   "statut": "a-ecrire"
+  },
+  {
    "id": "procedure.recouvrement.l-injonction-de-payer",
    "domaine": "procedure",
    "branche": "recouvrement",
@@ -7873,12 +7991,14 @@
    "titre": "Hypothèque légale et privilège",
    "niveau": 2,
    "niveau_nom": "Mécanismes",
-   "competence": "Inscrire l'hypothèque légale du syndicat et expliquer le privilège",
+   "competence": "Distinguer l’hypothèque inscrite de l’article 19 et l’hypothèque légale spéciale actuelle, puis situer l’ancien privilège immobilier spécial",
    "notions": [
-    "hypothèque légale",
+    "hypothèque légale inscrite",
     "article 19",
-    "privilège",
-    "article 19-1"
+    "article 19-1",
+    "article 2402 du Code civil",
+    "hypothèque légale spéciale",
+    "ancien privilège immobilier spécial"
    ],
    "prerequis": [],
    "ponts": [],
@@ -7936,6 +8056,7 @@
     "délai"
    ],
    "prerequis": [
+    "procedure.recouvrement.la-decheance-du-terme",
     "procedure.recouvrement.l-injonction-de-payer",
     "procedure.recouvrement.l-assignation"
    ],
@@ -8942,9 +9063,10 @@
    "titre": "Ravalement obligatoire et enseignes",
    "niveau": 2,
    "niveau_nom": "Mécanismes",
-   "competence": "Expliquer le ravalement obligatoire et les règles d'enseigne",
+   "competence": "Rechercher le dispositif local de ravalement obligatoire et les règles applicables aux enseignes",
    "notions": [
     "ravalement",
+    "champ territorial",
     "injonction",
     "enseigne"
    ],
@@ -9346,11 +9468,14 @@
    "titre": "La méthode de calcul",
    "niveau": 2,
    "niveau_nom": "Mécanismes",
-   "competence": "Expliquer la méthode de calcul du DPE et ses entrées",
+   "competence": "Expliquer les entrées du calcul du DPE en vérifiant la version réglementaire applicable à la date du diagnostic",
    "notions": [
     "3CL",
     "énergie primaire",
-    "émissions"
+    "émissions",
+    "date du diagnostic",
+    "version applicable",
+    "paramètres réglementaires sourcés"
    ],
    "prerequis": [
     "energie.dpe.histoire-du-dpe",
@@ -9404,10 +9529,12 @@
    "titre": "Le DPE collectif et son calendrier",
    "niveau": 2,
    "niveau_nom": "Mécanismes",
-   "competence": "Dire quand le DPE collectif est obligatoire et à quoi il sert",
+   "competence": "Vérifier le champ, le territoire et le calendrier du DPE collectif avant de conclure à une obligation",
    "notions": [
     "DPE collectif",
+    "date du permis",
     "calendrier",
+    "territoire",
     "taille de copropriété"
    ],
    "prerequis": [
@@ -9610,11 +9737,14 @@
    "titre": "Le fonds de travaux",
    "niveau": 1,
    "niveau_nom": "Repères",
-   "competence": "Relier le fonds de travaux au PPT",
+   "competence": "Relier le plan adopté au double plancher de cotisation et à l’affectation du fonds de travaux",
    "notions": [
-    "fonds",
-    "PPT",
-    "cotisation"
+    "article 14-2-1",
+    "PPT adopté ou non",
+    "budget prévisionnel",
+    "montant des travaux du plan",
+    "cotisation",
+    "vote de suspension"
    ],
    "prerequis": [],
    "ponts": [],
@@ -9722,11 +9852,13 @@
    "titre": "Tarifs réglementés et marché",
    "niveau": 1,
    "niveau_nom": "Repères",
-   "competence": "Distinguer tarif réglementé et offre de marché pour un immeuble",
+   "competence": "Distinguer les offres de marché du gaz et l’éligibilité aux tarifs réglementés de l’électricité selon le contrat et le client",
    "notions": [
-    "TRV",
-    "marché",
-    "éligibilité"
+    "fin des TRV gaz",
+    "offres de marché",
+    "TRV électricité",
+    "article L337-7",
+    "éligibilité du client et du contrat"
    ],
    "prerequis": [],
    "ponts": [],
@@ -10310,12 +10442,14 @@
    "titre": "État daté et pré-état daté",
    "niveau": 2,
    "niveau_nom": "Mécanismes",
-   "competence": "Établir un état daté conforme et facturé au bon prix",
+   "competence": "Distinguer l’état daté réglementé, les informations dues à l’acquéreur et une prestation distincte expressément commandée",
    "notions": [
+    "décret article 5",
+    "CCH L721-2",
     "état daté",
-    "pré-état daté",
-    "plafond",
-    "contenu"
+    "informations précontractuelles",
+    "commande préalable",
+    "plafond de l’état daté"
    ],
    "prerequis": [
     "immobilier.vente.du-compromis-a-l-acte",
@@ -10486,12 +10620,15 @@
    "titre": "Meublé de tourisme et règlement de copropriété",
    "niveau": 2,
    "niveau_nom": "Mécanismes",
-   "competence": "Répondre à une question de location courte en copropriété",
+   "competence": "Vérifier le règlement, les conditions d’une interdiction et les règles communales avant de répondre sur une location touristique",
    "notions": [
     "meublé de tourisme",
     "règlement",
     "destination",
-    "déclaration"
+    "article 26 d",
+    "résidence principale",
+    "information du syndic",
+    "règles communales"
    ],
    "prerequis": [
     "immobilier.location.le-bail-d-habitation",
@@ -10985,10 +11122,12 @@
    "titre": "Carte professionnelle, garantie, assurance",
    "niveau": 1,
    "niveau_nom": "Repères",
-   "competence": "Dire ce que la loi Hoguet exige pour exercer",
+   "competence": "Identifier au nom de qui l’on agit et vérifier la carte ou l’habilitation, l’étendue des pouvoirs et les garanties requises",
    "notions": [
-    "loi Hoguet",
-    "carte",
+    "loi Hoguet articles 3 et 4",
+    "titulaire",
+    "collaborateur habilité",
+    "délégation et limites",
     "garantie financière",
     "RC pro"
    ],
@@ -11760,11 +11899,15 @@
    "titre": "Lutte contre le blanchiment",
    "niveau": 1,
    "niveau_nom": "Repères",
-   "competence": "Dire les obligations de vigilance du syndic",
+   "competence": "Déterminer quelles activités du cabinet relèvent de la LCB-FT et distinguer ce cadre des contrôles contre la fraude au paiement",
    "notions": [
-    "TRACFIN",
+    "CMF L561-2",
+    "loi Hoguet article 1",
+    "activité exercée",
+    "champ de l’assujettissement",
     "vigilance",
-    "déclaration"
+    "TRACFIN",
+    "fraude au paiement"
    ],
    "prerequis": [],
    "ponts": [],
@@ -12035,7 +12178,7 @@
     "communication"
    ],
    "prerequis": [
-    "equipements.chauffage.les-contrats-p1-a-p4",
+    "equipements.chauffage.les-contrats-p1-a-p5",
     "cabinet.negocier.avec-un-prestataire",
     "droit.travaux.travaux-votes-et-travaux-urgents"
    ],
@@ -12426,15 +12569,15 @@
   }
  ],
  "compte": {
-  "chapitres": 387,
+  "chapitres": 389,
   "par_niveau": {
    "1": 117,
-   "2": 191,
+   "2": 193,
    "3": 58,
    "4": 19,
    "5": 2
   },
-  "cartes_cible_total": 2974,
+  "cartes_cible_total": 2990,
   "sous_branches": 18
  }
 }

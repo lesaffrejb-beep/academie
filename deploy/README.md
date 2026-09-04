@@ -1,5 +1,7 @@
 # deploy/ : le VPS, et l'auto-hébergement
 
+**Reprise du 04/09, publication demandée par JB :** [état livré, limites et suite](../travail/2026-09-04-publication-et-suite.md). Ce point actualise les mentions historiques de pause et de publication ci-dessous.
+
 État au 02/09/2026 : `academie-publication.service` et son timer
 publient chaque jour à 05:15 la banque validée
 (`genere.py --couches banque`) vers `/var/lib/academie/publication/`,

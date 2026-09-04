@@ -13,3 +13,7 @@ etat/*
 site/vecteurs-fsrs.json
 site/vecteurs-progression.json
 site/vecteurs-semaine.json
+
+# Traces locales de poste et sauvegardes de pause (conservées sur le Mac)
+.DS_Store
+travail/sauvegardes/

@@ -3,8 +3,9 @@
 Le programme d'un métier en données : `copro.json` pour le gestionnaire
 de copropriété. `catalogue.json` liste les parcours proposés à l'arrivée
 (`COMMENCER.md` §2) ; ses compteurs se mettent à jour à chaque lot de
-chapitres. Un fichier par métier : `ifsi.json` (infirmier, généré par
-`genere_ifsi.py`, lisible dans `../SYLLABUS-IFSI.md`, `decisions/0031`). Le texte lisible est `../PROGRAMME.md` ; quand les deux
+chapitres. Un fichier courant par métier : `ifsi.json` (infirmier,
+source éditable de `genere_ifsi.py`, lisible dans `../SYLLABUS-IFSI.md`,
+`decisions/0033`). Le texte lisible copro est `../PROGRAMME.md` ; quand les deux
 divergent, **le JSON fait foi** et le texte se corrige.
 
 Ce que porte le fichier :
@@ -19,6 +20,47 @@ Ce que porte le fichier :
 - `socle` : la liste des domaines et niveaux qui définissent le socle ;
 - `positionnement` : la répartition des vingt questions du quiz ;
 - `semaine_type` : la couleur des jours par défaut.
+
+## Programme infirmier courant
+
+`ifsi.json` porte le référentiel DEI-2026 et les liens officiels datés.
+Le squelette précédent est conservé à l'identique dans
+`versions/ifsi-2009.json`, sans devenir une référence clinique validée.
+Le valideur courant ne le mélange pas aux parcours proposés.
+
+Chaque chapitre courant possède un rattachement pédagogique aux
+compétences, une étape de formation, une difficulté, une criticité,
+des objectifs fins et une limite explicite de validation numérique.
+L'ancien niveau, le titre et les UE historiques sont conservés dans
+`legacy`. Le rattachement est une proposition éditoriale. Une liste
+d'UE vide signifie que l'affectation fine reste à établir.
+
+Pour un ajout sans prédécesseur, `legacy` porte explicitement un titre
+et un niveau nuls, et aucune UE. Ce cas est refusé sur un chapitre
+historique. L'étape est un premier point d'appui, non exclusif, qui ne
+précède pas celle de ses prérequis. Les objectifs de cadrage sont affinés
+sur les supports et les preuves du pilote ; les notions ne deviennent
+pas automatiquement chacune un objectif supplémentaire.
+
+`parcours` sépare Parcoursup, FPC et accès spécifiques. Le diagnostic
+et les semaines renvoient aux identifiants de chapitre. Un prérequis
+indirect ne doit pas réintroduire une autre voie ou un exercice
+facultatif dans un parcours obligatoire.
+
+L'arbre continue après le diplôme : prise de poste, spécialités,
+approfondissements et recherche. `specialisations` réutilise les
+chapitres communs, la boîte et la veille apportent de nouvelles
+branches. Une version est inventoriable ; l'apprentissage n'a pas de
+plafond. Les données pédagogiques du futur moteur de cas sont des
+spécifications, pas des fonctionnalités déjà actives.
+
+`python3 programme/genere_ifsi.py` rend le syllabus après contrôle,
+sans modifier le JSON. `python3 programme/genere_ifsi.py --check`
+refuse un syllabus périmé sans écrire. `app/valide_ifsi.py` complète
+les contrôles généraux ; `app/tests_ifsi.py` verrouille également la
+copie historique et la stabilité des identifiants.
+
+## Contrat commun et historique copro
 
 Ce que le fichier n'est pas : une banque. Il ne contient ni leçon ni
 carte. Le moteur ne le lit pas encore. Depuis le 03/09, `app/valide_programme.py`

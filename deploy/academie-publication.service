@@ -1,5 +1,5 @@
 [Unit]
-Description=Académie — publication autonome de la banque validée
+Description=Académie : banque validée et client hors ligne
 After=network-online.target
 Wants=network-online.target
 
@@ -8,13 +8,14 @@ Type=oneshot
 User=academie
 Group=academie
 WorkingDirectory=/home/academie/repo
-ExecStart=/usr/bin/python3 app/genere.py --couches banque --sortie /var/lib/academie/publication/banque.json
+ExecStart=/usr/bin/node /home/academie/repo/web/preparer-publication.mjs --sortie /var/lib/academie/publication --travail /run/academie-publication --python /usr/bin/python3
+RuntimeDirectory=academie-publication
 NoNewPrivileges=true
 PrivateTmp=true
 ProtectSystem=strict
 ProtectHome=read-only
 ReadOnlyPaths=/home/academie/repo
-ReadWritePaths=/var/lib/academie/publication
+ReadWritePaths=/var/lib/academie/publication /run/academie-publication
 ProtectKernelTunables=true
 ProtectKernelModules=true
 ProtectControlGroups=true

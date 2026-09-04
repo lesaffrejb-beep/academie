@@ -7,6 +7,7 @@
 
 import Dexie, { type Table } from "dexie";
 import { CONTRATS_CONNUS, type Banque } from "./types";
+import { cartesServiables } from "../moteur/serviceabilite";
 
 const CHEMINS = ["/academie/banque.json", "./banque.json"];
 
@@ -78,10 +79,13 @@ export async function chargeBanque(): Promise<Banque> {
     } catch {
       // Cache indisponible (navigation privee) : on joue quand meme.
     }
-    return reseau;
+    return { ...reseau, cartes: cartesServiables(reseau.cartes) };
   }
   const garde = await base.cache.get("banque").catch(() => undefined);
-  if (garde) return valide(garde.charge);
+  if (garde) {
+    const banque = valide(garde.charge);
+    return { ...banque, cartes: cartesServiables(banque.cartes) };
+  }
   throw new Error("aucune banque disponible, en ligne ni en cache");
 }
 

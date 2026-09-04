@@ -172,14 +172,14 @@ test.describe("direction artistique", () => {
 
     // Échap sort de la salle.
     await page.keyboard.press("Escape");
-    await expect(page.getByRole("button", { name: "Séance" })).toBeVisible();
+    await expect(page.getByRole("button", { name: "Séance", exact: true })).toBeVisible();
   });
 
   test("le focus se voit sur le chemin principal", async ({ page }) => {
     await page.goto("./");
     // Attendre que React ait posé les boutons : tabuler dans une page
     // encore vide ne prouverait rien.
-    await expect(page.getByRole("button", { name: "Séance" })).toBeVisible();
+    await expect(page.getByRole("button", { name: "Séance", exact: true })).toBeVisible();
     // Un onglet fraîchement ouvert n'a le focus nulle part : sans ce clic
     // dans un coin vide, la tabulation ne part de rien.
     await page.mouse.click(2, 2);

@@ -27,6 +27,9 @@ import os
 import sys
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from valide_ifsi import valider as valider_ifsi
+
 RACINE = Path(__file__).resolve().parents[1]
 ACADEMIE = Path(os.environ.get("ACADEMIE_RACINE") or RACINE)
 JOURS = ("lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi", "dimanche")
@@ -97,6 +100,9 @@ def valider(prog: dict, academie: dict, nom: str) -> list[str]:
     manquants = [j for j in JOURS if j not in semaine]
     if manquants:
         err.append(f"{nom} : semaine type incomplète, il manque {', '.join(manquants)}")
+
+    if "referentiels" in prog or "referentiel_actif" in prog:
+        err.extend(valider_ifsi(prog, nom))
 
     if not academie:
         return err

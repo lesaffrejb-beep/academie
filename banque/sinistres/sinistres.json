@@ -6,26 +6,36 @@
     "niveau": 1,
     "type": "flash",
     "question": "Dégât des eaux : de quel délai dispose-t-on pour déclarer à l'assureur, et à partir de quand court-il ?",
-    "reponse": "Cinq jours ouvrés, à compter de la DÉCOUVERTE du sinistre, pas de la date à laquelle la fuite a commencé.",
-    "explication": "Le point de départ est le moment où l'assuré a eu connaissance du sinistre. C'est ce qui rend la question « quand l'avez-vous découvert ? » plus importante, au téléphone, que « depuis quand ça fuit ? » : la seconde intéresse l'expert, la première fait courir le délai. La date de découverte se note et se date par écrit dès l'appel, elle sera la ligne de défense si le délai est contesté.",
-    "vigilance": "Cinq jours ouvrés est le plancher légal ; la police peut prévoir un délai plus long, jamais plus court. Devant un cas tendu, on vérifie le contrat plutôt que de réciter le plancher.",
+    "reponse": "Déclare le sinistre dès que tu en as connaissance et au plus tard dans le délai prévu au contrat : il doit être d'au moins cinq jours ouvrés. Le point de départ est la connaissance du sinistre par l'assuré.",
+    "explication": "Note la date à laquelle l'assuré a eu connaissance du sinistre, puis consulte le contrat pour déterminer le délai applicable. La date de début de la fuite peut être différente de la date de sa découverte.",
+    "vigilance": "Le contrat peut prévoir un délai plus long ; conserve une preuve datée de la déclaration.",
     "source": [
       {
-        "texte": "Art. L113-2, 4° du code des assurances (déclaration dès que l'assuré en a eu connaissance et au plus tard dans le délai fixé par le contrat, qui ne peut être inférieur à cinq jours ouvrés)",
+        "texte": "Art. L113-2, 4° du code des assurances : avis dès connaissance du sinistre, au plus tard dans le délai contractuel, qui ne peut être inférieur à cinq jours ouvrés hors exceptions prévues par ce texte",
         "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000035731302",
         "nature": "texte-officiel"
-      },
-      {
-        "texte": "Convention IRSI, convention inter-assureurs non publiée (sinistres survenus à compter du 01/06/2018, version révisée au 01/07/2020)",
-        "nature": "organisation-pro",
-        "parti": "défend les assureurs"
       }
     ],
-    "verifie": "2026-08-28",
+    "verifie": "2026-09-04",
     "peremption": null,
     "statut": "valide",
     "origine": ".agents/skills/erp-sinistres/references/grille-telephone-dde-irsi.md",
-    "partage": "banque"
+    "partage": "banque",
+    "revision": {
+      "chantier": "ACA-COPRO-1",
+      "date": "2026-09-04",
+      "auteur": {
+        "outil": "Codex",
+        "modele": "gpt-5.6-sol"
+      },
+      "action": "correction",
+      "motif": "Distinguer obligation de declarer, delai contractuel, minima legaux et conditions de sanction.",
+      "verification_precedente": "2026-08-28",
+      "sources_consultees": [
+        "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000035731302"
+      ],
+      "statut_relecture": "a-relire"
+    }
   },
   {
     "id": "sinistres-delai-vol-vandalisme",
@@ -36,43 +46,70 @@
       "sinistres-delai-degat-des-eaux"
     ],
     "type": "qcm",
-    "question": "Un vol est constaté dans les parties communes. Quel est le délai de déclaration, et quelle pièce conditionne en pratique le dossier ?",
-    "reponse": "Deux jours ouvrés : c'est le plancher que le contrat ne peut pas descendre en cas de vol. Et le dépôt de plainte : sans numéro de plainte, l'assureur ne traite pas le dossier.",
+    "question": "Un vol est constaté dans les parties communes : comment déclarer le sinistre tout en constituant le dossier de plainte ?",
+    "reponse": "Déclare dès connaissance dans le délai prévu au contrat, d'au moins deux jours ouvrés en cas de vol, sans attendre qu'une pièce manquante fasse dépasser ce délai. Dépose plainte et transmets le récépissé à l'assureur pour compléter le dossier selon les exigences du contrat.",
     "choix": [
       {
-        "texte": "Deux jours ouvrés, avec dépôt de plainte préalable",
+        "texte": "Déclarer dès connaissance, vérifier le délai du contrat et transmettre le récépissé de plainte",
         "correct": true
       },
       {
-        "texte": "Cinq jours ouvrés, comme pour un dégât des eaux",
+        "texte": "Attendre le récépissé de plainte avant tout avis à l'assureur, même si le délai expire",
         "correct": false,
-        "pourquoi_faux": "Le vol est le cas où le délai est le plus court de tous. Appliquer par réflexe le délai du dégât des eaux fait perdre l'essentiel de la fenêtre."
+        "pourquoi_faux": "L'obligation de déclaration dès connaissance et dans le délai contractuel demeure. Constituer les justificatifs ne justifie pas de différer l'avis à l'assureur jusqu'au dépassement de ce délai."
       },
       {
-        "texte": "Deux jours ouvrés, le dépôt de plainte pouvant être fait plus tard",
+        "texte": "Appliquer systématiquement cinq jours ouvrés, comme pour un dégât des eaux",
         "correct": false,
-        "pourquoi_faux": "Le numéro de plainte est une pièce du dossier de déclaration, pas une formalité de suite : sans lui l'assureur ne traite pas."
+        "pourquoi_faux": "Le plancher légal est de deux jours ouvrés pour le vol ; le délai effectivement applicable se lit dans le contrat. Cinq jours ne constitue donc pas une règle universelle pour le vol."
       },
       {
-        "texte": "Trente jours, comme pour une catastrophe naturelle",
+        "texte": "Appliquer trente jours à compter d'un arrêté de reconnaissance",
         "correct": false,
-        "pourquoi_faux": "Le délai de trente jours est propre à la catastrophe naturelle et court à compter de la publication de l'arrêté de reconnaissance, un mécanisme sans rapport avec le vol."
+        "pourquoi_faux": "Cette limite de déclaration appartient au régime des catastrophes naturelles. Un vol relève du délai contractuel et du plancher prévus par l'article L113-2."
       }
     ],
-    "explication": "Le réflexe est en trois temps : déposer plainte, sécuriser les accès, déclarer avec le numéro de plainte. Les photos se prennent avant tout nettoyage, y compris avant le passage de l'entreprise de propreté, qui efface souvent les traces de la journée.",
-    "vigilance": "Deux jours ouvrés se consomment vite quand la constatation tombe un vendredi soir : un vol constaté en fin de semaine se traite le jour même, pas le lundi. Deux précisions à ne pas confondre : le plancher légal des deux jours vise le VOL, le vandalisme suit le délai prévu au contrat ; et l'exigence du dépôt de plainte est contractuelle, pas légale.",
+    "explication": "La déclaration et la constitution des justificatifs sont deux démarches à mener rapidement. Le récépissé de plainte fait partie des pièces du dossier de vol ; l'article L113-2 ne fait pas de sa remise un préalable à l'avis de sinistre.",
+    "vigilance": "Le plancher de deux jours ouvrés vise le vol ; pour le vandalisme, vérifie la garantie et le délai applicables dans le contrat.",
     "source": [
       {
-        "texte": "Art. L113-2, 4° du code des assurances (délai contractuel de déclaration réduit à deux jours ouvrés en cas de vol)",
+        "texte": "Art. L113-2, 4° du code des assurances : avis dès connaissance et délai contractuel qui ne peut être inférieur à deux jours ouvrés en cas de vol",
         "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000035731302",
+        "nature": "texte-officiel"
+      },
+      {
+        "texte": "Service Public, assurance habitation et vol : déclaration à l'assureur, modalités contractuelles et récépissé de dépôt de plainte parmi les justificatifs",
+        "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F2028",
+        "nature": "institution"
+      },
+      {
+        "texte": "Art. L125-2 du code des assurances : délai propre aux catastrophes naturelles, pour distinguer le distracteur du régime du vol",
+        "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000047109081",
         "nature": "texte-officiel"
       }
     ],
-    "verifie": "2026-08-28",
+    "verifie": "2026-09-04",
     "peremption": null,
     "statut": "valide",
     "origine": ".agents/skills/erp-sinistres/references/matrice-urgence-sinistre.md",
-    "partage": "banque"
+    "partage": "banque",
+    "revision": {
+      "chantier": "ACA-COPRO-1",
+      "date": "2026-09-04",
+      "auteur": {
+        "outil": "Codex",
+        "modele": "gpt-5.6-sol"
+      },
+      "action": "correction",
+      "motif": "Distinguer obligation de declarer, delai contractuel, minima legaux et conditions de sanction.",
+      "verification_precedente": "2026-08-28",
+      "sources_consultees": [
+        "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000035731302",
+        "https://www.service-public.gouv.fr/particuliers/vosdroits/F2028",
+        "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000047109081"
+      ],
+      "statut_relecture": "a-relire"
+    }
   },
   {
     "id": "sinistres-delai-catastrophe-naturelle",
@@ -80,26 +117,37 @@
     "branche": "sinistres",
     "niveau": 2,
     "type": "flash",
-    "question": "Catastrophe naturelle : quel délai de déclaration, et à partir de quel événement court-il ?",
-    "reponse": "Trente jours à compter de la publication au Journal officiel de l'arrêté interministériel de reconnaissance de l'état de catastrophe naturelle. Le délai ne court pas depuis le sinistre lui-même.",
-    "explication": "Le mécanisme est particulier : tant que l'arrêté n'est pas publié, la garantie n'est pas ouverte, et l'horloge ne tourne pas. Le travail du gestionnaire est donc en deux temps : constituer le dossier de justificatifs immédiatement après l'événement, pendant que les traces sont fraîches, puis surveiller la publication de l'arrêté pour la commune concernée. Ce délai était de dix jours avant d'être porté à trente pour les sinistres relevant du régime en vigueur depuis le 1er janvier 2023.",
-    "vigilance": "Un dossier constitué au moment de la reconnaissance, plusieurs mois après l'événement, est presque toujours incomplet : les désordres ont été réparés, les photos n'existent pas.",
+    "question": "Après un événement susceptible de relever d'une catastrophe naturelle, quand donner avis à l'assureur et quelle est la limite de déclaration ?",
+    "reponse": "Déclare le sinistre dès que tu en as connaissance, et au plus tard trente jours après la publication de l'arrêté de reconnaissance de l'état de catastrophe naturelle.",
+    "explication": "L'article L125-2 impose l'avis dès connaissance du sinistre. La publication de l'arrêté fixe la limite extérieure de déclaration ; constitue les justificatifs sans attendre et complète le dossier avec la référence de l'arrêté lorsqu'il paraît.",
+    "vigilance": "Surveille la publication de l'arrêté et conserve les preuves du sinistre ainsi que la date de la déclaration initiale.",
     "source": [
       {
-        "texte": "Art. L125-2 du code des assurances (déclaration au plus tard trente jours après la publication de l'arrêté interministériel de reconnaissance de l'état de catastrophe naturelle)",
+        "texte": "Art. L125-2 du code des assurances, version en vigueur depuis le 28 mai 2026 : avis dès connaissance du sinistre, au plus tard trente jours après publication de l'arrêté de reconnaissance",
         "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000047109081",
-        "nature": "texte-officiel"
-      },
-      {
-        "texte": "Loi n° 2021-1837 du 28 décembre 2021 (délai porté de dix à trente jours, en vigueur au 01/01/2023)",
         "nature": "texte-officiel"
       }
     ],
-    "verifie": "2026-08-28",
+    "verifie": "2026-09-04",
     "peremption": "2027-07-02",
     "statut": "valide",
     "origine": ".agents/skills/erp-sinistres/references/matrice-urgence-sinistre.md",
-    "partage": "banque"
+    "partage": "banque",
+    "revision": {
+      "chantier": "ACA-COPRO-1",
+      "date": "2026-09-04",
+      "auteur": {
+        "outil": "Codex",
+        "modele": "gpt-5.6-sol"
+      },
+      "action": "correction",
+      "motif": "Distinguer obligation de declarer, delai contractuel, minima legaux et conditions de sanction.",
+      "verification_precedente": "2026-08-28",
+      "sources_consultees": [
+        "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000047109081"
+      ],
+      "statut_relecture": "a-relire"
+    }
   },
   {
     "id": "sinistres-decheance-de-garantie",
@@ -110,27 +158,37 @@
       "sinistres-delai-degat-des-eaux"
     ],
     "type": "flash",
-    "question": "Que risque-t-on concrètement à laisser passer un délai de déclaration, et sur qui retombe ce risque ?",
-    "reponse": "La déchéance de garantie : l'assureur peut refuser toute indemnisation, et le syndicat comme le copropriétaire sinistré se retrouvent sans couverture. Le retard imputable au gestionnaire engage sa responsabilité professionnelle au titre de son obligation de diligence.",
-    "explication": "C'est la raison pour laquelle un sinistre ne se traite pas dans l'ordre d'arrivée : ce qui est perdu par le délai ne se rattrape par aucune argumentation ultérieure. Le montant en jeu n'est pas celui du dommage mais celui de l'indemnité perdue, qui devient une créance possible contre le professionnel.",
-    "vigilance": "La déchéance n'est pas automatique : l'assureur doit l'opposer et le retard doit lui avoir causé un préjudice. Cela n'en fait pas un risque théorique, cela en fait un contentieux qu'on ne veut jamais avoir à mener.",
+    "question": "Une déclaration de sinistre tardive suffit-elle à priver l'assuré de la garantie ?",
+    "reponse": "La déchéance pour déclaration tardive suppose une clause du contrat et un préjudice causé à l'assureur par ce retard, qu'il doit établir. Elle ne peut pas être opposée si le retard résulte d'un cas fortuit ou de force majeure.",
+    "explication": "Une date dépassée ne suffit donc pas à conclure à la perte de garantie. Déclare le sinistre, conserve la preuve de l'envoi et les éléments expliquant le retard, puis examine la clause et le préjudice invoqués par l'assureur.",
+    "vigilance": "Conserve aussi les éléments utiles pour apprécier un éventuel cas fortuit ou de force majeure.",
     "source": [
       {
-        "texte": "Art. L113-2 du code des assurances (la déchéance pour déclaration tardive ne peut être opposée à l'assuré que si l'assureur établit que le retard lui a causé un préjudice)",
+        "texte": "Art. L113-2 du code des assurances : déchéance prévue par une clause du contrat, préjudice dû au retard établi par l'assureur, exception pour cas fortuit ou force majeure",
         "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000035731302",
-        "nature": "texte-officiel"
-      },
-      {
-        "texte": "Art. 18 loi n° 65-557 du 10 juillet 1965 (obligation de diligence du syndic)",
-        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000044074302",
         "nature": "texte-officiel"
       }
     ],
-    "verifie": "2026-08-28",
+    "verifie": "2026-09-04",
     "peremption": null,
     "statut": "valide",
     "origine": ".agents/skills/erp-sinistres/references/matrice-urgence-sinistre.md",
-    "partage": "banque"
+    "partage": "banque",
+    "revision": {
+      "chantier": "ACA-COPRO-1",
+      "date": "2026-09-04",
+      "auteur": {
+        "outil": "Codex",
+        "modele": "gpt-5.6-sol"
+      },
+      "action": "correction",
+      "motif": "Distinguer obligation de declarer, delai contractuel, minima legaux et conditions de sanction.",
+      "verification_precedente": "2026-08-28",
+      "sources_consultees": [
+        "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000035731302"
+      ],
+      "statut_relecture": "a-relire"
+    }
   },
   {
     "id": "sinistres-irsi-tranches",
@@ -172,9 +230,25 @@
     ],
     "verifie": "2026-08-28",
     "peremption": "2027-07-02",
-    "statut": "valide",
+    "statut": "signale",
     "origine": ".agents/skills/erp-sinistres/references/matrice-urgence-sinistre.md",
-    "partage": "banque"
+    "partage": "banque",
+    "revision": {
+      "chantier": "ACA-COPRO-1",
+      "date": "2026-09-04",
+      "auteur": {
+        "outil": "Codex",
+        "modele": "gpt-5.6-sol"
+      },
+      "action": "signalement",
+      "motif": "Texte conventionnel primaire complet et version applicable non consultes ; assertions de seuil, de gestionnaire ou de regime a verifier avant remise en service.",
+      "sources_consultees": [
+        "https://www.service-public.gouv.fr/particuliers/vosdroits/F2027",
+        "https://www.courdecassation.fr/decision/6793331f32b173f45a7c8d2f"
+      ],
+      "limite": "Ces sources eclairent le champ et la nature de la convention ; elles ne constituent pas une verification du texte conventionnel ni de toutes les assertions de cette carte.",
+      "statut_relecture": "a-relire"
+    }
   },
   {
     "id": "sinistres-irsi-assureur-gestionnaire",
@@ -198,9 +272,25 @@
     ],
     "verifie": "2026-08-28",
     "peremption": null,
-    "statut": "valide",
+    "statut": "signale",
     "origine": ".agents/skills/erp-sinistres/references/matrice-urgence-sinistre.md",
-    "partage": "banque"
+    "partage": "banque",
+    "revision": {
+      "chantier": "ACA-COPRO-1",
+      "date": "2026-09-04",
+      "auteur": {
+        "outil": "Codex",
+        "modele": "gpt-5.6-sol"
+      },
+      "action": "signalement",
+      "motif": "Texte conventionnel primaire complet et version applicable non consultes ; assertions de seuil, de gestionnaire ou de regime a verifier avant remise en service.",
+      "sources_consultees": [
+        "https://www.service-public.gouv.fr/particuliers/vosdroits/F2027",
+        "https://www.courdecassation.fr/decision/6793331f32b173f45a7c8d2f"
+      ],
+      "limite": "Ces sources eclairent le champ et la nature de la convention ; elles ne constituent pas une verification du texte conventionnel ni de toutes les assertions de cette carte.",
+      "statut_relecture": "a-relire"
+    }
   },
   {
     "id": "sinistres-recherche-de-fuite",
@@ -224,9 +314,25 @@
     ],
     "verifie": "2026-08-28",
     "peremption": null,
-    "statut": "valide",
+    "statut": "signale",
     "origine": ".agents/skills/erp-sinistres/references/matrice-urgence-sinistre.md",
-    "partage": "banque"
+    "partage": "banque",
+    "revision": {
+      "chantier": "ACA-COPRO-1",
+      "date": "2026-09-04",
+      "auteur": {
+        "outil": "Codex",
+        "modele": "gpt-5.6-sol"
+      },
+      "action": "signalement",
+      "motif": "Texte conventionnel primaire complet et version applicable non consultes ; assertions de seuil, de gestionnaire ou de regime a verifier avant remise en service.",
+      "sources_consultees": [
+        "https://www.service-public.gouv.fr/particuliers/vosdroits/F2027",
+        "https://www.courdecassation.fr/decision/6793331f32b173f45a7c8d2f"
+      ],
+      "limite": "Ces sources eclairent le champ et la nature de la convention ; elles ne constituent pas une verification du texte conventionnel ni de toutes les assertions de cette carte.",
+      "statut_relecture": "a-relire"
+    }
   },
   {
     "id": "sinistres-cidre-abrogee",
@@ -247,9 +353,25 @@
     ],
     "verifie": "2026-08-28",
     "peremption": null,
-    "statut": "valide",
+    "statut": "signale",
     "origine": ".agents/skills/erp-sinistres/references/grille-telephone-dde-irsi.md",
-    "partage": "banque"
+    "partage": "banque",
+    "revision": {
+      "chantier": "ACA-COPRO-1",
+      "date": "2026-09-04",
+      "auteur": {
+        "outil": "Codex",
+        "modele": "gpt-5.6-sol"
+      },
+      "action": "signalement",
+      "motif": "Texte conventionnel primaire complet et version applicable non consultes ; assertions de seuil, de gestionnaire ou de regime a verifier avant remise en service.",
+      "sources_consultees": [
+        "https://www.service-public.gouv.fr/particuliers/vosdroits/F2027",
+        "https://www.courdecassation.fr/decision/6793331f32b173f45a7c8d2f"
+      ],
+      "limite": "Ces sources eclairent le champ et la nature de la convention ; elles ne constituent pas une verification du texte conventionnel ni de toutes les assertions de cette carte.",
+      "statut_relecture": "a-relire"
+    }
   },
   {
     "id": "sinistres-priorite-par-gravite",

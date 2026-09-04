@@ -142,7 +142,7 @@
       "proof": "Une réponse jouée sur téléphone réseau coupé est relisible sur le Mac le soir, et l'inverse ; test de parité contre app/vecteurs_fsrs.py vert ; rejouer un lot ne change rien.",
       "parent_milestone": "ACADEMIE-V2-FONDATIONS",
       "done_on": "2026-09-03",
-      "note": "Code, tests et déploiement écrits le 03/09 ; l'étape 7 (installation sur le VPS, preuve téléphone-Mac) reste un geste de JB."
+      "note": "Le statut done est historique et ne clôt pas la preuve téléphone-Mac. Audit du 04/09 : file/reprise/import renforcés, mais défaut de tri lexical des dates à offsets différents reproduit et non corrigé au STOP. Priorité de reprise dans chantiers/ACA-JOURNAL-SYNC-1.md ; installation et preuve physique toujours non attestées. Voir travail/audit-froid-2026-09-04.md."
     },
     {
       "id": "ACA-RITUAL-METRICS-1",
@@ -273,7 +273,7 @@
       },
       "proof": "Valideur v2 vert sur la banque migrée ; tests de mutation étendus ; genere.py publie contrat: carte-v2 ; l'archipel joue encore la banque v2 ou est retiré au même moment.",
       "parent_milestone": "ACADEMIE-V2-FONDATIONS",
-      "note": "Étapes 1, 3 et 4 faites le 03/09. Étape 2 arbitrée le 04/09 (decisions/0030) : mécanique, prochain item à prendre. Puis archiver banque/."
+      "note": "Pause du 04/09 : app/migre_banque.py prépare un candidat isolé selon 0030, sans promotion ni archivage. 15 tests et 3 mutations ciblées passent. Mesures : 19 changements de domaine, 84 auteurs structurés absents, 80 relecteurs manquants, 19 niveaux incompatibles et 54 chapitres à écrire. Le reste n'est donc pas mécanique. Prochaine unité : preuves éditoriales sans provenance inventée, puis candidat vert et autorisation humaine. Voir travail/audit-froid-2026-09-04.md."
     },
     {
       "id": "ACA-EXPORT-1",
@@ -312,7 +312,7 @@
       },
       "proof": "Première question en moins de trois secondes réseau coupé sur téléphone ; checklist DA §9 ; aucun hôte tiers contacté ; JB joue sept séances dessus.",
       "parent_milestone": "ACADEMIE-V2-JOUEUR",
-      "note": "Squelette technique posé le 03/09 (web/ : moteur en parité, écrans nus, PWA, 95 tests, build vert). Reste : couche visuelle (autre main), e2e hors-ligne, bascule de client/, et ACA-CONTRAT-2. FSRS à la main plutôt que ts-fsrs : decisions/0029. Bascule de client/ après ACA-CONTRAT-2 (le format de carte bouge). Le 04/09, JB : l'archipel est archivé (archive/client-archipel-2026-09-04), rien n'est servi en attendant ; JB ne joue que sur un client fini, propre, pro. La publication doit construire web/ et copier dist/ (deploy/academie-publication.service)."
+      "note": "Pause du 04/09 : DA appliquée aux écrans, Impeccable cadré par web/AGENTS.md, images/sources/erreurs/signalements traités. 197 tests client, 5 tests de préparation de publication et 54 scénarios navigateur passent ; build vert. Service de publication complète préparé localement, non installé. Restent tri chronologique journal, confirmation visuelle tablette, réponses API malformées à tester, dépendances dev signalées par npm audit, bascule autorisée et sept séances réelles de JB. Banque encore v1 ; FSRS miroir Python selon 0029. Voir travail/audit-froid-2026-09-04.md."
     },
     {
       "id": "ACA-ARBRE-1",
@@ -388,7 +388,7 @@
       },
       "proof": "Inventaire sourcé sans création de carte et sans contenu labor, avec critères d'abandon de chaque source, lignes ajoutées au registre.",
       "parent_milestone": "ACADEMIE-V2-CONTENU",
-      "note": "Infaisable depuis le Cloud (sources officielles refusées par le proxy) : passé en agent-review le 04/09 pour sortir de la sélection automatique. À lancer à la main depuis le Mac."
+      "note": "Repérage public réalisé sur le Mac le 04/09 : cinq inventaires travail/sources-*-2026-09-04.md, 34 branches, 21 N1 existants proposés, 11 entrées ajoutées au registre (33 au total). Ni lecture intégrale ni cartes fabriquées ; verifie laissé vide sur les repérages. Culture n'a qu'un N1, quatre manquent au lot demandé. Critère du cahier encore partiel, ne pas le déclarer terminé. Voir travail/audit-froid-2026-09-04.md."
     },
     {
       "id": "ACA-CONTENT-2",
@@ -657,7 +657,7 @@
       },
       "proof": "Arthur joue sa première séance sur un domaine que JB n'a pas écrit ; le kit rejouerait la soirée ; le coût réel est écrit.",
       "parent_milestone": "ACADEMIE-V2-OUVERTURE",
-      "note": "Le squelette du programme infirmier existe depuis le 04/09 (programme/ifsi.json, 310 chapitres, decisions/0031) : le kit le confronte aux sources du S1 d'Arthur et calibre les niveaux par un agent frais avant le premier lot."
+      "note": "Le programme infirmier courant DEI-2026 possède 375 chapitres et des capacités éditoriales à affiner ; la copie du squelette précédent est conservée (decisions/0033). Le kit confrontera les objectifs pilotes aux supports d’Arthur, après les gates de rituel et de contenu existants. Les compteurs ne prouvent pas une banque produite ni une séance jouée."
     },
     {
       "id": "ACA-SELFHOST-1",
@@ -753,6 +753,40 @@
       "proof": "Tests du cahier verts (pseudo vide refusé, une carte par parcours plus une, copie exacte du prompt, route vers le quiz) ; check.py vert ; JB entre un pseudo, copie un prompt, arrive au quiz.",
       "parent_milestone": "ACADEMIE-V2-JOUEUR",
       "note": "Réécrit le 04/09 sur decisions/0032 : compte mail et mot de passe, un cursus à la fois, demande de cursus lue par JB. Ouvre serveur/ pour le mot de passe haché et la table des demandes."
+    },
+    {
+      "id": "ACA-IFSI-1",
+      "outcome": "Programme infirmier courant 2026, historique préservé, voies distinctes, objectifs numériques et mapping contrôlé.",
+      "status": "done",
+      "mode": "agent-review",
+      "risk": "medium",
+      "priority": 80,
+      "depends_on": [],
+      "budget": {
+        "max_units": 6,
+        "max_minutes": 180
+      },
+      "proof": "375 chapitres, 310 anciens identifiants et copie 2009 exacts ; 600 capacités de cadrage après revue, aucun prérequis d’étape ultérieure. 21 tests IFSI passent ; générateur --check conforme et sans écriture ; trois mutations IFSI détectées sur copie isolée. app/tests.py tout vert avec socket locale autorisée ; tooling/check.py zéro erreur ; contre-relecture indépendante favorable. Détail dans travail/2026-09-04-revision-ifsi.md.",
+      "parent_milestone": "ACADEMIE-V2-OUVERTURE",
+      "note": "Terminé localement après reprise et troisième rapport stratégique de JB. Le programme reste un inventaire, aucune carte IFSI jouable ; les cas et mesures attendent les pilotes et gates existants. Prochaine préparation : cahier de corrections sourcées copro. Aucun commit ni publication.",
+      "done_on": "2026-09-04"
+    },
+    {
+      "id": "ACA-COPRO-1",
+      "outcome": "Les assertions copro confirmées sont corrigées sur sources, les cartes sans preuve suffisante sont signalées et les 389 identifiants sont préservés.",
+      "status": "ready",
+      "mode": "agent-review",
+      "risk": "medium",
+      "priority": 96,
+      "depends_on": [
+        "ACA-PROGRAMME-1"
+      ],
+      "budget": {
+        "max_units": 6,
+        "max_minutes": 180
+      },
+      "proof": "Pause demandée par JB le 04/09/2026. Retouches sur disque ; relecture AG et avis final sur le programme ouverts, puis banque locale à régénérer. Point durable : travail/2026-09-04-revision-copro.md. Ne pas marquer done.",
+      "parent_milestone": "ACADEMIE-2"
     }
   ]
 }

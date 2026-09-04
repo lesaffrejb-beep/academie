@@ -11,8 +11,11 @@ divergent, le JSON fait foi et ce texte se corrige.
 Le second métier, l'infirmier, a son programme en données depuis le
 04/09/2026 : [`programme/ifsi.json`](programme/ifsi.json), lisible dans
 [`SYLLABUS-IFSI.md`](SYLLABUS-IFSI.md), tranché par
-[`decisions/0031`](decisions/0031-un-programme-par-metier-ifsi.md).
-Même forme, même règle des niveaux ; son socle est l'entrée en IFSI.
+[`decisions/0031`](decisions/0031-un-programme-par-metier-ifsi.md), puis
+révisé par [`decisions/0033`](decisions/0033-ifsi-referentiel-2026.md).
+Il va de l'orientation aux études, à la prise de poste et aux
+approfondissements sans plafond ; ses étapes ne se confondent pas avec
+les niveaux de difficulté ni avec une habilitation clinique.
 
 Qui l'a écrit : **le modèle**, à partir du brief de JB, de sa
 connaissance du métier et des ancres publiques (§5), sans manuel de
@@ -28,6 +31,10 @@ ce qu'on dit. Un chiffre, une date ou un article cité ici sert de
 repère pour l'auteur du chapitre, qui le revérifie à la source avant
 d'écrire une carte ; les mentions `[À VÉRIFIER]` signalent un repère
 non relu le 02/09.
+
+La [révision copro du 04/09](travail/2026-09-04-revision-copro.md)
+documente 34 corrections ou précisions ciblées, avec les sources et
+les formulations avant/après. Elle ne vaut pas audit juridique intégral.
 
 ---
 
@@ -100,16 +107,15 @@ valide par l'épreuve du gestionnaire (`BLUEPRINT.md` §8).
 | energie | 2 | expliquer un DPE, connaître le calendrier et les obligations |
 | immobilier | 2 | expliquer une vente en copro, une servitude, un PLU |
 
-Ordre de grandeur (`programme/copro.json`, 02/09/2026) : le programme
-compte **371 chapitres** (146 de niveau 1, 145 de niveau 2, 59 de
-niveau 3, 19 de niveau 4, 2 de niveau 5) pour environ **2 800 cartes**
-cibles ; le socle en représente **315 chapitres** et environ **2 300
-cartes**. À quatre séances par semaine avec trois cartes neuves
-chacune, plus une étude par semaine, un joueur parti de zéro tient le
-socle en deux ans environ ; le quiz de positionnement et les journées
-raccourcissent ce temps. Un gestionnaire en poste depuis un an y entre
-à un tiers déjà stabilisé. Ces chiffres sont des cibles de rédaction,
-pas des promesses : le calibrage (§5) et la mesure les corrigeront.
+Comptage de `programme/copro.json` au 04/09/2026 : **389 chapitres**
+(117 de niveau 1, 193 de niveau 2, 58 de niveau 3, 19 de niveau 4,
+2 de niveau 5), **2 990 cartes cibles** ; le socle représente
+**333 chapitres et 2 486 cartes cibles**. Les études du socle totalisent
+**310 h 45** d'estimations éditoriales, hors rappels et mise en pratique.
+Ces cibles de rédaction ne sont ni du contenu déjà écrit ni une durée
+de formation mesurée. Le temps réel pour tenir le socle et les acquis
+d'un gestionnaire en poste restent à mesurer ; aucune fraction
+stabilisée ni durée de deux ans n'est démontrée par cet inventaire.
 
 ## 4. Les spécialisations
 
@@ -168,11 +174,12 @@ les trous nommés. Les identifiants sont ceux de `programme/copro.json`.
   (art. 11) ; pouvoirs et représentation (art. 22) ; tenue, bureau,
   feuille de présence ; le vote par correspondance (17-1 A) et la
   visioconférence ; le procès-verbal (décret art. 17) et sa
-  notification (art. 18) ; la contestation en deux mois (art. 42) ;
+  notification (loi art. 42 et 42-1, décret art. 64 et suivants) ;
+  la contestation en deux mois (art. 42) ;
   N3 : diagnostiquer une convocation irrégulière ; N4 : l'AG
   dématérialisée, doctrine.
 - **majorites** : article 24 ; article 25 et la passerelle 25-1 ;
-  article 26 et l'unanimité ; les cas particuliers (accessibilité,
+  article 26, passerelle 26-1 et unanimité ; les cas particuliers (accessibilité,
   surélévation, travaux d'intérêt collectif sur privatif) ; N3 : le
   tableau des majorités par décision ; N4 : l'abus de majorité.
 - **charges** : charges générales et spéciales (art. 10) ; les clés de
@@ -181,7 +188,7 @@ les trous nommés. Les identifiants sont ceux de `programme/copro.json`.
   clés.
 - **travaux** : travaux votés et travaux urgents (art. 18, décret 37) ;
   travaux privatifs affectant les communes (25 b) ; l'accès aux lots
-  (art. 9) ; le plan pluriannuel de travaux et le fonds (14-2) ; le
+  (art. 9) ; le plan pluriannuel de travaux (14-2) et le fonds (14-2-1) ; le
   DTG ; N3 : instruire une demande de travaux.
 - **mutations** : la vente d'un lot vue du syndic (art. 20, opposition,
   état daté) ; l'avis de mutation ; division et réunion de lots ;
@@ -300,7 +307,8 @@ publiques anonymes pour les lectures ; un jeu d'écritures fictif validé.
 - **mri** : ce que la multirisque immeuble couvre ; la responsabilité
   civile du syndicat ; le propriétaire non occupant ; l'assurance
   obligatoire du copropriétaire ; N3 : vérifier une police.
-- **degat-des-eaux** : la convention IRSI, ses tranches et l'assureur
+- **degat-des-eaux** : le champ et les exclusions de la convention IRSI,
+  ses tranches et l'assureur
   gestionnaire ; la recherche de fuite ; les recours ; N3 : dérouler un
   dégât des eaux du 5e au 2e.
 - **autres-sinistres** : incendie, tempête, catastrophe naturelle, vol
@@ -331,7 +339,8 @@ la convention IRSI en version libre et datée.
 - **urgence** : le référé et ses cas ; le référé expertise ; la
   provision ; la procédure accélérée au fond (19-2).
 - **recouvrement** : injonction de payer ; assignation ; l'hypothèque
-  légale (19) et le privilège (19-1) ; saisie-attribution ; saisie
+  légale inscrite (19), l'hypothèque légale spéciale (19-1, Code civil
+  2402) et l'ancien privilège ; saisie-attribution ; saisie
   immobilière ; N3 : choisir la voie.
 - **contentieux-ag** : la nullité d'assemblée (art. 42) ; opposant et
   défaillant ; l'autorisation d'agir (décret art. 55) ; N3 : répondre
@@ -431,7 +440,8 @@ nommés** : la doctrine notariale libre.
 
 ### 6.10 Le cabinet : déontologie, contrats, relation (`cabinet`)
 
-- **profession** : carte professionnelle, garantie financière, assurance
+- **profession** : titulaire de carte et collaborateur habilité, étendue
+  des pouvoirs, garantie financière, assurance
   responsabilité ; le code de déontologie ; la formation continue
   obligatoire ; N4 : histoire et critique de la profession.
 - **contrat-de-syndic** : le contrat type ; forfait et prestations
@@ -450,7 +460,8 @@ nommés** : la doctrine notariale libre.
   d'ascenseur) ; méthode et alternatives ; N3 : préparer une
   négociation.
 - **donnees** : RGPD au cabinet ; pièces jointes de convocation et
-  données personnelles ; lutte contre le blanchiment ; sécurité.
+  données personnelles ; champ de la lutte contre le blanchiment selon
+  les activités du cabinet ; contrôles contre la fraude au paiement ; sécurité.
 - **charge** : gérer son temps, déléguer, prioriser ; les échéances qui
   ne se ratent pas.
 - **cas-transverses** : les dossiers qui mêlent les domaines
@@ -494,6 +505,11 @@ un remplissage.
 
 ## 9. Les trous nommés du programme, au 02/09/2026
 
+Complément de repérage public au 04/09/2026 (`ACA-CONTENT-MAP-1`) : les
+cinq inventaires `travail/sources-<domaine>-2026-09-04.md` décrivent les
+liens, droits et limites retrouvés. Ce sont des plans de lecture, pas des
+corpus intégralement lus ni des chapitres produits.
+
 | Trou | Domaines | Où chercher légalement |
 |---|---|---|
 | Images de pathologie et d'équipements | pathologie, equipements | schémas SVG maison depuis les textes AQC ; photothèque de terrain (plus tard) |
@@ -504,3 +520,11 @@ un remplissage.
 | Annexes comptables et devis publics fictifs | comptabilite, travaux | à fabriquer et valider |
 | Doctrine de niveau 4 en accès libre | droit, immobilier | rapports Cour de cassation, thèses en ligne, ANIL |
 | Psychologie d'assemblée | cabinet | doctrine et terrain, jamais présenté comme science |
+| Histoire du DPE, type d'audit et versions applicables | energie | ministère, CCH et arrêtés historiques à ouvrir précisément ; ne pas confondre audit de vente et copropriété |
+| Contrat d'exploitation chauffage public daté | energie | Cerema/ADEME, document légalement disponible à sélectionner ; P1-P5 non couvert par une simple page sur les réseaux de chaleur |
+| Vocabulaire complet du marché privé (BET, DOE, DPGF, CCTP) | travaux | INRS pour SPS/DIUO seulement ; source de marché privé complémentaire, jamais l'ancien CCAG public transposé |
+| Corpus primaire SCI/ASL/AFUL et superficie/diagnostics | immobilier | textes consolidés depuis Légifrance et références ANIL ; lecture détaillée à faire |
+| Notice fiscale courante et document local exécutoire | immobilier | DGFiP par millésime ; ALM pour PLUi/PSMV et droits propres au document, sans donnée de parcelle réelle |
+| Méthode de négociation et gestion de charge documentées | cabinet | doctrine signée et études primaires ; DITP/INRS sont des pistes, pas deux preuves indépendantes d'efficacité au cabinet |
+| Quatre chapitres N1 absents du lot demandé | culture | le programme n'a qu'un N1, architecture et styles ; arbitrage de programme requis pour en proposer cinq sans inventer |
+| Sources historiques primaires et autres lectures métier | culture | BnF/bibliothèques patrimoniales, édition et notice précises à retrouver ; aucun livre déclaré lu depuis son catalogue |

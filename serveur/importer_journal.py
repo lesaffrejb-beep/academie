@@ -6,8 +6,9 @@ vers journal-v1 (CONTRAT-CARTE-V2.md §5, decisions/0006) :
   - les lignes du quiz gardent `mode: "quiz"`, `origine` et
     `stabilite_forcee` ; `domaine` devient `region` ;
   - les lignes du carnet deviennent `mode: "erreur"` (carte, raison) ;
-  - `nonce` = SHA-256 de la ligne d'origine ; rien n'est perdu, rien
-    n'est réécrit dans le fichier source.
+  - `nonce` = SHA-256 de la ligne v0 d'origine ; une ligne deja v1 garde
+    son nonce et ses champs canoniques, pour ne pas compter deux fois
+    un evenement deja synchronise. Le fichier source reste intact.
 
     python3 serveur/importer_journal.py etat/jb/revues.jsonl [--erreurs etat/jb/erreurs.jsonl] > journal-v1.jsonl
 """
@@ -16,11 +17,17 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import math
 import sqlite3
 import sys
 from pathlib import Path
 
-CHAMPS_GARDES = ("carte", "note", "origine", "stabilite_forcee", "duree_ms", "confiance", "score", "cartes")
+MODES_V1 = ("revision", "quiz", "examen", "seance", "synthese", "signalement", "erreur")
+CHAMPS_GARDES = (
+    "carte", "note", "format", "duree_ms", "confiance", "stabilite_forcee", "origine",
+    "region", "dossier", "score", "cartes", "raison", "jour", "graine", "cap",
+    "banque_version", "moteur_version", "chapitre", "attendus_coches", "motif",
+)
 
 
 def _nonce(texte: str) -> str:
@@ -37,11 +44,13 @@ def migrer_revue(texte: str) -> dict | None:
         return None
     mode = v0.get("mode", "flash")
     v1 = {"quand": v0["quand"], "nonce": _nonce(texte.strip())}
+    if mode in MODES_V1 and "nonce" in v0:
+        v1["nonce"] = v0["nonce"]
     if mode == "flash":
         v1["mode"], v1["format"] = "revision", "seance"
     elif mode == "quiz":
         v1["mode"] = "quiz"
-    elif mode in ("revision", "examen", "seance", "synthese", "signalement", "erreur"):
+    elif mode in MODES_V1:
         v1["mode"] = mode
     else:
         v1["mode"], v1["format"], v1["origine_v0"] = "revision", "seance", str(mode)
@@ -49,15 +58,22 @@ def migrer_revue(texte: str) -> dict | None:
         if c in v0 and v0[c] is not None:
             v1[c] = v0[c]
     if v0.get("domaine"):
-        v1["region"] = v0["domaine"]
+        v1.setdefault("region", v0["domaine"])
     if "stabilite_forcee" in v1:
         try:
-            if float(v1["stabilite_forcee"]) <= 0:
+            stabilite = float(v1["stabilite_forcee"])
+            if not math.isfinite(stabilite) or stabilite <= 0:
                 del v1["stabilite_forcee"]
+            else:
+                v1["stabilite_forcee"] = stabilite
         except (TypeError, ValueError):
             del v1["stabilite_forcee"]
     if "note" in v1 and (not isinstance(v1["note"], int) or not 1 <= v1["note"] <= 4):
         del v1["note"]
+    if v1["mode"] == "quiz" and "stabilite_forcee" not in v1:
+        # Sans postulat de stabilite, le moteur v0 faisait une revision
+        # normale. Le contrat v1 exige de la nommer ainsi.
+        v1.update(mode="revision", format="seance", origine_v0="quiz")
     return v1
 
 

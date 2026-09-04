@@ -436,5 +436,41 @@ Gemini 2.5, lu par yage.ai le 03/09/2026, `[À VÉRIFIER]` à la source) ;
 
 ---
 
+## 33. L'IFSI : objectifs distincts et approfondissement sans plafond (04/09/2026)
+
+**Ce qu'on pose dans le programme** : l'étape de formation, la difficulté
+de l'exercice et la criticité sont trois axes indépendants. Les objectifs
+fins préparent le suivi des connaissances, du raisonnement, du calcul et
+de la communication. Le geste en simulation et le geste clinique
+supervisé demandent une appréciation distincte. Les spécialisations
+réutilisent les acquis et ouvrent de nouveaux chapitres ; l'apprentissage
+continue après le diplôme et après une spécialisation.
+
+**Pourquoi** : une réussite à un exercice numérique ne démontre pas une
+capacité à réaliser un soin dans une situation réelle. Le référentiel
+prévoit une progression selon la complexité des situations et des
+évaluations en stage. La difficulté cognitive est ici un choix éditorial
+par objectif, sans prétendre reproduire une échelle clinique officielle.
+
+**Source** : [arrêté du 20 février 2026, annexe III](https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000053570499),
+consulté le 04/09/2026 : complexité progressive, formation clinique et
+évaluation. Les voies d'entrée suivent [l'article 12](https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000053570385)
+pour la FPC. L'ouverture après le diplôme est le cap demandé par JB,
+consigné dans `decisions/0033-ifsi-referentiel-2026.md`.
+
+**Portée de ce lot** : métadonnées et contrôles de programme. Les règles
+de maîtrise par objectif, la remédiation d'erreur critique, la calibration
+de confiance, les cas évolutifs et leurs mesures sont des spécifications
+à éprouver dans un pilote. Aucun gain de rétention n'est revendiqué,
+aucun score de maîtrise n'est inventé et aucun nouvel état joueur n'est
+écrit par cette révision. Les formats et seuils seront éprouvés dans le
+moteur avant de devenir des mécaniques actives.
+
+Finition du 04/09 après relecture : les étapes restent des points d'appui
+éditoriaux, avec reprises possibles ; leur ordre respecte les prérequis.
+Les capacités sont conservées au niveau utile pour choisir un pilote.
+Le détail par notion et les critères de réussite viendront avec ses
+supports, sans utiliser le nombre d'objectifs comme preuve d'apprentissage.
+
 *Toute nouvelle mécanique ajoute son entrée ICI dans le même commit
 que son code ; sinon elle n'existe pas.*

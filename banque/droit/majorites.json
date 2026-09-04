@@ -67,7 +67,7 @@
       {
         "texte": "Le projet a recueilli la majorité des voix des copropriétaires présents",
         "correct": false,
-        "pourquoi_faux": "C'est la majorité de l'article 24, celle qui s'applique AU second vote — pas le seuil qui permet de l'ouvrir."
+        "pourquoi_faux": "La majorité des présents ne suffit pas à ouvrir la passerelle. Le seuil du premier vote porte sur toutes les voix du syndicat ; au second vote, l’article 24 retient les voix exprimées des copropriétaires présents, représentés ou ayant voté par correspondance."
       },
       {
         "texte": "Le président du conseil syndical le demande",
@@ -84,15 +84,34 @@
     "vigilance": "Le seuil du tiers se calcule sur TOUS les copropriétaires, comme l'article 25 lui-même. Convertir ce tiers en « 334 tantièmes » n'est juste que sur une copropriété à 1 000 tantièmes : c'est une illustration, jamais la règle. Second alinéa à ne pas confondre avec le premier : quand le projet porte sur des travaux du f de l'article 25 et n'a PAS atteint le tiers, il n'y a pas de second vote en séance, mais une nouvelle assemblée convoquée dans les trois mois sur un projet identique peut statuer à la majorité de l'article 24.",
     "source": [
       {
-        "texte": "Art. 25-1 loi n° 65-557 du 10 juillet 1965, version en vigueur depuis le 11/04/2024 (LOI n° 2024-322 du 9 avril 2024, art. 40)",
+        "texte": "Loi n° 65-557 du 10 juillet 1965, article 25-1, version en vigueur depuis le 11 avril 2024 ; consultée le 4 septembre 2026",
         "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000049398359",
+        "nature": "texte-officiel"
+      },
+      {
+        "texte": "Loi n° 65-557 du 10 juillet 1965, article 24, version en vigueur depuis le 18 juin 2025 ; consultée le 4 septembre 2026",
+        "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000051749514",
         "nature": "texte-officiel"
       }
     ],
-    "verifie": "2026-08-28",
+    "verifie": "2026-09-04",
     "peremption": null,
     "statut": "valide",
     "origine": "erp/react FLASHCARDS_DATA f1, réécrite (la formulation d'origine convertissait le tiers en tantièmes)",
-    "partage": "banque"
+    "partage": "banque",
+    "historique": [
+      {
+        "date": "2026-09-04",
+        "statut": "valide",
+        "motif": "ACA-COPRO-1 : Correction de l’explication du distracteur : distinguer le seuil d’ouverture de la passerelle et les voix exprimées au second vote. Relecture indépendante en attente.",
+        "par": "Codex / gpt-5.6-sol"
+      },
+      {
+        "date": "2026-09-04",
+        "statut": "valide",
+        "motif": "Contre-lecture des retouches v1 contre les articles 24, 25-1, 42-1 et 64 à 64-2 applicables selon la carte ; aucune réserve sur ce périmètre. Le chapitre v2 et la revue globale du programme restent ouverts.",
+        "par": "Codex / gpt-5.6-sol / agent principal, non auteur des retouches AG"
+      }
+    ]
   }
 ]

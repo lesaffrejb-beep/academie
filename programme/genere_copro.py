@@ -17,6 +17,10 @@ dans chaque branche et ses subdivisions dès qu'il y a spécialisation »).
 Les prochains agents remplissent les chapitres (chantier ACA-CONTENT-2) ;
 ils ne redessinent pas l'arbre sans décision.
 
+Corrections ciblées du 04/09/2026 (ACA-COPRO-1) : assertions avant/après
+et sources dans travail/rapports-chatgpt-pro/copro-corrections.json et
+les quatre notes copro associées. Cette passe ne certifie pas tout le programme.
+
 Règles portées ici : un chapitre de niveau n a pour prérequis les
 chapitres de niveau n-1 de sa sous-branche (ou de sa branche), plus les
 ponts nommés dans CROSS ; les identifiants sont immuables une fois une
@@ -91,10 +95,10 @@ B["droit"] = [
         ("La réforme permanente : controverses", 5, "Lire un rapport ou une proposition de réforme et en dire les enjeux", ["codification", "rapport", "controverse"]),
     ]),
     ("organes", "Le syndicat et ses organes", "qcm", [], [
-        ("Le syndicat des copropriétaires", 1, "Dire ce qu'est le syndicat, sa personnalité et sa responsabilité", ["article 14", "personnalité civile", "responsabilité"]),
+        ('Le syndicat des copropriétaires', 1, 'Expliquer la personnalité et la responsabilité du syndicat, puis repérer les régimes des petites copropriétés et des syndicats à deux copropriétaires', ['article 14', 'personnalité civile', 'responsabilité', 'articles 41-8 et suivants', 'lots et nombre de copropriétaires']),
         ("Le syndic et ses missions", 1, "Énumérer les missions légales du syndic et leurs limites", ["article 18", "mandataire", "exécution des décisions", "conservation"]),
         ("Désignation, contrat, fin de mandat", 2, "Dérouler la désignation d'un syndic et la fin d'un mandat sans faute", ["article 25 c", "contrat", "durée", "révocation", "transmission"]),
-        ("Le conseil syndical", 1, "Dire ce que fait et ne fait pas le conseil syndical", ["article 21", "assistance", "contrôle", "consultation"]),
+        ('Le conseil syndical', 1, 'Distinguer missions, désignation et dérogations relatives au conseil syndical', ['article 21', 'article 25 c', 'assistance', 'contrôle', 'consultation', 'petites copropriétés']),
         ("La délégation au conseil syndical", 2, "Expliquer ce que le syndicat peut déléguer au conseil et à quelles conditions", ["articles 21-1 à 21-5", "délégation", "assurance"]),
         ("Syndic bénévole et coopératif", 2, "Comparer les trois formes de syndic et leurs obligations", ["bénévole", "coopératif", "président-syndic"]),
         ("Administrateur provisoire et procédure d'alerte", 2, "Reconnaître une copropriété en difficulté et les outils du juge", ["article 29-1", "article 29-1 A", "mandataire ad hoc", "seuil d'impayés"]),
@@ -103,9 +107,10 @@ B["droit"] = [
     ]),
     ("assemblee", "L'assemblée générale", "cas", [("preparer", "Préparer"), ("tenir", "Tenir"), ("apres", "Après")], [
         ("La convocation : forme et délai", 2, "Convoquer une assemblée régulière, dans les délais, par les bons moyens", ["décret art. 9", "vingt et un jours", "recommandé", "notification électronique"], "preparer"),
+        ('La notification', 2, 'Choisir un procédé de notification admis, respecter la demande postale et déterminer le point de départ du délai', ['article 42-1', 'décret articles 64 à 64-4', 'notification électronique', 'prestataire qualifié', 'choix postal et prise d’effet', 'preuve de réception', 'remise contre récépissé'], 'preparer'),
         ("L'ordre du jour et les inscriptions", 2, "Construire un ordre du jour et traiter les demandes d'inscription", ["décret art. 10", "question inscrite", "projet de résolution"], "preparer"),
         ("Les pièces jointes obligatoires", 2, "Joindre à chaque résolution la pièce que le décret exige", ["décret art. 11", "devis", "contrat", "annexes"], "preparer"),
-        ("Pouvoirs et représentation", 2, "Vérifier les pouvoirs et appliquer les plafonds de mandats", ["article 22", "mandat", "trois pouvoirs", "cinq pour cent", "pouvoir en blanc"], "tenir"),
+        ('Pouvoirs et représentation', 2, 'Vérifier les délégations, le cumul des voix et les exceptions de l’article 22', ['article 22', 'trois délégations', 'dix pour cent au-delà de trois', 'voix propres et déléguées', 'exception du syndicat secondaire', 'pouvoir en blanc', 'interdictions de mandat'], 'tenir'),
         ("Tenue de séance, bureau, feuille de présence", 2, "Ouvrir une assemblée et tenir la feuille de présence", ["bureau", "président", "scrutateur", "feuille de présence"], "tenir"),
         ("Vote par correspondance et visioconférence", 2, "Organiser le vote par correspondance et la participation à distance", ["article 17-1 A", "formulaire", "visioconférence", "abstention"], "tenir"),
         ("Le procès-verbal et sa notification", 2, "Rédiger un procès-verbal complet et le notifier dans le délai", ["décret art. 17", "décret art. 18", "opposants", "défaillants", "un mois"], "apres"),
@@ -115,10 +120,10 @@ B["droit"] = [
         ("L'assemblée dématérialisée : doctrine", 4, "Discuter les limites juridiques de l'assemblée à distance", ["dématérialisation", "jurisprudence", "doctrine"], "tenir"),
     ]),
     ("majorites", "Les majorités", "qcm", [], [
-        ("L'article 24", 1, "Calculer une majorité simple, abstentions comprises, et dire ce qui s'y vote", ["voix exprimées", "présents et représentés", "gestion courante"]),
-        ("L'article 25 et la passerelle", 2, "Calculer une majorité absolue et appliquer la passerelle du second vote", ["tous les copropriétaires", "tiers", "second vote", "article 25-1"]),
-        ("L'article 26 et l'unanimité", 1, "Reconnaître une décision à double majorité ou à l'unanimité", ["double majorité", "deux tiers", "unanimité", "aliénation"]),
-        ("Les cas particuliers", 2, "Trouver la majorité dérogatoire d'une décision atypique", ["accessibilité", "surélévation", "travaux d'intérêt collectif", "individualisation"]),
+        ("L'article 24", 1, 'Calculer la majorité de l’article 24 en excluant les abstentions des voix exprimées et identifier les décisions concernées', ['voix exprimées pour et contre', 'présents et représentés', 'vote par correspondance', 'abstentions exclues', 'gestion courante']),
+        ("L'article 25 et la passerelle", 2, 'Calculer la majorité absolue et distinguer le second vote immédiat de la nouvelle assemblée réservée aux travaux visés par l’article 25 f', ['toutes les voix du syndicat', 'tiers des voix', 'article 25-1', 'second vote immédiat', 'travaux article 25 f', 'projet identique et délai de trois mois']),
+        ("L'article 26 et l'unanimité", 1, 'Reconnaître une décision à double majorité ou à l’unanimité et vérifier les conditions de la passerelle de l’article 26-1', ['double majorité', 'deux tiers', 'unanimité', 'aliénation', 'article 26-1', 'seuils en membres et en voix', 'second vote à la majorité de toutes les voix']),
+        ('Les cas particuliers', 2, 'Identifier le régime de la copropriété et la majorité dérogatoire applicable à une décision atypique', ['accessibilité', 'surélévation', 'travaux d’intérêt collectif', 'individualisation', 'petites copropriétés', 'syndicats à deux copropriétaires']),
         ("Le tableau des majorités par décision", 3, "Donner la majorité de n'importe quelle résolution courante sans regarder", ["tableau", "ordre du jour", "erreur de majorité"]),
         ("L'abus de majorité", 4, "Reconnaître une décision régulière mais abusive et ce que le juge en fait", ["abus", "intérêt collectif", "rupture d'égalité", "jurisprudence"]),
     ]),
@@ -132,7 +137,7 @@ B["droit"] = [
     ]),
     ("travaux", "Les travaux et les parties communes", "cas", [("collectifs", "Travaux collectifs"), ("privatifs", "Travaux privatifs")], [
         ("Travaux votés et travaux urgents", 2, "Distinguer un travail voté, un travail urgent et un travail d'entretien", ["article 18", "décret art. 37", "urgence", "conservation"], "collectifs"),
-        ("Le plan pluriannuel et le fonds de travaux", 2, "Expliquer le plan pluriannuel, le fonds et leurs obligations", ["article 14-2", "PPT", "fonds de travaux", "cotisation"], "collectifs"),
+        ('Le plan pluriannuel et le fonds de travaux', 2, 'Distinguer les obligations de projet de plan, son adoption et le fonds de travaux selon le champ de chaque texte', ['article 14-2 : PPT', 'article 14-2-1 : fonds', 'habitation', 'âge de l’immeuble', 'adoption du plan', 'cotisation et suspension décidées en AG'], 'collectifs'),
         ("Le diagnostic technique global", 2, "Dire quand un DTG est obligatoire et ce qu'il contient", ["DTG", "article L731-1", "contenu"], "collectifs"),
         ("Instruire une demande de travaux", 3, "Instruire une demande de travaux d'un copropriétaire jusqu'à l'ordre du jour", ["instruction", "pièces", "résolution", "conditions"], "privatifs"),
         ("Travaux privatifs affectant les communes", 2, "Reconnaître un travail privatif qui touche les communes et la majorité qu'il exige", ["article 25 b", "aspect extérieur", "autorisation"], "privatifs"),
@@ -178,7 +183,7 @@ B["pathologie"] = [
     ]),
     ("facades", "Façades", "photo", [], [
         ("Enduits et classes d'imperméabilité", 1, "Nommer les types d'enduit et de revêtement de façade", ["enduit", "revêtement", "classes I1 à I4", "imperméabilité"]),
-        ("Le ravalement", 1, "Dire ce qu'est un ravalement, quand il est obligatoire et ce qu'il comprend", ["ravalement", "obligation", "injonction", "dix ans"]),
+        ('Le ravalement', 1, 'Vérifier le dispositif local applicable puis distinguer entretien, ravalement et injonction', ['ravalement', 'champ territorial', 'CCH L126-2 et L126-3', 'obligation locale', 'injonction']),
         ("L'isolation par l'extérieur et ses désordres", 2, "Reconnaître un désordre d'isolation par l'extérieur", ["ITE", "fissuration", "chocs", "ponts thermiques"]),
         ("Décollements et efflorescences", 2, "Distinguer décollement, cloquage, efflorescence et leur cause", ["décollement", "cloquage", "efflorescence", "sels"]),
         ("Diagnostiquer une façade avant devis", 3, "Faire le tour d'une façade et écrire ce qu'un devis doit couvrir", ["diagnostic", "cahier des charges", "sondage"]),
@@ -188,7 +193,7 @@ B["pathologie"] = [
         ("Souches, cheminées, ventilations primaires", 1, "Distinguer sur un toit une souche de cheminée, une ventilation primaire et un conduit de VMC", ["souche", "ventilation primaire", "conduit", "chapeau"], "couvertures"),
         ("Tuiles, ardoises, zinguerie", 1, "Nommer les ouvrages d'une couverture et leurs désordres", ["ardoise", "tuile", "faîtage", "noue", "solin", "chéneau", "dalle nantaise"], "couvertures"),
         ("Chéneaux et eaux pluviales", 2, "Suivre le chemin de l'eau de pluie du toit au réseau", ["EP", "chéneau", "descente", "dauphin", "regard"], "couvertures"),
-        ("La visite de toiture", 3, "Conduire une visite de toiture en sécurité et en écrire le compte rendu", ["sécurité", "points de contrôle", "compte rendu"], "couvertures"),
+        ('La visite de toiture', 3, 'Préparer, faire réaliser et exploiter une inspection de toiture en vérifiant les conditions d’accès et les limites de son intervention', ['professionnel compétent', 'accès sécurisé', 'protections collectives', 'points de contrôle', 'compte rendu', 'limites du repérage visuel'], 'couvertures'),
         ("L'étanchéité : matériaux et garanties", 2, "Reconnaître un complexe d'étanchéité et ses garanties", ["bitume", "membrane", "protection", "garantie"], "terrasses"),
     ]),
     ("humidite", "L'humidité", "photo", [], [
@@ -201,15 +206,15 @@ B["pathologie"] = [
     ]),
     ("epoques", "Le bâti par époques", "datation", [], [
         ("Le bâti haussmannien et le bâti ancien", 1, "Reconnaître un immeuble ancien et ses pathologies typiques", ["pierre", "pan de bois", "plancher bois", "cheminées"]),
-        ("1950-1975 : béton, amiante, plomb", 1, "Reconnaître le bâti des Trente Glorieuses et ses risques", ["préfabrication", "amiante", "plomb", "balcons"]),
+        ('1950-1975 : béton, amiante, plomb', 1, 'Reconnaître le bâti des Trente Glorieuses sans déduire de cette période seule la présence de matériaux dangereux ni les obligations de diagnostic', ['préfabrication', 'matériaux à vérifier', 'amiante', 'plomb', 'balcons', 'période historique distincte du champ réglementaire']),
         ("1975-1990", 1, "Reconnaître le bâti de la première réglementation thermique", ["RT 1974", "isolation", "VMC", "double vitrage"]),
         ("Le bâti récent", 1, "Reconnaître le bâti postérieur aux années 2000 et ses désordres", ["RT 2012", "étanchéité à l'air", "ITE", "garanties"]),
         ("Dater une façade", 2, "Dater une façade à dix ans près à partir de ses indices", ["indices", "matériaux", "menuiseries", "modénature"]),
         ("Les pathologies attendues par époque", 3, "Anticiper les désordres d'un immeuble à partir de sa date", ["prévision", "époque", "entretien"]),
     ]),
     ("diagnostics", "Diagnostics réglementaires du bâti", "qcm", [], [
-        ("Amiante et dossier technique amiante", 1, "Dire ce que contient un DTA et quand il s'impose", ["amiante", "DTA", "repérage", "avant travaux"]),
-        ("Plomb", 1, "Dire quand un diagnostic plomb s'impose et ce qu'il déclenche", ["plomb", "CREP", "parties communes"]),
+        ('Amiante et dossier technique amiante', 1, 'Identifier le champ du DTA selon le bâtiment et son permis, puis le distinguer du repérage adapté aux travaux envisagés', ['amiante', 'DTA', 'date du permis', 'champ documentaire', 'repérage avant travaux', 'professionnel compétent']),
+        ('Plomb', 1, 'Vérifier le champ du CREP selon l’usage, la date de construction et les parties concernées, puis distinguer les investigations liées aux travaux', ['plomb', 'CREP', 'parties communes', 'construction avant 1949 pour le champ du CREP', 'risque avant travaux']),
         ("Termites", 1, "Dire où les termites sont un risque et ce que la loi impose", ["termites", "arrêté préfectoral", "déclaration"]),
         ("Radon", 2, "Expliquer le radon et les zones concernées", ["radon", "zones", "mesure"]),
         ("Tenir à jour les diagnostics", 3, "Tenir le tableau des diagnostics d'un immeuble sans trou", ["tableau", "péremption", "obligations"]),
@@ -233,7 +238,7 @@ B["equipements"] = [
         ("GRDF, le compteur et le raccordement gaz", 1, "Dire qui fait quoi entre le distributeur, le fournisseur et l'exploitant sur le gaz", ["GRDF", "distributeur", "fournisseur", "compteur", "coupure"], "gaz-fioul"),
         ("La sous-station de réseau de chaleur", 1, "Nommer les organes d'une sous-station et dire où s'arrête le réseau", ["sous-station", "échangeur", "primaire", "secondaire", "limite de prestation"], "reseau"),
         ("Le contrat de réseau de chaleur", 2, "Lire une facture de réseau de chaleur et ses parts fixe et variable", ["R1", "R2", "abonnement", "polices"], "reseau"),
-        ("Les contrats P1 à P4", 2, "Expliquer P1, P2, P3, P4 et ce que chacun couvre", ["P1", "P2", "P3", "P4", "exploitant", "intéressement"], "gaz-fioul"),
+        ("Les contrats P1 à P5", 2, "Expliquer P1, P2, P3, P4, P5 et ce que chacun couvre", ["P1", "P2", "P3", "P4", "P5", "exploitant", "intéressement"], "gaz-fioul"),
         ("Les exploitants de chauffage", 2, "Dire ce qu'un exploitant doit rendre et comment le contrôler", ["exploitant", "compte rendu", "consommations", "pénalités"], "gaz-fioul"),
         ("Individualisation des frais", 2, "Expliquer l'individualisation des frais de chauffage et ses exceptions", ["individualisation", "répartiteur", "compteur", "exemption"], "gaz-fioul"),
         ("Eau chaude sanitaire et légionelles", 2, "Expliquer la production d'eau chaude collective et la prévention des légionelles", ["ballon", "bouclage", "légionelle", "température"], "gaz-fioul"),
@@ -253,11 +258,11 @@ B["equipements"] = [
         ("Ventilation primaire et secondaire", 1, "Expliquer à quoi sert la ventilation d'une chute et où elle sort", ["ventilation primaire", "secondaire", "siphon", "souche"]),
         ("Surpresseur, compteurs, disconnecteur", 2, "Nommer les organes de l'arrivée d'eau et leur entretien", ["surpresseur", "compteur", "disconnecteur", "réducteur"]),
         ("La recherche de fuite", 2, "Organiser une recherche de fuite et savoir qui la paie", ["recherche de fuite", "IRSI", "destructive", "non destructive"]),
-        ("Un dégât des eaux vu de la plomberie", 3, "Diagnostiquer l'origine probable d'un dégât des eaux à partir des réseaux", ["origine", "colonne", "joint", "étanchéité"]),
+        ('Un dégât des eaux vu de la plomberie', 3, 'Formuler des hypothèses sur l’origine d’un dégât des eaux à partir des réseaux et demander les investigations qui permettent de les vérifier', ['hypothèse', 'colonne', 'joint', 'étanchéité', 'professionnel compétent', 'confirmation de l’origine']),
     ]),
     ("electricite", "Électricité des communs", "photo", [], [
         ("TGBT et colonnes montantes", 1, "Nommer le tableau général et les colonnes montantes et dire à qui elles appartiennent", ["TGBT", "colonne montante", "Enedis", "transfert"]),
-        ("La NF C 15-100 pour un gestionnaire", 2, "Dire ce que la norme électrique impose dans les communs", ["NF C 15-100", "mise en conformité", "diagnostic"]),
+        ('La NF C 15-100 pour un gestionnaire', 2, 'Lire le champ d’un contrôle électrique et distinguer réparation, mise en sécurité et conformité applicable aux travaux envisagés', ['NF C 15-100', 'édition applicable', 'neuf et existant', 'champ du contrôle', 'mise en sécurité', 'professionnel compétent']),
         ("Éclairage des communs", 2, "Choisir un éclairage des communs et en réduire la consommation", ["détecteur", "LED", "minuterie", "TRV"]),
         ("Bornes de recharge", 2, "Expliquer une installation de recharge dans un parking collectif", ["IRVE", "droit à la prise", "infrastructure collective", "opérateur"]),
         ("Lire un rapport électrique", 3, "Lire un rapport de contrôle électrique et prioriser les travaux", ["rapport", "anomalie", "priorité"]),
@@ -265,7 +270,7 @@ B["equipements"] = [
     ("acces", "Contrôle d'accès et sécurité", "photo", [], [
         ("Interphone, badges, ventouses, cellules", 1, "Nommer les organes d'un contrôle d'accès et leurs pannes courantes", ["interphone", "badge", "ventouse", "cellule", "gâche"]),
         ("Portails et portes de garage", 1, "Nommer les organes d'une porte automatique et ses obligations", ["moteur", "cellule", "sécurité", "entretien"]),
-        ("Désenfumage et extincteurs", 1, "Dire ce que la sécurité incendie impose dans un immeuble d'habitation", ["arrêté de 1986", "désenfumage", "extincteur", "porte coupe-feu"]),
+        ('Désenfumage et extincteurs', 1, 'Identifier la famille, la date et les équipements du bâtiment pour rechercher les obligations incendie applicables et orienter les contrôles', ['arrêté de 1986', 'famille du bâtiment', 'date et champ', 'désenfumage', 'extincteur', 'porte coupe-feu']),
         ("La porte de parking en panne", 3, "Gérer une porte de parking en panne : sécurité, dépannage, communication", ["panne", "sécurité", "dépannage"]),
     ]),
     ("contrats", "Les contrats d'entretien", "cas", [], [
@@ -296,9 +301,9 @@ B["comptabilite"] = [
         ("Le budget prévisionnel", 2, "Expliquer ce que couvre le budget prévisionnel et comment il se vote", ["article 14-1", "budget", "dépenses courantes", "vote"], "courant"),
         ("Les appels de fonds", 1, "Expliquer un appel de fonds trimestriel et sa date d'exigibilité", ["appel", "provision", "exigibilité", "trimestre"], "courant"),
         ("Les travaux hors budget", 2, "Expliquer comment se financent les travaux hors budget", ["article 14-2", "appel spécial", "échéancier"], "travaux"),
-        ("Le fonds de travaux", 2, "Expliquer le fonds de travaux, son taux et son usage", ["fonds de travaux", "cotisation", "cinq pour cent", "affectation"], "travaux"),
-        ("Avances et emprunt collectif", 2, "Distinguer avance de trésorerie, fonds de travaux et emprunt", ["avance", "fonds de roulement", "emprunt", "remboursement"], "courant"),
-        ("L'emprunt collectif à adhésion individuelle", 2, "Expliquer l'emprunt collectif à adhésion individuelle et la caution", ["emprunt collectif", "adhésion", "caution", "article 26-4"], "travaux"),
+        ('Le fonds de travaux', 2, 'Calculer la cotisation minimale selon l’adoption du PPT et vérifier les conditions d’une suspension décidée par l’assemblée', ['article 14-2-1', 'cinq pour cent du budget', 'PPT adopté : maximum des deux planchers', 'deux et demi pour cent du montant des travaux du plan', 'conditions cumulatives de suspension avec PPT', 'affectation'], 'travaux'),
+        ('Avances et emprunt collectif', 2, 'Distinguer avances, fonds de travaux et régimes d’emprunt collectif selon leur champ et leurs modalités d’adhésion', ['avance', 'fonds de roulement', 'emprunt', 'remboursement', 'article 26-4', 'adhésion individuelle ou présumée'], 'courant'),
+        ("L'emprunt collectif à adhésion individuelle", 2, 'Expliquer l’adhésion individuelle et la caution, puis les distinguer de l’adhésion présumée aux emprunts entrant dans l’article 26-4 III', ['article 26-4', 'adhésion individuelle', 'caution', 'champ du III', 'refus notifié et paiement intégral de la quote-part', 'délais depuis notification du PV'], 'travaux'),
         ("Le prêt avance mutation et les financements nouveaux", 1, "Dire ce qu'est le prêt avance mutation et à qui il sert", ["prêt avance mutation", "décret 2024-887", "financement"], "travaux"),
         ("Construire un budget", 3, "Construire un budget prévisionnel défendable devant le conseil syndical", ["construction", "historique", "indexation", "présentation"], "courant"),
     ]),
@@ -324,7 +329,7 @@ B["comptabilite"] = [
         ("Le plan de recouvrement", 3, "Construire le plan de recouvrement d'un immeuble et le présenter au conseil", ["plan", "priorité", "budget", "conseil syndical"]),
     ]),
     ("factures", "Factures, devis et TVA", "qcm", [], [
-        ("Les mentions obligatoires d'une facture", 2, "Vérifier qu'une facture est conforme avant de la payer", ["mentions", "SIREN", "TVA", "date", "numéro"]),
+        ("Les mentions obligatoires d'une facture", 2, 'Vérifier les mentions d’une facture et identifier l’entité facturée, son assujettissement et la nature du flux pour déterminer le circuit applicable', ['mentions', 'SIREN', 'TVA', 'date', 'numéro', 'entité facturée', 'assujettissement', 'facturation électronique', 'appel de charges distinct d’une facture']),
         ("Les mentions d'un devis", 2, "Vérifier qu'un devis est complet avant de le présenter", ["devis", "validité", "assurance", "délai"]),
         ("La TVA à 20, 10 et 5,5 %", 2, "Appliquer le bon taux de TVA à des travaux en copropriété", ["taux", "attestation", "rénovation énergétique", "logement"]),
         ("Refuser une facture", 3, "Refuser ou contester une facture sans casser la relation", ["contestation", "réserve", "paiement partiel"]),
@@ -340,7 +345,7 @@ B["sinistres"] = [
     ("contrat", "Le contrat d'assurance", "qcm", [], [
         ("Assuré, souscripteur, prime, franchise", 1, "Nommer les acteurs et les termes d'un contrat d'assurance", ["assuré", "souscripteur", "prime", "franchise"]),
         ("Garantie et exclusion", 1, "Lire une garantie et son exclusion", ["garantie", "exclusion", "plafond", "conditions générales"]),
-        ("Les délais de déclaration", 1, "Déclarer un sinistre dans le délai qui s'applique", ["cinq jours", "deux jours", "dix jours", "déchéance"]),
+        ('Les délais de déclaration', 1, 'Déclarer dès connaissance du sinistre, déterminer le délai contractuel applicable et vérifier les conditions d’une déchéance pour retard', ['article L113-2', 'plancher de cinq jours ouvrés', 'vol : deux jours ouvrés minimum', 'CatNat : trente jours après publication', 'article L125-2', 'clause de déchéance', 'préjudice et force majeure']),
         ("Lire des conditions particulières", 2, "Trouver dans des conditions particulières ce qui compte pour un sinistre", ["conditions particulières", "franchise", "garantie optionnelle"]),
     ]),
     ("mri", "La multirisque immeuble", "cas", [], [
@@ -350,7 +355,7 @@ B["sinistres"] = [
         ("Vérifier une police", 3, "Vérifier une police d'immeuble et proposer les ajustements", ["vérification", "surface", "franchise", "renégociation"]),
     ]),
     ("degat-des-eaux", "Le dégât des eaux", "cas", [], [
-        ("La convention IRSI et ses tranches", 1, "Dire à qui revient la gestion d'un dégât des eaux selon son montant", ["IRSI", "tranche", "assureur gestionnaire", "montant"]),
+        ('La convention IRSI et ses tranches', 1, 'Vérifier le champ de la convention avant d’identifier gestionnaire, recherche de fuite, indemnisation et responsabilités', ['convention entre assureurs', 'champ et exclusions', 'montant par local', 'occupation', 'assureur gestionnaire', 'droits légaux distincts', 'texte conventionnel actuel à retrouver']),
         ("L'assureur gestionnaire", 2, "Identifier l'assureur gestionnaire et ce qu'il doit faire", ["gestionnaire", "expertise pour compte commun", "recours"]),
         ("La recherche de fuite", 2, "Organiser la recherche de fuite et dire qui la prend en charge", ["recherche de fuite", "prise en charge", "destructive"]),
         ("Les recours", 2, "Expliquer les recours entre assureurs après indemnisation", ["recours", "subrogation", "responsable"]),
@@ -392,7 +397,7 @@ B["procedure"] = [
         ("Qui juge quoi en copropriété", 2, "Orienter n'importe quel litige de copropriété vers la bonne juridiction", ["compétence", "matière", "montant"]),
     ]),
     ("acteurs", "Les acteurs", "relier", [], [
-        ("L'avocat et quand il est obligatoire", 1, "Dire quand l'avocat est obligatoire et comment on le mandate", ["avocat", "représentation obligatoire", "dix mille euros", "honoraires"]),
+        ("L'avocat et quand il est obligatoire", 1, 'Identifier la juridiction, la matière et la procédure pour vérifier la représentation obligatoire et ses dispenses avant d’appliquer un seuil', ['avocat', 'CPC articles 760 et 761', 'compétence exclusive', 'dix mille euros selon procédure', 'dispenses', 'mandat et honoraires']),
         ("Le commissaire de justice", 1, "Dire ce que fait le commissaire de justice pour un syndicat", ["commissaire de justice", "signification", "constat", "exécution"]),
         ("Notaire, expert judiciaire, médiateur, greffe", 1, "Nommer les autres acteurs et leur rôle", ["notaire", "expert", "médiateur", "greffe"]),
     ]),
@@ -408,9 +413,10 @@ B["procedure"] = [
         ("La procédure accélérée au fond", 2, "Utiliser la procédure accélérée au fond pour les charges", ["article 19-2", "accélérée", "provisions", "condamnation"]),
     ]),
     ("recouvrement", "Le recouvrement judiciaire", "datation", [("titre", "Obtenir un titre"), ("execution", "Exécuter")], [
+        ("La déchéance du terme", 2, "Identifier l'assiette et le déclenchement de la déchéance du terme", ["article 19-2", "mise en demeure", "exigibilité", "déchéance du terme"], "titre"),
         ("L'injonction de payer", 2, "Déposer une injonction de payer et gérer l'opposition", ["injonction", "requête", "opposition", "ordonnance"], "titre"),
         ("L'assignation", 2, "Lancer une assignation en paiement et suivre l'audience", ["assignation", "audience", "conclusions", "jugement"], "titre"),
-        ("Hypothèque légale et privilège", 2, "Inscrire l'hypothèque légale du syndicat et expliquer le privilège", ["hypothèque légale", "article 19", "privilège", "article 19-1"], "execution"),
+        ('Hypothèque légale et privilège', 2, 'Distinguer l’hypothèque inscrite de l’article 19 et l’hypothèque légale spéciale actuelle, puis situer l’ancien privilège immobilier spécial', ['hypothèque légale inscrite', 'article 19', 'article 19-1', 'article 2402 du Code civil', 'hypothèque légale spéciale', 'ancien privilège immobilier spécial'], 'execution'),
         ("Saisie-attribution et saisie immobilière", 2, "Faire exécuter un titre par saisie", ["saisie-attribution", "saisie immobilière", "commissaire de justice"], "execution"),
         ("Choisir la voie", 3, "Choisir la voie de recouvrement adaptée à un dossier", ["choix", "montant", "solvabilité", "délai"], "titre"),
     ]),
@@ -470,7 +476,7 @@ B["travaux"] = [
     ("urbanisme-des-travaux", "L'urbanisme des travaux", "qcm", [], [
         ("Déclaration préalable et permis", 1, "Dire quels travaux exigent une déclaration ou un permis", ["déclaration préalable", "permis", "seuils"]),
         ("Le PLU et les Bâtiments de France", 2, "Lire ce que le PLU et l'architecte des Bâtiments de France imposent", ["PLU", "ABF", "site patrimonial", "PSMV"]),
-        ("Ravalement obligatoire et enseignes", 2, "Expliquer le ravalement obligatoire et les règles d'enseigne", ["ravalement", "injonction", "enseigne"]),
+        ('Ravalement obligatoire et enseignes', 2, 'Rechercher le dispositif local de ravalement obligatoire et les règles applicables aux enseignes', ['ravalement', 'champ territorial', 'injonction', 'enseigne']),
     ]),
     ("renovation-globale", "La rénovation globale", "cas", [], [
         ("Audit, DPE collectif, PPT", 1, "Dire ce que sont l'audit, le DPE collectif et le PPT et comment ils s'enchaînent", ["audit", "DPE collectif", "PPT"]),
@@ -495,9 +501,9 @@ B["energie"] = [
     ]),
     ("dpe", "Le DPE", "qcm", [], [
         ("Histoire du DPE", 1, "Situer les versions du DPE et ce qui a changé", ["2006", "2021", "opposabilité", "méthode"]),
-        ("La méthode de calcul", 2, "Expliquer la méthode de calcul du DPE et ses entrées", ["3CL", "énergie primaire", "émissions"]),
+        ('La méthode de calcul', 2, 'Expliquer les entrées du calcul du DPE en vérifiant la version réglementaire applicable à la date du diagnostic', ['3CL', 'énergie primaire', 'émissions', 'date du diagnostic', 'version applicable', 'paramètres réglementaires sourcés']),
         ("Les étiquettes", 1, "Lire une étiquette DPE et ses deux échelles", ["étiquette", "énergie", "climat", "classe"]),
-        ("Le DPE collectif et son calendrier", 2, "Dire quand le DPE collectif est obligatoire et à quoi il sert", ["DPE collectif", "calendrier", "taille de copropriété"]),
+        ('Le DPE collectif et son calendrier', 2, 'Vérifier le champ, le territoire et le calendrier du DPE collectif avant de conclure à une obligation', ['DPE collectif', 'date du permis', 'calendrier', 'territoire', 'taille de copropriété']),
         ("Fiabilité et contestation", 3, "Contester un DPE douteux avec méthode", ["fiabilité", "contestation", "diagnostiqueur"]),
         ("Le DPE en débat", 4, "Argumenter sur les limites du DPE", ["débat", "biais", "réforme"]),
     ]),
@@ -508,7 +514,7 @@ B["energie"] = [
     ("audit-et-ppt", "Audit énergétique et PPT", "cas", [], [
         ("L'audit énergétique", 1, "Dire ce que contient un audit énergétique et qui peut le faire", ["audit", "contenu", "qualification"]),
         ("Le PPT et le DTG", 2, "Distinguer PPT et DTG et dire ce que l'assemblée en fait", ["PPT", "DTG", "vote", "actualisation"]),
-        ("Le fonds de travaux", 1, "Relier le fonds de travaux au PPT", ["fonds", "PPT", "cotisation"]),
+        ('Le fonds de travaux', 1, 'Relier le plan adopté au double plancher de cotisation et à l’affectation du fonds de travaux', ['article 14-2-1', 'PPT adopté ou non', 'budget prévisionnel', 'montant des travaux du plan', 'cotisation', 'vote de suspension']),
     ]),
     ("aides", "Les aides", "qcm", [], [
         ("Les aides nationales", 1, "Nommer les aides nationales à la rénovation en copropriété", ["MaPrimeRénov' Copropriété", "ANAH", "conditions"]),
@@ -516,7 +522,7 @@ B["energie"] = [
         ("Le prêt collectif et les aides locales", 2, "Monter un plan d'aides avec le prêt collectif et les aides locales", ["prêt collectif", "aides locales", "cumul"]),
     ]),
     ("contrats-energie", "Les contrats d'énergie", "qcm", [], [
-        ("Tarifs réglementés et marché", 1, "Distinguer tarif réglementé et offre de marché pour un immeuble", ["TRV", "marché", "éligibilité"]),
+        ('Tarifs réglementés et marché', 1, 'Distinguer les offres de marché du gaz et l’éligibilité aux tarifs réglementés de l’électricité selon le contrat et le client', ['fin des TRV gaz', 'offres de marché', 'TRV électricité', 'article L337-7', 'éligibilité du client et du contrat']),
         ("Gaz et électricité pour un immeuble", 1, "Lire un contrat de gaz ou d'électricité des communs", ["contrat", "puissance", "abonnement", "GRDF", "Enedis"]),
         ("Le contrat d'exploitation de chauffage", 2, "Lire un contrat d'exploitation et ses clauses clés", ["exploitation", "intéressement", "durée", "révision"]),
         ("Les prix", 2, "Suivre les prix de l'énergie et leurs indices", ["indice", "prix", "CRE", "péremption"]),
@@ -547,7 +553,7 @@ B["immobilier"] = [
     ("vente", "La vente d'un lot", "datation", [], [
         ("Du compromis à l'acte", 1, "Dérouler une vente de lot du compromis à l'acte", ["compromis", "acte", "notaire", "délai"]),
         ("Diagnostics et surface", 1, "Nommer les diagnostics de vente et la surface Carrez", ["diagnostics", "Carrez", "DPE", "amiante"]),
-        ("État daté et pré-état daté", 2, "Établir un état daté conforme et facturé au bon prix", ["état daté", "pré-état daté", "plafond", "contenu"]),
+        ('État daté et pré-état daté', 2, 'Distinguer l’état daté réglementé, les informations dues à l’acquéreur et une prestation distincte expressément commandée', ['décret article 5', 'CCH L721-2', 'état daté', 'informations précontractuelles', 'commande préalable', 'plafond de l’état daté']),
         ("L'opposition et les charges au prorata", 2, "Former une opposition et répartir les charges entre vendeur et acquéreur", ["opposition", "prorata", "exigibilité"]),
         ("Une vente avec opposition", 3, "Gérer une vente avec impayé jusqu'au règlement", ["opposition", "notaire", "règlement"]),
     ]),
@@ -555,7 +561,7 @@ B["immobilier"] = [
         ("Le bail d'habitation", 1, "Nommer les règles clés du bail d'habitation", ["loi de 1989", "bail", "durée", "congé"]),
         ("La décence", 1, "Dire ce qu'est un logement décent et ce que le DPE y change", ["décence", "critères", "DPE"]),
         ("Les charges récupérables", 2, "Distinguer charges récupérables et non récupérables", ["décret 87-713", "récupérable", "régularisation"]),
-        ("Meublé de tourisme et règlement de copropriété", 2, "Répondre à une question de location courte en copropriété", ["meublé de tourisme", "règlement", "destination", "déclaration"]),
+        ('Meublé de tourisme et règlement de copropriété', 2, 'Vérifier le règlement, les conditions d’une interdiction et les règles communales avant de répondre sur une location touristique', ['meublé de tourisme', 'règlement', 'destination', 'article 26 d', 'résidence principale', 'information du syndic', 'règles communales']),
     ]),
     ("urbanisme", "L'urbanisme", "qcm", [], [
         ("Le PLU et ses zones", 1, "Lire un PLU et trouver la zone d'un immeuble", ["PLU", "zone", "règlement", "PLUi"]),
@@ -585,7 +591,7 @@ B["immobilier"] = [
 
 B["cabinet"] = [
     ("profession", "La profession", "qcm", [], [
-        ("Carte professionnelle, garantie, assurance", 1, "Dire ce que la loi Hoguet exige pour exercer", ["loi Hoguet", "carte", "garantie financière", "RC pro"]),
+        ('Carte professionnelle, garantie, assurance', 1, 'Identifier au nom de qui l’on agit et vérifier la carte ou l’habilitation, l’étendue des pouvoirs et les garanties requises', ['loi Hoguet articles 3 et 4', 'titulaire', 'collaborateur habilité', 'délégation et limites', 'garantie financière', 'RC pro']),
         ("Le code de déontologie", 2, "Appliquer les règles du code de déontologie aux cas courants", ["déontologie", "décret 2015-1090", "conflit d'intérêts"]),
         ("La formation continue obligatoire", 1, "Dire l'obligation de formation continue et comment la satisfaire", ["formation continue", "heures", "renouvellement"]),
         ("Histoire et critique de la profession", 4, "Situer la profession de syndic et les critiques qui lui sont faites", ["histoire", "critique", "associations", "réputation"]),
@@ -626,7 +632,7 @@ B["cabinet"] = [
     ("donnees", "Données, RGPD, blanchiment", "qcm", [], [
         ("Le RGPD au cabinet", 2, "Appliquer le RGPD aux données des copropriétaires", ["RGPD", "registre", "durée", "droits"]),
         ("Pièces jointes et données personnelles", 2, "Diffuser une convocation sans exposer des données personnelles", ["pièces jointes", "données", "notification collective"]),
-        ("Lutte contre le blanchiment", 1, "Dire les obligations de vigilance du syndic", ["TRACFIN", "vigilance", "déclaration"]),
+        ('Lutte contre le blanchiment', 1, 'Déterminer quelles activités du cabinet relèvent de la LCB-FT et distinguer ce cadre des contrôles contre la fraude au paiement', ['CMF L561-2', 'loi Hoguet article 1', 'activité exercée', 'champ de l’assujettissement', 'vigilance', 'TRACFIN', 'fraude au paiement']),
         ("Sécurité et cyber", 1, "Reconnaître une tentative d'hameçonnage et protéger les comptes", ["hameçonnage", "mot de passe", "fraude au virement"]),
         ("L'espace client en ligne", 1, "Dire ce que la loi impose comme accès en ligne et ce qu'un bon espace client contient", ["extranet", "article 18", "accès sécurisé", "documents"]),
     ]),
@@ -665,13 +671,15 @@ CROSS = {
     "cabinet.cas-transverses.un-degat-des-eaux-du-5e-au-2e": ["sinistres.degat-des-eaux.la-convention-irsi-et-ses-tranches", "equipements.plomberie.colonnes-eu-ev-ep", "droit.responsabilites.la-responsabilite-du-syndicat", "comptabilite.budget.les-travaux-hors-budget"],
     "cabinet.cas-transverses.une-fissure-avant-l-assemblee": ["pathologie.structure.microfissure-fissure-lezarde", "droit.travaux.travaux-votes-et-travaux-urgents", "droit.majorites.l-article-25-et-la-passerelle", "travaux.du-besoin-au-devis.comparer-des-devis"],
     "cabinet.cas-transverses.un-impaye-de-dix-huit-mois": ["comptabilite.impayes.relance-et-mise-en-demeure", "procedure.recouvrement.l-injonction-de-payer", "droit.mutations.le-coproprietaire-defaillant"],
-    "cabinet.cas-transverses.le-chauffage-en-panne-en-janvier": ["equipements.chauffage.les-contrats-p1-a-p4", "cabinet.negocier.avec-un-prestataire", "droit.travaux.travaux-votes-et-travaux-urgents"],
+    "cabinet.cas-transverses.le-chauffage-en-panne-en-janvier": ["equipements.chauffage.les-contrats-p1-a-p5", "cabinet.negocier.avec-un-prestataire", "droit.travaux.travaux-votes-et-travaux-urgents"],
     "cabinet.cas-transverses.la-copropriete-classee-g-doit-renover": ["energie.dpe.les-etiquettes", "energie.calendrier.les-interdictions-de-location-par-etiquette", "travaux.renovation-globale.audit-dpe-collectif-ppt", "droit.majorites.l-article-25-et-la-passerelle"],
     "cabinet.cas-transverses.un-coproprietaire-ferme-sa-loggia": ["droit.statut.lots-parties-privatives-parties-communes", "droit.travaux.travaux-privatifs-affectant-les-communes", "travaux.urbanisme-des-travaux.declaration-prealable-et-permis"],
     "cabinet.cas-transverses.l-ascenseur-a-l-arret-et-une-personne-en-fauteuil": ["equipements.ascenseurs.le-contrat-de-maintenance", "droit.responsabilites.la-responsabilite-du-syndicat", "cabinet.ecrire.courrier-mail-notification"],
     "cabinet.cas-transverses.une-vente-avec-opposition": ["immobilier.vente.etat-date-et-pre-etat-date", "droit.mutations.l-avis-de-mutation-et-l-opposition", "comptabilite.impayes.les-frais-imputables"],
     "cabinet.cas-transverses.une-surelevation-proposee-par-un-promoteur": ["droit.travaux.la-surelevation-et-le-droit-de-surelever", "droit.majorites.les-cas-particuliers", "travaux.urbanisme-des-travaux.le-plu-et-les-batiments-de-france"],
     "procedure.recouvrement.l-injonction-de-payer": ["comptabilite.impayes.relance-et-mise-en-demeure"],
+    "procedure.recouvrement.la-decheance-du-terme": ["procedure.avant-le-proces.mise-en-demeure-recommande-sommation"],
+    "droit.assemblee.la-notification": ["droit.assemblee.la-convocation-forme-et-delai"],
     "energie.audit-et-ppt.le-ppt-et-le-dtg": ["droit.travaux.le-plan-pluriannuel-et-le-fonds-de-travaux"],
     "comptabilite.impayes.du-comptable-au-juge": ["procedure.avant-le-proces.mise-en-demeure-recommande-sommation"],
 }
@@ -689,7 +697,7 @@ PONTS = {
 MOTS_CLES = {
     "sous-station": ["equipements.chauffage.la-sous-station-de-reseau-de-chaleur", "energie.chauffage-collectif.reseaux-de-chaleur"],
     "GRDF": ["equipements.chauffage.grdf-le-compteur-et-le-raccordement-gaz", "energie.contrats-energie.gaz-et-electricite-pour-un-immeuble"],
-    "Dalkia (exploitant)": ["equipements.chauffage.les-exploitants-de-chauffage", "equipements.chauffage.les-contrats-p1-a-p4"],
+    "Dalkia (exploitant)": ["equipements.chauffage.les-exploitants-de-chauffage", "equipements.chauffage.les-contrats-p1-a-p5"],
     "WAAT (opérateur de recharge)": ["energie.irve.les-operateurs-et-leurs-contrats", "equipements.electricite.bornes-de-recharge"],
     "EP (eaux pluviales)": ["equipements.plomberie.colonnes-eu-ev-ep", "pathologie.toitures.cheneaux-et-eaux-pluviales"],
     "surélévation": ["droit.travaux.la-surelevation-et-le-droit-de-surelever", "cabinet.cas-transverses.une-surelevation-proposee-par-un-promoteur"],
@@ -793,7 +801,7 @@ def construit() -> dict:
                  "une fois une carte publiée dessus.")
     prog["version"] = "0.2"
     prog["metier"] = "gestionnaire de copropriété"
-    prog["genere_le"] = "2026-09-03"
+    prog["genere_le"] = "2026-09-04"
     prog["niveaux"] = {str(k): v for k, v in NIVEAU_NOM.items()}
     prog["socle"] = {"_": "Niveau à tenir par domaine pour valider le socle (BLUEPRINT §6, decisions/0013).",
                      "niveaux": {k: v["niveau_socle"] for k, v in domaines.items() if v.get("niveau_socle")},
@@ -816,11 +824,13 @@ def construit() -> dict:
 def syllabus(prog: dict) -> str:
     L = []
     L.append("# SYLLABUS, le programme du gestionnaire de copropriété\n")
-    L.append("Généré le 03/09/2026 par `programme/genere_copro.py` depuis `programme/copro.json` (qui fait foi). "
+    L.append("Généré le 04/09/2026 depuis les données de `programme/genere_copro.py`, comme `programme/copro.json`. "
              "Ce fichier se lit comme le catalogue d'une formation en ligne : dix domaines, leurs branches et sous-branches, "
              f"{prog['compte']['chapitres']} chapitres sur cinq niveaux, ce que chacun apprend à faire, et le parcours des trois premiers mois. "
-             "Aucun chapitre n'est encore écrit sauf un témoin (`chapitres/droit/majorites/l-article-24.json`) : les agents remplissent "
+             "Cet inventaire est à écrire ; le chapitre témoin article 24 et le satellite chaudière hybride restent des brouillons. Les agents remplissent "
              "depuis ce squelette (chantier `ACA-CONTENT-2`), ils ne le redessinent pas sans décision.\n")
+    L.append("Les [corrections ciblées du 04/09](travail/2026-09-04-revision-copro.md) distinguent les faits vérifiés, les précisions de champ et les sources encore manquantes. "
+             "Les titres historiques sont conservés pour préserver les identifiants ; les capacités précisent le droit actuel.\n")
     L.append("## Comment lire\n")
     L.append("- **Niveaux** : I Repères (nommer, reconnaître), II Mécanismes (expliquer, appliquer), III Praticien (diagnostiquer, décider, rédiger), "
              "IV Doctrine (argumenter, critiquer), V Frontière (état de l'art, contribuer). Le socle = II partout, III en droit, comptabilité et cabinet.")
@@ -830,6 +840,11 @@ def syllabus(prog: dict) -> str:
     L.append(f"Compte : {prog['compte']['chapitres']} chapitres ({', '.join(f'{v} de niveau {k}' for k, v in prog['compte']['par_niveau'].items())}), "
              f"{prog['compte']['sous_branches']} sous-branches, {prog['compte']['cartes_cible_total']} cartes cibles ; socle : {prog['socle']['chapitres']} chapitres, "
              f"{prog['socle']['cartes_cible']} cartes cibles.\n")
+    minutes = sum(c["etude_minutes"] for c in prog["chapitres"]
+                  if c["domaine"] in prog["socle"]["niveaux"]
+                  and c["niveau"] <= prog["socle"]["niveaux"][c["domaine"]])
+    L.append(f"Les durées d'étude du socle totalisent {minutes // 60} h {minutes % 60:02d} : "
+             "ce sont des estimations éditoriales, hors rappels et mise en pratique, pas une durée de formation mesurée.\n")
     L.append("## Le parcours des trois premiers mois\n")
     L.append("Quatre séances et une étude par semaine, en niveaux I et II (quinze chapitres du trimestre sont passés en II au calibrage du 03/09), dans l'ordre du socle. Chaque semaine ouvre quatre à cinq chapitres en neuf ; "
              "l'étude du samedi prend le chapitre marqué. Après le trimestre, l'arbre est libre : la séance protège le socle, l'étude va où on veut.\n")

@@ -14,7 +14,24 @@ Dépend de : ACA-PROGRAMME-1, ACA-SOURCES-1. Bloque : ACA-ETUDE-1,
 ACA-BOITE-1, ACA-EXAMEN-1, ACA-PAPIER-1, ACA-AUDIT-1, ACA-CONTENT-2,
 ACA-BIBLIOTHEQUE-1, ACA-VERIF-1.
 
-## État au 04/09/2026 : l'étape 2 est arbitrée, à exécuter
+## Point d'arrêt du 04/09/2026 : candidat préparé, non promouvable
+
+`app/migre_banque.py` applique la table de 0030 dans une simulation ou
+un nouveau dossier isolé. Aucun mode de promotion ni archivage. Les
+15 tests et trois mutations ciblées passent. Le rapport mesure
+19 changements de domaine, et non les 21 annoncés avant application
+de la table finale ; 84 auteurs structurés manquent, 80 cartes valides
+n'ont pas de relecteur renseigné, 19 niveaux dépassent leur chapitre,
+quatre images manquent d'alternative textuelle. Il reste 54 chapitres
+à écrire dans le candidat. L'audit
+`travail/audit-froid-2026-09-04.md` donne le point de reprise complet.
+
+L'assignation est tranchée, pas la provenance : le « reste mécanique »
+annoncé ci-dessous est un état historique invalidé par la simulation.
+Ne pas inventer auteur, modèle, relecteur ou contenu pour migrer ;
+aucun archivage sans candidat vert et validation humaine.
+
+## État antérieur au 04/09/2026 : l'étape 2 arbitrée
 
 Les trois questions sont tranchées dans `decisions/0030` (21 changements
 acceptés, premier choix partout, deux chapitres neufs, P1 à P5). Il

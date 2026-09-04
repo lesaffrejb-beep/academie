@@ -1,0 +1,40 @@
+{
+  "observe_le": "2026-09-04",
+  "nature": "inventaire-editorial-local, pas une mesure des apprentissages",
+  "programmes": {
+    "copro": {
+      "source": "programme/copro.json",
+      "sha256": "a76e45a1eb768da4613f25061272331adf8407dea30484c15f61582e14573a40",
+      "chapitres": 389,
+      "socle_chapitres": 333,
+      "cartes_cible": 2990,
+      "socle_cartes_cible": 2486,
+      "socle_etude_minutes": 18645,
+      "objectifs_inventories": 0,
+      "niveaux": {
+        "1": 117,
+        "2": 193,
+        "3": 58,
+        "4": 19,
+        "5": 2
+      }
+    },
+    "ifsi": {
+      "source": "programme/ifsi.json",
+      "sha256": "a35c47e766a70d58060222003f8fc176a65baf8a5935be2884c1c8759ea3a6b3",
+      "chapitres": 375,
+      "socle_chapitres": 265,
+      "cartes_cible": 2794,
+      "socle_cartes_cible": 1862,
+      "socle_etude_minutes": 13965,
+      "objectifs_inventories": 1691,
+      "niveaux": {
+        "1": 96,
+        "2": 174,
+        "3": 62,
+        "4": 35,
+        "5": 8
+      }
+    }
+  }
+}

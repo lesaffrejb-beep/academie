@@ -1,6 +1,6 @@
 {
   "_": "Généré par app/genere.py — ne pas éditer à la main. Toute carte porte sa source et sa date de vérification ; une carte de statut `brouillon` n'a pas été revérifiée à la source et DOIT être signalée comme telle à l'écran.",
-  "genere_le": "2026-09-03",
+  "genere_le": "2026-09-04",
   "profil_defaut": "jb",
   "domaines": {
     "droit": {
@@ -537,10 +537,10 @@
         }
       ],
       "explication": "Deux planchers de nature différente : l'un indexe l'effort d'épargne sur le train de vie courant de la copropriété, l'autre sur ce que le plan a chiffré comme travaux à venir. Le second existe parce que le premier, seul, laisse une copropriété à petit budget cotiser une somme sans rapport avec ses besoins réels.",
-      "vigilance": "La cotisation peut être suspendue quand le fonds dépasse le budget prévisionnel, ou 50 % du montant des travaux du plan adopté. Suspension n'est pas dispense, et elle suppose le seuil atteint et constaté. La pièce qui fait foi est le relevé du compte séparé du fonds, pas la ligne du grand livre seule.",
+      "vigilance": "Avec un plan adopté, l'assemblée générale se prononce sur la suspension lorsque le fonds excède le budget prévisionnel ET 50 % du montant des travaux du plan. Les deux conditions sont cumulatives ; la suspension n'est pas automatique. Sans plan adopté, seul le dépassement du budget prévisionnel déclenche cette question à l'assemblée. La pièce financière se recoupe avec la résolution : atteindre les seuils ne suspend pas les appels.",
       "source": [
         {
-          "texte": "Art. 14-2-1 loi n° 65-557 du 10 juillet 1965 (cotisation annuelle : pas moins de 2,5 % du montant des travaux du plan adopté ET pas moins de 5 % du budget de l'art. 14-1 ; suspension possible quand le fonds excède le budget prévisionnel ou 50 % du montant des travaux du plan)",
+          "texte": "Art. 14-2-1 I et II, loi n° 65-557 du 10 juillet 1965 : planchers annuels cumulatifs avec un plan adopté ; suspension soumise à l'assemblée générale lorsque le fonds excède le budget prévisionnel et, en présence d'un plan adopté, excède aussi 50 % du montant de ses travaux.",
           "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000043967792",
           "nature": "texte-officiel"
         }
@@ -714,8 +714,8 @@
       "branche": "conformite-annuelle",
       "niveau": 2,
       "type": "qcm",
-      "question": "Quels bâtiments d'habitation collective sont soumis au diagnostic de performance énergétique collectif, et à quelle fréquence se renouvelle-t-il ?",
-      "reponse": "Ceux dont le permis de construire a été déposé avant le 01/01/2013 ; renouvelé tous les dix ans, sauf si un diagnostic postérieur au 01/07/2021 a établi une classe A, B ou C.",
+      "question": "En France métropolitaine, quels bâtiments d'habitation collective sont soumis au diagnostic de performance énergétique collectif, et à quelle fréquence se renouvelle-t-il ?",
+      "reponse": "En France métropolitaine, ceux dont le permis de construire a été déposé avant le 01/01/2013 ; renouvelé tous les dix ans, sauf si un diagnostic postérieur au 01/07/2021 a établi une classe A, B ou C.",
       "choix": [
         {
           "texte": "Permis de construire déposé avant le 01/01/2013 ; renouvellement décennal, sauf classe A, B ou C établie par un diagnostic postérieur au 01/07/2021",
@@ -734,10 +734,10 @@
         {
           "texte": "Les copropriétés de plus de cinquante lots seulement",
           "correct": false,
-          "pourquoi_faux": "La taille a commandé le calendrier d'entrée en vigueur, jamais le champ de l'obligation. Les trois vagues étant passées, toutes les tailles sont désormais concernées."
+          "pourquoi_faux": "En France métropolitaine, la taille a commandé le calendrier d'entrée en vigueur, pas le champ lié à l'ancienneté. Les trois vagues étant passées, toutes les tailles sont désormais concernées dans ce périmètre."
         }
       ],
-      "explication": "Deux critères se superposent et se confondent : l'ancienneté du bâtiment détermine s'il est visé, la taille de la copropriété a seulement déterminé à quelle date l'obligation lui est devenue opposable. Une fois toutes les vagues passées, seul le critère d'ancienneté subsiste.",
+      "explication": "En France métropolitaine, l'ancienneté du bâtiment détermine s'il est visé et la taille de la copropriété a déterminé la date d'entrée en vigueur. Le territoire se vérifie avant d'appliquer ce calendrier : cette carte ne transpose pas les échéances métropolitaines aux territoires ultramarins.",
       "vigilance": "Le diagnostic collectif se contrôle par son numéro ADEME, vérifiable sur l'observatoire. Sans numéro, on tient un document, pas une preuve.",
       "source": [
         {
@@ -746,7 +746,8 @@
           "nature": "texte-officiel"
         },
         {
-          "texte": "Art. 158 loi n° 2021-1104 du 22 août 2021 (calendrier : 01/01/2024, 01/01/2025, 01/01/2026)",
+          "texte": "Art. 158 VI et IX, loi n° 2021-1104 du 22 août 2021 : calendrier du DPE collectif et dérogation territoriale ; la carte est limitée à la France métropolitaine.",
+          "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000043957918/2026-06-20",
           "nature": "texte-officiel"
         }
       ],
@@ -958,7 +959,7 @@
         {
           "texte": "Le projet a recueilli la majorité des voix des copropriétaires présents",
           "correct": false,
-          "pourquoi_faux": "C'est la majorité de l'article 24, celle qui s'applique AU second vote — pas le seuil qui permet de l'ouvrir."
+          "pourquoi_faux": "La majorité des présents ne suffit pas à ouvrir la passerelle. Le seuil du premier vote porte sur toutes les voix du syndicat ; au second vote, l’article 24 retient les voix exprimées des copropriétaires présents, représentés ou ayant voté par correspondance."
         },
         {
           "texte": "Le président du conseil syndical le demande",
@@ -975,12 +976,17 @@
       "vigilance": "Le seuil du tiers se calcule sur TOUS les copropriétaires, comme l'article 25 lui-même. Convertir ce tiers en « 334 tantièmes » n'est juste que sur une copropriété à 1 000 tantièmes : c'est une illustration, jamais la règle. Second alinéa à ne pas confondre avec le premier : quand le projet porte sur des travaux du f de l'article 25 et n'a PAS atteint le tiers, il n'y a pas de second vote en séance, mais une nouvelle assemblée convoquée dans les trois mois sur un projet identique peut statuer à la majorité de l'article 24.",
       "source": [
         {
-          "texte": "Art. 25-1 loi n° 65-557 du 10 juillet 1965, version en vigueur depuis le 11/04/2024 (LOI n° 2024-322 du 9 avril 2024, art. 40)",
+          "texte": "Loi n° 65-557 du 10 juillet 1965, article 25-1, version en vigueur depuis le 11 avril 2024 ; consultée le 4 septembre 2026",
           "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000049398359",
+          "nature": "texte-officiel"
+        },
+        {
+          "texte": "Loi n° 65-557 du 10 juillet 1965, article 24, version en vigueur depuis le 18 juin 2025 ; consultée le 4 septembre 2026",
+          "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000051749514",
           "nature": "texte-officiel"
         }
       ],
-      "verifie": "2026-08-28",
+      "verifie": "2026-09-04",
       "statut": "valide"
     },
     {
@@ -989,39 +995,59 @@
       "branche": "veille-recente",
       "niveau": 1,
       "type": "qcm",
-      "question": "Depuis le décret du 22 décembre 2025, quel est le mode de notification de principe entre le syndic et les copropriétaires ?",
-      "reponse": "L'électronique. Le postal est devenu l'exception, réservée au copropriétaire qui le demande expressément, et le syndic n'a plus à recueillir d'accord préalable pour notifier par voie électronique.",
+      "question": "Pour choisir entre notification électronique et envoi postal, quel principe s’applique depuis l’entrée en vigueur du décret du 22 décembre 2025 ?",
+      "reponse": "La voie électronique s’applique sans accord préalable. Le copropriétaire peut demander à tout moment les notifications et mises en demeure par voie postale ; le syndic l’informe de cette possibilité.",
       "choix": [
         {
-          "texte": "L'électronique ; le papier ne subsiste que pour le copropriétaire qui le demande expressément",
+          "texte": "La voie électronique sans accord préalable ; le copropriétaire peut demander la voie postale",
           "correct": true
         },
         {
           "texte": "L'électronique, mais seulement pour les copropriétaires ayant donné leur accord préalable",
           "correct": false,
-          "pourquoi_faux": "C'est exactement le régime d'avant, que le décret a renversé. L'accord préalable n'est plus requis : continuer à le collecter ralentit le passage au numérique sans rien sécuriser."
+          "pourquoi_faux": "L’article 42-1 de la loi, dans sa version en vigueur depuis le 11 avril 2024, ne subordonne plus la notification électronique à l’accord préalable du copropriétaire."
         },
         {
           "texte": "Le papier, l'électronique restant une option à faire accepter",
           "correct": false,
-          "pourquoi_faux": "Le principe s'est inversé fin 2025. C'est le changement le plus structurant de la période, et celui qui met le plus de temps à entrer dans les habitudes de cabinet."
+          "pourquoi_faux": "L’article 42-1 prévoit la notification électronique et la faculté de demander la voie postale. Les modalités du décret modifié sont applicables depuis le 25 décembre 2025."
         },
         {
           "texte": "Le papier pour les convocations et procès-verbaux, l'électronique pour le reste",
           "correct": false,
-          "pourquoi_faux": "Le périmètre du décret ne se découpe pas ainsi : convocations, procès-verbaux, mises en demeure et appels de fonds sont tous concernés."
+          "pourquoi_faux": "Les convocations et procès-verbaux ne sont pas réservés à la voie postale. Il faut appliquer le régime de notification propre au document ; la mention jointe aux avis d’appels de charge ne transforme pas tous ces avis en notifications formelles."
         }
       ],
-      "explication": "Le renversement porte sur le principe, pas sur la liberté du copropriétaire : il peut toujours obtenir le papier, mais c'est à lui de le demander. Le coût de l'envoi et la charge de la démarche changent donc de côté, ce qui est tout l'objet de la réforme.",
-      "vigilance": "Le renversement a une contrepartie, et c'est un contrôle nouveau : chaque appel de fonds et chaque convocation doit rappeler la possibilité de recevoir les notifications et mises en demeure par voie postale.",
+      "explication": "Deux dates sont à distinguer : le principe légal figure à l’article 42-1 depuis le 11 avril 2024 ; le décret du 22 décembre 2025, publié le 24 décembre, règle les modalités applicables depuis le 25 décembre 2025. Le copropriétaire conserve le choix de la voie postale. La voie électronique doit respecter l’article 64 : un simple courriel ne suffit pas.",
+      "vigilance": "Les avis d’appels de charge et les convocations sont accompagnés de la mention de la possibilité de recevoir les notifications et mises en demeure par voie postale. Cette information ne dispense pas de vérifier les formalités applicables au document envoyé.",
       "source": [
         {
-          "texte": "Décret n° 2025-1292 du 22 décembre 2025 modifiant le décret n° 67-223 du 17 mars 1967 (art. 64 : la voie électronique devient le principe ; art. 64-1 : le postal sur demande du copropriétaire)",
-          "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000053159903",
+          "texte": "Loi n° 65-557 du 10 juillet 1965, article 42-1, version en vigueur depuis le 11 avril 2024 ; consultée le 4 septembre 2026",
+          "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000049398877",
+          "nature": "texte-officiel"
+        },
+        {
+          "texte": "Décret n° 2025-1292 du 22 décembre 2025, publié le 24 décembre et entré en vigueur le 25 décembre 2025 ; consulté le 4 septembre 2026",
+          "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000053159903/2025-12-25",
+          "nature": "texte-officiel"
+        },
+        {
+          "texte": "Décret n° 67-223 du 17 mars 1967, article 64 : modalités électroniques et départ du délai, version en vigueur depuis le 25 décembre 2025 ; consultée le 4 septembre 2026",
+          "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000053191373",
+          "nature": "texte-officiel"
+        },
+        {
+          "texte": "Décret n° 67-223 du 17 mars 1967, article 64-1 : voie postale et départ du délai, version en vigueur depuis le 25 décembre 2025 ; consultée le 4 septembre 2026",
+          "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000053191378/",
+          "nature": "texte-officiel"
+        },
+        {
+          "texte": "Décret n° 67-223 du 17 mars 1967, article 64-2 : mention accompagnant les avis d’appels de charge et les convocations, version en vigueur depuis le 25 décembre 2025 ; consultée le 4 septembre 2026",
+          "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000053191386",
           "nature": "texte-officiel"
         }
       ],
-      "verifie": "2026-08-28",
+      "verifie": "2026-09-04",
       "peremption": "2027-08-10",
       "statut": "valide"
     },
@@ -1036,16 +1062,16 @@
       "type": "flash",
       "question": "Que recouvre exactement la « voie électronique » au sens de l'article 64 du décret du 17 mars 1967, dans sa rédaction issue du décret du 22 décembre 2025 ?",
       "reponse": "Deux modalités, et deux seulement : la lettre recommandée électronique dans les conditions des articles R. 53 à R. 53-4 du code des postes et des communications électroniques, ou un procédé électronique mis en œuvre par un prestataire de service de confiance qualifié garantissant l'intégrité des données, la sécurité et la traçabilité. Un simple courriel ne vaut pas notification.",
-      "explication": "Le décret ne dématérialise pas la notification, il en change le support tout en gardant l'exigence de preuve : c'est la lettre recommandée électronique ou la qualification du prestataire qui produit l'équivalent du recommandé papier, horodatage et traçabilité compris. Un envoi depuis une boîte professionnelle, même avec accusé de lecture, ne fournit rien de tel.",
-      "vigilance": "C'est la confusion la plus coûteuse du nouveau régime : envoyer une convocation par courriel ordinaire en croyant appliquer le décret produit une convocation non notifiée, donc une assemblée attaquable.",
+      "explication": "L’article 64 impose soit une lettre recommandée électronique conforme aux articles R. 53 à R. 53-4 du code des postes et des communications électroniques, soit le procédé d’un prestataire de service de confiance qualifié répondant aux exigences du décret. Une adresse professionnelle ou un accusé de lecture ne suffisent pas à établir cette conformité.",
+      "vigilance": "Vérifier la modalité utilisée et les preuves produites par le prestataire : un simple courriel ne remplit pas, à lui seul, les conditions de l’article 64.",
       "source": [
         {
-          "texte": "Art. 64 du décret n° 67-223 du 17 mars 1967, dans sa rédaction issue du décret n° 2025-1292 du 22 décembre 2025 (lettre recommandée électronique des art. R. 53 à R. 53-4 du code des postes et des communications électroniques, ou procédé électronique d'un prestataire de service de confiance qualifié)",
-          "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000053159903",
+          "texte": "Décret n° 67-223 du 17 mars 1967, article 64 : modalités électroniques et départ du délai, version en vigueur depuis le 25 décembre 2025 ; consultée le 4 septembre 2026",
+          "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000053191373",
           "nature": "texte-officiel"
         }
       ],
-      "verifie": "2026-08-28",
+      "verifie": "2026-09-04",
       "peremption": "2027-08-10",
       "statut": "valide"
     },
@@ -1059,17 +1085,22 @@
       ],
       "type": "flash",
       "question": "Quelle mention le décret du 22 décembre 2025 impose-t-il d'ajouter, et sur quels documents ?",
-      "reponse": "Le rappel de la possibilité de recevoir les notifications et mises en demeure par voie postale, sur chaque appel de fonds et sur chaque convocation d'assemblée.",
-      "explication": "C'est la contrepartie du renversement : puisque le copropriétaire n'a plus à consentir au numérique, il faut au moins l'informer, à chaque envoi, qu'il peut revenir au papier. L'obligation porte sur deux documents précis et récurrents, pas sur une information générale donnée une fois.",
+      "reponse": "Le rappel de la possibilité de recevoir les notifications et mises en demeure par voie postale, qui accompagne les avis d’appels de charge et les convocations aux assemblées générales.",
+      "explication": "L’article 64-2 précise les documents accompagnés de cette mention. L’information rappelle le choix postal prévu par l’article 42-1 ; elle ne se réduit pas à une information générale donnée une seule fois.",
       "vigilance": "Une mention absente n'est pas un incident isolé mais une anomalie de process : elle vit dans les gabarits de l'outil de gestion et se répète sur tout le portefeuille jusqu'à correction du gabarit. C'est là qu'on va la vérifier, pas envoi par envoi.",
       "source": [
         {
-          "texte": "Art. 64-2 du décret n° 67-223 du 17 mars 1967, modifié par le décret n° 2025-1292 du 22 décembre 2025 (le syndic accompagne les appels de fonds et les convocations de la mention de la possibilité de recevoir les notifications et mises en demeure par voie postale)",
-          "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000053159903",
+          "texte": "Décret n° 67-223 du 17 mars 1967, article 64-2 : mention accompagnant les avis d’appels de charge et les convocations, version en vigueur depuis le 25 décembre 2025 ; consultée le 4 septembre 2026",
+          "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000053191386",
+          "nature": "texte-officiel"
+        },
+        {
+          "texte": "Loi n° 65-557 du 10 juillet 1965, article 42-1, version en vigueur depuis le 11 avril 2024 ; consultée le 4 septembre 2026",
+          "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000049398877",
           "nature": "texte-officiel"
         }
       ],
-      "verifie": "2026-08-28",
+      "verifie": "2026-09-04",
       "peremption": "2027-08-10",
       "statut": "valide"
     },
@@ -1079,17 +1110,17 @@
       "branche": "veille-recente",
       "niveau": 2,
       "type": "qcm",
-      "question": "Une convocation est notifiée. À compter de quand le délai court-il ?",
-      "reponse": "Papier : le lendemain de la première présentation au domicile. Électronique : le lendemain de la transmission de l'avis électronique par le prestataire qualifié.",
+      "question": "Une convocation est notifiée par lettre recommandée postale ou par voie électronique conforme à l’article 64. À compter de quand le délai court-il ?",
+      "reponse": "Voie postale : le lendemain de la première présentation de la lettre recommandée au domicile du destinataire. Voie électronique : le lendemain de la transmission de l’avis électronique d’envoi par le prestataire qualifié.",
       "choix": [
         {
-          "texte": "Le lendemain de la première présentation pour le papier, le lendemain de la transmission de l'avis électronique pour l'électronique",
+          "texte": "Le lendemain de la première présentation pour la lettre recommandée postale, le lendemain de la transmission de l’avis électronique d’envoi pour l’électronique",
           "correct": true
         },
         {
           "texte": "Le jour de l'envoi, dans les deux cas",
           "correct": false,
-          "pourquoi_faux": "La date d'envoi ne commande rien. C'est l'erreur qui fait croire un délai tenu alors qu'il manque plusieurs jours d'acheminement."
+          "pourquoi_faux": "Pour la lettre recommandée postale, la date d’expédition ne constitue pas la première présentation. Pour la voie électronique, le texte retient le lendemain de la transmission de l’avis électronique d’envoi."
         },
         {
           "texte": "Le jour du retrait du pli par le destinataire",
@@ -1102,16 +1133,21 @@
           "pourquoi_faux": "Le délai court à compter du lendemain. Un jour d'écart suffit à rendre une convocation tardive et l'assemblée attaquable."
         }
       ],
-      "explication": "Les deux modes suivent la même logique : le délai part du moment où le destinataire a été mis en mesure de prendre connaissance du pli, pas du moment où l'expéditeur s'en est débarrassé, ni du moment où le destinataire a bien voulu s'en saisir. Le nouveau régime électronique n'a fait que transposer cette règle à l'avis du prestataire.",
-      "vigilance": "Ce qui prouve le point de départ est la trace de première présentation dans le suivi de l'envoi, pas la date de signature de l'accusé de réception. C'est cette pièce-là qu'on conserve au dossier.",
+      "explication": "Les articles 64 et 64-1 fixent chacun un événement de départ du délai. Il faut identifier le mode de notification puis la date de l’événement prévu par le texte ; la lecture effective du message ou le retrait du pli ne remplacent pas cet événement.",
+      "vigilance": "Conserver la preuve de première présentation pour la lettre recommandée postale, ou la preuve de transmission de l’avis électronique d’envoi pour la voie électronique. La remise en main propre relève d’un autre mode, hors de cette question.",
       "source": [
         {
-          "texte": "Art. 64 et 64-1 du décret n° 67-223 du 17 mars 1967, dans leur rédaction issue du décret n° 2025-1292 du 22 décembre 2025 (électronique : lendemain de la transmission par le prestataire de l'avis électronique ; postal : lendemain de la première présentation de la lettre recommandée au domicile)",
-          "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000053159903",
+          "texte": "Décret n° 67-223 du 17 mars 1967, article 64 : modalités électroniques et départ du délai, version en vigueur depuis le 25 décembre 2025 ; consultée le 4 septembre 2026",
+          "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000053191373",
+          "nature": "texte-officiel"
+        },
+        {
+          "texte": "Décret n° 67-223 du 17 mars 1967, article 64-1 : voie postale et départ du délai, version en vigueur depuis le 25 décembre 2025 ; consultée le 4 septembre 2026",
+          "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000053191378/",
           "nature": "texte-officiel"
         }
       ],
-      "verifie": "2026-08-28",
+      "verifie": "2026-09-04",
       "peremption": "2027-08-10",
       "statut": "valide"
     },
@@ -2441,22 +2477,17 @@
       "niveau": 1,
       "type": "flash",
       "question": "Dégât des eaux : de quel délai dispose-t-on pour déclarer à l'assureur, et à partir de quand court-il ?",
-      "reponse": "Cinq jours ouvrés, à compter de la DÉCOUVERTE du sinistre, pas de la date à laquelle la fuite a commencé.",
-      "explication": "Le point de départ est le moment où l'assuré a eu connaissance du sinistre. C'est ce qui rend la question « quand l'avez-vous découvert ? » plus importante, au téléphone, que « depuis quand ça fuit ? » : la seconde intéresse l'expert, la première fait courir le délai. La date de découverte se note et se date par écrit dès l'appel, elle sera la ligne de défense si le délai est contesté.",
-      "vigilance": "Cinq jours ouvrés est le plancher légal ; la police peut prévoir un délai plus long, jamais plus court. Devant un cas tendu, on vérifie le contrat plutôt que de réciter le plancher.",
+      "reponse": "Déclare le sinistre dès que tu en as connaissance et au plus tard dans le délai prévu au contrat : il doit être d'au moins cinq jours ouvrés. Le point de départ est la connaissance du sinistre par l'assuré.",
+      "explication": "Note la date à laquelle l'assuré a eu connaissance du sinistre, puis consulte le contrat pour déterminer le délai applicable. La date de début de la fuite peut être différente de la date de sa découverte.",
+      "vigilance": "Le contrat peut prévoir un délai plus long ; conserve une preuve datée de la déclaration.",
       "source": [
         {
-          "texte": "Art. L113-2, 4° du code des assurances (déclaration dès que l'assuré en a eu connaissance et au plus tard dans le délai fixé par le contrat, qui ne peut être inférieur à cinq jours ouvrés)",
+          "texte": "Art. L113-2, 4° du code des assurances : avis dès connaissance du sinistre, au plus tard dans le délai contractuel, qui ne peut être inférieur à cinq jours ouvrés hors exceptions prévues par ce texte",
           "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000035731302",
           "nature": "texte-officiel"
-        },
-        {
-          "texte": "Convention IRSI, convention inter-assureurs non publiée (sinistres survenus à compter du 01/06/2018, version révisée au 01/07/2020)",
-          "nature": "organisation-pro",
-          "parti": "défend les assureurs"
         }
       ],
-      "verifie": "2026-08-28",
+      "verifie": "2026-09-04",
       "statut": "valide"
     },
     {
@@ -2468,39 +2499,49 @@
         "sinistres-delai-degat-des-eaux"
       ],
       "type": "qcm",
-      "question": "Un vol est constaté dans les parties communes. Quel est le délai de déclaration, et quelle pièce conditionne en pratique le dossier ?",
-      "reponse": "Deux jours ouvrés : c'est le plancher que le contrat ne peut pas descendre en cas de vol. Et le dépôt de plainte : sans numéro de plainte, l'assureur ne traite pas le dossier.",
+      "question": "Un vol est constaté dans les parties communes : comment déclarer le sinistre tout en constituant le dossier de plainte ?",
+      "reponse": "Déclare dès connaissance dans le délai prévu au contrat, d'au moins deux jours ouvrés en cas de vol, sans attendre qu'une pièce manquante fasse dépasser ce délai. Dépose plainte et transmets le récépissé à l'assureur pour compléter le dossier selon les exigences du contrat.",
       "choix": [
         {
-          "texte": "Deux jours ouvrés, avec dépôt de plainte préalable",
+          "texte": "Déclarer dès connaissance, vérifier le délai du contrat et transmettre le récépissé de plainte",
           "correct": true
         },
         {
-          "texte": "Cinq jours ouvrés, comme pour un dégât des eaux",
+          "texte": "Attendre le récépissé de plainte avant tout avis à l'assureur, même si le délai expire",
           "correct": false,
-          "pourquoi_faux": "Le vol est le cas où le délai est le plus court de tous. Appliquer par réflexe le délai du dégât des eaux fait perdre l'essentiel de la fenêtre."
+          "pourquoi_faux": "L'obligation de déclaration dès connaissance et dans le délai contractuel demeure. Constituer les justificatifs ne justifie pas de différer l'avis à l'assureur jusqu'au dépassement de ce délai."
         },
         {
-          "texte": "Deux jours ouvrés, le dépôt de plainte pouvant être fait plus tard",
+          "texte": "Appliquer systématiquement cinq jours ouvrés, comme pour un dégât des eaux",
           "correct": false,
-          "pourquoi_faux": "Le numéro de plainte est une pièce du dossier de déclaration, pas une formalité de suite : sans lui l'assureur ne traite pas."
+          "pourquoi_faux": "Le plancher légal est de deux jours ouvrés pour le vol ; le délai effectivement applicable se lit dans le contrat. Cinq jours ne constitue donc pas une règle universelle pour le vol."
         },
         {
-          "texte": "Trente jours, comme pour une catastrophe naturelle",
+          "texte": "Appliquer trente jours à compter d'un arrêté de reconnaissance",
           "correct": false,
-          "pourquoi_faux": "Le délai de trente jours est propre à la catastrophe naturelle et court à compter de la publication de l'arrêté de reconnaissance, un mécanisme sans rapport avec le vol."
+          "pourquoi_faux": "Cette limite de déclaration appartient au régime des catastrophes naturelles. Un vol relève du délai contractuel et du plancher prévus par l'article L113-2."
         }
       ],
-      "explication": "Le réflexe est en trois temps : déposer plainte, sécuriser les accès, déclarer avec le numéro de plainte. Les photos se prennent avant tout nettoyage, y compris avant le passage de l'entreprise de propreté, qui efface souvent les traces de la journée.",
-      "vigilance": "Deux jours ouvrés se consomment vite quand la constatation tombe un vendredi soir : un vol constaté en fin de semaine se traite le jour même, pas le lundi. Deux précisions à ne pas confondre : le plancher légal des deux jours vise le VOL, le vandalisme suit le délai prévu au contrat ; et l'exigence du dépôt de plainte est contractuelle, pas légale.",
+      "explication": "La déclaration et la constitution des justificatifs sont deux démarches à mener rapidement. Le récépissé de plainte fait partie des pièces du dossier de vol ; l'article L113-2 ne fait pas de sa remise un préalable à l'avis de sinistre.",
+      "vigilance": "Le plancher de deux jours ouvrés vise le vol ; pour le vandalisme, vérifie la garantie et le délai applicables dans le contrat.",
       "source": [
         {
-          "texte": "Art. L113-2, 4° du code des assurances (délai contractuel de déclaration réduit à deux jours ouvrés en cas de vol)",
+          "texte": "Art. L113-2, 4° du code des assurances : avis dès connaissance et délai contractuel qui ne peut être inférieur à deux jours ouvrés en cas de vol",
           "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000035731302",
+          "nature": "texte-officiel"
+        },
+        {
+          "texte": "Service Public, assurance habitation et vol : déclaration à l'assureur, modalités contractuelles et récépissé de dépôt de plainte parmi les justificatifs",
+          "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F2028",
+          "nature": "institution"
+        },
+        {
+          "texte": "Art. L125-2 du code des assurances : délai propre aux catastrophes naturelles, pour distinguer le distracteur du régime du vol",
+          "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000047109081",
           "nature": "texte-officiel"
         }
       ],
-      "verifie": "2026-08-28",
+      "verifie": "2026-09-04",
       "statut": "valide"
     },
     {
@@ -2509,22 +2550,18 @@
       "branche": "sinistres",
       "niveau": 2,
       "type": "flash",
-      "question": "Catastrophe naturelle : quel délai de déclaration, et à partir de quel événement court-il ?",
-      "reponse": "Trente jours à compter de la publication au Journal officiel de l'arrêté interministériel de reconnaissance de l'état de catastrophe naturelle. Le délai ne court pas depuis le sinistre lui-même.",
-      "explication": "Le mécanisme est particulier : tant que l'arrêté n'est pas publié, la garantie n'est pas ouverte, et l'horloge ne tourne pas. Le travail du gestionnaire est donc en deux temps : constituer le dossier de justificatifs immédiatement après l'événement, pendant que les traces sont fraîches, puis surveiller la publication de l'arrêté pour la commune concernée. Ce délai était de dix jours avant d'être porté à trente pour les sinistres relevant du régime en vigueur depuis le 1er janvier 2023.",
-      "vigilance": "Un dossier constitué au moment de la reconnaissance, plusieurs mois après l'événement, est presque toujours incomplet : les désordres ont été réparés, les photos n'existent pas.",
+      "question": "Après un événement susceptible de relever d'une catastrophe naturelle, quand donner avis à l'assureur et quelle est la limite de déclaration ?",
+      "reponse": "Déclare le sinistre dès que tu en as connaissance, et au plus tard trente jours après la publication de l'arrêté de reconnaissance de l'état de catastrophe naturelle.",
+      "explication": "L'article L125-2 impose l'avis dès connaissance du sinistre. La publication de l'arrêté fixe la limite extérieure de déclaration ; constitue les justificatifs sans attendre et complète le dossier avec la référence de l'arrêté lorsqu'il paraît.",
+      "vigilance": "Surveille la publication de l'arrêté et conserve les preuves du sinistre ainsi que la date de la déclaration initiale.",
       "source": [
         {
-          "texte": "Art. L125-2 du code des assurances (déclaration au plus tard trente jours après la publication de l'arrêté interministériel de reconnaissance de l'état de catastrophe naturelle)",
+          "texte": "Art. L125-2 du code des assurances, version en vigueur depuis le 28 mai 2026 : avis dès connaissance du sinistre, au plus tard trente jours après publication de l'arrêté de reconnaissance",
           "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000047109081",
-          "nature": "texte-officiel"
-        },
-        {
-          "texte": "Loi n° 2021-1837 du 28 décembre 2021 (délai porté de dix à trente jours, en vigueur au 01/01/2023)",
           "nature": "texte-officiel"
         }
       ],
-      "verifie": "2026-08-28",
+      "verifie": "2026-09-04",
       "peremption": "2027-07-02",
       "statut": "valide"
     },
@@ -2537,131 +2574,18 @@
         "sinistres-delai-degat-des-eaux"
       ],
       "type": "flash",
-      "question": "Que risque-t-on concrètement à laisser passer un délai de déclaration, et sur qui retombe ce risque ?",
-      "reponse": "La déchéance de garantie : l'assureur peut refuser toute indemnisation, et le syndicat comme le copropriétaire sinistré se retrouvent sans couverture. Le retard imputable au gestionnaire engage sa responsabilité professionnelle au titre de son obligation de diligence.",
-      "explication": "C'est la raison pour laquelle un sinistre ne se traite pas dans l'ordre d'arrivée : ce qui est perdu par le délai ne se rattrape par aucune argumentation ultérieure. Le montant en jeu n'est pas celui du dommage mais celui de l'indemnité perdue, qui devient une créance possible contre le professionnel.",
-      "vigilance": "La déchéance n'est pas automatique : l'assureur doit l'opposer et le retard doit lui avoir causé un préjudice. Cela n'en fait pas un risque théorique, cela en fait un contentieux qu'on ne veut jamais avoir à mener.",
+      "question": "Une déclaration de sinistre tardive suffit-elle à priver l'assuré de la garantie ?",
+      "reponse": "La déchéance pour déclaration tardive suppose une clause du contrat et un préjudice causé à l'assureur par ce retard, qu'il doit établir. Elle ne peut pas être opposée si le retard résulte d'un cas fortuit ou de force majeure.",
+      "explication": "Une date dépassée ne suffit donc pas à conclure à la perte de garantie. Déclare le sinistre, conserve la preuve de l'envoi et les éléments expliquant le retard, puis examine la clause et le préjudice invoqués par l'assureur.",
+      "vigilance": "Conserve aussi les éléments utiles pour apprécier un éventuel cas fortuit ou de force majeure.",
       "source": [
         {
-          "texte": "Art. L113-2 du code des assurances (la déchéance pour déclaration tardive ne peut être opposée à l'assuré que si l'assureur établit que le retard lui a causé un préjudice)",
+          "texte": "Art. L113-2 du code des assurances : déchéance prévue par une clause du contrat, préjudice dû au retard établi par l'assureur, exception pour cas fortuit ou force majeure",
           "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000035731302",
           "nature": "texte-officiel"
-        },
-        {
-          "texte": "Art. 18 loi n° 65-557 du 10 juillet 1965 (obligation de diligence du syndic)",
-          "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000044074302",
-          "nature": "texte-officiel"
         }
       ],
-      "verifie": "2026-08-28",
-      "statut": "valide"
-    },
-    {
-      "id": "sinistres-irsi-tranches",
-      "domaine": "sinistres",
-      "branche": "sinistres",
-      "niveau": 2,
-      "type": "qcm",
-      "question": "Dégât des eaux, dommages estimés à 3 000 € HT pour le local sinistré. Quel régime s'applique et qui pilote ?",
-      "reponse": "Tranche 2 de la convention IRSI : l'assureur gestionnaire, celui de l'occupant du local sinistré, missionne une expertise pour compte commun, règle, puis exerce son recours.",
-      "choix": [
-        {
-          "texte": "Tranche 2 de l'IRSI : expertise pour compte commun par l'assureur gestionnaire, puis recours",
-          "correct": true
-        },
-        {
-          "texte": "Tranche 1 de l'IRSI : règlement sans expertise et sans recours",
-          "correct": false,
-          "pourquoi_faux": "La tranche 1 s'arrête au premier seuil, très en dessous de 3 000 € HT. Elle se distingue justement par l'absence d'expertise systématique et l'abandon de recours."
-        },
-        {
-          "texte": "Hors IRSI : chaque assureur gère son assuré, expertise contradictoire",
-          "correct": false,
-          "pourquoi_faux": "On ne sort de la convention qu'au-delà du second seuil. À 3 000 € HT, un seul assureur pilote, ce qui change complètement l'interlocuteur à relancer."
-        },
-        {
-          "texte": "Cela dépend de l'assureur du syndicat, qui gère dès que l'immeuble est concerné",
-          "correct": false,
-          "pourquoi_faux": "L'assureur gestionnaire est déterminé par le local sinistré, pas par la qualité de l'immeuble. L'assureur du syndicat n'intervient comme gestionnaire que lorsque le local sinistré relève des parties communes."
-        }
-      ],
-      "explication": "Les trois régimes, par estimation des dommages par local sinistré : jusqu'à 1 600 € HT, tranche 1, l'assureur du local sinistré gère seul, sans expertise systématique et sans recours ; de 1 600 à 5 000 € HT, tranche 2, expertise pour compte commun et recours après règlement ; au-delà de 5 000 € HT, on sort de l'IRSI vers la convention dédiée à la copropriété ou le droit commun, avec expertise contradictoire.",
-      "vigilance": "Ces montants sont des seuils conventionnels révisables, en euros HT, et ils s'apprécient PAR LOCAL sinistré : trois logements touchés à 2 000 € chacun ne font pas un dossier à 6 000 €. Vérifier le seuil en vigueur avant de l'annoncer à un copropriétaire.",
-      "source": [
-        {
-          "texte": "Convention IRSI, convention inter-assureurs NON PUBLIÉE (sinistres survenus à compter du 01/06/2018, version révisée au 01/07/2020) : tranche 1 jusqu'à 1 600 € HT par local, tranche 2 de 1 601 à 5 000 € HT par local, avec expertise pour compte commun obligatoire en tranche 2. Seuils recoupés le 28/08/2026 sur des sources professionnelles concordantes, le texte conventionnel n'étant pas consultable publiquement.",
-          "nature": "organisation-pro",
-          "parti": "défend les assureurs"
-        }
-      ],
-      "verifie": "2026-08-28",
-      "peremption": "2027-07-02",
-      "statut": "valide"
-    },
-    {
-      "id": "sinistres-irsi-assureur-gestionnaire",
-      "domaine": "sinistres",
-      "branche": "sinistres",
-      "niveau": 2,
-      "prerequis": [
-        "sinistres-irsi-tranches"
-      ],
-      "type": "flash",
-      "question": "Sous convention IRSI, qui est l'assureur gestionnaire, et qu'est-ce que cela change pour le gestionnaire d'immeuble ?",
-      "reponse": "L'assureur de l'occupant du local sinistré, quel que soit l'endroit d'où vient l'eau. Lorsque le local sinistré relève des parties communes, c'est l'assureur multirisque du syndicat.",
-      "explication": "La convention désigne un pilote unique pour éviter que chaque assureur missionne son propre expert sur le même dégât. Conséquence pratique : on relance un seul interlocuteur, celui du sinistré, et non l'assureur de celui d'où provient la fuite. C'est contre-intuitif, et c'est la source d'erreur la plus courante dans le suivi d'un dossier.",
-      "vigilance": "Un locataire victime déclare à sa propre assurance habitation ; le syndicat déclare de son côté à la multirisque immeuble si les parties communes sont touchées. Les deux déclarations coexistent, l'une ne dispense pas de l'autre.",
-      "source": [
-        {
-          "texte": "Convention IRSI, convention inter-assureurs non publiée (sinistres survenus à compter du 01/06/2018, version révisée au 01/07/2020), désignation de l'assureur gestionnaire par le local sinistré",
-          "nature": "organisation-pro",
-          "parti": "défend les assureurs"
-        }
-      ],
-      "verifie": "2026-08-28",
-      "statut": "valide"
-    },
-    {
-      "id": "sinistres-recherche-de-fuite",
-      "domaine": "sinistres",
-      "branche": "sinistres",
-      "niveau": 2,
-      "prerequis": [
-        "sinistres-irsi-assureur-gestionnaire"
-      ],
-      "type": "flash",
-      "question": "Fuite invisible : qui organise la recherche de fuite, et qu'est-ce que la garantie couvre exactement ?",
-      "reponse": "L'assureur gestionnaire l'organise. Depuis la version de la convention applicable au 1er juillet 2020, la recherche de fuite est réputée garantie sans franchise ni plafond par tout contrat couvrant le local des investigations. La remise en état des dégâts causés par les investigations est comprise ; la réparation de la cause de la fuite en est exclue.",
-      "explication": "La distinction est celle qu'il faut savoir dire au téléphone : on prend en charge le fait d'être allé chercher, et de reboucher ce qu'on a ouvert, mais pas la réparation de la canalisation ou du joint fautif, qui reste à la charge de celui qui en a la propriété ou l'entretien. Sans rapport de recherche de fuite, une fuite invisible ne s'indemnise pas : c'est la pièce qui débloque le dossier.",
-      "vigilance": "Ne rien faire réparer d'irréversible avant l'expertise, et ne rien jeter. Une remise en état spontanée fait disparaître la preuve de l'origine et bascule le dossier sur la parole du sinistré.",
-      "source": [
-        {
-          "texte": "Convention IRSI, version applicable aux sinistres survenus à compter du 01/07/2020 : la recherche de fuite est réputée garantie, sans franchise ni plafond, par tout contrat garantissant le local des investigations, quelles que soient les responsabilités engagées. Convention inter-assureurs non publiée, point recoupé le 28/08/2026 sur des sources professionnelles concordantes.",
-          "nature": "organisation-pro",
-          "parti": "défend les assureurs"
-        }
-      ],
-      "verifie": "2026-08-28",
-      "statut": "valide"
-    },
-    {
-      "id": "sinistres-cidre-abrogee",
-      "domaine": "sinistres",
-      "branche": "sinistres",
-      "niveau": 1,
-      "type": "flash",
-      "question": "Un interlocuteur vous parle de la convention CIDRE pour un dégât des eaux récent. Que répondez-vous ?",
-      "reponse": "Qu'elle ne s'applique plus : pour les sinistres survenus à compter du 1er juin 2018, c'est la convention IRSI qui régit les rapports entre assureurs. La CIDRE ne se cite plus.",
-      "explication": "Le vocabulaire est resté longtemps dans les habitudes, y compris chez des professionnels, et il induit en erreur sur des points concrets : seuils, assureur qui pilote, existence d'un recours. Reprendre le terme exact évite de raisonner sur un mécanisme qui n'existe plus.",
-      "vigilance": "Un sinistre ancien peut légitimement relever du régime antérieur : le critère est la date de survenance du sinistre, pas la date à laquelle on en parle.",
-      "source": [
-        {
-          "texte": "Convention IRSI (applicable aux sinistres survenus à compter du 01/06/2018, en remplacement de la CIDRE)",
-          "nature": "organisation-pro",
-          "parti": "défend les assureurs"
-        }
-      ],
-      "verifie": "2026-08-28",
+      "verifie": "2026-09-04",
       "statut": "valide"
     },
     {
@@ -3048,6 +2972,19 @@
       "statut": "a-ecrire"
     },
     {
+      "id": "droit.assemblee.la-notification",
+      "titre": "La notification",
+      "domaine": "droit",
+      "branche": "assemblee",
+      "sous_branche": "preparer",
+      "niveau": 2,
+      "prerequis": [
+        "droit.assemblee.la-convocation-forme-et-delai"
+      ],
+      "satellite": false,
+      "statut": "a-ecrire"
+    },
+    {
       "id": "droit.assemblee.l-ordre-du-jour-et-les-inscriptions",
       "titre": "L'ordre du jour et les inscriptions",
       "domaine": "droit",
@@ -3126,6 +3063,7 @@
       "niveau": 3,
       "prerequis": [
         "droit.assemblee.la-convocation-forme-et-delai",
+        "droit.assemblee.la-notification",
         "droit.assemblee.l-ordre-du-jour-et-les-inscriptions",
         "droit.assemblee.les-pieces-jointes-obligatoires"
       ],
@@ -3141,6 +3079,7 @@
       "niveau": 3,
       "prerequis": [
         "droit.assemblee.la-convocation-forme-et-delai",
+        "droit.assemblee.la-notification",
         "droit.assemblee.l-ordre-du-jour-et-les-inscriptions",
         "droit.assemblee.les-pieces-jointes-obligatoires"
       ],
@@ -4116,8 +4055,8 @@
       "statut": "a-ecrire"
     },
     {
-      "id": "equipements.chauffage.les-contrats-p1-a-p4",
-      "titre": "Les contrats P1 à P4",
+      "id": "equipements.chauffage.les-contrats-p1-a-p5",
+      "titre": "Les contrats P1 à P5",
       "domaine": "equipements",
       "branche": "chauffage",
       "sous_branche": "gaz-fioul",
@@ -4189,7 +4128,7 @@
       "sous_branche": "gaz-fioul",
       "niveau": 3,
       "prerequis": [
-        "equipements.chauffage.les-contrats-p1-a-p4",
+        "equipements.chauffage.les-contrats-p1-a-p5",
         "equipements.chauffage.les-exploitants-de-chauffage",
         "equipements.chauffage.individualisation-des-frais",
         "equipements.chauffage.eau-chaude-sanitaire-et-legionelles"
@@ -5435,6 +5374,19 @@
       "statut": "a-ecrire"
     },
     {
+      "id": "procedure.recouvrement.la-decheance-du-terme",
+      "titre": "La déchéance du terme",
+      "domaine": "procedure",
+      "branche": "recouvrement",
+      "sous_branche": "titre",
+      "niveau": 2,
+      "prerequis": [
+        "procedure.avant-le-proces.mise-en-demeure-recommande-sommation"
+      ],
+      "satellite": false,
+      "statut": "a-ecrire"
+    },
+    {
       "id": "procedure.recouvrement.l-injonction-de-payer",
       "titre": "L'injonction de payer",
       "domaine": "procedure",
@@ -5485,6 +5437,7 @@
       "sous_branche": "titre",
       "niveau": 3,
       "prerequis": [
+        "procedure.recouvrement.la-decheance-du-terme",
         "procedure.recouvrement.l-injonction-de-payer",
         "procedure.recouvrement.l-assignation"
       ],
@@ -7042,7 +6995,7 @@
       "branche": "cas-transverses",
       "niveau": 3,
       "prerequis": [
-        "equipements.chauffage.les-contrats-p1-a-p4",
+        "equipements.chauffage.les-contrats-p1-a-p5",
         "cabinet.negocier.avec-un-prestataire",
         "droit.travaux.travaux-votes-et-travaux-urgents"
       ],

@@ -21,7 +21,8 @@ class Http(unittest.TestCase):
             with urllib.request.urlopen(base + "/sante", timeout=5) as r:
                 self.assertTrue(json.loads(r.read())["ok"])
             corps = json.dumps({"depuis": None, "lignes": [{"quand": "2026-09-03T08:00:00+00:00", "mode": "revision",
-                                                            "nonce": "nonce-http-1", "carte": "c", "note": 3}]}).encode()
+                                                            "nonce": "nonce-http-1", "carte": "c", "note": 3,
+                                                            "format": "seance"}]}).encode()
             req = urllib.request.Request(base + "/journal", data=corps, method="POST",
                                          headers={"Authorization": f"Bearer {jeton}", "Content-Type": "application/json"})
             with urllib.request.urlopen(req, timeout=5) as r:

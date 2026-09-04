@@ -43,8 +43,9 @@ function Application() {
   }
 
   return (
-    <div className="mx-auto flex min-h-full max-w-3xl flex-col">
-      <main className="flex-1">{ecran}</main>
+    <div className={enSalle ? "application en-salle" : "application"}>
+      {enSalle ? null : <header className="entete-app"><a href="#/" className="marque">{LIB.app}<span className="marque-point" /></a><span className="date-app">{new Intl.DateTimeFormat("fr-FR", { weekday: "long", day: "numeric", month: "long" }).format(new Date())}</span></header>}
+      <main className="contenu-app">{ecran}</main>
       {enSalle ? null : <Barre route={route} />}
     </div>
   );

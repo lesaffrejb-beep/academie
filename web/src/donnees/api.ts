@@ -73,7 +73,7 @@ export const api = {
       body: JSON.stringify({ type, contenu }),
     }),
 
-  litBoite: () => appelle<{ id: string; contenu: string; etat: string }[]>("/boite"),
+  litBoite: () => appelle<{ entrees: { id: string; contenu: string; etat: string }[] }>("/boite"),
 
   signale: (carte: string, motif: string) =>
     appelle<Record<string, unknown>>("/signalements", {

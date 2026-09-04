@@ -29,13 +29,19 @@ Règles :
 | Judilibre (Cour de cassation) | jurisprudence | arrêts, lectures d'arrêt | API ouverte |
 | Cour de cassation, rapports annuels et communiqués | jurisprudence, doctrine | niveau 4 | lecture directe |
 | ANIL et les ADIL | institution | fiches pratiques datées | lecture directe |
-| Service-public.fr | institution | démarches, délais | lecture directe |
+| Service Public, service-public.fr et service-public.gouv.fr | institution | démarches, délais | lecture directe, version datée |
 | Vie-publique.fr | institution | histoire des lois, dossiers | lecture directe |
 | ADEME (dont l'observatoire DPE) | institution | énergie, DPE, rénovation | lecture directe, données ouvertes |
 | ANAH / France Rénov' | institution | aides (péremption obligatoire) | lecture directe |
 | Ministère de la transition écologique (ecologie.gouv.fr) | institution | DPE, calendriers, PPT | lecture directe |
 | CRE | institution | prix et tarifs (péremption) | lecture directe |
 | CNIL | institution | RGPD au cabinet | lecture directe |
+| INRS (inrs.fr) | institution | prévention BTP, coordination SPS, charge et risques psychosociaux | liens et lecture documentaire ; pas de reproduction non privée sans autorisation |
+| DGCCRF (economie.gouv.fr) | institution | devis, garanties, pratiques contractuelles | lecture directe ; vérifier l'application au syndicat, pas au seul consommateur |
+| DGFiP (impots.gouv.fr) | institution | fiscalité immobilière, notices par campagne | pages publiques seulement ; pas d'espace fiscal ni de donnée de contribuable |
+| DITP (modernisation.gouv.fr) | institution | clarté des écrits | méthode publique, pas règle de droit ni preuve de psychologie d'AG |
+| Ministère de la Culture, Histoire des arts | institution | architecture, notices patrimoniales | attribution et licence du sous-domaine/document ; aucune image présumée libre |
+| Cité de l'architecture et du patrimoine | institution | pistes de lecture et ressources pédagogiques | liens ; droits propres au dossier avant toute reprise |
 | Agence Qualité Construction (fiches pathologie) | norme | texte des fiches ; **aucune image** | PDF pour usage documentaire, `pdftotext` |
 | Cerema (dont le portail réseaux de chaleur) | institution | guides techniques, chauffage urbain | lecture directe |
 | Agences régionales de santé (ars.sante.fr) | institution | risque sanitaire des installations collectives, dont la légionelle | lecture directe |
@@ -50,6 +56,24 @@ Règles :
 
 Ce qu'on ne touche jamais : les sites de cours, les blogs anonymes, les
 pages d'un autre droit (Québec, Belgique) qui partagent le vocabulaire.
+
+### Repérage public du 04/09/2026
+
+`ACA-CONTENT-MAP-1` a produit cinq plans de lecture dans
+`travail/sources-{energie,travaux,immobilier,cabinet,culture}-2026-09-04.md`.
+Les nouveaux hôtes du registre portent `repere_le` et une preuve limitée ;
+`verifie` reste vide, car aucun corpus n'a été intégralement traité dans
+l'usine. Cette liste autorise une recherche, **pas une déclaration de
+lecture ou de validation automatique**.
+
+Les droits ont été lus séparément : certains sites sont sous licence
+ouverte, d'autres limitent la reprise. En particulier, les articles CNIL
+sont sous CC BY-ND, les ressources France Rénov' sont sous droits ANAH,
+les reproductions INRS non privées demandent une autorisation. Les
+conditions d'Histoire des arts diffèrent de celles de culture.gouv.fr,
+et celles du portail réseaux de chaleur de celles du site Cerema principal.
+Les liens précis et les réserves sont dans les inventaires. Aucune
+nouvelle autorisation de téléchargement massif ou de publication n'en découle.
 
 ### Ce que l'extraction des 84 cartes a révélé (03/09/2026)
 
