@@ -217,3 +217,7 @@ Une fois ces trois réponses données, la table se recopie telle quelle
 dans `app/migre_banque.py` et le reste de `ACA-CONTRAT-2` est
 mécanique : écriture des fichiers de chapitre, valideur v2 sur le
 résultat, `genere.py` qui lit `chapitres/`, archivage de `banque/`.
+
+## Arbitrage du 04/09/2026
+
+Rendu dans [`decisions/0030`](../decisions/0030-la-banque-se-range-par-le-programme.md) : les 21 changements acceptés, les 24 « à confirmer » au premier choix, deux chapitres créés (notification, déchéance du terme), P1 à P5 renommé, les deux survols comme proposé. L'étape 2 est ouverte.

@@ -14,7 +14,14 @@ Dépend de : ACA-PROGRAMME-1, ACA-SOURCES-1. Bloque : ACA-ETUDE-1,
 ACA-BOITE-1, ACA-EXAMEN-1, ACA-PAPIER-1, ACA-AUDIT-1, ACA-CONTENT-2,
 ACA-BIBLIOTHEQUE-1, ACA-VERIF-1.
 
-## État au 03/09/2026 : l'étape 2 attend un arbitrage de JB
+## État au 04/09/2026 : l'étape 2 est arbitrée, à exécuter
+
+Les trois questions sont tranchées dans `decisions/0030` (21 changements
+acceptés, premier choix partout, deux chapitres neufs, P1 à P5). Il
+reste à recopier la table dans `app/migre_banque.py`, régénérer le
+programme, migrer, archiver `banque/`.
+
+## État au 03/09/2026 : l'étape 2 attendait un arbitrage de JB
 
 L'étape 2 demande « une table d'assignation écrite à la main (une
 carte, un chapitre) ». Elle a été préparée en entier :

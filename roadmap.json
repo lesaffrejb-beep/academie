@@ -259,7 +259,7 @@
       "status": "ready",
       "mode": "agent-review",
       "risk": "medium",
-      "priority": 90,
+      "priority": 99,
       "depends_on": [
         "ACA-PROGRAMME-1",
         "ACA-SOURCES-1"
@@ -271,7 +271,7 @@
       },
       "proof": "Valideur v2 vert sur la banque migrée ; tests de mutation étendus ; genere.py publie contrat: carte-v2 ; l'archipel joue encore la banque v2 ou est retiré au même moment.",
       "parent_milestone": "ACADEMIE-V2-FONDATIONS",
-      "note": "Étapes 1, 3 et 4 faites le 03/09. L'étape 2 attend trois réponses de JB (travail/assignation-cartes-chapitres-2026-09-03.md, fin du document) : 21 changements de domaine, 4 cartes sans chapitre, 3 trous du programme. Ensuite mécanique."
+      "note": "Étapes 1, 3 et 4 faites le 03/09. Étape 2 arbitrée le 04/09 (decisions/0030) : mécanique, prochain item à prendre. Puis archiver banque/."
     },
     {
       "id": "ACA-EXPORT-1",
