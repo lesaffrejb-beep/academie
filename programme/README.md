@@ -3,8 +3,8 @@
 Le programme d'un métier en données : `copro.json` pour le gestionnaire
 de copropriété. `catalogue.json` liste les parcours proposés à l'arrivée
 (`COMMENCER.md` §2) ; ses compteurs se mettent à jour à chaque lot de
-chapitres. Un fichier par métier (`ifsi.json` viendra du domaine
-d'Arthur). Le texte lisible est `../PROGRAMME.md` ; quand les deux
+chapitres. Un fichier par métier : `ifsi.json` (infirmier, généré par
+`genere_ifsi.py`, lisible dans `../SYLLABUS-IFSI.md`, `decisions/0031`). Le texte lisible est `../PROGRAMME.md` ; quand les deux
 divergent, **le JSON fait foi** et le texte se corrige.
 
 Ce que porte le fichier :

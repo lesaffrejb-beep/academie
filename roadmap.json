@@ -653,7 +653,8 @@
         "max_tokens": 40000
       },
       "proof": "Arthur joue sa première séance sur un domaine que JB n'a pas écrit ; le kit rejouerait la soirée ; le coût réel est écrit.",
-      "parent_milestone": "ACADEMIE-V2-OUVERTURE"
+      "parent_milestone": "ACADEMIE-V2-OUVERTURE",
+      "note": "Le squelette du programme infirmier existe depuis le 04/09 (programme/ifsi.json, 310 chapitres, decisions/0031) : le kit le confronte aux sources du S1 d'Arthur et calibre les niveaux par un agent frais avant le premier lot."
     },
     {
       "id": "ACA-SELFHOST-1",

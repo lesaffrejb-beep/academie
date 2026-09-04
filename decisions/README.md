@@ -44,3 +44,4 @@ lisant le dépôt, une règle née d'un incident. Pas l'avancement
 | [0028](0028-l-etat-d-un-noeud-et-la-fraicheur.md) | 03/09/2026 | L'état d'un nœud : `valide` se gagne à l'épreuve du domaine, la fraîcheur s'affiche à côté et ne déclasse jamais ; une carte se rattache par `chapitre`, le trou v1 s'écrit |
 | [0029](0029-fsrs-miroir-a-la-main.md) | 04/09/2026 | Le FSRS du client est un miroir à la main de `app/planificateur.py`, jugé par les vecteurs Python à chaque test ; `ts-fsrs` n'entre pas (amende 0007) |
 | [0030](0030-la-banque-se-range-par-le-programme.md) | 04/09/2026 | Les 84 cartes se rangent par le programme (21 changements de domaine acceptés) ; un trou se comble par un chapitre neuf ; P1 à P5 |
+| [0031](0031-un-programme-par-metier-ifsi.md) | 04/09/2026 | Un programme par métier ; `ifsi.json` : l'arbre de l'infirmier, socle = entrée en IFSI, III = formation, IV et V au-delà |

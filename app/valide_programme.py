@@ -98,6 +98,8 @@ def valider(prog: dict, academie: dict, nom: str) -> list[str]:
     if manquants:
         err.append(f"{nom} : semaine type incomplète, il manque {', '.join(manquants)}")
 
+    if not academie:
+        return err
     aca = academie.get("domaines", {})
     for cle in aca:
         if cle not in domaines:
@@ -127,7 +129,9 @@ def main() -> int:
     comptes: dict[str, dict] = {}
     for f in fichiers:
         prog = lire(f)
-        erreurs += valider(prog, academie, f.name)
+        # academie.json ne s'aligne que sur le programme de son métier ; les autres métiers se valident seuls.
+        aligne = academie if academie.get("metier") == prog.get("metier") else {}
+        erreurs += valider(prog, aligne, f.name)
         chs = prog.get("chapitres", [])
         comptes[f.stem] = {"chapitres": len(chs),
                            "par_niveau": {str(n): sum(1 for c in chs if c.get("niveau") == n) for n in NIVEAUX}}

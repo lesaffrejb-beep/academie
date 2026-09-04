@@ -44,7 +44,7 @@ PROGRAMME = {
          "titre": "La propriété", "niveau": 4, "prerequis": [], "statut": "a-ecrire"},
     ],
 }
-ACADEMIE = {"domaines": {"droit": {"titre": "Droit", "ordre": 1},
+ACADEMIE = {"metier": "test", "domaines": {"droit": {"titre": "Droit", "ordre": 1},
                          "culture": {"titre": "Culture", "ordre": 2, "arbre": False}}}
 
 
