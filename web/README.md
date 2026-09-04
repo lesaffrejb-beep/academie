@@ -93,14 +93,20 @@ visibilité accordée ; envoyer un mail.
 
 ## État au 03/09/2026
 
-Le squelette technique est posé et vert. La couche visuelle n'est pas
-faite : les écrans existent, ils sont nus, et c'est voulu.
+Le squelette technique est posé et vert. La **fondation** de la couche
+visuelle l'est aussi depuis le soir du 03/09 (polices, tokens, mouvement,
+mots, clavier) ; ce qui la surmonte (l'arbre, les anneaux, la
+personnalité des cartes) n'est pas fait, et les écrans restent nus.
 
 ### Ce qui existe
 
 - Vite 5, React 18, TypeScript strict, Tailwind avec les tokens en
   variables CSS (`src/index.css` est le seul fichier qui porte des
-  hexadécimaux).
+  hexadécimaux, et `tests/e2e/direction-artistique.spec.ts` le vérifie
+  dans le CSS servi, pas dans les sources).
+- Deux polices auto-hébergées, OFL, sous-ensemble latin seulement :
+  Fraunces (titres) et Source Sans 3 (texte, chiffres tabulaires),
+  65 ko à elles deux, précachées avec le reste.
 - `src/moteur/` : `fsrs.ts` (miroir écrit à la main de
   `app/planificateur.py`), `etats.ts` (rejeu du journal, y compris
   `stabilite_forcee`), `progression.ts`, `composeur.ts`, `points.ts`,
@@ -121,7 +127,7 @@ faite : les écrans existent, ils sont nus, et c'est voulu.
 - PWA : `vite-plugin-pwa` 0.21.1, manifeste, précache de la banque, de
   la voix, du JS, du CSS et des polices à venir ; la banque et la voix
   sont aussi en `StaleWhileRevalidate` à l'exécution.
-- Cinq tests verts, 157 cas : `src/moteur/parite.test.ts` lance
+- Cinq tests verts, 159 cas : `src/moteur/parite.test.ts` lance
   `python3 app/vecteurs_fsrs.py --json` et compare stabilité,
   difficulté, intervalle et récupérabilité à 1e-4 sur chaque étape de
   chaque séquence ; `tests/hotes.test.ts` vérifie qu'aucune URL de
@@ -145,12 +151,46 @@ faite : les écrans existent, ils sont nus, et c'est voulu.
   comparées une par une, leur emploi dans `compose()` ne l'était pas.
 - `LICENCES.md` : chaque dépendance, version exacte, licence.
 
-### Ce qui reste
+### La couche visuelle : la fondation est posée (03/09 au soir)
 
-- **La couche visuelle.** `public/icone.svg`, les valeurs de
-  `src/index.css` et `tailwind.config.ts` tiennent la place. La
-  `DIRECTION-ARTISTIQUE.md` et la maquette du 02/09 n'ont pas été
-  appliquées. Rien du moteur n'a besoin d'être touché pour la faire.
+La `DIRECTION-ARTISTIQUE.md` n'est pas appliquée en entier : les écrans
+n'ont ni arbre en SVG, ni anneaux, ni feuilles qui montent, ni
+personnalité par type de carte. Mais sa **fondation** l'est, et c'est
+elle qui décide de tout le reste :
+
+- **Les deux polices, auto-hébergées** (DA §2) : Fraunces pour les
+  titres, Source Sans 3 pour le texte et les chiffres tabulaires, OFL
+  toutes les deux. Sous-ensemble `latin` seulement, deux fichiers,
+  65 ko ; `src/polices.css` dit pourquoi. Rien n'est chargé d'un tiers.
+- **Les tokens en entier** : le brouillard, l'ombre unique des surfaces
+  qui flottent, le grain de papier (désactivable par
+  `data-grain="non"`), les marges 16/24, les trois durées et la courbe
+  du §6, et la palette de domaine **assombrie** en Papier pour tenir le
+  contraste AA du §7.
+- **Le mouvement du §6, et lui seul.** Le blocage général des
+  animations du matin est levé ; à sa place, une politique : l'état
+  pressé d'un bouton (98 %, 120 ms, §8 ter), aucune animation
+  d'entrée, et `prefers-reduced-motion` qui ramène tout à des fondus de
+  120 ms. Rien d'autre ne bouge parce que rien d'autre n'existe encore.
+- **Les mots du §8** : les libellés portent leurs accents, et les
+  quatre notes FSRS sont celles de la DA (À revoir, Difficile, Bien,
+  Évident) au lieu des mots du moteur.
+- **Le clavier du §8 ter** : Espace révèle, 1 à 4 notent, Échap sort.
+  « La souris n'est jamais nécessaire dans une salle » est une promesse
+  d'accessibilité, pas un confort ; elle est tenue avant les jolis
+  écrans.
+- **La ligne de source et de provenance du §5** : la note de confiance
+  en lettre, la nature de chaque source, et « Généré par … · N sources
+  concordantes · relu le … » construite sur les vrais champs du contrat
+  v2, que `genere.py` publie depuis ce soir.
+
+Ce qui reste de la couche visuelle : l'arbre (§3), la personnalité par
+type de carte (§5), les célébrations de clôture (§6), les glyphes
+(Lucide, game-icons) et le bento du profil (§8 ter). Rien du moteur n'a
+besoin d'être touché pour les faire.
+
+### Ce qui reste ailleurs
+
 - **ACA-CONTRAT-2.** Le client sait refuser un contrat inconnu et lire
   une banque sans champ `contrat` comme `carte-v1`, mais la banque
   publiée est encore une v1 sans le champ ; les types de `carte-v2` sont
@@ -170,6 +210,14 @@ faite : les écrans existent, ils sont nus, et c'est voulu.
   npm run e2e              # les deux tailles d'écran
   npm run e2e:telephone    # 375 px seulement
   ```
+
+  Depuis le 03/09 au soir s'y ajoute `tests/e2e/direction-artistique.spec.ts`,
+  qui prend la moitié **mesurable** de la checklist §9 : aucun
+  hexadécimal hors des tokens dans le CSS servi, rien qui déborde à 375,
+  à 1280 ni à 200 % de texte, les deux thèmes rendus, le mouvement
+  réduit respecté, le clavier de bout en bout dans une salle, le focus
+  visible. Vingt cas sur deux tailles d'écran. L'autre moitié de la
+  checklist est du jugement et n'a rien à faire dans un test.
 
   Ils ne sont **pas** dans `npm test` ni dans la porte du dépôt : ils
   demandent un navigateur et un build, la CI n'installe ni l'un ni

@@ -26,11 +26,26 @@ export interface Choix {
   pourquoi_faux?: string;
 }
 
+/**
+ * La provenance d'une carte v2, telle que `genere.py` la publie depuis
+ * le 03/09/2026 (CONTRAT-CARTE-V2 §2, decisions/0021).
+ *
+ * Les champs etaient transcrits de memoire avant que le generateur ne
+ * serve reellement des cartes v2 : `par` et `le` n'existent dans aucun
+ * contrat. Ils restent tolérés pour ne rien casser d'une banque ancienne,
+ * mais la ligne affichee se construit sur les vrais champs.
+ */
 export interface Provenance {
+  auteur?: "modele" | "humain" | string;
+  modele?: string;
+  genere_le?: string;
+  session?: string;
+  sources_retrouvees?: number;
+  sources_concordantes?: number;
+  sans_source?: boolean;
+  /** Formes anciennes, encore lues si elles se presentent. */
   par?: string;
   le?: string;
-  sources_retrouvees?: number;
-  relecteur?: string;
   [autre: string]: unknown;
 }
 
@@ -55,7 +70,9 @@ export interface Carte {
   partage?: string;
   provenance?: Provenance;
   a_recouper?: boolean;
-  note_confiance?: number;
+  /** Une LETTRE, pas un nombre (decisions/0022, CONTRAT-CARTE-V2 §2). */
+  note_confiance?: "A" | "B" | "C";
+  verifie_par?: string;
   [autre: string]: unknown;
 }
 

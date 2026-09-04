@@ -1,18 +1,27 @@
+@import "./polices.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 /*
- * Les tokens de DIRECTION-ARTISTIQUE.md, 2. C'est le SEUL fichier du
- * client qui porte des hexadecimaux. La couche visuelle se refait ici.
- * Valeurs posees au 03/09/2026 : elles tiennent la place, elles ne
- * pretendent pas etre la direction artistique finale.
+ * Les tokens de DIRECTION-ARTISTIQUE.md §2. C'est le SEUL fichier du
+ * client qui porte des hexadecimaux ; aucun composant n'a le droit d'en
+ * ecrire un (checklist §9). La couche visuelle se refait ici.
+ *
+ * Etat au 03/09/2026 au soir : les tokens sont poses en entier, les
+ * ecrans ne les emploient pas encore tous. Ce qui est FAIT ici : les
+ * deux polices, les deux themes avec la palette de domaine assombrie en
+ * Papier, le grain, le brouillard, l'ombre unique, et la politique de
+ * mouvement du §6. Ce qui n'est PAS fait : l'arbre en SVG, les anneaux,
+ * les feuilles qui montent, la personnalite par type de carte.
  */
 :root {
-  --f-titre: Georgia, "Times New Roman", serif;
-  --f-texte: system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-titre: "Fraunces Variable", Georgia, "Times New Roman", serif;
+  --f-texte: "Source Sans 3 Variable", system-ui, -apple-system, "Segoe UI",
+    sans-serif;
 
-  /* Nuit, le theme par defaut. */
+  /* Nuit, le theme par defaut : bleu nuit tres profond, legerement chaud. */
   --c-fond: #0d1117;
   --c-surface: #161b22;
   --c-encre: #f2ece1;
@@ -20,19 +29,45 @@
   --c-trait: #f2ece124;
   --c-succes: #6f8f5f;
   --c-erreur: #a8592f;
+  /* Le brouillard : le fond a 70 %, floute par-dessus l'inconnu (DA §3). */
+  --c-brouillard: #0d1117b3;
 
-  /* Palette par rang de domaine, jamais par nom (DA, 2). */
-  --c-rang-1: #b07d3a;
-  --c-rang-2: #a45f3c;
-  --c-rang-3: #7c8f6b;
-  --c-rang-4: #8b7fa8;
-  --c-rang-5: #5a7d99;
-  --c-rang-6: #9c5548;
-  --c-rang-7: #77804a;
-  --c-rang-8: #7a5470;
-  --c-rang-9: #b09a72;
-  --c-rang-10: #6c7580;
+  /* Palette par RANG de domaine, jamais par nom : un autre metier herite
+     sans qu'on code quoi que ce soit (DA §2). */
+  --c-rang-1: #b07d3a;   /* ocre */
+  --c-rang-2: #a45f3c;   /* cuivre */
+  --c-rang-3: #7c8f6b;   /* sauge */
+  --c-rang-4: #8b7fa8;   /* lavande */
+  --c-rang-5: #5a7d99;   /* bleu acier */
+  --c-rang-6: #9c5548;   /* brique */
+  --c-rang-7: #77804a;   /* olive */
+  --c-rang-8: #7a5470;   /* prune */
+  --c-rang-9: #b09a72;   /* sable */
+  --c-rang-10: #6c7580;  /* ardoise */
   --c-accent: var(--c-rang-1);
+  /* L'encre POSEE SUR l'accent (bouton principal plein, DA §8 ter). Le
+     fond du theme joue ce role dans les deux sens : en Nuit l'accent est
+     mi-clair et le fond est sombre, en Papier l'accent est assombri et le
+     fond est clair. Le contraste AA (§7) tient donc des deux cotes avec
+     un seul token, sans table de correspondance a maintenir. */
+  --c-sur-accent: var(--c-fond);
+
+  /* Espace et formes (DA §2). Grille de 4 px, rayons imbriques : le rayon
+     interieur vaut l'exterieur moins le padding. */
+  --marge: 16px;
+  --r-ext: 20px;
+  --r-int: 12px;
+  /* UNE ombre, douce et large, reservee a ce qui flotte : la feuille de
+     sources, la carte en cours. Le reste est plat. */
+  --ombre-flottante: 0 18px 48px -24px #00000099;
+
+  /* Mouvement (DA §6). Trois durees, une courbe : sortie rapide, entree
+     douce, jamais de rebond. Les composants n'ecrivent pas de duree en
+     dur, ils pointent ces variables. */
+  --d-retour: 120ms;
+  --d-ecran: 220ms;
+  --d-conquete: 500ms;
+  --e-mouvement: cubic-bezier(0.2, 0, 0, 1);
 }
 
 :root[data-theme="papier"] {
@@ -41,6 +76,23 @@
   --c-encre: #23262b;
   --c-encre-2: #23262b9e;
   --c-trait: #23262b24;
+  --c-brouillard: #f6f3ecb3;
+  --ombre-flottante: 0 18px 48px -28px #23262b3d;
+
+  /* « idem, assombrie » (DA §2) : la meme famille, assez foncee pour
+     tenir le contraste AA sur un fond clair (§7). */
+  --c-rang-1: #7d5620;
+  --c-rang-2: #7a4126;
+  --c-rang-3: #52603f;
+  --c-rang-4: #5d5279;
+  --c-rang-5: #385369;
+  --c-rang-6: #6f342a;
+  --c-rang-7: #4d5428;
+  --c-rang-8: #55344c;
+  --c-rang-9: #7a6537;
+  --c-rang-10: #454d57;
+  --c-succes: #4a6338;
+  --c-erreur: #8a3f1c;
 }
 
 * { box-sizing: border-box; }
@@ -54,16 +106,71 @@ body {
   font-family: var(--f-texte);
   font-size: 17px;
   line-height: 1.5;
+  /* Chiffres tabulaires PARTOUT : scores, dates, comptes, et surtout la
+     comptabilite (METHODE §13). Une colonne de chiffres qui danse est une
+     colonne qu'on relit. */
   font-variant-numeric: tabular-nums;
+  -webkit-text-size-adjust: 100%;
 }
 
-@media (min-width: 768px) { body { font-size: 16px; } }
-
-/* Zero animation : consigne du 03/09. Reste vrai meme si un composant
-   ajoutait une transition par inadvertance. */
-*, *::before, *::after {
-  animation: none !important;
-  transition: none !important;
+/* Corps 17 px sur telephone, 16 sur ordinateur ; marges 16 puis 24. */
+@media (min-width: 768px) {
+  body { font-size: 16px; }
+  :root { --marge: 24px; }
 }
 
+/*
+ * Le grain : un bruit tres leger sur le fond, comme du papier (DA §2).
+ * En SVG inline plutot qu'en image : rien a telecharger, rien a
+ * precacher, et aucun hote tiers (`tests/hotes.test.ts`). Il est
+ * desactivable — `data-grain="non"` sur la racine — parce qu'un fond qui
+ * grouille derriere un texte se paie en fatigue.
+ */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23g)'/%3E%3C/svg%3E");
+}
+
+:root[data-grain="non"] body::before { display: none; }
+
+#racine { position: relative; z-index: 1; }
+
+/*
+ * Le mouvement, applique la ou le §6 dit que ca bouge, et nulle part
+ * ailleurs. Au 03/09 les ecrans sont encore nus : le seul mouvement
+ * existant est l'etat presse d'un bouton (98 % d'echelle, 120 ms,
+ * DA §8 ter). Le texte qu'on lit, les chiffres, l'ecran d'erreur ne
+ * bougent jamais, et il n'y a AUCUNE animation d'entree — l'ouverture
+ * doit rester sous les trois secondes (§6 et cahier ACA-FRONT-2).
+ */
+button, a, [role="button"] {
+  transition: transform var(--d-retour) var(--e-mouvement),
+    border-color var(--d-retour) var(--e-mouvement),
+    background-color var(--d-retour) var(--e-mouvement);
+}
+
+button:active:not(:disabled), [role="button"]:active { transform: scale(0.98); }
+
+/*
+ * Mouvement reduit respecte (DA §6 et §9) : plus une seule transformation,
+ * les transitions deviennent des fondus courts. Ce bloc est la promesse
+ * que `tests/e2e/direction-artistique.spec.ts` verifie dans un vrai
+ * navigateur, `prefers-reduced-motion` arme.
+ */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: var(--d-retour) !important;
+    animation-iteration-count: 1 !important;
+    transition: opacity var(--d-retour) linear !important;
+  }
+  button:active:not(:disabled), [role="button"]:active { transform: none; }
+}
+
+/* Le focus se voit toujours : le clavier est un chemin de premiere
+   classe, pas un repli (DA §7 et §8 ter). */
 :focus-visible { outline: 2px solid var(--c-accent); outline-offset: 2px; }
