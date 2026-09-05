@@ -31,8 +31,8 @@ rougissent, les modales qui supplient.
 
 ### Couleurs
 
-Deux thèmes, choisis par le système ou par le joueur : **Nuit** (défaut)
-et **Papier**. Aucun hexadécimal dans un composant : tout passe par les
+Deux thèmes, choisis par le système ou par le joueur : **Papier** (défaut)
+et **Nuit**. Aucun hexadécimal dans un composant : tout passe par les
 variables.
 
 | Rôle | Nuit | Papier |
@@ -75,6 +75,16 @@ l'outil ([`BLUEPRINT.md`](BLUEPRINT.md) §12).
   (feuille de sources, carte en cours) ; le reste est plat.
 - Le **grain** : un bruit très léger sur le fond, comme du papier ;
   désactivable.
+
+## Amendement du 05/09 : couleurs et vue globale
+
+La demande explicite de JB et la décision 0037 reprennent la palette et
+la géométrie : Papier rosé, encre prune, accent framboise sourd ; Nuit
+prune conservé. Les valeurs exactes vivent dans `web/src/index.css`.
+La vue globale devient un index de domaines avec branches et disponibilité
+réelles, sans orbites, zoom ni rotation. Les paragraphes radiaux ci-dessous
+restent l'intention historique ; cet amendement les remplace pour la vue
+globale. Les fiches et prérequis restent accessibles dans la vue domaine.
 
 ## 3. L'arbre
 

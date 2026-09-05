@@ -68,3 +68,29 @@ historique n'est pas contourné. Proposition de périmètre dans
 [ACL-CADDY-20260905.md](../../deploy/ACL-CADDY-20260905.md).
 Le transfert sauvegardé ne vaut pas accès authentifié. La publication
 physique et les observations humaines restent des preuves distinctes.
+
+## Push et arrêt du transfert
+
+Code et consolidation poussés sur main : `184a75a80037bf4411f155b0061f805b0314c240`.
+CI GitHub `check` verte ; CI `client` en cours au constat.
+Le paquet local `/tmp/academie-livraison-20260905.tgz` contient cette version,
+avec manifeste de fichiers et `version-source.json`. SHA-256 de l'archive :
+`f2fdb3c8d67e8752cc67dbd82285f4c26b85ecd4e39262fae6ecf70365b52bb4`.
+
+La revue automatique a refusé `scp` vers
+`debian@51.178.183.154:/tmp/academie-livraison-20260905-184a75a.tgz` :
+autorisation de cet hôte et de ce paquet jugée insuffisamment explicite.
+Le transfert n'a pas eu lieu ; le pull distant prévu après n'a pas été
+exécuté. Clone distant resté sur `3ecbc77`, aucun droit ni fichier modifié.
+Les lectures établissent Caddy sur `vps-5a3d618c.vps.ovh.net`, route
+`/academie/`, publication `/var/lib/academie/publication`.
+
+Autorisation à obtenir : transfert de ce paquet public (code client,
+banque sourcée, polices et manifeste ; aucun journal, secret ou document
+client), sauvegarde du client et de SQLite, pull fast-forward du clone
+propre, installation vérifiée des assets avant index et service worker,
+redémarrage de la seule API Académie. Autorisation distincte mais
+présentée ensemble : ACL Caddy décrites dans le document de déploiement,
+avec refus SQLite/WAL/SHM et fichiers privés futurs avant traversée.
+HTTPS authentifié demandera une session d'accès valide. Aucun nouveau
+compte, désactivation d'authentification ou migration joueur proposé.
