@@ -440,3 +440,33 @@ Sinha & Kapur (2021), avec niveaux de consultation et limites dans
 la séparation avec/sans aide et le retrait des cartes sont des garanties
 logicielles à tester, pas des effets scientifiques. La rétention différée,
 le transfert réel et l’envie de revenir restent à mesurer chez les joueurs.
+
+## 35. Les formats interactifs spécialisés en séance (05/09/2026)
+
+**Ce qu’on fait** : la salle de séance propose des interfaces dédiées selon
+la nature cognitive de l’exercice :
+- **Jeu de rôle (`role`)** : fiche de situation scénarisée avec interlocuteur,
+  objectif de négociation et prompt exportable en un clic pour jeu immédiat.
+- **Relier (`relier`)** : appariement tactile direct entre repères visuels
+  d’un schéma et fonctions techniques.
+- **Photo et plan (`photo`, `plan`)** : visualiseur avec loupe d’inspection
+  tactile (niveaux de zoom) pour analyse d’organes techniques.
+- **Chronologie (`datation`)** : frise procédurale jalonnée mettant en évidence
+  l’étape ou le délai cible.
+- **Synthèse (`synthese`)** : volet d’indice à la demande et liste de contrôle
+  critériée des attendus après révélation pour guider l’auto-évaluation.
+
+**Pourquoi** : diversifier les modes d’interaction permet d’aligner l’effort
+cognitif sur l’activité cible (manipulation d’indices, analyse visuelle,
+mise en situation relationnelle, structuration chronologique) plutôt que de
+réduire toute réponse à une saisie textuelle indifférenciée.
+
+**Contrôles et limites** : les saisies et choix tactiles sont synchronisés
+dans le flux de réponse FSRS. L’usage d’une simulation IA ou l’auto-évaluation
+par critères guidés ne dispense pas d’une confrontation ultérieure au terrain.
+Aucun surcroît automatique de mémorisation n’est présumé ; les interactions
+doivent rester sobres, sans surcharge cognitive superflue.
+
+**Source et état des preuves** : Dunlosky et al. (2013), Bisra et al. (2018),
+Hattie & Timperley (2007). Choix ergonomique et pédagogique documenté dans
+`decisions/0039-modules-interactifs-salle-de-seance.md`.

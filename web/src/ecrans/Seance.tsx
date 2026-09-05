@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState, type CSSProperties } from "react";
 import {
   ArrowLeft, ArrowRight, BookOpen, Check, ChevronDown, ExternalLink, Flag,
-  Image as ImageIcon, ListChecks, MessageSquare, X,
+  Image as ImageIcon, ListChecks, MessageSquare, X, ZoomIn, ZoomOut,
 } from "lucide-react";
 import { LIB, TYPES_CARTE, voix } from "../app/i18n";
 import { useMagasin } from "../app/magasin";
@@ -13,6 +13,12 @@ import { cartesServiables } from "../moteur/serviceabilite";
 import type { Carte } from "../donnees/types";
 import { Bouton, Jauge } from "./Ui";
 import { EclatParticules, VoletGlissant } from "./MicroAnimations";
+import {
+  ModuleRole,
+  ModuleRelier,
+  ModuleDatation,
+  ModuleSynthese,
+} from "./ModulesSeance";
 
 const MOTEUR_VERSION = "web-2.0.0";
 const NIVEAUX = ["", "I", "II", "III", "IV", "V"];
@@ -126,6 +132,7 @@ function Exercice({ carte, graine, enregistrement, enregistre }: {
   const [choisi, setChoisi] = useState<number | null>(null);
   const [reponse, setReponse] = useState("");
   const [imageAbsente, setImageAbsente] = useState(false);
+  const [zoomImage, setZoomImage] = useState(1);
   const debut = useRef(Date.now());
   const titre = useRef<HTMLHeadingElement>(null);
   const correct = carte.choix?.findIndex((c) => c.correct) ?? -1;
@@ -167,26 +174,95 @@ function Exercice({ carte, graine, enregistrement, enregistre }: {
       <div className="salle-type"><Icone size={18} /><span>{TYPES_CARTE[carte.type] ?? carte.type}</span>
         <span>{NIVEAUX[carte.niveau] ?? carte.niveau}</span></div>
       <h1 ref={titre} tabIndex={-1} className="salle-question font-titre text-xl">{carte.question}</h1>
-      {image ? <figure className="salle-image">
-        <img src={image.fichier} alt={image.alt} onError={() => setImageAbsente(true)} />
-        {image.credit ? <figcaption>{image.credit}</figcaption> : null}
-        {imageAbsente ? <p role="status">{LIB.imageIndisponible}</p> : null}
-      </figure> : null}
+      {image ? (
+        <figure className="salle-image relative group overflow-hidden">
+          <img
+            src={image.fichier}
+            alt={image.alt}
+            onError={() => setImageAbsente(true)}
+            style={zoomImage > 1 ? { transform: `scale(${zoomImage})`, transformOrigin: "center" } : undefined}
+            className="transition-transform duration-200"
+          />
+          {(carte.type === "photo" || carte.type === "plan") ? (
+            <div className="absolute top-2 right-2 flex items-center rounded-lg border border-[var(--c-bordure-subtile)] bg-[var(--c-surface-elevee)] shadow-sm text-xs">
+              <button
+                type="button"
+                onClick={() => setZoomImage((z) => Math.max(1, +(z - 0.35).toFixed(2)))}
+                disabled={zoomImage <= 1}
+                className="p-1.5 text-[var(--c-encre-2)] hover:text-[var(--c-encre)] disabled:opacity-30 transition"
+                title="Zoom arrière"
+              >
+                <ZoomOut size={13} />
+              </button>
+              <button
+                type="button"
+                onClick={() => setZoomImage(1)}
+                className="px-2 py-0.5 font-mono text-[11px] text-[var(--c-encre)] border-x border-[var(--c-bordure-subtile)]"
+              >
+                {Math.round(zoomImage * 100)}%
+              </button>
+              <button
+                type="button"
+                onClick={() => setZoomImage((z) => Math.min(2.4, +(z + 0.35).toFixed(2)))}
+                disabled={zoomImage >= 2.4}
+                className="p-1.5 text-[var(--c-encre-2)] hover:text-[var(--c-encre)] disabled:opacity-30 transition"
+                title="Zoom avant"
+              >
+                <ZoomIn size={13} />
+              </button>
+            </div>
+          ) : null}
+          {image.credit ? <figcaption>{image.credit}</figcaption> : null}
+          {imageAbsente ? <p role="status">{LIB.imageIndisponible}</p> : null}
+        </figure>
+      ) : null}
 
-      {qcm ? <ul className="salle-choix">
-        {carte.choix?.map((c, i) => <li key={i}>
-          <button type="button" disabled={revele || enregistrement} onClick={() => { setChoisi(i); setRevele(true); if (i === correct) setEclat(true); }}
-            className={`salle-choix-bouton relative${revele && i === correct ? " est-juste" : revele && i === choisi ? " est-faux" : ""}`}>
-            {revele && i === correct && i === choisi ? <EclatParticules nombre={18} duree={650} /> : null}
-            <span className="salle-choix-repere">{revele && i === correct ? <Check size={18} />
-              : revele && i === choisi ? <X size={18} /> : i + 1}</span><span>{c.texte}</span>
-          </button>
-        </li>)}
-      </ul> : carte.type !== "flash" ? <div className="salle-reponse-libre">
-        <label htmlFor="reponse-carte">{LIB.taReponse}</label>
-        <textarea id="reponse-carte" rows={4} value={reponse} readOnly={revele}
-          onChange={(e) => setReponse(e.target.value)} />
-      </div> : null}
+      {carte.type === "role" ? (
+        <ModuleRole
+          carte={carte}
+          reponse={reponse}
+          surChangementReponse={setReponse}
+          revele={revele}
+        />
+      ) : carte.type === "relier" ? (
+        <ModuleRelier
+          carte={carte}
+          reponse={reponse}
+          surChangementReponse={setReponse}
+          revele={revele}
+        />
+      ) : carte.type === "datation" ? (
+        <ModuleDatation
+          carte={carte}
+          reponse={reponse}
+          surChangementReponse={setReponse}
+          revele={revele}
+        />
+      ) : (carte.type === "synthese" || carte.type === "cas") ? (
+        <ModuleSynthese
+          carte={carte}
+          reponse={reponse}
+          surChangementReponse={setReponse}
+          revele={revele}
+        />
+      ) : qcm ? (
+        <ul className="salle-choix">
+          {carte.choix?.map((c, i) => <li key={i}>
+            <button type="button" disabled={revele || enregistrement} onClick={() => { setChoisi(i); setRevele(true); if (i === correct) setEclat(true); }}
+              className={`salle-choix-bouton relative${revele && i === correct ? " est-juste" : revele && i === choisi ? " est-faux" : ""}`}>
+              {revele && i === correct && i === choisi ? <EclatParticules nombre={18} duree={650} /> : null}
+              <span className="salle-choix-repere">{revele && i === correct ? <Check size={18} />
+                : revele && i === choisi ? <X size={18} /> : i + 1}</span><span>{c.texte}</span>
+            </button>
+          </li>)}
+        </ul>
+      ) : carte.type !== "flash" ? (
+        <div className="salle-reponse-libre">
+          <label htmlFor="reponse-carte">{LIB.taReponse}</label>
+          <textarea id="reponse-carte" rows={4} value={reponse} readOnly={revele}
+            onChange={(e) => setReponse(e.target.value)} />
+        </div>
+      ) : null}
 
       {!revele ? <div className="salle-reveler">
         <label className="salle-confiance"><input type="checkbox" checked={confiance}

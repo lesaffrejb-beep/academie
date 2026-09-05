@@ -52,3 +52,4 @@ lisant le dépôt, une règle née d'un incident. Pas l'avancement
 | [0036](0036-livraison-autonome-des-parcours.md) | 05/09/2026 | Livraison autonome des parcours |
 | [0037](0037-exploration-lisible-et-preuves-durables.md) | 05/09/2026 | Exploration lisible et preuves durables |
 | [0038](0038-architecture-des-tokens-et-micro-interactions.md) | 05/09/2026 | Architecture des tokens 100 % portable, dendrogramme 360° et micro-animations tactiles |
+| [0039](0039-modules-interactifs-salle-de-seance.md) | 05/09/2026 | Modules interactifs spécialisés en séance (rôle, relier, plan, datation, synthèse) |
