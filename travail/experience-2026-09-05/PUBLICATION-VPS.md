@@ -86,3 +86,16 @@ contrôle. Trajet physique téléphone/Mac et retour, acceptation esthétique,
 rituel et transfert pédagogique restent les preuves humaines des cahiers.
 ACA-PUBLICATION-2 reste ouvert à ce périmètre ; les fichiers distants et
 les ACL sont désormais installés, ils ne sont plus « en attente d'accord ».
+
+## Actualisation de 17:45 (Commit 5c40585)
+
+- Hôte : `vps-5a3d618c.vps.ovh.net` (`51.178.183.154`), chemin `/academie/`.
+- Clone `/home/academie/repo` mis à jour en fast-forward sur `5c40585f314811a0ea49e3cfddf4fc0d7ea2fa5d`.
+- Publication atomique installée dans `/var/lib/academie/publication/` :
+  - Bundle JS `assets/index-Dnqlvej4.js` et feuille de style tokenisée `assets/index-piaikwn0.css`.
+  - Nouveaux modules de progression (passeport, ligue, trophées, insignes, ponts) et modules de séance (rôle, relier, datation dynamique, synthèse).
+  - Remplacement atomique de `index.html` et `sw.js` en dernier.
+  - Anciens assets conservés pour les sessions en cours.
+- Contrôle des ACL Caddy : `user:caddy:r-x` effectif, `getfacl` conforme.
+- Santé API `academie-etat.service` sur `http://127.0.0.1:8790/academie/api/v1/sante` : `{"ok": true, "moteur_version": "etat-v1", "contrats": ["carte-v1", "carte-v2", "journal-v1"]}`.
+
