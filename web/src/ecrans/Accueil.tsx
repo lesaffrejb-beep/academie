@@ -4,6 +4,7 @@ import { useMagasin } from "../app/magasin";
 import { va } from "../app/routage";
 import { accentDuRang } from "../app/theme";
 import { etudeDisponible, repriseEtude } from "../moteur/etude";
+import { NombreAnime } from "./MicroAnimations";
 
 export function Accueil() {
   const { banque, journal, metier, choisisMetier, etats, jour } = useMagasin();
@@ -30,7 +31,7 @@ export function Accueil() {
           <button className="action-etude" onClick={commence} disabled={!prochaine}>
             {reprise?.terminee ? "Revoir le parcours" : reprise?.commencee ? "Reprendre l’étude" : "Commencer l’étude"}<ArrowRight size={21} />
           </button>
-          <span className="invitation-detail"><span>{disponibles.length} chapitres · {total} cartes</span><span>À ton rythme</span></span>
+          <span className="invitation-detail"><span><NombreAnime valeur={disponibles.length} /> chapitres · <NombreAnime valeur={total} /> cartes</span><span>À ton rythme</span></span>
         </div>
       </div>
       {prochaine && <aside className="apercu-cas" aria-labelledby="titre-apercu">

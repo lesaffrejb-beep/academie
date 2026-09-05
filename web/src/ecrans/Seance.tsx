@@ -12,6 +12,7 @@ import { aujourdhuiOrdinal } from "../moteur/etats";
 import { cartesServiables } from "../moteur/serviceabilite";
 import type { Carte } from "../donnees/types";
 import { Bouton, Jauge } from "./Ui";
+import { EclatParticules, VoletGlissant } from "./MicroAnimations";
 
 const MOTEUR_VERSION = "web-2.0.0";
 const NIVEAUX = ["", "I", "II", "III", "IV", "V"];
@@ -120,6 +121,7 @@ function Exercice({ carte, graine, enregistrement, enregistre }: {
   enregistre: (valeur: 1 | 2 | 3 | 4 | "signalement", confiance?: boolean, duree?: number) => Promise<void>;
 }) {
   const [revele, setRevele] = useState(false);
+  const [eclat, setEclat] = useState(false);
   const [confiance, setConfiance] = useState(false);
   const [choisi, setChoisi] = useState<number | null>(null);
   const [reponse, setReponse] = useState("");
@@ -141,17 +143,24 @@ function Exercice({ carte, graine, enregistrement, enregistre }: {
       if (["INPUT", "TEXTAREA", "SELECT"].includes(cible?.tagName ?? "") || cible?.isContentEditable) return;
       if (revele && ["1", "2", "3", "4"].includes(e.key)) {
         e.preventDefault();
-        void enregistre(Number(e.key) as 1 | 2 | 3 | 4, confiance, Date.now() - debut.current);
+        const noteChoisie = Number(e.key) as 1 | 2 | 3 | 4;
+        if (noteChoisie >= 3) setEclat(true);
+        void enregistre(noteChoisie, confiance, Date.now() - debut.current);
       } else if (!revele && qcm && ["1", "2", "3", "4"].includes(e.key)) {
         const choix = Number(e.key) - 1;
-        if (carte.choix?.[choix]) { e.preventDefault(); setChoisi(choix); setRevele(true); }
+        if (carte.choix?.[choix]) {
+          e.preventDefault();
+          setChoisi(choix);
+          setRevele(true);
+          if (choix === correct) setEclat(true);
+        }
       } else if (!revele && !qcm && (e.key === " " || e.key === "Enter") && cible?.tagName !== "BUTTON") {
         e.preventDefault(); setRevele(true);
       }
     }
     window.addEventListener("keydown", clavier);
     return () => window.removeEventListener("keydown", clavier);
-  }, [carte.choix, confiance, enregistre, enregistrement, qcm, revele]);
+  }, [carte.choix, confiance, correct, enregistre, enregistrement, qcm, revele]);
 
   return <>
     <article className={`salle-carte salle-carte-${carte.type}`}>
@@ -166,8 +175,9 @@ function Exercice({ carte, graine, enregistrement, enregistre }: {
 
       {qcm ? <ul className="salle-choix">
         {carte.choix?.map((c, i) => <li key={i}>
-          <button type="button" disabled={revele || enregistrement} onClick={() => { setChoisi(i); setRevele(true); }}
-            className={`salle-choix-bouton${revele && i === correct ? " est-juste" : revele && i === choisi ? " est-faux" : ""}`}>
+          <button type="button" disabled={revele || enregistrement} onClick={() => { setChoisi(i); setRevele(true); if (i === correct) setEclat(true); }}
+            className={`salle-choix-bouton relative${revele && i === correct ? " est-juste" : revele && i === choisi ? " est-faux" : ""}`}>
+            {revele && i === correct && i === choisi ? <EclatParticules nombre={18} duree={650} /> : null}
             <span className="salle-choix-repere">{revele && i === correct ? <Check size={18} />
               : revele && i === choisi ? <X size={18} /> : i + 1}</span><span>{c.texte}</span>
           </button>
@@ -183,7 +193,7 @@ function Exercice({ carte, graine, enregistrement, enregistre }: {
           onChange={(e) => setConfiance(e.target.checked)} />{LIB.jetaisSur}</label>
         {!qcm ? <Bouton primaire disabled={enregistrement} onClick={() => setRevele(true)}
           enfants={<>{LIB.reveler}<ArrowRight size={18} /></>} /> : null}
-      </div> : <div className="salle-retour" aria-live="polite">
+      </div> : <VoletGlissant ouvert={revele}><div className="salle-retour" aria-live="polite">
         <h2 className={qcm && choisi !== correct ? "salle-faux" : "salle-juste"}>
           {qcm ? <>{choisi === correct ? <Check size={20} /> : <X size={20} />}
             {voix(choisi === correct ? "reponse.juste" : "reponse.fausse", {}, graine)}</> : LIB.correction}
@@ -194,13 +204,18 @@ function Exercice({ carte, graine, enregistrement, enregistre }: {
         {carte.explication ? <p>{carte.explication}</p> : null}
         {carte.vigilance ? <p className="salle-vigilance"><strong>{LIB.vigilance}.</strong> {carte.vigilance}</p> : null}
         {qcm && confiance && choisi !== correct ? <p>{voix("reponse.confiante", {}, graine)}</p> : null}
-      </div>}
+      </div></VoletGlissant>}
     </article>
     {revele ? <>
-      <div className="salle-notes" aria-busy={enregistrement}>
+      <div className="salle-notes relative" aria-busy={enregistrement}>
+        {eclat ? <EclatParticules nombre={26} duree={750} onFin={() => setEclat(false)} /> : null}
         {([LIB.note1, LIB.note2, LIB.note3, LIB.note4] as const).map((libelle, i) =>
           <Bouton key={libelle} primaire={i === 2} disabled={enregistrement}
-            onClick={() => void enregistre((i + 1) as 1 | 2 | 3 | 4, confiance, Date.now() - debut.current)}
+            className={`bouton-tactile salle-note-${i + 1}`}
+            onClick={() => {
+              if (i >= 2) setEclat(true);
+              void enregistre((i + 1) as 1 | 2 | 3 | 4, confiance, Date.now() - debut.current);
+            }}
             enfants={libelle} />)}
       </div>
       <Sources carte={carte} graine={graine} enregistrement={enregistrement}

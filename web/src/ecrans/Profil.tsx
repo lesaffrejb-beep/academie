@@ -7,6 +7,7 @@ import { poseTheme, themeCourant, type Theme } from "../app/theme";
 import { exporteJsonl, rejets } from "../moteur/journal";
 import { jourOrdinal } from "../moteur/etats";
 import { Bouton, pourcent } from "./Ui";
+import { NombreAnime, EtatPenseur } from "./MicroAnimations";
 
 export function Profil() {
   const { banque, points, monde, journal, bilan, jour, synchronise } = useMagasin();
@@ -40,7 +41,11 @@ export function Profil() {
 
   return <div className="page-document">
     <header className="profil-entete"><div><h1 className="titre-page">{LIB.profil}</h1><p>{LIB.niveau} {points?.niveau ?? 1} · {points?.xp ?? 0} {LIB.points} · dans ce métier</p></div><span>{pourcent(monde?.remplissageGlobal ?? 0)} {LIB.progression.toLowerCase()} du métier</span></header>
-    <dl className="statistiques"><div><dd>{reponses.length}</dd><dt>{LIB.revisions}</dt></div><div><dd>{new Set(reponses.map((l) => l.carte)).size}</dd><dt>{LIB.cartes}</dt></div><div><dd>{jours.size}</dd><dt>{LIB.joursJoues}</dt></div></dl>
+    <dl className="statistiques">
+      <div><dd><NombreAnime valeur={reponses.length} /></dd><dt>{LIB.revisions}</dt></div>
+      <div><dd><NombreAnime valeur={new Set(reponses.map((l) => l.carte)).size} /></dd><dt>{LIB.cartes}</dt></div>
+      <div><dd><NombreAnime valeur={jours.size} /></dd><dt>{LIB.joursJoues}</dt></div>
+    </dl>
     <div className="profil-grille">
       <section className="profil-section"><h2>{LIB.activite}</h2><div className="heatmap" role="img" aria-label={`${LIB.activite}, ${formatDate(jour - 90)} - ${formatDate(jour)}`}>
         {calendrier.map((j) => <span key={j} className={`jour-activite ${jours.has(j) ? "joue" : ""}`} title={`${formatDate(j)} : ${reponses.filter((l) => jourOrdinal(l.quand) === j).length} ${LIB.revisions}`} />)}
@@ -51,7 +56,7 @@ export function Profil() {
       <section className="profil-section"><h2>{LIB.derniereActivite}</h2>{derniere.length ? <ul className="journal-recent">{derniere.map((l) => <li key={`${l.quand}|${l.mode}|${l.nonce}`}><span>{banque?.cartes.find((c) => c.id === l.carte)?.question ?? LIB.carteIndisponible}</span><time dateTime={l.quand}>{new Date(l.quand).toLocaleDateString("fr-FR", { day: "numeric", month: "short" })}</time></li>)}</ul> : <p className="etat-vide">{LIB.aucuneActivite}</p>}</section>
       <section className="profil-section"><h2>{LIB.journal}</h2><Bouton onClick={() => void exporte()} enfants={<><Download size={18} />{LIB.exporter}</>} /><p className="activite-legende">{journal.length} {LIB.lignesJournal} · {bilan?.enAttente ?? 0} {LIB.enAttente}</p>{nbRejets > 0 ? <p role="status">{nbRejets} {LIB.rejetsJournal}</p> : null}{bilan?.horsLigne ? <p className="activite-legende">{LIB.horsLigne}</p> : null}
         {erreur || bilan?.erreur ? <p role="status">{erreur ?? (bilan?.erreur?.statut === 401 ? LIB.synchronisationConnexion : LIB.synchronisationIndisponible)}</p> : null}
-        <Bouton disabled={attente} onClick={() => void relance()} enfants={<><RefreshCw size={16} />{attente ? LIB.chargement : LIB.synchroniser}</>} />
+        <Bouton disabled={attente} onClick={() => void relance()} enfants={<><RefreshCw size={16} />{attente ? <EtatPenseur texte={LIB.chargement} /> : LIB.synchroniser}</>} />
       </section>
     </div>
     <footer className="liens-profil"><button className="lien-action" onClick={() => va("/confiance")}>{LIB.confiance}<ArrowRight size={16} /></button><button className="lien-action" onClick={() => va("/credits")}>{LIB.credits}<ArrowRight size={16} /></button></footer>

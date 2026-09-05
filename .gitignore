@@ -21,3 +21,4 @@ travail/sauvegardes/
 
 # Traces navigateur du poste ; captures de preuve choisies dans travail/.
 .playwright-mcp/
+test-results/

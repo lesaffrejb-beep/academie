@@ -49,7 +49,6 @@ lisant le dépôt, une règle née d'un incident. Pas l'avancement
 | [0033](0033-ifsi-referentiel-2026.md) | 04/09/2026 | IFSI : référentiel 2026, voies distinctes, axes séparés et progression sans plafond ; amende 0031 |
 | [0034](0034-capacites-sans-classes-de-modeles.md) | 05/09/2026 | Classes retirées à la demande de JB ; provenance, contrôles et compatibilité des états conservés |
 | [0035](0035-roadmap-par-preuves-et-pilote-borne.md) | 05/09/2026 | Preuves logicielles, publication, usage et apprentissage séparés ; contrat pilote avant migration globale |
-
-- [0036 : livraison autonome des parcours](0036-livraison-autonome-des-parcours.md)
-
-- [0037 : exploration lisible et preuves durables](0037-exploration-lisible-et-preuves-durables.md)
+| [0036](0036-livraison-autonome-des-parcours.md) | 05/09/2026 | Livraison autonome des parcours |
+| [0037](0037-exploration-lisible-et-preuves-durables.md) | 05/09/2026 | Exploration lisible et preuves durables |
+| [0038](0038-architecture-des-tokens-et-micro-interactions.md) | 05/09/2026 | Architecture des tokens 100 % portable, dendrogramme 360° et micro-animations tactiles |
