@@ -158,3 +158,13 @@ Publication : sauvegarder la base et les fichiers servis, fournir aussi
 `programme/catalogue.json` au serveur, déployer client et API ensemble ;
 faire autoriser puis vérifier la migration et l'accès HTTPS authentifié.
 Un ancien serveur refuse le mode cursus : ne pas publier seulement le client.
+
+### Bascule depuis un ancien client (0043)
+
+Toutes les routes privées authentifiées par cookie exigent l'en-tête
+`X-Academie-Profil`, sauf `GET /profil` utilisé au démarrage. L'absence
+renvoie 409 `client-a-recharger`, une identité différente 409 `compte-change`,
+sans lecture ni écriture des données privées. Les outils Bearer restent
+compatibles. Les anciennes réponses locales ne sont ni effacées ni importées
+automatiquement dans un compte. L'export HTTP par cookie demande également
+cet en-tête ; l'export de l'interface lit sa propre base locale.

@@ -9,6 +9,17 @@ ce qui ne l'est pas, c'est cette direction. La maquette cliquable du
 
 ---
 
+## Amendement du 05/09 au soir : décision 0043
+
+Les captures et l'accord explicite de JB remplacent la palette rosée/prune :
+Papier blanc froid et bleu, Nuit bleu profond. Source Sans 3 auto-hébergée
+porte désormais titres et corps. Les couleurs par rang restent sémantiques,
+avec encre sombre sur les accents clairs de Nuit et blanche sur les accents
+assombris de Papier. Les valeurs exactes sont dans `web/src/index.css`.
+Cet amendement prévaut sur les descriptions historiques de couleurs et de
+polices ci-dessous. Il conserve la géométrie actuelle, les modules et les
+animations déjà intégrés ; il ne transforme pas Académie en page marketing.
+
 ## 1. L'intention en trois mots : la planche
 
 Une **planche** d'encyclopédie, de carnet d'architecte, d'atlas : un

@@ -25,12 +25,14 @@ def application() -> tuple[Application, str, str]:
 
 
 def requete(appli: Application, methode: str, route: str, corps=None, jeton: str | None = None,
-            cookie: str | None = None) -> tuple[int, dict, object]:
+            cookie: str | None = None, profil: str | None = None) -> tuple[int, dict, object]:
     entetes = {}
     if jeton:
         entetes["authorization"] = f"Bearer {jeton}"
     if cookie:
         entetes["cookie"] = f"academie_session={cookie}"
+    if profil:
+        entetes["x-academie-profil"] = profil
     donnees = json.dumps(corps).encode("utf-8") if corps is not None else b""
     statut, e, sortie = appli.traiter(methode, PREFIXE + route, donnees, entetes)
     if e.get("content-type", "").startswith("application/json"):

@@ -51,11 +51,14 @@ class Application:
         cookies = SimpleCookie(entetes.get("cookie", ""))
         return cookies[COOKIE].value if COOKIE in cookies else None
 
-    def _profil(self, entetes: dict) -> str:
+    def _profil(self, entetes: dict, identite_requise: bool = True) -> str:
         profil = auth.verifier(self.conn, self._jeton(entetes))
         if profil is None:
             raise Refus(401, "non-authentifie", "session absente, expirée ou révoquée")
         attendu = entetes.get("x-academie-profil")
+        outil = entetes.get("authorization", "").lower().startswith("bearer ")
+        if identite_requise and not outil and not attendu:
+            raise Refus(409, "client-a-recharger", "Recharge Académie pour ouvrir ton compte. Les réponses de cet ancien onglet restent sur cet appareil.")
         if attendu and attendu != profil:
             raise Refus(409, "compte-change", "Le compte a changé dans un autre onglet. Reconnecte-toi ; tes réponses restent sur cet appareil.")
         return profil
@@ -135,7 +138,7 @@ class Application:
                           "content-disposition": 'attachment; filename="journal.jsonl"'}, texte.encode("utf-8"))
 
         if route == "/profil":
-            profil = self._profil(entetes)
+            profil = self._profil(entetes, identite_requise=methode != "GET")
             if methode == "GET":
                 return self._json(200, auth.profil_public(self.conn, profil))
             if methode == "PATCH":

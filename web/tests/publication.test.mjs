@@ -41,7 +41,7 @@ afterEach(() => {
 });
 
 function distribution(racine) {
-  for (const nom of ["index.html", "sw.js", "registerSW.js", "icone.svg", "voix.json",
+  for (const nom of ["index.html", "sw.js", "registerSW.js", "icone.svg", "voix.json", "catalogue.json",
     "assets/app.js", "assets/app.css", "assets/police.woff2", "images/schema.svg"]) {
     ecrit(racine, nom, nom === "voix.json" ? "{}" : `contenu ${nom}`);
   }
@@ -153,4 +153,17 @@ test("les sources en lecture seule construisent ; un build refuse conserve l ind
   ecrit(sortie, "index.html", "index sentinelle");
   assert.throws(() => prepare({ racine, sortie, travail }));
   assert.equal(fs.readFileSync(path.join(sortie, "index.html"), "utf8"), "index sentinelle");
+});
+
+
+test("un catalogue absent refuse une publication inutilisable à la première connexion", () => {
+  const travail = temporaire();
+  const source = path.join(travail, "dist");
+  const sortie = path.join(travail, "public");
+  distribution(source);
+  fs.unlinkSync(path.join(source, "catalogue.json"));
+  ecrisManifeste(source);
+  ecrit(sortie, "index.html", "ancienne page");
+  assert.throws(() => distribue(source, sortie), /catalogue/);
+  assert.equal(fs.readFileSync(path.join(sortie, "index.html"), "utf8"), "ancienne page");
 });

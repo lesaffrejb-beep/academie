@@ -1,5 +1,9 @@
 # Essayer l'accueil et les comptes
 
+Actualisation du soir : intégration sur main et publication VPS demandées
+par JB ; voir [le compte rendu de publication](PUBLICATION-VPS.md).
+La description de copie isolée ci-dessous retrace la première livraison.
+
 05/09/2026. Outil Codex, modèle GPT-6. Décision 0042, cahier
 ACA-ONBOARDING-1. Copie indépendante issue du commit 89cc630, sans les
 modifications non commitées de la session principale. Branche

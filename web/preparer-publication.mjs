@@ -12,7 +12,7 @@ const CLIENT = ["src", "public", "tests", "index.html", "package.json", "package
   "tsconfig.json", "vite.config.ts", "vitest.config.ts", "tailwind.config.ts", "postcss.config.js"];
 const DONNEES = ["academie.json", "banque", "chapitres", "programme"];
 const REQUIS = ["index.html", "sw.js", "registerSW.js", "manifest.webmanifest", "icone.svg",
-  "banque.json", "voix.json", ".vite/manifest.json"];
+  "banque.json", "voix.json", "catalogue.json", ".vite/manifest.json"];
 
 export function fichiers(racine, prefixe = "") {
   return fs.readdirSync(path.join(racine, prefixe), { withFileTypes: true }).flatMap((entree) => {

@@ -14,7 +14,7 @@
 .arrivee-formulaire p { line-height:1.5; }
 .arrivee-modes { display:flex; gap:4px; padding:4px; border:1px solid var(--c-trait); border-radius:10px; }
 .arrivee-modes button { flex:1; padding:10px 4px; border-radius:7px; }
-.arrivee-modes [aria-pressed=true] { background:var(--c-surface-elevee); }
+.arrivee-modes [aria-pressed=true] { background:var(--c-accent-fond); color:var(--c-accent-texte); font-weight:600; }
 .arrivee form { display:grid; gap:18px; }
 .arrivee label { display:grid; gap:7px; font-weight:600; }
 .arrivee input,.arrivee textarea { width:100%; min-height:48px; border:1px solid var(--c-trait); border-radius:8px; padding:10px 12px; background:var(--c-fond); color:var(--c-encre); font:400 17px var(--f-texte); }

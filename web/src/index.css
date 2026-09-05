@@ -17,53 +17,50 @@
  * les feuilles qui montent, la personnalite par type de carte.
  */
 :root {
-  --f-titre: "Fraunces Variable", Georgia, "Times New Roman", serif;
+  --f-titre: "Source Sans 3 Variable", system-ui, -apple-system, "Segoe UI",
+    sans-serif;
   --f-texte: "Source Sans 3 Variable", system-ui, -apple-system, "Segoe UI",
     sans-serif;
 
-  /* Nuit reste disponible ; Papier est le choix initial (decision 0037). */
-  --c-fond: #261f28;
-  --c-surface: #302833;
-  --c-surface-elevee: #3b323f;
-  --c-surface-creuse: #1e1820;
-  --c-surface-dock: #221b24cc;
-  --c-encre: #f7eef3;
-  --c-encre-2: #f7eef3ba;
-  --c-trait: #f7eef324;
-  --c-bordure-subtile: #f7eef31f;
-  --c-bordure-forte: #f7eef340;
-  --c-succes: #a3c692;
-  --c-succes-fond: #a3c6921f;
-  --c-erreur: #d19978;
-  --c-erreur-fond: #d199781f;
+  /* Nuit bleu profond reste disponible ; Papier est le choix initial (decision 0037). */
+  --c-fond: #0a092d;
+  --c-surface: #131642;
+  --c-surface-elevee: #1d225a;
+  --c-surface-creuse: #060520;
+  --c-surface-dock: #131642eb;
+  --c-encre: #f6f7fb;
+  --c-encre-2: #a6b0cf;
+  --c-trait: #282e66;
+  --c-bordure-subtile: #242a5c;
+  --c-bordure-forte: #394285;
+  --c-succes: #4ade80;
+  --c-succes-fond: #4ade8026;
+  --c-erreur: #f87171;
+  --c-erreur-fond: #f8717126;
   /* Le brouillard : le fond a 70 %, floute par-dessus l'inconnu (DA §3). */
-  --c-brouillard: #0d1117b3;
+  --c-brouillard: #0a092db3;
 
   /* Palette par RANG de domaine, jamais par nom : un autre metier herite
      sans qu'on code quoi que ce soit (DA §2). */
-  --c-rang-1: #e8a8be;   /* ocre */
-  --c-rang-2: #cb9176;   /* cuivre */
-  --c-rang-3: #acba94;   /* sauge */
-  --c-rang-4: #b6a7d0;   /* lavande */
-  --c-rang-5: #91b8ce;   /* bleu acier */
-  --c-rang-6: #cf9489;   /* brique */
-  --c-rang-7: #b1b978;   /* olive */
-  --c-rang-8: #c5a0bb;   /* prune */
-  --c-rang-9: #d3bc91;   /* sable */
-  --c-rang-10: #a4aeba;  /* ardoise */
+  --c-rang-1: #7786ff;   /* bleu nuit */
+  --c-rang-2: #fbbf24;   /* ambre dore */
+  --c-rang-3: #4ade80;   /* sauge vert */
+  --c-rang-4: #a78bfa;   /* lavande */
+  --c-rang-5: #38bdf8;   /* bleu acier ciel */
+  --c-rang-6: #fb923c;   /* mandarine brique */
+  --c-rang-7: #34d399;   /* olive menthe */
+  --c-rang-8: #818cf8;   /* indigo prune */
+  --c-rang-9: #22d3ee;   /* sable turquoise */
+  --c-rang-10: #94a3b8;  /* ardoise */
   --c-accent: var(--c-rang-1);
-  --c-accent-fond: #e8a8be2e;
+  --c-accent-fond: #7080ff26;
   --c-accent-texte: var(--c-accent);
-  --c-avertissement: #d3bc91;
-  --c-avertissement-fond: #d3bc911f;
-  --c-encre-3: #f7eef37a;
-  --c-surface-fond: #241c26;
-  /* L'encre POSEE SUR l'accent (bouton principal plein, DA §8 ter). Le
-     fond du theme joue ce role dans les deux sens : en Nuit l'accent est
-     mi-clair et le fond est sombre, en Papier l'accent est assombri et le
-     fond est clair. Le contraste AA (§7) tient donc des deux cotes avec
-     un seul token, sans table de correspondance a maintenir. */
-  --c-sur-accent: var(--c-fond);
+  --c-avertissement: #fbbf24;
+  --c-avertissement-fond: #fbbf2426;
+  --c-encre-3: #8890af;
+  --c-surface-fond: #0c0e33;
+  /* L'encre POSEE SUR l'accent (bouton principal plein, DA §8 ter). */
+  --c-sur-accent: #0a092d;
 
   /* Espace, formes et rayons */
   --marge: 16px;
@@ -108,10 +105,10 @@
   /* Transitions.dev : Tabs sliding */
   --tabs-dur: 250ms;
   --tabs-ease: cubic-bezier(0.22, 1, 0.36, 1);
-  --tabs-text-muted: #f7eef39e;
+  --tabs-text-muted: #a6b0cf;
   --tabs-text-active: #ffffff;
-  --tabs-bar-bg: #1e1820;
-  --tabs-pill-bg: #3c3240;
+  --tabs-bar-bg: #101235;
+  --tabs-pill-bg: #1d225a;
 
   /* Transitions.dev : Thinking states */
   --think-hold: 2000ms;
@@ -120,59 +117,60 @@
   --think-distance: 8px;
   --think-blur: 2px;
   --think-shimmer: 2000ms;
-  --think-base: #a89ba5;
+  --think-base: #8592ff;
   --think-highlight: #ffffff;
   --think-ease: ease-in-out;
 }
 
 :root[data-theme="papier"] {
-  --c-fond: #fcf8fa;
+  --c-fond: #f6f7fb;
   --c-surface: #ffffff;
   --c-surface-elevee: #ffffff;
-  --c-surface-creuse: #f5edf1;
-  --c-surface-dock: #ffffffd6;
-  --c-encre: #352b37;
-  --c-encre-2: #352b37bf;
-  --c-trait: #352b3724;
-  --c-bordure-subtile: #352b371a;
-  --c-bordure-forte: #352b373d;
-  --c-brouillard: #f6f3ecb3;
-  --c-succes: #4a6338;
-  --c-succes-fond: #4a63381a;
-  --c-erreur: #8a3f1c;
-  --c-erreur-fond: #8a3f1c1a;
-  --ombre-carte: 0 1px 3px -1px #352b371f, 0 6px 20px -4px #352b371f;
-  --ombre-flottante: 0 18px 48px -28px #352b373d;
-  --ombre-dock: 0 12px 32px -8px #352b3729, 0 2px 6px -1px #352b3714;
-  --ombre-surlevee: 0 20px 44px -16px #352b3738;
-  --ombre-pilule: 0 2px 6px -2px #352b3724;
+  --c-surface-creuse: #edf0f8;
+  --c-surface-dock: #ffffffea;
+  --c-encre: #1a1d28;
+  --c-encre-2: #586380;
+  --c-trait: #e2e6f0;
+  --c-bordure-subtile: #e5e8f2;
+  --c-bordure-forte: #cbd2e6;
+  --c-brouillard: #f6f7fbb3;
+  --c-succes: #157c3b;
+  --c-succes-fond: #22c55e1a;
+  --c-erreur: #c43838;
+  --c-erreur-fond: #ef444418;
+  --ombre-carte: 0 1px 3px 0 #1a1d280d, 0 4px 16px -2px #1a1d280f;
+  --ombre-flottante: 0 16px 36px -12px #1a1d2824;
+  --ombre-dock: 0 8px 24px -4px #1a1d281a, 0 2px 6px -1px #1a1d280a;
+  --ombre-surlevee: 0 20px 44px -12px #1a1d282e;
+  --ombre-pilule: 0 2px 8px -2px #1a1d2814;
 
-  /* « idem, assombrie » (DA §2) : la meme famille, assez foncee pour
-     tenir le contraste AA sur un fond clair (§7). */
-  --c-rang-1: #933e61;
-  --c-rang-2: #854752;
-  --c-rang-3: #536348;
-  --c-rang-4: #685275;
-  --c-rang-5: #405d72;
-  --c-rang-6: #873f4c;
-  --c-rang-7: #666039;
-  --c-rang-8: #724566;
-  --c-rang-9: #726044;
-  --c-rang-10: #515869;
-  --c-accent-fond: #933e611f;
+  /* Papier bleu : références de JB du 05/09, contrastes ajustés (0043). */
+  --c-rang-1: #4255ff;   /* Bleu vif */
+  --c-rang-2: #a35904;   /* Ambre or chaleureux */
+  --c-rang-3: #117c38;   /* Vert emeraude succes */
+  --c-rang-4: #7c3aed;   /* Violet electrique */
+  --c-rang-5: #0272ab;   /* Bleu cyan ocean */
+  --c-rang-6: #bb460a;   /* Mandarine vive */
+  --c-rang-7: #047b56;   /* Teal menthe */
+  --c-rang-8: #595cd9;   /* Indigo */
+  --c-rang-9: #067590;   /* Turquoise */
+  --c-rang-10: #475569;  /* Ardoise neutre */
+  --c-accent: var(--c-rang-1);
+  --c-accent-fond: #4255ff14;
   --c-accent-texte: var(--c-accent);
-  --c-avertissement: #726044;
-  --c-avertissement-fond: #7260441a;
-  --c-encre-3: #352b3780;
-  --c-surface-fond: #f8f1f5;
+  --c-avertissement: #a35904;
+  --c-avertissement-fond: #ffcd1f29;
+  --c-encre-3: #656b7c;
+  --c-surface-fond: #f0f3fa;
+  --c-sur-accent: #ffffff;
 
-  --tabs-text-muted: #352b3799;
-  --tabs-text-active: #352b37;
-  --tabs-bar-bg: #eee4ea;
+  --tabs-text-muted: #586380;
+  --tabs-text-active: #1a1d28;
+  --tabs-bar-bg: #edf0f8;
   --tabs-pill-bg: #ffffff;
 
-  --think-base: #7e7080;
-  --think-highlight: #281e2a;
+  --think-base: #586380;
+  --think-highlight: #1a1d28;
 }
 
 * { box-sizing: border-box; }

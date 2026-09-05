@@ -20,3 +20,19 @@ Migration simulée depuis v1 remplie : lignes et ancienne session conservées,
 aucune erreur de clé étrangère, deuxième passage sans effet.
 Le relecteur n'a pas exécuté le navigateur : cette preuve est séparée dans
 la livraison. Aucun verdict d'acceptation humaine ni de sécurité absolue.
+
+## Intégration sur main et publication, 05/09 au soir
+
+Relecteur indépendant Codex, même modèle, contexte frais :
+`/root/review_publication`. Un P1 détecté puis corrigé : un ancien onglet
+sans identité de profil pouvait utiliser le nouveau cookie. Identité
+obligatoire pour toutes les routes privées à cookie sauf GET /profil au
+démarrage ; Bearer conservé. Test rouge puis vert et aucune écriture sur
+refus. Neuf tests onboarding serveur, deux contrastes et six publication
+verts. Journal/sessions inchangés dans une migration synthétique, intégrité
+et clés étrangères correctes. Aucun autre bloquant constaté dans ce périmètre.
+La relecture ne prouve pas le rendu VPS ni l'essai humain.
+
+Le détecteur visuel signale les courbes de rebond des microanimations
+existantes. Conservées selon la décision 0041 et la demande de reprendre
+les travaux de l'autre session ; aucun rebond ajouté dans cette passe.

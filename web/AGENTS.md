@@ -12,7 +12,7 @@ skill n'est pas installé sur cette machine, les règles ci-dessous restent
 applicables. La doctrine et la DA ont priorité sur les skills externes.
 
 - La signature est la planche : arbre réel, liens fins, anneaux de
-  progression mesurée, Fraunces et Source Sans 3 auto-hébergées.
+  progression mesurée, Source Sans 3 auto-hébergée et palette bleue (0043).
 - Les écrans sont des espaces de travail et d'apprentissage : rail sur
   ordinateur, barre basse sur téléphone, salle sans navigation.
 - La question domine la salle. Aucun grand compteur ne lui dispute

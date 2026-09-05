@@ -754,9 +754,9 @@
         "max_minutes": 240,
         "max_tokens": 80000
       },
-      "proof": "Livraison locale isolée 05/09 : comptes mail/mot de passe, choix unique de cursus dans le journal, sauvegardes par profil, annuaire minimal masquable, demandes CLI. Tests serveur/client/build et navigateur ; travail/onboarding/LIVRAISON.md. Publication distante et essai humain distincts.",
+      "proof": "Intégré sur main le 05/09 : comptes, cursus, sauvegardes séparées, annuaire masquable. Tests serveur, 292 tests client, six publication, 76 navigateur et deux comptes réels. Compte rendu : travail/onboarding/LIVRAISON.md et PUBLICATION-VPS.md. Essai humain distinct.",
       "parent_milestone": "ACADEMIE-V2-JOUEUR",
-      "note": "Décision 0042 : première étude avec tentative, pas de faux quiz de positionnement ; aucun élargissement aux cercles complets. Copie indépendante, pas intégrée à main."
+      "note": "Décisions 0042 et 0043 : première étude avec tentative, pas de faux quiz de positionnement ; annuaire minimal. Publication VPS autorisée par JB ; constat opérationnel dans le compte rendu de livraison."
     },
     {
       "id": "ACA-IFSI-1",

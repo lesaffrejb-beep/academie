@@ -34,3 +34,14 @@ Extension à `web/preparer-publication.mjs` et son test : la copie isolée
 omet `contenu/parcours.json` et livre silencieusement un accueil sans
 parcours. Prouver la conservation exacte des parcours disponibles dans
 le build isolé, puis copier ce fichier explicite. Aucun journal copié.
+
+## Livraison du soir du 05/09, autorisée par JB
+
+Demande explicite : réunir l'onboarding et les retouches visuelles, pousser
+sur main et publier sur le VPS pour essayer ce soir. L'accès HTTP de test
+fourni par JB est ajouté à la seule route Académie ; les comptes élèves
+restent personnels avec leurs propres mots de passe et journaux. Cette
+instruction remplace la restriction d'accès de convenance ci-dessus pour
+cette livraison. Sauvegarder Caddy et SQLite, conserver les autres routes,
+valider la configuration avant rechargement et prouver le trajet authentifié.
+Le catalogue requis par l'onboarding doit faire partie du paquet vérifié.

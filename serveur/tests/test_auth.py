@@ -41,7 +41,7 @@ class Auth(unittest.TestCase):
         magic = auth.creer_jeton(self.conn, self.profil, "magic")
         _, e, _ = requete(self.appli, "GET", f"/auth/lien?jeton={magic}")
         cookie = e["set-cookie"].split(";")[0].split("=", 1)[1]
-        requete(self.appli, "POST", "/auth/deconnexion", cookie=cookie)
+        requete(self.appli, "POST", "/auth/deconnexion", cookie=cookie, profil=self.profil)
         s, _, _ = requete(self.appli, "GET", "/profil", cookie=cookie)
         self.assertEqual(s, 401)
 

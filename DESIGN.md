@@ -2,31 +2,31 @@
 name: Académie — la planche vivante
 description: Système visuel observé de l’école d’un métier, jouée tous les jours.
 colors:
-  nuit-fond: "#261f28"
-  nuit-surface: "#302833"
-  nuit-encre: "#f7eef3"
-  nuit-encre-secondaire: "#f7eef3ba"
-  nuit-trait: "#f7eef324"
-  nuit-rose: "#e8a8be"
-  nuit-succes: "#a3c692"
-  nuit-erreur: "#d19978"
-  papier-fond: "#fcf8fa"
+  nuit-fond: "#0a092d"
+  nuit-surface: "#131642"
+  nuit-encre: "#f6f7fb"
+  nuit-encre-secondaire: "#a6b0cf"
+  nuit-trait: "#282e66"
+  nuit-bleu: "#7786ff"
+  nuit-succes: "#4ade80"
+  nuit-erreur: "#f87171"
+  papier-fond: "#f6f7fb"
   papier-surface: "#ffffff"
-  papier-encre: "#352b37"
-  papier-encre-secondaire: "#352b37bf"
-  papier-trait: "#352b3724"
-  papier-framboise: "#933e61"
-  papier-succes: "#4a6338"
-  papier-erreur: "#8a3f1c"
+  papier-encre: "#1a1d28"
+  papier-encre-secondaire: "#586380"
+  papier-trait: "#e2e6f0"
+  papier-bleu: "#4255ff"
+  papier-succes: "#157c3b"
+  papier-erreur: "#c43838"
 typography:
   display:
-    fontFamily: '"Fraunces Variable", Georgia, "Times New Roman", serif'
+    fontFamily: '"Source Sans 3 Variable", system-ui, sans-serif'
     fontSize: "clamp(2.8rem, 4.8vw, 4.7rem)"
     fontWeight: 440
     lineHeight: 1.08
     letterSpacing: "-.035em"
   question:
-    fontFamily: '"Fraunces Variable", Georgia, "Times New Roman", serif'
+    fontFamily: '"Source Sans 3 Variable", system-ui, sans-serif'
     fontSize: "clamp(1.6rem, 2.5vw, 2.2rem)"
     fontWeight: 400
     lineHeight: 1.3
@@ -45,12 +45,12 @@ spacing:
   marge-desktop: "24px"
 components:
   action-etude-nuit:
-    backgroundColor: "{colors.nuit-rose}"
+    backgroundColor: "{colors.nuit-bleu}"
     textColor: "{colors.nuit-fond}"
     rounded: "{rounded.action-etude}"
     padding: "15px 20px"
   action-etude-papier:
-    backgroundColor: "{colors.papier-framboise}"
+    backgroundColor: "{colors.papier-bleu}"
     textColor: "{colors.papier-fond}"
     rounded: "{rounded.action-etude}"
     padding: "15px 20px"
@@ -67,8 +67,8 @@ components:
 
 **Creative North Star: "La planche vivante"**
 
-Une planche d’encyclopédie adulte : papier rosé ou fond prune profond, traits
-fins et titres à empattements. Les surfaces ouvertes et la densité calme
+Une planche d’encyclopédie adulte : papier blanc froid ou fond bleu profond, traits
+fins et titres humanistes. Les surfaces ouvertes et la densité calme
 laissent le contenu du métier conduire la lecture. Le savoir réel fournit
 les noms, les liens et les états du dessin.
 
@@ -235,3 +235,9 @@ retirée de l’accueil ; la [reprise visuelle](travail/experience-2026-09-05/RE
 en conserve le contexte. Le sidecar `.impeccable/design.json` reste un relevé
 antérieur, non actualisé par cette passe ; ses palettes ne font pas référence
 pour le client actuel.
+
+## Actualisation du 05/09 au soir
+
+Décision 0043 : références bleues fournies par JB, titres et corps Source
+Sans 3 auto-hébergée. Le fichier CSS porte les valeurs exactes, dont les
+accents de domaine ajustés pour la lisibilité dans les deux thèmes.

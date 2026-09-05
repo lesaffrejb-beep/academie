@@ -130,3 +130,11 @@ et aperçu adjacent dans le flux, sans déplacement de canevas.
 Preuves avant code : défaut Papier, préférence conservée, domaines nommés
 et absence de faux graphe. Puis E2E existants, rendu 375/1280 dans les deux
 thèmes, contraste calculé, revue indépendante et contrôles du dépôt.
+
+## Finition autorisée du 05/09 au soir
+
+Intégrer la palette bleue montrée par JB (références Quizlet et diff fourni),
+avec Source Sans 3 auto-hébergée, sans dépendre de la police propriétaire
+absente. Garder les modules et animations existants ; corriger les contrastes
+des textes et boutons dans les deux thèmes, puis vérifier le rendu mobile
+et ordinateur du trajet compte → cursus → étude → élèves. Décision 0043.
