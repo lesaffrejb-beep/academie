@@ -73,7 +73,7 @@ export function ModuleRole({
       <div className="rounded-2xl border border-[var(--c-bordure-subtile)] bg-[var(--c-surface)] p-4 shadow-sm">
         <div className="flex flex-wrap items-center justify-between gap-2 pb-3 border-b border-[var(--c-bordure-subtile)]">
           <div className="flex items-center gap-2">
-            <span className="w-8 h-8 rounded-full flex items-center justify-center bg-[color-mix(in_srgb,var(--c-accent)_15%,transparent)] text-[var(--c-accent)]">
+            <span className="w-8 h-8 rounded-full flex items-center justify-center bg-[var(--c-accent-fond)] text-[var(--c-accent)]">
               <User size={16} />
             </span>
             <div>
@@ -449,7 +449,14 @@ export function ModulePhotoPlan({
  * 4. MODULE CHRONOLOGIE & DATATION (type: "datation")
  * Frise temporelle avec étapes ordonnées et identification de l'échéance manquante.
  */
+export interface EtapeChronologie {
+  num: number;
+  titre: string;
+  cible?: boolean;
+}
+
 export function ModuleDatation({
+  carte,
   reponse,
   surChangementReponse,
   revele,
@@ -459,14 +466,35 @@ export function ModuleDatation({
   surChangementReponse: (valeur: string) => void;
   revele: boolean;
 }) {
-  const etapesProcedure = [
-    { num: 1, titre: "Relance simple" },
-    { num: 2, titre: "Mise en demeure" },
-    { num: 3, titre: "Délai de 30 jours", cible: true },
-    { num: 4, titre: "Déchéance du terme" },
-    { num: 5, titre: "Titre exécutoire" },
-    { num: 6, titre: "Mesures d exécution" },
-  ];
+  const etapesProcedure = useMemo<EtapeChronologie[]>(() => {
+    // 1. Étapes déclarées directement dans la carte
+    if (carte.etapes && Array.isArray(carte.etapes) && carte.etapes.length > 0) {
+      return carte.etapes as EtapeChronologie[];
+    }
+    // 2. Extraction dynamique d'étapes numérotées depuis la question
+    const regexEtape = /(?:^|\s)([1-9])[\s.)-]+\s*([^;.\n]+)/g;
+    const extraites: EtapeChronologie[] = [];
+    let match: RegExpExecArray | null;
+    while ((match = regexEtape.exec(carte.question)) !== null) {
+      const num = Number(match[1]);
+      const titre = match[2]?.trim() ?? "";
+      if (titre && !extraites.some((e) => e.num === num)) {
+        extraites.push({ num, titre, cible: titre.includes("?") || carte.question.includes(`étape ${num}`) });
+      }
+    }
+    if (extraites.length >= 3) {
+      return extraites.sort((a, b) => a.num - b.num);
+    }
+    // 3. Modèle procédural canonique pour le recouvrement de charges et la déchéance du terme
+    return [
+      { num: 1, titre: "Relance simple" },
+      { num: 2, titre: "Mise en demeure" },
+      { num: 3, titre: "Délai de 30 jours", cible: true },
+      { num: 4, titre: "Déchéance du terme" },
+      { num: 5, titre: "Titre exécutoire" },
+      { num: 6, titre: "Mesures d exécution" },
+    ];
+  }, [carte.etapes, carte.question]);
 
   return (
     <div className="module-datation flex flex-col gap-4">
@@ -482,7 +510,7 @@ export function ModuleDatation({
                 className={
                   "flex flex-col items-center justify-center p-2 rounded-xl border text-center transition min-w-[90px] " +
                   (etp.cible
-                    ? "border-[var(--c-accent)] bg-[color-mix(in_srgb,var(--c-accent)_10%,transparent)] shadow-sm"
+                    ? "border-[var(--c-accent)] bg-[var(--c-accent-fond)] shadow-sm"
                     : "border-[var(--c-bordure-subtile)] bg-[var(--c-surface-creuse)]")
                 }
               >

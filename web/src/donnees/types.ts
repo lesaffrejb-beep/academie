@@ -64,6 +64,7 @@ export interface Carte {
   vigilance?: string;
   choix?: Choix[];
   paires?: { gauche: string; droite: string }[];
+  etapes?: { num: number; titre: string; cible?: boolean }[];
   source: Source[];
   verifie: string;
   statut: "valide" | "brouillon" | string;

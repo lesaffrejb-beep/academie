@@ -52,6 +52,12 @@
   --c-rang-9: #d3bc91;   /* sable */
   --c-rang-10: #a4aeba;  /* ardoise */
   --c-accent: var(--c-rang-1);
+  --c-accent-fond: #e8a8be2e;
+  --c-accent-texte: var(--c-accent);
+  --c-avertissement: #d3bc91;
+  --c-avertissement-fond: #d3bc911f;
+  --c-encre-3: #f7eef37a;
+  --c-surface-fond: #241c26;
   /* L'encre POSEE SUR l'accent (bouton principal plein, DA §8 ter). Le
      fond du theme joue ce role dans les deux sens : en Nuit l'accent est
      mi-clair et le fond est sombre, en Papier l'accent est assombri et le
@@ -153,6 +159,12 @@
   --c-rang-8: #724566;
   --c-rang-9: #726044;
   --c-rang-10: #515869;
+  --c-accent-fond: #933e611f;
+  --c-accent-texte: var(--c-accent);
+  --c-avertissement: #726044;
+  --c-avertissement-fond: #7260441a;
+  --c-encre-3: #352b3780;
+  --c-surface-fond: #f8f1f5;
 
   --tabs-text-muted: #352b3799;
   --tabs-text-active: #352b37;

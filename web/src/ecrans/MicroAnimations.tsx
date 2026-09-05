@@ -642,11 +642,11 @@ export function ToastExp({
 
   return (
     <div
-      className={`pastille-exp-flottante absolute z-50 flex items-center gap-1.5 px-3 py-1 rounded-full bg-[var(--c-accent)] text-white font-bold font-mono text-sm shadow-lg border border-white/20 backdrop-blur-sm select-none ${classe}`}
+      className={`pastille-exp-flottante absolute z-50 flex items-center gap-1.5 px-3 py-1 rounded-full bg-[var(--c-accent)] text-[var(--c-sur-accent)] font-bold font-mono text-sm shadow-flottante border border-[var(--c-bordure-forte)] backdrop-blur-sm select-none ${classe}`}
       role="status"
       aria-live="polite"
     >
-      <Sparkles size={13} className="text-amber-200" />
+      <Sparkles size={13} className="text-[var(--c-sur-accent)]" />
       <span>+{montant} XP</span>
     </div>
   );
@@ -685,7 +685,7 @@ export function JaugeExp({
         </div>
         <div className="flex items-center gap-2 font-mono text-[var(--c-encre-2)]">
           {gainRecent > 0 ? (
-            <span className="text-emerald-500 font-bold animate-pulse">
+            <span className="text-[var(--c-succes)] font-bold animate-pulse">
               +{gainRecent} XP
             </span>
           ) : null}
@@ -734,6 +734,9 @@ export function RituelSemainePill({
   const lundiOrdinal = jourActuel - jourSemaine;
 
   const nomsJours = ["L", "M", "M", "J", "V", "S", "D"];
+  const nomsJoursComplets = [
+    "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"
+  ];
   const [jourClique, setJourClique] = useState<number | null>(null);
 
   return (
@@ -753,15 +756,24 @@ export function RituelSemainePill({
           const estPasse = ordinalJour < jourActuel;
           const estAujourdhui = ordinalJour === jourActuel;
           const estJoue = joursJoues.has(ordinalJour);
+          const nomComplet = nomsJoursComplets[idx] ?? nom;
+          const etatAria = estJoue
+            ? "validé"
+            : estAujourdhui
+            ? "aujourd hui"
+            : estPasse
+            ? "non fait"
+            : "à venir";
 
           return (
             <button
               key={idx}
               type="button"
+              aria-label={`${nomComplet} : ${etatAria}`}
               onClick={() => {
                 if (estJoue) setJourClique(idx);
               }}
-              className={`relative flex flex-col items-center justify-center py-2 px-1 rounded-lg transition-all duration-200 bouton-tactile ${
+              className={`relative flex flex-col items-center justify-center min-h-[44px] py-2 px-1 rounded-lg transition-all duration-200 bouton-tactile ${
                 estAujourdhui
                   ? "ring-2 ring-[var(--c-accent)] shadow-sm bg-[var(--c-surface)]"
                   : "bg-[var(--c-surface)]"
@@ -776,7 +788,7 @@ export function RituelSemainePill({
               <div
                 className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold transition-all ${
                   estJoue
-                    ? "bg-[var(--c-accent)] text-white shadow-sm scale-105"
+                    ? "bg-[var(--c-accent)] text-[var(--c-sur-accent)] shadow-sm scale-105"
                     : estAujourdhui
                     ? "border-2 border-dashed border-[var(--c-accent)] text-[var(--c-accent)]"
                     : estPasse

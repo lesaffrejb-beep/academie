@@ -2,7 +2,7 @@ import { useState, useMemo } from "react";
 import {
   Award, Compass, Flame, Brain, ShieldCheck, Sparkles, Share2,
   Pin, PinOff, Trophy, Timer, Lock,
-  Info, Shield, Scale, Wind, FileText, ArrowRight, Check,
+  Info, Shield, Scale, Wind, FileText, ArrowRight, Check, X,
 } from "lucide-react";
 import { useMagasin } from "../app/magasin";
 import { va } from "../app/routage";
@@ -124,8 +124,8 @@ export function ModulePasseport() {
                       )}
                     </div>
                   </div>
-                  <div className="w-4 h-4 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center">
-                    <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                  <div className="w-4 h-4 rounded-full bg-[var(--c-succes-fond)] border border-[var(--c-succes)]/40 flex items-center justify-center">
+                    <div className="w-2 h-2 rounded-full bg-[var(--c-succes)] animate-pulse" />
                   </div>
                 </div>
               </div>
@@ -210,7 +210,7 @@ export function ModuleLigue() {
       {/* Carte d'en-tête de ligue */}
       <div className="rounded-2xl border border-[var(--c-bordure-subtile)] bg-[var(--c-surface-elevee)] p-5 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div className="flex items-center gap-3.5">
-          <div className="w-12 h-12 rounded-2xl bg-amber-500/15 border border-amber-500/30 text-amber-600 dark:text-amber-400 flex items-center justify-center">
+          <div className="w-12 h-12 rounded-int bg-[var(--c-accent-fond)] border border-[var(--c-accent)]/30 text-[var(--c-accent)] flex items-center justify-center">
             <Trophy size={24} />
           </div>
           <div>
@@ -275,11 +275,11 @@ export function ModuleLigue() {
                   <span
                     className={`w-6 text-center font-mono font-bold text-xs ${
                       p.rang === 1
-                        ? "text-amber-500"
+                        ? "text-[var(--c-rang-1)] font-extrabold"
                         : p.rang === 2
-                        ? "text-zinc-400"
+                        ? "text-[var(--c-encre-2)] font-bold"
                         : p.rang === 3
-                        ? "text-amber-700"
+                        ? "text-[var(--c-rang-2)] font-bold"
                         : "text-[var(--c-encre-3)]"
                     }`}
                   >
@@ -400,8 +400,8 @@ export function ModuleTrophees() {
                 <span
                   className={`text-[10px] uppercase font-bold px-2 py-0.5 rounded-full ${
                     trophee.debloque
-                      ? "bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30"
-                      : "bg-[var(--c-surface-fond)] text-[var(--c-encre-3)] border border-[var(--c-bordure-subtile)]"
+                      ? "bg-[var(--c-succes-fond)] text-[var(--c-succes)] border border-[var(--c-succes)]/30"
+                      : "bg-[var(--c-surface-creuse)] text-[var(--c-encre-3)] border border-[var(--c-bordure-subtile)]"
                   }`}
                 >
                   {trophee.debloque ? "Validé" : "En cours"}
@@ -439,6 +439,7 @@ export function ModuleTrophees() {
 
 export function ModuleBadges() {
   const { banque, etats } = useMagasin();
+  const [avertissement, setAvertissement] = useState<string | null>(null);
   const [epingles, setEpingles] = useState<Set<string>>(() => {
     try {
       const brut = localStorage.getItem("academie-insignes-epingles");
@@ -457,12 +458,15 @@ export function ModuleBadges() {
     const suivant = new Set(epingles);
     if (suivant.has(id)) {
       suivant.delete(id);
+      setAvertissement(null);
     } else {
       if (suivant.size >= 3) {
-        alert("Tu peux épingler un maximum de 3 insignes sur ton passeport.");
+        setAvertissement("Tu peux épingler au maximum 3 insignes sur ton passeport.");
+        setTimeout(() => setAvertissement(null), 3500);
         return;
       }
       suivant.add(id);
+      setAvertissement(null);
     }
     setEpingles(suivant);
     localStorage.setItem("academie-insignes-epingles", JSON.stringify(Array.from(suivant)));
@@ -486,6 +490,24 @@ export function ModuleBadges() {
           </p>
         </div>
       </div>
+
+      {avertissement ? (
+        <div
+          role="status"
+          aria-live="polite"
+          className="p-3 rounded-xl bg-[var(--c-surface-creuse)] border border-[var(--c-accent)] text-xs text-[var(--c-accent)] flex items-center justify-between gap-2"
+        >
+          <span>{avertissement}</span>
+          <button
+            type="button"
+            onClick={() => setAvertissement(null)}
+            className="text-[var(--c-encre-2)] hover:text-[var(--c-encre)] p-1 rounded transition"
+            aria-label="Fermer le message"
+          >
+            <X size={13} />
+          </button>
+        </div>
+      ) : null}
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {insignes.map((insigne) => {

@@ -100,7 +100,7 @@ export function Profil({ ongletDefaut }: { ongletDefaut?: string }) {
 
       {/* Bannière d'alerte synchronisation (garantit la visibilité immédiate pour les tests et l'accessibilité) */}
       {(erreur || bilan?.erreur) ? (
-        <div className="p-4 mb-4 rounded-xl border border-rose-500/30 bg-rose-500/10 text-rose-600 dark:text-rose-400 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs">
+        <div className="p-4 mb-4 rounded-xl border border-[var(--c-erreur)]/30 bg-[var(--c-erreur-fond)] text-[var(--c-erreur)] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs">
           <p role="status">
             {erreur ?? (bilan?.erreur?.statut === 401 ? LIB.synchronisationConnexion : LIB.synchronisationIndisponible)}
           </p>
