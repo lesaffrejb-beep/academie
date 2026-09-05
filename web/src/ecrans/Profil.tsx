@@ -15,7 +15,8 @@ export function Profil() {
   const [attente, attend] = useState(false);
   const [erreur, informe] = useState<string | null>(null);
   useEffect(() => { void rejets().then((r) => setNbRejets(r.length)).catch(() => undefined); }, [journal.length]);
-  const reponses = journal.filter((l) => l.mode === "revision" && l.carte && l.note);
+  const idsMetier = new Set(banque?.cartes.map(c => c.id) ?? []);
+  const reponses = journal.filter((l) => idsMetier.has(l.carte ?? "") && l.mode === "revision" && l.carte && l.note);
   const jours = new Set(reponses.map((l) => jourOrdinal(l.quand)));
   const derniere = reponses.slice(-5).reverse();
   const calendrier = Array.from({ length: 91 }, (_, i) => jour - 90 + i);
@@ -38,7 +39,7 @@ export function Profil() {
   }
 
   return <div className="page-document">
-    <header className="profil-entete"><div><h1 className="titre-page">{LIB.profil}</h1><p>{LIB.niveau} {points?.niveau ?? 1} · {points?.xp ?? 0} {LIB.points}</p></div><span>{pourcent(monde?.remplissageGlobal ?? 0)} {LIB.progression.toLowerCase()}</span></header>
+    <header className="profil-entete"><div><h1 className="titre-page">{LIB.profil}</h1><p>{LIB.niveau} {points?.niveau ?? 1} · {points?.xp ?? 0} {LIB.points} · dans ce métier</p></div><span>{pourcent(monde?.remplissageGlobal ?? 0)} {LIB.progression.toLowerCase()} du métier</span></header>
     <dl className="statistiques"><div><dd>{reponses.length}</dd><dt>{LIB.revisions}</dt></div><div><dd>{new Set(reponses.map((l) => l.carte)).size}</dd><dt>{LIB.cartes}</dt></div><div><dd>{jours.size}</dd><dt>{LIB.joursJoues}</dt></div></dl>
     <div className="profil-grille">
       <section className="profil-section"><h2>{LIB.activite}</h2><div className="heatmap" role="img" aria-label={`${LIB.activite}, ${formatDate(jour - 90)} - ${formatDate(jour)}`}>

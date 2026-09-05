@@ -1,4 +1,4 @@
-/** Nuit (defaut) ou Papier, et la palette d'accent par RANG de domaine. */
+/** Papier (defaut) ou Nuit, et la palette d'accent par RANG de domaine. */
 
 export type Theme = "nuit" | "papier";
 
@@ -9,9 +9,9 @@ export function themeCourant(): Theme {
     const v = localStorage.getItem(CLE);
     if (v === "nuit" || v === "papier") return v;
   } catch {
-    // Stockage refuse : Nuit, le defaut.
+    // Stockage refuse : Papier, le defaut.
   }
-  return "nuit";
+  return "papier";
 }
 
 export function poseTheme(theme: Theme): void {

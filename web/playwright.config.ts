@@ -2,8 +2,8 @@
  * Playwright pour les preuves de bout en bout d'ACA-FRONT-2.
  *
  * Ces tests ne sont PAS dans `npm test` et ne sont pas dans la porte du
- * depot : ils demandent un navigateur et un build, la CI n'installe ni
- * l'un ni l'autre. On les lance a la main, `npm run e2e`.
+ * depot : ils demandent un navigateur et un build. Le workflow web.yml
+ * les exécute en CI ; lancement local : `npm run e2e`.
  *
  * Le serveur est `vite preview` sur le VRAI build : le service worker
  * n'existe pas en developpement, et sans lui « hors-ligne » ne veut rien
@@ -17,7 +17,7 @@
 
 import { defineConfig, devices } from "@playwright/test";
 
-const CHROMIUM = process.env.CHROMIUM_PATH ?? "/opt/pw-browsers/chromium";
+const CHROMIUM = process.env.CHROMIUM_PATH || undefined;
 const PORT = 4173;
 const BASE = `http://127.0.0.1:${PORT}/academie/`;
 
@@ -49,7 +49,7 @@ export default defineConfig({
     },
   ],
   webServer: {
-    command: `npm run build && npm run preview -- --port ${PORT} --strictPort`,
+    command: `npm run build && npm run preview -- --host 127.0.0.1 --port ${PORT} --strictPort`,
     url: BASE,
     reuseExistingServer: !process.env.CI,
     timeout: 180_000,

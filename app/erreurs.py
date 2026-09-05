@@ -46,6 +46,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+from chronologie import cle_chronologique
 import seance  # noqa: E402
 from planificateur import RATE  # noqa: E402
 
@@ -134,7 +135,7 @@ def lit_carnet(profil: str, racine_etat: Path | None = None) -> list[dict]:
             lignes.append(entree)
         else:
             print(f"⚠ {chemin.name}:{n} sans carte, ignorée", file=sys.stderr)
-    return sorted(lignes, key=lambda e: e.get("quand", ""))
+    return sorted(lignes, key=cle_chronologique)
 
 
 # --- agrégats (bilan mensuel) ----------------------------------------

@@ -1,5 +1,11 @@
 # Cahier ACA-CONTRAT-2 : le contrat v2 opposable et la banque migrée
 
+**Séquencement du 05/09 (0035) :** la migration globale vient après
+ACA-ETUDE-1. ACA-PILOTE-CONTRAT-1 sécurise d'abord la coexistence nécessaire
+aux trois chapitres pilotes ; ACA-ETUDE-1 ne dépend plus de cette migration
+entière. Les assignations de 0030, les preuves de provenance et la validation
+humaine avant promotion restent requises. Les états ci-dessous sont datés.
+
 Résultat attendu : le contrat carte-v2 et chapitre-v1 sont opposables :
 valideur unique, banque migrée à la disposition par chapitre sans
 renumérotage, péremption par défaut du droit, `a_recouper` et

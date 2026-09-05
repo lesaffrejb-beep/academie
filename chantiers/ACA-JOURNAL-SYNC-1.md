@@ -4,10 +4,12 @@ Résultat attendu : l'état joueur vit sur le VPS et le client joue
 hors-ligne ; API d'état (`serveur/API.md`), SQLite (`serveur/schema.sql`),
 client qui écrit localement et synchronise par union, FSRS en parité des
 deux côtés.
-Fini quand : une réponse jouée sur téléphone réseau coupé est relisible
-sur le Mac le soir, et l'inverse ; le test de parité contre
+Fini quand : les défauts de rejeu et d'acquittement ci-dessous sont corrigés
+et relus indépendamment ; le test de parité contre
 `app/vecteurs_fsrs.py` est vert ; rejouer un lot ne change rien ;
 `app/tests.py` et `tooling/check.py` verts.
+La preuve physique téléphone/Mac est conservée dans ACA-PUBLICATION-2
+(séparation des preuves, décision 0035).
 Dépend de : ACA-DOC-2. Bloque : ACA-FRONT-2, ACA-SEMAINE-1, ACA-ARBRE-1,
 ACA-RITUAL-METRICS-1, ACA-RITUAL-1.
 
@@ -67,6 +69,9 @@ doctrine.
 6. `deploy/` : unité systemd, extrait Caddy, `installer.sh` idempotent.
 7. Preuve sur le VPS : téléphone en avion, dix cartes, retour réseau,
    Mac le soir ; export JSON identique des deux côtés.
+
+L'étape 7 et les gestes d'installation sont exécutés et attestés dans
+ACA-PUBLICATION-2 ; ils ne sont pas déclarés accomplis par les tests locaux.
 
 ## Ce qu'on ne fait pas
 
@@ -132,3 +137,30 @@ Ajustement cible du perimetre, autorise pour la reprise :
    `python3 app/tests.py` puis `python3 tooling/check.py` avant de
    considerer ce correctif termine. Pas de publication avec ce defaut
    presente comme resolu.
+
+## Reprise du 05/09 : acquittement invalide
+
+La vraie fonction de synchronisation a été exécutée avec un transport de
+test renvoyant HTTP 200 et `{}`. Un événement reste dans le journal local
+mais disparaît de la file d'envoi : aucune réception serveur n'est prouvée.
+Preuve : `travail/audit-2026-09-05/preuves/api-200-vide.json`.
+
+Périmètre complémentaire : `web/src/donnees/api.ts`,
+`web/src/moteur/journal.ts`, leurs contrats et tests. Écrire d'abord les
+régressions pour corps vide, objet incomplet, types/chiffres incohérents,
+rejets mal formés, puis un lot valide avec acceptés/doublons/rejets et reprise.
+Valider le schéma et la cohérence de l'acquittement avant toute suppression
+dans la file. Une réponse ambiguë garde les événements en attente et une
+erreur visible ; pas de changement du journal append-only. Vérifier aussi
+le contrat des lectures, sans transformer un échec en faux succès.
+
+## Régression révélée par le parcours Étude
+
+05/09 : l'émission tronquée à la seconde réordonnait les étapes rapides
+lors du rejeu. Extension bornée : horodatage logique local strictement
+croissant à la microseconde, marque atomique dans IndexedDB, sans changer
+les dates des événements déjà présents ni les imports explicites.
+Les contrôles de concurrence, redémarrage et recul d'horloge sont dans
+web/src/moteur/journal.monotone.test.ts ; les E2E vérifient IndexedDB réel.
+Une horloge reculée produit une date logique, pas une nouvelle mesure
+du temps physique. Voir travail/relecture-journal-2026-09-05.md.

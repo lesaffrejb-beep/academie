@@ -15,47 +15,52 @@
     "Savoir qui compte parmi les votants : présents, représentés, votants par correspondance."
   ],
   "amorce": {
-    "question": "En assemblée, une résolution d'approbation des comptes recueille 250 tantièmes pour, 200 contre et 150 abstentions, sur 600 tantièmes présents ou représentés. Adoptée ou rejetée ?",
+    "question": "Cas fictif : en assemblée, une résolution d'approbation des comptes recueille 250 tantièmes pour, 200 contre et 150 abstentions, sur 600 tantièmes présents ou représentés. Adoptée ou rejetée ?",
     "aide": "Demande-toi ce qu'est une voix exprimée.",
     "reponse_attendue": "Adoptée : à l'article 24 on compte la majorité des voix exprimées, et une abstention n'est pas une voix exprimée. 250 contre 200, la résolution passe."
   },
-  "lecon": "L'article 24 de la loi du 10 juillet 1965 fixe la majorité par défaut : quand la loi ne prévoit pas une autre majorité, une décision d'assemblée se prend à la majorité des voix exprimées des copropriétaires présents, représentés ou ayant voté par correspondance. Ce chapitre présente le régime général ; les copropriétés à deux copropriétaires ont des règles particulières à vérifier séparément.\n\nD'abord « voix » : le calcul se fait en quotes-parts de parties communes, pas en nombre de personnes. Dans le régime général, on additionne les tantièmes des lots d'un copropriétaire, sous réserve notamment de la réduction prévue par l'article 22 pour celui qui possède plus de la moitié des voix : ses voix sont ramenées à la somme de celles des autres copropriétaires.\n\nEnsuite « exprimées » : seuls les votes pour et contre entrent dans le dénominateur. Une abstention n'est pas une voix exprimée ; elle ne pèse ni pour ni contre. Le pour doit dépasser la moitié des voix exprimées. À égalité entre pour et contre, la résolution n'est pas adoptée. Il faut donc séparer la participation à l'assemblée et l'expression d'un vote sur chaque résolution.\n\nEnfin « présents, représentés ou ayant voté par correspondance » : les absents qui n'ont ni mandataire participant au vote ni vote par correspondance ne comptent pas dans les voix exprimées. L'article 25, lui, se calcule sur les voix de tous les copropriétaires du syndicat. Un pouvoir envoyé sans nom de mandataire n'établit pas à lui seul qu'un vote a été exprimé : il faut vérifier sa prise en charge régulière.\n\nPour déterminer la majorité d'une décision, on vérifie son objet et le texte applicable. L'approbation des comptes et le budget prévisionnel relèvent de l'article 24. Cet article vise aussi les travaux nécessaires à la conservation de l'immeuble et à la préservation de la santé et de la sécurité, ainsi que certains travaux d'accessibilité sous les conditions qu'il précise. En revanche, la désignation ou la révocation du syndic et des membres du conseil syndical relève de l'article 25 c. Une éventuelle passerelle de l'article 25-1 exige ses propres conditions : elle ne transforme pas ces décisions en décisions directement soumises à l'article 24.\n\nUn exemple travaillé. Un immeuble de 1 000 tantièmes réunit une assemblée où 600 tantièmes sont présents, représentés ou votent par correspondance. La résolution d'approbation des comptes recueille 250 tantièmes pour, 200 contre, 150 abstentions. Les voix exprimées sont 250 plus 200, soit 450. Il faut plus de 225 voix pour : avec 250, la résolution est adoptée. Si les 150 abstentionnistes avaient voté contre, elle aurait été rejetée : 250 contre 350.\n\nLe procès-verbal indique le résultat du vote pour chaque question. L'article 17 du décret du 17 mars 1967 exige, avec leur nombre de voix, les noms des copropriétaires ou associés opposés à la décision, abstentionnistes ou assimilés à des copropriétaires défaillants selon le deuxième alinéa de l'article 17-1 A de la loi. Cette dernière catégorie ne se remplace pas par une mention générale de tous ceux qui n'ont pas pris part au vote.\n\nDevant la feuille de présence et le relevé des votes, commence par vérifier la majorité applicable, puis additionne les voix pour et contre, écarte les abstentions et compare. Le résultat et les mentions du procès-verbal doivent pouvoir être rapprochés de ce calcul.",
+  "lecon": "L'article 24 de la loi du 10 juillet 1965 fixe la majorité par défaut : quand la loi ne prévoit pas une autre majorité, une décision d'assemblée se prend à la majorité des voix exprimées des copropriétaires présents, représentés ou ayant voté par correspondance. Ce chapitre présente le régime général ; les copropriétés à deux copropriétaires ont des règles particulières à vérifier séparément.\n\nD'abord « voix » : le calcul se fait en quotes-parts de parties communes, pas en nombre de personnes. Dans le régime général, on additionne les tantièmes des lots d'un copropriétaire, sous réserve notamment de la réduction prévue par l'article 22 pour celui qui possède plus de la moitié des voix : ses voix sont ramenées à la somme de celles des autres copropriétaires.\n\nEnsuite « exprimées » : seuls les votes pour et contre entrent dans le dénominateur. Une abstention n'est pas une voix exprimée ; elle ne pèse ni pour ni contre. Le pour doit dépasser la moitié des voix exprimées. À égalité entre pour et contre, la résolution n'est pas adoptée. Il faut donc séparer la participation à l'assemblée et l'expression d'un vote sur chaque résolution.\n\nEnfin « présents, représentés ou ayant voté par correspondance » : les absents qui n'ont ni mandataire participant au vote ni vote par correspondance ne comptent pas dans les voix exprimées. L'article 25, lui, se calcule sur les voix de tous les copropriétaires du syndicat. Un pouvoir envoyé sans nom de mandataire n'établit pas à lui seul qu'un vote a été exprimé : il faut vérifier sa prise en charge régulière.\n\nPour déterminer la majorité d'une décision, on vérifie son objet et le texte applicable. L'approbation des comptes et le budget prévisionnel relèvent de l'article 24. Cet article vise aussi les travaux nécessaires à la conservation de l'immeuble et à la préservation de la santé et de la sécurité, ainsi que certains travaux d'accessibilité sous les conditions qu'il précise. En revanche, la désignation ou la révocation du syndic et des membres du conseil syndical relève de l'article 25 c. Une éventuelle passerelle de l'article 25-1 exige ses propres conditions : elle ne transforme pas ces décisions en décisions directement soumises à l'article 24.\n\nUn exemple fictif travaillé. Un immeuble de 1 000 tantièmes réunit une assemblée où 600 tantièmes sont présents, représentés ou votent par correspondance. La résolution d'approbation des comptes recueille 250 tantièmes pour, 200 contre, 150 abstentions. Les voix exprimées sont 250 plus 200, soit 450. Il faut plus de 225 voix pour : avec 250, la résolution est adoptée. Si les 150 abstentionnistes avaient voté contre, elle aurait été rejetée : 250 contre 350.\n\nLe procès-verbal indique le résultat du vote pour chaque question. L'article 17 du décret du 17 mars 1967 exige, avec leur nombre de voix, les noms des copropriétaires ou associés opposés à la décision, abstentionnistes ou assimilés à des copropriétaires défaillants selon le deuxième alinéa de l'article 17-1 A de la loi. Cette dernière catégorie ne se remplace pas par une mention générale de tous ceux qui n'ont pas pris part au vote.\n\nDevant la feuille de présence et le relevé des votes, commence par vérifier la majorité applicable, puis additionne les voix pour et contre, écarte les abstentions et compare. Le résultat et les mentions du procès-verbal doivent pouvoir être rapprochés de ce calcul.",
   "synthese": {
-    "consigne": "Explique à un collègue en soixante secondes comment se calcule l'article 24 et pourquoi une abstention ne fait pas perdre une résolution.",
+    "consigne": "Explique à un collègue en soixante secondes comment se calcule l'article 24 et pourquoi une abstention n'est pas un vote contre.",
     "attendus": [
       "majorité des voix exprimées",
       "tantièmes, pas têtes",
       "présents, représentés, votants par correspondance",
-      "les absents sans pouvoir ne comptent pas",
+      "les absents sans mandataire participant ni vote par correspondance ne comptent pas",
       "l'abstention n'est pas une voix exprimée",
       "un exemple chiffré"
     ]
   },
   "sources": [
     {
-      "texte": "Loi n° 65-557 du 10 juillet 1965, article 24, version en vigueur depuis le 18 juin 2025 ; consultée le 4 septembre 2026",
+      "texte": "Loi n° 65-557 du 10 juillet 1965, article 24, version en vigueur depuis le 18 juin 2025 ; consultée le 5 septembre 2026",
       "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000051749514",
-      "nature": "texte-officiel"
+      "nature": "texte-officiel",
+      "consulte_le": "2026-09-05"
     },
     {
-      "texte": "Loi n° 65-557 du 10 juillet 1965, article 22, version en vigueur depuis le 1er juin 2020 ; consultée le 4 septembre 2026",
+      "texte": "Loi n° 65-557 du 10 juillet 1965, article 22, version en vigueur depuis le 1er juin 2020 ; consultée le 5 septembre 2026",
       "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000039313531",
-      "nature": "texte-officiel"
+      "nature": "texte-officiel",
+      "consulte_le": "2026-09-05"
     },
     {
-      "texte": "Loi n° 65-557 du 10 juillet 1965, article 25 c, version en vigueur depuis le 18 juin 2025 ; consultée le 4 septembre 2026",
-      "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000051749507/2026-03-10",
-      "nature": "texte-officiel"
+      "texte": "Loi n° 65-557 du 10 juillet 1965, article 25 c, version en vigueur depuis le 18 juin 2025 ; consultée le 5 septembre 2026",
+      "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000051749507",
+      "nature": "texte-officiel",
+      "consulte_le": "2026-09-05"
     },
     {
-      "texte": "Loi n° 65-557 du 10 juillet 1965, article 25-1, version en vigueur depuis le 11 avril 2024 ; consultée le 4 septembre 2026",
+      "texte": "Loi n° 65-557 du 10 juillet 1965, article 25-1, version en vigueur depuis le 11 avril 2024 ; consultée le 5 septembre 2026",
       "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000049398359",
-      "nature": "texte-officiel"
+      "nature": "texte-officiel",
+      "consulte_le": "2026-09-05"
     },
     {
-      "texte": "Décret n° 67-223 du 17 mars 1967, article 17, version en vigueur depuis le 4 juillet 2020 ; consultée le 4 septembre 2026",
-      "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000042078689/2026-04-15",
-      "nature": "texte-officiel"
+      "texte": "Décret n° 67-223 du 17 mars 1967, article 17, version en vigueur depuis le 4 juillet 2020 ; consultée le 5 septembre 2026",
+      "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000042078689",
+      "nature": "texte-officiel",
+      "consulte_le": "2026-09-05"
     }
   ],
   "provenance": {
@@ -67,9 +72,9 @@
     "sources_concordantes": 0,
     "sans_source": false
   },
-  "statut": "brouillon",
+  "statut": "valide",
   "partage": "banque",
-  "verifie": "2026-09-04",
+  "verifie": "2026-09-05",
   "version": 2,
   "cartes": [
     {
@@ -87,7 +92,8 @@
         {
           "texte": "Art. 24, loi n° 65-557 du 10 juillet 1965",
           "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000880200/",
-          "nature": "texte-officiel"
+          "nature": "texte-officiel",
+          "consulte_le": "2026-09-05"
         }
       ],
       "provenance": {
@@ -99,10 +105,31 @@
         "sources_concordantes": 1,
         "sans_source": false
       },
-      "verifie": "2026-09-03",
+      "verifie": "2026-09-05",
       "peremption": null,
-      "statut": "brouillon",
-      "partage": "banque"
+      "statut": "valide",
+      "partage": "banque",
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6",
+        "session": "/root/revue_journal",
+        "date": "2026-09-05",
+        "rapport": "travail/relecture-contenu-2026-09-05.md",
+        "assertions": [
+          "Article 24 I : majorité des voix exprimées des présents, représentés et votants par correspondance ; les calculs fictifs et l'exclusion des abstentions sont cohérents.",
+          "Article 22 : quotes-parts et réduction des voix du copropriétaire majoritaire, dans le régime général.",
+          "Article 25 c : désignation et révocation du syndic et du conseil ; article 25-1 distinct et soumis à ses conditions.",
+          "Décret article 17 : résultat, identités et voix des catégories prescrites ; absence non assimilée à un vote contre.",
+          "Contrôle ciblé de la carte droit-majorites-24-definition : question, réponse, explication et distracteurs rapprochés des règles ci-dessus ; cas fictifs et limites conservés."
+        ],
+        "sources": [
+          "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000880200/"
+        ],
+        "reserves": [
+          "Régime général uniquement ; copropriétés à deux copropriétaires et règles spéciales à vérifier séparément.",
+          "Exemples chiffrés fictifs, pas des données client ; contrôle ciblé des assertions, sans avis sur une assemblée réelle."
+        ]
+      }
     },
     {
       "id": "droit-majorites-24-abstention",
@@ -139,14 +166,16 @@
       "confiance": true,
       "source": [
         {
-          "texte": "Loi n° 65-557 du 10 juillet 1965, article 24, version en vigueur depuis le 18 juin 2025 ; consultée le 4 septembre 2026",
+          "texte": "Loi n° 65-557 du 10 juillet 1965, article 24, version en vigueur depuis le 18 juin 2025 ; consultée le 5 septembre 2026",
           "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000051749514",
-          "nature": "texte-officiel"
+          "nature": "texte-officiel",
+          "consulte_le": "2026-09-05"
         },
         {
-          "texte": "Décret n° 67-223 du 17 mars 1967, article 17, version en vigueur depuis le 4 juillet 2020 ; consultée le 4 septembre 2026",
-          "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000042078689/2026-04-15",
-          "nature": "texte-officiel"
+          "texte": "Décret n° 67-223 du 17 mars 1967, article 17, version en vigueur depuis le 4 juillet 2020 ; consultée le 5 septembre 2026",
+          "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000042078689",
+          "nature": "texte-officiel",
+          "consulte_le": "2026-09-05"
         }
       ],
       "provenance": {
@@ -158,10 +187,32 @@
         "sources_concordantes": 0,
         "sans_source": false
       },
-      "verifie": "2026-09-04",
+      "verifie": "2026-09-05",
       "peremption": null,
-      "statut": "brouillon",
-      "partage": "banque"
+      "statut": "valide",
+      "partage": "banque",
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6",
+        "session": "/root/revue_journal",
+        "date": "2026-09-05",
+        "rapport": "travail/relecture-contenu-2026-09-05.md",
+        "assertions": [
+          "Article 24 I : majorité des voix exprimées des présents, représentés et votants par correspondance ; les calculs fictifs et l'exclusion des abstentions sont cohérents.",
+          "Article 22 : quotes-parts et réduction des voix du copropriétaire majoritaire, dans le régime général.",
+          "Article 25 c : désignation et révocation du syndic et du conseil ; article 25-1 distinct et soumis à ses conditions.",
+          "Décret article 17 : résultat, identités et voix des catégories prescrites ; absence non assimilée à un vote contre.",
+          "Contrôle ciblé de la carte droit-majorites-24-abstention : question, réponse, explication et distracteurs rapprochés des règles ci-dessus ; cas fictifs et limites conservés."
+        ],
+        "sources": [
+          "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000051749514",
+          "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000042078689"
+        ],
+        "reserves": [
+          "Régime général uniquement ; copropriétés à deux copropriétaires et règles spéciales à vérifier séparément.",
+          "Exemples chiffrés fictifs, pas des données client ; contrôle ciblé des assertions, sans avis sur une assemblée réelle."
+        ]
+      }
     },
     {
       "id": "droit-majorites-24-calcul",
@@ -170,7 +221,7 @@
       "branche": "majorites",
       "type": "qcm",
       "niveau": 1,
-      "question": "Sur 1 000 tantièmes, 600 participent. Une résolution de l'article 24 recueille 280 pour, 300 contre, 20 abstentions. Résultat ?",
+      "question": "Cas fictif : sur 1 000 tantièmes, 600 participent. Une résolution de l'article 24 recueille 280 pour, 300 contre, 20 abstentions. Résultat ?",
       "reponse": "Rejetée : 280 pour contre 300 contre, le pour ne dépasse pas la moitié des 580 voix exprimées.",
       "choix": [
         {
@@ -190,7 +241,7 @@
         {
           "texte": "Il faut un second vote à l'article 25-1.",
           "correct": false,
-          "pourquoi_faux": "La passerelle de l'article 25-1 ne concerne que les décisions de l'article 25 ; à l'article 24, une résolution rejetée est rejetée."
+          "pourquoi_faux": "La passerelle de l'article 25-1 part d'une décision soumise à la majorité de tous les copropriétaires, sous ses propres conditions. Elle ne s'applique pas à ce premier vote relevant directement de l'article 24."
         }
       ],
       "explication": "Voix exprimées : 280 plus 300, soit 580. La majorité exige plus de 290 pour. Avec 280, la résolution est rejetée. Les 20 abstentions et les 400 tantièmes absents ne pèsent pas.",
@@ -200,7 +251,8 @@
         {
           "texte": "Art. 24, loi n° 65-557 du 10 juillet 1965",
           "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000880200/",
-          "nature": "texte-officiel"
+          "nature": "texte-officiel",
+          "consulte_le": "2026-09-05"
         }
       ],
       "provenance": {
@@ -212,10 +264,31 @@
         "sources_concordantes": 1,
         "sans_source": false
       },
-      "verifie": "2026-09-03",
+      "verifie": "2026-09-05",
       "peremption": null,
-      "statut": "brouillon",
-      "partage": "banque"
+      "statut": "valide",
+      "partage": "banque",
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6",
+        "session": "/root/revue_journal",
+        "date": "2026-09-05",
+        "rapport": "travail/relecture-contenu-2026-09-05.md",
+        "assertions": [
+          "Article 24 I : majorité des voix exprimées des présents, représentés et votants par correspondance ; les calculs fictifs et l'exclusion des abstentions sont cohérents.",
+          "Article 22 : quotes-parts et réduction des voix du copropriétaire majoritaire, dans le régime général.",
+          "Article 25 c : désignation et révocation du syndic et du conseil ; article 25-1 distinct et soumis à ses conditions.",
+          "Décret article 17 : résultat, identités et voix des catégories prescrites ; absence non assimilée à un vote contre.",
+          "Contrôle ciblé de la carte droit-majorites-24-calcul : question, réponse, explication et distracteurs rapprochés des règles ci-dessus ; cas fictifs et limites conservés."
+        ],
+        "sources": [
+          "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000880200/"
+        ],
+        "reserves": [
+          "Régime général uniquement ; copropriétés à deux copropriétaires et règles spéciales à vérifier séparément.",
+          "Exemples chiffrés fictifs, pas des données client ; contrôle ciblé des assertions, sans avis sur une assemblée réelle."
+        ]
+      }
     },
     {
       "id": "droit-majorites-24-qui-compte",
@@ -225,24 +298,27 @@
       "type": "flash",
       "niveau": 1,
       "question": "Un copropriétaire absent, sans pouvoir et sans formulaire de vote par correspondance : compte-t-il dans le calcul de l'article 24 ?",
-      "reponse": "Non. L'article 24 ne compte que les copropriétaires présents, représentés ou ayant voté par correspondance ; l'absent pur n'existe pas pour ce calcul.",
-      "explication": "C'est la différence avec l'article 25, où les voix de tous les copropriétaires composant le syndicat sont la base du calcul, ce qui fait peser les absents comme des contre.",
+      "reponse": "Non. Sans présence, représentation effective ni vote par correspondance, aucune voix de ce copropriétaire n'est exprimée sur la résolution.",
+      "explication": "À l'article 25, les voix de tous les copropriétaires restent dans la base de calcul. L'absence rend donc la majorité plus difficile à atteindre, mais elle ne devient pas juridiquement un vote contre.",
       "vigilance": "Un pouvoir en blanc doit être régulièrement attribué à un mandataire participant au vote. Le syndic ne peut ni le conserver pour voter lui-même ni choisir son bénéficiaire.",
       "source": [
         {
-          "texte": "Loi n° 65-557 du 10 juillet 1965, article 24, version en vigueur depuis le 18 juin 2025 ; consultée le 4 septembre 2026",
+          "texte": "Loi n° 65-557 du 10 juillet 1965, article 24, version en vigueur depuis le 18 juin 2025 ; consultée le 5 septembre 2026",
           "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000051749514",
-          "nature": "texte-officiel"
+          "nature": "texte-officiel",
+          "consulte_le": "2026-09-05"
         },
         {
-          "texte": "Loi n° 65-557 du 10 juillet 1965, article 25 c, version en vigueur depuis le 18 juin 2025 ; consultée le 4 septembre 2026",
-          "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000051749507/2026-03-10",
-          "nature": "texte-officiel"
+          "texte": "Loi n° 65-557 du 10 juillet 1965, article 25 c, version en vigueur depuis le 18 juin 2025 ; consultée le 5 septembre 2026",
+          "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000051749507",
+          "nature": "texte-officiel",
+          "consulte_le": "2026-09-05"
         },
         {
-          "texte": "Loi n° 65-557 du 10 juillet 1965, article 22, version en vigueur depuis le 1er juin 2020 ; consultée le 4 septembre 2026",
+          "texte": "Loi n° 65-557 du 10 juillet 1965, article 22, version en vigueur depuis le 1er juin 2020 ; consultée le 5 septembre 2026",
           "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000039313531",
-          "nature": "texte-officiel"
+          "nature": "texte-officiel",
+          "consulte_le": "2026-09-05"
         }
       ],
       "provenance": {
@@ -254,10 +330,33 @@
         "sources_concordantes": 0,
         "sans_source": false
       },
-      "verifie": "2026-09-04",
+      "verifie": "2026-09-05",
       "peremption": null,
-      "statut": "brouillon",
-      "partage": "banque"
+      "statut": "valide",
+      "partage": "banque",
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6",
+        "session": "/root/revue_journal",
+        "date": "2026-09-05",
+        "rapport": "travail/relecture-contenu-2026-09-05.md",
+        "assertions": [
+          "Article 24 I : majorité des voix exprimées des présents, représentés et votants par correspondance ; les calculs fictifs et l'exclusion des abstentions sont cohérents.",
+          "Article 22 : quotes-parts et réduction des voix du copropriétaire majoritaire, dans le régime général.",
+          "Article 25 c : désignation et révocation du syndic et du conseil ; article 25-1 distinct et soumis à ses conditions.",
+          "Décret article 17 : résultat, identités et voix des catégories prescrites ; absence non assimilée à un vote contre.",
+          "Contrôle ciblé de la carte droit-majorites-24-qui-compte : question, réponse, explication et distracteurs rapprochés des règles ci-dessus ; cas fictifs et limites conservés."
+        ],
+        "sources": [
+          "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000051749514",
+          "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000051749507",
+          "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000039313531"
+        ],
+        "reserves": [
+          "Régime général uniquement ; copropriétés à deux copropriétaires et règles spéciales à vérifier séparément.",
+          "Exemples chiffrés fictifs, pas des données client ; contrôle ciblé des assertions, sans avis sur une assemblée réelle."
+        ]
+      }
     },
     {
       "id": "droit-majorites-24-quelles-decisions",
@@ -294,14 +393,16 @@
       "confiance": true,
       "source": [
         {
-          "texte": "Loi n° 65-557 du 10 juillet 1965, article 24, version en vigueur depuis le 18 juin 2025 ; consultée le 4 septembre 2026",
+          "texte": "Loi n° 65-557 du 10 juillet 1965, article 24, version en vigueur depuis le 18 juin 2025 ; consultée le 5 septembre 2026",
           "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000051749514",
-          "nature": "texte-officiel"
+          "nature": "texte-officiel",
+          "consulte_le": "2026-09-05"
         },
         {
-          "texte": "Loi n° 65-557 du 10 juillet 1965, article 25 c, version en vigueur depuis le 18 juin 2025 ; consultée le 4 septembre 2026",
-          "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000051749507/2026-03-10",
-          "nature": "texte-officiel"
+          "texte": "Loi n° 65-557 du 10 juillet 1965, article 25 c, version en vigueur depuis le 18 juin 2025 ; consultée le 5 septembre 2026",
+          "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000051749507",
+          "nature": "texte-officiel",
+          "consulte_le": "2026-09-05"
         }
       ],
       "provenance": {
@@ -313,10 +414,32 @@
         "sources_concordantes": 0,
         "sans_source": false
       },
-      "verifie": "2026-09-04",
+      "verifie": "2026-09-05",
       "peremption": null,
-      "statut": "brouillon",
-      "partage": "banque"
+      "statut": "valide",
+      "partage": "banque",
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6",
+        "session": "/root/revue_journal",
+        "date": "2026-09-05",
+        "rapport": "travail/relecture-contenu-2026-09-05.md",
+        "assertions": [
+          "Article 24 I : majorité des voix exprimées des présents, représentés et votants par correspondance ; les calculs fictifs et l'exclusion des abstentions sont cohérents.",
+          "Article 22 : quotes-parts et réduction des voix du copropriétaire majoritaire, dans le régime général.",
+          "Article 25 c : désignation et révocation du syndic et du conseil ; article 25-1 distinct et soumis à ses conditions.",
+          "Décret article 17 : résultat, identités et voix des catégories prescrites ; absence non assimilée à un vote contre.",
+          "Contrôle ciblé de la carte droit-majorites-24-quelles-decisions : question, réponse, explication et distracteurs rapprochés des règles ci-dessus ; cas fictifs et limites conservés."
+        ],
+        "sources": [
+          "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000051749514",
+          "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000051749507"
+        ],
+        "reserves": [
+          "Régime général uniquement ; copropriétés à deux copropriétaires et règles spéciales à vérifier séparément.",
+          "Exemples chiffrés fictifs, pas des données client ; contrôle ciblé des assertions, sans avis sur une assemblée réelle."
+        ]
+      }
     },
     {
       "id": "droit-majorites-24-tantiemes",
@@ -327,13 +450,14 @@
       "niveau": 1,
       "question": "Dans le régime général, comment détermine-t-on les voix d’un copropriétaire qui possède trois lots ?",
       "reponse": "On additionne les tantièmes de ses trois lots. S’il possède plus de la moitié des voix du syndicat, l’article 22 réduit ses voix à la somme de celles des autres copropriétaires.",
-      "explication": "L'article 22 attache à chaque lot un nombre de voix correspondant à sa quote-part dans les parties communes. Le même article plafonne les voix d'un copropriétaire qui détiendrait plus de la moitié des tantièmes à la somme des voix des autres.",
+      "explication": "L'article 22 attribue à chaque copropriétaire des voix correspondant à sa quote-part dans les parties communes. Si cette quote-part dépasse la moitié, il réduit ses voix à la somme de celles des autres copropriétaires.",
       "vigilance": "Le plafonnement du copropriétaire majoritaire se vérifie sur la feuille de présence avant de proclamer un résultat.",
       "source": [
         {
-          "texte": "Loi n° 65-557 du 10 juillet 1965, article 22, version en vigueur depuis le 1er juin 2020 ; consultée le 4 septembre 2026",
+          "texte": "Loi n° 65-557 du 10 juillet 1965, article 22, version en vigueur depuis le 1er juin 2020 ; consultée le 5 septembre 2026",
           "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000039313531",
-          "nature": "texte-officiel"
+          "nature": "texte-officiel",
+          "consulte_le": "2026-09-05"
         }
       ],
       "provenance": {
@@ -345,10 +469,31 @@
         "sources_concordantes": 0,
         "sans_source": false
       },
-      "verifie": "2026-09-04",
+      "verifie": "2026-09-05",
       "peremption": null,
-      "statut": "brouillon",
-      "partage": "banque"
+      "statut": "valide",
+      "partage": "banque",
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6",
+        "session": "/root/revue_journal",
+        "date": "2026-09-05",
+        "rapport": "travail/relecture-contenu-2026-09-05.md",
+        "assertions": [
+          "Article 24 I : majorité des voix exprimées des présents, représentés et votants par correspondance ; les calculs fictifs et l'exclusion des abstentions sont cohérents.",
+          "Article 22 : quotes-parts et réduction des voix du copropriétaire majoritaire, dans le régime général.",
+          "Article 25 c : désignation et révocation du syndic et du conseil ; article 25-1 distinct et soumis à ses conditions.",
+          "Décret article 17 : résultat, identités et voix des catégories prescrites ; absence non assimilée à un vote contre.",
+          "Contrôle ciblé de la carte droit-majorites-24-tantiemes : question, réponse, explication et distracteurs rapprochés des règles ci-dessus ; cas fictifs et limites conservés."
+        ],
+        "sources": [
+          "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000039313531"
+        ],
+        "reserves": [
+          "Régime général uniquement ; copropriétés à deux copropriétaires et règles spéciales à vérifier séparément.",
+          "Exemples chiffrés fictifs, pas des données client ; contrôle ciblé des assertions, sans avis sur une assemblée réelle."
+        ]
+      }
     },
     {
       "id": "droit-majorites-24-pv-opposants",
@@ -363,9 +508,10 @@
       "vigilance": "Un procès-verbal qui note « adoptée à la majorité » sans nommer les opposants fragilise la copropriété en cas de contestation.",
       "source": [
         {
-          "texte": "Décret n° 67-223 du 17 mars 1967, article 17, version en vigueur depuis le 4 juillet 2020 ; consultée le 4 septembre 2026",
-          "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000042078689/2026-04-15",
-          "nature": "texte-officiel"
+          "texte": "Décret n° 67-223 du 17 mars 1967, article 17, version en vigueur depuis le 4 juillet 2020 ; consultée le 5 septembre 2026",
+          "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000042078689",
+          "nature": "texte-officiel",
+          "consulte_le": "2026-09-05"
         }
       ],
       "provenance": {
@@ -377,10 +523,55 @@
         "sources_concordantes": 0,
         "sans_source": false
       },
-      "verifie": "2026-09-04",
+      "verifie": "2026-09-05",
       "peremption": null,
-      "statut": "brouillon",
-      "partage": "banque"
+      "statut": "valide",
+      "partage": "banque",
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6",
+        "session": "/root/revue_journal",
+        "date": "2026-09-05",
+        "rapport": "travail/relecture-contenu-2026-09-05.md",
+        "assertions": [
+          "Article 24 I : majorité des voix exprimées des présents, représentés et votants par correspondance ; les calculs fictifs et l'exclusion des abstentions sont cohérents.",
+          "Article 22 : quotes-parts et réduction des voix du copropriétaire majoritaire, dans le régime général.",
+          "Article 25 c : désignation et révocation du syndic et du conseil ; article 25-1 distinct et soumis à ses conditions.",
+          "Décret article 17 : résultat, identités et voix des catégories prescrites ; absence non assimilée à un vote contre.",
+          "Contrôle ciblé de la carte droit-majorites-24-pv-opposants : question, réponse, explication et distracteurs rapprochés des règles ci-dessus ; cas fictifs et limites conservés."
+        ],
+        "sources": [
+          "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000042078689"
+        ],
+        "reserves": [
+          "Régime général uniquement ; copropriétés à deux copropriétaires et règles spéciales à vérifier séparément.",
+          "Exemples chiffrés fictifs, pas des données client ; contrôle ciblé des assertions, sans avis sur une assemblée réelle."
+        ]
+      }
     }
-  ]
+  ],
+  "verifie_par": {
+    "outil": "Codex",
+    "modele": "GPT-6",
+    "session": "/root/revue_journal",
+    "date": "2026-09-05",
+    "rapport": "travail/relecture-contenu-2026-09-05.md",
+    "assertions": [
+      "Article 24 I : majorité des voix exprimées des présents, représentés et votants par correspondance ; les calculs fictifs et l'exclusion des abstentions sont cohérents.",
+      "Article 22 : quotes-parts et réduction des voix du copropriétaire majoritaire, dans le régime général.",
+      "Article 25 c : désignation et révocation du syndic et du conseil ; article 25-1 distinct et soumis à ses conditions.",
+      "Décret article 17 : résultat, identités et voix des catégories prescrites ; absence non assimilée à un vote contre."
+    ],
+    "sources": [
+      "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000051749514",
+      "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000039313531",
+      "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000051749507",
+      "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000049398359",
+      "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000042078689"
+    ],
+    "reserves": [
+      "Régime général uniquement ; copropriétés à deux copropriétaires et règles spéciales à vérifier séparément.",
+      "Exemples chiffrés fictifs, pas des données client ; contrôle ciblé des assertions, sans avis sur une assemblée réelle."
+    ]
+  }
 }

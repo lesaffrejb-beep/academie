@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 
 export interface Route {
   nom:
-    | "arbre" | "domaine" | "noeud" | "seance" | "cloture"
+    | "accueil" | "etude" | "arbre" | "domaine" | "noeud" | "seance" | "cloture"
     | "profil" | "boite" | "credits" | "confiance";
   parametre?: string;
 }
@@ -18,15 +18,17 @@ export function analyse(fragment: string): Route {
   const tete = bouts[0] ?? "";
   const queue = bouts.slice(1).join("/");
   switch (tete) {
+    case "arbre": return {nom: "arbre"};
     case "domaine": return { nom: "domaine", parametre: queue };
     case "noeud": return { nom: "noeud", parametre: queue };
     case "salle":
+      if (bouts[1] === "etude") return {nom:"etude", parametre:bouts.slice(2).join("/")};
       return bouts[1] === "cloture" ? { nom: "cloture" } : { nom: "seance", parametre: bouts[2] };
     case "profil": return { nom: "profil" };
     case "boite": return { nom: "boite" };
     case "credits": return { nom: "credits" };
     case "confiance": return { nom: "confiance", parametre: queue };
-    default: return { nom: "arbre" };
+    default: return { nom: "accueil" };
   }
 }
 

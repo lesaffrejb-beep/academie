@@ -21,12 +21,12 @@
   --f-texte: "Source Sans 3 Variable", system-ui, -apple-system, "Segoe UI",
     sans-serif;
 
-  /* Nuit, le theme par defaut : bleu nuit tres profond, legerement chaud. */
-  --c-fond: #131918;
-  --c-surface: #1c2321;
-  --c-encre: #f2ece1;
-  --c-encre-2: #f2ece1ba;
-  --c-trait: #f2ece124;
+  /* Nuit reste disponible ; Papier est le choix initial (decision 0037). */
+  --c-fond: #261f28;
+  --c-surface: #302833;
+  --c-encre: #f7eef3;
+  --c-encre-2: #f7eef3ba;
+  --c-trait: #f7eef324;
   --c-succes: #a3c692;
   --c-erreur: #d19978;
   /* Le brouillard : le fond a 70 %, floute par-dessus l'inconnu (DA §3). */
@@ -34,7 +34,7 @@
 
   /* Palette par RANG de domaine, jamais par nom : un autre metier herite
      sans qu'on code quoi que ce soit (DA §2). */
-  --c-rang-1: #cfaa73;   /* ocre */
+  --c-rang-1: #e8a8be;   /* ocre */
   --c-rang-2: #cb9176;   /* cuivre */
   --c-rang-3: #acba94;   /* sauge */
   --c-rang-4: #b6a7d0;   /* lavande */
@@ -71,26 +71,26 @@
 }
 
 :root[data-theme="papier"] {
-  --c-fond: #f7f7f2;
+  --c-fond: #fcf8fa;
   --c-surface: #ffffff;
-  --c-encre: #23262b;
-  --c-encre-2: #23262bbf;
-  --c-trait: #23262b24;
+  --c-encre: #352b37;
+  --c-encre-2: #352b37bf;
+  --c-trait: #352b3724;
   --c-brouillard: #f6f3ecb3;
-  --ombre-flottante: 0 18px 48px -28px #23262b3d;
+  --ombre-flottante: 0 18px 48px -28px #352b373d;
 
   /* « idem, assombrie » (DA §2) : la meme famille, assez foncee pour
      tenir le contraste AA sur un fond clair (§7). */
-  --c-rang-1: #7d5620;
-  --c-rang-2: #7a4126;
-  --c-rang-3: #52603f;
-  --c-rang-4: #5d5279;
-  --c-rang-5: #385369;
-  --c-rang-6: #6f342a;
-  --c-rang-7: #4d5428;
-  --c-rang-8: #55344c;
-  --c-rang-9: #7a6537;
-  --c-rang-10: #454d57;
+  --c-rang-1: #933e61;
+  --c-rang-2: #854752;
+  --c-rang-3: #536348;
+  --c-rang-4: #685275;
+  --c-rang-5: #405d72;
+  --c-rang-6: #873f4c;
+  --c-rang-7: #666039;
+  --c-rang-8: #724566;
+  --c-rang-9: #726044;
+  --c-rang-10: #515869;
   --c-succes: #4a6338;
   --c-erreur: #8a3f1c;
 }
@@ -429,4 +429,34 @@ select { background: var(--c-surface); color: var(--c-encre); padding: 10px 12px
 }
 @media (prefers-reduced-motion: reduce) {
   .anneau-valeur { transition: none; }
+}
+
+/* Exploration lisible : chaque ligne est un domaine réel, sans faux lien. */
+.exploration-composition { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(240px, .8fr); gap: clamp(32px, 5vw, 80px); align-items: start; margin: 28px 0 40px; }
+.index-domaines { min-width: 0; border-top: 1px solid var(--c-trait); }
+.domaine-ligne { display: grid; grid-template-columns: minmax(0, 1fr) auto 20px; gap: 6px 20px; width: 100%; min-height: 84px; padding: 18px 0; border-bottom: 1px solid var(--c-trait); text-align: left; }
+.domaine-nom { font: 450 1.3rem/1.3 var(--f-titre); }
+.domaine-contenu { align-self: center; font-size: .78rem; color: var(--c-encre-2); }
+.domaine-branches { grid-row: 2; grid-column: 1 / 3; font-size: .82rem; color: var(--c-encre-2); line-height: 1.5; }
+.domaine-ligne > svg { grid-column: 3; grid-row: 1 / 3; align-self: center; color: var(--c-trait); }
+.domaine-ligne[aria-pressed="true"] .domaine-nom, .domaine-ligne[aria-pressed="true"] > svg { color: var(--c-domaine); }
+.domaine-ligne:hover .domaine-nom { color: var(--c-domaine); }
+.exploration-composition .apercu-domaine { position: sticky; top: 24px; border: 0; padding: 20px 0; }
+.exploration-composition .apercu-domaine h2 { font-size: clamp(1.8rem, 3vw, 2.7rem); margin-top: 28px; }
+.exploration-composition .apercu-navigation { font-size: .85rem; color: var(--c-encre-2); }
+.exploration-composition .branches-apercu { margin-block: 28px; }
+@media(max-width: 767px) {
+  .exploration-composition { display: flex; flex-direction: column; gap: 24px; margin-top: 20px; }
+  .index-domaines { width: 100%; }
+  .domaine-ligne { grid-template-columns: minmax(0, 1fr) 20px; gap: 8px 12px; padding-block: 16px; }
+  .domaine-nom { font-size: 1.15rem; }
+  .domaine-contenu { grid-row: 2; font-size: .82rem; }
+  .domaine-branches { display: none; }
+  .domaine-ligne > svg { grid-column: 2; }
+  .exploration-composition .apercu-domaine { position: static; width: 100%; border-top: 1px solid var(--c-trait); }
+}
+
+@media(max-width: 767px) {
+  .exploration-composition .apercu-domaine { display: none; }
+  .page-arbre .actions-cap > .bouton { position: static; max-width: none; }
 }

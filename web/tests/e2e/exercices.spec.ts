@@ -11,8 +11,9 @@ const CARTE = {
 };
 
 async function ouvre(page: Page, cartes: Record<string, unknown>[] = [CARTE],
-  chemin = "./#/salle/seance/hasard", heure = new Date(2026, 8, 4, 12)) {
-  await page.clock.install({ time: heure });
+  chemin = "./#/salle/seance/hasard", heure = new Date(2026, 8, 4, 12), pause = false) {
+  await page.clock.install({ time: pause ? new Date(heure.getTime() - 1000) : heure });
+  if (pause) await page.clock.pauseAt(heure);
   await page.route("**/banque.json", (route) => route.fulfill({ json: {
     cartes, domaines: { domaine: { titre: "Domaine de test", ordre: 1 } },
     quotas: { revisions_par_seance: 10, nouveau_par_seance: 10, plafond_reprise: 20 },
@@ -121,7 +122,7 @@ test("une seance de chapitre ne sert aucune carte d un autre chapitre", async ({
 
 test("la carte expire a minuit dans une salle deja ouverte", async ({ page }) => {
   await ouvre(page, [{ ...CARTE, peremption: "2026-09-04" }],
-    "./#/salle/seance/hasard", new Date(2026, 8, 4, 23, 59, 59));
+    "./#/salle/seance/hasard", new Date(2026, 8, 4, 23, 59, 59), true);
   await page.clock.runFor(2000);
   await expect(page.locator(QUESTION)).not.toBeVisible();
   expect((await journal(page)).filter((l) => l.mode === "revision")).toHaveLength(0);

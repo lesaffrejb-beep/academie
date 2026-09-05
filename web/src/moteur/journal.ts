@@ -1,3 +1,4 @@
+import { compareJournal } from "./chronologie";
 /**
  * Le journal : ecriture locale d'abord, envoi ensuite, jamais l'inverse.
  *
@@ -62,29 +63,63 @@ export function nonce(): string {
   return Array.from(octets, (o) => o.toString(16).padStart(2, "0")).join("");
 }
 
-export function maintenant(): string {
-  const instant = new Date();
+function dateLocale(instant: Date, fraction: string): string {
   const minutes = -instant.getTimezoneOffset();
   const local = new Date(instant.getTime() + minutes * 60_000).toISOString().slice(0, 19);
   const heures = Math.floor(Math.abs(minutes) / 60).toString().padStart(2, "0");
   const reste = (Math.abs(minutes) % 60).toString().padStart(2, "0");
-  return `${local}${minutes >= 0 ? "+" : "-"}${heures}:${reste}`;
+  return `${local}${fraction ? "." + fraction : ""}${minutes >= 0 ? "+" : "-"}${heures}:${reste}`;
+}
+
+export function maintenant(): string {
+  const instant = new Date();
+  return dateLocale(instant, instant.getMilliseconds().toString().padStart(3, "0").replace(/0+$/, ""));
+}
+
+const MARQUE_CREATION = "creation-microsecondes";
+
+/** Plancher exact à la microseconde, uniquement pour amorcer les anciens états. */
+function microsecondes(quand: string): bigint | undefined {
+  const m = /^(\d{4}-\d{2}-\d{2}[Tt ]\d{2}:\d{2}:\d{2})(?:\.(\d+))?([Zz]|[+-]\d{2}:\d{2})?$/.exec(quand);
+  if (!m) return undefined;
+  const seconde = Date.parse(`${m[1]?.toUpperCase().replace(" ", "T")}${(m[3] ?? "Z").toUpperCase()}`);
+  if (!Number.isFinite(seconde)) return undefined;
+  return BigInt(seconde) * 1000n + BigInt((m[2] ?? "").padEnd(6, "0").slice(0, 6));
+}
+
+/** Appelé sous verrou rw : les onglets partagent cette horloge persistante. */
+async function creationSuivante(): Promise<string> {
+  const enregistree = (await base.marques.get(MARQUE_CREATION))?.valeur;
+  let precedente: bigint | undefined;
+  if (enregistree && /^-?\d+$/.test(enregistree)) precedente = BigInt(enregistree);
+  else {
+    // Une installation existante n'a pas encore la marque. Rien n'est réécrit.
+    const derniere = (await base.journal.toArray()).sort(compareJournal).at(-1);
+    if (derniere) precedente = microsecondes(derniere.quand);
+  }
+  const horloge = BigInt(Date.now()) * 1000n;
+  const suivante = precedente !== undefined && precedente >= horloge ? precedente + 1n : horloge;
+  const millisecondes = suivante >= 0n ? suivante / 1000n : (suivante - 999n) / 1000n;
+  const fraction = ((suivante % 1_000_000n + 1_000_000n) % 1_000_000n).toString().padStart(6, "0");
+  const quand = dateLocale(new Date(Number(millisecondes)), fraction);
+  await base.marques.put({cle: MARQUE_CREATION, valeur: suivante.toString()});
+  return quand;
 }
 
 /** Ecrit une ligne localement et la met en file. Rend la ligne ecrite. */
 export async function ecris(
   partielle: Omit<LigneJournal, "quand" | "nonce"> & Partial<Pick<LigneJournal, "quand" | "nonce">>,
 ): Promise<LigneJournal> {
-  const ligne: LigneJournal = {
-    quand: partielle.quand ?? maintenant(),
-    nonce: partielle.nonce ?? nonce(),
-    ...partielle,
-  } as LigneJournal;
-  await base.transaction("rw", base.journal, base.file, async () => {
+  return base.transaction("rw", base.journal, base.file, base.marques, async () => {
+    const ligne = {
+      ...partielle,
+      quand: partielle.quand ?? await creationSuivante(),
+      nonce: partielle.nonce ?? nonce(),
+    } as LigneJournal;
     await base.journal.put({ ...ligne, cle: cleDe(ligne) });
     await base.file.put({ nonce: ligne.nonce });
+    return ligne;
   });
-  return ligne;
 }
 
 /** Le journal complet, trie. C'est la seule source d'etat. */
@@ -92,7 +127,7 @@ export async function litJournal(): Promise<LigneJournal[]> {
   const lignes = await base.journal.toArray();
   return lignes
     .map(({ cle: _cle, ...reste }) => reste as LigneJournal)
-    .sort((a, b) => a.quand.localeCompare(b.quand));
+    .sort(compareJournal);
 }
 
 /** Ajoute des lignes venues du serveur sans jamais ecraser (union). */

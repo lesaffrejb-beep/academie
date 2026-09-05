@@ -134,6 +134,7 @@ export function prepare({ racine = RACINE, sortie, travail = os.tmpdir(), python
     fs.symlinkSync(modules, path.join(web, "node_modules"), "dir");
     fs.mkdirSync(path.join(atelier, "contenu"));
     fs.copyFileSync(path.join(racine, "contenu/voix.json"), path.join(atelier, "contenu/voix.json"));
+    fs.copyFileSync(path.join(racine, "contenu/parcours.json"), path.join(atelier, "contenu/parcours.json"));
     execFileSync(python, ["-B", path.join(racine, "app/genere.py"), "--couches", "banque",
       "--sortie", path.join(atelier, "site/banque.json")], {
       cwd: racine, env: { ...process.env, ACADEMIE_RACINE: atelier, PYTHONDONTWRITEBYTECODE: "1" },

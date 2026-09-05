@@ -1,0 +1,61 @@
+{
+  "date": "2026-09-05",
+  "commit_audite": "3ecbc77",
+  "banque": {
+    "cartes_servables": 76,
+    "domaines": {
+      "comptabilite": 10,
+      "droit": 26,
+      "equipements": 13,
+      "pathologie": 10,
+      "procedure": 11,
+      "sinistres": 6
+    },
+    "formats": {
+      "flash": 41,
+      "qcm": 27,
+      "role": 2,
+      "libre": 2,
+      "photo": 1,
+      "relier": 1,
+      "datation": 1,
+      "plan": 1
+    },
+    "avec_chapitre": 0,
+    "provenance_structuree": 0
+  },
+  "programmes": {
+    "copro": {
+      "sha256": "efc14236cd110113d731c4faa368ce93168f9d07d95b9d53816e6eb5ca65a5e3",
+      "chapitres": 389,
+      "domaines": 11,
+      "branches": 81,
+      "cartes_cibles_editoriales": 2990,
+      "minutes_editoriales": 23085,
+      "prerequis": 398,
+      "ponts": 7,
+      "capacites_cadrage": 0
+    },
+    "ifsi": {
+      "sha256": "0ec1e3fd497c38518bec70e151f5256a102f50afe278d3e7ca8220f92f1b4395",
+      "chapitres": 375,
+      "domaines": 11,
+      "branches": 58,
+      "cartes_cibles_editoriales": 2794,
+      "minutes_editoriales": 22275,
+      "prerequis": 413,
+      "ponts": 28,
+      "capacites_cadrage": 600
+    }
+  },
+  "reproduction_dst": {
+    "ordre_reel": [
+      4,
+      1
+    ],
+    "ordre_lu": [
+      1,
+      4
+    ]
+  }
+}

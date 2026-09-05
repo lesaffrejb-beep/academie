@@ -120,6 +120,32 @@
       "type": "string",
       "maxLength": 300,
       "description": "signalement : pourquoi la carte est fausse (facultatif)"
+    },
+    "etude_etape": {
+      "type": "string",
+      "enum": [
+        "tentative",
+        "principe",
+        "exercices",
+        "synthese",
+        "grille",
+        "terminee"
+      ]
+    },
+    "contenu_version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "reponse_libre": {
+      "type": "string",
+      "maxLength": 5000
+    },
+    "aide_utilisee": {
+      "type": "boolean"
+    },
+    "exercice_index": {
+      "type": "integer",
+      "minimum": 0
     }
   },
   "allOf": [

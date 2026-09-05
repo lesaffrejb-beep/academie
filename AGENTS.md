@@ -16,7 +16,7 @@ Règles dures :
 6. Une mécanique nouvelle ajoute son entrée sourcée dans `METHODE.md` dans le même commit ; un arbitrage structurant ajoute un fichier dans `decisions/`.
 7. Avant de conclure : `python3 app/tests.py` puis `python3 tooling/check.py`.
 8. Tu ne codes pas sans cahier : un chantier de `roadmap.json` se fait depuis `chantiers/<id>.md`, dans son périmètre, tests rouges d'abord (`CONTRIBUER.md`, `decisions/0025`). L'app parle avec la voix de `VOIX.md`.
-9. Tu te déclares avant un travail long (`MODELES.md` : outil, modèle, classe ; en doute, petit) et tu avances par unités que `app/usine/usine.py` distribue et juge ; tu n'écris jamais « fait », « relu » ou « validé » sans le verdict du script (`decisions/0027`).
+9. Tu indiques outil et modèle avant un travail long, sans classement (`MODELES.md`, `decisions/0034`). Pour lire un document, tu avances par unités que `app/usine/usine.py` distribue et juge ; tu n'écris jamais « fait », « relu » ou « validé » sans le verdict du script (`decisions/0027`).
 
 La roadmap exécutable est `roadmap.json` ; la roadmap lisible, `ROADMAP.md`.
 Le domaine (carte des dépôts, décisions transverses, modèles) vit dans

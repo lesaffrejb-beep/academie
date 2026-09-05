@@ -1,0 +1,160 @@
+
+Running 76 tests using 1 worker
+
+(node:17993) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [ordinateur] › tests/e2e/accueil-visuel.spec.ts:3:1 › le thème se choisit dès l’accueil et persiste après rechargement (595ms)
+  ✓   2 [ordinateur] › tests/e2e/accueil-visuel.spec.ts:14:1 › les chapitres et le cas réel sont accessibles au téléphone dans les deux métiers (636ms)
+  ✓   3 [ordinateur] › tests/e2e/atlas.spec.ts:3:1 › la tablette conserve toutes les cibles dans le cadre de l'atlas (338ms)
+  ✓   4 [ordinateur] › tests/e2e/atlas.spec.ts:19:1 › l'atlas ouvre les vrais chapitres et distingue le programme du contenu (511ms)
+  ✓   5 [ordinateur] › tests/e2e/atlas.spec.ts:37:1 › le rail et la carte restent lisibles avec deux thèmes et texte agrandi (1.1s)
+  ✓   6 [ordinateur] › tests/e2e/atlas.spec.ts:52:2 › les domaines sont nommés et le programme ne simule pas des relations (295ms)
+  ✓   7 [ordinateur] › tests/e2e/boite.spec.ts:3:1 › le retour d'un dépôt ne supprime pas l'idée saisie pendant l'envoi (430ms)
+  ✓   8 [ordinateur] › tests/e2e/boite.spec.ts:23:1 › un dépôt confirmé apparaît dans la file de la boîte (460ms)
+  ✓   9 [ordinateur] › tests/e2e/boite.spec.ts:39:1 › le brouillon survit à un changement d'écran et peut être abandonné (425ms)
+  ✓  10 [ordinateur] › tests/e2e/direction-artistique.spec.ts:50:3 › direction artistique › aucun hexadécimal hors des tokens dans le CSS servi (190ms)
+  ✓  11 [ordinateur] › tests/e2e/direction-artistique.spec.ts:79:3 › direction artistique › rien ne déborde, ni à 375 ni à 1280, ni à 200 % de texte (595ms)
+  ✓  12 [ordinateur] › tests/e2e/direction-artistique.spec.ts:99:3 › direction artistique › les deux thèmes rendent, et l'encre n'est pas la couleur du fond (302ms)
+  ✓  13 [ordinateur] › tests/e2e/direction-artistique.spec.ts:120:3 › direction artistique › le mouvement réduit est respecté (307ms)
+  ✓  14 [ordinateur] › tests/e2e/direction-artistique.spec.ts:139:3 › direction artistique › la souris n'est jamais nécessaire dans une salle (509ms)
+  ✓  15 [ordinateur] › tests/e2e/direction-artistique.spec.ts:182:3 › direction artistique › le focus se voit sur le chemin principal (356ms)
+  ✓  16 [ordinateur] › tests/e2e/etude.relecture.spec.ts:28:1 › l'indice survit au rechargement de la tentative (600ms)
+  ✓  17 [ordinateur] › tests/e2e/etude.relecture.spec.ts:40:1 › une réponse avec indice ne reçoit aucune note de rappel autonome (599ms)
+  ✓  18 [ordinateur] › tests/e2e/etude.relecture.spec.ts:55:1 › un QCM conserve le choix initial et le retour après rechargement (818ms)
+  ✓  19 [ordinateur] › tests/e2e/etude.spec.ts:3:1 › l'accueil conduit à une tentative et conserve la réponse après fermeture (687ms)
+  ✓  20 [ordinateur] › tests/e2e/etude.spec.ts:19:1 › le métier IFSI ouvre ses propres contenus (430ms)
+  ✓  21 [ordinateur] › tests/e2e/etude.spec.ts:27:1 › une étude entière hors ligne garde production et rappels, puis recommence sans ancien corrigé (1.2s)
+  ✓  22 [ordinateur] › tests/e2e/etude.spec.ts:52:1 › l'accueil et l'étude restent lisibles avec texte agrandi (315ms)
+  ✓  23 [ordinateur] › tests/e2e/exercices.spec.ts:44:1 › une seule ouverture et une seule note pour un double clic (333ms)
+  ✓  24 [ordinateur] › tests/e2e/exercices.spec.ts:57:3 › photo montre sa vraie image et permet une reponse (326ms)
+  ✓  25 [ordinateur] › tests/e2e/exercices.spec.ts:57:3 › relier montre sa vraie image et permet une reponse (296ms)
+  ✓  26 [ordinateur] › tests/e2e/exercices.spec.ts:57:3 › datation montre sa vraie image et permet une reponse (330ms)
+  ✓  27 [ordinateur] › tests/e2e/exercices.spec.ts:57:3 › plan montre sa vraie image et permet une reponse (302ms)
+  ✓  28 [ordinateur] › tests/e2e/exercices.spec.ts:71:1 › les vraies sources sont repliees puis consultables apres reponse (340ms)
+  ✓  29 [ordinateur] › tests/e2e/exercices.spec.ts:80:1 › signaler retire immediatement la carte sans lui donner une note (387ms)
+  ✓  30 [ordinateur] › tests/e2e/exercices.spec.ts:92:1 › une panne de stockage garde la correction et propose de reessayer (364ms)
+  ✓  31 [ordinateur] › tests/e2e/exercices.spec.ts:111:1 › une seance de chapitre ne sert aucune carte d un autre chapitre (345ms)
+  ✓  32 [ordinateur] › tests/e2e/exercices.spec.ts:123:1 › la carte expire a minuit dans une salle deja ouverte (266ms)
+  ✓  33 [ordinateur] › tests/e2e/exercices.spec.ts:131:1 › une mauvaise reponse QCM explique le choix et conserve la confiance (423ms)
+  ✓  34 [ordinateur] › tests/e2e/hors-ligne.spec.ts:144:3 › hors-ligne › la première question s'affiche en moins de trois secondes, réseau coupé (347ms)
+  ✘  35 [ordinateur] › tests/e2e/hors-ligne.spec.ts:161:3 › hors-ligne › une séance jouée réseau coupé s'écrit localement et attend (1.0m)
+(node:18466) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  36 [ordinateur] › tests/e2e/hors-ligne.spec.ts:192:3 › hors-ligne › au retour du réseau, la file part vers le serveur (789ms)
+  ✓  37 [ordinateur] › tests/e2e/hors-ligne.spec.ts:246:3 › hors-ligne › aucun hôte tiers n'est contacté pendant une séance (485ms)
+  ✓  38 [ordinateur] › tests/e2e/profil.spec.ts:3:1 › un refus de session reste visible et peut être réessayé (407ms)
+(node:18507) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  39 [telephone] › tests/e2e/accueil-visuel.spec.ts:3:1 › le thème se choisit dès l’accueil et persiste après rechargement (623ms)
+  ✓  40 [telephone] › tests/e2e/accueil-visuel.spec.ts:14:1 › les chapitres et le cas réel sont accessibles au téléphone dans les deux métiers (681ms)
+  ✓  41 [telephone] › tests/e2e/atlas.spec.ts:3:1 › la tablette conserve toutes les cibles dans le cadre de l'atlas (361ms)
+  ✓  42 [telephone] › tests/e2e/atlas.spec.ts:19:1 › l'atlas ouvre les vrais chapitres et distingue le programme du contenu (534ms)
+  ✓  43 [telephone] › tests/e2e/atlas.spec.ts:37:1 › le rail et la carte restent lisibles avec deux thèmes et texte agrandi (1.0s)
+  ✓  44 [telephone] › tests/e2e/atlas.spec.ts:52:2 › les domaines sont nommés et le programme ne simule pas des relations (317ms)
+  ✓  45 [telephone] › tests/e2e/boite.spec.ts:3:1 › le retour d'un dépôt ne supprime pas l'idée saisie pendant l'envoi (418ms)
+  ✓  46 [telephone] › tests/e2e/boite.spec.ts:23:1 › un dépôt confirmé apparaît dans la file de la boîte (422ms)
+  ✓  47 [telephone] › tests/e2e/boite.spec.ts:39:1 › le brouillon survit à un changement d'écran et peut être abandonné (417ms)
+  ✓  48 [telephone] › tests/e2e/direction-artistique.spec.ts:50:3 › direction artistique › aucun hexadécimal hors des tokens dans le CSS servi (175ms)
+  ✓  49 [telephone] › tests/e2e/direction-artistique.spec.ts:79:3 › direction artistique › rien ne déborde, ni à 375 ni à 1280, ni à 200 % de texte (493ms)
+  ✓  50 [telephone] › tests/e2e/direction-artistique.spec.ts:99:3 › direction artistique › les deux thèmes rendent, et l'encre n'est pas la couleur du fond (258ms)
+  ✓  51 [telephone] › tests/e2e/direction-artistique.spec.ts:120:3 › direction artistique › le mouvement réduit est respecté (299ms)
+  ✓  52 [telephone] › tests/e2e/direction-artistique.spec.ts:139:3 › direction artistique › la souris n'est jamais nécessaire dans une salle (466ms)
+  ✓  53 [telephone] › tests/e2e/direction-artistique.spec.ts:182:3 › direction artistique › le focus se voit sur le chemin principal (320ms)
+  ✓  54 [telephone] › tests/e2e/etude.relecture.spec.ts:28:1 › l'indice survit au rechargement de la tentative (550ms)
+  ✓  55 [telephone] › tests/e2e/etude.relecture.spec.ts:40:1 › une réponse avec indice ne reçoit aucune note de rappel autonome (604ms)
+  ✓  56 [telephone] › tests/e2e/etude.relecture.spec.ts:55:1 › un QCM conserve le choix initial et le retour après rechargement (798ms)
+  ✓  57 [telephone] › tests/e2e/etude.spec.ts:3:1 › l'accueil conduit à une tentative et conserve la réponse après fermeture (656ms)
+  ✓  58 [telephone] › tests/e2e/etude.spec.ts:19:1 › le métier IFSI ouvre ses propres contenus (351ms)
+  ✓  59 [telephone] › tests/e2e/etude.spec.ts:27:1 › une étude entière hors ligne garde production et rappels, puis recommence sans ancien corrigé (1.4s)
+  ✓  60 [telephone] › tests/e2e/etude.spec.ts:52:1 › l'accueil et l'étude restent lisibles avec texte agrandi (373ms)
+  ✓  61 [telephone] › tests/e2e/exercices.spec.ts:44:1 › une seule ouverture et une seule note pour un double clic (327ms)
+  ✓  62 [telephone] › tests/e2e/exercices.spec.ts:57:3 › photo montre sa vraie image et permet une reponse (284ms)
+  ✓  63 [telephone] › tests/e2e/exercices.spec.ts:57:3 › relier montre sa vraie image et permet une reponse (286ms)
+  ✓  64 [telephone] › tests/e2e/exercices.spec.ts:57:3 › datation montre sa vraie image et permet une reponse (319ms)
+  ✓  65 [telephone] › tests/e2e/exercices.spec.ts:57:3 › plan montre sa vraie image et permet une reponse (286ms)
+  ✓  66 [telephone] › tests/e2e/exercices.spec.ts:71:1 › les vraies sources sont repliees puis consultables apres reponse (294ms)
+  ✓  67 [telephone] › tests/e2e/exercices.spec.ts:80:1 › signaler retire immediatement la carte sans lui donner une note (416ms)
+  ✓  68 [telephone] › tests/e2e/exercices.spec.ts:92:1 › une panne de stockage garde la correction et propose de reessayer (302ms)
+  ✓  69 [telephone] › tests/e2e/exercices.spec.ts:111:1 › une seance de chapitre ne sert aucune carte d un autre chapitre (317ms)
+  ✓  70 [telephone] › tests/e2e/exercices.spec.ts:123:1 › la carte expire a minuit dans une salle deja ouverte (232ms)
+  ✓  71 [telephone] › tests/e2e/exercices.spec.ts:131:1 › une mauvaise reponse QCM explique le choix et conserve la confiance (395ms)
+  ✓  72 [telephone] › tests/e2e/hors-ligne.spec.ts:144:3 › hors-ligne › la première question s'affiche en moins de trois secondes, réseau coupé (324ms)
+  ✓  73 [telephone] › tests/e2e/hors-ligne.spec.ts:161:3 › hors-ligne › une séance jouée réseau coupé s'écrit localement et attend (603ms)
+  ✘  74 [telephone] › tests/e2e/hors-ligne.spec.ts:192:3 › hors-ligne › au retour du réseau, la file part vers le serveur (1.0m)
+(node:19153) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  75 [telephone] › tests/e2e/hors-ligne.spec.ts:246:3 › hors-ligne › aucun hôte tiers n'est contacté pendant une séance (578ms)
+  ✓  76 [telephone] › tests/e2e/profil.spec.ts:3:1 › un refus de session reste visible et peut être réessayé (464ms)
+
+
+  1) [ordinateur] › tests/e2e/hors-ligne.spec.ts:161:3 › hors-ligne › une séance jouée réseau coupé s'écrit localement et attend
+
+    Test timeout of 60000ms exceeded.
+
+    Error: locator.click: Test timeout of 60000ms exceeded.
+    Call log:
+      - waiting for locator('ul li button').first()
+
+
+      126 |   } else {
+      127 |     // QCM : cliquer un choix révèle la réponse.
+    > 128 |     await choix.click();
+          |                 ^
+      129 |   }
+      130 |   const bien = page.getByRole("button", { name: "Bien", exact: true });
+      131 |   await expect(bien).toBeVisible();
+        at repond (/Users/jb/Code/academie/web/tests/e2e/hors-ligne.spec.ts:128:17)
+        at joue (/Users/jb/Code/academie/web/tests/e2e/hors-ligne.spec.ts:139:5)
+        at /Users/jb/Code/academie/web/tests/e2e/hors-ligne.spec.ts:167:5
+
+    Error Context: test-results/hors-ligne-hors-ligne-une--9564d--écrit-localement-et-attend-ordinateur/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/hors-ligne-hors-ligne-une--9564d--écrit-localement-et-attend-ordinateur/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/hors-ligne-hors-ligne-une--9564d--écrit-localement-et-attend-ordinateur/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [telephone] › tests/e2e/hors-ligne.spec.ts:192:3 › hors-ligne › au retour du réseau, la file part vers le serveur
+
+    Test timeout of 60000ms exceeded.
+
+    Error: locator.click: Test timeout of 60000ms exceeded.
+    Call log:
+      - waiting for locator('ul li button').first()
+        - locator resolved to <button disabled type="button" class="salle-choix-bouton est-juste">…</button>
+      - attempting click action
+        - waiting for element to be visible, enabled and stable
+        - element is not stable
+      - retrying click action
+        - waiting for element to be visible, enabled and stable
+      - element was detached from the DOM, retrying
+
+
+      126 |   } else {
+      127 |     // QCM : cliquer un choix révèle la réponse.
+    > 128 |     await choix.click();
+          |                 ^
+      129 |   }
+      130 |   const bien = page.getByRole("button", { name: "Bien", exact: true });
+      131 |   await expect(bien).toBeVisible();
+        at repond (/Users/jb/Code/academie/web/tests/e2e/hors-ligne.spec.ts:128:17)
+        at joue (/Users/jb/Code/academie/web/tests/e2e/hors-ligne.spec.ts:139:5)
+        at /Users/jb/Code/academie/web/tests/e2e/hors-ligne.spec.ts:196:5
+
+    Error Context: test-results/hors-ligne-hors-ligne-au-r-c8928-a-file-part-vers-le-serveur-telephone/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/hors-ligne-hors-ligne-au-r-c8928-a-file-part-vers-le-serveur-telephone/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/hors-ligne-hors-ligne-au-r-c8928-a-file-part-vers-le-serveur-telephone/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2 failed
+    [ordinateur] › tests/e2e/hors-ligne.spec.ts:161:3 › hors-ligne › une séance jouée réseau coupé s'écrit localement et attend
+    [telephone] › tests/e2e/hors-ligne.spec.ts:192:3 › hors-ligne › au retour du réseau, la file part vers le serveur
+  74 passed (2.6m)

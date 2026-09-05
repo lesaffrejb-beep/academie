@@ -40,6 +40,10 @@ APP = Path(__file__).resolve().parent
 RACINE = APP.parent
 
 SUITES = [
+    ("frontières étude", "tests_etude_relecture.py"),
+    ("expérience pédagogique", "tests_experience.py"),
+    ("chronologie adversaire", "tests_chronologie_relecture.py"),
+    ("chronologie du journal", "tests_chronologie.py"),
     ("moteur FSRS", "tests_planificateur.py"),
     ("séance du jour", "tests_seance.py"),
     ("carte-monde", "tests_progression.py"),

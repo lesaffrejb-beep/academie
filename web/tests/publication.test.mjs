@@ -140,6 +140,9 @@ test("les sources en lecture seule construisent ; un build refuse conserve l ind
   }
   const banque = JSON.parse(fs.readFileSync(path.join(sortie, "banque.json"), "utf8"));
   assert.ok(banque.cartes.length > 0);
+  const parcours = JSON.parse(fs.readFileSync(path.join(racine, "contenu/parcours.json"), "utf8")).parcours;
+  assert.ok(parcours.length > 0);
+  assert.deepEqual(banque.etudes.parcours, parcours, "les parcours jouables survivent au build isolé");
   for (const carte of banque.cartes) if (carte.image?.fichier) {
     assert.ok(fs.existsSync(path.join(sortie, carte.image.fichier)), carte.image.fichier);
   }

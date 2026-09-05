@@ -1,189 +1,158 @@
-# LA MÉTHODE — pourquoi l'Académie fait apprendre comme ça
+# La méthode : pourquoi l’Académie propose ces exercices
 
-Livrable nommé par JB le 30/08/2026 : « tous nos choix sourcés et
-documentés dans une méthode lisible par tout le monde ». Ce document
-est la version LISIBLE du cadrage scientifique
-([`CADRAGE-SCIENTIFIQUE.md`](CADRAGE-SCIENTIFIQUE.md), bibliographie
-re-sourcée et vérifiée le 28/08/2026) : une entrée par mécanique du
-produit — *ce qu'on fait*, *pourquoi*, *la source*. La règle est
-gravée dans la spec : **une mécanique qui n'arrive pas à écrire son
-entrée ici n'entre pas dans le produit.** L'app renvoie vers cette
-page (« pourquoi cette mécanique ? »).
+Une entrée par mécanique : ce que le produit prévoit, la preuve disponible,
+et ce qui reste un choix de conception. Cette méthode ne décrit pas à elle
+seule l’état du logiciel livré ; `roadmap.json` et ses preuves font foi.
+Les durées, quotas et seuils cités sont des paramètres produit, sauf source
+explicite. Aucun effet moyen publié ne garantit un résultat individuel.
 
-Une source marquée `[À VÉRIFIER]` signale une entrée dont le principe
-est établi mais dont la référence précise n'a pas encore été relue à
-la source par un agent — la mécanique concernée reste en retrait tant
-que ce n'est pas fait (même règle que pour les cartes).
+Révision critique du 05/09/2026, chantier `ACA-METHODE-2`. Les populations,
+comparaisons et limites figurent dans [le cadrage](CADRAGE-SCIENTIFIQUE.md).
+Les niveaux de consultation sont consignés dans
+[le rapport](travail/relecture-science-2026-09-05.md). Une source retrouvée
+n’est pas une lecture intégrale certifiée par l’usine. Les anciennes dates
+ci-dessous sont historiques ; elles ne valent pas nouvelle vérification.
+Une référence `[À VÉRIFIER]` ne fonde aucune promesse affichée dans l’app.
 
----
+## 1. Les révisions sont planifiées avec FSRS
 
-## 1. Les révisions reviennent à intervalles croissants (FSRS)
+**Ce qu’on fait** : FSRS-6 estime un intervalle à partir de l’historique
+et d’une cible de rappel. Il estime une probabilité, sans connaître le
+moment exact de ton oubli.
+**Pourquoi** : l’espacement est soutenu par la recherche sur la rétention.
+La fidélité de notre portage à une implémentation de référence est une
+preuve technique, pas un gain pédagogique mesuré. Aucun pourcentage de
+révisions économisées n’est promis ; charge et rappel différé se mesurent.
+**Source** : documentation des auteurs de [FSRS](https://github.com/open-spaced-repetition/fsrs4anki/wiki/The-Algorithm)
+et Cepeda et al. (2006), sources R1/R2 du cadrage. Un retard réussi met à
+jour l’estimation de stabilité ; il ne garantit pas une meilleure mémoire.
 
-**Ce qu'on fait** : chaque carte revient juste avant le moment où tu
-l'aurais oubliée ; l'intervalle s'allonge à chaque rappel réussi. Le
-planificateur est FSRS-6 (21 paramètres, modèle
-difficulté-stabilité-récupérabilité), pas le vieux SM-2 d'Anki.
-**Pourquoi** : la répétition espacée est l'effet le plus robuste de la
-littérature ; FSRS réduit de 20 à 30 % le volume de révisions pour la
-même rétention (90 %), et transforme un retard de révision en
-consolidation au lieu d'une punition.
-**Source** : Ye et al., ACM KDD / IEEE (2022-2024), corpus de plus de
-700 M de révisions — vérifié 28/08/2026 ; portage maison comparé à
-`py-fsrs` à 10⁻⁴ près (`app/tests_planificateur.py`).
+## 2. Répondre, puis comprendre et reprendre
 
-## 2. On te fait répondre, jamais relire
+**Ce qu’on fait** : une séance commence par une tentative ; la leçon,
+les exemples et la correction aident à comprendre, puis vient un rappel.
+**Pourquoi** : les tests de récupération bénéficient en moyenne à la
+rétention par rapport à la réétude dans les comparaisons étudiées. Lire
+reste utile pour acquérir une connaissance ou comprendre une explication.
+La sensation de familiarité ne suffit pas à établir qu’on saura rappeler.
+**Source** : Rowland (2014) et Dunlosky et al. (2013), R3/R4 du cadrage.
 
-**Ce qu'on fait** : tout passe par la récupération — te faire sortir
-la réponse de ta tête (rappel libre, indicé, diagnostic), jamais par
-la relecture de fiches.
-**Pourquoi** : récupérer une information l'encode bien mieux que la
-réétudier (tailles d'effet g = 0,50-0,70 en méta-analyse) ; la
-relecture et le surlignage donnent une illusion de maîtrise mesurée.
-**Source** : Rowland (2014), *Psychological Bulletin* ; Adesope et
-al. (2017), *Review of Educational Research* ; Dunlosky et al. (2013)
-pour l'illusion de la relecture — vérifiés 28/08/2026.
+## 3. Les QCM ont des options plausibles et expliquées
 
-## 3. Les QCM ont des pièges expliqués
+**Ce qu’on fait** : chaque distracteur porte son explication ; la banque
+passe les contrôles du contrat de carte.
+**Pourquoi** : choisir entre des options permet aussi d’apprendre. Le
+rappel généré bénéficie davantage au rappel ultérieur dans les études
+synthétisées par Rowland ; cela ne rend pas la reconnaissance inutile.
+Un QCM seul ne démontre ni rappel libre ni décision en situation nouvelle.
+**Source** : Rowland (2014), R3 ; qualité des distracteurs : choix éditorial.
 
-**Ce qu'on fait** : un QCM de l'Académie n'a jamais de mauvaises
-réponses « de remplissage » : chaque distracteur est plausible et
-porte son explication (« pourquoi c'est faux »).
-**Pourquoi** : un QCM évident ne demande que de la reconnaissance,
-quasi inutile ; la discrimination entre options plausibles force la
-reconstruction. Le contrat de carte l'impose mécaniquement (le
-valideur refuse un QCM sans distracteurs expliqués).
-**Source** : Rowland (2014) sur reconnaissance vs rappel — vérifié
-28/08/2026.
+## 4. Après une erreur : une explication et un nouvel essai
 
-## 4. Après une erreur : l'explication tout de suite, puis la carte revient
+**Ce qu’on fait** : correction, source et note privée facultative sur
+l’erreur ; la carte revient. Le retour porte sur la réponse et la démarche.
+**Pourquoi** : dans les expériences d’hypercorrection, les erreurs
+confiantes ont été plus souvent corrigées au test suivant. Cela ne garantit
+pas le résultat de chaque joueur ; le résumé ne démontre pas que seul un
+retour immédiat et explicatif produit cet effet. Le retour immédiat est
+notre choix pour rendre l’erreur compréhensible dans la séance.
+**Source** : Butterfield & Metcalfe (2001), R5. Hattie & Timperley (2007),
+référence complémentaire R15 ; aucun effet chiffré attribué à notre feedback.
 
-**Ce qu'on fait** : une erreur déclenche immédiatement la
-micro-explication (3 lignes), la source de la carte, et le champ
-optionnel « pourquoi je me suis trompé ? » (le carnet d'erreurs). La
-carte ratée revient vite.
-**Pourquoi** : l'effet d'hypercorrection — les erreurs commises avec
-confiance sont les mieux corrigées, à condition d'un feedback
-immédiat et explicatif ; la surprise crée un pic d'attention qu'il ne
-faut pas gaspiller. Le feedback efficace porte sur le processus,
-jamais sur la personne.
-**Source** : Butterfield & Metcalfe (2001, 2006) ; Hattie &
-Timperley (2007), d = 0,79 pour le feedback ciblé — vérifiés
-28/08/2026.
+## 5. Les erreurs répétées conduisent à une autre aide
 
-## 5. Trois échecs sur la même carte = mini-leçon
+**Ce qu’on fait** : trois échecs déclenchent une mini-leçon ou une carte
+préalable dans la conception ; la note du carnet peut guider la reprise.
+**Pourquoi** : un échec peut venir d’un prérequis, d’une formulation ou
+d’une stratégie. Le seuil de trois est un choix à éprouver, pas un
+résultat de la théorie de la charge cognitive.
+**Source** : Sweller et al. (2019), référence complémentaire R16 pour le
+guidage et les exemples ; le diagnostic reste à vérifier sur la carte.
 
-**Ce qu'on fait** : une carte ratée 3 fois sort du simple cycle et
-déclenche autre chose (mini-leçon, carte préalable) — la note du
-carnet d'erreurs oriente quoi.
-**Pourquoi** : répéter un échec à l'identique n'apprend rien ; c'est
-le signal qu'un prérequis manque (échafaudage à reconstruire).
-**Source** : Sweller (1988-2019), théorie de la charge cognitive et
-exemples résolus — vérifié 28/08/2026.
+## 6. Entrelacer ce qu’il faut apprendre à distinguer
 
-## 6. Les matières s'entremêlent dans la séance
+**Ce qu’on fait** : la séance varie domaines et formats ; les contenus
+proposent aussi des cas proches à comparer.
+**Pourquoi** : le bénéfice de l’entrelacement dépend du matériel et de sa
+similarité. Distinguer deux règles proches a une raison pédagogique ;
+changer arbitrairement de sujet à chaque écran n’est pas le même test.
+Une procédure peut demander une séquence suivie avant d’être mélangée.
+**Source** : Brunmair & Richter (2019), R6 ; la diversité de la séance
+reste un choix produit à observer.
 
-**Ce qu'on fait** : une séance mélange les domaines et les types au
-lieu de faire des blocs (« tout droit », puis « tout technique »).
-**Pourquoi** : la pratique en blocs donne une forte impression de
-compétence et un transfert médiocre ; l'entrelacement force à
-discriminer ce qui se ressemble.
-**Source** : Bjork & Bjork (2011), difficultés désirables ; Carvalho
-& Goldstone (2014) — vérifiés 28/08/2026.
+## 7. Le moteur choisit le format, le joueur choisit sa direction
 
-## 7. L'algo est le prof : tu ne choisis jamais le format
+**Ce qu’on fait** : le joueur choisit où apprendre et le temps disponible ;
+le moteur compose les formats conformément à `DOCTRINE.md` §3.5.
+**Pourquoi** : c’est un arbitrage produit pour guider la séance. La revue
+des stratégies d’étude ne prouve ni que chacun choisit mal, ni que retirer
+le choix des formats améliore l’apprentissage. La recommandation doit
+rester compréhensible et le guidage adapté aux prérequis.
+**Source** : Dunlosky et al. (2013), R4, pour les stratégies ; doctrine
+pour la répartition du choix. Aucun invariant n’est modifié ici.
 
-**Ce qu'on fait** : tu cliques une zone (ou « au hasard »),
-et le moteur enchaîne les formats — QCM, image, document à expliquer,
-mise en situation — sans te demander ton avis.
-**Pourquoi** : laisser l'élève choisir sa méthode produit exactement
-les mauvais choix (relecture, blocs, QCM faciles : les stratégies les
-plus agréables sont les moins efficaces, c'est mesuré). Le choix qui
-te reste est celui qui motive sans nuire : OÙ aller sur la carte.
-**Source** : Dunlosky et al. (2013) sur l'inefficacité des stratégies
-auto-choisies ; Bjork & Bjork (2011) — vérifiés 28/08/2026.
+## 8. Un créneau viable, des séances fractionnables
 
-## 8. Le matin, court ; le reste quand on a le temps (amendé le 02/09/2026)
+**Ce qu’on fait** : séance courte visée de 8 à 20 minutes ; étude de
+45 à 90 minutes et journée quand on le souhaite, avec clôture possible
+et plafond de neuf (`decisions/0005`). Ces durées sont des choix produit.
+**Pourquoi** : espacer les reprises soutient la rétention. Le matin est
+une préférence de rituel, sans preuve d’un horaire optimal dérivé du
+cortisol. La réplication de Hagger ne justifie aucun verrou à quinze
+minutes et ne démontre pas non plus que la fatigue n’existe pas.
+**Source** : Cepeda et al. (2006), Pruessner et al. (1997), Hagger et al.
+(2016), R2/R7/R8. Aucun gain local de régularité encore revendiqué.
 
-**Ce qu'on fait** : la séance du matin vise 8 à 20 minutes, sans
-verrou dur : la clôture est honorable à tout moment, cinq cartes valent
-une séance. Deux formats longs existent, l'étude (45 à 90 min) et la
-journée, avec **le neuf plafonné par jour** quel que soit le format
-(`decisions/0005`).
-**Pourquoi** : le rituel court est ce qui survit à une vie de bureau,
-et c'est lui qui fait travailler l'espacement. La pratique massée est
-inférieure à la pratique distribuée pour la rétention, donc une longue
-journée ne doit pas bourrer de cartes neuves : elle dépense son temps
-en compréhension et en production. La thèse de l'épuisement des
-ressources exécutives, qui fondait le plafond dur de 15 minutes, a mal
-survécu à sa réplication : elle ne justifie plus un verrou.
-**Source** : Cepeda et al. (2006), *Psychological Bulletin*, 839
-comparaisons, vérifié 28/08/2026 ; Pruessner, Lupien et al. (1997,
-2007) sur la réponse cortisol du réveil, vérifié 28/08/2026 (le matin
-reste un bon moment, pas une obligation) ; Hagger et al. (2016),
-réplication multi-laboratoires préenregistrée de l'ego depletion,
-*Perspectives on Psychological Science* `[À VÉRIFIER : référence
-citée de mémoire le 02/09, à relire avant de la citer dans l'app]`.
+## 9. La progression ne punit pas les absences
 
-## 9. La série ne casse jamais, la dette n'existe pas
+**Ce qu’on fait** : compteur cumulatif, reprises réétalées, aucune pile
+de retard culpabilisante.
+**Pourquoi** : « jamais de dette, jamais de honte » est une valeur de la
+doctrine. Deci et al. étudient des récompenses précises ; ils ne démontrent
+pas que chaque compteur interrompu provoque l’abandon de chaque adulte.
+**Source** : `DOCTRINE.md` §3.9 ; Deci et al. (1999), R9, pour les limites
+des récompenses, pas pour une causalité universelle des absences.
 
-**Ce qu'on fait** : le compteur monte, il ne descend jamais ; une
-coupure (saison d'AG, vacances) se résorbe par ré-étalement
-automatique, jamais par une pile de retard affichée.
-**Pourquoi** : la gamification punitive détruit la motivation
-intrinsèque (effet de surjustification) ; la honte du streak cassé
-fait abandonner, elle ne fait pas revenir.
-**Source** : Deci, Koestner & Ryan (1999), méta-analyse SDT — vérifié
-28/08/2026.
+## 10. L’épreuve examine ce qui reste sans aide
 
-## 10. L'épreuve de domaine est un examen à froid
+**Ce qu’on fait** : un examen à froid conditionne le plein avancement
+d’une région dans la conception ; sources après la réponse.
+**Pourquoi** : différer le test distingue mieux la performance immédiate
+de la rétention. Une épreuve échantillonne un contenu ; elle ne mesure pas
+tout le métier. Les seuils de progression sont des conventions produit.
+**Source** : Rowland (2014), R3 ; cas nouveaux et mesure distincte du
+transfert dans `ACA-TRANSFERT-1`.
 
-**Ce qu'on fait** : le 100 % d'une région n'existe qu'après un examen
-(cartes tirées à froid, score solennel) ; sans lui, plafond à 99 %.
-**Pourquoi** : le test EST l'apprentissage (practice testing), et
-l'examen à froid mesure la rétention réelle, pas la performance à
-chaud de la séance — c'est la différence que les difficultés
-désirables enseignent.
-**Source** : Adesope et al. (2017) ; Bjork & Bjork (2011) — vérifiés
-28/08/2026.
+## 11. L’arbre garde des repères stables
 
-## 11. L'arbre est un lieu stable (amendé le 02/09/2026)
+**Ce qu’on fait** : domaines, branches et chapitres gardent une place
+prévisible ; l’habillage spatial peut évoluer avec les décisions produit.
+**Pourquoi** : aider à s’orienter est l’objectif ergonomique. L’étude de
+Maguire concerne des experts de la mémoire utilisant des stratégies
+spatiales ; un menu organisé ne reproduit pas cet entraînement.
+**Source** : Maguire et al. (2003), R10. Le bénéfice mémoriel de notre
+arbre n’est pas établi ; il ne sert pas d’argument à une promesse.
 
-**Ce qu'on fait** : chaque savoir a une place fixe sur l'arbre du
-métier (domaine, branche, nœud, distance au tronc) et cette place ne
-bouge pas : on retrouve « la compta en bas à gauche, les majorités près
-du tronc ». L'habillage « immeuble en coupe » (palais de mémoire) est
-gravé comme idée et différé derrière l'arbre lui-même.
-**Pourquoi** : l'ancrage spatial des connaissances exploite la mémoire
-spatiale, très puissante chez l'humain ; une disposition stable est la
-condition de cet ancrage, quel que soit le décor.
-**Source** : Maguire et al. (2003), *Nature Neuroscience*, « Routes
-to remembering » `[À VÉRIFIER, référence à relire à la source avant
-de s'en réclamer dans l'app]`.
+## 12. Distinguer vitesse et justesse
 
-## 12. Certains exercices sont chronométrés, d'autres jamais
+**Ce qu’on fait** : les automatismes peuvent être chronométrés après
+acquisition ; l’analyse reste sans pression temporelle imposée.
+**Pourquoi** : la vitesse et la justesse sont deux observations différentes.
+Le retrait du chrono sur l’analyse est un choix de confort et de guidage,
+pas la preuve que tout chronométrage empêche d’apprendre.
+**Source** : Binder (1996), référence complémentaire R17. Le transfert
+d’un automatisme rapide à une décision professionnelle doit être éprouvé.
 
-**Ce qu'on fait** : les automatismes (vocabulaire, réflexes de
-diagnostic) se travaillent parfois en temps court ; l'analyse
-(réponse libre, ateliers, documents) jamais.
-**Pourquoi** : la fluence — produire vite et sans effort — est une
-composante mesurable de l'expertise, distincte de la justesse ; mais
-chronométrer l'analyse ne produit que du stress sans apprentissage.
-**Source** : Binder (1996), « Behavioral fluency: evolution of a new
-paradigm », *The Behavior Analyst* 19, 163-197, vérifié 02/09/2026 :
-la fluence (justesse plus vitesse) prédit la rétention, l'endurance et
-le transfert mieux que la justesse seule. Le chrono ne s'active que
-sur des automatismes d'une branche déjà solide.
+## 13. Une image sert la question
 
-## 13. Les images montrent, le texte explique — jamais en double
-
-**Ce qu'on fait** : les schémas (coupe de VMC, frise de procédure)
-sont épurés, légendés au bon endroit, et la question porte sur ce que
-l'image montre.
-**Pourquoi** : la contiguïté spatiale (l'étiquette SUR le schéma, pas
-dans un pavé à côté) et la signalisation réduisent la charge inutile
-et améliorent le transfert (d = 0,38 pour la signalisation).
-**Source** : Mayer & Fiorella (2021) ; Schneider et al. (2018) —
-vérifiés 28/08/2026.
+**Ce qu’on fait** : schémas lisibles, légendes proches, indices utiles,
+texte accessible et représentations adaptées à la notion.
+**Pourquoi** : signalisation et contiguïté peuvent aider à relier les
+éléments. Cela n’interdit ni photographie, ni légende séparée, ni animation ;
+le choix dépend du contenu, de l’écran et de l’accessibilité. La qualité
+graphique ne supprime pas toute charge cognitive et doit être examinée.
+**Source** : Mayer & Fiorella (2021), Schneider et al. (2018), références
+complémentaires R18/R19 ; aucun effet chiffré propre au front annoncé.
 
 ## 14. Le quiz de positionnement t'évite de retaper les bases
 
@@ -191,129 +160,117 @@ vérifiés 28/08/2026.
 réponse inscrit la carte comme déjà stabilisée (21 j, paramétré,
 marquée `origine: quiz`), une mauvaise n'inscrit rien, et le quiz
 ouvre des branches sans jamais écrire leur remplissage.
-**Pourquoi** : évaluer le niveau réel avant de dérouler évite l'ennui
-(le tueur de rituel n°1 chez quelqu'un qui sait déjà) sans jamais
-« valider » : seule la mesure FSRS au fil des séances fait foi.
+**Pourquoi** : éviter des répétitions perçues comme inutiles est l’objectif produit.
+Une réponse juste ne suffit pas à établir le niveau réel ; le paramètre
+d’initialisation reste une hypothèse à confronter aux rappels ultérieurs.
 **Source** : mécanique dérivée du testing effect (Rowland 2014) ;
 calibrage mesuré au pré-mortem du 29/08 (la stabilité standard d'une
 première révision n'est que de ~2 jours — mesuré sur le moteur).
 
-## 15. Les « dark patterns », assumés et bornés
+## 15. Un engagement qui sert l’apprentissage
 
-**Ce qu'on fait** : brouillard de l'arbre, épreuves, tirage,
-insignes — les mécaniques d'engagement des jeux, utilisées
-délibérément pour ramener chaque matin.
-**Pourquoi** : le rituel quotidien est la condition de tout le reste
-(l'espacement ne marche que si on revient) ; on met l'engagement au
-service de l'apprentissage, jamais l'inverse. Les bornes sont
-gravées : jamais de culpabilisation, jamais de dette, jamais de
-comparaison imposée, défis coupés si les données montrent qu'ils
-dégradent le rituel, et la récompense qui compte ouvre du contenu.
-**Source** : Deci, Koestner & Ryan (1999) pour les bornes — vérifié
-28/08/2026 ; arbitrages JB des 29-30/08 pour le cap.
+**Ce qu’on fait** : progression, découverte, insignes et épreuves doivent
+donner envie de revenir. Leur effet se juge sur l’usage et les acquis.
+**Pourquoi** : la gamification peut aider, avec des résultats variables.
+Une interface attrayante et une activité utile peuvent coexister. Ni
+badges nécessairement nocifs, ni progression visuelle nécessairement efficace.
+**Source** : Sailer & Homner (2020), R12 ; les bornes anti-honte sont
+celles de `DOCTRINE.md`, sans dépendre d’un bénéfice expérimental garanti.
 
-## 16. Le concret avant la théorie : l'amorce (ajouté le 02/09/2026)
+## 16. Une tentative avant l’explication, avec du guidage
 
-**Ce qu'on fait** : un chapitre s'ouvre sur un problème à tenter
-(« laquelle de ces trois fissures appelle un expert dans la semaine ? »)
-avant toute leçon. Se tromper y est prévu.
-**Pourquoi** : résoudre avant d'être instruit prépare l'encodage de la
-leçon (on remarque ce qu'on ne savait pas) et améliore la compréhension
-et le transfert, pas seulement la rétention.
-**Source** : Sinha & Kapur (2021), *Review of Educational Research*,
-méta-analyse de 53 études, g = 0,36 en faveur de « problème puis
-instruction » ; vérifié 02/09/2026.
+**Ce qu’on fait** : un problème court ouvre le chapitre, puis viennent
+l’explication, un exemple et un nouvel essai. Une aide reste possible.
+**Pourquoi** : problème puis instruction obtient un avantage moyen dans
+la synthèse de Sinha & Kapur, sous conditions de conception. L’ordre des
+étapes seul ne suffit pas ; laisser un novice sans prise n’est pas le but.
+**Source** : Sinha & Kapur (2021), R13. Les prérequis et la portée au
+métier se vérifient dans le pilote, sans extrapoler une taille d’effet.
 
-## 17. Le rappel bat l'élaboration, même pour comprendre (ajouté le 02/09/2026)
+## 17. Articuler rappel et élaboration
 
-**Ce qu'on fait** : on ne remplace jamais les cartes par des schémas à
-compléter ou des cartes mentales « pour comprendre » ; comprendre passe
-aussi par répondre.
-**Pourquoi** : le rappel produit plus d'apprentissage que l'étude
-élaborative par carte conceptuelle, y compris sur des questions
-d'inférence, et même quand le test final est une carte conceptuelle.
-**Source** : Karpicke & Blunt (2011), *Science* 331, 772-775 ; vérifié
-02/09/2026.
+**Ce qu’on fait** : répondre de mémoire, expliquer les liens, reconstruire
+un schéma et confronter une analogie à ses limites peuvent se compléter.
+**Pourquoi** : Karpicke & Blunt comparent des procédures précises de
+rappel et de carte conceptuelle sur des textes scientifiques ; le rappel
+y bénéficie aussi à la compréhension. Cette étude ne disqualifie pas
+toutes les formes d’élaboration ni les cartes reconstruites de mémoire.
+**Source** : Karpicke & Blunt (2011), R11. La variété des activités reste
+subordonnée à l’objectif que la réponse permet d’observer.
 
 ## 18. La synthèse : s'expliquer à soi-même (ajouté le 02/09/2026)
 
 **Ce qu'on fait** : tout chapitre se clôt par une production (une
 phrase, une explication, une note) relue contre une liste de contrôle.
 À partir du niveau 3 la synthèse devient l'exercice dominant.
-**Pourquoi** : inciter à s'auto-expliquer améliore l'apprentissage
-substantiellement, dans des conditions très variées.
-**Source** : Bisra et al. (2018), *Educational Psychology Review*,
-méta-analyse, g = 0,55 ; Chi et al. (1989) pour l'effet initial ;
-vérifiés 02/09/2026.
+**Pourquoi** : les synthèses citées rapportent un bénéfice moyen des incitations
+à s’auto-expliquer, dans les tâches étudiées ; une liste de contrôle et
+un nouvel essai servent à éprouver la qualité de l’explication dans ce produit.
+**Source** : Bisra et al. (2018), référence complémentaire R20 ; Chi
+et al. (1989), filiation historique. Sources non réexaminées dans ce lot,
+aucune taille d’effet reprise comme attente pour le joueur.
 
 ## 19. Expliquer à quelqu'un (ajouté le 02/09/2026)
 
 **Ce qu'on fait** : la synthèse de niveau 2 est « explique-le à un
 collègue en soixante secondes » ; les défis entre joueurs et, plus tard,
 la contribution d'un chapitre en sont la version réelle.
-**Pourquoi** : se préparer à enseigner aide à court terme ; enseigner
-réellement ajoute un bénéfice qui dure.
-**Source** : Fiorella & Mayer (2013), *Contemporary Educational
-Psychology* 38, 281-288 ; vérifié 02/09/2026.
+**Pourquoi** : l’étude citée compare préparation et enseignement dans un
+dispositif déterminé. L’exercice destiné à un collègue en est une adaptation
+produit ; sa durée et son bénéfice différé ne sont pas établis localement.
+**Source** : Fiorella & Mayer (2013), référence complémentaire R21 ;
+source historique non réexaminée dans ce lot.
 
-## 20. Le papier : dessiner, oui ; écrire à la main, pas prouvé (ajouté le 02/09/2026)
+## 20. Dessiner de mémoire, puis vérifier
 
-**Ce qu'on fait** : deux exercices sur papier, le dessin de mémoire
-(un caisson de VMC, un circuit de recouvrement) et la feuille blanche
-(rappel libre en temps borné), corrigés par liste de contrôle. Aucune
-promesse sur « écrire à la main pour mieux retenir ».
-**Pourquoi** : dessiner un item bat l'écrire, souvent du simple au
-double en rappel libre ; la prise de notes manuscrite, elle, ne
-réplique pas sa supériorité.
-**Source** : Wammes, Meade & Fernandes (2016), *QJEP* ; Fernandes,
-Wammes & Meade (2018), *Current Directions* ; Morehead, Dunlosky &
-Rawson (2019), *Educational Psychology Review* ; vérifiés 02/09/2026.
+**Ce qu’on fait** : dessin et feuille blanche, corrigés avec une liste
+de contrôle ; aucune supériorité générale de l’écriture manuelle annoncée.
+**Pourquoi** : les expériences de dessin portent notamment sur le rappel
+d’items ; leur extension aux schémas techniques complexes reste à éprouver.
+La réplication sur la prise de notes ne prouve pas l’égalité de tous les
+supports dans toutes les conditions.
+**Source** : Wammes et al. (2016), Morehead et al. (2019), références
+complémentaires R22/R23 ; aucun doublement du rappel promis au joueur.
 
-## 21. La journée : du temps pour comprendre, pas pour bourrer (ajouté le 02/09/2026)
+## 21. La journée laisse de la place à la compréhension
 
-**Ce qu'on fait** : une demi-journée ou une journée enchaîne des études
-sur deux ou trois domaines, avec des pauses, un rappel en fin de journée
-sur les chapitres du matin, et un plafond de cartes neuves par jour.
-**Pourquoi** : la pratique massée est inférieure à la pratique
-distribuée pour la rétention ; c'est le neuf qui fabrique la dette de
-révisions, pas la compréhension. Espacer les reprises dans la journée
-et entrelacer les domaines garde ce que la science donne.
-**Source** : Cepeda et al. (2006), *Psychological Bulletin* ; Rohrer &
-Taylor (2007) pour l'entrelacement ; vérifiés 28/08/2026.
+**Ce qu’on fait** : plusieurs études, pauses et reprises, avec plafond de
+neuf. Ce rythme est une proposition éditoriale à adapter à la personne.
+**Pourquoi** : l’espacement bénéficie à la rétention dans les tâches
+étudiées ; il n’établit pas la meilleure dose de chapitres par jour.
+Les cas et productions servent à travailler ce que les cartes seules
+n’observent pas ; leur effet ne se déduit pas du temps passé.
+**Source** : Cepeda et al. (2006), R2 ; paramètres et rythme : choix produit.
 
-## 22. Dire sa confiance avant de répondre (ajouté le 02/09/2026)
+## 22. Dire sa confiance avant de révéler
 
-**Ce qu'on fait** : sur un cas ou un QCM de niveau 2 et plus, le joueur
-dit s'il est sûr avant de révéler. Le profil affiche sa calibration.
-**Pourquoi** : une erreur confiante est mieux corrigée qu'une erreur
-hésitante, à condition d'un retour immédiat ; et savoir quand on ne
-sait pas est la compétence d'un professionnel qui vérifie.
-**Source** : Butterfield & Metcalfe (2001, 2006), vérifiés 28/08/2026 ;
-la calibration est mesurée au journal, elle n'est pas promise.
+**Ce qu’on fait** : sur les cas concernés, le joueur indique sa confiance
+avant le corrigé ; l’accord entre confiance et réussite se mesure.
+**Pourquoi** : l’hypercorrection motive l’attention portée aux erreurs
+confiantes, sans prédire ce qui arrivera à chaque réponse. La calibration
+permet de constater quand il faut vérifier ; elle n’est pas une maîtrise.
+**Source** : Butterfield & Metcalfe (2001), R5 ; effet local non mesuré.
 
-## 23. Le socle protégé, la liberté ailleurs (ajouté le 02/09/2026)
+## 23. Le socle pèse dans la séance, l’exploration reste ouverte
 
-**Ce qu'on fait** : tant que le socle n'est pas validé, la moitié du
-neuf d'une séance vient de la branche du socle la moins avancée ;
-l'étude est libre ; on ne bloque jamais.
-**Pourquoi** : le choix auto-régulé tend vers ce qu'on aime et vers les
-illusions de maîtrise ; bloquer détruit l'autonomie, qui est un besoin
-de base de la motivation. Pondérer sans bloquer respecte les deux.
-**Source** : Dunlosky et al. (2013) sur les stratégies auto-choisies ;
-Deci, Koestner & Ryan (1999) sur l'autonomie ; vérifiés 28/08/2026.
+**Ce qu’on fait** : la moitié du neuf vient du socle le moins avancé
+tant qu’il n’est pas acquis ; l’étude reste ouverte dans la conception.
+**Pourquoi** : c’est un compromis produit entre couverture et liberté.
+Ni ce quota ni son effet sur la motivation ne viennent d’une expérience
+citée. La revue des stratégies ne démontre pas que tout choix libre nuit.
+**Source** : doctrine et `BLUEPRINT.md` pour l’arbitrage ; R4/R9 pour
+les limites de l’interprétation scientifique.
 
-## 24. Les niveaux 4 et 5 : l'expertise n'est pas du drill (ajouté le 02/09/2026)
+## 24. L’expertise demande des situations variées
 
-**Ce qu'on fait** : au-delà du praticien, l'arbre monte vers la
-doctrine, les cas réels, la controverse et la contribution, pas vers
-plus de cartes.
-**Pourquoi** : la pratique délibérée explique une part de la
-performance dans les jeux et la musique, mais très peu dans les
-professions ; l'expertise professionnelle vient du jugement sur des cas
-et de la connaissance du débat.
-**Source** : Ericsson, Krampe & Tesch-Römer (1993) ; Macnamara,
-Hambrick & Oswald (2014), méta-analyse (moins de 1 % de variance
-expliquée dans les professions) ; vérifiés 02/09/2026.
+**Ce qu’on fait** : niveaux avancés avec cas, controverse, justification
+et contribution, en conservant la pratique et son retour.
+**Pourquoi** : Macnamara et al. observent des associations variables entre
+pratique accumulée et performance selon les domaines. La faible variance
+expliquée dans les professions n’est pas un effet causal de formation et
+ne prouve ni l’inutilité de pratiquer, ni l’efficacité de lire la doctrine.
+**Source** : Macnamara et al. (2014), R14. Ces formats doivent démontrer
+un rappel autonome et un usage sur un cas nouveau.
 
 ## 25. La variété des formats (ajouté le 02/09/2026)
 
@@ -338,26 +295,25 @@ ressemble pas à l'entraînement.
 Ceci (2002) pour la taxonomie du transfert `[À VÉRIFIER : cité de
 mémoire le 02/09]`.
 
-## 27. Les points sont dérivés, la ligue compte des cartes stabilisées (ajouté le 02/09/2026)
+## 27. Les points restent un indicateur de progression
 
-**Ce qu'on fait** : une carte stabilisée vaut dix fois son niveau ; la
-ligue hebdomadaire compte les cartes stabilisées × niveau ; jamais le
-temps, jamais les clics ; jamais de monnaie.
-**Pourquoi** : une mesure qu'on peut gagner sans apprendre devient un
-objectif et cesse de mesurer (Goodhart) ; les récompenses extrinsèques
-futiles détruisent la motivation intrinsèque ; ce qui ouvre du contenu
-dure.
-**Source** : Deci, Koestner & Ryan (1999), vérifié 28/08/2026 ;
-`labor/wiki/patterns/mesure-objectif-goodhart.md`.
+**Ce qu’on fait** : points et ligue dérivés des cartes stabilisées et
+du niveau, selon les paramètres produit ; aucune monnaie.
+**Pourquoi** : les clics ne suffisent pas à mesurer un apprentissage ;
+la stabilité estimée non plus. Les points rendent l’avancement visible,
+sans remplacer les réponses différées ou les productions.
+**Source** : choix produit ; Deci et al. (1999), R9, n’établissent pas
+que tous les points détruisent la motivation ni que débloquer du contenu
+la préserve automatiquement.
 
 ## 28. La semaine type (ajouté le 02/09/2026)
 
 **Ce qu'on fait** : des jours colorés (fondations, cours, terrain,
 exploration, étude, libre) qui pèsent sur le neuf et les formats ;
 les révisions dues sont servies tous les jours.
-**Pourquoi** : une habitude tient à un déclencheur stable ; un rythme
-hebdomadaire lisible en est un, et la variété entre jours prolonge
-l'entrelacement sans folklore.
+**Pourquoi** : un rythme lisible vise à faciliter la reprise. Il s’agit d’une
+hypothèse produit ; une semaine thématique n’est pas en elle-même la
+preuve d’une habitude acquise ni d’un bénéfice d’entrelacement.
 **Source** : règle de conception ; Lally et al. (2010) sur la formation
 des habitudes `[À VÉRIFIER : cité de mémoire le 02/09]` ; la mesure au
 journal (`jour` sur chaque séance) tranchera.
@@ -380,61 +336,39 @@ accepte d'apprendre.
 patterns de labor « validated sans lien ne vaut rien » et « un rapport
 de LLM vaut par ses questions » (`labor/wiki/patterns/`).
 
-## 30. La fiche se lit après, jamais avant (ajouté le 02/09/2026)
+## 30. La fiche accompagne la tentative
 
-**Ce qu'on fait** : chaque chapitre a sa fiche de rappel (la leçon et la
-liste question-réponse de ses cartes), lisible à tout moment depuis le
-nœud, proposée quand un nœud passe « à revoir » et la veille d'une
-épreuve ; elle n'ouvre jamais une séance et ne remplace jamais une
-carte.
-**Pourquoi** : relire n'apprend pas (§2), mais relire **après** avoir
-tenté de se souvenir, ou pour réactiver un savoir périmé avant de le
-tester, n'est pas de la relecture passive : c'est le retour d'information
-qui suit le rappel. « Relis trois minutes, puis cinq cartes » est un
-rappel avec feedback, pas une lecture.
-**Source** : Roediger & Karpicke (2006) sur la relecture qui gagne au
-test immédiat et perd au test différé ; Hattie & Timperley (2007) sur le
-feedback ; vérifiés 28/08/2026.
+**Ce qu’on fait** : fiche accessible depuis le chapitre, proposée en
+reprise ; elle ne remplace pas la tentative qui ouvre la séance.
+**Pourquoi** : lire une explication peut apprendre. Une fiche aide à
+comprendre ou corriger ; seul un nouvel essai sans fiche permet de voir
+ce qui est disponible mentalement. L’ordre de la séance est un choix
+produit, sans interdiction scientifique générale de lire avant un test.
+**Source** : Rowland (2014), Dunlosky et al. (2013), R3/R4.
 
-## 31. Les petits leviers d'engagement, et leurs bornes (ajouté le 02/09/2026)
+## 31. Des invitations à revenir, à évaluer
 
-**Ce qu'on fait** : une mission par semaine qui donne un insigne ; une
-notification par jour au plus, opt-in, silencieuse si la séance est
-faite ; le calendrier du métier qui pèse en silence sur le neuf ; le
-bilan du mois, privé, et sa carte partageable sans aucune erreur ; le
-fil des jalons et les kudos dans le cercle.
-**Pourquoi** : ce sont des déclencheurs et des signes de reconnaissance,
-pas des récompenses ; ils soutiennent l'habitude sans créer de dette ni
-de comparaison imposée. Chacun se coupe d'office pour un joueur dont il
-dégrade le rituel mesuré, et aucun ne donne de points.
-**Source** : Deci, Koestner & Ryan (1999) pour les bornes, vérifié
-28/08/2026 ; la mesure au journal (`rapport_rituel.py`) pour le reste ;
-`decisions/0014`, `0016`, `0020`.
+**Ce qu’on fait** : invitation choisie, bilan privé, jalons et
+reconnaissance entre pairs dans le périmètre des décisions produit.
+**Pourquoi** : ces dispositifs peuvent soutenir ou gêner l’envie de
+revenir selon la personne. Leur nom ne les soustrait pas aux effets des
+récompenses. Les retirer si l’usage se dégrade reste une règle produit ;
+un journal d’usage seul ne démontre pas leur causalité.
+**Source** : Sailer & Homner (2020), R12 ; `decisions/0014`, `0016`,
+`0020` pour les bornes et la confidentialité.
 
-## 32. Le pas à pas imposé et les points de sauvegarde (ajouté le 03/09/2026)
+## 32. Provenance, contrôles et points de reprise
 
-**Ce qu'on fait** : tout travail long d'un modèle (lire un document,
-écrire un lot, coder un chantier) est découpé par un script en unités
-que le modèle ne dimensionne pas ; chaque unité est jugée par la machine
-contre un témoin (le texte extrait de la page) avant que la suivante
-s'ouvre ; chaque unité validée est écrite sur disque avec un sceau, et
-les contrôles sont rejoués à chaque reprise. Le modèle se déclare
-(outil, modèle, classe) et la taille des unités suit ses résultats.
-**Pourquoi** : la lecture d'un long contexte se dégrade avec la position
-et la longueur, même quand la fenêtre annoncée suffit ; un résumé de
-modèle ajoute un fait absent de la source dans environ un cas sur dix,
-même pour les meilleurs ; et un modèle ne détecte pas ces deux défauts
-de l'intérieur. Le pas à pas rend chaque erreur locale et visible, le
-point de sauvegarde rend la coupure sans coût, la revérification rend
-l'autovalidation inutile.
-**Source** : Liu et al., « Lost in the Middle: How Language Models Use
-Long Contexts », TACL 2024 (arXiv 2307.03172), vérifié 03/09/2026 ;
-tableau Vectara des hallucinations (HHEM-2.3), mis à jour le
-11/05/2026, lu le 03/09/2026 ; MRCR à huit aiguilles (rapport Google
-Gemini 2.5, lu par yage.ai le 03/09/2026, `[À VÉRIFIER]` à la source) ;
-`MODELES.md` §4 ; `decisions/0027`.
-
----
+**Ce qu’on fait** : le modèle déclare outil et modèle ; pour une lecture,
+l’usine distribue et juge les unités de document. Le code et les audits
+conservent un point de reprise et des preuves adaptées à leur mission.
+**Pourquoi** : contrôler les assertions contre une source et enregistrer
+la reprise rendent le travail inspectable. Un sceau ne certifie ni vérité,
+ni compréhension. Aucun nom de modèle ne limite le travail et aucun taux
+général d’erreur des modèles n’est annoncé ici.
+**Source** : `MODELES.md` et `decisions/0034`. Liu et al. (2024),
+[Lost in the Middle](https://doi.org/10.1162/tacl_a_00638), reste une piste
+historique sur des tâches et modèles particuliers, non réexaminée dans ce lot.
 
 ## 33. L'IFSI : objectifs distincts et approfondissement sans plafond (04/09/2026)
 
@@ -474,3 +408,35 @@ supports, sans utiliser le nombre d'objectifs comme preuve d'apprentissage.
 
 *Toute nouvelle mécanique ajoute son entrée ICI dans le même commit
 que son code ; sinon elle n'existe pas.*
+
+## 34. L’étude relie tentative, principe, exercices et explication (05/09/2026)
+
+**Ce qu’on fait** : une étude commence par une réponse personnelle ou une
+demande de bases. Le principe et la leçon viennent ensuite, puis des
+exercices et une synthèse personnelle. La grille de synthèse n’apparaît
+qu’après écriture ; le joueur indique lui-même les critères présents dans
+sa réponse. « Étude parcourue » décrit le parcours effectué, sans certifier
+une compétence ni un transfert.
+
+**Pourquoi** : ce parcours articule récupération et élaboration, avec
+instruction après tentative [R3/R11/R13 du cadrage]. Ce rapprochement est
+une conception pédagogique ; les travaux ne démontrent pas que ces quatre
+écrans ou cet ordre exact sont optimaux pour nos métiers. L’indice sert à
+reprendre quand les bases manquent, sans fabriquer une réussite autonome.
+
+**Contrôles et limites** : la réponse et sa condition d’aide sont conservées
+dans le journal. Un exercice assisté ne reçoit pas de note FSRS de rappel
+autonome. Les essais sans indice restent des exercices pendant une étude,
+avec le principe récemment consulté : ils ne sont pas un test à froid.
+Leur format `etude` doit rester identifiable pour les mesures ultérieures.
+Un choix QCM erroné est un rappel à reprendre ; une synthèse cochée reste
+une autoévaluation. La reprise conserve l’étape et la version du contenu ;
+un chapitre indisponible ou une carte retirée empêche de poursuivre sa
+séquence, sans effacer les réponses déjà écrites.
+
+**Source et état des preuves** : Rowland (2014), Karpicke & Blunt (2011),
+Sinha & Kapur (2021), avec niveaux de consultation et limites dans
+[le cadrage](CADRAGE-SCIENTIFIQUE.md). La conservation des réponses,
+la séparation avec/sans aide et le retrait des cartes sont des garanties
+logicielles à tester, pas des effets scientifiques. La rétention différée,
+le transfert réel et l’envie de revenir restent à mesurer chez les joueurs.

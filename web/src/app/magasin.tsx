@@ -17,6 +17,8 @@ import { brancheReprise, ecris, litJournal, synchronise, type Bilan } from "../m
 import { chargeVoix } from "./i18n";
 
 interface Magasin {
+  metier: string;
+  choisisMetier: (metier: string) => void;
   pret: boolean;
   panne: string | null;
   banque: Banque | null;
@@ -33,6 +35,22 @@ interface Magasin {
 }
 
 const Contexte = createContext<Magasin | null>(null);
+
+/** Vue pour les indicateurs du métier ; le journal conservé reste complet. */
+export function journalPourMetier(journal: LigneJournal[], banque: Banque): LigneJournal[] {
+  const cartes = new Set(banque.cartes.map(c => c.id));
+  const chapitres = new Set(banque.chapitres?.map(c => c.id) ?? []);
+  const domaines = new Set(Object.keys(banque.domaines));
+  return journal.filter(l => {
+    if (l.carte !== undefined) return cartes.has(l.carte);
+    if (l.chapitre !== undefined) return chapitres.has(l.chapitre);
+    if (l.region !== undefined) return domaines.has(l.region);
+    if (l.cartes?.length) return l.cartes.every(id => cartes.has(id));
+    // Les anciens événements sans rattachement restent exportables, sans
+    // leur inventer un métier pour calculer les points ou les jours joués.
+    return false;
+  });
+}
 
 export function observeJour(surJour: (jour: number) => void): () => void {
   let minuterie: ReturnType<typeof setTimeout>;
@@ -57,7 +75,22 @@ export function observeJour(surJour: (jour: number) => void): () => void {
 export function FournisseurMagasin({ enfants }: { enfants: ReactNode }) {
   const [pret, setPret] = useState(false);
   const [panne, setPanne] = useState<string | null>(null);
-  const [banque, setBanque] = useState<Banque | null>(null);
+  const [banqueComplete, setBanque] = useState<Banque | null>(null);
+  const [metier, setMetier] = useState(() => {
+    try { return localStorage.getItem("academie-metier") ?? "copro"; } catch { return "copro"; }
+  });
+  const choisisMetier = (cle: string) => {
+    if (!banqueComplete?.metiers?.[cle]) return;
+    setMetier(cle);
+    try { localStorage.setItem("academie-metier", cle); } catch { /* préférence facultative */ }
+  };
+  const banque = useMemo(() => {
+    if (!banqueComplete) return null;
+    const m = banqueComplete.metiers?.[metier];
+    if (!m) return banqueComplete;
+    const ids = new Set(m.cartes);
+    return {...banqueComplete, ...m, cartes: banqueComplete.cartes.filter(c => ids.has(c.id))};
+  }, [banqueComplete, metier]);
   const [journal, setJournal] = useState<LigneJournal[]>([]);
   const [bilan, setBilan] = useState<Bilan | null>(null);
   const [jour, setJour] = useState(aujourdhuiOrdinal);
@@ -110,17 +143,21 @@ export function FournisseurMagasin({ enfants }: { enfants: ReactNode }) {
     () => (banque ? planificateurDe(banque.fsrs) : null),
     [banque],
   );
+  const journalMetier = useMemo(
+    () => (banque ? journalPourMetier(journal, banque) : []),
+    [journal, banque],
+  );
   const etats = useMemo(
-    () => (sched ? etatsCartes(journal, sched) : new Map<string, EtatCarte>()),
-    [journal, sched],
+    () => (sched ? etatsCartes(journalMetier, sched) : new Map<string, EtatCarte>()),
+    [journalMetier, sched],
   );
   const monde = useMemo(
-    () => (banque ? carteMonde(banque.cartes, journal, banque, etats, [], jour) : null),
-    [banque, journal, etats, jour],
+    () => (banque ? carteMonde(banque.cartes, journalMetier, banque, etats, [], jour) : null),
+    [banque, journalMetier, etats, jour],
   );
   const pts = useMemo(
-    () => (monde ? points(journal, monde, jour) : null),
-    [journal, monde, jour],
+    () => (monde ? points(journalMetier, monde, jour) : null),
+    [journalMetier, monde, jour],
   );
 
   const note = useCallback(
@@ -141,7 +178,7 @@ export function FournisseurMagasin({ enfants }: { enfants: ReactNode }) {
   }, []);
 
   const valeur: Magasin = {
-    pret, panne, banque, journal, etats, monde, points: pts, sched, jour, bilan,
+    metier, choisisMetier, pret, panne, banque, journal, etats, monde, points: pts, sched, jour, bilan,
     note, rafraichis, synchronise: relance,
   };
   return <Contexte.Provider value={valeur}>{enfants}</Contexte.Provider>;

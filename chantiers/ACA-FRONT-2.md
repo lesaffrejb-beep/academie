@@ -6,7 +6,9 @@ Confiance ; hors-ligne d'abord ; DA appliquée ; `check.py` mis à jour.
 Fini quand : première question en moins de trois secondes réseau coupé
 sur téléphone ; checklist `DIRECTION-ARTISTIQUE.md` §9 ; aucun hôte
 tiers contacté (test qui liste les hôtes) ; parité FSRS et progression
-avec Python ; JB joue sept séances dessus.
+avec Python ; revue rendue indépendante. La publication réelle relève de
+ACA-PUBLICATION-2 ; les sept séances d'acceptation sont conservées dans
+ACA-RITUAL-1 parmi les trente (décision 0035).
 Dépend de : ACA-JOURNAL-SYNC-1, ACA-PROGRAMME-1, ACA-REUSE-1
 (et ACA-ARBRE-1 pour l'arbre au niveau du chapitre : sans lui, l'arbre
 v2 s'arrête au domaine). Bloque : ACA-ETUDE-1, ACA-EXAMEN-1.
@@ -62,6 +64,10 @@ par une ligne dans `contenu/voix.json` avec trois variantes),
 6. Bascule : build dans la publication, `client/` archivé, `check.py`
    mis à jour, JB joue sept séances.
 
+État du 05/09 : l'archipel a déjà été archivé. La publication et les séances
+de cette ancienne étape 6 sont désormais attestées dans les deux chantiers
+ci-dessus, sans refaire l'archivage ni les considérer acquises.
+
 ## Ce qu'on ne fait pas
 
 - Pas de cercle, pas de ligue, pas de défis (masqués).
@@ -83,3 +89,44 @@ python3 tooling/check.py
 
 JB voit : l'arbre sur son téléphone dans le tram, une séance de bout en
 bout sans réseau, et sur le Mac le soir le même état.
+
+## Corrections ciblées issues de l'audit du 05/09
+
+Lire `travail/audit-2026-09-05/AUDIT.md` et ses captures. Aucune nouvelle
+refonte visuelle n'a été demandée ou réalisée pendant l'audit.
+
+1. Montrer ce qui se joue avant les dizaines de chapitres « À écrire » ;
+   distinguer explorer le programme et commencer à apprendre. L'arrivée
+   générale et les comptes restent ACA-ONBOARDING-1.
+2. Éprouver un départ novice : la séance observée commence par un schéma de
+   procédure de niveau III. Si le correctif touche le composeur, extension
+   bornée du périmètre à `app/seance.py`, composeurs Python/TS et tests de
+   parité ; ne pas modifier les paramètres FSRS ni inventer des prérequis.
+3. Rendre les schémas consultables à 375 px et la correction parcourable avec
+   actions accessibles ; donner des libellés aux pictogrammes de domaines.
+4. Conserver le brouillon de la boîte quand on change d'onglet ; tester aussi
+   abandon explicite et reprise, sans produire d'envoi non demandé.
+5. Restaurer le focus au déclencheur à la fermeture du dialogue, et guider
+   le focus vers le nouvel écran après navigation. Ne pas confondre un test
+   clavier avec une certification WCAG ; éprouver lecteur d'écran et zoom.
+6. Distinguer résultat de la réponse, confiance et autoévaluation. Montrer
+   provenance/absence de provenance sans fabriquer de preuve de maîtrise.
+7. Ajouter les tests web, build et E2E appropriés à `.github/workflows/` ;
+   extension bornée à la CI. Les tests doivent échouer sur les régressions
+   observées avant correction. Revue rendue Impeccable selon `web/AGENTS.md`.
+
+## Reprise autorisée du 05/09, couleurs et graphe
+
+JB demande explicitement de reprendre les couleurs et le graphe, avec
+arbitrages réversibles et publication. Le périmètre inclut cette fois
+la DA, DESIGN.md et une décision : Papier par défaut, encre prune et
+rose sourd, Nuit conservé ; exploration par domaines lisibles et branches
+réelles, sans orbites décoratives. Aucun calcul de progression modifié.
+Mode de surface : Operate / Read. Le premier écran doit permettre de
+choisir un domaine par son nom et distinguer cartes disponibles et
+chapitres prévus. Interaction : sélection au clavier ou au toucher, puis
+aperçu des branches et ouverture du domaine. Sur mobile, liste compacte
+et aperçu adjacent dans le flux, sans déplacement de canevas.
+Preuves avant code : défaut Papier, préférence conservée, domaines nommés
+et absence de faux graphe. Puis E2E existants, rendu 375/1280 dans les deux
+thèmes, contraste calculé, revue indépendante et contrôles du dépôt.

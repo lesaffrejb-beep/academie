@@ -52,7 +52,9 @@ class CorrectionsCopro(unittest.TestCase):
         catalogue = json.loads((RACINE / "programme/catalogue.json").read_text())
         copro = next(p for p in catalogue["parcours"] if p["cle"] == "copro")
         self.assertEqual(copro["chapitres"], len(generation.construit()["chapitres"]))
-        self.assertEqual(copro["cartes_jouables"], len(ids))
+        self.assertEqual(copro["cartes_jouables"], len(charge["metiers"]["copro"]["cartes"]))
+        self.assertEqual(set(charge["metiers"]["copro"]["cartes"]) | set(charge["metiers"]["ifsi"]["cartes"]), ids)
+        self.assertFalse(set(charge["metiers"]["copro"]["cartes"]) & set(charge["metiers"]["ifsi"]["cartes"]))
 
 
 if __name__ == "__main__":

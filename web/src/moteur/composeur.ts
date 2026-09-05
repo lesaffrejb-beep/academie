@@ -285,6 +285,11 @@ export function compose(
       }
     }
   }
+  if (!jouables.some(c => etats.has(c.id)) && candidates.length) {
+    const niveauEntree = Math.min(...candidates.map(c => c.niveau ?? 1));
+    candidates = candidates.filter(c => (c.niveau ?? 1) === niveauEntree);
+    pourquoi.push("première séance : commencer par les fondations disponibles");
+  }
   const nouveau = candidates.slice(0, decision.quota);
 
   return {

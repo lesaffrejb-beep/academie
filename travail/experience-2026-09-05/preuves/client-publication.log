@@ -1,0 +1,43 @@
+
+> academie-client@2.0.0 test
+> vitest run && node --test tests/publication.test.mjs
+
+
+ RUN  v2.1.8 /Users/jb/Code/academie/web
+
+ ✓ tests/hotes.test.ts (54 tests) 36ms
+ ✓ tests/voix.test.ts (25 tests) 92ms
+ ✓ src/moteur/serviceabilite.test.ts (10 tests) 11ms
+ ✓ src/moteur/journal.relecture.test.ts (13 tests) 147ms
+ ✓ src/moteur/journal.monotone.test.ts (7 tests) 48ms
+ ✓ src/moteur/parite-arbre.test.ts (31 tests) 9ms
+ ✓ src/moteur/parite.test.ts (39 tests) 125ms
+ ✓ src/moteur/journal.test.ts (18 tests) 285ms
+ ✓ src/moteur/parite-semaine.test.ts (29 tests) 10ms
+ ✓ src/moteur/etude.relecture.test.ts (8 tests) 8ms
+ ✓ src/donnees/banque.test.ts (2 tests) 5ms
+ ✓ src/donnees/api.etude.test.ts (13 tests) 4ms
+ ✓ src/donnees/api.test.ts (9 tests) 8ms
+ ✓ src/moteur/chronologie.test.ts (4 tests) 4ms
+ ✓ src/moteur/etude.test.ts (4 tests) 16ms
+ ✓ src/app/magasin.metier.test.ts (2 tests) 6ms
+ ✓ src/app/magasin.test.ts (2 tests) 10ms
+
+ Test Files  17 passed (17)
+      Tests  270 passed (270)
+   Start at  09:22:00
+   Duration  2.62s (transform 1.21s, setup 0ms, collect 4.26s, tests 823ms, environment 6ms, prepare 3.62s)
+
+✔ un asset manque : aucune partie de la publication existante ne bouge (14.30175ms)
+✔ les ressources non inventoriees ou alterees refusent la distribution (7.252166ms)
+✔ un lien vers le depot ne peut devenir une sortie de publication (3.407667ms)
+✔ les ressources precedent l index, le service worker vient en dernier (15.042125ms)
+✔ les sources en lecture seule construisent ; un build refuse conserve l index (16290.063792ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 16516.331

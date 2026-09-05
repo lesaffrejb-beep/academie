@@ -1,0 +1,14 @@
+{
+  "test": "modules TypeScript réels, HTTP 200 avec objet vide, stockage mémoire de test",
+  "file_avant": 1,
+  "file_apres": 0,
+  "journal_local": 1,
+  "bilan": {
+    "envoyees": 1,
+    "acceptees": 0,
+    "recues": 0,
+    "rejetees": 0,
+    "enAttente": 0,
+    "horsLigne": false
+  }
+}

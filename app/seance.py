@@ -32,6 +32,7 @@ from datetime import date, datetime, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+from chronologie import cle_chronologique
 from planificateur import Planificateur  # noqa: E402
 from valide_banque import charge_banque, charge_config  # noqa: E402
 
@@ -57,7 +58,7 @@ def lit_journal(profil: str) -> list[dict]:
             revues.append(json.loads(ligne))
         except json.JSONDecodeError:
             print(f"⚠ {p.name}:{n} illisible, ignorée", file=sys.stderr)
-    return sorted(revues, key=lambda r: r.get("quand", ""))
+    return sorted(revues, key=cle_chronologique)
 
 
 def etats_cartes(journal: list[dict], sched: Planificateur) -> dict[str, dict]:
@@ -76,7 +77,7 @@ def etats_cartes(journal: list[dict], sched: Planificateur) -> dict[str, dict]:
     rejoue exactement comme avant.
     """
     etats: dict[str, dict] = {}
-    for revue in journal:
+    for revue in sorted(journal, key=cle_chronologique):
         cid, note = revue.get("carte"), revue.get("note")
         quand = revue.get("quand")
         if not cid or note not in (1, 2, 3, 4) or not quand:
@@ -279,6 +280,10 @@ def compose(cartes: list[dict], etats: dict, config: dict, aujourdhui: date,
                 pourquoi.append(f"socle : {min(vises, len(du_socle))} carte(s) neuve(s) "
                                 f"sur la branche la moins avancée ({branche_socle})")
 
+    if not any(c["id"] in etats for c in jouables) and neuves:
+        niveau_entree = min(c.get("niveau", 1) for c in neuves)
+        neuves = [c for c in neuves if c.get("niveau", 1) == niveau_entree]
+        pourquoi.append("première séance : commencer par les fondations disponibles")
     neuves = neuves[:quota_neuf]
 
     return {

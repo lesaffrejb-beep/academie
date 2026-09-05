@@ -2,7 +2,7 @@
 """L'usine en ligne de commande : un document réel, pas à pas (decisions/0026, 0027).
 
     python3 app/usine/usine.py preparer <fichier> [--interne]
-    python3 app/usine/usine.py declarer <empreinte> --outil <outil> --modele <modèle> [--classe petit|moyen|grand]
+    python3 app/usine/usine.py declarer <empreinte> --outil <outil> --modele <modèle>
     python3 app/usine/usine.py suivant <empreinte>
     python3 app/usine/usine.py valider <empreinte>
     python3 app/usine/usine.py etat [<empreinte>]
@@ -74,7 +74,7 @@ def cmd_preparer(args) -> int:
         print("  OCR requis : aucune couche texte ; `ocrmypdf --language fra` puis `preparer` à nouveau")
     if args.interne:
         print("  interne : ce document et tout ce qui en sort restent dans sources/interne/ ; aucun nom ne doit passer dans une fiche ni un chapitre")
-    print(f"ensuite : python3 app/usine/usine.py declarer {emp} --outil <outil> --modele <modèle> --classe <petit|moyen|grand>")
+    print(f"ensuite : python3 app/usine/usine.py declarer {emp} --outil <outil> --modele <modèle>")
     return 0
 
 
@@ -86,7 +86,9 @@ def _doc(cle: str) -> tuple[E.Document, dict, dict]:
 
 def cmd_declarer(args) -> int:
     doc, etat, cfg = _doc(args.empreinte)
-    for m in E.declarer(doc, etat, cfg, args.outil, args.modele, args.classe or cfg["classe_par_defaut"]):
+    if args.classe is not None:
+        print("option --classe obsolète et ignorée ; les contrôles ne dépendent plus du modèle")
+    for m in E.declarer(doc, etat, cfg, args.outil, args.modele):
         print(m)
     E.sauver(doc, etat)
     print(f"ensuite : python3 app/usine/usine.py suivant {doc.empreinte}")
@@ -170,7 +172,7 @@ def main(argv=None) -> int:
     sp = p.add_subparsers(dest="cmd", required=True)
     s = sp.add_parser("preparer"); s.add_argument("fichier"); s.add_argument("--interne", action="store_true"); s.set_defaults(f=cmd_preparer)
     s = sp.add_parser("declarer"); s.add_argument("empreinte"); s.add_argument("--outil", required=True); s.add_argument("--modele", required=True)
-    s.add_argument("--classe", default=None); s.set_defaults(f=cmd_declarer)
+    s.add_argument("--classe", default=None, help=argparse.SUPPRESS); s.set_defaults(f=cmd_declarer)
     s = sp.add_parser("suivant"); s.add_argument("empreinte"); s.set_defaults(f=cmd_suivant)
     s = sp.add_parser("valider"); s.add_argument("empreinte"); s.set_defaults(f=cmd_valider)
     s = sp.add_parser("etat"); s.add_argument("empreinte", nargs="?"); s.set_defaults(f=cmd_etat)

@@ -1,0 +1,423 @@
+{
+  "id": "droit.assemblee.le-proces-verbal-et-sa-notification",
+  "titre": "Le procès-verbal et sa notification",
+  "domaine": "droit",
+  "branche": "assemblee",
+  "niveau": 2,
+  "prerequis": [],
+  "objectifs": [
+    "Rapprocher le résultat annoncé des votes.",
+    "Identifier les mentions nécessaires du procès-verbal.",
+    "Produire une note traçable sans modifier une décision."
+  ],
+  "amorce": {
+    "question": "Cas fictif : une approbation des comptes à l’article 24 totalise 240 voix pour, 180 contre et 80 abstentions ; peux-tu écrire seulement « adopté à la majorité » ?",
+    "aide": "Le résultat suffit-il à retrouver les opposants et les abstentionnistes ?",
+    "reponse_attendue": "Le vote est adopté, mais le procès-verbal doit aussi porter les mentions prévues à l’article 17 du décret, dont les noms et voix des opposants et abstentionnistes."
+  },
+  "lecon": "Une assemblée se termine et quelqu’un veut envoyer immédiatement un résumé : « Tout est voté. » Ton travail commence par la résolution précise. Le procès-verbal décrit une décision et son résultat ; il ne sert pas à reconstruire après coup ce que les participants auraient voulu voter. Ce chapitre s’en tient à la préparation et au contrôle du procès-verbal. Les modalités et délais de notification ne sont pas enseignés ici, malgré le titre plus large du programme.\n\nL’article 17 du décret du 17 mars 1967 impose le résultat de chaque vote sous l’intitulé de la question inscrite à l’ordre du jour. Il prévoit aussi les noms et le nombre de voix des personnes opposées, abstentionnistes ou assimilées à des défaillants dans le cas qu’il vise. Les réserves sur la régularité des décisions formulées par les opposants sont mentionnées. Le texte complet précise les signatures et les autres modalités : on le consulte pour produire le document réel.\n\nTravaille sur un exemple fictif, dans le régime général, avec des voix déjà vérifiées. L’approbation des comptes soumise à l’article 24 reçoit 240 voix pour, 180 contre, 80 abstentions. Les exprimées totalisent 420 ; les voix favorables dépassent les voix défavorables. La décision est adoptée. Les abstentions ne s’ajoutent pas aux voix contre, mais leur exclusion du calcul ne signifie pas leur disparition du procès-verbal.\n\nUne bonne note préparatoire sépare quatre éléments : objet de la résolution, règle de majorité appliquée, relevé des votes, conclusion. Dans cet exercice, ajoute une liste des pièces manquantes. Si les noms des abstentionnistes ne figurent pas dans les documents fournis, écris « liste nominative à retrouver ». Tu ne complètes pas une donnée par mémoire supposée et tu ne réutilises aucun nom réel dans l’application.\n\nVoici la variante qui révèle une compréhension : une autre résolution relevant du même article recueille autant de voix pour que contre. Elle n’est pas adoptée. L’enthousiasme de la salle ne remplace pas le vote. Le document doit rendre le raisonnement contrôlable par quelqu’un qui n’était pas présent, et non raconter l’ambiance de la réunion.\n\nSi le résultat annoncé et le relevé divergent, signale l’écart et rapproche les pièces avant de finaliser. Cette consigne est une méthode de contrôle pédagogique ; elle ne décrit pas une procédure universelle de rectification d’un procès-verbal déjà signé ou notifié. Une telle situation appelle l’examen des faits et des règles applicables.\n\nÀ la prochaine préparation, tu sauras rédiger une note concise, exposer le calcul, nommer ce qui manque et distinguer un projet de document d’un acte final. Ta production va maintenant être confrontée à une grille, sans prétendre certifier toute la tenue d’une assemblée.",
+  "synthese": {
+    "consigne": "Cas fictif : approbation des comptes à l’article 24, 190 voix pour, 190 contre, 60 abstentions ; écris une note de résultat et les mentions à compléter.",
+    "attendus": [
+      "Résolution non adoptée à égalité des voix exprimées.",
+      "Abstentions exclues du calcul mais tracées au procès-verbal.",
+      "Noms et voix des catégories exigées à retrouver dans les pièces.",
+      "Ne pas inventer une pièce ni modifier le vote."
+    ]
+  },
+  "sources": [
+    {
+      "texte": "Décret du 17 mars 1967, article 17 : procès-verbal",
+      "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000042078689",
+      "nature": "texte-officiel",
+      "consulte_le": "2026-09-05",
+      "parti": "Institution publique ; texte normatif"
+    },
+    {
+      "texte": "Loi du 10 juillet 1965, article 24 : majorité des voix exprimées",
+      "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000051749514",
+      "nature": "texte-officiel",
+      "consulte_le": "2026-09-05",
+      "parti": "Institution publique ; texte normatif"
+    }
+  ],
+  "provenance": {
+    "auteur": "modele",
+    "modele": "GPT-6",
+    "outil": "Codex",
+    "session": "01a0704b-2f89-7eb1-82d1-219bc309c6ef/root",
+    "genere_le": "2026-09-05",
+    "sources_retrouvees": 2,
+    "sources_concordantes": 0,
+    "sans_source": false
+  },
+  "statut": "valide",
+  "partage": "banque",
+  "verifie": "2026-09-05",
+  "peremption": "2027-03-05",
+  "version": 1,
+  "cartes": [
+    {
+      "id": "droit-assemblee-le-proces-verbal-et-sa-notification-egalite",
+      "chapitre": "droit.assemblee.le-proces-verbal-et-sa-notification",
+      "domaine": "droit",
+      "branche": "assemblee",
+      "niveau": 2,
+      "type": "flash",
+      "question": "À l’article 24, une égalité entre pour et contre permet-elle d’adopter la résolution ?",
+      "reponse": "Non : les voix favorables ne constituent pas la majorité des voix exprimées.",
+      "explication": "Les abstentions ne départagent pas les votes.",
+      "source": [
+        {
+          "texte": "Décret du 17 mars 1967, article 17 : procès-verbal",
+          "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000042078689",
+          "nature": "texte-officiel",
+          "consulte_le": "2026-09-05",
+          "parti": "Institution publique ; texte normatif"
+        },
+        {
+          "texte": "Loi du 10 juillet 1965, article 24 : majorité des voix exprimées",
+          "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000051749514",
+          "nature": "texte-officiel",
+          "consulte_le": "2026-09-05",
+          "parti": "Institution publique ; texte normatif"
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "modele": "GPT-6",
+        "outil": "Codex",
+        "session": "01a0704b-2f89-7eb1-82d1-219bc309c6ef/root",
+        "genere_le": "2026-09-05",
+        "sources_retrouvees": 2,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "statut": "valide",
+      "partage": "banque",
+      "verifie": "2026-09-05",
+      "peremption": "2027-03-05",
+      "aide": "Reviens au principe du chapitre et nomme ce qui manque.",
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6",
+        "session": "/root/revue_journal",
+        "date": "2026-09-05",
+        "rapport": "travail/relecture-contenu-2026-09-05.md",
+        "assertions": [
+          "Décret article 17 : résultat sous chaque question, noms et voix des opposants, abstentionnistes et défaillants visés ; réserves des opposants.",
+          "Article 24 I : 240 contre 180 adopté ; 190 contre 190 non adopté ; abstentions hors exprimées.",
+          "La note pédagogique distingue les données fournies et les pièces absentes ; aucune rectification juridique ni notification réelle simulée.",
+          "Contrôle ciblé de la carte droit-assemblee-le-proces-verbal-et-sa-notification-egalite : question, réponse, explication et distracteurs rapprochés des règles ci-dessus ; cas fictifs et limites conservés."
+        ],
+        "sources": [
+          "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000042078689",
+          "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000051749514"
+        ],
+        "reserves": [
+          "Seule la préparation du procès-verbal est enseignée ; modalités et délais de notification hors contenu malgré l'identifiant du programme.",
+          "Les catégories de défaillants renvoient au texte ; aucune procédure complète de contestation ou rectification enseignée."
+        ]
+      }
+    },
+    {
+      "id": "droit-assemblee-le-proces-verbal-et-sa-notification-abstention-pv",
+      "chapitre": "droit.assemblee.le-proces-verbal-et-sa-notification",
+      "domaine": "droit",
+      "branche": "assemblee",
+      "niveau": 2,
+      "type": "qcm",
+      "question": "Une abstention exclue des voix exprimées peut-elle être omise du procès-verbal ?",
+      "reponse": "Non : le procès-verbal doit identifier les abstentionnistes et leurs voix.",
+      "explication": "Calculer la majorité et tracer les participants sont des opérations distinctes.",
+      "source": [
+        {
+          "texte": "Décret du 17 mars 1967, article 17 : procès-verbal",
+          "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000042078689",
+          "nature": "texte-officiel",
+          "consulte_le": "2026-09-05",
+          "parti": "Institution publique ; texte normatif"
+        },
+        {
+          "texte": "Loi du 10 juillet 1965, article 24 : majorité des voix exprimées",
+          "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000051749514",
+          "nature": "texte-officiel",
+          "consulte_le": "2026-09-05",
+          "parti": "Institution publique ; texte normatif"
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "modele": "GPT-6",
+        "outil": "Codex",
+        "session": "01a0704b-2f89-7eb1-82d1-219bc309c6ef/root",
+        "genere_le": "2026-09-05",
+        "sources_retrouvees": 2,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "statut": "valide",
+      "partage": "banque",
+      "verifie": "2026-09-05",
+      "peremption": "2027-03-05",
+      "aide": "Reviens au principe du chapitre et nomme ce qui manque.",
+      "choix": [
+        {
+          "texte": "Non : le procès-verbal doit identifier les abstentionnistes et leurs voix.",
+          "correct": true
+        },
+        {
+          "texte": "Oui, elle ne sert à rien.",
+          "correct": false,
+          "pourquoi_faux": "L’article 17 exige cette mention."
+        },
+        {
+          "texte": "Oui, si la décision est adoptée.",
+          "correct": false,
+          "pourquoi_faux": "L’issue favorable ne supprime pas les mentions."
+        },
+        {
+          "texte": "Oui, si elle est transformée en vote contre.",
+          "correct": false,
+          "pourquoi_faux": "Transformer le vote fausserait le relevé."
+        }
+      ],
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6",
+        "session": "/root/revue_journal",
+        "date": "2026-09-05",
+        "rapport": "travail/relecture-contenu-2026-09-05.md",
+        "assertions": [
+          "Décret article 17 : résultat sous chaque question, noms et voix des opposants, abstentionnistes et défaillants visés ; réserves des opposants.",
+          "Article 24 I : 240 contre 180 adopté ; 190 contre 190 non adopté ; abstentions hors exprimées.",
+          "La note pédagogique distingue les données fournies et les pièces absentes ; aucune rectification juridique ni notification réelle simulée.",
+          "Contrôle ciblé de la carte droit-assemblee-le-proces-verbal-et-sa-notification-abstention-pv : question, réponse, explication et distracteurs rapprochés des règles ci-dessus ; cas fictifs et limites conservés."
+        ],
+        "sources": [
+          "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000042078689",
+          "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000051749514"
+        ],
+        "reserves": [
+          "Seule la préparation du procès-verbal est enseignée ; modalités et délais de notification hors contenu malgré l'identifiant du programme.",
+          "Les catégories de défaillants renvoient au texte ; aucune procédure complète de contestation ou rectification enseignée."
+        ]
+      }
+    },
+    {
+      "id": "droit-assemblee-le-proces-verbal-et-sa-notification-manquants",
+      "chapitre": "droit.assemblee.le-proces-verbal-et-sa-notification",
+      "domaine": "droit",
+      "branche": "assemblee",
+      "niveau": 2,
+      "type": "flash",
+      "question": "Les noms correspondant aux abstentions manquent dans ton dossier : comment prépares-tu la note ?",
+      "reponse": "Tu signales la donnée absente et demandes la pièce permettant de la retrouver.",
+      "explication": "Une lacune visible est préférable à un nom inventé.",
+      "source": [
+        {
+          "texte": "Décret du 17 mars 1967, article 17 : procès-verbal",
+          "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000042078689",
+          "nature": "texte-officiel",
+          "consulte_le": "2026-09-05",
+          "parti": "Institution publique ; texte normatif"
+        },
+        {
+          "texte": "Loi du 10 juillet 1965, article 24 : majorité des voix exprimées",
+          "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000051749514",
+          "nature": "texte-officiel",
+          "consulte_le": "2026-09-05",
+          "parti": "Institution publique ; texte normatif"
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "modele": "GPT-6",
+        "outil": "Codex",
+        "session": "01a0704b-2f89-7eb1-82d1-219bc309c6ef/root",
+        "genere_le": "2026-09-05",
+        "sources_retrouvees": 2,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "statut": "valide",
+      "partage": "banque",
+      "verifie": "2026-09-05",
+      "peremption": "2027-03-05",
+      "aide": "Reviens au principe du chapitre et nomme ce qui manque.",
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6",
+        "session": "/root/revue_journal",
+        "date": "2026-09-05",
+        "rapport": "travail/relecture-contenu-2026-09-05.md",
+        "assertions": [
+          "Décret article 17 : résultat sous chaque question, noms et voix des opposants, abstentionnistes et défaillants visés ; réserves des opposants.",
+          "Article 24 I : 240 contre 180 adopté ; 190 contre 190 non adopté ; abstentions hors exprimées.",
+          "La note pédagogique distingue les données fournies et les pièces absentes ; aucune rectification juridique ni notification réelle simulée.",
+          "Contrôle ciblé de la carte droit-assemblee-le-proces-verbal-et-sa-notification-manquants : question, réponse, explication et distracteurs rapprochés des règles ci-dessus ; cas fictifs et limites conservés."
+        ],
+        "sources": [
+          "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000042078689",
+          "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000051749514"
+        ],
+        "reserves": [
+          "Seule la préparation du procès-verbal est enseignée ; modalités et délais de notification hors contenu malgré l'identifiant du programme.",
+          "Les catégories de défaillants renvoient au texte ; aucune procédure complète de contestation ou rectification enseignée."
+        ]
+      }
+    },
+    {
+      "id": "droit-assemblee-le-proces-verbal-et-sa-notification-reserve",
+      "chapitre": "droit.assemblee.le-proces-verbal-et-sa-notification",
+      "domaine": "droit",
+      "branche": "assemblee",
+      "niveau": 2,
+      "type": "flash",
+      "question": "Où trouver la règle sur la mention des réserves de régularité formulées par les opposants ?",
+      "reponse": "Dans l’article 17 du décret du 17 mars 1967.",
+      "explication": "Le texte prévoit de mentionner ces réserves au procès-verbal.",
+      "source": [
+        {
+          "texte": "Décret du 17 mars 1967, article 17 : procès-verbal",
+          "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000042078689",
+          "nature": "texte-officiel",
+          "consulte_le": "2026-09-05",
+          "parti": "Institution publique ; texte normatif"
+        },
+        {
+          "texte": "Loi du 10 juillet 1965, article 24 : majorité des voix exprimées",
+          "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000051749514",
+          "nature": "texte-officiel",
+          "consulte_le": "2026-09-05",
+          "parti": "Institution publique ; texte normatif"
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "modele": "GPT-6",
+        "outil": "Codex",
+        "session": "01a0704b-2f89-7eb1-82d1-219bc309c6ef/root",
+        "genere_le": "2026-09-05",
+        "sources_retrouvees": 2,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "statut": "valide",
+      "partage": "banque",
+      "verifie": "2026-09-05",
+      "peremption": "2027-03-05",
+      "aide": "Reviens au principe du chapitre et nomme ce qui manque.",
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6",
+        "session": "/root/revue_journal",
+        "date": "2026-09-05",
+        "rapport": "travail/relecture-contenu-2026-09-05.md",
+        "assertions": [
+          "Décret article 17 : résultat sous chaque question, noms et voix des opposants, abstentionnistes et défaillants visés ; réserves des opposants.",
+          "Article 24 I : 240 contre 180 adopté ; 190 contre 190 non adopté ; abstentions hors exprimées.",
+          "La note pédagogique distingue les données fournies et les pièces absentes ; aucune rectification juridique ni notification réelle simulée.",
+          "Contrôle ciblé de la carte droit-assemblee-le-proces-verbal-et-sa-notification-reserve : question, réponse, explication et distracteurs rapprochés des règles ci-dessus ; cas fictifs et limites conservés."
+        ],
+        "sources": [
+          "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000042078689",
+          "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000051749514"
+        ],
+        "reserves": [
+          "Seule la préparation du procès-verbal est enseignée ; modalités et délais de notification hors contenu malgré l'identifiant du programme.",
+          "Les catégories de défaillants renvoient au texte ; aucune procédure complète de contestation ou rectification enseignée."
+        ]
+      }
+    },
+    {
+      "id": "droit-assemblee-le-proces-verbal-et-sa-notification-transfert",
+      "chapitre": "droit.assemblee.le-proces-verbal-et-sa-notification",
+      "domaine": "droit",
+      "branche": "assemblee",
+      "niveau": 2,
+      "type": "synthese",
+      "question": "Cas fictif : approbation des comptes à l’article 24, 190 voix pour, 190 contre, 60 abstentions ; écris une note de résultat et les mentions à compléter.",
+      "reponse": "La résolution n’est pas adoptée : 190 pour égale 190 contre. Les 60 abstentions sont hors exprimées, mais leurs noms et voix doivent être tracés avec les autres mentions exigées.",
+      "explication": "Cas fictif ; une autoévaluation ne valide pas un procès-verbal réel.",
+      "source": [
+        {
+          "texte": "Décret du 17 mars 1967, article 17 : procès-verbal",
+          "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000042078689",
+          "nature": "texte-officiel",
+          "consulte_le": "2026-09-05",
+          "parti": "Institution publique ; texte normatif"
+        },
+        {
+          "texte": "Loi du 10 juillet 1965, article 24 : majorité des voix exprimées",
+          "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000051749514",
+          "nature": "texte-officiel",
+          "consulte_le": "2026-09-05",
+          "parti": "Institution publique ; texte normatif"
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "modele": "GPT-6",
+        "outil": "Codex",
+        "session": "01a0704b-2f89-7eb1-82d1-219bc309c6ef/root",
+        "genere_le": "2026-09-05",
+        "sources_retrouvees": 2,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "statut": "valide",
+      "partage": "banque",
+      "verifie": "2026-09-05",
+      "peremption": "2027-03-05",
+      "aide": "Reviens au principe du chapitre et nomme ce qui manque.",
+      "attendus": [
+        "Résolution non adoptée à égalité des voix exprimées.",
+        "Abstentions exclues du calcul mais tracées au procès-verbal.",
+        "Noms et voix des catégories exigées à retrouver dans les pièces.",
+        "Ne pas inventer une pièce ni modifier le vote."
+      ],
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6",
+        "session": "/root/revue_journal",
+        "date": "2026-09-05",
+        "rapport": "travail/relecture-contenu-2026-09-05.md",
+        "assertions": [
+          "Décret article 17 : résultat sous chaque question, noms et voix des opposants, abstentionnistes et défaillants visés ; réserves des opposants.",
+          "Article 24 I : 240 contre 180 adopté ; 190 contre 190 non adopté ; abstentions hors exprimées.",
+          "La note pédagogique distingue les données fournies et les pièces absentes ; aucune rectification juridique ni notification réelle simulée.",
+          "Contrôle ciblé de la carte droit-assemblee-le-proces-verbal-et-sa-notification-transfert : question, réponse, explication et distracteurs rapprochés des règles ci-dessus ; cas fictifs et limites conservés."
+        ],
+        "sources": [
+          "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000042078689",
+          "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000051749514"
+        ],
+        "reserves": [
+          "Seule la préparation du procès-verbal est enseignée ; modalités et délais de notification hors contenu malgré l'identifiant du programme.",
+          "Les catégories de défaillants renvoient au texte ; aucune procédure complète de contestation ou rectification enseignée."
+        ]
+      }
+    }
+  ],
+  "verifie_par": {
+    "outil": "Codex",
+    "modele": "GPT-6",
+    "session": "/root/revue_journal",
+    "date": "2026-09-05",
+    "rapport": "travail/relecture-contenu-2026-09-05.md",
+    "assertions": [
+      "Décret article 17 : résultat sous chaque question, noms et voix des opposants, abstentionnistes et défaillants visés ; réserves des opposants.",
+      "Article 24 I : 240 contre 180 adopté ; 190 contre 190 non adopté ; abstentions hors exprimées.",
+      "La note pédagogique distingue les données fournies et les pièces absentes ; aucune rectification juridique ni notification réelle simulée."
+    ],
+    "sources": [
+      "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000042078689",
+      "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000051749514"
+    ],
+    "reserves": [
+      "Seule la préparation du procès-verbal est enseignée ; modalités et délais de notification hors contenu malgré l'identifiant du programme.",
+      "Les catégories de défaillants renvoient au texte ; aucune procédure complète de contestation ou rectification enseignée."
+    ]
+  }
+}

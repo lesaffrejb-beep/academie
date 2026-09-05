@@ -43,6 +43,8 @@ def racine_test(lignes_par_page: int = 3, mots_page_texte: int = 5) -> Path:
     conf = json.loads((RACINE / "academie.json").read_text(encoding="utf-8"))
     conf["usine"]["lignes_par_page_transcription"] = lignes_par_page
     conf["usine"]["mots_page_texte"] = mots_page_texte
+    conf["usine"]["unite_initiale"] = 2
+    conf["usine"]["unite_max"] = 4
     (rac / "academie.json").write_text(json.dumps(conf, ensure_ascii=False), encoding="utf-8")
     (rac / "sources").mkdir()
     (rac / "sources" / "REGISTRE.md").write_text("# Registre\n\n| Source | Réf | Nature | Parti | Fiab | Vérifié | On en tire | On n'en tire pas |\n|---|---|---|---|---|---|---|---|\n", encoding="utf-8")
@@ -140,13 +142,17 @@ def scenario_transcription_et_pas_a_pas() -> None:
     code, sortie = lance(rac, "suivant", emp)
     verifie("sans déclaration, pas d'unité", code == 1 and "déclar" in sortie, sortie)
 
-    code, sortie = lance(rac, "declarer", emp, "--outil", "codex", "--modele", "gpt-5.5", "--classe", "géant")
-    verifie("une classe inconnue devient petit", code == 0 and "classe petit" in sortie, sortie)
-    code, sortie = lance(rac, "declarer", emp, "--outil", "claude-code", "--modele", "claude-haiku-4-5", "--classe", "grand")
-    verifie("un petit modèle ne se déclare pas grand", code == 0 and "petit modèle" in sortie and etat_de(rac, emp)["taille_unite"] == 2, sortie)
-    code, sortie = lance(rac, "declarer", emp, "--outil", "claude-code", "--modele", "claude-fable-5-1", "--classe", "grand")
-    verifie("un grand modèle commence à 12 pages", code == 0 and etat_de(rac, emp)["taille_unite"] == 12, sortie)
-    lance(rac, "declarer", emp, "--outil", "claude-code", "--modele", "claude-haiku-4-5", "--classe", "petit")
+    for nom in ("gpt-6-astra", "modele-inconnu", "local-mini", "claude-haiku-4-5"):
+        code, sortie = lance(rac, "declarer", emp, "--outil", "codex", "--modele", nom)
+        declaration = etat_de(rac, emp)["declaration"] or {}
+        verifie(f"{nom} garde les mêmes conditions sans classe",
+                code == 0 and "classe" not in declaration
+                and declaration.get("modele") == nom
+                and etat_de(rac, emp)["taille_unite"] == 2, sortie)
+    code, sortie = lance(rac, "declarer", emp, "--outil", "codex", "--modele", "claude-haiku-4-5", "--classe", "grand")
+    verifie("l'ancien argument est ignoré sans créer une classe",
+            code == 0 and "ignor" in sortie and "classe" not in etat_de(rac, emp)["declaration"]
+            and etat_de(rac, emp)["taille_unite"] == 2, sortie)
 
     code, sortie = lance(rac, "suivant", emp)
     verifie("la première unité couvre les pages 1 à 2", code == 0 and "pages 1 à 2" in sortie and "Point de sauvegarde" in sortie, sortie)
@@ -187,7 +193,7 @@ def scenario_transcription_et_pas_a_pas() -> None:
     code, sortie = lance(rac, "valider", emp)
     verifie("l'unité altérée, réparée, se valide", code == 0, sortie)
 
-    # Série : trois unités propres d'affilée doublent la taille (1 → 2 → 4, plafond petit).
+    # Série : trois unités propres d'affilée doublent la taille (1 → 2 → 4, plafond commun de la fixture).
     tailles = []
     for _ in range(6):
         code, sortie = lance(rac, "suivant", emp)
@@ -221,9 +227,12 @@ def scenario_pdf() -> None:
     verifie("une figure vectorielle est repérée par sa légende et sa page rendue",
             etat["figures_par_page"].get("2") == 1 and any((rac / "sources" / f"{emp}.figures").glob("p-0002*.png")), json.dumps(etat["figures_par_page"]))
     verifie("le PDF n'est pas marqué OCR requis", etat["ocr_requis"] is False)
-    lance(rac, "declarer", emp, "--outil", "claude-code", "--modele", "claude-sonnet-5", "--classe", "moyen")
+    conf = json.loads((rac / "academie.json").read_text())
+    conf["usine"]["unite_initiale"] = 3
+    (rac / "academie.json").write_text(json.dumps(conf))
+    lance(rac, "declarer", emp, "--outil", "claude-code", "--modele", "claude-sonnet-5")
     code, sortie = lance(rac, "suivant", emp)
-    verifie("un modèle moyen prend les 3 pages d'un coup", "pages 1 à 3" in sortie and "Pages rendues" in sortie, sortie)
+    verifie("le document utilise les 3 pages configurées", "pages 1 à 3" in sortie and "Pages rendues" in sortie, sortie)
     code, sortie = lance(rac, "valider", emp)
     verifie("la consigne de départ laissée sur la page vide est refusée", code == 1 and "consigne de départ" in sortie, sortie)
     remplace_section(rac, emp, 3, "[page vide]")
@@ -257,6 +266,59 @@ def scenario_pdf() -> None:
     verifie("la ligne ne s'écrit pas deux fois", registre.count("Guide des majorités") == (rac / "sources" / "REGISTRE.md").read_text(encoding="utf-8").count("Guide des majorités"))
 
 
+def scenario_reprise_ancien_etat() -> None:
+    rac = racine_test()
+    src = rac / "ancien.txt"
+    src.write_text(transcription_fixture(), encoding="utf-8")
+    lance(rac, "preparer", str(src))
+    emp = empreinte_de(rac)
+    lance(rac, "declarer", emp, "--outil", "codex", "--modele", "modele-anonyme")
+    lance(rac, "suivant", emp)
+    lance(rac, "valider", emp)
+    lance(rac, "suivant", emp)
+    e = etat_de(rac, emp)
+    unites_avant = json.loads(json.dumps(e["unites"]))
+    conf = json.loads((rac / "academie.json").read_text())
+    conf["usine"].pop("unite_initiale")
+    conf["usine"].pop("unite_max")
+    conf["usine"].update({"classes": {"petit": {"unite_initiale": 2, "unite_max": 4}},
+                          "classe_par_defaut": "petit", "modeles_petits": ".*"})
+    (rac / "academie.json").write_text(json.dumps(conf))
+    e["declaration"]["classe"] = "ancienne-valeur-inconnue"
+    (rac / "sources" / f"{emp}.etat.json").write_text(json.dumps(e))
+    code, sortie = lance(rac, "suivant", emp)
+    verifie("un ancien état reprend son unité sans consulter sa classe",
+            code == 0 and etat_de(rac, emp)["unites"] == unites_avant, sortie)
+    code, sortie = lance(rac, "valider", emp)
+    verifie("un ancien état se valide sans migration de classe", code == 0, sortie)
+    verifie("le sceau de l'unité antérieure est conservé",
+            etat_de(rac, emp)["unites"][0]["sceau"] == unites_avant[0]["sceau"])
+    lance(rac, "suivant", emp)
+    ouverte = etat_de(rac, emp)["unites"][-1]
+    lance(rac, "declarer", emp, "--outil", "codex", "--modele", "nouveau-nom")
+    code, sortie = lance(rac, "suivant", emp)
+    verifie("changer de modèle conserve l'unité ouverte", code == 0 and etat_de(rac, emp)["unites"][-1] == ouverte, sortie)
+    conf_avant = (rac / "academie.json").read_bytes()
+    code, sortie = lance(rac, "declarer", emp, "--outil", "codex", "--modele", "local-mini")
+    bornes_courantes = json.loads((RACINE / "academie.json").read_text())["usine"]
+    verifie("un ancien dépôt adopte les unités communes sans classer son modèle",
+            code == 0 and etat_de(rac, emp)["taille_unite"] == bornes_courantes["unite_initiale"], sortie)
+    e = etat_de(rac, emp)
+    e["serie"] = bornes_courantes["serie_pour_doubler"] - 1
+    (rac / "sources" / f"{emp}.etat.json").write_text(json.dumps(e))
+    code, sortie = lance(rac, "valider", emp)
+    verifie("ancien dépôt : le doublement dépasse effectivement l'ancien plafond",
+            code == 0 and etat_de(rac, emp)["taille_unite"] == min(
+                2 * bornes_courantes["unite_initiale"], bornes_courantes["unite_max"]), sortie)
+    for _ in range(4):
+        code, sortie = lance(rac, "suivant", emp)
+        if "toutes les pages" in sortie:
+            break
+        code, sortie = lance(rac, "valider", emp)
+        verifie("ancien dépôt : l'adaptation se poursuit sans ancien plafond", code == 0, sortie)
+    verifie("la compatibilité ne réécrit pas la configuration du domaine", (rac / "academie.json").read_bytes() == conf_avant)
+
+
 def scenario_transcription_unitaire() -> None:
     lignes = transcription.nettoyer(transcription_fixture(3))
     verifie("horodatages, numéros et locuteurs disparaissent",
@@ -268,6 +330,7 @@ def main() -> int:
     scenario_transcription_et_pas_a_pas()
     scenario_pdf()
     scenario_transcription_unitaire()
+    scenario_reprise_ancien_etat()
     if ECHECS:
         print(f"\n{len(ECHECS)} test(s) en échec : {', '.join(ECHECS)}")
         return 1

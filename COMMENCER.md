@@ -74,7 +74,7 @@ fait est sur disque.
 **Ce que tu obtiens.** Un dépôt-domaine à toi (copie du
 [`gabarit-domaine/`](gabarit-domaine/README.md)), tes sources et leurs
 fiches, un registre, un programme en données et son sommaire lisible.
-Les chapitres viennent ensuite, écrits par un grand modèle, relus, et
+Les chapitres viennent ensuite, écrits par un modèle, relus, et
 ce que tu livres au serveur profite aux suivants sous licence ouverte
 ([`decisions/0018`](decisions/0018-licences.md)).
 

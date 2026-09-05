@@ -17,7 +17,7 @@ export function Noeud({ chemin }: { chemin: string }) {
   const noeud = monde.noeuds.find((n) => n.id === id);
   const cartes = banque.cartes.filter((c) => c.chapitre === id);
   const sources = [...new Map(cartes.flatMap((c) => c.source ?? []).map((s) => [s.url ?? s.texte, s])).values()];
-  const ferme = () => va(`/domaine/${domaine}`);
+  const ferme = () => { try { sessionStorage.setItem("academie-retour-noeud",id); } catch { /* retour au titre */ } va(`/domaine/${domaine}`); };
   return <><Domaine cle={domaine} /><dialog ref={feuille} className="fiche-noeud" aria-labelledby="titre-noeud" onCancel={(e) => { e.preventDefault(); ferme(); }} onClick={(e) => { if (e.target === e.currentTarget) { const r = e.currentTarget.getBoundingClientRect(); if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) ferme(); } }}>
     <div className="fiche-poignee" /><div className="fiche-entete"><span>{LIB.niveau} {noeud?.niveau ?? ""}</span><button autoFocus className="bouton-icone" aria-label={LIB.fermer} title={LIB.fermer} onClick={ferme}><X size={21} /></button></div>
     <div className="fiche-sceau"><Anneau part={noeud?.remplissage ?? 0} taille={80} /><span>{noeud?.niveau}</span></div>

@@ -1,0 +1,463 @@
+{
+  "id": "droit.organes.le-syndic-et-ses-missions",
+  "titre": "Le syndic et ses missions",
+  "domaine": "droit",
+  "branche": "organes",
+  "niveau": 1,
+  "prerequis": [],
+  "objectifs": [
+    "Distinguer décider, exécuter et contrôler.",
+    "Demander la pièce qui établit le pouvoir d’agir.",
+    "Répondre à une demande sans promettre au-delà du mandat."
+  ],
+  "amorce": {
+    "question": "Cas fictif : le président du conseil syndical demande de commander une amélioration non urgente qui n’a jamais été votée ; son accord suffit-il ?",
+    "aide": "Un avis, une décision et une délégation produisent-ils le même pouvoir ?",
+    "reponse_attendue": "Son accord seul ne suffit pas. Vérifie la décision applicable et une éventuelle délégation avant d’engager le syndicat."
+  },
+  "lecon": "Tu arrives au cabinet. Une demande paraît simple : « Le conseil est d’accord, lance la commande. » Avant de choisir une entreprise, pose une question : qui dispose du pouvoir de décider dans cette situation ? L’exercice utilise un cas entièrement fictif, sans urgence, sans vote préalable et sans délégation établie. Il entraîne à demander une pièce, pas à deviner une autorisation.\n\nLa loi du 10 juillet 1965 distingue les rôles. Son article 18 charge notamment le syndic d’exécuter les dispositions du règlement de copropriété et les décisions de l’assemblée générale. Il assure aussi l’administration et la conservation de l’immeuble. Son article 21 donne au conseil syndical une fonction d’assistance et de contrôle. Donner un avis favorable ne revient donc pas automatiquement à prendre une décision à la place de l’assemblée.\n\nDans notre exemple, l’objet est une amélioration non urgente. Tu recherches la résolution applicable, les conditions décidées et l’existence éventuelle d’une délégation. Tu ne réponds pas seulement « oui » ou « non » : tu nommes l’information absente. Une réponse utile serait : « Le soutien du conseil est identifié. La base autorisant la commande reste à vérifier avant engagement. » Cette formulation est une proposition pédagogique de communication, pas une formule juridique obligatoire.\n\nCompare maintenant une autre situation : la même prestation a déjà été précisément approuvée par l’assemblée et les conditions de son exécution sont remplies. Le syndic peut alors exécuter cette décision dans son périmètre. Ce qui change est la base de l’action, pas le ton insistant de l’interlocuteur. Si une délégation est invoquée, demande son texte et ses limites ; ce chapitre ne décrit pas tout son régime.\n\nIl existe une autre limite à notre exemple : l’urgence. L’article 18 prévoit que le syndic peut, de sa propre initiative, faire exécuter les travaux nécessaires à la sauvegarde de l’immeuble en cas d’urgence. Une préférence de confort n’établit pas cette urgence. À l’inverse, tu ne dois pas transformer « vérifier le vote » en règle d’attente universelle face à un danger. Les formalités propres à cette situation demandent une étude distincte.\n\nAu prochain échange, tu sauras séparer l’auteur de la demande, l’objet de la décision et le fondement du pouvoir. Ta note doit laisser une trace lisible : ce qui est établi, ce qui manque et l’action proposée pour vérifier. C’est ce raisonnement que tu vas maintenant rappeler, puis appliquer à une variante.",
+  "synthese": {
+    "consigne": "Cas fictif : le conseil veut changer de prestation sans décision retrouvée, hors urgence ; écris une réponse courte avec une action de vérification.",
+    "attendus": [
+      "Distinguer avis et pouvoir de décision.",
+      "Demander résolution ou délégation applicable.",
+      "Proposer une vérification avant engagement, sans inventer d’autorisation."
+    ]
+  },
+  "sources": [
+    {
+      "texte": "Loi du 10 juillet 1965, article 18 : missions du syndic",
+      "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000049398867",
+      "nature": "texte-officiel",
+      "consulte_le": "2026-09-05",
+      "parti": "Institution publique ; texte normatif"
+    },
+    {
+      "texte": "Loi du 10 juillet 1965, article 21 : conseil syndical",
+      "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000039313574",
+      "nature": "texte-officiel",
+      "consulte_le": "2026-09-05",
+      "parti": "Institution publique ; texte normatif"
+    },
+    {
+      "texte": "Loi du 10 juillet 1965, article 25 a : délégation et limites de dépenses",
+      "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000051749507",
+      "nature": "texte-officiel",
+      "consulte_le": "2026-09-05",
+      "parti": "Institution publique ; texte normatif"
+    }
+  ],
+  "provenance": {
+    "auteur": "modele",
+    "modele": "GPT-6",
+    "outil": "Codex",
+    "session": "01a0704b-2f89-7eb1-82d1-219bc309c6ef/root",
+    "genere_le": "2026-09-05",
+    "sources_retrouvees": 2,
+    "sources_concordantes": 0,
+    "sans_source": false
+  },
+  "statut": "valide",
+  "partage": "banque",
+  "verifie": "2026-09-05",
+  "peremption": "2027-03-05",
+  "version": 1,
+  "cartes": [
+    {
+      "id": "droit-organes-le-syndic-et-ses-missions-roles",
+      "chapitre": "droit.organes.le-syndic-et-ses-missions",
+      "domaine": "droit",
+      "branche": "organes",
+      "niveau": 1,
+      "type": "flash",
+      "question": "Qui assure l’exécution des délibérations de l’assemblée générale ?",
+      "reponse": "Le syndic.",
+      "explication": "L’article 18 décrit cette mission ; le conseil syndical assiste et contrôle.",
+      "source": [
+        {
+          "texte": "Loi du 10 juillet 1965, article 18 : missions du syndic",
+          "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000049398867",
+          "nature": "texte-officiel",
+          "consulte_le": "2026-09-05",
+          "parti": "Institution publique ; texte normatif"
+        },
+        {
+          "texte": "Loi du 10 juillet 1965, article 21 : conseil syndical",
+          "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000039313574",
+          "nature": "texte-officiel",
+          "consulte_le": "2026-09-05",
+          "parti": "Institution publique ; texte normatif"
+        },
+        {
+          "texte": "Loi du 10 juillet 1965, article 25 a : délégation et limites de dépenses",
+          "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000051749507",
+          "nature": "texte-officiel",
+          "consulte_le": "2026-09-05",
+          "parti": "Institution publique ; texte normatif"
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "modele": "GPT-6",
+        "outil": "Codex",
+        "session": "01a0704b-2f89-7eb1-82d1-219bc309c6ef/root",
+        "genere_le": "2026-09-05",
+        "sources_retrouvees": 2,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "statut": "valide",
+      "partage": "banque",
+      "verifie": "2026-09-05",
+      "peremption": "2027-03-05",
+      "aide": "Reviens au principe du chapitre et nomme ce qui manque.",
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6",
+        "session": "/root/revue_journal",
+        "date": "2026-09-05",
+        "rapport": "travail/relecture-contenu-2026-09-05.md",
+        "assertions": [
+          "Article 18 : exécution des décisions de l'assemblée, administration et sauvegarde urgente.",
+          "Article 21 : assistance, contrôle et avis du conseil syndical ; un avis seul ne prouve pas l'autorisation du cas proposé.",
+          "Article 25 a : existence d'une délégation à établir avec ses limites ; aucun régime complet de délégation enseigné.",
+          "Contrôle ciblé de la carte droit-organes-le-syndic-et-ses-missions-roles : question, réponse, explication et distracteurs rapprochés des règles ci-dessus ; cas fictifs et limites conservés."
+        ],
+        "sources": [
+          "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000049398867",
+          "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000039313574",
+          "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000051749507"
+        ],
+        "reserves": [
+          "Régime général et cas fictifs hors urgence, sauf carte explicitement consacrée à la sauvegarde ; délégations et formalités urgentes non enseignées exhaustivement."
+        ]
+      }
+    },
+    {
+      "id": "droit-organes-le-syndic-et-ses-missions-avis",
+      "chapitre": "droit.organes.le-syndic-et-ses-missions",
+      "domaine": "droit",
+      "branche": "organes",
+      "niveau": 1,
+      "type": "qcm",
+      "question": "Hors urgence et sans délégation établie, l’accord du président du conseil suffit-il à autoriser une amélioration non votée ?",
+      "reponse": "Non : il faut vérifier le fondement de la décision.",
+      "explication": "L’avis favorable ne prouve ni une résolution ni une délégation.",
+      "source": [
+        {
+          "texte": "Loi du 10 juillet 1965, article 18 : missions du syndic",
+          "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000049398867",
+          "nature": "texte-officiel",
+          "consulte_le": "2026-09-05",
+          "parti": "Institution publique ; texte normatif"
+        },
+        {
+          "texte": "Loi du 10 juillet 1965, article 21 : conseil syndical",
+          "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000039313574",
+          "nature": "texte-officiel",
+          "consulte_le": "2026-09-05",
+          "parti": "Institution publique ; texte normatif"
+        },
+        {
+          "texte": "Loi du 10 juillet 1965, article 25 a : délégation et limites de dépenses",
+          "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000051749507",
+          "nature": "texte-officiel",
+          "consulte_le": "2026-09-05",
+          "parti": "Institution publique ; texte normatif"
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "modele": "GPT-6",
+        "outil": "Codex",
+        "session": "01a0704b-2f89-7eb1-82d1-219bc309c6ef/root",
+        "genere_le": "2026-09-05",
+        "sources_retrouvees": 2,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "statut": "valide",
+      "partage": "banque",
+      "verifie": "2026-09-05",
+      "peremption": "2027-03-05",
+      "aide": "Reviens au principe du chapitre et nomme ce qui manque.",
+      "choix": [
+        {
+          "texte": "Non : il faut vérifier le fondement de la décision.",
+          "correct": true
+        },
+        {
+          "texte": "Oui, son titre suffit.",
+          "correct": false,
+          "pourquoi_faux": "La présidence ne donne pas un pouvoir général de décision."
+        },
+        {
+          "texte": "Oui, si la demande est écrite.",
+          "correct": false,
+          "pourquoi_faux": "La forme écrite ne crée pas la compétence."
+        },
+        {
+          "texte": "Oui, si le prestataire est connu.",
+          "correct": false,
+          "pourquoi_faux": "La confiance dans le prestataire ne vaut pas autorisation."
+        }
+      ],
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6",
+        "session": "/root/revue_journal",
+        "date": "2026-09-05",
+        "rapport": "travail/relecture-contenu-2026-09-05.md",
+        "assertions": [
+          "Article 18 : exécution des décisions de l'assemblée, administration et sauvegarde urgente.",
+          "Article 21 : assistance, contrôle et avis du conseil syndical ; un avis seul ne prouve pas l'autorisation du cas proposé.",
+          "Article 25 a : existence d'une délégation à établir avec ses limites ; aucun régime complet de délégation enseigné.",
+          "Contrôle ciblé de la carte droit-organes-le-syndic-et-ses-missions-avis : question, réponse, explication et distracteurs rapprochés des règles ci-dessus ; cas fictifs et limites conservés."
+        ],
+        "sources": [
+          "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000049398867",
+          "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000039313574",
+          "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000051749507"
+        ],
+        "reserves": [
+          "Régime général et cas fictifs hors urgence, sauf carte explicitement consacrée à la sauvegarde ; délégations et formalités urgentes non enseignées exhaustivement."
+        ]
+      }
+    },
+    {
+      "id": "droit-organes-le-syndic-et-ses-missions-piece",
+      "chapitre": "droit.organes.le-syndic-et-ses-missions",
+      "domaine": "droit",
+      "branche": "organes",
+      "niveau": 1,
+      "type": "flash",
+      "question": "Une délégation est invoquée pour commander : quelle pièce demandes-tu ?",
+      "reponse": "Le texte de la délégation et ses limites, avec la décision qui la fonde.",
+      "explication": "Il faut établir un pouvoir, pas seulement recueillir un avis.",
+      "source": [
+        {
+          "texte": "Loi du 10 juillet 1965, article 18 : missions du syndic",
+          "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000049398867",
+          "nature": "texte-officiel",
+          "consulte_le": "2026-09-05",
+          "parti": "Institution publique ; texte normatif"
+        },
+        {
+          "texte": "Loi du 10 juillet 1965, article 21 : conseil syndical",
+          "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000039313574",
+          "nature": "texte-officiel",
+          "consulte_le": "2026-09-05",
+          "parti": "Institution publique ; texte normatif"
+        },
+        {
+          "texte": "Loi du 10 juillet 1965, article 25 a : délégation et limites de dépenses",
+          "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000051749507",
+          "nature": "texte-officiel",
+          "consulte_le": "2026-09-05",
+          "parti": "Institution publique ; texte normatif"
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "modele": "GPT-6",
+        "outil": "Codex",
+        "session": "01a0704b-2f89-7eb1-82d1-219bc309c6ef/root",
+        "genere_le": "2026-09-05",
+        "sources_retrouvees": 2,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "statut": "valide",
+      "partage": "banque",
+      "verifie": "2026-09-05",
+      "peremption": "2027-03-05",
+      "aide": "Reviens au principe du chapitre et nomme ce qui manque.",
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6",
+        "session": "/root/revue_journal",
+        "date": "2026-09-05",
+        "rapport": "travail/relecture-contenu-2026-09-05.md",
+        "assertions": [
+          "Article 18 : exécution des décisions de l'assemblée, administration et sauvegarde urgente.",
+          "Article 21 : assistance, contrôle et avis du conseil syndical ; un avis seul ne prouve pas l'autorisation du cas proposé.",
+          "Article 25 a : existence d'une délégation à établir avec ses limites ; aucun régime complet de délégation enseigné.",
+          "Contrôle ciblé de la carte droit-organes-le-syndic-et-ses-missions-piece : question, réponse, explication et distracteurs rapprochés des règles ci-dessus ; cas fictifs et limites conservés."
+        ],
+        "sources": [
+          "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000049398867",
+          "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000039313574",
+          "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000051749507"
+        ],
+        "reserves": [
+          "Régime général et cas fictifs hors urgence, sauf carte explicitement consacrée à la sauvegarde ; délégations et formalités urgentes non enseignées exhaustivement."
+        ]
+      }
+    },
+    {
+      "id": "droit-organes-le-syndic-et-ses-missions-urgence",
+      "chapitre": "droit.organes.le-syndic-et-ses-missions",
+      "domaine": "droit",
+      "branche": "organes",
+      "niveau": 1,
+      "type": "flash",
+      "question": "Pourquoi ne faut-il pas attendre systématiquement une assemblée face à une urgence de sauvegarde ?",
+      "reponse": "L’article 18 prévoit un pouvoir d’initiative du syndic pour les travaux urgents nécessaires à la sauvegarde de l’immeuble.",
+      "explication": "Le cas non urgent du chapitre ne doit pas devenir une interdiction générale d’agir.",
+      "source": [
+        {
+          "texte": "Loi du 10 juillet 1965, article 18 : missions du syndic",
+          "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000049398867",
+          "nature": "texte-officiel",
+          "consulte_le": "2026-09-05",
+          "parti": "Institution publique ; texte normatif"
+        },
+        {
+          "texte": "Loi du 10 juillet 1965, article 21 : conseil syndical",
+          "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000039313574",
+          "nature": "texte-officiel",
+          "consulte_le": "2026-09-05",
+          "parti": "Institution publique ; texte normatif"
+        },
+        {
+          "texte": "Loi du 10 juillet 1965, article 25 a : délégation et limites de dépenses",
+          "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000051749507",
+          "nature": "texte-officiel",
+          "consulte_le": "2026-09-05",
+          "parti": "Institution publique ; texte normatif"
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "modele": "GPT-6",
+        "outil": "Codex",
+        "session": "01a0704b-2f89-7eb1-82d1-219bc309c6ef/root",
+        "genere_le": "2026-09-05",
+        "sources_retrouvees": 2,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "statut": "valide",
+      "partage": "banque",
+      "verifie": "2026-09-05",
+      "peremption": "2027-03-05",
+      "aide": "Reviens au principe du chapitre et nomme ce qui manque.",
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6",
+        "session": "/root/revue_journal",
+        "date": "2026-09-05",
+        "rapport": "travail/relecture-contenu-2026-09-05.md",
+        "assertions": [
+          "Article 18 : exécution des décisions de l'assemblée, administration et sauvegarde urgente.",
+          "Article 21 : assistance, contrôle et avis du conseil syndical ; un avis seul ne prouve pas l'autorisation du cas proposé.",
+          "Article 25 a : existence d'une délégation à établir avec ses limites ; aucun régime complet de délégation enseigné.",
+          "Contrôle ciblé de la carte droit-organes-le-syndic-et-ses-missions-urgence : question, réponse, explication et distracteurs rapprochés des règles ci-dessus ; cas fictifs et limites conservés."
+        ],
+        "sources": [
+          "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000049398867",
+          "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000039313574",
+          "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000051749507"
+        ],
+        "reserves": [
+          "Régime général et cas fictifs hors urgence, sauf carte explicitement consacrée à la sauvegarde ; délégations et formalités urgentes non enseignées exhaustivement."
+        ]
+      }
+    },
+    {
+      "id": "droit-organes-le-syndic-et-ses-missions-transfert",
+      "chapitre": "droit.organes.le-syndic-et-ses-missions",
+      "domaine": "droit",
+      "branche": "organes",
+      "niveau": 1,
+      "type": "synthese",
+      "question": "Cas fictif : un prestataire propose une option supplémentaire absente de la résolution approuvée ; rédige ta réponse au conseil.",
+      "reponse": "La résolution retrouvée porte sur la prestation initiale. L’option nécessite de vérifier une autorisation applicable avant de la commander.",
+      "explication": "Le cas change, mais la limite entre exécuter et décider demeure.",
+      "source": [
+        {
+          "texte": "Loi du 10 juillet 1965, article 18 : missions du syndic",
+          "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000049398867",
+          "nature": "texte-officiel",
+          "consulte_le": "2026-09-05",
+          "parti": "Institution publique ; texte normatif"
+        },
+        {
+          "texte": "Loi du 10 juillet 1965, article 21 : conseil syndical",
+          "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000039313574",
+          "nature": "texte-officiel",
+          "consulte_le": "2026-09-05",
+          "parti": "Institution publique ; texte normatif"
+        },
+        {
+          "texte": "Loi du 10 juillet 1965, article 25 a : délégation et limites de dépenses",
+          "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000051749507",
+          "nature": "texte-officiel",
+          "consulte_le": "2026-09-05",
+          "parti": "Institution publique ; texte normatif"
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "modele": "GPT-6",
+        "outil": "Codex",
+        "session": "01a0704b-2f89-7eb1-82d1-219bc309c6ef/root",
+        "genere_le": "2026-09-05",
+        "sources_retrouvees": 2,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "statut": "valide",
+      "partage": "banque",
+      "verifie": "2026-09-05",
+      "peremption": "2027-03-05",
+      "aide": "Reviens au principe du chapitre et nomme ce qui manque.",
+      "attendus": [
+        "Distinguer avis et pouvoir de décision.",
+        "Demander résolution ou délégation applicable.",
+        "Proposer une vérification avant engagement, sans inventer d’autorisation."
+      ],
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6",
+        "session": "/root/revue_journal",
+        "date": "2026-09-05",
+        "rapport": "travail/relecture-contenu-2026-09-05.md",
+        "assertions": [
+          "Article 18 : exécution des décisions de l'assemblée, administration et sauvegarde urgente.",
+          "Article 21 : assistance, contrôle et avis du conseil syndical ; un avis seul ne prouve pas l'autorisation du cas proposé.",
+          "Article 25 a : existence d'une délégation à établir avec ses limites ; aucun régime complet de délégation enseigné.",
+          "Contrôle ciblé de la carte droit-organes-le-syndic-et-ses-missions-transfert : question, réponse, explication et distracteurs rapprochés des règles ci-dessus ; cas fictifs et limites conservés."
+        ],
+        "sources": [
+          "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000049398867",
+          "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000039313574",
+          "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000051749507"
+        ],
+        "reserves": [
+          "Régime général et cas fictifs hors urgence, sauf carte explicitement consacrée à la sauvegarde ; délégations et formalités urgentes non enseignées exhaustivement."
+        ]
+      }
+    }
+  ],
+  "verifie_par": {
+    "outil": "Codex",
+    "modele": "GPT-6",
+    "session": "/root/revue_journal",
+    "date": "2026-09-05",
+    "rapport": "travail/relecture-contenu-2026-09-05.md",
+    "assertions": [
+      "Article 18 : exécution des décisions de l'assemblée, administration et sauvegarde urgente.",
+      "Article 21 : assistance, contrôle et avis du conseil syndical ; un avis seul ne prouve pas l'autorisation du cas proposé.",
+      "Article 25 a : existence d'une délégation à établir avec ses limites ; aucun régime complet de délégation enseigné."
+    ],
+    "sources": [
+      "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000049398867",
+      "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000039313574",
+      "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000051749507"
+    ],
+    "reserves": [
+      "Régime général et cas fictifs hors urgence, sauf carte explicitement consacrée à la sauvegarde ; délégations et formalités urgentes non enseignées exhaustivement."
+    ]
+  }
+}

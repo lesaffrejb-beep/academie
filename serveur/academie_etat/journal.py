@@ -8,6 +8,10 @@ import json
 import math
 import re
 import sqlite3
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "app"))
+from chronologie import cle_chronologique
 from datetime import datetime, timezone
 
 LOT_MAX = 500
@@ -94,6 +98,18 @@ def valider_ligne(ligne: dict) -> str | None:
     if "attendus_coches" in ligne and (not isinstance(ligne["attendus_coches"], list)
                                        or not all(type(c) is int for c in ligne["attendus_coches"])):
         return "`attendus_coches` doit être une liste d'entiers"
+    if "etude_etape" in ligne and (not isinstance(ligne["etude_etape"], str)
+                                    or ligne["etude_etape"] not in (
+                                        "tentative", "principe", "exercices", "synthese", "grille", "terminee")):
+        return "`etude_etape` inconnue"
+    for champ, minimum in (("contenu_version", 1), ("exercice_index", 0)):
+        if champ in ligne and (type(ligne[champ]) is not int or ligne[champ] < minimum):
+            return f"`{champ}` doit être un entier supérieur ou égal à {minimum}"
+    if "reponse_libre" in ligne and (not isinstance(ligne["reponse_libre"], str)
+                                      or len(ligne["reponse_libre"]) > 5000):
+        return "`reponse_libre` doit être un texte de 5000 caractères au plus"
+    if "aide_utilisee" in ligne and not isinstance(ligne["aide_utilisee"], bool):
+        return "`aide_utilisee` doit être un booléen"
     return None
 
 
@@ -148,8 +164,8 @@ def fusionner(conn: sqlite3.Connection, profil: str, lignes: list[dict], depuis:
 
 
 def exporter(conn: sqlite3.Connection, profil: str) -> list[dict]:
-    return [json.loads(r["ligne"]) for r in conn.execute(
-        "SELECT ligne FROM journal WHERE profil = ? ORDER BY quand, mode, nonce", (profil,))]
+    return sorted([json.loads(r["ligne"]) for r in conn.execute(
+        "SELECT ligne FROM journal WHERE profil = ? ORDER BY quand, mode, nonce", (profil,))], key=cle_chronologique)
 
 
 def compter(conn: sqlite3.Connection, profil: str) -> int:

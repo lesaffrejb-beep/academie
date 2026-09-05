@@ -165,6 +165,34 @@ def valide_provenance(prov, ref: str) -> list[str]:
     return err
 
 
+def valide_relecture(objet, ref):
+    """Les attestations nouvelles identifient une passe distincte ; l'ancien tampon reste lisible."""
+    if objet.get("statut") != "valide":
+        return []
+    revue = objet.get("verifie_par")
+    if not isinstance(revue, dict):
+        return []  # tampon historique, non suffisant pour publier une étude
+    auteur = (objet.get("provenance") or {}).get("session")
+    err = []
+    if not isinstance(auteur, str) or not isinstance(revue.get("session"), str) or not revue["session"].strip() or revue["session"] == auteur:
+        err.append(f"{ref} : relecture exige une session distincte de l'auteur")
+    for champ in ("outil", "modele", "date", "rapport", "assertions", "sources"):
+        if not revue.get(champ):
+            err.append(f"{ref} : attestation de relecture sans {champ}")
+    for champ in ("outil", "modele", "date", "rapport"):
+        if not isinstance(revue.get(champ), str) or not revue[champ].strip():
+            err.append(f"{ref} : attestation {champ} doit être un texte")
+    try:
+        date.fromisoformat(str(revue.get("date")))
+    except ValueError:
+        err.append(f"{ref} : date de relecture invalide")
+    for champ in ("assertions", "sources"):
+        valeurs = revue.get(champ)
+        if not isinstance(valeurs, list) or not valeurs or any(not isinstance(v, str) or not v.strip() for v in valeurs):
+            err.append(f"{ref} : attestation {champ} exige une liste de textes")
+    return err
+
+
 def valide_sources(sources, ref: str) -> list[str]:
     err = []
     if not isinstance(sources, list):
@@ -240,6 +268,7 @@ def valide_carte(carte: dict, chapitre: dict, ref_ch: str, parc: set[str],
         err.append(f"{ref} : `valide` sans `verifie_par` (double passe obligatoire)")
 
     err += valide_provenance(carte.get("provenance"), ref)
+    err += valide_relecture(carte, ref)
     prov = carte.get("provenance") if isinstance(carte.get("provenance"), dict) else {}
     sources = carte.get("source") if isinstance(carte.get("source"), list) else []
     err += valide_sources(sources, ref)
@@ -378,6 +407,7 @@ def valide_chapitre(ch: dict, fichier: Path, programme: dict[str, dict],
     if not isinstance(ch.get("version"), int) or ch["version"] < 1:
         err.append(f"{ref} : `version` doit être un entier ≥ 1")
     err += valide_provenance(ch.get("provenance"), ref)
+    err += valide_relecture(ch, ref)
     err += valide_sources(ch.get("sources") or [], ref)
     prov = ch.get("provenance") if isinstance(ch.get("provenance"), dict) else {}
     if not ch.get("sources") and prov.get("sans_source") is not True:

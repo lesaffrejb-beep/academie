@@ -24,3 +24,19 @@ Règles :
 4. Les schémas décrivent la forme, pas la vérité : une carte peut être
    conforme et fausse. La double passe et le valideur sémantique
    (anti-fuite, péremption, prérequis) restent obligatoires.
+
+## Études pilotes (05/09/2026, décision 0036)
+
+`banque.json.etudes` version 1 contient `lecons` indexées par ID de chapitre
+et `parcours` avec IDs ordonnés. Seuls les chapitres valides, entièrement
+servables et munis d'une attestation structurée indépendante sont exposés.
+`verifie_par` indique outil, modèle, session distincte, date, rapport,
+assertions et URLs examinées. Une chaîne historique reste lisible mais ne
+suffit pas à publier une étude. Le contrôle ne prouve pas la vérité.
+
+`metiers` définit les cartes et le programme de chaque métier. Le choix est
+une préférence d'interface ; il ne modifie pas le journal. Les entrées
+historiques et les IDs restent intacts. Une correction de sens incrémente la
+version du chapitre ; les événements gardent la version réellement jouée
+et la nouvelle version exige une nouvelle étude ;
+la stabilité d'une carte reste une estimation de mémoire, pas une compétence.

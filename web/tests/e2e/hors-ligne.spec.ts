@@ -32,7 +32,7 @@
  * est le même.
  *
  * Rien de tout cela n'est dans `npm test` ni dans la porte du dépôt : la
- * CI n'a ni navigateur ni build. Voir `playwright.config.ts`.
+ * suite Python n'installe pas de navigateur. La CI web les lance séparément.
  */
 
 import { expect, test, type Page } from "@playwright/test";
@@ -98,7 +98,7 @@ async function tailleDeLaFile(page: Page): Promise<number> {
 /** Charge une fois en ligne et attend que tout soit en cache. */
 async function amorce(page: Page): Promise<void> {
   await page.goto("./");
-  await expect(page.getByRole("button", { name: "Séance", exact: true })).toBeVisible();
+  await expect(page.getByRole("button", { name: "Apprendre", exact: true })).toBeVisible();
   // Le service worker doit avoir pris la main : sans lui, « hors-ligne »
   // ne mesurerait que le cache HTTP du navigateur.
   await page.waitForFunction(
@@ -129,7 +129,11 @@ async function repond(page: Page): Promise<void> {
   }
   const bien = page.getByRole("button", { name: "Bien", exact: true });
   await expect(bien).toBeVisible();
+  const avant = await page.locator(QUESTION).first().textContent();
   await bien.click();
+  // La note écrit dans IndexedDB avant de présenter la carte suivante.
+  // Ne pas réinterroger le QCM désactivé de la carte qui se termine.
+  await expect(page.locator(QUESTION).first()).not.toHaveText(avant ?? "");
 }
 
 /** Répond à `combien` cartes, en attendant chaque fois la suivante. */

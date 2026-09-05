@@ -83,8 +83,8 @@ export default defineConfig({
         start_url: "/academie/",
         scope: "/academie/",
         display: "standalone",
-        background_color: "#0d1117",
-        theme_color: "#0d1117",
+        background_color: "#fcf8fa",
+        theme_color: "#fcf8fa",
         icons: [
           {
             src: "icone.svg",

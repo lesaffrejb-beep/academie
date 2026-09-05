@@ -115,24 +115,19 @@ est refusé par le valideur.
 
 ## 8. Un travail long se fait pas à pas, et la machine juge
 
-Lire un document, écrire un lot de chapitres, coder un chantier : un
-modèle, petit ou grand, perd le début quand le contexte s'allonge et
-ajoute quelque chose quand il résume (`MODELES.md` §1). La règle
-([`decisions/0027`](decisions/0027-pas-a-pas-impose-points-de-sauvegarde-classes-de-modeles.md)) :
+Un travail long conserve un point de reprise et des preuves adaptées à la
+mission (`MODELES.md`, `decisions/0034`). Aucune restriction ne découle du
+nom du modèle.
 
-1. **Se déclarer** : outil, modèle, classe (`petit`, `moyen`, `grand`) ;
-   en doute, petit. Un nom de petit modèle est ramené à petit.
-2. **Avancer par unités** que le script distribue : pour un document,
-   `python3 app/usine/usine.py suivant <empreinte>` donne des pages, la
-   consigne, les pages rendues ; `valider` juge ; la taille des unités
-   suit les résultats.
-3. **Écrire sur disque après chaque unité** : c'est le point de
-   sauvegarde. Après une coupure, `prompts/reprendre.md`.
-4. **Ne rien croire sur parole** : `suivant` et `etat` rejouent les
-   contrôles des unités validées ; un état trafiqué repasse à faire.
-5. **S'arrêter et le dire** après deux refus de suite sur la même unité,
-   ou quand la classe ne permet pas la tâche (§3 de `MODELES.md`).
+1. **Provenance** : indiquer outil et modèle, ou « inconnu ».
+2. **Document** : l'usine donne les unités de pages, conserve les sceaux et
+   rejoue ses contrôles. La taille suit les résultats du document.
+3. **Code** : suivre le cahier, écrire les tests pertinents avant la
+   correction, contrôler le résultat ; conserver un point de reprise.
+4. **Audit** : distinguer documents, contrôles logiciels, rendu observé,
+   comportement déployé et effets mesurés chez une personne.
+5. **Blocage** : chercher sa cause et changer d'approche dans le périmètre
+   autorisé ; signaler précisément ce qui exige une information humaine.
 
-Pour le code, l'équivalent est le cahier : une étape numérotée à la
-fois, tests rouges d'abord, commit par étape. Un petit modèle exécute
-une étape ; un moyen prend un cahier ; un grand peut en écrire un.
+L'usine ne juge pas un audit de dépôt. Son verdict sur un document ne
+certifie ni la vérité de la source ni la compétence du lecteur.

@@ -1,0 +1,128 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-05T07:31:24.249546+00:00",
+  "title": "Design System: Académie",
+  "extensions": {
+    "shadows": [
+      {
+        "name": "ombre-flottante-nuit",
+        "value": "0 18px 48px -24px #00000099",
+        "purpose": "Feuilles flottantes et cartes de séance en Nuit."
+      },
+      {
+        "name": "ombre-flottante-papier",
+        "value": "0 18px 48px -28px #23262b3d",
+        "purpose": "Même usage en Papier."
+      }
+    ],
+    "motion": [
+      {
+        "name": "d-retour",
+        "value": "120ms",
+        "purpose": "Retour des contrôles."
+      },
+      {
+        "name": "d-ecran",
+        "value": "220ms",
+        "purpose": "Token existant de changement d’écran ; aucune animation d’entrée déduite."
+      },
+      {
+        "name": "d-conquete",
+        "value": "500ms",
+        "purpose": "Transition des anneaux, supprimée en mouvement réduit."
+      },
+      {
+        "name": "e-mouvement",
+        "value": "cubic-bezier(0.2, 0, 0, 1)",
+        "purpose": "Courbe des transitions de contrôle."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "experience-mobile-max",
+        "value": "640px"
+      },
+      {
+        "name": "rail-desktop-min",
+        "value": "768px"
+      },
+      {
+        "name": "experience-intermediaire-max",
+        "value": "1000px"
+      },
+      {
+        "name": "atlas-colonnes-min",
+        "value": "1200px"
+      },
+      {
+        "name": "atlas-large-min",
+        "value": "1440px"
+      },
+      {
+        "name": "accueil-centre-min",
+        "value": "1600px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Action d’étude",
+      "kind": "button",
+      "description": "Action d’étude — extrait des styles du client.",
+      "html": "<button class=\"ds-action\">Commencer l’étude</button>",
+      "css": ".ds-action{font-family:var(--f-texte);display:inline-flex;align-items:center;gap:30px;background:var(--c-accent);color:var(--c-sur-accent);border:0;border-radius:10px;padding:15px 22px;min-height:52px;font-weight:600;cursor:pointer;transition:filter var(--d-retour)}.ds-action:hover{filter:brightness(1.08)}.ds-action:disabled{opacity:.5;cursor:default}.ds-action:focus-visible{outline:2px solid var(--c-accent);outline-offset:2px}.ds-action:active:not(:disabled){transform:scale(.98)} @media(prefers-reduced-motion:reduce){button:active:not(:disabled){transform:none}button{transition:opacity var(--d-retour) linear}}",
+      "refersTo": "action-etude-nuit"
+    },
+    {
+      "name": "Aide facultative",
+      "kind": "button",
+      "description": "Aide facultative — extrait des styles du client.",
+      "html": "<button class=\"ds-aide\">Un indice</button>",
+      "css": ".ds-aide{font-family:var(--f-texte);display:inline-flex;gap:8px;align-items:center;color:var(--c-accent);background:transparent;border:0;min-height:44px;margin-top:8px;cursor:pointer;transition:transform var(--d-retour) var(--e-mouvement),background-color var(--d-retour) var(--e-mouvement)}.ds-aide:focus-visible{outline:2px solid var(--c-accent);outline-offset:2px}.ds-aide:active:not(:disabled){transform:scale(.98)} @media(prefers-reduced-motion:reduce){button:active:not(:disabled){transform:none}button{transition:opacity var(--d-retour) linear}}"
+    },
+    {
+      "name": "Réponse libre",
+      "kind": "input",
+      "description": "Réponse libre — extrait des styles du client.",
+      "html": "<label class=\"ds-reponse\">Ta réponse<textarea rows=\"4\" placeholder=\"Pose ton raisonnement, même incomplet.\"></textarea></label>",
+      "css": ".ds-reponse{font-family:var(--f-texte);display:flex;flex-direction:column;gap:10px;color:var(--c-encre-2);font-size:.9rem}.ds-reponse textarea{font-family:var(--f-texte);width:100%;border:1px solid var(--c-trait);background:var(--c-surface);padding:18px;color:var(--c-encre);font-size:1.05rem;line-height:1.6;border-radius:12px;resize:vertical;caret-color:var(--c-accent)}.ds-reponse textarea::placeholder{color:var(--c-encre-2)}.ds-reponse textarea:focus-visible{outline:2px solid var(--c-accent);outline-offset:2px} @media(prefers-reduced-motion:reduce){button:active:not(:disabled){transform:none}button{transition:opacity var(--d-retour) linear}}",
+      "refersTo": "reponse-etude-nuit"
+    },
+    {
+      "name": "Choix de métier",
+      "kind": "nav",
+      "description": "Choix de métier — extrait des styles du client.",
+      "html": "<nav class=\"ds-metier\" aria-label=\"Choisir ton métier\"><button aria-pressed=\"true\">Copropriété</button><button aria-pressed=\"false\">Soins infirmiers</button></nav>",
+      "css": ".ds-metier{display:flex;gap:24px;border-bottom:1px solid var(--c-trait);width:fit-content}.ds-metier button{font-family:var(--f-texte);padding:12px 0;min-height:44px;background:transparent;border:0;color:var(--c-encre-2);border-bottom:2px solid transparent;cursor:pointer;transition:transform var(--d-retour) var(--e-mouvement),border-color var(--d-retour) var(--e-mouvement)}.ds-metier button[aria-pressed=\"true\"]{color:var(--c-encre);border-color:var(--c-accent)}.ds-metier button:focus-visible{outline:2px solid var(--c-accent);outline-offset:2px}.ds-metier button:active:not(:disabled){transform:scale(.98)} @media(prefers-reduced-motion:reduce){button:active:not(:disabled){transform:none}button{transition:opacity var(--d-retour) linear}}"
+    },
+    {
+      "name": "Feuille flottante",
+      "kind": "card",
+      "description": "Feuille flottante — extrait des styles du client.",
+      "html": "<section class=\"ds-feuille\">Sources et fabrication</section>",
+      "css": ".ds-feuille{font-family:var(--f-texte);color:var(--c-encre);padding:24px;border-radius:var(--r-ext);background:var(--c-surface);box-shadow:var(--ombre-flottante)} @media(prefers-reduced-motion:reduce){button:active:not(:disabled){transform:none}button{transition:opacity var(--d-retour) linear}}"
+    }
+  ],
+  "narrative": {
+    "northStar": "La planche vivante",
+    "overview": "Une planche d’encyclopédie adulte : fond profond ou papier clair, traits fins,\nanneaux et titres à empattements. Les surfaces ouvertes et la densité calme\nlaissent le contenu du métier conduire la lecture. Le savoir réel fournit\nles noms, les liens et les états du dessin.",
+    "keyCharacteristics": [
+      "Fraunces pour les titres ; Source Sans 3 pour lire et agir.",
+      "Nuit et Papier, avec un accent attribué au rang du domaine.",
+      "Traits fins, formes circulaires et surfaces majoritairement plates.",
+      "États explicites, sources accessibles, aucune progression inventée."
+    ],
+    "rules": [],
+    "dos": [
+      "**Do** conserver les deux thèmes et les variables de couleur existantes.",
+      "**Do** utiliser les vrais chapitres et états pour les parcours dessinés.",
+      "**Do** garder les sources et les limites de progression lisibles.",
+      "**Do** distinguer une étude parcourue d’une compétence démontrée."
+    ],
+    "donts": [
+      "**Don't** ajouter de mascotte, confettis ou couleurs saturées omniprésentes.",
+      "**Don't** réintroduire les petites étiquettes décoratives au-dessus des titres de chapitre.",
+      "**Don't** transformer l’ombre flottante en relief de chaque section."
+    ]
+  }
+}

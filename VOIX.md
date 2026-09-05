@@ -22,7 +22,7 @@ fête. Il ne dit jamais « je ».
 | Pendant la carte | silence | rien d'autre que la question |
 | Réponse juste | bref, neutre | « C'est ça. » puis l'explication si elle apporte |
 | Réponse fausse | sobre, jamais un jugement | « Pas ça. » puis l'explication, la source, la vigilance |
-| Erreur confiante | une phrase de plus, sans reproche | « Tu étais sûr : c'est le moment où la correction s'imprime le mieux. Elle reviendra vite. » |
+| Erreur confiante | une phrase de plus, sans reproche | « Tu étais sûr. Compare ton raisonnement à l’explication, puis essaie de nouveau. » |
 | Clôture | fait, puis action | « Deux cartes stabilisées. La compta est ta branche la plus en retard ; une étude de 45 minutes la fait passer à 66 %. » |
 | Jalon | citation sourcée, en serif | « Si j'ai vu plus loin, c'est en montant sur les épaules de géants. » Isaac Newton, lettre à Robert Hooke, 1675 |
 | Épreuve | solennel, court | « Douze cartes à froid. Les sources viendront à la fin. » |

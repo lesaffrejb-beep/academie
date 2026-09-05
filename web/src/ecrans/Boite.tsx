@@ -12,7 +12,8 @@ const ETATS: Record<string, string> = {
 
 export function Boite() {
   const { jour } = useMagasin();
-  const [texte, setTexte] = useState("");
+  const [texte, setTexte] = useState(() => { try { return sessionStorage.getItem("academie-boite-brouillon") ?? ""; } catch { return ""; } });
+  useEffect(() => { try { sessionStorage.setItem("academie-boite-brouillon",texte); } catch { /* brouillon en mémoire */ } },[texte]);
   const [message, informe] = useState<string | null>(null);
   const [chargement, charge] = useState(true);
   const [envoi, envoie] = useState(false);
@@ -37,7 +38,7 @@ export function Boite() {
   return <div className="page-document"><Titre enfants={LIB.boite} />
     <form className="boite-depot" onSubmit={(e) => { e.preventDefault(); void depose(); }}>
       <label><span className="sr-only">{LIB.deposer}</span><textarea value={texte} onChange={(e) => setTexte(e.target.value)} rows={4} maxLength={20000} className="boite-texte" /></label>
-      <div className="boite-actions"><p>{voix("boite.glisse", {}, jour)}</p><Bouton primaire disabled={!texte.trim() || envoi} onClick={() => void depose()} enfants={<><Plus size={18} />{envoi ? LIB.chargement : LIB.deposer}</>} /></div>
+      <div className="boite-actions">{texte && <button type="button" className="lien-action" onClick={() => setTexte("")}>Abandonner le brouillon</button>}<p>{voix("boite.glisse", {}, jour)}</p><Bouton primaire disabled={!texte.trim() || envoi} onClick={() => void depose()} enfants={<><Plus size={18} />{envoi ? LIB.chargement : LIB.deposer}</>} /></div>
     </form>
     <section className="profil-section"><h2>{LIB.file}</h2>
       {message ? <div role="status"><p>{message}</p><button className="lien-action" onClick={() => void rafraichis()}>{LIB.reessayer}</button></div>

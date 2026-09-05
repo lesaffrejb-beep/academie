@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "parcours": [
+    {
+      "id": "ag",
+      "metier": "copro",
+      "titre": "Tenir le fil d’une assemblée",
+      "promesse": "Comprendre les rôles. Décider juste. Laisser une trace.",
+      "accroche": "Une demande pressante. Un vote serré. Une décision à défendre.",
+      "rang": 1,
+      "chapitres": [
+        "droit.organes.le-syndic-et-ses-missions",
+        "droit.majorites.l-article-24",
+        "droit.assemblee.le-proces-verbal-et-sa-notification"
+      ],
+      "etiquettes": [
+        "Les pouvoirs",
+        "Le vote",
+        "La trace"
+      ],
+      "public": "Gestionnaire de copropriété",
+      "limite": "Cas fictifs du régime général ; la situation réelle exige les pièces et textes applicables."
+    },
+    {
+      "id": "soins",
+      "metier": "ifsi",
+      "titre": "Prendre soin commence ici",
+      "promesse": "Vérifier avant d’agir. Dire ce qui compte.",
+      "accroche": "Une discordance à repérer. Une information à transmettre.",
+      "rang": 3,
+      "chapitres": [
+        "pharmaco.securite.les-cinq-b",
+        "methodes.communication.les-transmissions-orales"
+      ],
+      "etiquettes": [
+        "La sécurité",
+        "La transmission"
+      ],
+      "public": "Étudiant en soins infirmiers",
+      "limite": "Entraînement théorique ; les gestes et la compétence clinique se travaillent en formation supervisée."
+    }
+  ]
+}

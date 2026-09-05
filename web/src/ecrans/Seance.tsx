@@ -232,7 +232,7 @@ export function ligneProvenance(carte: Carte): string {
   if (typeof p.sources_concordantes === "number" && p.sources_concordantes > 0) {
     morceaux.push(`${p.sources_concordantes} ${LIB.sourcesConcordantes}`);
   }
-  if (carte.verifie_par) morceaux.push(`${LIB.relueLe} ${carte.verifie} · ${carte.verifie_par}`);
+  if (carte.verifie_par) morceaux.push(`${LIB.relueLe} ${carte.verifie} · ${typeof carte.verifie_par === "string" ? carte.verifie_par : "passe indépendante"}`);
   return morceaux.length ? `${LIB.provenance} : ${morceaux.join(" · ")}` : "";
 }
 

@@ -1,162 +1,155 @@
-# Roadmap Académie, active (réécrite le 02/09/2026)
+# Roadmap Académie, 05/09/2026
 
-**Reprise du 04/09, publication demandée par JB :** [état livré, limites et suite](travail/2026-09-04-publication-et-suite.md). Ce point actualise les mentions historiques de pause et de publication ci-dessous.
+Cap : une école de métier qui donne envie de revenir et rend capable de
+comprendre, rappeler, expliquer et agir, y compris sans IA. L'arbre reste
+vaste ; la prochaine livraison doit être petite et complète.
 
-L'Académie transforme des sources vérifiées en un arbre de compétences
-qu'on conquiert chaque jour. Elle échoue si elle est belle et n'est pas
-ouverte le matin, si elle récompense des clics sans améliorer la
-rétention et le transfert, ou si elle enseigne une bêtise.
+L'[audit](travail/audit-2026-09-05/AUDIT.md) fonde cet ordre. La
+[revue scientifique](travail/audit-2026-09-05/SCIENCE.md) distingue résultats,
+limites et propositions. `roadmap.json` contient les dépendances ; chaque
+chantier a son cahier avant le code. Les anciens jalons restent historiques,
+leurs chiffres ne sont pas des compteurs actuels.
 
-Cette page est la seule roadmap active ; `roadmap.json` est la file
-exécutable (`python3 tooling/roadmap.py next` ne choisit qu'un item
-`ready`, sûr et sans dépendance ouverte). Le cadrage d'août est dans
-[`archive/`](archive/roadmaps/README.md). Les décisions qui fondent
-cette roadmap sont dans [`decisions/`](decisions/README.md).
+## État local après la demande autonome
 
-## La preuve recherchée
+La décision 0036 autorise la fabrication maintenant. Les preuves de cette
+livraison sont dans [LIVRAISON.md](travail/experience-2026-09-05/LIVRAISON.md).
+L'audit initial reste daté ; ses compteurs décrivent l'avant.
 
-- au moins quatre séances par semaine, sans culpabilisation après une
-  coupure ;
-- une séance jouable en moins de trois secondes, hors-ligne, sur
-  téléphone et sur ordinateur, terminable à tout moment ;
-- une réponse jouée dans le tram relisible sur le Mac le soir ;
-- rétention à froid mesurée après environ trente séances, et une
-  calibration qui s'améliore ;
-- 100 % des cartes servies valides, avec leur provenance, la nature de
-  leurs sources et leur note de confiance affichées ;
-- le coût de fabrication d'un chapitre connu avant d'en promettre.
+- Deux parcours : AG (trois chapitres, 17 cartes) et IFSI sécurité et
+  communication (deux chapitres, 10 cartes), avec relecture indépendante.
+- 103 cartes publiées localement : 93 copro et 10 IFSI. Les 76 cartes v1
+  sont conservées ; les cinq leçons v2 sont reliées au programme.
+- Accueil orienté apprentissage, salle Étude, reprise, brouillons, deux
+  thèmes, séparation des métiers et des réponses avec/sans aide.
+- Journal : ordre UTC exact, émission locale ordonnée et acquittements
+  contrôlés ; preuves de régression et contre-relecture dans la livraison.
+- Les surinterprétations scientifiques ciblées sont corrigées et leurs
+  limites documentées. Les références non recontrôlées restent nommées.
+- 389 chapitres copro et 375 IFSI restent l'horizon éditorial. Cinq leçons
+  jouables ne démontrent ni sa couverture, ni une formation validée.
+- Publication distante, trajet physique téléphone/Mac, appréciation
+  esthétique de JB, usage sur quatre semaines et transfert : non mesurés
+  dans cette livraison. Aucun résultat humain reconstruit par un agent.
+- Classes de modèles retirées des consignes actives et du code par le lot
+  précédent, conservé avec ses contrôles de reprise et de provenance.
 
-## Maintenant : prouver le rituel et poser les fondations v2
+## Ordre de référence de l’audit, puis actualisation
 
-**Point d'arrêt du 04/09 :** l'[audit et la reprise](travail/audit-froid-2026-09-04.md)
-priment pour l'état d'avancement sur le récit historique ci-dessous.
-Le front et la préparation locale de publication ont progressé ;
-54 scénarios navigateur passent. Le tri chronologique des révisions
-reste à corriger avant bascule, le contrat v2 manque de provenance et
-les preuves humaines restent ouvertes. Les sources sont maintenant
-repérées depuis le Mac : le blocage Cloud n'est plus le blocage actuel.
+Ordre : **préserver les réponses et la fiabilité**, rendre l'existant
+utilisable, mesurer l'usage, démontrer un apprentissage, puis étendre.
+À priorité égale, choisir le lot qui retire une dépendance avec le moins
+de travail. Aucun score RICE artificiel faute de données d'usage/coût.
 
-Ce qui est fait le 02/09 : doctrine v2, programme en données, contrats
-v2 proposés, squelette du serveur et du client, maquette du front. Le
-03/09 : l'état synchronisé (`ACA-JOURNAL-SYNC-1`), le programme validé
-(`ACA-PROGRAMME-1`), le squelette technique du client, le registre des
-sources (`ACA-SOURCES-1`), les licences de réutilisation lues à la
-source (`ACA-REUSE-1`), le tableau de bord du rituel
-(`ACA-RITUAL-METRICS-1`). Sont ouverts : le contrat v2
-(`ACA-CONTRAT-2`), le client v2 (`ACA-FRONT-2`), et les trente séances
-de JB (`ACA-RITUAL-1`), qui n'attendent plus que lui. L'export Anki
-(`ACA-EXPORT-1`) est fait : l'assurance-vie de réversibilité tourne.
-La carte des sources des domaines vides (`ACA-CONTENT-MAP-1`) est
-**bloquée en Cloud** et attend le Mac : la politique réseau y refuse
-tous les sites institutionnels, et le chantier interdit un inventaire
-de mémoire (le détail est dans son cahier). L'arbre
-(`ACA-ARBRE-1`) et la semaine type (`ACA-SEMAINE-1`) sont faits :
-nœuds, branches, états, couleurs des jours, pondération du socle, et la
-parité Python/TypeScript sur chacun.
+Les charges ci-dessous sont des enveloppes de planification, pas des mesures
+ni des promesses de calendrier. Une unité termine un livrable vérifiable ;
+le temps d'agent ne remplace pas les jours d'observation humaine. Les
+`budget` JSON bornent une passe de travail, pas tout un chantier.
 
-1. **L'état synchronisé** (`ACA-JOURNAL-SYNC-1`) : API d'état, SQLite,
-   client hors-ligne, parité FSRS. C'est le maillon manquant depuis
-   août ; sans lui aucun gate ne se mesure.
-2. **Le tableau de bord du rituel** (`ACA-RITUAL-METRICS-1`, fait le
-   03/09 : `python3 app/rituel.py <journal.jsonl>`) et **les trente
-   séances de JB** (`ACA-RITUAL-1`), qui n'attendent plus que JB. Le
-   rituel reste le gate de tout ce qui est multi-joueur.
-3. **Le programme validé** (`ACA-PROGRAMME-1`) : valideur, clés de
-   `academie.json` alignées, calibrage des niveaux par agent frais.
-4. **Le registre des sources** (`ACA-SOURCES-1`, fait le 03/09) : nature
-   et parti sur les 154 sources des 84 cartes, `sources/registre.json`
-   qui fait foi, liste blanche v1. Deux trous nommés en sont sortis : le
-   référentiel qui fonde P1 à P5, et l'arrêt du 18/06/2026 sans numéro
-   de pourvoi.
-5. **La réutilisation** (`ACA-REUSE-1`) : licences lues à la source,
-   verdict par candidat, avant la première ligne du client.
-6. **Le contrat v2** (`ACA-CONTRAT-2`) : cartes, chapitres, valideur,
-   migration, dans le même commit.
+| Ordre | Chantiers et résultat concret | Preuve de sortie | Charge indicative |
+|---|---|---|---|
+| P0, maintenant | `ACA-JOURNAL-SYNC-1` : ordre temporel correct et acquittement serveur strict | Tests rouges puis verts sur offsets, fractions, égalités, reprise et réponses 200 invalides ; aucun événement désynchronisé silencieusement | 2 à 3 unités de code/revue |
+| P0, en parallèle | `ACA-COPRO-1` : clôturer les relectures restantes ; `ACA-METHODE-2` : corriger les surinterprétations scientifiques | Table assertion/source/périmètre et avis indépendant ; chaque règle scientifique distingue preuve et choix produit | 1 unité copro, 2 unités méthode |
+| P1 | `ACA-FRONT-2` : première séance évidente, départ novice adapté, mobile lisible, brouillon conservé, focus correct, tests web en CI | Revue rendue indépendante, vérifications téléphone/tablette/ordinateur, tests incluant les défauts observés ; appréciation visuelle JB encore distincte | 3 à 4 unités ciblées, sans refonte générale imposée |
+| P1, après correctifs | `ACA-PUBLICATION-2` : rendre le client réellement accessible et synchronisé | SHA servi, HTTPS authentifié, téléphone hors-ligne puis Mac et trajet inverse, retour arrière documenté ; validation humaine de publication | 1 unité de préparation puis essai réel |
+| P1, dès accès utilisable | `ACA-RITUAL-1` : sept séances d'acceptation incluses dans environ trente, puis bilan | Usage réel sur au moins quatre semaines, test différé, calibration et verbatim ; aucune séance de robot comptée | Temps humain, pas estimable en tokens |
+| P2, contrat préparable avant le bilan | `ACA-PILOTE-CONTRAT-1` puis `ACA-ETUDE-1` : une séquence AG cohérente sur trois chapitres | Contrat du pilote, sources et relecture vérifiables, tentative/aides/explication/cas inédit/rappel ; jeu pilote après bilan du rituel | 1 à 2 unités contrat, 3 à 5 unités éditoriales et produit |
+| P2, après le pilote | `ACA-TRANSFERT-1` : montrer ce qui reste et ce qui se transfère | Cas parallèles sans IA et avec outils, mesures différées distinctes des points et de FSRS ; décision documentée | Préparation 1 à 2 unités, observations différées |
+| P3, sur preuve | `ACA-CONTRAT-2`, `ACA-CONTENT-2`, étude/cas IFSI, réponses libres, boîte et extensions | Migration entière sans provenance inventée ; lots plafonnés par le coût et le besoin observés ; aucune promesse de formation clinique validée par des cartes | Recalibrer avec le premier pilote |
 
-## Ensuite : le produit v2 pour un joueur
+La fabrication locale anticipée est autorisée par 0036 ; son observation
+humaine reste distincte. Les cases de la table ci-dessus décrivent les
+preuves attendues, pas une absence de code. Aucune nouvelle mécanique
+n'entre dans un lot déjà mesuré en cours de rituel. Un défaut bloquant se corrige, sa version et
+la rupture éventuelle de mesure se consignent.
 
-Le programme infirmier suit le cap confirmé le 04/09 : entrer en école,
-devenir infirmier, continuer sans plafond. `ACA-IFSI-1` corrige
-l'inventaire et les préparations : référentiel 2026, historique conservé,
-Parcoursup/FPC/accès spécifiques, étapes de formation et spécialités.
-Le [rapport de révision](travail/2026-09-04-revision-ifsi.md) distingue
-ces données des futures cartes et du moteur de cas. Le premier lot de
-contenu traversera diabète, médicaments, calcul, alerte, communication
-et retour à domicile ; les branches s'étendront par les sources, la boîte
-et les cas nouveaux, sans niveau final.
+## Le premier parcours qui doit donner envie d'apprendre
 
-**Reprise du 04/09 :** les [trois rapports](travail/rapports-chatgpt-pro/README.md)
-sont classés avec provenance et variantes. Le troisième recentre le
-[plan commun](travail/rapports-chatgpt-pro/PLAN.md) sur les corrections,
-l'usage réel, puis les extensions minimales nécessaires aux pilotes.
-`ACA-IFSI-1` est terminé localement : 375 chapitres, 600 capacités de
-cadrage, syllabus et catalogue alignés, 21 tests IFSI et contrôles du
-dépôt verts. Le [point de reprise](travail/2026-09-04-revision-ifsi.md)
-conserve les preuves et limites. `ACA-COPRO-1` porte les corrections
-ciblées copro : [état, sources et suite](travail/2026-09-04-revision-copro.md).
-Ce lot est en pause à la demande de JB, avant clôture des relectures.
-Les gates d'usage et les chantiers front/journal restent ouverts.
+**AG : préparer une décision, la défendre, puis la mettre en œuvre.**
+Trois chapitres rapprochés, issus du programme existant, plutôt qu'une
+carte solitaire suivie de sujets sans lien. La sélection livrée est : syndic et missions, article 24, préparation
+du procès-verbal. Le chapitre PV ne couvre pas encore toutes les
+modalités de notification annoncées par le programme.
 
-1. **Le client v2** (`ACA-FRONT-2`) : l'arbre, la séance, le profil,
-   sur la maquette du 02/09 ; remplace l'archipel ; `check.py` mis à
-   jour.
-   L'arrivée d'un élève (pseudo, catalogue, « Créer le vôtre » avec les
-   prompts à coller) suit dans `ACA-ONBOARDING-1` ; d'ici là, l'accueil
-   est `COMMENCER.md` (`decisions/0027`).
-2. **La semaine type et le socle** (`ACA-SEMAINE-1`, fait le 03/09) :
-   le composeur applique la couleur du jour, la pondération du socle, la
-   séance de domaine avec ses rappels d'ailleurs, et ouvre la séance par
-   une ligne de journal qui la rend rejouable.
-3. **L'étude** (`ACA-ETUDE-1`) sur trois chapitres pilotes, puis
-   **les épreuves** (`ACA-EXAMEN-1`), **la boîte** (`ACA-BOITE-1`),
-   **la journée** (`ACA-JOURNEE-1`), **le papier** (`ACA-PAPIER-1`).
-4. **Le contenu** (`ACA-CONTENT-MAP-1`, `ACA-CONTENT-2`) : les domaines
-   du socle en niveaux 1 et 2, par lots de chapitres, double passe,
-   échantillon humain ; un arrivant ne valide jamais seul une matière
-   qu'il découvre.
-5. **L'audit** (`ACA-AUDIT-1`) : rapport HTML par banque, dossier de
-   carte, péremption du droit ; puis **les runs de vérification**
-   (`ACA-VERIF-1`) : un tirage de cartes revérifié sur les sources
-   fiables, historique écrit, statuts qui bougent.
-6. **La réponse libre** (`ACA-RESPONSE-1`) : expérience bornée sur un
-   petit lot, coût par correction mesuré.
+1. Comprendre les acteurs, pouvoirs, documents et informations manquantes.
+2. Qualifier une décision, expliquer son raisonnement et comparer un cas
+   proche où la conclusion change.
+3. Produire une courte note de décision, repérer une limite de mandat et
+   répondre à la pression d'un interlocuteur avec des options explicites.
 
-## Plus tard : ouvrir sans détruire le produit
+Le pilote exerce les fondations aussi bien que le terrain : définir un
+principe, le rappeler, l'expliquer simplement, l'utiliser. Il distingue
+ce qui est sûr, ce qui dépend du contexte, ce qui exige une vérification
+et ce qui appelle une aide professionnelle. Aucun exemple de cette page
+ne constitue une réponse juridique validée.
 
-1. **Les comptes et le RGPD** (`ACA-MULTI-DECISION-1`) : JB arbitre
-   authentification, suppression sous 48 h, sous-traitant mail, après
-   le bilan des trente séances et quatre semaines de plus.
-2. **Les cercles** (`ACA-CERCLE-1`) : tous les joueurs se voient par
-   défaut, chacun peut se masquer, carnet privé ; fil, kudos, défis ;
-   puis **la ligue** (`ACA-LIGUE-1`) et **le tuteur** (`ACA-TUTEUR-1`).
-3. **La bibliothèque commune** (`ACA-BIBLIOTHEQUE-1`) : livraisons,
-   quarantaine, licence du contenu, un domaine fabriqué par l'un
-   adoptable par l'autre.
-4. **Le kit de domaine** (`ACA-DOMAIN-KIT-1`) éprouvé avec Arthur, sur
-   le squelette infirmier posé le 04/09 (`programme/ifsi.json`) ;
-   **l'auto-hébergement** (`ACA-SELFHOST-1`) éprouvé par un copain.
-5. **Les médias** (`ACA-MEDIA-1`) : photothèque de terrain, écoute,
-   podcast de chapitre. **Le canal labor** (`ACA-ERP-1`) : anonymisé,
-   validé, scanné. **L'optimiseur FSRS** (`ACA-OPTIMISEUR-1`) à
-   quatre cents révisions.
+Après ce pilote : dégât des eaux pour varier les situations, puis systèmes
+du bâtiment (dont VMC) et sécurité/mandat selon le besoin constaté. IFSI :
+premier lot transversal diabète, traitement, calcul, alerte, communication
+et domicile, sur sources adaptées au niveau. Les gestes et la compétence
+clinique demandent une observation supervisée distincte de l'application.
 
-## Questions d'architecture déjà tranchées
+La migration globale reste prévue dans `ACA-CONTRAT-2`, avec les
+assignations de 0030. Elle n'est plus le prérequis des trois premiers
+chapitres : le générateur accepte déjà v1 et v2 ensemble. Le petit contrat
+pilote doit prouver cette coexistence sans doublons, sans fausse étiquette
+v2 globale et sans réécrire le journal. Décision de séquencement : 0035.
 
-`ARCHITECTURE.md` fait foi : moteur Python de référence ; serveur
-Python + SQLite ; client React + TypeScript + PWA, jetable ; FSRS des
-deux côtés avec vecteurs de parité ; état sur le VPS, hors git ; sources
-chez le joueur ; aucun appel de modèle côté serveur ; aucun tiers.
+## Ce qu'on mesure
 
-## Garde-fous de produit
+| Dimension | Mesure utile | Ce qu'elle ne prouve pas |
+|---|---|---|
+| Usage | Retours, séances interrompues, temps disponible, envie de reprendre | Acquisition d'un métier |
+| Mémoire | Rappel différé, sans corrigé, des connaissances cibles | Traitement d'un cas nouveau |
+| Compréhension | Explication causale, contre-exemple, analogie et sa limite | Exécution correcte sur le terrain |
+| Transfert | Cas inédit et production avec grille annoncée | Généralisation à tout le métier |
+| Jugement | Informations demandées, risques reconnus, options et justification, confiance avant retour | Autorisation juridique ou clinique donnée par l'IA |
+| Assistance | Même objectif avec outils et sources, temps et vérifications observés | Connaissance disponible sans téléphone |
+| Fabrication | Temps réel, corrections factuelles, relecture humaine et coût par chapitre | Capacité illimitée de production |
 
-- Pas de dette, pas de série qui casse, pas de classement public, pas
-  de monnaie, pas d'avatar, pas de confettis.
-- Rien de multi-joueur avant la preuve du rituel ; rien de social sans
-  la suppression de compte.
-- Aucune donnée client de labor, même dans un prompt.
-- Une carte fausse sort du service immédiatement, puis se corrige à la
-  source.
-- Une mécanique sans entrée dans `METHODE.md` n'entre pas.
-- Le temps humain de validation est plafonné : dix minutes par semaine
-  pour le propriétaire du domaine ; si ça déborde, on baisse le neuf.
-- Quinze items `ready` au plus dans `roadmap.json`.
+Le test à froid de vingt cartes prévu pour le rituel reste un premier
+signal. `ACA-TRANSFERT-1` ajoute un protocole borné au pilote ; ni vingt
+cartes ni un joueur ne constituent un essai causal sur l'efficacité générale.
+
+## IA, groupe et horizon
+
+Faire progresser le professeur IA par capacités observées : fabriquer une
+séquence sourcée, proposer des indices, discuter une justification, jouer
+un interlocuteur, puis adapter le parcours sur des résultats différés.
+Le même modèle peut écrire et effectuer une passe indépendante dans une
+autre session ; changer son nom ne prouve aucune indépendance.
+
+`ACA-RESPONSE-1` porte l'expérience bornée de correction. `ACA-TUTEUR-1`
+concerne le rôle social consenti ; le professeur IA adaptatif reste à
+cadrer après les résultats de l'expérience de correction. Celle-ci
+n'attend pas les cercles. L'architecture sans appel LLM serveur reste
+en vigueur ; une première expérimentation peut utiliser l'abonnement local.
+
+Un binôme peut discuter un cas après réponse individuelle, puis chacun
+résoudre une variante seul. Cette expérience consentie n'exige pas encore
+un réseau social. Les cercles et la ligue restent après le rituel et les
+décisions de comptes. Pas de classement imposé ni de reporting hiérarchique.
+
+Conserver Python, SQLite, journal append-only, client PWA et données par
+métier. Différer nouvelle infrastructure, catalogue massif, médias coûteux,
+optimisation FSRS sans historique suffisant et automatisation large de la
+publication. L'effort va d'abord à une expérience de bout en bout.
+
+## Prochaine reprise
+
+Lire `chantiers/ACA-JOURNAL-SYNC-1.md`, écrire les régressions manquantes,
+corriger et faire relire. `tooling/roadmap.py next` ne choisit que les
+items automatisables sans revue ; son absence de résultat ne signifie
+pas qu'il n'y a aucun travail. Les P0 avec revue se prennent explicitement
+depuis cette page et leur cahier.
+
+## Sortie de cette livraison
+
+ACA-JOURNAL-SYNC-1, ACA-COPRO-1, ACA-METHODE-2, ACA-FRONT-2,
+ACA-PILOTE-CONTRAT-1 et ACA-EXPERIENCE-1 sont clos à leur périmètre local.
+La livraison porte les preuves exactes et leurs limites. La prochaine
+preuve à obtenir est l'accès publié et la synchronisation physique
+(ACA-PUBLICATION-2), puis les observations réelles du rituel et du pilote.
+ACA-ETUDE-1 reste ouvert pour son étude humaine observée ; sa fabrication
+locale anticipée est désormais disponible. Rien n'est bloqué sur une
+question de design ou de contenu adressée à JB dans cette passe.

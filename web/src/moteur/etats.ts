@@ -1,3 +1,4 @@
+import { compareJournal } from "./chronologie";
 /**
  * Rejeu du journal en etat par carte. Miroir de seance.etats_cartes
  * (app/seance.py). Rien n'est stocke : l'etat se recalcule a chaque
@@ -45,7 +46,7 @@ export function aujourdhuiOrdinal(): number {
 
 /** Trie le journal par `quand`, comme lit_journal. */
 export function trieJournal(journal: LigneJournal[]): LigneJournal[] {
-  return [...journal].sort((a, b) => (a.quand ?? "").localeCompare(b.quand ?? ""));
+  return [...journal].sort(compareJournal);
 }
 
 export function etatsCartes(

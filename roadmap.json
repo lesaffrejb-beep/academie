@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "project": "academie",
-  "_": "Réécrite le 02/09/2026 (ROADMAP.md, decisions/). Statuts : done | ready | blocked. Modes : deterministic | agent-safe | agent-review | human-only. tooling/roadmap.py ne choisit qu'un item ready, risque low ou medium, mode deterministic ou agent-safe, sans dépendance ouverte.",
+  "_": "Actualisée le 05/09/2026 par audit (ROADMAP.md, décision 0035). done = périmètre et preuves du cahier, pas toute la promesse produit. ready | blocked ; modes deterministic | agent-safe | agent-review | human-only. Les budgets bornent une passe de travail, pas la durée complète. tooling/roadmap.py next ne choisit que les tâches automatisables sans revue.",
   "items": [
     {
       "id": "ACA-PORT-1",
@@ -130,7 +130,7 @@
       "status": "done",
       "mode": "agent-review",
       "risk": "medium",
-      "priority": 96,
+      "priority": 108,
       "depends_on": [
         "ACA-DOC-2"
       ],
@@ -139,10 +139,9 @@
         "max_minutes": 360,
         "max_tokens": 120000
       },
-      "proof": "Une réponse jouée sur téléphone réseau coupé est relisible sur le Mac le soir, et l'inverse ; test de parité contre app/vecteurs_fsrs.py vert ; rejouer un lot ne change rien.",
+      "proof": "Livraison locale du 05/09 : travail/experience-2026-09-05/LIVRAISON.md. Suites Python et contrôle verts,270 tests client + 5 publication,build, 70 scénarios navigateur vérifiés (69/70 puis minuit corrigé 2/2), relectures indépendantes. Publication et observation humaine restent séparées.",
       "parent_milestone": "ACADEMIE-V2-FONDATIONS",
-      "done_on": "2026-09-03",
-      "note": "Le statut done est historique et ne clôt pas la preuve téléphone-Mac. Audit du 04/09 : file/reprise/import renforcés, mais défaut de tri lexical des dates à offsets différents reproduit et non corrigé au STOP. Priorité de reprise dans chantiers/ACA-JOURNAL-SYNC-1.md ; installation et preuve physique toujours non attestées. Voir travail/audit-froid-2026-09-04.md."
+      "note": "Périmètre local du cahier terminé, décision 0036. Journal exact et reprise, contrat mixte,5 leçons / 27 cartes v2 en 2 parcours, écran accueil/étude et documentation. Les tests ne prouvent pas la rétention ni la synchronisation physique."
     },
     {
       "id": "ACA-RITUAL-METRICS-1",
@@ -168,10 +167,10 @@
       "status": "blocked",
       "mode": "human-only",
       "risk": "low",
-      "priority": 95,
+      "priority": 101,
       "depends_on": [
-        "ACA-JOURNAL-SYNC-1",
-        "ACA-FRONT-2"
+        "ACA-PUBLICATION-2",
+        "ACA-RITUAL-METRICS-1"
       ],
       "budget": {
         "max_units": 30,
@@ -179,7 +178,7 @@
       },
       "proof": "Bilan usage et savoir depuis le journal synchronisé : fréquence, abandons, formats, score à froid, calibration, verbatim JB et décision continuer, corriger ou geler.",
       "parent_milestone": "ACADEMIE-RITUAL-1",
-      "note": "Le 04/09, JB : il joue quand le client v2 est fini, propre et pro. Dépend donc d'ACA-FRONT-2."
+      "note": "Les sept premières séances reprennent la preuve d’acceptation du front, incluses dans environ trente. Au moins quatre semaines, test différé et bilan réel ; aucune mécanique neuve dans le lot mesuré. Voir 0035."
     },
     {
       "id": "ACA-PROGRAMME-1",
@@ -242,7 +241,7 @@
       "status": "ready",
       "mode": "agent-review",
       "risk": "medium",
-      "priority": 90,
+      "priority": 81,
       "depends_on": [
         "ACA-DOC-2"
       ],
@@ -258,13 +257,14 @@
     {
       "id": "ACA-CONTRAT-2",
       "outcome": "Le contrat carte-v2 et chapitre-v1 sont opposables : valideur v2 dans le même commit, banque migrée à la disposition par chapitre sans renumérotage, péremption par défaut du droit, a_recouper dérivé.",
-      "status": "ready",
+      "status": "blocked",
       "mode": "agent-review",
       "risk": "medium",
-      "priority": 99,
+      "priority": 82,
       "depends_on": [
         "ACA-PROGRAMME-1",
-        "ACA-SOURCES-1"
+        "ACA-SOURCES-1",
+        "ACA-ETUDE-1"
       ],
       "budget": {
         "max_units": 2,
@@ -273,7 +273,7 @@
       },
       "proof": "Valideur v2 vert sur la banque migrée ; tests de mutation étendus ; genere.py publie contrat: carte-v2 ; l'archipel joue encore la banque v2 ou est retiré au même moment.",
       "parent_milestone": "ACADEMIE-V2-FONDATIONS",
-      "note": "Pause du 04/09 : app/migre_banque.py prépare un candidat isolé selon 0030, sans promotion ni archivage. 15 tests et 3 mutations ciblées passent. Mesures : 19 changements de domaine, 84 auteurs structurés absents, 80 relecteurs manquants, 19 niveaux incompatibles et 54 chapitres à écrire. Le reste n'est donc pas mécanique. Prochaine unité : preuves éditoriales sans provenance inventée, puis candidat vert et autorisation humaine. Voir travail/audit-froid-2026-09-04.md."
+      "note": "Pause du 04/09 : app/migre_banque.py prépare un candidat isolé selon 0030, sans promotion ni archivage. 15 tests et 3 mutations ciblées passent. Mesures : 19 changements de domaine, 84 auteurs structurés absents, 80 relecteurs manquants, 19 niveaux incompatibles et 54 chapitres à écrire. Le reste n'est donc pas mécanique. Prochaine unité : preuves éditoriales sans provenance inventée, puis candidat vert et autorisation humaine. Voir travail/audit-froid-2026-09-04.md. Séquencement 05/09 (0035) : migration globale après le pilote, sans changer les assignations de 0030 ; ACA-PILOTE-CONTRAT-1 sécurise auparavant les trois chapitres et la coexistence."
     },
     {
       "id": "ACA-EXPORT-1",
@@ -296,10 +296,10 @@
     {
       "id": "ACA-FRONT-2",
       "outcome": "Le client v2 (web/) remplace l'archipel : arbre global et vue domaine, séance, fiche de nœud, clôture, profil, boîte, crédits ; hors-ligne d'abord ; DA appliquée ; check.py mis à jour.",
-      "status": "ready",
+      "status": "done",
       "mode": "agent-review",
       "risk": "medium",
-      "priority": 89,
+      "priority": 103,
       "depends_on": [
         "ACA-JOURNAL-SYNC-1",
         "ACA-PROGRAMME-1",
@@ -310,9 +310,9 @@
         "max_minutes": 720,
         "max_tokens": 250000
       },
-      "proof": "Première question en moins de trois secondes réseau coupé sur téléphone ; checklist DA §9 ; aucun hôte tiers contacté ; JB joue sept séances dessus.",
+      "proof": "Livraison locale du 05/09 : travail/experience-2026-09-05/LIVRAISON.md. Suites Python et contrôle verts,270 tests client + 5 publication,build, 70 scénarios navigateur vérifiés (69/70 puis minuit corrigé 2/2), relectures indépendantes. Publication et observation humaine restent séparées.",
       "parent_milestone": "ACADEMIE-V2-JOUEUR",
-      "note": "Pause du 04/09 : DA appliquée aux écrans, Impeccable cadré par web/AGENTS.md, images/sources/erreurs/signalements traités. 197 tests client, 5 tests de préparation de publication et 54 scénarios navigateur passent ; build vert. Service de publication complète préparé localement, non installé. Restent tri chronologique journal, confirmation visuelle tablette, réponses API malformées à tester, dépendances dev signalées par npm audit, bascule autorisée et sept séances réelles de JB. Banque encore v1 ; FSRS miroir Python selon 0029. Voir travail/audit-froid-2026-09-04.md."
+      "note": "Périmètre local du cahier terminé, décision 0036. Journal exact et reprise, contrat mixte,5 leçons / 27 cartes v2 en 2 parcours, écran accueil/étude et documentation. Les tests ne prouvent pas la rétention ni la synchronisation physique. Reprise du 05/09 : palette Papier par défaut et exploration lisible, décision 0037, trois corrections de revue résolues (REVUE-EXPLORATION.md). Acceptation JB encore distincte."
     },
     {
       "id": "ACA-ARBRE-1",
@@ -358,10 +358,12 @@
       "status": "blocked",
       "mode": "agent-review",
       "risk": "medium",
-      "priority": 87,
+      "priority": 94,
       "depends_on": [
-        "ACA-CONTRAT-2",
-        "ACA-FRONT-2"
+        "ACA-PILOTE-CONTRAT-1",
+        "ACA-FRONT-2",
+        "ACA-METHODE-2",
+        "ACA-RITUAL-1"
       ],
       "budget": {
         "max_units": 2,
@@ -369,7 +371,8 @@
         "max_tokens": 90000
       },
       "proof": "Trois chapitres au contrat, double passe faite ; une étude jouée par JB avec synthèse cochée ; les cartes extraites entrent en rotation.",
-      "parent_milestone": "ACADEMIE-V2-JOUEUR"
+      "parent_milestone": "ACADEMIE-V2-JOUEUR",
+      "note": "Décision0036 : code et cinq leçons fabriqués en avance dans ACA-EXPERIENCE-1. Restent étude observée par JB et protocole humain, sans compter les tests navigateur. Protocole1 préparé dans travail/experience-2026-09-05/PROTOCOLE.md."
     },
     {
       "id": "ACA-CONTENT-MAP-1",
@@ -401,7 +404,8 @@
         "ACA-CONTENT-MAP-1",
         "ACA-CONTRAT-2",
         "ACA-INGESTION-1",
-        "ACA-RITUAL-1"
+        "ACA-RITUAL-1",
+        "ACA-TRANSFERT-1"
       ],
       "budget": {
         "max_units": 6,
@@ -774,10 +778,10 @@
     {
       "id": "ACA-COPRO-1",
       "outcome": "Les assertions copro confirmées sont corrigées sur sources, les cartes sans preuve suffisante sont signalées et les 389 identifiants sont préservés.",
-      "status": "ready",
+      "status": "done",
       "mode": "agent-review",
       "risk": "medium",
-      "priority": 96,
+      "priority": 106,
       "depends_on": [
         "ACA-PROGRAMME-1"
       ],
@@ -785,8 +789,112 @@
         "max_units": 6,
         "max_minutes": 180
       },
-      "proof": "Pause demandée par JB le 04/09/2026. Retouches sur disque ; relecture AG et avis final sur le programme ouverts, puis banque locale à régénérer. Point durable : travail/2026-09-04-revision-copro.md. Ne pas marquer done.",
-      "parent_milestone": "ACADEMIE-2"
+      "proof": "Relecture v1 AG déjà attestée ; chapitre24 et cartes contrôlés/promus dans le pilote ; 34/34 retouches du programme identiques aux notes source, avis de cohérence indépendant du05/09 sans validation juridique actualisée intégrale. Rapports relecture-contenu et relecture-programme-2026-09-05 ; contrôles intégrés verts.",
+      "parent_milestone": "ACADEMIE-2",
+      "note": "Les sources IRSI/NF C15-100 restent à retrouver, les cartes signalées restent exclues. Les389 identifiants conservés ne démontrent pas la couverture métier."
+    },
+    {
+      "id": "ACA-MODELES-2",
+      "outcome": "Les agents sont jugés sur leurs résultats ; aucune classe de modèle ne restreint les tâches ou les unités.",
+      "status": "done",
+      "mode": "agent-review",
+      "risk": "medium",
+      "priority": 110,
+      "depends_on": [],
+      "budget": {
+        "max_units": 1,
+        "max_minutes": 90
+      },
+      "proof": "Tests rouges puis verts, anciens états ET configurations compatibles sans réécriture, reprise et doublement au-delà de l’ancien plafond testés, contrôles globaux verts, revue indépendante sans bloquant. Voir travail/audit-2026-09-05/VERIFICATIONS.md.",
+      "parent_milestone": "ACADEMIE-1",
+      "done_on": "2026-09-05"
+    },
+    {
+      "id": "ACA-METHODE-2",
+      "outcome": "Méthode et cadrage distinguent résultats scientifiques, limites et choix produit sans surpromesses.",
+      "status": "done",
+      "mode": "agent-review",
+      "risk": "medium",
+      "priority": 105,
+      "depends_on": [],
+      "budget": {
+        "max_units": 2,
+        "max_minutes": 180
+      },
+      "proof": "Table assertion/source/correction, relecture-science-2026-09-05.md et contre-passe du coordinateur, contrôles intégrés verts. Portée ciblée, neuf références historiques non réexaminées et apprentissage non mesuré.",
+      "parent_milestone": "ACADEMIE-V2-JOUEUR"
+    },
+    {
+      "id": "ACA-PUBLICATION-2",
+      "outcome": "Client corrigé servi en HTTPS authentifié, trajet hors-ligne téléphone/Mac et inverse réellement attestés.",
+      "status": "blocked",
+      "mode": "human-only",
+      "risk": "low",
+      "priority": 102,
+      "depends_on": [
+        "ACA-JOURNAL-SYNC-1",
+        "ACA-FRONT-2",
+        "ACA-COPRO-1"
+      ],
+      "budget": {
+        "max_units": 1,
+        "max_minutes": 120
+      },
+      "proof": "SHA, droits et retour arrière vérifiés ; publication autorisée, deux trajets physiques attestés ; pas de secrets dans le rapport.",
+      "parent_milestone": "ACADEMIE-V2-JOUEUR",
+      "note": " Demande push/VPS du 05/09 : correction du build isolé qui omettait les parcours, régression rouge puis verte et revue indépendante. Accès Caddy toujours bloqué, proposition ACL bornée dans deploy/ACL-CADDY-20260905.md."
+    },
+    {
+      "id": "ACA-PILOTE-CONTRAT-1",
+      "outcome": "Trois chapitres pilotes v2 peuvent coexister avec v1 sans doublons, fausse provenance ou fausse étiquette globale.",
+      "status": "done",
+      "mode": "agent-review",
+      "risk": "medium",
+      "priority": 95,
+      "depends_on": [
+        "ACA-PROGRAMME-1",
+        "ACA-SOURCES-1"
+      ],
+      "budget": {
+        "max_units": 2,
+        "max_minutes": 240
+      },
+      "proof": "Livraison locale du 05/09 : travail/experience-2026-09-05/LIVRAISON.md. Suites Python et contrôle verts,270 tests client + 5 publication,build, 70 scénarios navigateur vérifiés (69/70 puis minuit corrigé 2/2), relectures indépendantes. Publication et observation humaine restent séparées.",
+      "parent_milestone": "ACADEMIE-V2-JOUEUR",
+      "note": "Périmètre local du cahier terminé, décision 0036. Journal exact et reprise, contrat mixte,5 leçons / 27 cartes v2 en 2 parcours, écran accueil/étude et documentation. Les tests ne prouvent pas la rétention ni la synchronisation physique."
+    },
+    {
+      "id": "ACA-TRANSFERT-1",
+      "outcome": "Le pilote mesure rappel, compréhension, jugement, production et apport des outils sur des cas distincts.",
+      "status": "blocked",
+      "mode": "human-only",
+      "risk": "low",
+      "priority": 93,
+      "depends_on": [
+        "ACA-ETUDE-1"
+      ],
+      "budget": {
+        "max_units": 2,
+        "max_minutes": 180
+      },
+      "proof": "Protocole et mesure initiale livrés avant la première étude par ACA-ETUDE-1 ; observations différées, grilles et désaccords de correction, bilan signé sans causalité générale.",
+      "parent_milestone": "ACADEMIE-V2-JOUEUR"
+    },
+    {
+      "id": "ACA-EXPERIENCE-1",
+      "outcome": "Accueil et parcours copro/IFSI jouables, sourcés, avec reprise et preuves locales (décision 0036).",
+      "status": "done",
+      "mode": "agent-review",
+      "risk": "medium",
+      "priority": 100,
+      "depends_on": [],
+      "budget": {
+        "max_units": 8,
+        "max_minutes": 480
+      },
+      "proof": "Livraison locale du 05/09 : travail/experience-2026-09-05/LIVRAISON.md. Suites Python et contrôle verts,270 tests client + 5 publication,build, 70 scénarios navigateur vérifiés (69/70 puis minuit corrigé 2/2), relectures indépendantes. Publication et observation humaine restent séparées.",
+      "parent_milestone": "ACADEMIE-1",
+      "note": "Périmètre local du cahier terminé, décision 0036. Journal exact et reprise, contrat mixte,5 leçons / 27 cartes v2 en 2 parcours, écran accueil/étude et documentation. Les tests ne prouvent pas la rétention ni la synchronisation physique."
     }
   ]
 }

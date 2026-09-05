@@ -1,6 +1,6 @@
 # academie, l'école d'un métier jouée tous les jours
 
-**Reprise du 04/09, publication demandée par JB :** [état livré, limites et suite](travail/2026-09-04-publication-et-suite.md). Ce point actualise les mentions historiques de pause et de publication ci-dessous.
+**Livraison locale du 05/09 :** [expérience et preuves](travail/experience-2026-09-05/LIVRAISON.md), [roadmap priorisée](ROADMAP.md). Deux parcours jouables, cinq chapitres et 27 cartes v2 relus indépendamment, en complément des 76 cartes v1. Accueil Copropriété/IFSI, étude reprenable et réponses aidées distinctes des rappels autonomes. L'[audit initial](travail/audit-2026-09-05/AUDIT.md) est conservé comme photographie avant ces corrections. Le [dernier état VPS, daté du 04/09](travail/2026-09-04-publication-et-suite.md), n’a pas été revérifié à distance ici.
 
 L'Académie transforme des sources vérifiées en un **arbre de
 compétences** qu'on conquiert par des exercices de rappel, de
@@ -22,8 +22,8 @@ La conception d'août est archivée intacte dans
 |---|---|---|
 | 1 | [`DOCTRINE.md`](DOCTRINE.md) | ce qu'on est, ce qu'on refuse, les dix invariants, la précédence des documents |
 | 2 | [`BLUEPRINT.md`](BLUEPRINT.md) | ce que le joueur vit : séance, étude, journée, l'arbre, le chapitre, les épreuves, la boîte, les cercles |
-| 3 | [`PROGRAMME.md`](PROGRAMME.md) et [`programme/copro.json`](programme/copro.json) | ce qu'on enseigne au gestionnaire : dix domaines, branches, 389 chapitres, cinq niveaux, le socle ; l'infirmier a le sien, [`programme/ifsi.json`](programme/ifsi.json) et [`SYLLABUS-IFSI.md`](SYLLABUS-IFSI.md) |
-| 4 | [`METHODE.md`](METHODE.md) et [`CADRAGE-SCIENTIFIQUE.md`](CADRAGE-SCIENTIFIQUE.md) | pourquoi chaque mécanique existe, avec sa source vérifiée |
+| 3 | [`PROGRAMME.md`](PROGRAMME.md) et [`programme/copro.json`](programme/copro.json) | ce qu'on enseigne au gestionnaire : onze domaines, branches, 389 chapitres, cinq niveaux, le socle ; l'infirmier a le sien, [`programme/ifsi.json`](programme/ifsi.json) et [`SYLLABUS-IFSI.md`](SYLLABUS-IFSI.md) |
+| 4 | [`METHODE.md`](METHODE.md) et [`CADRAGE-SCIENTIFIQUE.md`](CADRAGE-SCIENTIFIQUE.md) | pourquoi chaque mécanique existe ; limites d’interprétation relevées par l’audit du 05/09 |
 | 5 | [`ARCHITECTURE.md`](ARCHITECTURE.md) | les quatre pièces, où est stocké quoi, le moteur, les contrats, le serveur, l'usine, l'archivage, l'audit, le déploiement |
 | 6 | [`DIRECTION-ARTISTIQUE.md`](DIRECTION-ARTISTIQUE.md) | à quoi ça ressemble, les écrans, la barre, le mouvement, l'accessibilité ; maquette : `travail/maquette-2026-09-02.html` |
 | 7 | [`ROADMAP.md`](ROADMAP.md) et `roadmap.json` | ce qu'on fait ensuite, avec la preuve attendue |
@@ -33,18 +33,19 @@ La conception d'août est archivée intacte dans
 | 11 | [`IDEES-EN-VOL.md`](IDEES-EN-VOL.md), [`lab/VEILLE.md`](lab/VEILLE.md), [`travail/`](travail/) | ce qui n'est pas perdu |
 | 12 | [`MODELES.md`](MODELES.md), [`COMMENCER.md`](COMMENCER.md), [`prompts/`](prompts/README.md) | ce qu'un modèle peut et ne peut pas faire ici ; l'arrivée d'un élève et les prompts à coller dans Claude Code, Codex, Antigravity ou Cursor |
 
-## Ce qui existe et ce qui reste à prouver (04/09/2026)
+## Ce qui existe et ce qui reste à prouver (05/09/2026)
 
 ```
   banque/<domaine>/<branche>.json    84 cartes copro (76 valides, 4 signalées, 4 brouillons), contrat carte-v1
+  chapitres/<domaine>/<branche>/     27 cartes v2 valides, 5 leçons servies ; 4 cartes satellite brouillons
         │
   app/valide_banque.py               refuse tout ce qui sort du contrat
         │
   app/genere.py                      publie banque.json (cartes valides, couche banque)
         │
-  web/ : build Vite → dist/          client React, arbre, salle, profil, boîte
+  web/ : build Vite → dist/          accueil, étude, arbre, rappels, profil, boîte
         │
-  VPS à jour                         client transféré ; accès Caddy bloqué par les droits
+  VPS (dernier constat : 04/09)       ancien client transféré ; accès Caddy alors bloqué par les droits
 ```
 
 Le moteur Python (`app/`) est la référence : FSRS-6 comparé à
@@ -63,11 +64,10 @@ v2, le programme et le client sont implémentés. Les tests locaux ne
 prouvent ni la publication actuelle, ni le trajet réel téléphone–Mac,
 ni les sept séances attendues. L'archipel a été archivé le 04/09.
 
-La banque jouable locale reste v1 : aucun de ses 76 éléments n'est encore
-rattaché à un chapitre. La préparation de migration est disponible,
-mais elle refuse d'inventer auteurs et relecteurs manquants ou de
-promouvoir un candidat invalide. Les 11 cartes v2 pilotes sont des
-brouillons. Étude, épreuves, journée et cercles restent à construire.
+La banque locale combine 76 cartes v1 et 27 cartes v2, avec cinq leçons
+et deux parcours. Les 76 cartes v1 restent sans rattachement au chapitre ;
+la migration refuse d'inventer leur provenance. Étude est jouable ;
+épreuves, journée et cercles restent à construire.
 
 L'[audit du 04/09](travail/audit-froid-2026-09-04.md) donne les preuves,
 les écarts et la prochaine unité de chaque chantier. L'ordre exécutable

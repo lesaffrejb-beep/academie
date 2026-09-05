@@ -38,7 +38,7 @@ def fichiers(dossiers, suffixes):
         if not p.exists():
             continue
         for f in p.rglob("*"):
-            if f.is_file() and f.suffix in suffixes and not {"node_modules", "dist", "dev-dist"} & set(f.parts):
+            if f.is_file() and f.suffix in suffixes and not {"node_modules", "dist", "dev-dist", "test-results", "playwright-report"} & set(f.parts):
                 yield f
 
 
@@ -97,7 +97,7 @@ def controle_json(errors):
 
 def controle_ancien_couplage(errors):
     for path in ROOT.rglob("*"):
-        if path == Path(__file__) or not path.is_file() or ".git" in path.parts or {"node_modules", "dist", "dev-dist"} & set(path.parts):
+        if path == Path(__file__) or not path.is_file() or ".git" in path.parts or {"node_modules", "dist", "dev-dist", "test-results", "playwright-report"} & set(path.parts):
             continue
         if path.suffix not in {".md", ".py", ".json", ".yaml", ".yml", ".ts", ".tsx", ".js"}:
             continue
@@ -133,7 +133,7 @@ def controle_roadmap(errors):
     # Chantiers cités dans les documents : ils existent.
     cites = set()
     for f in ROOT.rglob("*.md"):
-        if ".git" in f.parts or "archive" in f.parts or {"node_modules", "dist", "dev-dist"} & set(f.parts):
+        if ".git" in f.parts or "archive" in f.parts or {"node_modules", "dist", "dev-dist", "test-results", "playwright-report"} & set(f.parts):
             continue
         cites |= set(RE_CHANTIER.findall(lit(f)))
     for c in sorted(cites - ids):
@@ -239,14 +239,20 @@ def controle_usine(errors):
     if not a or not g:
         errors.append("clé `usine` absente d'academie.json ou du gabarit (decisions/0027)")
         return
-    for cle in ("classes", "classe_par_defaut", "modeles_petits", "serie_pour_doubler", "couverture_min",
+    for cle in ("unite_initiale", "unite_max", "serie_pour_doubler", "couverture_min",
                 "invention_max", "mots_page_texte", "mots_min_description", "lignes_par_page_transcription", "dpi_rendu", "resume_max"):
         if cle not in a:
             errors.append(f"academie.json : usine.{cle} manquant")
         elif a.get(cle) != g.get(cle):
             errors.append(f"usine.{cle} diffère entre academie.json et gabarit-domaine/academie.json")
-    if a.get("classe_par_defaut") not in (a.get("classes") or {}):
-        errors.append("usine.classe_par_defaut n'est pas une classe déclarée")
+    for cle in ("classes", "classe_par_defaut", "modeles_petits"):
+        if cle in a or cle in g:
+            errors.append(f"usine.{cle} : ancien classement de modèles interdit")
+    bornes = [a.get("unite_initiale"), a.get("unite_max"), a.get("serie_pour_doubler")]
+    if any(type(n) is not int or n < 1 for n in bornes):
+        errors.append("usine : tailles et série doivent être des entiers positifs")
+    elif bornes[0] > bornes[1]:
+        errors.append("usine.unite_initiale dépasse unite_max")
     try:
         cat = json.loads((ROOT / "programme" / "catalogue.json").read_text(encoding="utf-8"))
         for parcours in cat.get("parcours", []):
@@ -273,7 +279,7 @@ def main() -> int:
     for controle in (controle_fichiers_requis, controle_fichiers_suivis,
                      controle_json, controle_ancien_couplage, controle_client_archipel,
                      controle_roadmap, controle_decisions, controle_programme, controle_tirets, controle_voix,
-                     controle_contenu, controle_imports, controle_chapitres):
+                     controle_contenu, controle_imports, controle_usine, controle_chapitres):
         controle(errors)
     for error in errors:
         print(f"ERREUR: {error}")

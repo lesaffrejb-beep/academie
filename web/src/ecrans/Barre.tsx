@@ -5,7 +5,8 @@ import { va, type Route } from "../app/routage";
 import { Network, Inbox, UserRound, BookOpen, Play, type LucideIcon } from "lucide-react";
 
 const ENTREES: { cle: Route["nom"]; chemin: string; libelle: string; icon: LucideIcon }[] = [
-  { cle: "arbre", chemin: "/", libelle: LIB.arbre, icon: Network },
+  { cle: "accueil", chemin: "/", libelle: "Apprendre", icon: BookOpen },
+  { cle: "arbre", chemin: "/arbre", libelle: LIB.arbre, icon: Network },
   { cle: "boite", chemin: "/boite", libelle: LIB.boite, icon: Inbox },
   { cle: "profil", chemin: "/profil", libelle: LIB.profil, icon: UserRound },
 ];

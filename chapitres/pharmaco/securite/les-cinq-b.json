@@ -1,0 +1,469 @@
+{
+  "id": "pharmaco.securite.les-cinq-b",
+  "titre": "Les cinq B",
+  "domaine": "pharmaco",
+  "branche": "securite",
+  "niveau": 1,
+  "prerequis": [],
+  "objectifs": [
+    "Rappeler les contrôles des cinq B.",
+    "Repérer une concordance non établie avant administration.",
+    "Expliquer pourquoi une vérification ne se remplace pas par une supposition."
+  ],
+  "amorce": {
+    "question": "Simulation de formation : le médicament préparé et la prescription portent des identités différentes ; que fais-tu avant toute administration ?",
+    "aide": "Quelle concordance n’est pas établie ?",
+    "reponse_attendue": "Tu suspends cette administration et sollicites le professionnel encadrant pour vérifier la concordance selon la procédure du lieu de soins."
+  },
+  "lecon": "Avant un soin, connaître un nom de médicament ne suffit pas. Ce chapitre est un entraînement théorique à la sécurité, destiné à préparer les échanges avec ton encadrant. Il ne te demande aucun geste ni aucun choix de dose. Les situations et les documents évoqués sont fictifs ; aucune donnée patient ne doit être saisie dans l’Académie.\n\nLe guide de la HAS présente les cinq B comme des objectifs de sécurité de l’administration : bon patient, bon médicament, bonne dose, bonne voie et bon moment. Tu peux les utiliser comme des questions de concordance avec la prescription et la situation. Les réciter n’établit pas que les contrôles ont été réalisés. Dans un lieu de soins, les procédures, le rôle de chacun et la supervision restent nécessaires.\n\nPremier exercice fictif : une préparation et une prescription n’affichent pas la même identité. La réponse attendue n’est pas de choisir le nom qui te semble probable. Le contrôle du patient n’est pas établi ; tu interromps la progression de cette administration et fais vérifier l’écart avec l’encadrant. Cette simulation travaille le fait de rendre l’incertitude visible. Elle ne permet pas de décider seul du traitement de quelqu’un.\n\nDeuxième exemple fictif : tous les intitulés paraissent familiers, mais la voie prévue n’a pas été rapprochée de la prescription. Dire « c’est le médicament habituel » laisse cette question sans réponse. Dans ta justification, nomme précisément le contrôle absent. L’exercice change de détail pour que tu retrouves une méthode, sans mémoriser seulement une phrase de corrigé.\n\nLa HAS attire aussi l’attention sur les interruptions de tâche et les facteurs humains ou organisationnels. La sécurité ne repose donc pas uniquement sur une personne qui ferait davantage d’efforts de mémoire. Dans le cas proposé, une interruption a cassé le fil de la vérification. Tu dois expliciter ce qui reste à vérifier avec le professionnel, selon l’organisation du service, plutôt que revendiquer une certitude que tu n’as plus.\n\nPour t’entraîner, explique maintenant les cinq questions à un camarade sans regarder la liste. Puis invente une situation où un seul contrôle n’est pas établi, et nomme-le. Ce travail de comparaison est un choix pédagogique de l’Académie : son intérêt pour ta mémoire et son transfert restent à observer. Une réponse correcte à cette carte ne valide ni une administration, ni une compétence clinique.\n\nÀ l’issue de l’étude, tu sauras rappeler le cadre et formuler un doute de façon utile à l’encadrant. Tu ne sauras pas, sur cette seule base, réaliser le circuit complet du médicament. La suite réelle se déroule dans la formation et les situations supervisées.",
+  "synthese": {
+    "consigne": "Simulation : une préparation paraît habituelle, mais sa voie n’a pas été vérifiée ; explique le contrôle absent et la démarche avec ton encadrant.",
+    "attendus": [
+      "Nommer la bonne voie parmi les cinq B.",
+      "Ne pas supposer la concordance sur la seule familiarité.",
+      "Faire vérifier avant administration selon le protocole et la supervision."
+    ]
+  },
+  "sources": [
+    {
+      "texte": "HAS : outils de sécurisation de l’administration des médicaments",
+      "url": "https://www.has-sante.fr/jcms/c_946211/fr/outils-de-securisation-et-d-autoevaluation-de-l-administration-des-medicaments",
+      "nature": "institution",
+      "consulte_le": "2026-09-05",
+      "parti": "Institution publique de santé"
+    },
+    {
+      "texte": "HAS : guide administration, règle des cinq B et vérification de l’identité, page 27",
+      "url": "https://www.has-sante.fr/upload/docs/application/pdf/2014-01/3ebat_guide_adm_reduit_261113.pdf",
+      "nature": "institution",
+      "consulte_le": "2026-09-05",
+      "parti": "Institution publique de santé"
+    },
+    {
+      "texte": "HAS : interruptions de tâche lors de l’administration des médicaments",
+      "url": "https://www.has-sante.fr/jcms/c_2618396/fr/interruptions-de-tache-lors-de-l-administration-des-medicaments",
+      "nature": "institution",
+      "consulte_le": "2026-09-05",
+      "parti": "Institution publique de santé"
+    }
+  ],
+  "provenance": {
+    "auteur": "modele",
+    "modele": "GPT-6",
+    "outil": "Codex",
+    "session": "01a0704b-2f89-7eb1-82d1-219bc309c6ef/root",
+    "genere_le": "2026-09-05",
+    "sources_retrouvees": 3,
+    "sources_concordantes": 0,
+    "sans_source": false
+  },
+  "statut": "valide",
+  "partage": "banque",
+  "verifie": "2026-09-05",
+  "peremption": "2027-03-05",
+  "version": 1,
+  "cartes": [
+    {
+      "id": "pharmaco-securite-les-cinq-b-rappel",
+      "chapitre": "pharmaco.securite.les-cinq-b",
+      "domaine": "pharmaco",
+      "branche": "securite",
+      "niveau": 1,
+      "type": "flash",
+      "question": "Quels contrôles les cinq B te font-ils rappeler ?",
+      "reponse": "Bon patient, bon médicament, bonne dose, bonne voie, bon moment.",
+      "explication": "C’est un cadre de vérification ; sa récitation ne réalise pas les contrôles.",
+      "source": [
+        {
+          "texte": "HAS : outils de sécurisation de l’administration des médicaments",
+          "url": "https://www.has-sante.fr/jcms/c_946211/fr/outils-de-securisation-et-d-autoevaluation-de-l-administration-des-medicaments",
+          "nature": "institution",
+          "consulte_le": "2026-09-05",
+          "parti": "Institution publique de santé"
+        },
+        {
+          "texte": "HAS : guide administration, règle des cinq B et vérification de l’identité, page 27",
+          "url": "https://www.has-sante.fr/upload/docs/application/pdf/2014-01/3ebat_guide_adm_reduit_261113.pdf",
+          "nature": "institution",
+          "consulte_le": "2026-09-05",
+          "parti": "Institution publique de santé"
+        },
+        {
+          "texte": "HAS : interruptions de tâche lors de l’administration des médicaments",
+          "url": "https://www.has-sante.fr/jcms/c_2618396/fr/interruptions-de-tache-lors-de-l-administration-des-medicaments",
+          "nature": "institution",
+          "consulte_le": "2026-09-05",
+          "parti": "Institution publique de santé"
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "modele": "GPT-6",
+        "outil": "Codex",
+        "session": "01a0704b-2f89-7eb1-82d1-219bc309c6ef/root",
+        "genere_le": "2026-09-05",
+        "sources_retrouvees": 3,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "statut": "valide",
+      "partage": "banque",
+      "verifie": "2026-09-05",
+      "peremption": "2027-03-05",
+      "aide": "Reviens au principe du chapitre et nomme ce qui manque.",
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6",
+        "session": "/root/revue_journal",
+        "date": "2026-09-05",
+        "rapport": "travail/relecture-contenu-2026-09-05.md",
+        "assertions": [
+          "HAS : cinq objectifs bon patient, médicament, dose, voie et moment ; concordance patient, prescription et préparation avant administration.",
+          "Guide HAS, extraits pages 27, 30, 31 et 109 : vérifier l'identité, la voie et les concordances ; une non-conformité appelle un avis avant administration.",
+          "HAS interruptions : facteurs humains et organisationnels, actions collectives ; le rappel théorique ne prouve aucun geste clinique.",
+          "Contrôle ciblé de la carte pharmaco-securite-les-cinq-b-rappel : question, réponse, explication et distracteurs rapprochés des règles ci-dessus ; cas fictifs et limites conservés."
+        ],
+        "sources": [
+          "https://www.has-sante.fr/jcms/c_946211/fr/outils-de-securisation-et-d-autoevaluation-de-l-administration-des-medicaments",
+          "https://www.has-sante.fr/upload/docs/application/pdf/2014-01/3ebat_guide_adm_reduit_261113.pdf",
+          "https://www.has-sante.fr/jcms/c_2618396/fr/interruptions-de-tache-lors-de-l-administration-des-medicaments"
+        ],
+        "reserves": [
+          "Consultation ciblée d'extraits PDF HAS et de pages HTML ; aucune lecture intégrale du guide de 180 pages revendiquée.",
+          "Entraînement théorique, sans posologie ni choix thérapeutique ; supervision et procédures du lieu de soins requises."
+        ]
+      }
+    },
+    {
+      "id": "pharmaco-securite-les-cinq-b-discordance",
+      "chapitre": "pharmaco.securite.les-cinq-b",
+      "domaine": "pharmaco",
+      "branche": "securite",
+      "niveau": 1,
+      "type": "qcm",
+      "question": "Simulation : la préparation et la prescription ne correspondent pas au même patient ; quelle action est adaptée ?",
+      "reponse": "Suspendre cette administration et faire vérifier l’écart avec l’encadrant.",
+      "explication": "La concordance d’identité n’est pas établie.",
+      "source": [
+        {
+          "texte": "HAS : outils de sécurisation de l’administration des médicaments",
+          "url": "https://www.has-sante.fr/jcms/c_946211/fr/outils-de-securisation-et-d-autoevaluation-de-l-administration-des-medicaments",
+          "nature": "institution",
+          "consulte_le": "2026-09-05",
+          "parti": "Institution publique de santé"
+        },
+        {
+          "texte": "HAS : guide administration, règle des cinq B et vérification de l’identité, page 27",
+          "url": "https://www.has-sante.fr/upload/docs/application/pdf/2014-01/3ebat_guide_adm_reduit_261113.pdf",
+          "nature": "institution",
+          "consulte_le": "2026-09-05",
+          "parti": "Institution publique de santé"
+        },
+        {
+          "texte": "HAS : interruptions de tâche lors de l’administration des médicaments",
+          "url": "https://www.has-sante.fr/jcms/c_2618396/fr/interruptions-de-tache-lors-de-l-administration-des-medicaments",
+          "nature": "institution",
+          "consulte_le": "2026-09-05",
+          "parti": "Institution publique de santé"
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "modele": "GPT-6",
+        "outil": "Codex",
+        "session": "01a0704b-2f89-7eb1-82d1-219bc309c6ef/root",
+        "genere_le": "2026-09-05",
+        "sources_retrouvees": 3,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "statut": "valide",
+      "partage": "banque",
+      "verifie": "2026-09-05",
+      "peremption": "2027-03-05",
+      "aide": "Reviens au principe du chapitre et nomme ce qui manque.",
+      "choix": [
+        {
+          "texte": "Suspendre cette administration et faire vérifier l’écart avec l’encadrant.",
+          "correct": true
+        },
+        {
+          "texte": "Choisir le nom le plus familier.",
+          "correct": false,
+          "pourquoi_faux": "La familiarité ne vérifie pas l’identité."
+        },
+        {
+          "texte": "Administrer puis compléter le contrôle.",
+          "correct": false,
+          "pourquoi_faux": "Le contrôle ne doit pas être reporté après cette administration."
+        },
+        {
+          "texte": "Changer soi-même l’étiquette.",
+          "correct": false,
+          "pourquoi_faux": "Cela masque l’écart sans en établir la cause."
+        }
+      ],
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6",
+        "session": "/root/revue_journal",
+        "date": "2026-09-05",
+        "rapport": "travail/relecture-contenu-2026-09-05.md",
+        "assertions": [
+          "HAS : cinq objectifs bon patient, médicament, dose, voie et moment ; concordance patient, prescription et préparation avant administration.",
+          "Guide HAS, extraits pages 27, 30, 31 et 109 : vérifier l'identité, la voie et les concordances ; une non-conformité appelle un avis avant administration.",
+          "HAS interruptions : facteurs humains et organisationnels, actions collectives ; le rappel théorique ne prouve aucun geste clinique.",
+          "Contrôle ciblé de la carte pharmaco-securite-les-cinq-b-discordance : question, réponse, explication et distracteurs rapprochés des règles ci-dessus ; cas fictifs et limites conservés."
+        ],
+        "sources": [
+          "https://www.has-sante.fr/jcms/c_946211/fr/outils-de-securisation-et-d-autoevaluation-de-l-administration-des-medicaments",
+          "https://www.has-sante.fr/upload/docs/application/pdf/2014-01/3ebat_guide_adm_reduit_261113.pdf",
+          "https://www.has-sante.fr/jcms/c_2618396/fr/interruptions-de-tache-lors-de-l-administration-des-medicaments"
+        ],
+        "reserves": [
+          "Consultation ciblée d'extraits PDF HAS et de pages HTML ; aucune lecture intégrale du guide de 180 pages revendiquée.",
+          "Entraînement théorique, sans posologie ni choix thérapeutique ; supervision et procédures du lieu de soins requises."
+        ]
+      }
+    },
+    {
+      "id": "pharmaco-securite-les-cinq-b-limite",
+      "chapitre": "pharmaco.securite.les-cinq-b",
+      "domaine": "pharmaco",
+      "branche": "securite",
+      "niveau": 1,
+      "type": "flash",
+      "question": "Une récitation correcte des cinq B prouve-t-elle une administration sûre ?",
+      "reponse": "Non : il faut réaliser les vérifications dans la situation, selon les procédures et la supervision.",
+      "explication": "L’exercice mesure une réponse théorique, pas un geste clinique.",
+      "source": [
+        {
+          "texte": "HAS : outils de sécurisation de l’administration des médicaments",
+          "url": "https://www.has-sante.fr/jcms/c_946211/fr/outils-de-securisation-et-d-autoevaluation-de-l-administration-des-medicaments",
+          "nature": "institution",
+          "consulte_le": "2026-09-05",
+          "parti": "Institution publique de santé"
+        },
+        {
+          "texte": "HAS : guide administration, règle des cinq B et vérification de l’identité, page 27",
+          "url": "https://www.has-sante.fr/upload/docs/application/pdf/2014-01/3ebat_guide_adm_reduit_261113.pdf",
+          "nature": "institution",
+          "consulte_le": "2026-09-05",
+          "parti": "Institution publique de santé"
+        },
+        {
+          "texte": "HAS : interruptions de tâche lors de l’administration des médicaments",
+          "url": "https://www.has-sante.fr/jcms/c_2618396/fr/interruptions-de-tache-lors-de-l-administration-des-medicaments",
+          "nature": "institution",
+          "consulte_le": "2026-09-05",
+          "parti": "Institution publique de santé"
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "modele": "GPT-6",
+        "outil": "Codex",
+        "session": "01a0704b-2f89-7eb1-82d1-219bc309c6ef/root",
+        "genere_le": "2026-09-05",
+        "sources_retrouvees": 3,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "statut": "valide",
+      "partage": "banque",
+      "verifie": "2026-09-05",
+      "peremption": "2027-03-05",
+      "aide": "Reviens au principe du chapitre et nomme ce qui manque.",
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6",
+        "session": "/root/revue_journal",
+        "date": "2026-09-05",
+        "rapport": "travail/relecture-contenu-2026-09-05.md",
+        "assertions": [
+          "HAS : cinq objectifs bon patient, médicament, dose, voie et moment ; concordance patient, prescription et préparation avant administration.",
+          "Guide HAS, extraits pages 27, 30, 31 et 109 : vérifier l'identité, la voie et les concordances ; une non-conformité appelle un avis avant administration.",
+          "HAS interruptions : facteurs humains et organisationnels, actions collectives ; le rappel théorique ne prouve aucun geste clinique.",
+          "Contrôle ciblé de la carte pharmaco-securite-les-cinq-b-limite : question, réponse, explication et distracteurs rapprochés des règles ci-dessus ; cas fictifs et limites conservés."
+        ],
+        "sources": [
+          "https://www.has-sante.fr/jcms/c_946211/fr/outils-de-securisation-et-d-autoevaluation-de-l-administration-des-medicaments",
+          "https://www.has-sante.fr/upload/docs/application/pdf/2014-01/3ebat_guide_adm_reduit_261113.pdf",
+          "https://www.has-sante.fr/jcms/c_2618396/fr/interruptions-de-tache-lors-de-l-administration-des-medicaments"
+        ],
+        "reserves": [
+          "Consultation ciblée d'extraits PDF HAS et de pages HTML ; aucune lecture intégrale du guide de 180 pages revendiquée.",
+          "Entraînement théorique, sans posologie ni choix thérapeutique ; supervision et procédures du lieu de soins requises."
+        ]
+      }
+    },
+    {
+      "id": "pharmaco-securite-les-cinq-b-interruption",
+      "chapitre": "pharmaco.securite.les-cinq-b",
+      "domaine": "pharmaco",
+      "branche": "securite",
+      "niveau": 1,
+      "type": "flash",
+      "question": "Après une interruption pendant une vérification, pourquoi faut-il expliciter ce qui reste à contrôler ?",
+      "reponse": "Parce que le fil du contrôle peut avoir été perdu ; la certitude ne se déduit pas de la mémoire de la tâche.",
+      "explication": "La HAS aborde les interruptions comme un risque aussi organisationnel.",
+      "source": [
+        {
+          "texte": "HAS : outils de sécurisation de l’administration des médicaments",
+          "url": "https://www.has-sante.fr/jcms/c_946211/fr/outils-de-securisation-et-d-autoevaluation-de-l-administration-des-medicaments",
+          "nature": "institution",
+          "consulte_le": "2026-09-05",
+          "parti": "Institution publique de santé"
+        },
+        {
+          "texte": "HAS : guide administration, règle des cinq B et vérification de l’identité, page 27",
+          "url": "https://www.has-sante.fr/upload/docs/application/pdf/2014-01/3ebat_guide_adm_reduit_261113.pdf",
+          "nature": "institution",
+          "consulte_le": "2026-09-05",
+          "parti": "Institution publique de santé"
+        },
+        {
+          "texte": "HAS : interruptions de tâche lors de l’administration des médicaments",
+          "url": "https://www.has-sante.fr/jcms/c_2618396/fr/interruptions-de-tache-lors-de-l-administration-des-medicaments",
+          "nature": "institution",
+          "consulte_le": "2026-09-05",
+          "parti": "Institution publique de santé"
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "modele": "GPT-6",
+        "outil": "Codex",
+        "session": "01a0704b-2f89-7eb1-82d1-219bc309c6ef/root",
+        "genere_le": "2026-09-05",
+        "sources_retrouvees": 3,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "statut": "valide",
+      "partage": "banque",
+      "verifie": "2026-09-05",
+      "peremption": "2027-03-05",
+      "aide": "Reviens au principe du chapitre et nomme ce qui manque.",
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6",
+        "session": "/root/revue_journal",
+        "date": "2026-09-05",
+        "rapport": "travail/relecture-contenu-2026-09-05.md",
+        "assertions": [
+          "HAS : cinq objectifs bon patient, médicament, dose, voie et moment ; concordance patient, prescription et préparation avant administration.",
+          "Guide HAS, extraits pages 27, 30, 31 et 109 : vérifier l'identité, la voie et les concordances ; une non-conformité appelle un avis avant administration.",
+          "HAS interruptions : facteurs humains et organisationnels, actions collectives ; le rappel théorique ne prouve aucun geste clinique.",
+          "Contrôle ciblé de la carte pharmaco-securite-les-cinq-b-interruption : question, réponse, explication et distracteurs rapprochés des règles ci-dessus ; cas fictifs et limites conservés."
+        ],
+        "sources": [
+          "https://www.has-sante.fr/jcms/c_946211/fr/outils-de-securisation-et-d-autoevaluation-de-l-administration-des-medicaments",
+          "https://www.has-sante.fr/upload/docs/application/pdf/2014-01/3ebat_guide_adm_reduit_261113.pdf",
+          "https://www.has-sante.fr/jcms/c_2618396/fr/interruptions-de-tache-lors-de-l-administration-des-medicaments"
+        ],
+        "reserves": [
+          "Consultation ciblée d'extraits PDF HAS et de pages HTML ; aucune lecture intégrale du guide de 180 pages revendiquée.",
+          "Entraînement théorique, sans posologie ni choix thérapeutique ; supervision et procédures du lieu de soins requises."
+        ]
+      }
+    },
+    {
+      "id": "pharmaco-securite-les-cinq-b-transfert",
+      "chapitre": "pharmaco.securite.les-cinq-b",
+      "domaine": "pharmaco",
+      "branche": "securite",
+      "niveau": 1,
+      "type": "synthese",
+      "question": "Simulation : une préparation paraît habituelle, mais sa voie n’a pas été vérifiée ; explique le contrôle absent et la démarche avec ton encadrant.",
+      "reponse": "La voie reste à vérifier ; le caractère habituel du médicament ne suffit pas. Je fais établir la concordance avec la prescription et l’encadrant avant administration.",
+      "explication": "Simulation théorique sans posologie ni geste.",
+      "source": [
+        {
+          "texte": "HAS : outils de sécurisation de l’administration des médicaments",
+          "url": "https://www.has-sante.fr/jcms/c_946211/fr/outils-de-securisation-et-d-autoevaluation-de-l-administration-des-medicaments",
+          "nature": "institution",
+          "consulte_le": "2026-09-05",
+          "parti": "Institution publique de santé"
+        },
+        {
+          "texte": "HAS : guide administration, règle des cinq B et vérification de l’identité, page 27",
+          "url": "https://www.has-sante.fr/upload/docs/application/pdf/2014-01/3ebat_guide_adm_reduit_261113.pdf",
+          "nature": "institution",
+          "consulte_le": "2026-09-05",
+          "parti": "Institution publique de santé"
+        },
+        {
+          "texte": "HAS : interruptions de tâche lors de l’administration des médicaments",
+          "url": "https://www.has-sante.fr/jcms/c_2618396/fr/interruptions-de-tache-lors-de-l-administration-des-medicaments",
+          "nature": "institution",
+          "consulte_le": "2026-09-05",
+          "parti": "Institution publique de santé"
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "modele": "GPT-6",
+        "outil": "Codex",
+        "session": "01a0704b-2f89-7eb1-82d1-219bc309c6ef/root",
+        "genere_le": "2026-09-05",
+        "sources_retrouvees": 3,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "statut": "valide",
+      "partage": "banque",
+      "verifie": "2026-09-05",
+      "peremption": "2027-03-05",
+      "aide": "Reviens au principe du chapitre et nomme ce qui manque.",
+      "attendus": [
+        "Nommer la bonne voie parmi les cinq B.",
+        "Ne pas supposer la concordance sur la seule familiarité.",
+        "Faire vérifier avant administration selon le protocole et la supervision."
+      ],
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6",
+        "session": "/root/revue_journal",
+        "date": "2026-09-05",
+        "rapport": "travail/relecture-contenu-2026-09-05.md",
+        "assertions": [
+          "HAS : cinq objectifs bon patient, médicament, dose, voie et moment ; concordance patient, prescription et préparation avant administration.",
+          "Guide HAS, extraits pages 27, 30, 31 et 109 : vérifier l'identité, la voie et les concordances ; une non-conformité appelle un avis avant administration.",
+          "HAS interruptions : facteurs humains et organisationnels, actions collectives ; le rappel théorique ne prouve aucun geste clinique.",
+          "Contrôle ciblé de la carte pharmaco-securite-les-cinq-b-transfert : question, réponse, explication et distracteurs rapprochés des règles ci-dessus ; cas fictifs et limites conservés."
+        ],
+        "sources": [
+          "https://www.has-sante.fr/jcms/c_946211/fr/outils-de-securisation-et-d-autoevaluation-de-l-administration-des-medicaments",
+          "https://www.has-sante.fr/upload/docs/application/pdf/2014-01/3ebat_guide_adm_reduit_261113.pdf",
+          "https://www.has-sante.fr/jcms/c_2618396/fr/interruptions-de-tache-lors-de-l-administration-des-medicaments"
+        ],
+        "reserves": [
+          "Consultation ciblée d'extraits PDF HAS et de pages HTML ; aucune lecture intégrale du guide de 180 pages revendiquée.",
+          "Entraînement théorique, sans posologie ni choix thérapeutique ; supervision et procédures du lieu de soins requises."
+        ]
+      }
+    }
+  ],
+  "verifie_par": {
+    "outil": "Codex",
+    "modele": "GPT-6",
+    "session": "/root/revue_journal",
+    "date": "2026-09-05",
+    "rapport": "travail/relecture-contenu-2026-09-05.md",
+    "assertions": [
+      "HAS : cinq objectifs bon patient, médicament, dose, voie et moment ; concordance patient, prescription et préparation avant administration.",
+      "Guide HAS, extraits pages 27, 30, 31 et 109 : vérifier l'identité, la voie et les concordances ; une non-conformité appelle un avis avant administration.",
+      "HAS interruptions : facteurs humains et organisationnels, actions collectives ; le rappel théorique ne prouve aucun geste clinique."
+    ],
+    "sources": [
+      "https://www.has-sante.fr/jcms/c_946211/fr/outils-de-securisation-et-d-autoevaluation-de-l-administration-des-medicaments",
+      "https://www.has-sante.fr/upload/docs/application/pdf/2014-01/3ebat_guide_adm_reduit_261113.pdf",
+      "https://www.has-sante.fr/jcms/c_2618396/fr/interruptions-de-tache-lors-de-l-administration-des-medicaments"
+    ],
+    "reserves": [
+      "Consultation ciblée d'extraits PDF HAS et de pages HTML ; aucune lecture intégrale du guide de 180 pages revendiquée.",
+      "Entraînement théorique, sans posologie ni choix thérapeutique ; supervision et procédures du lieu de soins requises."
+    ]
+  }
+}

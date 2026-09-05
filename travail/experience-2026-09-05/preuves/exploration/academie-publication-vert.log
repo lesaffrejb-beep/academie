@@ -1,0 +1,13 @@
+✔ un asset manque : aucune partie de la publication existante ne bouge (8.669ms)
+✔ les ressources non inventoriees ou alterees refusent la distribution (7.599333ms)
+✔ un lien vers le depot ne peut devenir une sortie de publication (1.548459ms)
+✔ les ressources precedent l index, le service worker vient en dernier (12.913125ms)
+✔ les sources en lecture seule construisent ; un build refuse conserve l index (6807.608417ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 6890.677875

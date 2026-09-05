@@ -1,5 +1,10 @@
 # 0027, Le pas à pas imposé : points de sauvegarde, classes de modèles, rien sur parole
 
+**Amendée le 05/09/2026 par [0034](0034-capacites-sans-classes-de-modeles.md) :**
+les catégories de modèles, leurs plafonds et leurs restrictions sont retirés.
+Le texte ci-dessous conserve la décision historique ; seuls les contrôles
+documentaires et les points de reprise restent en vigueur.
+
 - Statut : acceptée
 - Date : 03/09/2026
 - Décideur : agent, sur le brief de JB du 03/09 (« qu'un modèle plus

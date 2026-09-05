@@ -97,7 +97,7 @@ CHAMPS = ("id", "domaine", "branche", "niveau", "prerequis", "type",
 # que la v1 ne connaissait pas.
 CHAMPS_V2 = CHAMPS + (
     "chapitre", "provenance", "verifie_par", "a_recouper", "note_confiance",
-    "pas", "attendus", "document", "audio", "chrono", "confiance")
+    "pas", "attendus", "document", "audio", "chrono", "confiance", "aide")
 
 
 def carte_publique(carte: dict) -> dict:
@@ -206,6 +206,50 @@ def charge_cartes_v2(couches: set[str], avec_brouillons: bool,
             retenues.append(carte_publique_v2(
                 {**carte, "a_recouper": a_recouper, "note_confiance": note}))
     return retenues, erreurs, ecartees
+
+
+def charge_etudes(retenues, aujourdhui):
+    """Expose uniquement les études complètes, relues et encore servables."""
+    import valide_chapitres as v2
+    chapitres, _ = v2.charge_chapitres()
+    ids = {c["id"] for c in retenues}
+    lecons = {}
+    for ch, fichier in chapitres:
+        revue = ch.get("verifie_par")
+        if ch.get("statut") != "valide" or not isinstance(revue, dict):
+            continue
+        if v2.valide_chapitre(ch, fichier, v2.charge_programme(), set(), aujourdhui):
+            continue
+        if ch.get("peremption") and ch["peremption"] < aujourdhui.isoformat():
+            continue
+        cartes = ch.get("cartes") or []
+        if not cartes or any(c["id"] not in ids for c in cartes):
+            continue
+        if any(c.get("peremption") and c["peremption"] < aujourdhui.isoformat() for c in cartes):
+            continue
+        lecons[ch["id"]] = {k: ch[k] for k in ("id", "titre", "domaine", "branche", "niveau", "objectifs", "amorce", "lecon", "synthese", "sources", "provenance", "verifie_par", "verifie", "version", "statut")}
+        lecons[ch["id"]]["peremption"] = ch.get("peremption")
+        lecons[ch["id"]]["cartes"] = [c["id"] for c in cartes]
+    fichier = ACADEMIE / "contenu" / "parcours.json"
+    parcours = json.loads(fichier.read_text(encoding="utf-8")).get("parcours", []) if fichier.is_file() else []
+    return {"version": 1, "lecons": lecons, "parcours": [p for p in parcours if all(c in lecons for c in p["chapitres"])]}
+
+
+def charge_metiers(retenues):
+    """Un même moteur, des banques distinctes par métier, un journal privé commun."""
+    metiers = {}
+    for fichier in sorted((ACADEMIE / "programme").glob("*.json")):
+        p = json.loads(fichier.read_text(encoding="utf-8"))
+        if not p.get("chapitres") or not p.get("domaines"):
+            continue
+        ids = {c["id"] for c in p["chapitres"]}
+        domaines = p["domaines"]
+        metiers[fichier.stem] = {
+            "domaines": domaines, "chapitres": [chapitre_public(c) for c in p["chapitres"]],
+            "branches": p.get("branches", {}), "niveaux": p.get("niveaux", {}),
+            "cartes": [c["id"] for c in retenues if c.get("chapitre") in ids or (not c.get("chapitre") and c["domaine"] in domaines)],
+        }
+    return metiers
 
 
 def publie_images(retenues: list[dict], dossier_sortie: Path) -> tuple[list[str], list[str]]:
@@ -360,6 +404,8 @@ def main() -> int:
         charge["chapitres"] = [chapitre_public(c) for c in programme.get("chapitres", [])]
         charge["branches"] = programme.get("branches", {})
         charge["niveaux"] = programme.get("niveaux", {})
+    charge["etudes"] = charge_etudes(retenues, aujourdhui)
+    charge["metiers"] = charge_metiers(retenues)
     # Le contrat de la charge servie. Il n'est pas un vœu : il dit au
     # client ce qu'il peut supposer de CHAQUE carte du lot. Tant qu'une
     # carte v1 est servie — sans `chapitre`, sans `provenance` —

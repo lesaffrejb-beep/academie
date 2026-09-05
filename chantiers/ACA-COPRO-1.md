@@ -68,3 +68,7 @@ relecture AG, avis final sur le programme et traçabilité finale encore
 ouverts. Lire `travail/2026-09-04-revision-copro.md` avant toute reprise.
 Le chantier reste `ready`, pas `done`. Ne pas régénérer ou publier les
 dernières retouches comme si leur relecture était achevée.
+
+Actualisation du 05/09 : le rapport de révision atteste la contre-lecture
+des cinq retouches v1 AG avant le push du 04/09. Ne pas la refaire par défaut.
+Restent le chapitre v2 brouillon et la clôture générale du lot.

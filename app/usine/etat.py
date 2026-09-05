@@ -5,9 +5,8 @@ pages), la déclaration du modèle, les sceaux des unités validées et un
 journal. Rien n'y est cru sur parole : `suivant` et `etat` rejouent les
 contrôles de chaque unité validée contre le texte machine, donc un état
 modifié à la main est détecté comme une altération. La taille des unités
-part petite, grandit sur une série d'unités propres, rechute au premier
-refus : un petit modèle avance à petits pas, un grand modèle avance vite
-sans jamais avoir le droit d'inventer un chiffre.
+suit les contrôles du document, indépendamment du nom du modèle.
+Les anciennes déclarations restent lisibles ; leur classe est ignorée.
 """
 
 from __future__ import annotations
@@ -41,7 +40,19 @@ def config(rac: Path) -> dict:
     conf = json.loads((rac / "academie.json").read_text(encoding="utf-8"))
     if "usine" not in conf:
         raise RuntimeError("academie.json n'a pas de clé `usine` (decisions/0027)")
-    return conf["usine"]
+    cfg = dict(conf["usine"])
+    # Les dépôts-domaines existants peuvent encore porter l'ancien schéma.
+    # Leurs classes ne sont jamais lues : seules les bornes communes du
+    # dépôt qui fournit ce code servent de défaut, sans écriture du domaine.
+    manquantes = [cle for cle in ("unite_initiale", "unite_max") if cle not in cfg]
+    if manquantes:
+        origine = Path(__file__).resolve().parents[2] / "academie.json"
+        communes = json.loads(origine.read_text(encoding="utf-8"))["usine"]
+        for cle in manquantes:
+            if cle not in communes:
+                raise RuntimeError(f"configuration de l'usine à actualiser : {cle} manquant")
+            cfg[cle] = communes[cle]
+    return cfg
 
 
 class Document:
@@ -109,38 +120,23 @@ def etat_initial(doc: Document, info: dict, cfg: dict) -> dict:
         "mots_machine": info["mots_machine"], "images_par_page": info.get("images_par_page", {}),
         "figures_par_page": info.get("figures_par_page", {}),
         "ocr_requis": bool(info.get("ocr_requis")), "declaration": None,
-        "taille_unite": cfg["classes"][cfg["classe_par_defaut"]]["unite_initiale"], "serie": 0,
+        "taille_unite": cfg["unite_initiale"], "serie": 0,
         "a_verifier": 0, "unites": [], "journal": [],
     }
 
 
 # ---- déclaration ----------------------------------------------------------
 
-def classe_forcee(modele: str, classe: str, cfg: dict) -> tuple[str, str]:
-    """Un nom de petit modèle ne se déclare pas grand ; une classe inconnue vaut petit."""
-    classes = cfg["classes"]
-    if classe not in classes:
-        return cfg["classe_par_defaut"], f"classe « {classe} » inconnue : {cfg['classe_par_defaut']} par défaut"
-    motif = cfg.get("modeles_petits", "")
-    if motif and re.search(r"(?<![a-z0-9])(?:" + motif + r")(?![a-z0-9])", modele.lower()) and classe != cfg["classe_par_defaut"]:
-        return cfg["classe_par_defaut"], f"« {modele} » est un petit modèle (MODELES.md) : classe {cfg['classe_par_defaut']} imposée"
-    return classe, ""
-
-
-def declarer(doc: Document, etat: dict, cfg: dict, outil: str, modele: str, classe: str) -> list[str]:
-    messages = []
+def declarer(doc: Document, etat: dict, cfg: dict, outil: str, modele: str) -> list[str]:
+    """Consigne la provenance ; aucune capacité n'est déduite du nom."""
     if not outil.strip() or not modele.strip():
         raise RuntimeError("outil et modèle sont obligatoires (MODELES.md §2)")
-    classe, note = classe_forcee(modele.strip(), classe.strip().lower(), cfg)
-    if note:
-        messages.append(note)
     ancienne = etat.get("declaration")
-    etat["declaration"] = {"outil": outil.strip(), "modele": modele.strip(), "classe": classe, "declare_le": maintenant()}
-    etat["taille_unite"] = cfg["classes"][classe]["unite_initiale"]
+    etat["declaration"] = {"outil": outil.strip(), "modele": modele.strip(), "declare_le": maintenant()}
+    etat["taille_unite"] = cfg["unite_initiale"]
     etat["serie"] = 0
-    journaliser(etat, "déclaration", f"{outil} / {modele} / {classe}" + (" (changement)" if ancienne else ""))
-    messages.append(f"déclaré : {outil}, {modele}, classe {classe} ; unités de {etat['taille_unite']} page(s) pour commencer")
-    return messages
+    journaliser(etat, "déclaration", f"{outil} / {modele}" + (" (changement)" if ancienne else ""))
+    return [f"déclaré : {outil}, {modele} ; unités de {etat['taille_unite']} page(s) pour commencer"]
 
 
 # ---- lecture du pivot -----------------------------------------------------
@@ -264,7 +260,7 @@ def suivant(doc: Document, etat: dict, cfg: dict) -> tuple[dict | None, list[str
     """L'unité à faire maintenant ; refuse d'avancer tant que la précédente n'est pas validée."""
     messages = []
     if not etat.get("declaration"):
-        raise RuntimeError("aucun modèle déclaré : `usine.py declarer <empreinte> --outil … --modele … --classe …` (MODELES.md §2)")
+        raise RuntimeError("aucun modèle déclaré : `usine.py declarer <empreinte> --outil … --modele …` (MODELES.md §2)")
     if etat.get("ocr_requis"):
         raise RuntimeError("ce PDF n'a pas de couche texte : `ocrmypdf --language fra <pdf> <pdf-ocr>` puis `preparer` à nouveau")
     messages += reverifier(doc, etat, cfg)
@@ -294,8 +290,7 @@ def valider(doc: Document, etat: dict, cfg: dict) -> tuple[bool, list[str]]:
         return False, ["aucune unité en cours : lance `suivant`"]
     u = en_cours[0]
     err, sceau, a_verifier = controler_unite(doc, etat, cfg, u)
-    classe = etat["declaration"]["classe"]
-    bornes = cfg["classes"][classe]
+    bornes = cfg
     if err:
         u["statut"] = "refusee"
         u["refus"] = int(u.get("refus", 0)) + 1
@@ -371,7 +366,7 @@ def resume(doc: Document, etat: dict) -> str:
     relues = pages_relues(etat)
     lignes = [
         f"{doc.empreinte} ({etat.get('fichier', '')}) : {relues}/{total} page(s) relues, {len(etat['unites'])} unité(s), unités de {etat['taille_unite']} page(s)",
-        f"modèle : {decl.get('outil', 'non déclaré')} / {decl.get('modele', '')} / classe {decl.get('classe', '')}".rstrip(" /"),
+        f"modèle : {decl.get('outil', 'non déclaré')} / {decl.get('modele', '')}".rstrip(" /"),
     ]
     if etat.get("ocr_requis"):
         lignes.append("OCR requis avant toute lecture")

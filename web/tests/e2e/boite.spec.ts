@@ -35,3 +35,13 @@ test("un dépôt confirmé apparaît dans la file de la boîte", async ({ page }
   await expect(page.getByRole("textbox", { name: "Déposer" })).toHaveValue("");
   await expect(page.getByRole("listitem").filter({ hasText: "Une idée de chapitre" })).toBeVisible();
 });
+
+test("le brouillon survit à un changement d'écran et peut être abandonné",async({page})=>{
+  await page.goto('./#/boite');
+  await page.locator('textarea').fill('Une idée encore en brouillon');
+  await page.getByRole('button',{name:'Apprendre',exact:true}).click();
+  await page.getByRole('button',{name:'Boîte',exact:true}).click();
+  await expect(page.locator('textarea')).toHaveValue('Une idée encore en brouillon');
+  await page.getByRole('button',{name:'Abandonner le brouillon',exact:true}).click();
+  await expect(page.locator('textarea')).toHaveValue('');
+});

@@ -9,7 +9,9 @@ Fini quand : le bilan `travail/bilan-rituel-AAAA-MM-JJ.md` existe, il
 cite la sortie de `python3 app/rituel.py` sur le journal réel, il porte
 le score à froid, le verbatim de JB et la décision : continuer,
 corriger ou geler.
-Dépend de : ACA-JOURNAL-SYNC-1 (fait le 03/09 : l'état est sur le VPS).
+Dépend de : ACA-PUBLICATION-2 et ACA-RITUAL-METRICS-1. Les sept premières
+séances portent aussi l'acceptation réelle du front ; elles font partie
+des trente, sans double comptage (0035).
 Bloque : ACA-CONTENT-2, ACA-MULTI-DECISION-1, ACA-DOMAIN-KIT-1,
 ACA-RESPONSE-1, ACA-OPTIMISEUR-1.
 
@@ -32,9 +34,9 @@ les séances.
   semaine, séances par semaine, plus longue coupure. Il ne lit pas le
   contenu des réponses.
 - Le journal se sort par `GET /journal/export` (`serveur/API.md`).
-- Le client servi aujourd'hui est l'archipel (`client/`). Le client v2
-  (`ACA-FRONT-2`) n'est pas un prérequis : le rituel se prouve sur ce
-  qui est servi, pas sur ce qui est promis.
+- JB a demandé le 04/09 un client v2 propre avant de jouer. Le client
+  corrigé et sa mise en service sont donc des prérequis. Un ancien statut
+  `done` ou un test local ne prouve pas ce service.
 
 ## Périmètre
 

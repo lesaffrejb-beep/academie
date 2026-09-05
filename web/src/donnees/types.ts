@@ -111,6 +111,8 @@ export interface ReglagesProgression {
 }
 
 export interface Banque {
+  etudes?: { version: number; lecons: Record<string, Lecon>; parcours: Parcours[] };
+  metiers?: Record<string, { domaines: Record<string, Domaine>; chapitres: Chapitre[]; branches: Record<string, BrancheProgramme[]>; niveaux: Record<string,string>; cartes: string[] }>;
   /** Absent = publie avant ACA-CONTRAT-2, lu comme carte-v1. */
   contrat?: string;
   genere_le?: string;
@@ -190,6 +192,11 @@ export interface LigneJournal {
   chapitre?: string;
   attendus_coches?: number[];
   motif?: string;
+  etude_etape?: string;
+  contenu_version?: number;
+  reponse_libre?: string;
+  aide_utilisee?: boolean;
+  exercice_index?: number;
 }
 
 /** Reponse de POST /academie/api/v1/journal (serveur/API.md). */
@@ -205,4 +212,18 @@ export interface ErreurApi {
   motif: string;
   /** Index de la ligne fautive quand le lot est refuse en entier. */
   index?: number;
+}
+
+export interface Lecon {
+  id: string; titre: string; domaine: string; branche: string; niveau: number;
+  version: number; statut: string; peremption?: string | null; verifie: string;
+  objectifs: string[];
+  amorce: {question: string; aide?: string; reponse_attendue: string};
+  lecon: string; synthese: {consigne: string; attendus: string[]};
+  cartes: string[]; sources: Source[]; provenance: Provenance;
+  verifie_par: {outil: string; modele: string; session: string; date: string};
+}
+export interface Parcours {
+  id: string; metier: string; titre: string; promesse: string; accroche: string;
+  rang: number; chapitres: string[]; etiquettes: string[]; public: string; limite: string;
 }

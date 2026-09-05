@@ -19,7 +19,7 @@ export function Domaine({ cle }: { cle: string }) {
   const branches = monde.branches.filter((b) => b.domaine === cle);
   const anciennes = banque.cartes.filter((c) => c.domaine === cle && !c.chapitre);
   return <div className="page-domaine" style={{ "--c-accent": accentDuRang(region.rang), "--c-domaine": accentDuRang(region.rang) } as CSSProperties}>
-    <button className="lien-retour" onClick={() => va("/")}><ArrowLeft size={18} />{LIB.arbre}</button>
+    <button className="lien-retour" onClick={() => va("/arbre")}><ArrowLeft size={18} />{LIB.arbre}</button>
     <header className="entete-domaine"><div className="sceau-domaine"><Anneau part={region.remplissage} taille={80} /><Glyphe rang={region.rang} taille={30} /></div>
       <div><h1 className="titre-page">{region.titre}</h1><p>{noeuds.length} {LIB.chapitres} · {region.cartesTotales} {LIB.cartesDisponibles} · {pourcent(region.remplissage)}</p></div>
       <Bouton primaire disabled={!region.cartesTotales} onClick={() => va(`/salle/seance/${cle}`)} enfants={<><Play size={16} />{LIB.reviser}</>} />
@@ -32,7 +32,7 @@ export function Domaine({ cle }: { cle: string }) {
         const enfants = affiches.filter((n) => n.branche === b.cle);
         if (!enfants.length) return null;
         return <section className="branche-domaine" key={b.cle}><h2>{b.titre}<span>{enfants.length}</span></h2><ol>
-          {enfants.map((n) => <li key={n.id}><button data-testid="chapitre" className="noeud-chapitre" onClick={() => va(`/noeud/${cle}/${n.id}`)}>
+          {enfants.map((n) => <li key={n.id}><button data-testid="chapitre" data-chapitre={n.id} className="noeud-chapitre" onClick={() => va(`/noeud/${cle}/${n.id}`)}>
             <span className={`sceau-chapitre ${n.cartesTotales ? "" : "sans-cartes"}`}><Anneau part={n.remplissage} taille={44} /><span>{n.niveau}</span></span>
             <span className="texte-chapitre"><span>{n.titre}</span><small>{n.cartesTotales ? `${ETATS_NOEUD[n.etat]} · ${n.cartesTotales} ${LIB.cartes}` : LIB.aEcrire}</small></span><ArrowRight size={16} />
           </button></li>)}

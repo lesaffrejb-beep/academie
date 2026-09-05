@@ -40,10 +40,16 @@ lisant le dépôt, une règle née d'un incident. Pas l'avancement
 | [0024](0024-la-voix-de-l-academie.md) | 03/09/2026 | La voix : un collègue plus avancé, tutoiement, faits et actions, jamais d'exclamation ni de mots du jeu |
 | [0025](0025-le-cadre-d-execution.md) | 03/09/2026 | Un LLM ne code pas sans cahier ; les règles vivent dans des contrôles ; le contrat avant le code |
 | [0026](0026-un-document-n-est-pas-un-chapitre.md) | 03/09/2026 | Un document n'est pas un chapitre : bibliothèque, pivot Markdown par page, figures rendues, abonnement d'abord, quatre voies vers l'arbre |
-| [0027](0027-pas-a-pas-impose-points-de-sauvegarde-classes-de-modeles.md) | 03/09/2026 | Le pas à pas imposé : un script distribue et juge les unités, points de sauvegarde sur disque, classes de modèles déclarées et ramenées à petit, rien sur parole ; MODELES.md, adaptateurs par outil, onboarding |
+| [0027](0027-pas-a-pas-impose-points-de-sauvegarde-classes-de-modeles.md) | 03/09/2026 | Le pas à pas imposé : un script distribue et juge les unités, points de sauvegarde sur disque, classement historique retiré par 0034, rien sur parole ; MODELES.md, adaptateurs par outil, onboarding |
 | [0028](0028-l-etat-d-un-noeud-et-la-fraicheur.md) | 03/09/2026 | L'état d'un nœud : `valide` se gagne à l'épreuve du domaine, la fraîcheur s'affiche à côté et ne déclasse jamais ; une carte se rattache par `chapitre`, le trou v1 s'écrit |
 | [0029](0029-fsrs-miroir-a-la-main.md) | 04/09/2026 | Le FSRS du client est un miroir à la main de `app/planificateur.py`, jugé par les vecteurs Python à chaque test ; `ts-fsrs` n'entre pas (amende 0007) |
 | [0030](0030-la-banque-se-range-par-le-programme.md) | 04/09/2026 | Les 84 cartes se rangent par le programme (21 changements de domaine acceptés) ; un trou se comble par un chapitre neuf ; P1 à P5 |
 | [0031](0031-un-programme-par-metier-ifsi.md) | 04/09/2026 | Un programme par métier ; `ifsi.json` : l'arbre de l'infirmier, socle = entrée en IFSI, III = formation, IV et V au-delà |
 | [0032](0032-arrivee-compte-cursus-unique-demande-de-cursus.md) | 04/09/2026 | L'arrivée : mail pro et mot de passe, choix d'un cursus (un seul à la fois, sauvegarde automatique), « nouveau cursus » = demande à JB |
 | [0033](0033-ifsi-referentiel-2026.md) | 04/09/2026 | IFSI : référentiel 2026, voies distinctes, axes séparés et progression sans plafond ; amende 0031 |
+| [0034](0034-capacites-sans-classes-de-modeles.md) | 05/09/2026 | Classes retirées à la demande de JB ; provenance, contrôles et compatibilité des états conservés |
+| [0035](0035-roadmap-par-preuves-et-pilote-borne.md) | 05/09/2026 | Preuves logicielles, publication, usage et apprentissage séparés ; contrat pilote avant migration globale |
+
+- [0036 : livraison autonome des parcours](0036-livraison-autonome-des-parcours.md)
+
+- [0037 : exploration lisible et preuves durables](0037-exploration-lisible-et-preuves-durables.md)

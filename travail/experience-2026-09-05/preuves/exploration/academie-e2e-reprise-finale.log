@@ -1,0 +1,17 @@
+
+Running 8 tests using 1 worker
+
+(node:20424) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 [ordinateur] › tests/e2e/hors-ligne.spec.ts:148:3 › hors-ligne › la première question s'affiche en moins de trois secondes, réseau coupé (448ms)
+  ✓  2 [ordinateur] › tests/e2e/hors-ligne.spec.ts:165:3 › hors-ligne › une séance jouée réseau coupé s'écrit localement et attend (750ms)
+  ✓  3 [ordinateur] › tests/e2e/hors-ligne.spec.ts:196:3 › hors-ligne › au retour du réseau, la file part vers le serveur (580ms)
+  ✓  4 [ordinateur] › tests/e2e/hors-ligne.spec.ts:250:3 › hors-ligne › aucun hôte tiers n'est contacté pendant une séance (457ms)
+(node:20470) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  5 [telephone] › tests/e2e/hors-ligne.spec.ts:148:3 › hors-ligne › la première question s'affiche en moins de trois secondes, réseau coupé (442ms)
+  ✓  6 [telephone] › tests/e2e/hors-ligne.spec.ts:165:3 › hors-ligne › une séance jouée réseau coupé s'écrit localement et attend (670ms)
+  ✓  7 [telephone] › tests/e2e/hors-ligne.spec.ts:196:3 › hors-ligne › au retour du réseau, la file part vers le serveur (558ms)
+  ✓  8 [telephone] › tests/e2e/hors-ligne.spec.ts:250:3 › hors-ligne › aucun hôte tiers n'est contacté pendant une séance (443ms)
+
+  8 passed (5.9s)

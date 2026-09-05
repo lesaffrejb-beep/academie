@@ -48,7 +48,7 @@ async function token(page: Page, nom: string): Promise<string> {
 
 test.describe("direction artistique", () => {
   test("aucun hexadécimal hors des tokens dans le CSS servi", async ({ page }) => {
-    await page.goto("./");
+    await page.goto("./#/arbre");
     // On lit la feuille SERVIE : c'est elle qui décide de ce qui s'affiche.
     // Un composant qui aurait écrit `#ff0000` en dur atterrirait ici.
     const css = await page.evaluate(() =>
@@ -98,7 +98,7 @@ test.describe("direction artistique", () => {
 
   test("les deux thèmes rendent, et l'encre n'est pas la couleur du fond", async ({ page }) => {
     for (const theme of ["nuit", "papier"]) {
-      await page.goto("./");
+      await page.goto("./#/arbre");
       await page.evaluate((t) => {
         document.documentElement.setAttribute("data-theme", t);
       }, theme);
@@ -157,9 +157,13 @@ test.describe("direction artistique", () => {
         await expect(bien).toBeVisible();
         joué = true;
       } else {
+        const questionAvant = await page.locator(QUESTION).first().textContent();
         await page.locator("ul li button").first().click();
         await expect(bien).toBeVisible();
         await bien.click();
+        // La réponse écrit dans IndexedDB avant le changement de carte.
+        // Attendre ce changement évite de chercher un QCM sur le rappel suivant.
+        await expect(page.locator(QUESTION).first()).not.toHaveText(questionAvant ?? "");
       }
     }
     expect(joué, "aucune carte à révélation en dix cartes : test non concluant")
@@ -172,14 +176,14 @@ test.describe("direction artistique", () => {
 
     // Échap sort de la salle.
     await page.keyboard.press("Escape");
-    await expect(page.getByRole("button", { name: "Séance", exact: true })).toBeVisible();
+    await expect(page.getByRole("button", { name: "Apprendre", exact: true })).toBeVisible();
   });
 
   test("le focus se voit sur le chemin principal", async ({ page }) => {
-    await page.goto("./");
+    await page.goto("./#/arbre");
     // Attendre que React ait posé les boutons : tabuler dans une page
     // encore vide ne prouverait rien.
-    await expect(page.getByRole("button", { name: "Séance", exact: true })).toBeVisible();
+    await expect(page.getByRole("button", { name: "Apprendre", exact: true })).toBeVisible();
     // Un onglet fraîchement ouvert n'a le focus nulle part : sans ce clic
     // dans un coin vide, la tabulation ne part de rien.
     await page.mouse.click(2, 2);

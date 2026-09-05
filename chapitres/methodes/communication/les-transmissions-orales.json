@@ -1,0 +1,423 @@
+{
+  "id": "methodes.communication.les-transmissions-orales",
+  "titre": "Les transmissions orales",
+  "domaine": "methodes",
+  "branche": "communication",
+  "niveau": 1,
+  "prerequis": [],
+  "objectifs": [
+    "Structurer une transmission avec Saed.",
+    "Distinguer observation et interprétation.",
+    "Terminer par une demande explicite et vérifier la compréhension."
+  ],
+  "amorce": {
+    "question": "Simulation de formation : « La personne ne va pas comme d’habitude » est transmis sans autre précision ; quelle information demanderais-tu d’abord ?",
+    "aide": "Qu’observes-tu maintenant, et pourquoi appelles-tu ?",
+    "reponse_attendue": "Demande la situation actuelle et le motif de l’appel, puis les faits utiles et la demande adressée au professionnel."
+  },
+  "lecon": "Tu as une information à transmettre à un professionnel. Tout dire dans l’ordre où cela te revient en mémoire ne produit pas forcément un message utilisable. Ce chapitre te propose une structure et des cas fictifs. Il travaille la formulation d’une alerte, pas le diagnostic ni la conduite thérapeutique. En situation réelle, tu mobilises sans retard les personnes et procédures prévues par le lieu de soins.\n\nLa HAS propose Saed : situation, antécédents, évaluation, demande. Ce support aide à organiser un échange oral entre professionnels. Dans la situation, indique qui parle, de qui il est question et pourquoi le contact a lieu. Dans les antécédents, sélectionne les éléments utiles au problème actuel. L’évaluation expose ce que tu observes, ce que tu as fait dans ton rôle et ce que tu penses de la situation, avec ton incertitude. La demande dit ce que tu attends de l’interlocuteur.\n\nConsidère ce matériau fictif : une personne dit se sentir différente de son état habituel ; tu ne connais pas encore la cause ; l’encadrant doit être informé de ton inquiétude. Tu n’as reçu ni constantes ni dossier détaillé dans l’exercice. Tu ne dois donc pas les inventer pour remplir toutes les cases. Une transmission peut nommer les données manquantes. Le cadre aide à préciser le message, il ne crée pas l’information.\n\nPour travailler la différence entre fait et interprétation, compare « la personne dit être gênée » et « la personne fait certainement une complication ». La première proposition rapporte un propos, la seconde affirme une conclusion qui nécessite d’autres éléments. Dans ta réponse, indique ce qui a été observé ou rapporté, puis sépare ton inquiétude de sa cause supposée. Les phrases de cet exercice sont des créations pédagogiques, pas des modèles suffisants pour toutes les situations.\n\nUn message peut être ordonné et rester incomplet s’il ne demande rien. « Voilà pour information » laisse à l’autre le soin de deviner ce que tu attends. Dans la simulation, formule une demande d’évaluation par l’encadrant et vérifie la réponse obtenue. L’outil Saed prévoit aussi la reformulation par l’interlocuteur pour s’assurer de la compréhension avant sa décision.\n\nPour pratiquer à deux, chacun prépare d’abord sa réponse seul ; vous comparez ensuite les informations choisies, puis chacun traite une nouvelle variante sans aide. Cette organisation est une proposition d’entraînement, sans classement entre étudiants. Elle ne remplace ni la mise en situation ni son retour par un formateur.\n\nTu vas maintenant produire une transmission courte, comparer ta réponse à une grille et rappeler la structure de mémoire. L’objectif est un message plus explicite, avec ses limites connues. L’Académie ne transforme pas cette autoévaluation en preuve de compétence clinique.",
+  "synthese": {
+    "consigne": "Simulation : une personne dit se sentir différente de son état habituel ; la cause est inconnue et aucun autre renseignement n’est fourni ; rédige une transmission à ton encadrant sans inventer de donnée.",
+    "attendus": [
+      "Situation et motif de contact identifiés.",
+      "Antécédents utiles manquants explicitement signalés.",
+      "Observation distinguée de l’hypothèse ; incertitude exprimée.",
+      "Demande d’évaluation explicite et compréhension à vérifier."
+    ]
+  },
+  "sources": [
+    {
+      "texte": "HAS : Saed, structurer la communication entre professionnels",
+      "url": "https://www.has-sante.fr/jcms/c_1776178/fr/saed-un-guide-pour-faciliter-la-communication-entre-professionnels-de-sante",
+      "nature": "institution",
+      "consulte_le": "2026-09-05",
+      "parti": "Institution publique de santé"
+    },
+    {
+      "texte": "HAS : outil Saed, trame de transmission et reformulation",
+      "url": "https://www.has-sante.fr/upload/docs/application/pdf/2019-02/outil_14_outil__saed_.pdf",
+      "nature": "institution",
+      "consulte_le": "2026-09-05",
+      "parti": "Institution publique de santé"
+    }
+  ],
+  "provenance": {
+    "auteur": "modele",
+    "modele": "GPT-6",
+    "outil": "Codex",
+    "session": "01a0704b-2f89-7eb1-82d1-219bc309c6ef/root",
+    "genere_le": "2026-09-05",
+    "sources_retrouvees": 2,
+    "sources_concordantes": 0,
+    "sans_source": false
+  },
+  "statut": "valide",
+  "partage": "banque",
+  "verifie": "2026-09-05",
+  "peremption": "2027-03-05",
+  "version": 1,
+  "cartes": [
+    {
+      "id": "methodes-communication-les-transmissions-orales-rappel",
+      "chapitre": "methodes.communication.les-transmissions-orales",
+      "domaine": "methodes",
+      "branche": "communication",
+      "niveau": 1,
+      "type": "flash",
+      "question": "Que signifie Saed ?",
+      "reponse": "Situation, antécédents, évaluation, demande.",
+      "explication": "Ce cadre organise une transmission orale entre professionnels.",
+      "source": [
+        {
+          "texte": "HAS : Saed, structurer la communication entre professionnels",
+          "url": "https://www.has-sante.fr/jcms/c_1776178/fr/saed-un-guide-pour-faciliter-la-communication-entre-professionnels-de-sante",
+          "nature": "institution",
+          "consulte_le": "2026-09-05",
+          "parti": "Institution publique de santé"
+        },
+        {
+          "texte": "HAS : outil Saed, trame de transmission et reformulation",
+          "url": "https://www.has-sante.fr/upload/docs/application/pdf/2019-02/outil_14_outil__saed_.pdf",
+          "nature": "institution",
+          "consulte_le": "2026-09-05",
+          "parti": "Institution publique de santé"
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "modele": "GPT-6",
+        "outil": "Codex",
+        "session": "01a0704b-2f89-7eb1-82d1-219bc309c6ef/root",
+        "genere_le": "2026-09-05",
+        "sources_retrouvees": 2,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "statut": "valide",
+      "partage": "banque",
+      "verifie": "2026-09-05",
+      "peremption": "2027-03-05",
+      "aide": "Reviens au principe du chapitre et nomme ce qui manque.",
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6",
+        "session": "/root/revue_journal",
+        "date": "2026-09-05",
+        "rapport": "travail/relecture-contenu-2026-09-05.md",
+        "assertions": [
+          "HAS Saed : situation, antécédents, évaluation, demande ; trame de communication orale.",
+          "Fiche HAS 2019 : identification, contexte utile, actions dans son rôle, incertitude et demande explicite ; reformulation par l'interlocuteur.",
+          "Les simulations ne fournissent aucune constante ni diagnostic ; signaler une information absente conserve leur intégrité. Aucune compétence clinique attestée.",
+          "Contrôle ciblé de la carte methodes-communication-les-transmissions-orales-rappel : question, réponse, explication et distracteurs rapprochés des règles ci-dessus ; cas fictifs et limites conservés."
+        ],
+        "sources": [
+          "https://www.has-sante.fr/jcms/c_1776178/fr/saed-un-guide-pour-faciliter-la-communication-entre-professionnels-de-sante",
+          "https://www.has-sante.fr/upload/docs/application/pdf/2019-02/outil_14_outil__saed_.pdf"
+        ],
+        "reserves": [
+          "Page HAS et passages textuels ciblés de la fiche PDF consultés ; aucun traitement intégral documentaire par l'usine revendiqué.",
+          "Proposition pédagogique, pas diagnostic, protocole d'urgence ou certification clinique ; efficacité propre de cet entraînement non mesurée."
+        ]
+      }
+    },
+    {
+      "id": "methodes-communication-les-transmissions-orales-observation",
+      "chapitre": "methodes.communication.les-transmissions-orales",
+      "domaine": "methodes",
+      "branche": "communication",
+      "niveau": 1,
+      "type": "qcm",
+      "question": "Quelle phrase distingue un fait rapporté d’un diagnostic supposé ?",
+      "reponse": "La personne dit se sentir différente de son état habituel ; la cause est inconnue.",
+      "explication": "Le propos est identifié comme rapporté et la limite reste visible.",
+      "source": [
+        {
+          "texte": "HAS : Saed, structurer la communication entre professionnels",
+          "url": "https://www.has-sante.fr/jcms/c_1776178/fr/saed-un-guide-pour-faciliter-la-communication-entre-professionnels-de-sante",
+          "nature": "institution",
+          "consulte_le": "2026-09-05",
+          "parti": "Institution publique de santé"
+        },
+        {
+          "texte": "HAS : outil Saed, trame de transmission et reformulation",
+          "url": "https://www.has-sante.fr/upload/docs/application/pdf/2019-02/outil_14_outil__saed_.pdf",
+          "nature": "institution",
+          "consulte_le": "2026-09-05",
+          "parti": "Institution publique de santé"
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "modele": "GPT-6",
+        "outil": "Codex",
+        "session": "01a0704b-2f89-7eb1-82d1-219bc309c6ef/root",
+        "genere_le": "2026-09-05",
+        "sources_retrouvees": 2,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "statut": "valide",
+      "partage": "banque",
+      "verifie": "2026-09-05",
+      "peremption": "2027-03-05",
+      "aide": "Reviens au principe du chapitre et nomme ce qui manque.",
+      "choix": [
+        {
+          "texte": "La personne dit se sentir différente de son état habituel ; la cause est inconnue.",
+          "correct": true
+        },
+        {
+          "texte": "La personne fait certainement une complication.",
+          "correct": false,
+          "pourquoi_faux": "La cause est affirmée sans éléments suffisants."
+        },
+        {
+          "texte": "Tout va bien puisque la personne parle.",
+          "correct": false,
+          "pourquoi_faux": "Le seul fait de parler ne justifie pas cette conclusion."
+        },
+        {
+          "texte": "La cause est forcément son traitement.",
+          "correct": false,
+          "pourquoi_faux": "L’hypothèse devient une certitude sans preuve."
+        }
+      ],
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6",
+        "session": "/root/revue_journal",
+        "date": "2026-09-05",
+        "rapport": "travail/relecture-contenu-2026-09-05.md",
+        "assertions": [
+          "HAS Saed : situation, antécédents, évaluation, demande ; trame de communication orale.",
+          "Fiche HAS 2019 : identification, contexte utile, actions dans son rôle, incertitude et demande explicite ; reformulation par l'interlocuteur.",
+          "Les simulations ne fournissent aucune constante ni diagnostic ; signaler une information absente conserve leur intégrité. Aucune compétence clinique attestée.",
+          "Contrôle ciblé de la carte methodes-communication-les-transmissions-orales-observation : question, réponse, explication et distracteurs rapprochés des règles ci-dessus ; cas fictifs et limites conservés."
+        ],
+        "sources": [
+          "https://www.has-sante.fr/jcms/c_1776178/fr/saed-un-guide-pour-faciliter-la-communication-entre-professionnels-de-sante",
+          "https://www.has-sante.fr/upload/docs/application/pdf/2019-02/outil_14_outil__saed_.pdf"
+        ],
+        "reserves": [
+          "Page HAS et passages textuels ciblés de la fiche PDF consultés ; aucun traitement intégral documentaire par l'usine revendiqué.",
+          "Proposition pédagogique, pas diagnostic, protocole d'urgence ou certification clinique ; efficacité propre de cet entraînement non mesurée."
+        ]
+      }
+    },
+    {
+      "id": "methodes-communication-les-transmissions-orales-demande",
+      "chapitre": "methodes.communication.les-transmissions-orales",
+      "domaine": "methodes",
+      "branche": "communication",
+      "niveau": 1,
+      "type": "flash",
+      "question": "Une transmission structurée s’arrête après l’évaluation : quel élément de Saed manque ?",
+      "reponse": "La demande explicite adressée à l’interlocuteur.",
+      "explication": "Nommer l’action attendue rend le message utilisable.",
+      "source": [
+        {
+          "texte": "HAS : Saed, structurer la communication entre professionnels",
+          "url": "https://www.has-sante.fr/jcms/c_1776178/fr/saed-un-guide-pour-faciliter-la-communication-entre-professionnels-de-sante",
+          "nature": "institution",
+          "consulte_le": "2026-09-05",
+          "parti": "Institution publique de santé"
+        },
+        {
+          "texte": "HAS : outil Saed, trame de transmission et reformulation",
+          "url": "https://www.has-sante.fr/upload/docs/application/pdf/2019-02/outil_14_outil__saed_.pdf",
+          "nature": "institution",
+          "consulte_le": "2026-09-05",
+          "parti": "Institution publique de santé"
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "modele": "GPT-6",
+        "outil": "Codex",
+        "session": "01a0704b-2f89-7eb1-82d1-219bc309c6ef/root",
+        "genere_le": "2026-09-05",
+        "sources_retrouvees": 2,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "statut": "valide",
+      "partage": "banque",
+      "verifie": "2026-09-05",
+      "peremption": "2027-03-05",
+      "aide": "Reviens au principe du chapitre et nomme ce qui manque.",
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6",
+        "session": "/root/revue_journal",
+        "date": "2026-09-05",
+        "rapport": "travail/relecture-contenu-2026-09-05.md",
+        "assertions": [
+          "HAS Saed : situation, antécédents, évaluation, demande ; trame de communication orale.",
+          "Fiche HAS 2019 : identification, contexte utile, actions dans son rôle, incertitude et demande explicite ; reformulation par l'interlocuteur.",
+          "Les simulations ne fournissent aucune constante ni diagnostic ; signaler une information absente conserve leur intégrité. Aucune compétence clinique attestée.",
+          "Contrôle ciblé de la carte methodes-communication-les-transmissions-orales-demande : question, réponse, explication et distracteurs rapprochés des règles ci-dessus ; cas fictifs et limites conservés."
+        ],
+        "sources": [
+          "https://www.has-sante.fr/jcms/c_1776178/fr/saed-un-guide-pour-faciliter-la-communication-entre-professionnels-de-sante",
+          "https://www.has-sante.fr/upload/docs/application/pdf/2019-02/outil_14_outil__saed_.pdf"
+        ],
+        "reserves": [
+          "Page HAS et passages textuels ciblés de la fiche PDF consultés ; aucun traitement intégral documentaire par l'usine revendiqué.",
+          "Proposition pédagogique, pas diagnostic, protocole d'urgence ou certification clinique ; efficacité propre de cet entraînement non mesurée."
+        ]
+      }
+    },
+    {
+      "id": "methodes-communication-les-transmissions-orales-inconnu",
+      "chapitre": "methodes.communication.les-transmissions-orales",
+      "domaine": "methodes",
+      "branche": "communication",
+      "niveau": 1,
+      "type": "flash",
+      "question": "Un renseignement utile n’est pas disponible dans le cas : dois-tu le compléter par une valeur plausible ?",
+      "reponse": "Non : tu signales qu’il manque et identifies la vérification nécessaire.",
+      "explication": "Le cadre ne doit pas pousser à inventer des informations.",
+      "source": [
+        {
+          "texte": "HAS : Saed, structurer la communication entre professionnels",
+          "url": "https://www.has-sante.fr/jcms/c_1776178/fr/saed-un-guide-pour-faciliter-la-communication-entre-professionnels-de-sante",
+          "nature": "institution",
+          "consulte_le": "2026-09-05",
+          "parti": "Institution publique de santé"
+        },
+        {
+          "texte": "HAS : outil Saed, trame de transmission et reformulation",
+          "url": "https://www.has-sante.fr/upload/docs/application/pdf/2019-02/outil_14_outil__saed_.pdf",
+          "nature": "institution",
+          "consulte_le": "2026-09-05",
+          "parti": "Institution publique de santé"
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "modele": "GPT-6",
+        "outil": "Codex",
+        "session": "01a0704b-2f89-7eb1-82d1-219bc309c6ef/root",
+        "genere_le": "2026-09-05",
+        "sources_retrouvees": 2,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "statut": "valide",
+      "partage": "banque",
+      "verifie": "2026-09-05",
+      "peremption": "2027-03-05",
+      "aide": "Reviens au principe du chapitre et nomme ce qui manque.",
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6",
+        "session": "/root/revue_journal",
+        "date": "2026-09-05",
+        "rapport": "travail/relecture-contenu-2026-09-05.md",
+        "assertions": [
+          "HAS Saed : situation, antécédents, évaluation, demande ; trame de communication orale.",
+          "Fiche HAS 2019 : identification, contexte utile, actions dans son rôle, incertitude et demande explicite ; reformulation par l'interlocuteur.",
+          "Les simulations ne fournissent aucune constante ni diagnostic ; signaler une information absente conserve leur intégrité. Aucune compétence clinique attestée.",
+          "Contrôle ciblé de la carte methodes-communication-les-transmissions-orales-inconnu : question, réponse, explication et distracteurs rapprochés des règles ci-dessus ; cas fictifs et limites conservés."
+        ],
+        "sources": [
+          "https://www.has-sante.fr/jcms/c_1776178/fr/saed-un-guide-pour-faciliter-la-communication-entre-professionnels-de-sante",
+          "https://www.has-sante.fr/upload/docs/application/pdf/2019-02/outil_14_outil__saed_.pdf"
+        ],
+        "reserves": [
+          "Page HAS et passages textuels ciblés de la fiche PDF consultés ; aucun traitement intégral documentaire par l'usine revendiqué.",
+          "Proposition pédagogique, pas diagnostic, protocole d'urgence ou certification clinique ; efficacité propre de cet entraînement non mesurée."
+        ]
+      }
+    },
+    {
+      "id": "methodes-communication-les-transmissions-orales-transfert",
+      "chapitre": "methodes.communication.les-transmissions-orales",
+      "domaine": "methodes",
+      "branche": "communication",
+      "niveau": 1,
+      "type": "synthese",
+      "question": "Simulation : une personne dit se sentir différente de son état habituel ; la cause est inconnue et aucun autre renseignement n’est fourni ; rédige une transmission à ton encadrant sans inventer de donnée.",
+      "reponse": "Je transmets le changement rapporté, précise les renseignements absents et mon incertitude, puis demande une évaluation à l’encadrant et vérifie sa réponse.",
+      "explication": "La formulation exacte peut varier ; la grille porte sur les fonctions du message.",
+      "source": [
+        {
+          "texte": "HAS : Saed, structurer la communication entre professionnels",
+          "url": "https://www.has-sante.fr/jcms/c_1776178/fr/saed-un-guide-pour-faciliter-la-communication-entre-professionnels-de-sante",
+          "nature": "institution",
+          "consulte_le": "2026-09-05",
+          "parti": "Institution publique de santé"
+        },
+        {
+          "texte": "HAS : outil Saed, trame de transmission et reformulation",
+          "url": "https://www.has-sante.fr/upload/docs/application/pdf/2019-02/outil_14_outil__saed_.pdf",
+          "nature": "institution",
+          "consulte_le": "2026-09-05",
+          "parti": "Institution publique de santé"
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "modele": "GPT-6",
+        "outil": "Codex",
+        "session": "01a0704b-2f89-7eb1-82d1-219bc309c6ef/root",
+        "genere_le": "2026-09-05",
+        "sources_retrouvees": 2,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "statut": "valide",
+      "partage": "banque",
+      "verifie": "2026-09-05",
+      "peremption": "2027-03-05",
+      "aide": "Reviens au principe du chapitre et nomme ce qui manque.",
+      "attendus": [
+        "Situation et motif de contact identifiés.",
+        "Antécédents utiles manquants explicitement signalés.",
+        "Observation distinguée de l’hypothèse ; incertitude exprimée.",
+        "Demande d’évaluation explicite et compréhension à vérifier."
+      ],
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6",
+        "session": "/root/revue_journal",
+        "date": "2026-09-05",
+        "rapport": "travail/relecture-contenu-2026-09-05.md",
+        "assertions": [
+          "HAS Saed : situation, antécédents, évaluation, demande ; trame de communication orale.",
+          "Fiche HAS 2019 : identification, contexte utile, actions dans son rôle, incertitude et demande explicite ; reformulation par l'interlocuteur.",
+          "Les simulations ne fournissent aucune constante ni diagnostic ; signaler une information absente conserve leur intégrité. Aucune compétence clinique attestée.",
+          "Contrôle ciblé de la carte methodes-communication-les-transmissions-orales-transfert : question, réponse, explication et distracteurs rapprochés des règles ci-dessus ; cas fictifs et limites conservés."
+        ],
+        "sources": [
+          "https://www.has-sante.fr/jcms/c_1776178/fr/saed-un-guide-pour-faciliter-la-communication-entre-professionnels-de-sante",
+          "https://www.has-sante.fr/upload/docs/application/pdf/2019-02/outil_14_outil__saed_.pdf"
+        ],
+        "reserves": [
+          "Page HAS et passages textuels ciblés de la fiche PDF consultés ; aucun traitement intégral documentaire par l'usine revendiqué.",
+          "Proposition pédagogique, pas diagnostic, protocole d'urgence ou certification clinique ; efficacité propre de cet entraînement non mesurée."
+        ]
+      }
+    }
+  ],
+  "verifie_par": {
+    "outil": "Codex",
+    "modele": "GPT-6",
+    "session": "/root/revue_journal",
+    "date": "2026-09-05",
+    "rapport": "travail/relecture-contenu-2026-09-05.md",
+    "assertions": [
+      "HAS Saed : situation, antécédents, évaluation, demande ; trame de communication orale.",
+      "Fiche HAS 2019 : identification, contexte utile, actions dans son rôle, incertitude et demande explicite ; reformulation par l'interlocuteur.",
+      "Les simulations ne fournissent aucune constante ni diagnostic ; signaler une information absente conserve leur intégrité. Aucune compétence clinique attestée."
+    ],
+    "sources": [
+      "https://www.has-sante.fr/jcms/c_1776178/fr/saed-un-guide-pour-faciliter-la-communication-entre-professionnels-de-sante",
+      "https://www.has-sante.fr/upload/docs/application/pdf/2019-02/outil_14_outil__saed_.pdf"
+    ],
+    "reserves": [
+      "Page HAS et passages textuels ciblés de la fiche PDF consultés ; aucun traitement intégral documentaire par l'usine revendiqué.",
+      "Proposition pédagogique, pas diagnostic, protocole d'urgence ou certification clinique ; efficacité propre de cet entraînement non mesurée."
+    ]
+  }
+}

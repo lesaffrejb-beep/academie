@@ -1,0 +1,15 @@
+
+> academie-client@2.0.0 e2e
+> playwright test --grep la carte expire a minuit
+
+
+Running 2 tests using 1 worker
+
+(node:81648) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 [ordinateur] › tests/e2e/exercices.spec.ts:123:1 › la carte expire a minuit dans une salle deja ouverte (10.6s)
+(node:81964) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  2 [telephone] › tests/e2e/exercices.spec.ts:123:1 › la carte expire a minuit dans une salle deja ouverte (6.7s)
+
+  2 passed (1.1m)

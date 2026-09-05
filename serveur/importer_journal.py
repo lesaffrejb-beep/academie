@@ -22,6 +22,9 @@ import sqlite3
 import sys
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "app"))
+from chronologie import cle_chronologique
+
 MODES_V1 = ("revision", "quiz", "examen", "seance", "synthese", "signalement", "erreur")
 CHAMPS_GARDES = (
     "carte", "note", "format", "duree_ms", "confiance", "stabilite_forcee", "origine",
@@ -103,7 +106,7 @@ def migrer_fichier(revues: Path, erreurs: Path | None = None) -> tuple[list[dict
                 illisibles += 1
             else:
                 lignes.append(v1)
-    lignes.sort(key=lambda l: (l["quand"], l["mode"], l["nonce"]))
+    lignes.sort(key=cle_chronologique)
     return lignes, illisibles
 
 
