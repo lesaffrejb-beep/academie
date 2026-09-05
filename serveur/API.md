@@ -168,3 +168,28 @@ sans lecture ni écriture des données privées. Les outils Bearer restent
 compatibles. Les anciennes réponses locales ne sont ni effacées ni importées
 automatiquement dans un compte. L'export HTTP par cookie demande également
 cet en-tête ; l'export de l'interface lit sa propre base locale.
+
+
+## Activation et reprise du 05/09/2026 (0044)
+
+`GET /profil` ajoute `compte_personnel`, booléen indiquant la présence
+d'identifiants personnels ; aucun hash n'est exposé. `POST /compte/activer`
+reçoit mail, mot_de_passe et pseudo avec la session et X-Academie-Profil.
+Il transforme uniquement un ancien profil sans mot de passe, conserve son
+identifiant, son journal et ses sessions. Même validation que l'inscription ;
+409 si le profil est déjà personnel ou si le mail appartient à un autre
+profil. Transaction atomique et limitation des tentatives par profil.
+
+L'accueil est joignable par `#/arrivee` même connecté. L'entrée HTTPS
+`/academie-acces/` sert le même client sous un scope distinct du service
+worker historique ; l'API et les URL de contenus restent `/academie/`.
+Le compte et le journal du navigateur restent disponibles sur cette même
+origine. Le proxy applique les mêmes identifiants HTTP aux deux entrées.
+
+La reprise du journal anonyme est une action explicite, réservée au compte
+nommé par une marque dans la base source. Les événements valides sont
+copiés à l'identique dans sa base et sa file de synchronisation, sans
+reprendre le curseur serveur ancien ni écraser un conflit. Les rejets
+empêchent tout message de succès complet. Les originaux restent conservés.
+Les brouillons peuvent être récupérés même sans réponse validée ; ils
+restent dans le stockage local du compte, sans synchronisation serveur.

@@ -76,6 +76,7 @@ export const api = {
   profil: () => appelle<Compte>("/profil"),
   inscription: (mail: string, mot_de_passe: string, pseudo: string) => appelle<Compte>("/compte", {method:"POST", body:JSON.stringify({mail, mot_de_passe, pseudo})}),
   connexion: (mail: string, mot_de_passe: string) => appelle<Compte>("/auth/connexion", {method:"POST", body:JSON.stringify({mail, mot_de_passe})}),
+  activeCompte: (mail: string, mot_de_passe: string, pseudo: string) => appelle<Compte>("/compte/activer", {method:"POST", body:JSON.stringify({mail, mot_de_passe, pseudo})}),
   deconnexion: () => appelle<{ok:boolean}>("/auth/deconnexion", {method:"POST"}),
   visibilite: (visibilite: boolean) => appelle<{ok:boolean}>("/profil", {method:"PATCH", body:JSON.stringify({visibilite})}),
   eleves: () => appelle<{eleves:{id:string; pseudo:string; cursus:string|null}[]}>("/eleves"),

@@ -70,3 +70,75 @@ test("un cookie changé par un autre onglet refuse la synchronisation",async({pa
   await page.getByRole("button",{name:"Synchroniser maintenant",exact:true}).click();
   await expect(page.getByText(/Le compte a changé dans un autre onglet/)).toBeVisible();
 });
+
+test("accueil joignable connecté et ancien travail repris une seule fois",async({page})=>{
+  const id=crypto.randomUUID();
+  await page.goto("./");
+  await page.evaluate(async()=>{
+    await new Promise<void>((resolve,reject)=>{
+      const r=indexedDB.open("academie-journal",10);
+      r.onupgradeneeded=()=>{for(const [n,k] of [["journal","cle"],["file","nonce"],["rejets","nonce"],["marques","cle"]])r.result.createObjectStore(n!,{keyPath:k});};
+      r.onerror=()=>reject(r.error);r.onsuccess=()=>{
+        const db=r.result,t=db.transaction("journal","readwrite");
+        const l={quand:"2026-09-05T10:00:00Z",mode:"revision",nonce:"reprise-locale-unique",carte:"carte-ancienne",note:3,format:"seance"};
+        t.objectStore("journal").put({...l,cle:`${l.quand}|${l.mode}|${l.nonce}`});
+        t.oncomplete=()=>{db.close();resolve();}; t.onerror=()=>reject(t.error);
+      };
+    });
+  });
+  await inscrit(page,`reprise-${id}@example.test`,"Mon espace de reprise","Gestion de copropriété 3 études");
+  await eleves(page);
+  await page.getByRole("link",{name:"Mon compte",exact:true}).click();
+  await expect(page.getByRole("heading",{name:"Ton compte, ton parcours.",exact:true})).toBeVisible();
+  await page.getByRole("button",{name:"Récupérer mon travail sur ce compte",exact:true}).click();
+  await expect(page.getByText("Ancien travail récupéré et synchronisé.",{exact:true})).toBeVisible();
+  await page.reload();
+  await expect(page.getByText("Ancien travail récupéré et synchronisé.",{exact:true})).toBeVisible();
+  const etat=await page.evaluate(async()=>{
+    const profil=await (await fetch("/academie/api/v1/profil")).json();
+    const r=await fetch("/academie/api/v1/journal",{method:"POST",headers:{"Content-Type":"application/json","X-Academie-Profil":profil.id},body:JSON.stringify({lignes:[]})});
+    return (await r.json()).manquantes.filter((l:{nonce:string})=>l.nonce==="reprise-locale-unique").length;
+  });
+  expect(etat).toBe(1);
+  await page.evaluate(async()=>{
+    await new Promise<void>((resolve,reject)=>{
+      const r=indexedDB.open("academie-journal");
+      r.onsuccess=()=>{const d=r.result,t=d.transaction("journal","readwrite"),s=t.objectStore("journal"),q=s.getAll();
+        q.onsuccess=()=>{const l=q.result[0];s.put({...l,note:1});};
+        t.oncomplete=()=>{d.close();resolve();};t.onerror=()=>reject(t.error);
+      };r.onerror=()=>reject(r.error);
+    });
+  });
+  await page.reload();
+  await expect(page.getByText("Ancien travail récupéré et synchronisé.",{exact:true})).toHaveCount(0);
+  await page.getByRole("button",{name:"Récupérer mon travail sur ce compte",exact:true}).click();
+  await expect(page.getByRole("alert")).toContainText("Deux versions d’une ancienne réponse diffèrent");
+  await page.getByRole("button",{name:"Utiliser un autre compte",exact:true}).click();
+  await inscrit(page,`autre-${id}@example.test`,"Autre compte","Gestion de copropriété 3 études");
+  await eleves(page);await page.getByRole("link",{name:"Mon compte",exact:true}).click();
+  await expect(page.getByText("Le travail de cet appareil est déjà rattaché à un autre compte.",{exact:true})).toBeVisible();
+  await expect(page.getByRole("button",{name:"Récupérer mon travail sur ce compte",exact:true})).toHaveCount(0);
+});
+
+
+test("brouillon seul récupéré et accès indépendant du scope ancien",async({page,context})=>{
+  await page.goto("./");
+  await page.evaluate(async()=>{await navigator.serviceWorker.ready;localStorage.setItem("academie-boite-brouillon","Un brouillon commencé avant mon compte");});
+  await expect.poll(()=>page.evaluate(()=>navigator.serviceWorker.controller?.scriptURL)).toContain("/academie/sw.js");
+  await page.goto("/academie-acces/");
+  await expect(page.getByRole("button",{name:"Créer mon espace",exact:true})).toBeVisible();
+  await expect.poll(()=>page.evaluate(()=>navigator.serviceWorker.controller?.scriptURL)).toContain("/academie-acces/sw.js");
+  const id=crypto.randomUUID();
+  await inscrit(page,`brouillon-${id}@example.test`,"Compte brouillon","Gestion de copropriété 3 études");
+  await eleves(page);await page.getByRole("link",{name:"Mon compte",exact:true}).click();
+  await page.getByRole("button",{name:"Récupérer mon travail sur ce compte",exact:true}).click();
+  await expect(page.getByText("Brouillons récupérés sur cet appareil.",{exact:true})).toBeVisible();
+  expect(await page.evaluate(()=>{
+    const c=JSON.parse(localStorage.getItem("academie-compte-reprise")!);
+    return localStorage.getItem(`academie-boite-brouillon:compte:${c.id}`);
+  })).toBe("Un brouillon commencé avant mon compte");
+  await context.setOffline(true);await page.reload();
+  await expect(page.getByRole("heading",{name:"Ton compte, ton parcours.",exact:true})).toBeVisible();
+  await expect(page.getByText("Brouillons récupérés sur cet appareil.",{exact:true})).toBeVisible();
+  await context.setOffline(false);
+});

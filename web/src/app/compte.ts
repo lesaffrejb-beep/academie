@@ -1,5 +1,6 @@
 /** Identité de cet onglet, séparée du cookie commun au navigateur. */
 export interface Compte {
+  compte_personnel?: boolean;
   id: string; titre_affiche: string; cree_le: string; cursus: string | null;
   reglages?: {visibilite?: boolean};
 }

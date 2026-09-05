@@ -34,7 +34,7 @@ interface Marque {
   valeur: string | null;
 }
 
-class BaseJournal extends Dexie {
+export class BaseJournal extends Dexie {
   journal!: Table<LigneJournal & { cle: string }, string>;
   file!: Table<EnFile, string>;
   rejets!: Table<Rejet, string>;

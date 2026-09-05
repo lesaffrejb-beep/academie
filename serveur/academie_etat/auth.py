@@ -78,12 +78,13 @@ def echanger_magic(conn: sqlite3.Connection, jeton: str, appareil: str | None = 
 
 
 def profil_public(conn: sqlite3.Connection, pid: str) -> dict | None:
-    row = conn.execute("SELECT id, titre_affiche, cree_le, reglages, supprime_le FROM profils WHERE id = ?", (pid,)).fetchone()
+    row = conn.execute("SELECT id, titre_affiche, cree_le, reglages, supprime_le, mot_de_passe_hache FROM profils WHERE id = ?", (pid,)).fetchone()
     if row is None:
         return None
     domaines = [r["domaine"] for r in conn.execute("SELECT domaine FROM adoptions WHERE profil = ? ORDER BY adopte_le", (pid,))]
     return {"id": row["id"], "titre_affiche": row["titre_affiche"], "cree_le": row["cree_le"],
             "reglages": json.loads(row["reglages"] or "{}"), "domaines": domaines,
+            "compte_personnel": bool(row["mot_de_passe_hache"]),
             "suppression_demandee_le": row["supprime_le"], "cursus": cursus_actuel(conn, pid)}
 
 
@@ -210,3 +211,28 @@ def demander_cursus(conn, pid, data):
     identifiant = str(uuid.uuid4())
     conn.execute("INSERT INTO demandes_cursus VALUES (?, ?, ?, ?)", (identifiant, pid, texte.strip(), maintenant()))
     return {"id": identifiant, "ok": True}
+
+
+def activer_compte(conn, pid, data):
+    """Doter le profil de la session d'identifiants sans déplacer son journal."""
+    from .app import Refus
+    mail = mail_normalise(data.get("mail"))
+    pseudo, mdp = data.get("pseudo"), data.get("mot_de_passe")
+    if not isinstance(pseudo, str) or not 1 <= len(pseudo.strip()) <= 60:
+        raise Refus(422, "pseudo-invalide", "Choisis un pseudo entre 1 et 60 caractères.")
+    if not isinstance(mdp, str) or not 12 <= len(mdp) <= 256:
+        raise Refus(422, "mot-de-passe-invalide", "Choisis un mot de passe entre 12 et 256 caractères.")
+    conn.execute("BEGIN IMMEDIATE")
+    try:
+        row = conn.execute("SELECT mot_de_passe_hache FROM profils WHERE id=?", (pid,)).fetchone()
+        if not row or row[0]:
+            raise Refus(409, "compte-deja-personnel", "Ce compte possède déjà ses identifiants. Reconnecte-toi avec eux.")
+        if conn.execute("SELECT 1 FROM profils WHERE lower(mail)=? AND id<>?", (mail,pid)).fetchone():
+            raise Refus(409, "compte-existant", "Cette adresse possède déjà un compte. Utilise une autre adresse ou connecte-toi à ce compte.")
+        conn.execute("UPDATE profils SET mail=?, titre_affiche=?, mot_de_passe_hache=? WHERE id=?",
+                     (mail,pseudo.strip(),hacher_mdp(mdp),pid))
+        conn.execute("COMMIT")
+    except Exception:
+        conn.execute("ROLLBACK")
+        raise
+    return profil_public(conn,pid)

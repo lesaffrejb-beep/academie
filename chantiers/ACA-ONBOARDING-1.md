@@ -90,3 +90,20 @@ Entrée par première étude (tentative avant leçon), sans faux positionnement.
 Le catalogue compte au build les cartes servies et les études disponibles.
 
 Raccord de restauration inclus : `serveur/importer_journal.py` et son test aller-retour. Le lanceur local est `serveur/essai_local.py`.
+
+## Correction demandée le 05/09 après essai (0044)
+
+JB ne voit pas la connexion/inscription et veut rattacher son travail
+commencé à son compte. Périmètre : porte et routes de compte, lien permanent
+Mon compte, API d'activation d'un ancien profil sans mot de passe (identifiant
+et journal conservés), reprise explicite du journal anonyme local vers un
+seul compte avec originaux préservés, brouillons locaux conservés, tests
+réels de reprise et comptes. La reprise réclame un geste dans l'interface
+qui nomme le compte destinataire ; aucune attribution silencieuse.
+Périmètre publication : entrée /academie-acces/ hors portée de l'ancien
+service worker, même origine et même API ; route Caddy dédiée avec les mêmes
+comptes HTTP que /academie/. Le nouveau client propose les mises à jour sans
+rechargement forcé d'une réponse en cours. Push et VPS explicitement autorisés.
+Tests rouges : ancien profil activé conserve son journal ; compte déjà
+personnel et mail d'un autre profil refusés ; route arrivée disponible avec
+session ; import idempotent et reprise refusée pour un autre compte.

@@ -33,13 +33,14 @@ def main():
         def do_GET(self):
             if urlsplit(self.path).path.startswith("/academie/api/"):
                 return self._servir()
-            if not self.path.startswith("/academie/"):
+            prefixe = "/academie-acces" if self.path.startswith("/academie-acces/") else "/academie"
+            if not self.path.startswith(prefixe + "/"):
                 self.send_response(302)
                 self.send_header("Location", "/academie/")
                 self.send_header("Content-Length", "0")
                 self.end_headers()
                 return
-            self.path = self.path[len("/academie"):]
+            self.path = self.path[len(prefixe):]
             return SimpleHTTPRequestHandler.do_GET(self)
 
         def do_HEAD(self):

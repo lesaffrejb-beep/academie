@@ -13,8 +13,8 @@ const ETATS: Record<string, string> = {
 
 export function Boite() {
   const { jour } = useMagasin();
-  const [texte, setTexte] = useState(() => { try { return sessionStorage.getItem(clePrivee("academie-boite-brouillon")) ?? ""; } catch { return ""; } });
-  useEffect(() => { try { sessionStorage.setItem(clePrivee("academie-boite-brouillon"),texte); } catch { /* brouillon en mémoire */ } },[texte]);
+  const [texte, setTexte] = useState(() => { try { return (localStorage.getItem(clePrivee("academie-boite-brouillon")) ?? sessionStorage.getItem(clePrivee("academie-boite-brouillon"))) ?? ""; } catch { return ""; } });
+  useEffect(() => { try { localStorage.setItem(clePrivee("academie-boite-brouillon"),texte); } catch { /* brouillon en mémoire */ } },[texte]);
   const [message, informe] = useState<string | null>(null);
   const [chargement, charge] = useState(true);
   const [envoi, envoie] = useState(false);

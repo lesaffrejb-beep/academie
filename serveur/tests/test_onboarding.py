@@ -87,3 +87,25 @@ class Onboarding(unittest.TestCase):
         self.assertEqual(self.a.traiter("GET","/profil",b"",entetes)[0],200)
         entetes["x-academie-profil"]=p["id"]
         self.assertEqual(self.a.traiter("POST","/journal",json.dumps({"lignes":[ligne(50)]}).encode(),entetes)[0],200)
+
+    def test_activation_ancien_profil_conserve_journal(self):
+        from academie_etat import auth
+        pid=auth.creer_profil(self.a.conn,"Ancien élève")
+        token=auth.creer_jeton(self.a.conn,pid,"cookie")
+        requete(self.a,"POST","/journal",{"lignes":[ligne(52)]},cookie=token,profil=pid)
+        data={"mail":"reprise@example.test","pseudo":"Compte personnel","mot_de_passe":"Une phrase personnelle assez longue"}
+        self.assertFalse(requete(self.a,"GET","/profil",cookie=token)[2].get("compte_personnel",True))
+        s,_,c=requete(self.a,"POST","/compte/activer",data,cookie=token,profil=pid)
+        self.assertEqual(s,200);self.assertEqual(c["id"],pid);self.assertTrue(c["compte_personnel"])
+        self.assertEqual(requete(self.a,"POST","/auth/connexion",data)[2]["id"],pid)
+        self.assertEqual(self.a.conn.execute("SELECT COUNT(*) FROM journal WHERE profil=?",(pid,)).fetchone()[0],1)
+        self.assertEqual(requete(self.a,"POST","/compte/activer",data,cookie=token,profil=pid)[0],409)
+
+    def test_activation_refuse_mail_autre_compte_et_onglet_ancien(self):
+        from academie_etat import auth
+        self.compte()
+        pid=auth.creer_profil(self.a.conn,"Ancien élève");token=auth.creer_jeton(self.a.conn,pid,"cookie")
+        data={"mail":"alice@example.test","pseudo":"Reprise","mot_de_passe":"Une phrase personnelle assez longue"}
+        self.assertEqual(requete(self.a,"POST","/compte/activer",data,cookie=token,profil=pid)[0],409)
+        self.assertEqual(requete(self.a,"POST","/compte/activer",data,cookie=token)[0],409)
+        self.assertIsNone(self.a.conn.execute("SELECT mot_de_passe_hache FROM profils WHERE id=?",(pid,)).fetchone()[0])

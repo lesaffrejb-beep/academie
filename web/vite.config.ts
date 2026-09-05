@@ -89,6 +89,7 @@ export default defineConfig({
     donneesDuDepot(),
     VitePWA({
       registerType: "autoUpdate",
+      injectRegister: false,
       includeAssets: ["icone.svg"],
       manifest: {
         name: "Academie",
@@ -98,8 +99,8 @@ export default defineConfig({
         start_url: "/academie/",
         scope: "/academie/",
         display: "standalone",
-        background_color: "#fcf8fa",
-        theme_color: "#fcf8fa",
+        background_color: "#f6f7fb",
+        theme_color: "#f6f7fb",
         icons: [
           {
             src: "icone.svg",
@@ -110,11 +111,15 @@ export default defineConfig({
         ],
       },
       workbox: {
+        skipWaiting: true,
+        clientsClaim: true,
         // La banque fait environ 200 ko : le defaut de Workbox (2 Mo)
         // suffit, on le dit pour que personne ne cherche.
         maximumFileSizeToCacheInBytes: 4 * 1024 * 1024,
         globPatterns: ["**/*.{js,css,html,svg,png,jpg,jpeg,webp,json,woff2}"],
         navigateFallback: "/academie/index.html",
+        // Même contenu hors du scope de l’ancien SW ; les URL restent canoniques.
+        manifestTransforms: [async (entries) => ({manifest: entries.map(e => ({...e, url: `/academie/${e.url.replace(/^\/+/, "")}`})), warnings: []})],
         cleanupOutdatedCaches: true,
         runtimeCaching: [
           {

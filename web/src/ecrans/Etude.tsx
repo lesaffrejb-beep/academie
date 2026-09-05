@@ -38,7 +38,7 @@ function SalleEtude({lecon, cartes}: {lecon: Lecon; cartes: Carte[]}) {
   const cleBrouillon = clePrivee(`academie-etude-brouillon:${lecon.id}:${lecon.version}:${etape}:${index}`);
   useEffect(() => {
     try {
-      const b = JSON.parse(sessionStorage.getItem(cleBrouillon) ?? "{}");
+      const b = JSON.parse((localStorage.getItem(cleBrouillon) ?? sessionStorage.getItem(cleBrouillon)) ?? "{}");
       setTexte(typeof b.texte === "string" ? b.texte : ""); setAide(b.aide === true);
       setChoix(typeof b.choix === "number" ? b.choix : null); setConfiance(b.confiance === true); setRevelee(b.revelee === true);
     } catch { setTexte(""); setAide(false); setChoix(null); setConfiance(false); setRevelee(false); }
@@ -52,7 +52,7 @@ function SalleEtude({lecon, cartes}: {lecon: Lecon; cartes: Carte[]}) {
   function brouillon(changement: {texte?:string; aide?:boolean; choix?:number; confiance?:boolean; revelee?:boolean}) {
     const b = {texte, aide, choix, confiance, revelee, ...changement};
     setTexte(b.texte); setAide(b.aide); setChoix(b.choix); setConfiance(b.confiance); setRevelee(b.revelee);
-    try { sessionStorage.setItem(cleBrouillon,JSON.stringify(b)); } catch { /* brouillon en mémoire */ }
+    try { localStorage.setItem(cleBrouillon,JSON.stringify(b)); } catch { /* brouillon en mémoire */ }
   }
   function ecritTexte(t: string) { brouillon({texte:t}); }
   async function enregistre(suite: string, champs: Partial<LigneJournal> = {}, prochainIndex = index) {
@@ -60,7 +60,7 @@ function SalleEtude({lecon, cartes}: {lecon: Lecon; cartes: Carte[]}) {
     verrou.current = true; setOccupe(true); setErreur("");
     try {
       await note({mode:"synthese", chapitre:lecon.id, attendus_coches:coches, format:"etude", contenu_version:lecon.version, etude_etape:suite, exercice_index:prochainIndex, reponse_libre:texte, aide_utilisee:aide, confiance, ...champs});
-      try { sessionStorage.removeItem(cleBrouillon); } catch { /* réponse déjà dans le journal */ }
+      try { localStorage.removeItem(cleBrouillon); sessionStorage.removeItem(cleBrouillon); } catch { /* réponse déjà dans le journal */ }
       setEtape(suite); setIndex(prochainIndex); setRevelee(false); setChoix(null); setAide(false); setCoches([]);
     } catch { setErreur("Ta réponse n’a pas pu être enregistrée. Réessaie avant de quitter."); }
     finally { verrou.current = false; setOccupe(false); }

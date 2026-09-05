@@ -58,3 +58,4 @@ lisant le dépôt, une règle née d'un incident. Pas l'avancement
 | [0042](0042-essai-comptes-et-eleves.md) | 05/09/2026 | Essai : comptes, cursus et sauvegardes séparées |
 
 | [0043](0043-palette-bleue-et-livraison-essai.md) | 05/09/2026 | Palette bleue et publication de l’essai autorisée par JB |
+| [0044](0044-acces-compte-et-reprise.md) | 05/09/2026 | Accueil accessible, compte personnel et reprise explicite du travail |

@@ -1,3 +1,4 @@
+import { MiseAJour } from "./ecrans/Arrivee/MiseAJour";
 import { PorteCompte } from "./ecrans/Arrivee/Arrivee";
 import { Eleves } from "./ecrans/Eleves";
 import { StrictMode, useEffect } from "react";
@@ -66,7 +67,7 @@ function Application() {
 
   return (
     <div className={enSalle ? "application en-salle" : "application"}>
-      {enSalle ? null : <header className="entete-app"><a href="#/" className="marque">{LIB.app}<span className="marque-point" /></a><div className="entete-outils"><span className="date-app">{new Intl.DateTimeFormat("fr-FR", { weekday: "long", day: "numeric", month: "long" }).format(new Date())}</span><ChoixTheme key={route.nom} /></div></header>}
+      {enSalle ? null : <header className="entete-app"><a href="#/" className="marque">{LIB.app}<span className="marque-point" /></a><div className="entete-outils"><span className="date-app">{new Intl.DateTimeFormat("fr-FR", { weekday: "long", day: "numeric", month: "long" }).format(new Date())}</span><a className="lien-compte" href="#/arrivee">Mon compte</a><ChoixTheme key={route.nom} /></div></header>}
       <main className="contenu-app">{ecran}</main>
       {enSalle ? null : <Barre route={route} />}
     </div>
@@ -77,6 +78,7 @@ const racine = document.getElementById("racine");
 if (racine) {
   createRoot(racine).render(
     <StrictMode>
+      <MiseAJour />
       <PorteCompte enfants={<FournisseurMagasin enfants={<Application />} />} />
     </StrictMode>,
   );
