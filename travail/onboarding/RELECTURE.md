@@ -36,3 +36,8 @@ La relecture ne prouve pas le rendu VPS ni l'essai humain.
 Le détecteur visuel signale les courbes de rebond des microanimations
 existantes. Conservées selon la décision 0041 et la demande de reprendre
 les travaux de l'autre session ; aucun rebond ajouté dans cette passe.
+
+Script ponctuel de publication également relu : migration API arrêtée,
+retour arrière API/client cohérent, et comparaison du fichier Caddy avant
+restauration pour préserver une modification concurrente. Deux défauts
+relevés et corrigés avant exécution ; aucun autre bloquant statique trouvé.

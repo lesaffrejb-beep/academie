@@ -1,0 +1,3 @@
+From https://github.com/lesaffrejb-beep/academie
+ * branch            main       -> FETCH_HEAD
+{"source": "6c9c6bc80e041b48340e3fb5c4fb636c2008184f", "backup": "/var/lib/academie/sauvegardes/avant-onboarding-6c9c6bc", "manifest_files": 16, "journal_sessions_preserves": true, "migration": "0002_comptes.sql", "https_auth": 200, "caddy_prive": true}

@@ -159,6 +159,6 @@ question de design ou de contenu adressée à JB dans cette passe.
 ACA-ONBOARDING-1 est intégré sur main pour l’essai autorisé (0042, 0043) :
 mail/mot de passe, pseudo, cursus unique, sauvegardes par compte et annuaire
 minimal masquable. [Preuves et limites](travail/onboarding/LIVRAISON.md).
-Publication sur le VPS et dix heures humaines par cursus restent distinctes.
+Publication VPS constatée le soir (code 6c9c6bc) ; [contrôles et limites](travail/onboarding/PUBLICATION-VPS.md). Le parcours joueur public, le trajet physique et dix heures humaines par cursus restent à constater.
 Le stock est de trois études copro et deux IFSI ; les programmes ne sont
 pas des cours déjà fabriqués. [Prompt PDF et préparation de l’essai](prompts/essai-10h-et-pdf.md).
