@@ -1,0 +1,56 @@
+# file: /var/lib/academie
+# owner: academie
+# group: academie
+user::rwx
+user:caddy:--x
+group::r-x
+mask::r-x
+other::---
+default:user::rwx
+default:user:caddy:---
+default:group::r-x
+default:mask::r-x
+default:other::---
+
+# file: /var/lib/academie/publication
+# owner: academie
+# group: academie
+user::rwx
+user:caddy:r-x
+group::r-x
+mask::r-x
+other::---
+default:user::rwx
+default:user:caddy:r-x
+default:group::r-x
+default:mask::r-x
+default:other::---
+
+# file: /var/lib/academie/etat.sqlite
+# owner: academie
+# group: academie
+user::rw-
+user:caddy:---
+group::r--
+mask::r--
+other::r--
+
+# file: /var/lib/academie/etat.sqlite-wal
+# owner: academie
+# group: academie
+user::rw-
+user:caddy:---
+group::r--
+mask::r--
+other::r--
+
+# file: /var/lib/academie/etat.sqlite-shm
+# owner: academie
+# group: academie
+user::rw-
+user:caddy:---
+group::r--
+mask::r--
+other::r--
+
+NextElapseUSecRealtime=Sun 2026-09-06 05:18:30 UTC

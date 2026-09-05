@@ -1,6 +1,6 @@
 # academie, l'école d'un métier jouée tous les jours
 
-**Livraison locale du 05/09 :** [expérience et preuves](travail/experience-2026-09-05/LIVRAISON.md), [roadmap priorisée](ROADMAP.md). Deux parcours jouables, cinq chapitres et 27 cartes v2 relus indépendamment, en complément des 76 cartes v1. Accueil Copropriété/IFSI, étude reprenable et réponses aidées distinctes des rappels autonomes. L'[audit initial](travail/audit-2026-09-05/AUDIT.md) est conservé comme photographie avant ces corrections. Le [dernier état VPS, daté du 04/09](travail/2026-09-04-publication-et-suite.md), n’a pas été revérifié à distance ici.
+**Livraison locale du 05/09 :** [expérience et preuves](travail/experience-2026-09-05/LIVRAISON.md), [roadmap priorisée](ROADMAP.md). Deux parcours jouables, cinq chapitres et 27 cartes v2 relus indépendamment, en complément des 76 cartes v1. Accueil Copropriété/IFSI, étude reprenable et réponses aidées distinctes des rappels autonomes. L'[audit initial](travail/audit-2026-09-05/AUDIT.md) est conservé comme photographie avant ces corrections. Le [client a été installé sur le VPS le 05/09](travail/experience-2026-09-05/PUBLICATION-VPS.md), avec ACL Caddy et sauvegardes ; rendu HTTPS authentifié encore à constater.
 
 L'Académie transforme des sources vérifiées en un **arbre de
 compétences** qu'on conquiert par des exercices de rappel, de
@@ -45,7 +45,7 @@ La conception d'août est archivée intacte dans
         │
   web/ : build Vite → dist/          accueil, étude, arbre, rappels, profil, boîte
         │
-  VPS (dernier constat : 04/09)       ancien client transféré ; accès Caddy alors bloqué par les droits
+  VPS (constat : 05/09)               client transféré, Caddy autorisé ; session HTTPS à vérifier
 ```
 
 Le moteur Python (`app/`) est la référence : FSRS-6 comparé à

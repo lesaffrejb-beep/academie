@@ -842,7 +842,7 @@
       },
       "proof": "SHA, droits et retour arrière vérifiés ; publication autorisée, deux trajets physiques attestés ; pas de secrets dans le rapport.",
       "parent_milestone": "ACADEMIE-V2-JOUEUR",
-      "note": " Demande push/VPS du 05/09 : correction du build isolé qui omettait les parcours, régression rouge puis verte et revue indépendante. Accès Caddy toujours bloqué, proposition ACL bornée dans deploy/ACL-CADDY-20260905.md."
+      "note": " Demande push/VPS du 05/09 : correction du build isolé qui omettait les parcours, régression rouge puis verte et revue indépendante. Accès Caddy toujours bloqué, proposition ACL bornée dans deploy/ACL-CADDY-20260905.md. Après accord explicite : client et ACL installés, sauvegardes et contrôles privés verts ; rendu HTTPS authentifié et trajet physique encore ouverts. Voir travail/experience-2026-09-05/PUBLICATION-VPS.md."
     },
     {
       "id": "ACA-PILOTE-CONTRAT-1",

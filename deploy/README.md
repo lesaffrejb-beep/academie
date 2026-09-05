@@ -1,3 +1,5 @@
+**Actualisation du 05/09 :** [publication et ACL installées, preuves et limites](../travail/experience-2026-09-05/PUBLICATION-VPS.md). Les mentions de blocage Caddy ci-dessous sont historiques ; la connexion HTTPS authentifiée reste à constater.
+
 # deploy/ : le VPS, et l'auto-hébergement
 
 **Reprise du 04/09, publication demandée par JB :** [état livré, limites et suite](../travail/2026-09-04-publication-et-suite.md). Ce point actualise les mentions historiques de pause et de publication ci-dessous.
