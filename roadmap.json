@@ -741,7 +741,7 @@
     {
       "id": "ACA-ONBOARDING-1",
       "outcome": "Dans le client v2, un nouvel élève crée son compte (mail pro, mot de passe), choisit un pseudo et un cursus du catalogue (copropriété, infirmier) ou dépose une demande de nouveau cursus à JB, puis passe au quiz du cursus choisi ; un seul cursus à la fois, relié au profil, sauvegardé par le journal (decisions/0032).",
-      "status": "blocked",
+      "status": "done",
       "mode": "agent-review",
       "risk": "low",
       "priority": 80,
@@ -754,9 +754,9 @@
         "max_minutes": 240,
         "max_tokens": 80000
       },
-      "proof": "Tests du cahier verts (pseudo vide refusé, une carte par parcours plus une, copie exacte du prompt, route vers le quiz) ; check.py vert ; JB entre un pseudo, copie un prompt, arrive au quiz.",
+      "proof": "Livraison locale isolée 05/09 : comptes mail/mot de passe, choix unique de cursus dans le journal, sauvegardes par profil, annuaire minimal masquable, demandes CLI. Tests serveur/client/build et navigateur ; travail/onboarding/LIVRAISON.md. Publication distante et essai humain distincts.",
       "parent_milestone": "ACADEMIE-V2-JOUEUR",
-      "note": "Réécrit le 04/09 sur decisions/0032 : compte mail et mot de passe, un cursus à la fois, demande de cursus lue par JB. Ouvre serveur/ pour le mot de passe haché et la table des demandes."
+      "note": "Décision 0042 : première étude avec tentative, pas de faux quiz de positionnement ; aucun élargissement aux cercles complets. Copie indépendante, pas intégrée à main."
     },
     {
       "id": "ACA-IFSI-1",

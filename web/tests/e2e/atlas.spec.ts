@@ -1,4 +1,4 @@
-import { expect, test } from "@playwright/test";
+import { expect, test } from "./compte-fixture";
 
 test("la tablette conserve toutes les cibles dans le cadre de l'atlas", async ({ page }) => {
   for (const largeur of [768, 1024]) {

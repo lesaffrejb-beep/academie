@@ -1,7 +1,7 @@
 {
-  "_": "Le catalogue des parcours proposés à l'arrivée (COMMENCER.md §2). Une entrée par programme en données ; l'écran ACA-ONBOARDING-1 le lit tel quel. « Créer le vôtre » n'est pas une entrée : c'est un bouton fixe qui mène aux prompts.",
+  "_": "Catalogue des cursus ; compteurs recalculés par le build depuis les programmes et les études servies. Nouveau cursus enregistre une demande privée pour JB.",
   "version": "0.1",
-  "mis_a_jour_le": "2026-09-04",
+  "mis_a_jour_le": "2026-09-05",
   "parcours": [
     {
       "cle": "copro",
@@ -11,9 +11,9 @@
       "sommaire": "SYLLABUS.md",
       "etat": "squelette",
       "chapitres": 389,
-      "chapitres_ecrits": 2,
+      "chapitres_ecrits": 3,
       "cartes_jouables": 93,
-      "aujourd_hui": "Lire le programme et jouer les cartes disponibles localement. Deux chapitres restent brouillons ; quatre cartes conventionnelles sont signalées en attente de source.",
+      "aujourd_hui": "Essayer les études disponibles et les rappels ; le programme complet reste à écrire.",
       "ouvert_a": "tous"
     },
     {
@@ -24,9 +24,9 @@
       "sommaire": "SYLLABUS-IFSI.md",
       "etat": "squelette",
       "chapitres": 375,
-      "chapitres_ecrits": 0,
+      "chapitres_ecrits": 2,
       "cartes_jouables": 10,
-      "aujourd_hui": "Lire le programme 2026 : préparations distinctes, formation, prise de poste et approfondissements. Les chapitres sont à écrire ; aucune carte IFSI jouable annoncée.",
+      "aujourd_hui": "Essayer les études disponibles et les rappels ; le programme complet reste à écrire.",
       "ouvert_a": "tous"
     }
   ],

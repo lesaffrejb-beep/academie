@@ -25,8 +25,9 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "app"))
 from chronologie import cle_chronologique
 
-MODES_V1 = ("revision", "quiz", "examen", "seance", "synthese", "signalement", "erreur")
+MODES_V1 = ("revision", "quiz", "examen", "seance", "synthese", "signalement", "erreur", "cursus")
 CHAMPS_GARDES = (
+    "cursus",
     "carte", "note", "format", "duree_ms", "confiance", "stabilite_forcee", "origine",
     "region", "dossier", "score", "cartes", "raison", "jour", "graine", "cap",
     "banque_version", "moteur_version", "chapitre", "attendus_coches", "motif",

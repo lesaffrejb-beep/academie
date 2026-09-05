@@ -1,3 +1,5 @@
+import { PorteCompte } from "./ecrans/Arrivee/Arrivee";
+import { Eleves } from "./ecrans/Eleves";
 import { StrictMode, useEffect } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
@@ -48,6 +50,7 @@ function Application() {
 
   let ecran: JSX.Element;
   switch (route.nom) {
+    case "eleves": ecran = <Eleves />; break;
     case "etude": ecran = <Etude id={route.parametre ?? ""} />; break;
     case "arbre": ecran = <Arbre />; break;
     case "domaine": ecran = <Domaine cle={route.parametre ?? ""} />; break;
@@ -74,7 +77,7 @@ const racine = document.getElementById("racine");
 if (racine) {
   createRoot(racine).render(
     <StrictMode>
-      <FournisseurMagasin enfants={<Application />} />
+      <PorteCompte enfants={<FournisseurMagasin enfants={<Application />} />} />
     </StrictMode>,
   );
 }

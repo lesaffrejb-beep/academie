@@ -153,3 +153,12 @@ preuve à obtenir est l'accès publié et la synchronisation physique
 ACA-ETUDE-1 reste ouvert pour son étude humaine observée ; sa fabrication
 locale anticipée est désormais disponible. Rien n'est bloqué sur une
 question de design ou de contenu adressée à JB dans cette passe.
+
+## Essai comptes préparé le 05/09
+
+ACA-ONBOARDING-1 est livré localement dans une copie isolée (0042) :
+mail/mot de passe, pseudo, cursus unique, sauvegardes par compte et annuaire
+minimal masquable. [Preuves et limites](travail/onboarding/LIVRAISON.md).
+Publication sur le VPS et dix heures humaines par cursus restent distinctes.
+Le stock est de trois études copro et deux IFSI ; les programmes ne sont
+pas des cours déjà fabriqués. [Prompt PDF et préparation de l’essai](prompts/essai-10h-et-pdf.md).

@@ -74,3 +74,19 @@ python3 app/tests.py && python3 tooling/check.py
 JB voit : il crée un compte, choisit un pseudo, voit Copropriété,
 Infirmier et « Nouveau cursus », dépose une demande d'essai, la lit avec
 son outil, choisit Copropriété, arrive au quiz.
+
+## Extension autorisée le 05/09 (0042)
+
+Copie Git isolée. Périmètre supplémentaire : serveur/academie_etat/,
+serveur/migrations/, serveur/tests/, contrats/journal-v1.schema.json,
+web/src/, web/vite.config.ts, web/tests/, scripts de lancement local,
+programme/catalogue.json, prompts/essai-10h-et-pdf.md, travail/onboarding/.
+Tests rouges avant code : inscription/connexion, refus des comptes
+invalides, séparation des journaux, cookie changé, cursus persistant,
+annuaire sans mail/réponses/temps, masquage effectif et demandes CLI.
+Preuve navigateur sur serveur réel local : deux comptes et deux cursus,
+reconnexion, brouillons isolés, tentative d'étude et onglet Élèves.
+Entrée par première étude (tentative avant leçon), sans faux positionnement.
+Le catalogue compte au build les cartes servies et les études disponibles.
+
+Raccord de restauration inclus : `serveur/importer_journal.py` et son test aller-retour. Le lanceur local est `serveur/essai_local.py`.

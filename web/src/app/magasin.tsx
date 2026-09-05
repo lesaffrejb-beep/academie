@@ -1,3 +1,4 @@
+import { compteActuel, clePrivee } from "./compte";
 /**
  * Le magasin : banque, journal, etats, carte-monde. Tout est recalcule a
  * chaque changement du journal ; rien n'est stocke a part les lignes.
@@ -77,12 +78,13 @@ export function FournisseurMagasin({ enfants }: { enfants: ReactNode }) {
   const [panne, setPanne] = useState<string | null>(null);
   const [banqueComplete, setBanque] = useState<Banque | null>(null);
   const [metier, setMetier] = useState(() => {
-    try { return localStorage.getItem("academie-metier") ?? "copro"; } catch { return "copro"; }
+    if (compteActuel()?.cursus) return compteActuel()?.cursus as string;
+    try { return localStorage.getItem(clePrivee("academie-metier")) ?? "copro"; } catch { return "copro"; }
   });
   const choisisMetier = (cle: string) => {
-    if (!banqueComplete?.metiers?.[cle]) return;
+    if (compteActuel()?.cursus || !banqueComplete?.metiers?.[cle]) return;
     setMetier(cle);
-    try { localStorage.setItem("academie-metier", cle); } catch { /* préférence facultative */ }
+    try { localStorage.setItem(clePrivee("academie-metier"), cle); } catch { /* préférence facultative */ }
   };
   const banque = useMemo(() => {
     if (!banqueComplete) return null;

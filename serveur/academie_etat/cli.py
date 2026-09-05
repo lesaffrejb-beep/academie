@@ -28,6 +28,7 @@ def main(argv: list[str] | None = None) -> int:
     l = sp.add_parser("lien"); l.add_argument("profil"); l.add_argument("--origine", default="https://vps-5a3d618c.vps.ovh.net")
     j = sp.add_parser("jeton"); j.add_argument("profil"); j.add_argument("--appareil", default="outil")
     sp.add_parser("purger")
+    sp.add_parser("demandes")
     i = sp.add_parser("importer"); i.add_argument("profil"); i.add_argument("revues"); i.add_argument("--erreurs")
     args = ap.parse_args(argv)
 
@@ -56,6 +57,10 @@ def main(argv: list[str] | None = None) -> int:
         return 0
     if args.cmd == "jeton":
         print(auth.creer_jeton(conn, args.profil, "outil", args.appareil))
+        return 0
+    if args.cmd == "demandes":
+        for row in conn.execute("SELECT id, profil, texte, cree_le FROM demandes_cursus ORDER BY cree_le"):
+            print(dict(row))
         return 0
     if args.cmd == "purger":
         print(f"{auth.purger(conn)} profil(s) effacé(s)")

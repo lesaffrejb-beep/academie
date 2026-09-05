@@ -18,9 +18,23 @@ import { VitePWA } from "vite-plugin-pwa";
  */
 const DONNEES = [
   { nom: "banque.json", source: new URL("../site/banque.json", import.meta.url) },
+  { nom: "catalogue.json", source: new URL("../programme/catalogue.json", import.meta.url) },
   { nom: "voix.json", source: new URL("../contenu/voix.json", import.meta.url) },
 ] as const;
 
+function contenuDonnee(d: {nom:string;source:URL}): Buffer {
+  if (d.nom !== "catalogue.json") return readFileSync(d.source);
+  const catalogue = JSON.parse(readFileSync(d.source, "utf8"));
+  const banque = JSON.parse(readFileSync(DONNEES[0].source, "utf8"));
+  for (const p of catalogue.parcours) {
+    const programme = JSON.parse(readFileSync(new URL(`../${p.programme}`, import.meta.url), "utf8"));
+    p.chapitres = programme.chapitres.length;
+    p.cartes_jouables = banque.metiers?.[p.cle]?.cartes?.length ?? 0;
+    p.chapitres_ecrits = new Set((banque.etudes?.parcours ?? []).filter((e: {metier:string}) => e.metier === p.cle)
+      .flatMap((e: {chapitres:string[]}) => e.chapitres).filter((id: string) => banque.etudes.lecons[id])).size;
+  }
+  return Buffer.from(JSON.stringify(catalogue));
+}
 function donneesDuDepot(): Plugin {
   function medias() {
     const banque = JSON.parse(readFileSync(DONNEES[0].source, "utf8")) as { cartes: { image?: { fichier?: string } }[] };
@@ -36,7 +50,7 @@ function donneesDuDepot(): Plugin {
         if (!trouve) return suite();
         let corps: Buffer;
         try {
-          corps = readFileSync(trouve.source);
+          corps = contenuDonnee(trouve);
         } catch {
           reponse.statusCode = 404;
           reponse.end();
@@ -59,7 +73,7 @@ function donneesDuDepot(): Plugin {
         this.emitFile({
           type: "asset",
           fileName: d.nom,
-          source: readFileSync(d.source),
+          source: contenuDonnee(d),
         });
       }
     },
@@ -69,6 +83,7 @@ function donneesDuDepot(): Plugin {
 // base /academie/ : le client est servi sous ce prefixe (serveur/API.md).
 export default defineConfig({
   base: "/academie/",
+  server: {proxy: {"/academie/api": "http://127.0.0.1:8796"}},
   plugins: [
     react(),
     donneesDuDepot(),

@@ -15,7 +15,7 @@ from chronologie import cle_chronologique
 from datetime import datetime, timezone
 
 LOT_MAX = 500
-MODES = ("revision", "quiz", "examen", "erreur", "seance", "synthese", "signalement")
+MODES = ("revision", "quiz", "examen", "erreur", "seance", "synthese", "signalement", "cursus")
 FORMATS = ("seance", "domaine", "etude", "journee", "epreuve", "hasard", "defi")
 JOURS = ("fondations", "cours", "terrain", "exploration", "etude", "libre")
 OBLIGATOIRES_PAR_MODE = {
@@ -26,6 +26,7 @@ OBLIGATOIRES_PAR_MODE = {
     "seance": ("format", "graine", "banque_version", "moteur_version"),
     "synthese": ("chapitre", "attendus_coches"),
     "signalement": ("carte",),
+    "cursus": ("cursus",),
 }
 
 
@@ -64,6 +65,10 @@ def valider_ligne(ligne: dict) -> str | None:
     for champ in OBLIGATOIRES_PAR_MODE[ligne["mode"]]:
         if champ not in ligne:
             return f"champ manquant `{champ}` pour le mode `{ligne['mode']}`"
+    if ligne["mode"] == "cursus":
+        from .auth import catalogue
+        if not isinstance(ligne.get("cursus"), str) or ligne["cursus"] not in catalogue():
+            return "cursus inconnu"
     if ligne["mode"] == "examen" and "region" not in ligne and "dossier" not in ligne:
         return "un examen exige `region` ou `dossier`"
     if not isinstance(ligne["nonce"], str) or len(ligne["nonce"]) < 8:
@@ -130,6 +135,13 @@ def fusionner(conn: sqlite3.Connection, profil: str, lignes: list[dict], depuis:
     valider_lot(lignes)
     if depuis is not None and not _iso(depuis):
         raise LigneInvalide(-1, "`depuis` n'est pas un horodatage ISO 8601")
+    from .auth import cursus_actuel
+    cursus = cursus_actuel(conn, profil)
+    for index, ligne in enumerate(lignes):
+        if ligne["mode"] == "cursus":
+            if cursus is not None and cursus != ligne["cursus"]:
+                raise LigneInvalide(index, "Un seul cursus est actif par compte.")
+            cursus = ligne["cursus"]
     recu_le = datetime.now(timezone.utc).isoformat(timespec="seconds")
     envoyees = set()
     acceptees = ignorees = 0

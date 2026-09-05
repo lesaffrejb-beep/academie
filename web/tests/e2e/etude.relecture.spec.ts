@@ -1,4 +1,4 @@
-import { expect, test, type Page } from "@playwright/test";
+import { expect, test, type Page } from "./compte-fixture";
 
 async function debut(page: Page) {
   await page.goto("./");
@@ -14,7 +14,7 @@ async function premierExercice(page: Page) {
 }
 async function lignes(page: Page): Promise<Record<string, unknown>[]> {
   return page.evaluate(() => new Promise<Record<string, unknown>[]>((resolve,reject) => {
-    const req=indexedDB.open("academie-journal");
+    const req=indexedDB.open("academie-journal-compte:e2e-copro");
     req.onerror=()=>reject(req.error);
     req.onsuccess=()=>{
       const db=req.result;

@@ -1,4 +1,4 @@
-import { expect, test, type Page } from "@playwright/test";
+import { expect, test, type Page } from "./compte-fixture";
 
 test.use({ serviceWorkers: "block" });
 
@@ -30,7 +30,7 @@ async function ouvre(page: Page, cartes: Record<string, unknown>[] = [CARTE],
 
 async function journal(page: Page): Promise<Record<string, unknown>[]> {
   return page.evaluate(() => new Promise((resolve, reject) => {
-    const requete = indexedDB.open("academie-journal");
+    const requete = indexedDB.open("academie-journal-compte:e2e-copro");
     requete.onerror = () => reject(requete.error);
     requete.onsuccess = () => {
       const base = requete.result;

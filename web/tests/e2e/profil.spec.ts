@@ -1,4 +1,4 @@
-import { expect, test } from "@playwright/test";
+import { expect, test } from "./compte-fixture";
 
 test("un refus de session reste visible et peut être réessayé", async ({ page }) => {
   let appels = 0;

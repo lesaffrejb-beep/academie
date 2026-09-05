@@ -1,4 +1,5 @@
-import { expect, test } from "@playwright/test";
+import {sessionTest} from "./compte-fixture";
+import { expect, test } from "./compte-fixture";
 
 test("le thème se choisit dès l’accueil et persiste après rechargement", async ({ page }) => {
   await page.goto("./");
@@ -15,7 +16,8 @@ test("les chapitres et le cas réel sont accessibles au téléphone dans les deu
   await page.setViewportSize({ width: 375, height: 812 });
   await page.goto("./");
   for (const metier of ["Copropriété", "Soins infirmiers"]) {
-    await page.getByRole("button", { name: metier, exact: true }).click();
+    await sessionTest(page,metier === "Copropriété" ? "copro":"ifsi");
+    await page.reload();
     await expect(page.locator(".apercu-question")).toBeVisible();
     const question = await page.locator(".apercu-question").innerText();
     const chapitres = page.locator(".chapitre-ouvert");

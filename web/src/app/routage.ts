@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 export interface Route {
   nom:
     | "accueil" | "etude" | "arbre" | "domaine" | "noeud" | "seance" | "cloture"
-    | "profil" | "boite" | "credits" | "confiance";
+    | "eleves" | "arrivee" | "profil" | "boite" | "credits" | "confiance";
   parametre?: string;
 }
 
@@ -18,6 +18,8 @@ export function analyse(fragment: string): Route {
   const tete = bouts[0] ?? "";
   const queue = bouts.slice(1).join("/");
   switch (tete) {
+    case "arrivee": return {nom:"arrivee"};
+    case "eleves": return {nom:"eleves"};
     case "arbre": return {nom: "arbre"};
     case "domaine": return { nom: "domaine", parametre: queue };
     case "noeud": return { nom: "noeud", parametre: queue };

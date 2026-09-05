@@ -35,7 +35,7 @@
  * suite Python n'installe pas de navigateur. La CI web les lance séparément.
  */
 
-import { expect, test, type Page } from "@playwright/test";
+import { expect, test, type Page } from "./compte-fixture";
 
 const BUDGET_MS = 3000;
 
@@ -49,7 +49,7 @@ const SEANCE = "./#/salle/seance/hasard";
 async function journalLocal(page: Page): Promise<Record<string, unknown>[]> {
   return page.evaluate<Record<string, unknown>[]>(() => {
     return new Promise((resolve, reject) => {
-      const ouverture = indexedDB.open("academie-journal");
+      const ouverture = indexedDB.open("academie-journal-compte:e2e-copro");
       ouverture.onerror = () => reject(new Error("indexedDB indisponible"));
       ouverture.onsuccess = () => {
         const base = ouverture.result;
@@ -75,7 +75,7 @@ async function journalLocal(page: Page): Promise<Record<string, unknown>[]> {
 async function tailleDeLaFile(page: Page): Promise<number> {
   return page.evaluate<number>(() => {
     return new Promise((resolve, reject) => {
-      const ouverture = indexedDB.open("academie-journal");
+      const ouverture = indexedDB.open("academie-journal-compte:e2e-copro");
       ouverture.onerror = () => reject(new Error("indexedDB indisponible"));
       ouverture.onsuccess = () => {
         const base = ouverture.result;

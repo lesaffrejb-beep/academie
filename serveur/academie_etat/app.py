@@ -4,6 +4,7 @@ ni banques, ni livraisons, ni cercles avant leurs chantiers."""
 from __future__ import annotations
 
 import json
+import ipaddress
 import sqlite3
 import threading
 from http import HTTPStatus
@@ -15,6 +16,17 @@ from . import CONTRATS, PREFIXE, VERSION, auth, boite, journal
 
 COOKIE = "academie_session"
 CORPS_MAX = 2_000_000
+
+
+def adresse_origine(pair: str, transmis: str) -> str:
+    # Caddy sur loopback ajoute le pair réel en fin de X-Forwarded-For.
+    # Un hôte directement exposé ne fait jamais confiance à cet en-tête.
+    try:
+        if ipaddress.ip_address(pair).is_loopback and transmis:
+            return str(ipaddress.ip_address(transmis.split(",")[-1].strip()))
+    except ValueError:
+        pass
+    return pair
 
 
 class Refus(Exception):
@@ -29,7 +41,7 @@ class Application:
     def __init__(self, conn: sqlite3.Connection, securise: bool = True):
         self.conn = conn
         self.securise = securise
-        self.verrou = threading.Lock()
+        self.verrou = threading.RLock()
 
     # --- outillage -------------------------------------------------------
     def _jeton(self, entetes: dict) -> str | None:
@@ -43,6 +55,9 @@ class Application:
         profil = auth.verifier(self.conn, self._jeton(entetes))
         if profil is None:
             raise Refus(401, "non-authentifie", "session absente, expirée ou révoquée")
+        attendu = entetes.get("x-academie-profil")
+        if attendu and attendu != profil:
+            raise Refus(409, "compte-change", "Le compte a changé dans un autre onglet. Reconnecte-toi ; tes réponses restent sur cet appareil.")
         return profil
 
     def _cookie(self, jeton: str, duree_s: int = 365 * 86400) -> str:
@@ -53,7 +68,9 @@ class Application:
     def traiter(self, methode: str, chemin: str, corps: bytes, entetes: dict) -> tuple[int, dict, bytes]:
         """Rend (statut, en-têtes, corps). Les en-têtes sont en minuscules."""
         try:
-            return self._router(methode, chemin, corps, entetes)
+            # Une connexion SQLite partagée : protéger lectures et transactions.
+            with self.verrou:
+                return self._router(methode, chemin, corps, entetes)
         except Refus as r:
             return self._json(r.statut, {"erreur": r.code, "motif": r.motif, **r.extra})
         except journal.LigneInvalide as e:
@@ -69,6 +86,21 @@ class Application:
         if route == "/sante" and methode == "GET":
             return self._json(200, {"ok": True, "moteur_version": VERSION, "contrats": CONTRATS})
 
+        if route in ("/compte", "/auth/connexion") and methode == "POST":
+            data = self._corps(corps)
+            auth.limiter(self.conn, "origine:" + entetes.get("x-adresse-pair", "local"), 100)
+            fonction = auth.inscrire if route == "/compte" else auth.connecter_compte
+            profil, jeton = fonction(self.conn, data, entetes.get("user-agent", "")[:120])
+            return self._json(201 if route == "/compte" else 200, profil, {"set-cookie": self._cookie(jeton)})
+
+        if route == "/eleves" and methode == "GET":
+            self._profil(entetes)
+            return self._json(200, {"eleves": auth.eleves(self.conn)})
+
+        if route == "/demandes-cursus" and methode == "POST":
+            profil = self._profil(entetes)
+            return self._json(201, auth.demander_cursus(self.conn, profil, self._corps(corps)))
+
         if route == "/auth/lien" and methode in ("GET", "POST"):
             jeton = (params.get("jeton") or [None])[0]
             if jeton is None and methode == "POST":
@@ -82,6 +114,7 @@ class Application:
                               {"set-cookie": self._cookie(cookie)})
 
         if route == "/auth/deconnexion" and methode == "POST":
+            self._profil(entetes)
             jeton = self._jeton(entetes)
             with self.verrou:
                 auth.revoquer(self.conn, jeton or "")
@@ -161,7 +194,12 @@ def fabrique_handler(application: Application):
                 self.rfile.read(taille)
                 return
             corps = self.rfile.read(taille) if taille else b""
+            if self.command in ("POST", "PATCH") and taille and self.headers.get("Content-Type", "").split(";",1)[0].strip().lower() != "application/json":
+                self._repondre(415, {"content-type":"application/json"}, b'{"erreur":"type-invalide","motif":"application/json requis"}')
+                return
             entetes = {k.lower(): v for k, v in self.headers.items()}
+            # Le pair socket fait foi ; ignorer un en-tête envoyé par le navigateur.
+            entetes["x-adresse-pair"] = adresse_origine(self.client_address[0], entetes.get("x-forwarded-for", ""))
             statut, e, donnees = application.traiter(self.command, self.path, corps, entetes)
             self._repondre(statut, e, donnees)
 

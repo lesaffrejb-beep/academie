@@ -5,6 +5,10 @@ les outils de la machine)."""
 from __future__ import annotations
 
 import hashlib
+import hmac
+import re
+import time
+from pathlib import Path
 import json
 import secrets
 import sqlite3
@@ -80,10 +84,13 @@ def profil_public(conn: sqlite3.Connection, pid: str) -> dict | None:
     domaines = [r["domaine"] for r in conn.execute("SELECT domaine FROM adoptions WHERE profil = ? ORDER BY adopte_le", (pid,))]
     return {"id": row["id"], "titre_affiche": row["titre_affiche"], "cree_le": row["cree_le"],
             "reglages": json.loads(row["reglages"] or "{}"), "domaines": domaines,
-            "suppression_demandee_le": row["supprime_le"]}
+            "suppression_demandee_le": row["supprime_le"], "cursus": cursus_actuel(conn, pid)}
 
 
 def modifier_reglages(conn: sqlite3.Connection, pid: str, maj: dict) -> dict:
+    if "visibilite" in maj and type(maj["visibilite"]) is not bool:
+        from .app import Refus
+        raise Refus(422, "visibilite-invalide", "Choisis une visibilité valide.")
     row = conn.execute("SELECT reglages FROM profils WHERE id = ?", (pid,)).fetchone()
     reglages = json.loads(row["reglages"] or "{}")
     for cle in ("theme", "semaine_type", "notifications", "visibilite", "titre_affiche"):
@@ -107,3 +114,99 @@ def purger(conn: sqlite3.Connection, delai: timedelta = timedelta(hours=48)) -> 
     limite = (datetime.now(timezone.utc) - delai).isoformat(timespec="seconds")
     cur = conn.execute("DELETE FROM profils WHERE supprime_le IS NOT NULL AND supprime_le <= ?", (limite,))
     return cur.rowcount
+
+
+def catalogue() -> list[str]:
+    chemin = Path(__file__).resolve().parents[2] / "programme/catalogue.json"
+    return [p["cle"] for p in json.loads(chemin.read_text())["parcours"]]
+
+
+def cursus_actuel(conn, pid):
+    row = conn.execute("SELECT ligne FROM journal WHERE profil = ? AND mode = 'cursus' LIMIT 1", (pid,)).fetchone()
+    return json.loads(row[0])["cursus"] if row else None
+
+
+def mail_normalise(valeur):
+    from .app import Refus
+    if not isinstance(valeur, str) or len(valeur) > 254 or not re.fullmatch(r"[^\s@]+@[^\s@]+\.[^\s@]+", valeur.strip()):
+        raise Refus(422, "mail-invalide", "Indique une adresse mail valide.")
+    return valeur.strip().casefold()
+
+
+def hacher_mdp(mdp, sel=None):
+    sel = sel or secrets.token_bytes(16)
+    empreinte = hashlib.scrypt(mdp.encode(), salt=sel, n=32768, r=8, p=1, maxmem=64*1024*1024)
+    return "scrypt$32768$8$1$" + sel.hex() + "$" + empreinte.hex()
+
+
+def limiter(conn, cle, maximum=12):
+    from .app import Refus
+    instant = time.time()
+    conn.execute("DELETE FROM tentatives_auth WHERE debut < ?", (instant - 900,))
+    row = conn.execute("SELECT nombre FROM tentatives_auth WHERE cle = ?", (cle,)).fetchone()
+    if row and row[0] >= maximum:
+        raise Refus(429, "trop-de-tentatives", "Trop de tentatives. Réessaie dans quelques minutes.")
+    conn.execute("INSERT INTO tentatives_auth VALUES (?, ?, 1) ON CONFLICT(cle) DO UPDATE SET nombre = nombre + 1", (cle, instant))
+
+
+def inscrire(conn, data, appareil=""):
+    from .app import Refus
+    mail = mail_normalise(data.get("mail"))
+    pseudo, mdp = data.get("pseudo"), data.get("mot_de_passe")
+    if not isinstance(pseudo, str) or not 1 <= len(pseudo.strip()) <= 60:
+        raise Refus(422, "pseudo-invalide", "Choisis un pseudo entre 1 et 60 caractères.")
+    if not isinstance(mdp, str) or not 12 <= len(mdp) <= 256:
+        raise Refus(422, "mot-de-passe-invalide", "Choisis un mot de passe entre 12 et 256 caractères.")
+    if conn.execute("SELECT 1 FROM profils WHERE lower(mail) = ?", (mail,)).fetchone():
+        raise Refus(409, "compte-existant", "Ce compte existe déjà. Connecte-toi ou demande un lien de secours.")
+    hache = hacher_mdp(mdp)
+    conn.execute("BEGIN IMMEDIATE")
+    try:
+        pid = creer_profil(conn, pseudo.strip(), mail)
+        conn.execute("UPDATE profils SET mot_de_passe_hache = ? WHERE id = ?", (hache, pid))
+        jeton = creer_jeton(conn, pid, "cookie", appareil)
+        conn.execute("COMMIT")
+    except Exception:
+        conn.execute("ROLLBACK")
+        raise
+    return profil_public(conn, pid), jeton
+
+
+def connecter_compte(conn, data, appareil=""):
+    from .app import Refus
+    mail = mail_normalise(data.get("mail"))
+    mdp = data.get("mot_de_passe")
+    if not isinstance(mdp, str) or len(mdp) > 256:
+        raise Refus(401, "connexion-refusee", "Adresse ou mot de passe incorrect.")
+    limiter(conn, "mail:" + hacher(mail))
+    row = conn.execute("SELECT id, mot_de_passe_hache, supprime_le FROM profils WHERE lower(mail) = ?", (mail,)).fetchone()
+    hache = row["mot_de_passe_hache"] if row else None
+    # Même calcul coûteux pour un compte absent ; aucune recherche de mail exposée.
+    sel = bytes.fromhex(hache.split("$")[4]) if hache else bytes(16)
+    candidat = hacher_mdp(mdp, sel)
+    if not hache or not hmac.compare_digest(candidat, hache) or row["supprime_le"]:
+        raise Refus(401, "connexion-refusee", "Adresse ou mot de passe incorrect.")
+    conn.execute("DELETE FROM tentatives_auth WHERE cle = ?", ("mail:" + hacher(mail),))
+    return profil_public(conn, row["id"]), creer_jeton(conn, row["id"], "cookie", appareil)
+
+
+def eleves(conn):
+    resultat = []
+    for row in conn.execute("SELECT id, titre_affiche, reglages FROM profils WHERE supprime_le IS NULL ORDER BY titre_affiche, id"):
+        if json.loads(row["reglages"] or "{}").get("visibilite") is False:
+            continue
+        cursus = cursus_actuel(conn, row["id"])
+        if conn.execute("SELECT 1 FROM masquages WHERE profil = ? AND domaine IN ('*', ?)", (row["id"], cursus)).fetchone():
+            continue
+        resultat.append({"id": row["id"], "pseudo": row["titre_affiche"], "cursus": cursus})
+    return resultat
+
+
+def demander_cursus(conn, pid, data):
+    from .app import Refus
+    texte = data.get("texte")
+    if not isinstance(texte, str) or not 1 <= len(texte.strip()) <= 2000:
+        raise Refus(422, "demande-invalide", "Décris ta situation et ce que tu veux apprendre (2000 caractères au plus).")
+    identifiant = str(uuid.uuid4())
+    conn.execute("INSERT INTO demandes_cursus VALUES (?, ?, ?, ?)", (identifiant, pid, texte.strip(), maintenant()))
+    return {"id": identifiant, "ok": True}

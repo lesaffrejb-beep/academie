@@ -22,7 +22,8 @@
         "erreur",
         "seance",
         "synthese",
-        "signalement"
+        "signalement",
+        "cursus"
       ]
     },
     "nonce": {
@@ -146,6 +147,10 @@
     "exercice_index": {
       "type": "integer",
       "minimum": 0
+    },
+    "cursus": {
+      "type": "string",
+      "minLength": 1
     }
   },
   "allOf": [
@@ -265,6 +270,20 @@
       "then": {
         "required": [
           "carte"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "mode": {
+            "const": "cursus"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "cursus"
         ]
       }
     }

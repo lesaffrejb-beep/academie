@@ -1,4 +1,5 @@
-import { expect, test } from "@playwright/test";
+import {sessionTest} from "./compte-fixture";
+import { expect, test } from "./compte-fixture";
 
 test("l'accueil conduit à une tentative et conserve la réponse après fermeture", async ({ page }) => {
   await page.goto("./");
@@ -18,7 +19,8 @@ test("l'accueil conduit à une tentative et conserve la réponse après fermetur
 
 test("le métier IFSI ouvre ses propres contenus", async ({page}) => {
   await page.goto("./");
-  await page.getByRole("button",{name:"Soins infirmiers",exact:true}).click();
+  await sessionTest(page,"ifsi");
+  await page.reload();
   await expect(page.getByRole("heading",{name:"Prendre soin commence ici"})).toBeVisible();
   await page.getByRole("button",{name:"Commencer l’étude",exact:true}).click();
   await expect(page.getByRole("heading",{name:"Les cinq B",exact:true})).toBeVisible();

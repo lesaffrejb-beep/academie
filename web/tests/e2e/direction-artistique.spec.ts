@@ -1,3 +1,4 @@
+import {sessionTest} from "./compte-fixture";
 /**
  * La checklist de DIRECTION-ARTISTIQUE.md §9, celle qui se mesure.
  *
@@ -25,7 +26,7 @@
  * ils ne sont ni dans `npm test` ni dans la porte du dépôt.
  */
 
-import { expect, test, type Page } from "@playwright/test";
+import { expect, test, type Page } from "./compte-fixture";
 
 const QUESTION = ".font-titre.text-xl";
 const SEANCE = "./#/salle/seance/hasard";
@@ -120,6 +121,7 @@ test.describe("direction artistique", () => {
   test("le mouvement réduit est respecté", async ({ browser }) => {
     const contexte = await browser.newContext({ reducedMotion: "reduce" });
     const page = await contexte.newPage();
+    await sessionTest(page);
     await page.goto(SEANCE);
     await expect(page.locator(QUESTION).first()).toBeVisible();
 

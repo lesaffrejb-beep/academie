@@ -1,0 +1,91 @@
+
+> academie-client@2.0.0 e2e
+> playwright test --project=telephone
+
+[WebServer] (node:99982) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:109) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 38 tests using 1 worker
+
+(node:117) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [telephone] › tests/e2e/accueil-visuel.spec.ts:4:1 › le thème se choisit dès l’accueil et persiste après rechargement (741ms)
+  ✓   2 [telephone] › tests/e2e/accueil-visuel.spec.ts:15:1 › les chapitres et le cas réel sont accessibles au téléphone dans les deux métiers (787ms)
+  ✓   3 [telephone] › tests/e2e/atlas.spec.ts:3:1 › la tablette conserve toutes les cibles dans le cadre de l'atlas (428ms)
+  ✓   4 [telephone] › tests/e2e/atlas.spec.ts:19:1 › l'atlas ouvre les vrais chapitres et distingue le programme du contenu (942ms)
+  ✓   5 [telephone] › tests/e2e/atlas.spec.ts:37:1 › le rail et la carte restent lisibles avec deux thèmes et texte agrandi (1.1s)
+  ✓   6 [telephone] › tests/e2e/atlas.spec.ts:52:2 › les domaines sont nommés et le programme ne simule pas des relations (339ms)
+  ✓   7 [telephone] › tests/e2e/boite.spec.ts:3:1 › le retour d'un dépôt ne supprime pas l'idée saisie pendant l'envoi (440ms)
+  ✓   8 [telephone] › tests/e2e/boite.spec.ts:23:1 › un dépôt confirmé apparaît dans la file de la boîte (427ms)
+  ✓   9 [telephone] › tests/e2e/boite.spec.ts:39:1 › le brouillon survit à un changement d'écran et peut être abandonné (449ms)
+  ✓  10 [telephone] › tests/e2e/direction-artistique.spec.ts:50:3 › direction artistique › aucun hexadécimal hors des tokens dans le CSS servi (188ms)
+  ✓  11 [telephone] › tests/e2e/direction-artistique.spec.ts:79:3 › direction artistique › rien ne déborde, ni à 375 ni à 1280, ni à 200 % de texte (527ms)
+  ✓  12 [telephone] › tests/e2e/direction-artistique.spec.ts:99:3 › direction artistique › les deux thèmes rendent, et l'encre n'est pas la couleur du fond (297ms)
+  ✘  13 [telephone] › tests/e2e/direction-artistique.spec.ts:120:3 › direction artistique › le mouvement réduit est respecté (10.2s)
+(node:795) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  14 [telephone] › tests/e2e/direction-artistique.spec.ts:139:3 › direction artistique › la souris n'est jamais nécessaire dans une salle (961ms)
+  ✓  15 [telephone] › tests/e2e/direction-artistique.spec.ts:182:3 › direction artistique › le focus se voit sur le chemin principal (375ms)
+  ✓  16 [telephone] › tests/e2e/etude.relecture.spec.ts:28:1 › l'indice survit au rechargement de la tentative (616ms)
+  ✓  17 [telephone] › tests/e2e/etude.relecture.spec.ts:40:1 › une réponse avec indice ne reçoit aucune note de rappel autonome (628ms)
+  ✓  18 [telephone] › tests/e2e/etude.relecture.spec.ts:55:1 › un QCM conserve le choix initial et le retour après rechargement (920ms)
+  ✓  19 [telephone] › tests/e2e/etude.spec.ts:4:1 › l'accueil conduit à une tentative et conserve la réponse après fermeture (764ms)
+  ✓  20 [telephone] › tests/e2e/etude.spec.ts:20:1 › le métier IFSI ouvre ses propres contenus (453ms)
+  ✓  21 [telephone] › tests/e2e/etude.spec.ts:29:1 › une étude entière hors ligne garde production et rappels, puis recommence sans ancien corrigé (1.5s)
+  ✓  22 [telephone] › tests/e2e/etude.spec.ts:54:1 › l'accueil et l'étude restent lisibles avec texte agrandi (412ms)
+  ✓  23 [telephone] › tests/e2e/exercices.spec.ts:44:1 › une seule ouverture et une seule note pour un double clic (325ms)
+  ✓  24 [telephone] › tests/e2e/exercices.spec.ts:57:3 › photo montre sa vraie image et permet une reponse (357ms)
+  ✓  25 [telephone] › tests/e2e/exercices.spec.ts:57:3 › relier montre sa vraie image et permet une reponse (383ms)
+  ✓  26 [telephone] › tests/e2e/exercices.spec.ts:57:3 › datation montre sa vraie image et permet une reponse (369ms)
+  ✓  27 [telephone] › tests/e2e/exercices.spec.ts:57:3 › plan montre sa vraie image et permet une reponse (365ms)
+  ✓  28 [telephone] › tests/e2e/exercices.spec.ts:71:1 › les vraies sources sont repliees puis consultables apres reponse (363ms)
+  ✓  29 [telephone] › tests/e2e/exercices.spec.ts:80:1 › signaler retire immediatement la carte sans lui donner une note (412ms)
+  ✓  30 [telephone] › tests/e2e/exercices.spec.ts:92:1 › une panne de stockage garde la correction et propose de reessayer (338ms)
+  ✓  31 [telephone] › tests/e2e/exercices.spec.ts:111:1 › une seance de chapitre ne sert aucune carte d un autre chapitre (339ms)
+  ✓  32 [telephone] › tests/e2e/exercices.spec.ts:123:1 › la carte expire a minuit dans une salle deja ouverte (248ms)
+  ✓  33 [telephone] › tests/e2e/exercices.spec.ts:131:1 › une mauvaise reponse QCM explique le choix et conserve la confiance (413ms)
+  ✓  34 [telephone] › tests/e2e/hors-ligne.spec.ts:148:3 › hors-ligne › la première question s'affiche en moins de trois secondes, réseau coupé (391ms)
+  ✓  35 [telephone] › tests/e2e/hors-ligne.spec.ts:165:3 › hors-ligne › une séance jouée réseau coupé s'écrit localement et attend (733ms)
+  ✓  36 [telephone] › tests/e2e/hors-ligne.spec.ts:196:3 › hors-ligne › au retour du réseau, la file part vers le serveur (654ms)
+  ✓  37 [telephone] › tests/e2e/hors-ligne.spec.ts:250:3 › hors-ligne › aucun hôte tiers n'est contacté pendant une séance (525ms)
+  ✓  38 [telephone] › tests/e2e/profil.spec.ts:3:1 › un refus de session reste visible et peut être réessayé (444ms)
+
+
+  1) [telephone] › tests/e2e/direction-artistique.spec.ts:120:3 › direction artistique › le mouvement réduit est respecté
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: locator('.font-titre.text-xl').first()
+    Expected: visible
+    Timeout: 10000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 10000ms
+      - waiting for locator('.font-titre.text-xl').first()
+
+
+      122 |     const page = await contexte.newPage();
+      123 |     await page.goto(SEANCE);
+    > 124 |     await expect(page.locator(QUESTION).first()).toBeVisible();
+          |                                                  ^
+      125 |
+      126 |     // Aucune transformation ne subsiste, et les transitions sont des
+      127 |     // fondus courts (DA §6). On mesure sur un vrai bouton de l'écran.
+        at /private/tmp/academie-onboarding-20260905/web/tests/e2e/direction-artistique.spec.ts:124:50
+
+    Error Context: test-results/direction-artistique-direc-0c2f2-uvement-réduit-est-respecté-telephone/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/direction-artistique-direc-0c2f2-uvement-réduit-est-respecté-telephone/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/direction-artistique-direc-0c2f2-uvement-réduit-est-respecté-telephone/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [telephone] › tests/e2e/direction-artistique.spec.ts:120:3 › direction artistique › le mouvement réduit est respecté
+  37 passed (38.7s)

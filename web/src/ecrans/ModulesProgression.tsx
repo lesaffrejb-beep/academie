@@ -1,3 +1,4 @@
+import { clePrivee } from "../app/compte";
 import { useState, useMemo } from "react";
 import {
   Award, Compass, Flame, Brain, ShieldCheck, Sparkles, Share2,
@@ -27,7 +28,7 @@ export function ModulePasseport() {
   const titre = useMemo(() => titreDuJoueur(points, monde), [points, monde]);
   const epinglesIds = useMemo(() => {
     try {
-      const brut = localStorage.getItem("academie-insignes-epingles");
+      const brut = localStorage.getItem(clePrivee("academie-insignes-epingles"));
       return new Set<string>(brut ? JSON.parse(brut) : ["insigne-chauffage-p3"]);
     } catch {
       return new Set<string>(["insigne-chauffage-p3"]);
@@ -184,7 +185,7 @@ export function ModulePasseport() {
 export function ModuleLigue() {
   const { banque, journal, jour } = useMagasin();
   const [participe, setParticipe] = useState(() => {
-    return localStorage.getItem("academie-ligue-optin") !== "non";
+    return localStorage.getItem(clePrivee("academie-ligue-optin")) !== "non";
   });
 
   const bilan = useMemo(
@@ -195,7 +196,7 @@ export function ModuleLigue() {
   const toggleParticipation = () => {
     const suivant = !participe;
     setParticipe(suivant);
-    localStorage.setItem("academie-ligue-optin", suivant ? "oui" : "non");
+    localStorage.setItem(clePrivee("academie-ligue-optin"), suivant ? "oui" : "non");
   };
 
   const nomsDivisions: Record<string, string> = {
@@ -442,7 +443,7 @@ export function ModuleBadges() {
   const [avertissement, setAvertissement] = useState<string | null>(null);
   const [epingles, setEpingles] = useState<Set<string>>(() => {
     try {
-      const brut = localStorage.getItem("academie-insignes-epingles");
+      const brut = localStorage.getItem(clePrivee("academie-insignes-epingles"));
       return new Set(brut ? JSON.parse(brut) : ["insigne-chauffage-p3"]);
     } catch {
       return new Set(["insigne-chauffage-p3"]);
@@ -469,7 +470,7 @@ export function ModuleBadges() {
       setAvertissement(null);
     }
     setEpingles(suivant);
-    localStorage.setItem("academie-insignes-epingles", JSON.stringify(Array.from(suivant)));
+    localStorage.setItem(clePrivee("academie-insignes-epingles"), JSON.stringify(Array.from(suivant)));
   };
 
   const iconesInsignes: Record<string, typeof Shield> = {

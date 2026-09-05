@@ -23,6 +23,10 @@ class Http(unittest.TestCase):
             corps = json.dumps({"depuis": None, "lignes": [{"quand": "2026-09-03T08:00:00+00:00", "mode": "revision",
                                                             "nonce": "nonce-http-1", "carte": "c", "note": 3,
                                                             "format": "seance"}]}).encode()
+            mauvaise = urllib.request.Request(base + "/compte", data=b'{}', method="POST", headers={"Content-Type":"text/plain"})
+            with self.assertRaises(urllib.error.HTTPError) as cm:
+                urllib.request.urlopen(mauvaise, timeout=5)
+            self.assertEqual(cm.exception.code, 415)
             req = urllib.request.Request(base + "/journal", data=corps, method="POST",
                                          headers={"Authorization": f"Bearer {jeton}", "Content-Type": "application/json"})
             with urllib.request.urlopen(req, timeout=5) as r:

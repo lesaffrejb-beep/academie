@@ -1,3 +1,4 @@
+import { compteActuel, type Compte } from "../app/compte";
 /**
  * Client de serveur/API.md. Prefixe /academie/api/v1, cookie de session
  * gere par le navigateur (credentials: 'include'). Aucune cle embarquee,
@@ -23,7 +24,7 @@ async function appelle<T>(
   try {
     const reponse = await fetch(PREFIXE + route, {
       credentials: "include",
-      headers: { "Content-Type": "application/json", ...(init.headers ?? {}) },
+      headers: { "Content-Type": "application/json", ...(compteActuel() ? {"X-Academie-Profil": compteActuel()?.id ?? ""} : {}), ...(init.headers ?? {}) },
       ...init,
     });
     let corps: unknown = null;
@@ -72,7 +73,13 @@ export const api = {
     return r;
   },
 
-  profil: () => appelle<{ id: string; titre_affiche: string; cree_le: string }>("/profil"),
+  profil: () => appelle<Compte>("/profil"),
+  inscription: (mail: string, mot_de_passe: string, pseudo: string) => appelle<Compte>("/compte", {method:"POST", body:JSON.stringify({mail, mot_de_passe, pseudo})}),
+  connexion: (mail: string, mot_de_passe: string) => appelle<Compte>("/auth/connexion", {method:"POST", body:JSON.stringify({mail, mot_de_passe})}),
+  deconnexion: () => appelle<{ok:boolean}>("/auth/deconnexion", {method:"POST"}),
+  visibilite: (visibilite: boolean) => appelle<{ok:boolean}>("/profil", {method:"PATCH", body:JSON.stringify({visibilite})}),
+  eleves: () => appelle<{eleves:{id:string; pseudo:string; cursus:string|null}[]}>("/eleves"),
+  demandeCursus: (texte: string) => appelle<{ok:boolean}>("/demandes-cursus", {method:"POST",body:JSON.stringify({texte})}),
 
   deposeBoite: (contenu: string, type: "texte" | "lien" | "note" = "texte") =>
     appelle<{ id: string; etat: string }>("/boite", {
@@ -109,6 +116,7 @@ const entier = (v: unknown) => typeof v === "number" && Number.isSafeInteger(v);
 const nombre = (v: unknown) => typeof v === "number" && Number.isFinite(v);
 const formats = ["seance", "domaine", "etude", "journee", "epreuve", "hasard", "defi"];
 const requis: Record<string, string[]> = {
+  cursus: ["cursus"],
   revision: ["carte", "note", "format"], quiz: ["carte", "note", "stabilite_forcee", "origine"],
   examen: ["score"], erreur: ["carte"], seance: ["format", "graine", "banque_version", "moteur_version"],
   synthese: ["chapitre", "attendus_coches"], signalement: ["carte"],
@@ -118,6 +126,7 @@ export function ligneValide(v: unknown): v is LigneJournal {
   if (!objet(v) || !iso(v.quand) || typeof v.nonce !== "string" || Array.from(v.nonce).length < 8
       || typeof v.mode !== "string" || !Object.hasOwn(requis, v.mode)) return false;
   if (requis[v.mode]?.some(c => !(c in v))) return false;
+  if (v.mode === "cursus" && (typeof v.cursus !== "string" || !v.cursus)) return false;
   if (v.mode === "examen" && !("region" in v) && !("dossier" in v)) return false;
   if ("note" in v && (!entier(v.note) || Number(v.note) < 1 || Number(v.note) > 4)) return false;
   if ("format" in v && (typeof v.format !== "string" || !formats.includes(v.format))) return false;

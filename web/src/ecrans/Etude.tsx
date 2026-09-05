@@ -1,3 +1,4 @@
+import { clePrivee } from "../app/compte";
 import { useEffect, useRef, useState, type CSSProperties } from "react";
 import { ArrowLeft, ArrowRight, Check, Lightbulb, ExternalLink } from "lucide-react";
 import { useMagasin } from "../app/magasin";
@@ -34,7 +35,7 @@ function SalleEtude({lecon, cartes}: {lecon: Lecon; cartes: Carte[]}) {
   const originale = exercices[index];
   const decalage = originale ? Array.from(originale.id).reduce((n,c) => n + c.charCodeAt(0),0) % (originale.choix?.length || 1) : 0;
   const carte: Carte | undefined = originale ? {...originale, choix: originale.choix ? [...originale.choix.slice(decalage), ...originale.choix.slice(0,decalage)] : undefined} : undefined;
-  const cleBrouillon = `academie-etude-brouillon:${lecon.id}:${lecon.version}:${etape}:${index}`;
+  const cleBrouillon = clePrivee(`academie-etude-brouillon:${lecon.id}:${lecon.version}:${etape}:${index}`);
   useEffect(() => {
     try {
       const b = JSON.parse(sessionStorage.getItem(cleBrouillon) ?? "{}");

@@ -1,0 +1,53 @@
+
+> academie-client@2.0.0 e2e
+> playwright test --project=ordinateur
+
+[WebServer] (node:1797) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:1822) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 38 tests using 1 worker
+
+(node:1825) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [ordinateur] › tests/e2e/accueil-visuel.spec.ts:4:1 › le thème se choisit dès l’accueil et persiste après rechargement (673ms)
+  ✓   2 [ordinateur] › tests/e2e/accueil-visuel.spec.ts:15:1 › les chapitres et le cas réel sont accessibles au téléphone dans les deux métiers (786ms)
+  ✓   3 [ordinateur] › tests/e2e/atlas.spec.ts:3:1 › la tablette conserve toutes les cibles dans le cadre de l'atlas (405ms)
+  ✓   4 [ordinateur] › tests/e2e/atlas.spec.ts:19:1 › l'atlas ouvre les vrais chapitres et distingue le programme du contenu (619ms)
+  ✓   5 [ordinateur] › tests/e2e/atlas.spec.ts:37:1 › le rail et la carte restent lisibles avec deux thèmes et texte agrandi (1.2s)
+  ✓   6 [ordinateur] › tests/e2e/atlas.spec.ts:52:2 › les domaines sont nommés et le programme ne simule pas des relations (382ms)
+  ✓   7 [ordinateur] › tests/e2e/boite.spec.ts:3:1 › le retour d'un dépôt ne supprime pas l'idée saisie pendant l'envoi (417ms)
+  ✓   8 [ordinateur] › tests/e2e/boite.spec.ts:23:1 › un dépôt confirmé apparaît dans la file de la boîte (455ms)
+  ✓   9 [ordinateur] › tests/e2e/boite.spec.ts:39:1 › le brouillon survit à un changement d'écran et peut être abandonné (430ms)
+  ✓  10 [ordinateur] › tests/e2e/direction-artistique.spec.ts:51:3 › direction artistique › aucun hexadécimal hors des tokens dans le CSS servi (222ms)
+  ✓  11 [ordinateur] › tests/e2e/direction-artistique.spec.ts:80:3 › direction artistique › rien ne déborde, ni à 375 ni à 1280, ni à 200 % de texte (555ms)
+  ✓  12 [ordinateur] › tests/e2e/direction-artistique.spec.ts:100:3 › direction artistique › les deux thèmes rendent, et l'encre n'est pas la couleur du fond (319ms)
+  ✓  13 [ordinateur] › tests/e2e/direction-artistique.spec.ts:121:3 › direction artistique › le mouvement réduit est respecté (399ms)
+  ✓  14 [ordinateur] › tests/e2e/direction-artistique.spec.ts:141:3 › direction artistique › la souris n'est jamais nécessaire dans une salle (790ms)
+  ✓  15 [ordinateur] › tests/e2e/direction-artistique.spec.ts:184:3 › direction artistique › le focus se voit sur le chemin principal (429ms)
+  ✓  16 [ordinateur] › tests/e2e/etude.relecture.spec.ts:28:1 › l'indice survit au rechargement de la tentative (632ms)
+  ✓  17 [ordinateur] › tests/e2e/etude.relecture.spec.ts:40:1 › une réponse avec indice ne reçoit aucune note de rappel autonome (631ms)
+  ✓  18 [ordinateur] › tests/e2e/etude.relecture.spec.ts:55:1 › un QCM conserve le choix initial et le retour après rechargement (845ms)
+  ✓  19 [ordinateur] › tests/e2e/etude.spec.ts:4:1 › l'accueil conduit à une tentative et conserve la réponse après fermeture (739ms)
+  ✓  20 [ordinateur] › tests/e2e/etude.spec.ts:20:1 › le métier IFSI ouvre ses propres contenus (477ms)
+  ✓  21 [ordinateur] › tests/e2e/etude.spec.ts:29:1 › une étude entière hors ligne garde production et rappels, puis recommence sans ancien corrigé (1.3s)
+  ✓  22 [ordinateur] › tests/e2e/etude.spec.ts:54:1 › l'accueil et l'étude restent lisibles avec texte agrandi (347ms)
+  ✓  23 [ordinateur] › tests/e2e/exercices.spec.ts:44:1 › une seule ouverture et une seule note pour un double clic (315ms)
+  ✓  24 [ordinateur] › tests/e2e/exercices.spec.ts:57:3 › photo montre sa vraie image et permet une reponse (352ms)
+  ✓  25 [ordinateur] › tests/e2e/exercices.spec.ts:57:3 › relier montre sa vraie image et permet une reponse (427ms)
+  ✓  26 [ordinateur] › tests/e2e/exercices.spec.ts:57:3 › datation montre sa vraie image et permet une reponse (339ms)
+  ✓  27 [ordinateur] › tests/e2e/exercices.spec.ts:57:3 › plan montre sa vraie image et permet une reponse (335ms)
+  ✓  28 [ordinateur] › tests/e2e/exercices.spec.ts:71:1 › les vraies sources sont repliees puis consultables apres reponse (332ms)
+  ✓  29 [ordinateur] › tests/e2e/exercices.spec.ts:80:1 › signaler retire immediatement la carte sans lui donner une note (390ms)
+  ✓  30 [ordinateur] › tests/e2e/exercices.spec.ts:92:1 › une panne de stockage garde la correction et propose de reessayer (369ms)
+  ✓  31 [ordinateur] › tests/e2e/exercices.spec.ts:111:1 › une seance de chapitre ne sert aucune carte d un autre chapitre (345ms)
+  ✓  32 [ordinateur] › tests/e2e/exercices.spec.ts:123:1 › la carte expire a minuit dans une salle deja ouverte (467ms)
+  ✓  33 [ordinateur] › tests/e2e/exercices.spec.ts:131:1 › une mauvaise reponse QCM explique le choix et conserve la confiance (409ms)
+  ✓  34 [ordinateur] › tests/e2e/hors-ligne.spec.ts:148:3 › hors-ligne › la première question s'affiche en moins de trois secondes, réseau coupé (351ms)
+  ✓  35 [ordinateur] › tests/e2e/hors-ligne.spec.ts:165:3 › hors-ligne › une séance jouée réseau coupé s'écrit localement et attend (746ms)
+  ✓  36 [ordinateur] › tests/e2e/hors-ligne.spec.ts:196:3 › hors-ligne › au retour du réseau, la file part vers le serveur (664ms)
+  ✓  37 [ordinateur] › tests/e2e/hors-ligne.spec.ts:250:3 › hors-ligne › aucun hôte tiers n'est contacté pendant une séance (508ms)
+  ✓  38 [ordinateur] › tests/e2e/profil.spec.ts:3:1 › un refus de session reste visible et peut être réessayé (646ms)
+
+  38 passed (29.7s)

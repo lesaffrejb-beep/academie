@@ -1,3 +1,4 @@
+import { nomJournal } from "../app/compte";
 import { compareJournal } from "./chronologie";
 /**
  * Le journal : ecriture locale d'abord, envoi ensuite, jamais l'inverse.
@@ -39,8 +40,8 @@ class BaseJournal extends Dexie {
   rejets!: Table<Rejet, string>;
   marques!: Table<Marque, string>;
 
-  constructor() {
-    super("academie-journal");
+  constructor(nom = "academie-journal") {
+    super(nom);
     this.version(1).stores({
       journal: "cle, quand, carte, mode",
       file: "nonce",
@@ -50,7 +51,13 @@ class BaseJournal extends Dexie {
   }
 }
 
-export const base = new BaseJournal();
+export let base = new BaseJournal();
+/** Avant le montage du magasin ; aucun échange ni état anonyme repris. */
+export function ouvreCompte(id: string) {
+  if (base.name === nomJournal(id)) return;
+  base.close();
+  base = new BaseJournal(nomJournal(id));
+}
 
 export function cleDe(ligne: LigneJournal): string {
   return `${ligne.quand}|${ligne.mode}|${ligne.nonce}`;

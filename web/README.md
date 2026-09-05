@@ -336,3 +336,25 @@ l'ancien `index.html`, puis l'ancien `sw.js`, et remet l'unité précédente.
 Il vérifie ensuite l'ouverture en ligne et hors ligne avant de réactiver
 le timer. Le script n'efface ni anciens assets ni sauvegardes ; leur
 nettoyage est une opération distincte, jamais implicite.
+
+## Essai des comptes (05/09/2026)
+
+Le client ouvre une porte de compte avant de monter le magasin. Après
+connexion, la base locale appartient à l'identifiant du profil ; un seul
+cursus reste actif. Élèves affiche pseudo/cursus et permet le masquage,
+la synchronisation, l'export et la déconnexion. L'accès après rechargement
+hors ligne reprend le dernier compte mémorisé sur cet appareil, sauf
+après déconnexion. Le formulaire ne mémorise jamais le mot de passe.
+
+Pour un essai durable, construire avec `npm --prefix web run build`, puis
+`python3 serveur/essai_local.py --port 5186`. Ouvrir
+`http://127.0.0.1:5186/academie/`. Le launcher sert le vrai build PWA et
+l'API sur une seule origine ; sa base par défaut est
+`etat/essai-local.sqlite`, hors Git. Pour un autre état, utiliser `--base`.
+Ce lancement est limité au Mac ; il n'ouvre pas l'application au réseau.
+
+Les compteurs de catalogue sont calculés depuis les programmes, cartes
+servies et études du build. Le premier écran d'étude sollicite une
+réponse avant la leçon ; il ne prétend pas être un quiz de positionnement.
+Les tests de contenu utilisent un profil fictif explicite ; l'inscription
+et les comptes réels ont leurs propres preuves serveur et navigateur.

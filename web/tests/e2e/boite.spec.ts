@@ -1,4 +1,4 @@
-import { expect, test } from "@playwright/test";
+import { expect, test } from "./compte-fixture";
 
 test("le retour d'un dépôt ne supprime pas l'idée saisie pendant l'envoi", async ({ page }) => {
   let confirme!: () => void;

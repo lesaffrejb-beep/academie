@@ -1,3 +1,4 @@
+import { compteActuel } from "../app/compte";
 import { ArrowRight, ArrowUpRight, Check, RotateCcw, Network } from "lucide-react";
 import type { CSSProperties } from "react";
 import { useMagasin } from "../app/magasin";
@@ -20,10 +21,10 @@ export function Accueil() {
 
   return <div className="accueil" style={{ "--c-accent": accentDuRang(parcours?.rang ?? 1) } as CSSProperties}>
     <div className="flex flex-wrap items-center justify-between gap-3 mb-2">
-      <div className="choix-metier" aria-label="Choisir ton métier">
+      {!compteActuel()?.cursus && <div className="choix-metier" aria-label="Choisir ton métier">
         <button aria-pressed={metier === "copro"} onClick={() => choisisMetier("copro")}>Copropriété</button>
         <button aria-pressed={metier === "ifsi"} onClick={() => choisisMetier("ifsi")}>Soins infirmiers</button>
-      </div>
+      </div>}
       <button
         type="button"
         onClick={() => va("/profil")}

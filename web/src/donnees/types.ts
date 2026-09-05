@@ -164,7 +164,7 @@ export interface BrancheProgramme {
 
 export type ModeJournal =
   | "revision" | "quiz" | "examen" | "erreur"
-  | "seance" | "synthese" | "signalement";
+  | "seance" | "synthese" | "signalement" | "cursus";
 
 export type FormatJournal =
   | "seance" | "domaine" | "etude" | "journee" | "epreuve" | "hasard" | "defi";
@@ -173,6 +173,7 @@ export interface LigneJournal {
   quand: string;
   mode: ModeJournal;
   nonce: string;
+  cursus?: string;
   carte?: string;
   note?: 1 | 2 | 3 | 4;
   format?: FormatJournal;

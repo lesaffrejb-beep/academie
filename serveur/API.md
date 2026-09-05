@@ -107,3 +107,54 @@ une route de classement public.
 
 Tant qu'il n'y a pas de comptes, JB crée les profils et génère les liens
 à la main avec un outil de ligne de commande du paquet.
+
+## Essai comptes, 05/09/2026 (0042)
+
+Implémentation locale : `POST /compte` reçoit `mail`, `mot_de_passe`,
+`pseudo` ; répond 201 avec le profil et un cookie HttpOnly, SameSite=Strict,
+Secure en production. Mot de passe de 12 à 256 caractères, scrypt
+N=32768/r=8/p=1 et sel aléatoire par compte. Le mail est normalisé ;
+aucune vérification de possession du mail ni aucun envoi automatique.
+`POST /auth/connexion` reçoit mail/mot_de_passe, répond 200 et renouvelle
+la session. Refus 401 générique ; 422 pour données invalides, 409 pour
+compte existant, 429 pour limitation. Les corps POST/PATCH non vides
+exigent application/json sur HTTP, pour empêcher les formulaires tiers.
+La limite d'origine se fonde sur le pair socket ; derrière Caddy local,
+seule la dernière adresse ajoutée à X-Forwarded-For est utilisée. Le proxy
+doit ajouter le vrai pair, pas conserver seul un en-tête contrôlé par le
+client. Le service reste sur loopback. Ni mot de passe ni jeton en clair
+dans SQLite ou le stockage navigateur ; seul le cookie porte le jeton.
+
+Le client émet `X-Academie-Profil` sur ses requêtes authentifiées. Si le
+cookie désigne quelqu'un d'autre, 409 `compte-change`, sans lecture ni
+écriture du journal. Les jetons d'outils historiques restent compatibles.
+Chaque onglet conserve son identité en mémoire et utilise IndexedDB
+`academie-journal-compte:<id>` ; les brouillons et préférences de progression
+portent aussi cet identifiant. Le journal anonyme historique est conservé
+sans être affecté automatiquement à un compte. Un profil minimal sans
+secret est mémorisé sur l'appareil pour la reprise hors ligne ; se
+déconnecter efface cette mémoire, pas les réponses en attente. Sur un
+appareil partagé, la déconnexion ferme aussi les autres onglets ouverts.
+Le stockage local n'est pas chiffré par le mot de passe du compte.
+
+L'événement journal `mode:cursus` exige `cursus` dans le catalogue.
+Le premier choix fixe le cursus du compte ; les réémissions du même
+choix sont acceptées, un choix différent est refusé 422. Le profil rend
+`cursus` calculé depuis le journal. Import et export gardent l'événement.
+
+`GET /eleves` authentifié ne rend que `{eleves:[{id,pseudo,cursus}]}`.
+Les profils supprimés, masqués ou `reglages.visibilite=false` sont absents.
+`PATCH /profil {visibilite: boolean}` masque/rétablit le profil. Aucune
+route nouvelle ne rend réponses, erreurs, temps, mail ou agrégat.
+Ce petit annuaire n'implémente pas les défis et autres cercles complets.
+
+`POST /demandes-cursus {texte}` authentifié enregistre de 1 à 2000
+caractères. `python3 -m academie_etat --base <base> demandes` les relit.
+Aucun envoi de mail. Le lien magique CLI existant reste le secours.
+
+La migration 0002 ajoute les comptes et étend les modes du journal en
+conservant les lignes. Elle n'a été appliquée qu'aux bases d'essai.
+Publication : sauvegarder la base et les fichiers servis, fournir aussi
+`programme/catalogue.json` au serveur, déployer client et API ensemble ;
+faire autoriser puis vérifier la migration et l'accès HTTPS authentifié.
+Un ancien serveur refuse le mode cursus : ne pas publier seulement le client.
