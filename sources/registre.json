@@ -475,6 +475,36 @@
       "url_droits": "https://www.citedelarchitecture.fr/fr/mentions-legales",
       "on_en_tire": "repérage au 04/09/2026 : pistes de lecture, titres et notices d'architecture",
       "on_n_en_tire_pas": "un dossier pédagogique redistribué, une image d'éditeur ou une datation fondée sur le catalogue seul"
+    },
+    {
+      "id": "dila-jeu-particuliers",
+      "source": "DILA, jeu de fiches Particuliers (repérage du canal ouvert)",
+      "reference": "https://www.data.gouv.fr/datasets/fiches-pratiques-et-ressources-de-service-public-gouv-fr-particuliers",
+      "nature": "institution",
+      "parti": "",
+      "fiabilite": "A",
+      "verifie": "",
+      "repere_le": "2026-09-05",
+      "preuve_reperage": "Pages P10025, P10004 et catalogue du jeu consultés ; aucune fiche métier intégralement traitée",
+      "licence_reperee": "Licence Ouverte 2.0 pour les données du jeu ; conserver attribution, URL, fichier et date",
+      "url_droits": "https://www.service-public.gouv.fr/P10004",
+      "on_en_tire": "un canal de réutilisation identifié pour les quatre inventaires ; voir travail/sources-energie-2026-09-05.md",
+      "on_n_en_tire_pas": "une licence pour photos, marques ou documents tiers ; une validation juridique des fiches"
+    },
+    {
+      "id": "bnf-notice-viollet-dictionnaire",
+      "source": "BnF, notice du Dictionnaire raisonné de Viollet-le-Duc",
+      "reference": "https://catalogue.bnf.fr/ark:/12148/cb39316844m",
+      "nature": "institution",
+      "parti": "",
+      "fiabilite": "A",
+      "verifie": "",
+      "repere_le": "2026-09-05",
+      "preuve_reperage": "Notice bibliographique consultée ; aucun volume du livre lu ni numérisation attestée",
+      "licence_reperee": "Notice sous licence ouverte avec source et date ; droits de numérisation distincts",
+      "url_droits": "https://www.bnf.fr/fr/conditions-de-reutilisations-des-donnees-de-la-bnf",
+      "on_en_tire": "une référence historique à instruire pour culture.lectures.l-architecture-et-ses-styles",
+      "on_n_en_tire_pas": "une lecture du traité, une vérité historique neutre ou une autorisation de reprise de ses images"
     }
   ]
 }

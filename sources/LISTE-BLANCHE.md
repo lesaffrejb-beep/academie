@@ -75,6 +75,16 @@ et celles du portail réseaux de chaleur de celles du site Cerema principal.
 Les liens précis et les réserves sont dans les inventaires. Aucune
 nouvelle autorisation de téléchargement massif ou de publication n'en découle.
 
+### Complément du 05/09/2026
+
+Le [complément DILA](../travail/sources-energie-2026-09-05.md) précise le
+canal ouvert pour les fiches des quatre domaines concernés. La
+[référence Culture](../travail/sources-culture-2026-09-05.md) ajoute une
+notice BnF exacte à instruire, avec droits de notice et de livre distincts.
+Recherche autorisée dans le catalogue BnF et Gallica pour cette piste ;
+aucun téléchargement massif. Les deux nouvelles lignes du registre
+restent des repérages, sans vérification intégrale du contenu métier.
+
 ### Ce que l'extraction des 84 cartes a révélé (03/09/2026)
 
 Le chantier `ACA-SOURCES-1` a rattaché les 154 entrées de source des
