@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef, useState, type CSSProperties, type MouseEvent, type ReactNode } from "react";
+import { Check, Sparkles } from "lucide-react";
 
 /**
  * Composant NombreAnime : decoupage des chiffres avec animation pop-in
@@ -610,6 +611,185 @@ export function BordureLumineuse({
           }}
         />
       </svg>
+    </div>
+  );
+}
+
+/**
+ * Composant ToastExp : pastille flottante dopamine "+XX XP"
+ * avec projection physique, lueur et disparition amortie.
+ */
+export function ToastExp({
+  montant,
+  visible,
+  surFin,
+  classe = "",
+}: {
+  montant: number;
+  visible: boolean;
+  surFin?: () => void;
+  classe?: string;
+}) {
+  useEffect(() => {
+    if (!visible) return;
+    const timer = setTimeout(() => {
+      surFin?.();
+    }, 1250);
+    return () => clearTimeout(timer);
+  }, [visible, surFin]);
+
+  if (!visible || montant <= 0) return null;
+
+  return (
+    <div
+      className={`pastille-exp-flottante absolute z-50 flex items-center gap-1.5 px-3 py-1 rounded-full bg-[var(--c-accent)] text-white font-bold font-mono text-sm shadow-lg border border-white/20 backdrop-blur-sm select-none ${classe}`}
+      role="status"
+      aria-live="polite"
+    >
+      <Sparkles size={13} className="text-amber-200" />
+      <span>+{montant} XP</span>
+    </div>
+  );
+}
+
+/**
+ * Composant JaugeExp : jauge de progression d'expérience avec balayage liquide
+ * métallique (shimmer), compteur de niveau et pourcentages précis.
+ */
+export function JaugeExp({
+  xpDansLeNiveau,
+  xpDuNiveau = 1000,
+  niveau = 1,
+  gainRecent = 0,
+  classe = "",
+}: {
+  xpDansLeNiveau: number;
+  xpDuNiveau?: number;
+  niveau?: number;
+  gainRecent?: number;
+  classe?: string;
+}) {
+  const ratio = Math.max(0, Math.min(1, xpDansLeNiveau / xpDuNiveau));
+  const pourcentage = Math.round(ratio * 100);
+
+  return (
+    <div className={`flex flex-col gap-2 w-full ${classe}`}>
+      <div className="flex items-center justify-between text-xs">
+        <div className="flex items-center gap-2">
+          <span className="w-6 h-6 rounded-full bg-[var(--c-accent-fond)] text-[var(--c-accent-texte)] font-bold flex items-center justify-center font-mono text-xs border border-[var(--c-accent)]/30">
+            {niveau}
+          </span>
+          <span className="font-semibold text-[var(--c-encre)]">
+            Niveau {niveau}
+          </span>
+        </div>
+        <div className="flex items-center gap-2 font-mono text-[var(--c-encre-2)]">
+          {gainRecent > 0 ? (
+            <span className="text-emerald-500 font-bold animate-pulse">
+              +{gainRecent} XP
+            </span>
+          ) : null}
+          <span>
+            <NombreAnime valeur={xpDansLeNiveau} /> / {xpDuNiveau} XP ({pourcentage}%)
+          </span>
+        </div>
+      </div>
+
+      {/* Barre de progression avec reflet shimmer */}
+      <div
+        className="relative h-3 w-full overflow-hidden rounded-full bg-[var(--c-surface-creuse)] border border-[var(--c-bordure-subtile)]"
+        role="progressbar"
+        aria-valuenow={pourcentage}
+        aria-valuemin={0}
+        aria-valuemax={100}
+      >
+        <div
+          className="h-full rounded-full bg-gradient-to-r from-[var(--c-accent)] to-[var(--c-succes)] transition-all duration-700 ease-out relative overflow-hidden"
+          style={{ width: `${pourcentage}%` }}
+        >
+          <div className="reflet-shimmer-jauge" />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/**
+ * Composant RituelSemainePill : visualisation tactile des 7 jours de régularité
+ * (Lundi à Dimanche) avec statuts physiques et micro-rebond.
+ */
+export function RituelSemainePill({
+  joursJoues,
+  jourActuel,
+  serieJours = 0,
+  classe = "",
+}: {
+  joursJoues: Set<number | null | undefined>;
+  jourActuel: number;
+  serieJours?: number;
+  classe?: string;
+}) {
+  const dateAujourdhui = new Date(jourActuel * 86_400_000);
+  const jourSemaine = (dateAujourdhui.getUTCDay() + 6) % 7;
+  const lundiOrdinal = jourActuel - jourSemaine;
+
+  const nomsJours = ["L", "M", "M", "J", "V", "S", "D"];
+  const [jourClique, setJourClique] = useState<number | null>(null);
+
+  return (
+    <div className={`flex flex-col gap-2 ${classe}`}>
+      <div className="flex items-center justify-between text-xs">
+        <span className="font-semibold text-[var(--c-encre)]">
+          Régularité de la semaine
+        </span>
+        <span className="font-mono text-[var(--c-encre-2)]">
+          {serieJours} jour{serieJours > 1 ? "s" : ""} consécutif{serieJours > 1 ? "s" : ""}
+        </span>
+      </div>
+
+      <div className="grid grid-cols-7 gap-1.5 p-2 bg-[var(--c-surface-creuse)] rounded-xl border border-[var(--c-bordure-subtile)]">
+        {nomsJours.map((nom, idx) => {
+          const ordinalJour = lundiOrdinal + idx;
+          const estPasse = ordinalJour < jourActuel;
+          const estAujourdhui = ordinalJour === jourActuel;
+          const estJoue = joursJoues.has(ordinalJour);
+
+          return (
+            <button
+              key={idx}
+              type="button"
+              onClick={() => {
+                if (estJoue) setJourClique(idx);
+              }}
+              className={`relative flex flex-col items-center justify-center py-2 px-1 rounded-lg transition-all duration-200 bouton-tactile ${
+                estAujourdhui
+                  ? "ring-2 ring-[var(--c-accent)] shadow-sm bg-[var(--c-surface)]"
+                  : "bg-[var(--c-surface)]"
+              }`}
+            >
+              {jourClique === idx ? (
+                <EclatParticules nombre={12} duree={500} onFin={() => setJourClique(null)} />
+              ) : null}
+              <span className="text-[10px] font-mono text-[var(--c-encre-3)] mb-1">
+                {nom}
+              </span>
+              <div
+                className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold transition-all ${
+                  estJoue
+                    ? "bg-[var(--c-accent)] text-white shadow-sm scale-105"
+                    : estAujourdhui
+                    ? "border-2 border-dashed border-[var(--c-accent)] text-[var(--c-accent)]"
+                    : estPasse
+                    ? "bg-transparent text-[var(--c-encre-3)] opacity-40"
+                    : "bg-transparent text-[var(--c-encre-3)] opacity-25"
+                }`}
+              >
+                {estJoue ? <Check size={13} /> : null}
+              </div>
+            </button>
+          );
+        })}
+      </div>
     </div>
   );
 }

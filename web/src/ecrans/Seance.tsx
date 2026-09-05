@@ -12,7 +12,7 @@ import { aujourdhuiOrdinal } from "../moteur/etats";
 import { cartesServiables } from "../moteur/serviceabilite";
 import type { Carte } from "../donnees/types";
 import { Bouton, Jauge } from "./Ui";
-import { EclatParticules, VoletGlissant } from "./MicroAnimations";
+import { EclatParticules, ToastExp, VoletGlissant } from "./MicroAnimations";
 import {
   ModuleRole,
   ModuleRelier,
@@ -128,6 +128,7 @@ function Exercice({ carte, graine, enregistrement, enregistre }: {
 }) {
   const [revele, setRevele] = useState(false);
   const [eclat, setEclat] = useState(false);
+  const [expGagnee, setExpGagnee] = useState<number | null>(null);
   const [confiance, setConfiance] = useState(false);
   const [choisi, setChoisi] = useState<number | null>(null);
   const [reponse, setReponse] = useState("");
@@ -151,6 +152,8 @@ function Exercice({ carte, graine, enregistrement, enregistre }: {
       if (revele && ["1", "2", "3", "4"].includes(e.key)) {
         e.preventDefault();
         const noteChoisie = Number(e.key) as 1 | 2 | 3 | 4;
+        const gain = (noteChoisie === 4 ? 30 : noteChoisie === 3 ? 20 : noteChoisie === 2 ? 10 : 5);
+        setExpGagnee(gain);
         if (noteChoisie >= 3) setEclat(true);
         void enregistre(noteChoisie, confiance, Date.now() - debut.current);
       } else if (!revele && qcm && ["1", "2", "3", "4"].includes(e.key)) {
@@ -159,7 +162,10 @@ function Exercice({ carte, graine, enregistrement, enregistre }: {
           e.preventDefault();
           setChoisi(choix);
           setRevele(true);
-          if (choix === correct) setEclat(true);
+          if (choix === correct) {
+            setEclat(true);
+            setExpGagnee(15);
+          }
         }
       } else if (!revele && !qcm && (e.key === " " || e.key === "Enter") && cible?.tagName !== "BUTTON") {
         e.preventDefault(); setRevele(true);
@@ -246,9 +252,24 @@ function Exercice({ carte, graine, enregistrement, enregistre }: {
           revele={revele}
         />
       ) : qcm ? (
-        <ul className="salle-choix">
+        <ul className="salle-choix relative">
+          {expGagnee ? (
+            <ToastExp
+              montant={expGagnee}
+              visible={expGagnee > 0}
+              surFin={() => setExpGagnee(null)}
+              classe="-top-10 left-1/2 -translate-x-1/2"
+            />
+          ) : null}
           {carte.choix?.map((c, i) => <li key={i}>
-            <button type="button" disabled={revele || enregistrement} onClick={() => { setChoisi(i); setRevele(true); if (i === correct) setEclat(true); }}
+            <button type="button" disabled={revele || enregistrement} onClick={() => {
+              setChoisi(i);
+              setRevele(true);
+              if (i === correct) {
+                setEclat(true);
+                setExpGagnee(15);
+              }
+            }}
               className={`salle-choix-bouton relative${revele && i === correct ? " est-juste" : revele && i === choisi ? " est-faux" : ""}`}>
               {revele && i === correct && i === choisi ? <EclatParticules nombre={18} duree={650} /> : null}
               <span className="salle-choix-repere">{revele && i === correct ? <Check size={18} />
@@ -284,11 +305,21 @@ function Exercice({ carte, graine, enregistrement, enregistre }: {
     </article>
     {revele ? <>
       <div className="salle-notes relative" aria-busy={enregistrement}>
+        {expGagnee ? (
+          <ToastExp
+            montant={expGagnee}
+            visible={expGagnee > 0}
+            surFin={() => setExpGagnee(null)}
+            classe="-top-12 left-1/2 -translate-x-1/2"
+          />
+        ) : null}
         {eclat ? <EclatParticules nombre={26} duree={750} onFin={() => setEclat(false)} /> : null}
         {([LIB.note1, LIB.note2, LIB.note3, LIB.note4] as const).map((libelle, i) =>
           <Bouton key={libelle} primaire={i === 2} disabled={enregistrement}
             className={`bouton-tactile salle-note-${i + 1}`}
             onClick={() => {
+              const gain = (i === 3 ? 30 : i === 2 ? 20 : i === 1 ? 10 : 5);
+              setExpGagnee(gain);
               if (i >= 2) setEclat(true);
               void enregistre((i + 1) as 1 | 2 | 3 | 4, confiance, Date.now() - debut.current);
             }}

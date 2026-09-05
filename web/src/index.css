@@ -560,6 +560,66 @@ button:active:not(:disabled), [role="button"]:active { transform: scale(0.98); }
 .salle-note-3:hover { box-shadow: 0 0 16px color-mix(in srgb, var(--c-encre) 25%, transparent); }
 .salle-note-4:hover { box-shadow: 0 0 18px color-mix(in srgb, var(--c-succes) 35%, transparent); }
 
+/* Animation pastille flottante EXP */
+@keyframes flotte-exp-montee {
+  0% {
+    opacity: 0;
+    transform: scale(0.3) translateY(12px);
+  }
+  20% {
+    opacity: 1;
+    transform: scale(1.15) translateY(-6px);
+  }
+  35% {
+    transform: scale(1) translateY(-14px);
+  }
+  75% {
+    opacity: 1;
+    transform: scale(0.98) translateY(-36px);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.85) translateY(-54px);
+  }
+}
+
+.pastille-exp-flottante {
+  animation: flotte-exp-montee 1.25s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  pointer-events: none;
+}
+
+/* Balayage liquide lumineux sur la jauge d'EXP */
+@keyframes balayage-shimmer-jauge {
+  0% { transform: translateX(-100%); }
+  50%, 100% { transform: translateX(200%); }
+}
+
+.reflet-shimmer-jauge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 50%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    color-mix(in srgb, var(--c-surface) 35%, transparent) 50%,
+    transparent 100%
+  );
+  animation: balayage-shimmer-jauge 2.6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  pointer-events: none;
+}
+
+/* Pulsation douce célébration palier */
+@keyframes pulsation-palier {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.04); box-shadow: 0 0 24px color-mix(in srgb, var(--c-accent) 40%, transparent); }
+}
+
+.pulsation-palier {
+  animation: pulsation-palier 2s ease-in-out infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .impulsion-synaptique { animation: none; }
   .salle-retour { animation: none; }
@@ -569,6 +629,9 @@ button:active:not(:disabled), [role="button"]:active { transform: scale(0.98); }
   .salle-choix-bouton.est-juste { animation: none; }
   .onde-orbitale { animation: none; opacity: 0; }
   .halo-respiration { animation: none; }
+  .pastille-exp-flottante { animation: none; opacity: 1; }
+  .reflet-shimmer-jauge { animation: none; }
+  .pulsation-palier { animation: none; }
 }
 
 /* L'atlas est un espace ouvert. Seuls l'exercice et les dialogues flottent. */

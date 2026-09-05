@@ -7,7 +7,7 @@ import { poseTheme, themeCourant, type Theme } from "../app/theme";
 import { exporteJsonl, rejets } from "../moteur/journal";
 import { jourOrdinal } from "../moteur/etats";
 import { Bouton, pourcent } from "./Ui";
-import { NombreAnime, EtatPenseur } from "./MicroAnimations";
+import { NombreAnime, EtatPenseur, RituelSemainePill } from "./MicroAnimations";
 import {
   ModulePasseport,
   ModuleLigue,
@@ -44,7 +44,7 @@ export function Profil({ ongletDefaut }: { ongletDefaut?: string }) {
 
   const idsMetier = new Set(banque?.cartes.map((c) => c.id) ?? []);
   const reponses = journal.filter((l) => idsMetier.has(l.carte ?? "") && l.mode === "revision" && l.carte && l.note);
-  const jours = new Set(reponses.map((l) => jourOrdinal(l.quand)));
+  const jours = new Set(reponses.map((l) => jourOrdinal(l.quand)).filter((j): j is number => j !== null));
   const derniere = reponses.slice(-5).reverse();
   const calendrier = Array.from({ length: 91 }, (_, i) => jour - 90 + i);
   const formatDate = (ordinal: number) =>
@@ -195,6 +195,14 @@ export function Profil({ ongletDefaut }: { ongletDefaut?: string }) {
         ) : (
           /* Onglet Journal & Rituels (Historique, Heatmap, Apparence, Sauvegarde) */
           <div className="profil-grille">
+            <section className="profil-section mb-6">
+              <RituelSemainePill
+                joursJoues={jours}
+                jourActuel={jour}
+                serieJours={points?.serieJours ?? 0}
+              />
+            </section>
+
             <section className="profil-section">
               <h2>{LIB.activite}</h2>
               <div

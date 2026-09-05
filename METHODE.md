@@ -499,3 +499,27 @@ avérée dans les branches concernées.
 
 **Source et état des preuves** : Deci & Ryan (2000), Slavin (1995), `decisions/0010`,
 `decisions/0014`, `decisions/0015` et `decisions/0040`.
+
+## 37. Feedback gratifiant, jauge de palier et rituels tactiles (05/09/2026)
+
+**Ce qu’on fait** : l'apprentissage intègre des micro-animations mesurées :
+- **Toast d'EXP** : pastille jaillissant lors d'une réussite ou d'une note
+  de révision, matérialisant l'effort consenti sans interrompre le geste.
+- **Jauge liquide et palier** : affichage continu de la progression vers le
+  palier suivant, enrichi d'un balayage discret et d'un défilement numérique fluide.
+- **Rituel tactile hebdomadaire** : visualisation concrète des jours pratiqués,
+  mettant en valeur la régularité sans pénalité en cas d'absence.
+
+**Pourquoi** : l'erreur de prédiction dopaminergique (Schultz et al., 1997)
+participe à la consolidation de l'attention et à la motivation d'effort. Un
+feedback sensoriel immédiat et sobre valorise la réussite cognitive sans
+verser dans l'addiction des jeux d'argent.
+
+**Contrôles et limites** : l'expérience pédagogique prime sur l'effet visuel.
+Le vocabulaire d'arcade reste banni (aucune référence aux quêtes, boss, combos
+ou streaks). Les animations respectent impérativement la préférence de
+mouvement réduit (`prefers-reduced-motion: reduce`).
+
+**Source et état des preuves** : Schultz et al. (1997), Hattie & Timperley (2007),
+`decisions/0038` et `decisions/0041`.
+

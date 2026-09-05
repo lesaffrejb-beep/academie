@@ -7,7 +7,7 @@ import { etudeDisponible, repriseEtude } from "../moteur/etude";
 import { NombreAnime } from "./MicroAnimations";
 
 export function Accueil() {
-  const { banque, journal, metier, choisisMetier, etats, jour } = useMagasin();
+  const { banque, journal, metier, choisisMetier, etats, jour, points } = useMagasin();
   if (!banque) return null;
   const parcours = banque.etudes?.parcours.find(p => p.metier === metier);
   const lecons = parcours?.chapitres.map(id => banque.etudes?.lecons[id]).filter(l => l !== undefined) ?? [];
@@ -19,9 +19,25 @@ export function Accueil() {
   const commence = () => prochaine && va(`/salle/etude/${prochaine.id}`);
 
   return <div className="accueil" style={{ "--c-accent": accentDuRang(parcours?.rang ?? 1) } as CSSProperties}>
-    <div className="choix-metier" aria-label="Choisir ton métier">
-      <button aria-pressed={metier === "copro"} onClick={() => choisisMetier("copro")}>Copropriété</button>
-      <button aria-pressed={metier === "ifsi"} onClick={() => choisisMetier("ifsi")}>Soins infirmiers</button>
+    <div className="flex flex-wrap items-center justify-between gap-3 mb-2">
+      <div className="choix-metier" aria-label="Choisir ton métier">
+        <button aria-pressed={metier === "copro"} onClick={() => choisisMetier("copro")}>Copropriété</button>
+        <button aria-pressed={metier === "ifsi"} onClick={() => choisisMetier("ifsi")}>Soins infirmiers</button>
+      </div>
+      <button
+        type="button"
+        onClick={() => va("/profil")}
+        className="bouton-tactile flex items-center gap-2.5 px-3 py-1.5 rounded-full bg-[var(--c-surface)] border border-[var(--c-bordure-subtile)] text-xs text-[var(--c-encre)] shadow-sm hover:border-[var(--c-accent)]"
+      >
+        <span className="w-5 h-5 rounded-full bg-[var(--c-accent-fond)] text-[var(--c-accent-texte)] font-bold font-mono text-[11px] flex items-center justify-center">
+          {points?.niveau ?? 1}
+        </span>
+        <span className="font-semibold">Niveau {points?.niveau ?? 1}</span>
+        <span className="text-[var(--c-encre-3)]">·</span>
+        <span className="font-mono text-[var(--c-encre-2)]"><NombreAnime valeur={points?.xpDansLeNiveau ?? 0} /> / {points?.xpDuNiveau ?? 1000} XP</span>
+        <span className="text-[var(--c-encre-3)]">·</span>
+        <span className="font-mono text-[var(--c-accent)] font-semibold">{points?.serieJours ?? 0}j série</span>
+      </button>
     </div>
     <section className="accueil-ouverture">
       <div className="invitation">

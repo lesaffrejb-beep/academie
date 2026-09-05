@@ -54,3 +54,5 @@ lisant le dépôt, une règle née d'un incident. Pas l'avancement
 | [0038](0038-architecture-des-tokens-et-micro-interactions.md) | 05/09/2026 | Architecture des tokens 100 % portable, dendrogramme 360° et micro-animations tactiles |
 | [0039](0039-modules-interactifs-salle-de-seance.md) | 05/09/2026 | Modules interactifs spécialisés en séance (rôle, relier, plan, datation, synthèse) |
 | [0040](0040-modules-progression-ligue-trophees-insignes-ponts-passeport.md) | 05/09/2026 | Modules de progression : passeport, ligue hebdomadaire, trophées, insignes et ponts |
+| [0041](0041-micro-animations-dopamine-exp-rituel.md) | 05/09/2026 | Micro-animations satisfaisantes : retour dopamine d'EXP, jauge liquide et rituel tactile |
+
