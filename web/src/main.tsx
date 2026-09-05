@@ -54,7 +54,7 @@ function Application() {
     case "noeud": ecran = <Noeud chemin={route.parametre ?? ""} />; break;
     case "seance": ecran = <Seance portee={route.parametre} />; break;
     case "cloture": ecran = <Cloture />; break;
-    case "profil": ecran = <Profil />; break;
+    case "profil": ecran = <Profil ongletDefaut={route.parametre} />; break;
     case "boite": ecran = <Boite />; break;
     case "credits": ecran = <Credits />; break;
     case "confiance": ecran = <Confiance domaine={route.parametre} />; break;

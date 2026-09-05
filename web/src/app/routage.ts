@@ -24,7 +24,7 @@ export function analyse(fragment: string): Route {
     case "salle":
       if (bouts[1] === "etude") return {nom:"etude", parametre:bouts.slice(2).join("/")};
       return bouts[1] === "cloture" ? { nom: "cloture" } : { nom: "seance", parametre: bouts[2] };
-    case "profil": return { nom: "profil" };
+    case "profil": return { nom: "profil", parametre: queue || undefined };
     case "boite": return { nom: "boite" };
     case "credits": return { nom: "credits" };
     case "confiance": return { nom: "confiance", parametre: queue };

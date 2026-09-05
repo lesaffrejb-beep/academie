@@ -470,3 +470,32 @@ doivent rester sobres, sans surcharge cognitive superflue.
 **Source et état des preuves** : Dunlosky et al. (2013), Bisra et al. (2018),
 Hattie & Timperley (2007). Choix ergonomique et pédagogique documenté dans
 `decisions/0039-modules-interactifs-salle-de-seance.md`.
+
+## 36. Les modules de progression et d'émulation (05/09/2026)
+
+**Ce qu’on fait** : le profil de l'apprenant rassemble cinq modules :
+- **Passeport de maîtrise** : carte de visite professionnelle sobre, reflétant le
+  titre officiel déduit du socle et arborant les brevets de spécialité acquis.
+- **Ligue hebdomadaire** : cercle restreint de pairs, mesurant exclusivement
+  les cartes stabilisées de la semaine pondérées par le niveau, avec option de
+  retrait discret et sans reporting hiérarchique.
+- **Trophées de jalon** : constat factuel de six jalons de régularité et de
+  profondeur d'apprentissage (premier pas, régularité, mémoire profonde,
+  gardien du socle, synthèse, grand chelem).
+- **Insignes de spécialité** : brevets par branche technique, attestant
+  de la maturité d'un pan du programme et épinglables sur le passeport.
+- **Branches ponts** : dossiers transverses reliant plusieurs domaines pour
+  mettre en pratique le transfert interdisciplinaire.
+
+**Pourquoi** : soutenir la régularité et le sentiment d'efficacité personnelle
+sans recourir aux artifices extrinsèques préjudiciables à la motivation
+intrinsèque (Deci & Ryan, 2000 ; Slavin, 1995). L'émulation repose sur la
+stabilisation réelle des acquis et la maîtrise de cas réels.
+
+**Contrôles et limites** : le calcul est déterministe et s'effectue localement
+à partir du journal append-only. Aucune mesure du temps passé ni de la rapidité
+d'exécution n'est prise en compte. L'accès aux ponts exige une maturité minimale
+avérée dans les branches concernées.
+
+**Source et état des preuves** : Deci & Ryan (2000), Slavin (1995), `decisions/0010`,
+`decisions/0014`, `decisions/0015` et `decisions/0040`.
