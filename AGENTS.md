@@ -34,3 +34,8 @@ Pour une demande « je veux apprendre X », appliquer `CHEMINS.md` et
 `prompts/construire-un-chemin.md` : cible observable, ancrage, diagnostic,
 sources et chemin révisable. Le script vérifie la cohérence du dossier ;
 l’agent instruit les choix pédagogiques depuis des productions réelles.
+
+Pour rédiger ou compléter les cours bruts de copropriété, lire
+`cours/copro/REGLES.md` et le cahier `chantiers/ACA-COURS-COPRO-1.md`.
+Leur index et leurs sources sont régénérés par `app/cours_copro.py`.
+Ce routage ne modifie pas la procédure de validation des cartes.

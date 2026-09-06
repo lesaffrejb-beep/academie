@@ -1,0 +1,512 @@
+[
+  {
+    "id": "infociments-mortier",
+    "titre": "Mortier : définition",
+    "url": "https://www.infociments.fr/glossaire/mortier",
+    "nature": "organisation-professionnelle",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Définition du mortier et emplois ; page HTML.",
+    "limites": "Émetteur industriel ; aucun dosage normatif repris."
+  },
+  {
+    "id": "efb-usages-ciment",
+    "titre": "Les principales utilisations du ciment",
+    "url": "https://cementlab.infociments.fr/ciments/fenetre-sur-lecole-francaise-du-beton-efb-les-principales-utilisations-du-ciment",
+    "nature": "organisation-professionnelle",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Page HTML : familles de mélanges, emplois, préfabrication.",
+    "limites": "Ne prouve pas la lecture des fiches PDF liées ; anciennes références normatives non reprises."
+  },
+  {
+    "id": "aqc-corrosion",
+    "titre": "Corrosion des armatures du béton armé en façades des bâtiments",
+    "url": "https://qualiteconstruction.com/ressource/fiches-pathologie-batiment/corrosion-armatures-beton-arme-facades-batiments/",
+    "nature": "retour-experience-technique",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Page HTML AQC B.05, mise à jour janvier 2024 : mécanismes et symptômes qualitatifs.",
+    "limites": "Pas de dimensionnement ni de seuil de sécurité ; PDF non déclaré lu."
+  },
+  {
+    "id": "aqc-bois-humidite",
+    "titre": "Dégradation par l’eau et l’humidité des enveloppes et ossatures bois",
+    "url": "https://qualiteconstruction.com/ressource/fiches-pathologie-batiment/degradation-eau-humidite-enveloppes-ossatures-bois/",
+    "nature": "retour-experience-technique",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Page HTML : humidité, durabilité et interfaces.",
+    "limites": "Pas de prescription de traitement ; normes liées non consultées."
+  },
+  {
+    "id": "brgm-choix-pierre",
+    "titre": "Guide méthodologique de sélection des pierres : retour de projet BRGM",
+    "url": "https://www.brgm.fr/fr/reference-projet-acheve/restauration-cathedrale-dame-paris-guide-methodologique-selection-pierres",
+    "nature": "organisme-public",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Page HTML : nécessité de compatibilité esthétique et physico-mécanique.",
+    "limites": "Retour de projet patrimonial ; méthode transposée qualitativement, aucun cas extérieur à la copropriété enseigné."
+  },
+  {
+    "id": "aqc-enduits",
+    "titre": "Désordres des enduits monocouches",
+    "url": "https://qualiteconstruction.com/ressource/fiches-pathologie-batiment/desordres-enduits-monocouches/",
+    "nature": "retour-experience-technique",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Page HTML AQC D.03, janvier 2024 : fonctions, défauts et préparation.",
+    "limites": "DTU cité par la fiche non consulté ; aucune température de chantier prescrite."
+  },
+  {
+    "id": "acermi-performances",
+    "titre": "Des performances certifiées",
+    "url": "https://www.acermi.com/fr/marque-acermi/performances-certifiees/",
+    "nature": "organisme-certification",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Page HTML : conductivité, résistance thermique et propriétés selon emploi.",
+    "limites": "Certificat produit distinct de la conformité du système et de la réalisation."
+  },
+  {
+    "id": "cerema-perfdub",
+    "titre": "Approche performantielle pour la durabilité des ouvrages en béton : PERFDUB",
+    "url": "https://www.cerema.fr/fr/actualites/approche-performantielle-durabilite-ouvrages-beton-retour",
+    "nature": "organisme-public",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Synthèse institutionnelle HTML des mécanismes, essais, modèles et variabilité.",
+    "limites": "Articles expérimentaux complets et référentiel FD P18-480 non lus ; aucune équivalence de durée commerciale déduite."
+  },
+  {
+    "id": "aqc-etics",
+    "titre": "Systèmes d’isolation thermique par l’extérieur (ETICS) en pose initiale",
+    "url": "https://qualiteconstruction.com/ressource/fiches-pathologie-batiment/systemes-isolation-thermique-exterieur-etics-pose-initiale/",
+    "nature": "retour-experience-technique",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Page HTML janvier 2024 : désordres du système, interfaces et fixation.",
+    "limites": "Périmètre ETICS exposé par la fiche ; pas de transposition universelle à toutes les ITE."
+  },
+  {
+    "id": "georisques-rga",
+    "titre": "Dossier expert sur le retrait-gonflement des argiles",
+    "url": "https://www.georisques.gouv.fr/consulter-les-dossiers-thematiques/retrait-gonflement-des-argiles",
+    "nature": "organisme-public",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Mécanisme géologique et effets des mouvements différentiels, page HTML.",
+    "limites": "Le dossier traite particulièrement la vulnérabilité du logement individuel ; seule la physique est transposée aux cas collectifs, sans prescription de fondation."
+  },
+  {
+    "id": "aqc-balcons-structure",
+    "titre": "Fissuration et effondrement de balcons",
+    "url": "https://qualiteconstruction.com/ressource/fiches-pathologie-batiment/fissuration-effondrement-balcons/",
+    "nature": "retour-experience-technique",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Page HTML AQC B.07, janvier 2024 : configurations et risques.",
+    "limites": "Aucun seuil de charge, dimension, détail de ferraillage ou procédé temporaire prescrit."
+  },
+  {
+    "id": "aqc-fissures-maconneries",
+    "titre": "Fissures structurelles des maçonneries",
+    "url": "https://qualiteconstruction.com/ressource/fiches-pathologie-batiment/fissures-structurelles-maconneries-maisons-individuelles/",
+    "nature": "retour-experience-technique",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Page HTML : retraits et déformations d’interfaces.",
+    "limites": "Périmètre original maison individuelle : mécanismes seulement, cas de copropriété originaux ; pas de transposition de détail normatif."
+  },
+  {
+    "id": "cerema-auscultation",
+    "titre": "Réaliser des auscultations sur ouvrages d’art",
+    "url": "https://www.cerema.fr/fr/activites/services/realiser-auscultations-ouvrages-art",
+    "nature": "organisme-public",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Page HTML : définir besoin, données, investigations et restitution.",
+    "limites": "Offre de service, pas référentiel normatif ; raisonnement adapté aux immeubles collectifs."
+  },
+  {
+    "id": "cerema-suivi",
+    "titre": "Suivi à distance des ouvrages fortement dégradés",
+    "url": "https://www.cerema.fr/fr/actualites/suivi-distance-ouvrages-fortement-degrades",
+    "nature": "organisme-public",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Page HTML 2016 : déplacements, température et séries de suivi.",
+    "limites": "Pas de protocole ni seuil d’ouvrage d’art transposé en copropriété ; exemples pédagogiques fictifs distincts."
+  },
+  {
+    "id": "aqc-impermeabilite",
+    "titre": "Dégradations des revêtements d’imperméabilité de façade",
+    "url": "https://qualiteconstruction.com/ressource/fiches-pathologie-batiment/degradations-revetements-impermeabilite-facade/",
+    "nature": "retour-experience-technique",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Page HTML : reconnaissance, systèmes et arrêts.",
+    "limites": "NF DTU 42.1 non consulté intégralement ; aucun tableau chiffré reconstitué."
+  },
+  {
+    "id": "dila-ravalement",
+    "titre": "Ravalement de façade : fréquence",
+    "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F640",
+    "nature": "information-officielle",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Page HTML vérifiée le 6 mars 2026 : champ local, arrêté et périodicité.",
+    "limites": "Arrêté local et actes propres à l’immeuble restent à retrouver ; procédure et répartition des charges non développées."
+  },
+  {
+    "id": "aqc-etics-renovation",
+    "titre": "Rénovation de systèmes ETICS existants",
+    "url": "https://qualiteconstruction.com/ressource/fiches-pathologie-batiment/renovation-systemes-isolation-thermique-exterieur-etics-existants/",
+    "nature": "retour-experience-technique",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Page HTML : tenue de l’existant, perméance, interfaces.",
+    "limites": "Pas de classe de dégradation attribuée sans examen ; référentiels et avis techniques non lus."
+  },
+  {
+    "id": "aqc-decollement-acrotere",
+    "titre": "Décollement d’enduit hydraulique en façade",
+    "url": "https://qualiteconstruction.com/ressource/batiment/decollement-enduit-hydraulique-facade/",
+    "nature": "retour-experience-technique",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Légende de retour photographique : protection en tête et décollement.",
+    "limites": "Texte de légende consulté ; aucune inspection de la photographie revendiquée dans ce lot."
+  },
+  {
+    "id": "aqc-renover-facades",
+    "titre": "Rénover son habitation : rénover les façades",
+    "url": "https://qualiteconstruction.com/ressource/renovation/renover-habitation-renovation-facades/",
+    "nature": "retour-experience-technique",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Page HTML de présentation 2025 : nécessité de diagnostic et compatibilité des couches.",
+    "limites": "Plaquette PDF liée non lue ; cas et méthode de consultation rédigés comme application originale."
+  },
+  {
+    "id": "aqc-releves",
+    "titre": "Toitures-terrasses, le point faible : les relevés",
+    "url": "https://qualiteconstruction.com/ressource/fiches-pathologie-batiment/toitures-terrasses-point-faible-releves/",
+    "nature": "retour-experience-technique",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Page HTML AQC janvier 2024 : fonctions et causes des dégradations.",
+    "limites": "Pas de hauteur, soudure ni prescription transposée ; normes et DTA non lus."
+  },
+  {
+    "id": "aqc-terrasses-entretien",
+    "titre": "Les toitures-terrasses hors végétalisation",
+    "url": "https://qualiteconstruction.com/ressource/fiches-entretien-maintenance/toitures-terrasses/",
+    "nature": "retour-experience-technique",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Page HTML : destination, entretien, évacuations et changements d’usage.",
+    "limites": "Fréquences et charges non généralisées ; aucun geste en hauteur demandé au lecteur."
+  },
+  {
+    "id": "aqc-couvertures",
+    "titre": "Les couvertures",
+    "url": "https://qualiteconstruction.com/ressource/fiches-entretien-maintenance/couvertures/",
+    "nature": "retour-experience-technique",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Page HTML : matériaux, accessoires et entretien.",
+    "limites": "Pas de règles de pose détaillées ni de sécurité déduites de simples photographies."
+  },
+  {
+    "id": "aqc-tuiles-points-singuliers",
+    "titre": "Infiltrations par points singuliers de couvertures en tuiles",
+    "url": "https://qualiteconstruction.com/ressource/fiches-pathologie-batiment/infiltrations-points-singuliers-couvertures-tuiles/",
+    "nature": "retour-experience-technique",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Page HTML : raccords, émergences et chemins d’eau.",
+    "limites": "Pas de pente ou recouvrement prescrits ; PDF non lu."
+  },
+  {
+    "id": "aqc-toiture-seche",
+    "titre": "Fuite de couverture de grands éléments : toiture sèche",
+    "url": "https://qualiteconstruction.com/ressource/fiches-pathologie-batiment/fuite-couverture-grands-elements-toiture-seche/",
+    "nature": "retour-experience-technique",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Page HTML : obstruction, stagnation, corrosion et raccords.",
+    "limites": "Périmètre de couverture sèche conservé ; calcul volumique du cours entièrement fictif."
+  },
+  {
+    "id": "inrs-chutes-exposition",
+    "titre": "Risques liés aux chutes de hauteur : exemples d’exposition",
+    "url": "https://www.inrs.fr/risques/chutes-hauteur/exemples-exposition-risque.html",
+    "nature": "organisme-prevention",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Page HTML INRS : rive, accès, éléments fragiles.",
+    "limites": "Pas de dispositif de sécurité conçu à partir du cours."
+  },
+  {
+    "id": "inrs-terrasses-acces",
+    "titre": "Sécuriser les interventions sur les toitures terrasses",
+    "url": "https://www.inrs.fr/media.html?refINRS=ED+6529",
+    "nature": "organisme-prevention",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Résumé HTML de la fiche : accès, protection collective, circulation.",
+    "limites": "Fiche PDF non déclarée lue ; seule la portée du résumé est employée."
+  },
+  {
+    "id": "aqc-detournement-vmc",
+    "titre": "Détournement d’un conduit de VMC",
+    "url": "https://qualiteconstruction.com/ressource/batiment/detournement-conduit-vmc/",
+    "nature": "retour-experience-technique",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Texte HTML de légende : passage de câbles dans conduit VMC.",
+    "limites": "Photographie non inspectée dans ce lot ; aucun détail normatif déduit."
+  },
+  {
+    "id": "aqc-capillarite",
+    "titre": "Remontées capillaires",
+    "url": "https://qualiteconstruction.com/ressource/fiches-pathologie-batiment/remontees-capillaires/",
+    "nature": "information-technique-primaire",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Mécanisme capillaire, évaporation et sels.",
+    "limites": "Pas de recette de traitement ni de norme intégrale consultée."
+  },
+  {
+    "id": "aqc-condensation",
+    "titre": "Condensations dans les logements",
+    "url": "https://qualiteconstruction.com/ressource/fiches-pathologie-batiment/condensations-logements/",
+    "nature": "information-technique-primaire",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Condensation de surface et dans les parois.",
+    "limites": "Pas de diagnostic médical ni de règle universelle sur les pare-vapeur."
+  },
+  {
+    "id": "aqc-menuiseries-eau",
+    "titre": "Infiltrations par les liaisons menuiserie extérieure/gros œuvre",
+    "url": "https://qualiteconstruction.com/ressource/fiches-pathologie-batiment/infiltrations-liaisons-menuiserie-exterieure-gros-oeuvre/",
+    "nature": "information-technique-primaire",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Assemblages, joints et cheminement des infiltrations.",
+    "limites": "Les particularités DROM ne sont pas généralisées."
+  },
+  {
+    "id": "ademe-isolation",
+    "titre": "Tout savoir sur l’isolation",
+    "url": "https://agirpourlatransition.ademe.fr/particuliers/amenager-maison/renover/tout-savoir-isolation",
+    "nature": "information-technique-primaire",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Interfaces, ponts thermiques et ventilation.",
+    "limites": "Ni prescription de produit ni justification réglementaire."
+  },
+  {
+    "id": "ademe-systemes-ventilation",
+    "titre": "Systèmes de ventilation",
+    "url": "https://recherche.ademe.fr/thematiques/air/qualite-de-lair-interieure-des-batiments/systemes-de-ventilation",
+    "nature": "information-technique-primaire",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Renouvellement d’air et maîtrise des sources de pollution.",
+    "limites": "Pas de lecture intégrale du protocole Promevent."
+  },
+  {
+    "id": "cerema-humidite-ancien",
+    "titre": "Réhabilitation énergétique des bâtiments anciens : nouvelle session du MOOC CREBA",
+    "url": "https://www.cerema.fr/fr/actualites/rehabilitation-energetique-batiments-anciens-nouvelle",
+    "nature": "information-technique-primaire",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Présentation HTML : diagnostic global et comportements hydriques du bâti ancien.",
+    "limites": "MOOC non suivi ; aucun procédé validé pour un immeuble donné."
+  },
+  {
+    "id": "cerema-creba",
+    "titre": "Des outils pour une réhabilitation responsable du bâti ancien",
+    "url": "https://www.cerema.fr/fr/actualites/outils-rehabilitation-responsable-du-bati-ancien",
+    "nature": "information-institutionnelle",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Approche patrimoniale, technique, énergétique et environnementale ; présentation HTML.",
+    "limites": "Application locale et documents propres au bâtiment à vérifier ; pas de conformité individuelle déduite."
+  },
+  {
+    "id": "cerema-copro-reconstruction",
+    "titre": "Étude sur la réhabilitation des copropriétés normandes construites entre 1948 et 1974",
+    "url": "https://www.cerema.fr/fr/actualites/etude-rehabilitation-coproprietes-normandes-construites",
+    "nature": "information-institutionnelle",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Contexte historique régional ; présentation HTML, pas rapport PDF.",
+    "limites": "Application locale et documents propres au bâtiment à vérifier ; pas de conformité individuelle déduite."
+  },
+  {
+    "id": "ministere-rt-histoire",
+    "titre": "Réglementation thermique RT2012",
+    "url": "https://www.ecologie.gouv.fr/politiques-publiques/reglementation-thermique-rt2012",
+    "nature": "information-institutionnelle",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Première RT en1974 et objectifs RT2012, présentation officielle.",
+    "limites": "Application locale et documents propres au bâtiment à vérifier ; pas de conformité individuelle déduite."
+  },
+  {
+    "id": "dila-amiante",
+    "titre": "Habitat contenant de l’amiante",
+    "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F288",
+    "nature": "information-institutionnelle",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "DTA, parties communes et information des occupants.",
+    "limites": "Application locale et documents propres au bâtiment à vérifier ; pas de conformité individuelle déduite."
+  },
+  {
+    "id": "dila-crep",
+    "titre": "Diagnostic immobilier : constat de risque d’exposition au plomb",
+    "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F1142",
+    "nature": "information-institutionnelle",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Champ et objet du CREP ; page vérifiée17août2026.",
+    "limites": "Application locale et documents propres au bâtiment à vérifier ; pas de conformité individuelle déduite."
+  },
+  {
+    "id": "csp-amiante",
+    "titre": "CSP, section prévention des risques liés à l’amiante",
+    "url": "https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006072665/LEGISCTA000006191045/",
+    "nature": "texte-officiel",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "R1334-14 et R1334-17 : permis avant1juillet1997, parties communes ; sections de repérage consultées.",
+    "limites": "Texte HTML consulté ; protocoles détaillés et application à un bâtiment réel non établis par ce cours."
+  },
+  {
+    "id": "inrs-amiante-regles",
+    "titre": "Amiante : réglementation",
+    "url": "https://www.inrs.fr/risques/amiante/reglementation",
+    "nature": "information-institutionnelle",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Distinction gestion immeuble et protection travailleurs ; obligation de repérage avant opération à risque.",
+    "limites": "Texte HTML consulté ; protocoles détaillés et application à un bâtiment réel non établis par ce cours."
+  },
+  {
+    "id": "csp-plomb-communs",
+    "titre": "CSP article L1334-8",
+    "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000031928065/2026-04-28",
+    "nature": "texte-officiel",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Parties à usage commun, habitation, avant1949 ; CREP et travaux altérant les revêtements.",
+    "limites": "Texte HTML consulté ; protocoles détaillés et application à un bâtiment réel non établis par ce cours."
+  },
+  {
+    "id": "inrs-plomb",
+    "titre": "Prévenir les expositions professionnelles au plomb",
+    "url": "https://www.inrs.fr/risques/plomb/ce-qu-il-faut-retenir.html",
+    "nature": "information-institutionnelle",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Voies d’exposition et prévention spécifique lors des travaux sur peintures.",
+    "limites": "Texte HTML consulté ; protocoles détaillés et application à un bâtiment réel non établis par ce cours."
+  },
+  {
+    "id": "dila-termites-vente",
+    "titre": "Diagnostic termites et autres insectes xylophages",
+    "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F3150",
+    "nature": "information-institutionnelle",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Vente, arrêté préfectoral, périmètre, validité maximale6mois.",
+    "limites": "Texte HTML consulté ; protocoles détaillés et application à un bâtiment réel non établis par ce cours."
+  },
+  {
+    "id": "dila-termites-presence",
+    "titre": "Termites dans l’habitat",
+    "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F285",
+    "nature": "information-institutionnelle",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Signalement, déclaration dans le mois et procédures locales.",
+    "limites": "Texte HTML consulté ; protocoles détaillés et application à un bâtiment réel non établis par ce cours."
+  },
+  {
+    "id": "asnr-radon-population",
+    "titre": "Le radon et la population : foire aux questions",
+    "url": "https://reglementation-controle.asnr.fr/information/dossiers-pedagogiques/le-radon-et-la-population/foire-aux-questions",
+    "nature": "information-institutionnelle",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Potentiel géologique et nécessité de mesurer l’habitation.",
+    "limites": "Texte HTML consulté ; protocoles détaillés et application à un bâtiment réel non établis par ce cours."
+  },
+  {
+    "id": "asnr-radon-expertise",
+    "titre": "FAQ Radon",
+    "url": "https://recherche-expertise.asnr.fr/foire-questions/faq-radon",
+    "nature": "information-institutionnelle",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Mesure, entrée depuis le sol, distinction information de vente et mesure, situations professionnelles.",
+    "limites": "Texte HTML consulté ; protocoles détaillés et application à un bâtiment réel non établis par ce cours."
+  },
+  {
+    "id": "zolpan-d2",
+    "titre": "Zolpan : protection et décoration des façades",
+    "url": "https://particuliers.zolpan.fr/expertises/tous-nos-conseils/peinture-facade/protection-decoration-des-facades",
+    "nature": "fabricant",
+    "consulte_le": "2026-09-06",
+    "portee": "Page HTML consultée, D2/D3, préparation et compatibilité des supports.",
+    "limites": "Source commerciale ; normes complètes non consultées, performances de gamme non généralisées.",
+    "etat": "consultee"
+  },
+  {
+    "id": "cstb-upec-html",
+    "titre": "CSTB : certification QB UPEC sols stratifiés",
+    "url": "https://www.cstb.fr/nos-offres/toutes-nos-offres/certification-qb-upec-revetements-sol-stratifies",
+    "nature": "organisme-technique",
+    "consulte_le": "2026-09-06",
+    "portee": "Texte HTML indexé effectivement retourné et lu : U/P/E/C, essais et référence aux locaux. Page générale QB UPEC ouverte séparément.",
+    "limites": "Ouverture directe en erreur serveur ; cahier 3782 et référentiels PDF non lus. Aucun indice de local prescrit.",
+    "etat": "consultee"
+  },
+  {
+    "id": "afnor-garde-corps",
+    "titre": "AFNOR : mise à jour des règles de garde-corps",
+    "url": "https://www.afnor.org/actualites/sante-securite-travail/garde-corps-norme-mieux-proteger-enfants/",
+    "nature": "organisme-normalisation",
+    "consulte_le": "2026-09-06",
+    "portee": "Article HTML mis à jour décembre 2025 lu, objectifs de protection et révision.",
+    "limites": "Norme complète non lue ; l’article ne suffit pas à qualifier une obligation de rénovation de tout existant.",
+    "etat": "consultee"
+  },
+  {
+    "id": "afnor-essais-garde-corps",
+    "titre": "AFNOR : notice NF P01-013 novembre 2024",
+    "url": "https://www.boutique.afnor.org/fr-fr/norme/nf-p01013/essais-des-gardecorps-methodes-et-criteres/fa204440/428038",
+    "nature": "notice-norme",
+    "consulte_le": "2026-09-06",
+    "portee": "Notice HTML et sommaire consultés.",
+    "limites": "Norme complète, forces et déformations admissibles non consultées.",
+    "etat": "consultee"
+  },
+  {
+    "id": "montreal-chaussees",
+    "titre": "Ville de Montréal : entretenir les chaussées toute l’année",
+    "url": "https://montreal.ca/articles/entretenir-les-chaussees-toute-lannee-20383",
+    "nature": "collectivite-publique",
+    "consulte_le": "2026-09-06",
+    "portee": "Page HTML lue : gel-dégel, cavités, réparation locale et réhabilitation.",
+    "limites": "Source québécoise ; aucune règle, statistique ni seuil local transposé à la France.",
+    "etat": "consultee"
+  }
+]

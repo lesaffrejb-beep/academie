@@ -1,0 +1,23 @@
+..EF.....
+======================================================================
+ERROR: test_complement_compte_separe_et_reference_controlee (__main__.ControleCours.test_complement_compte_separe_et_reference_controlee)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jb/Code/academie/app/tests_cours_copro.py", line 45, in test_complement_compte_separe_et_reference_controlee
+    self.assertEqual(len(r['complements']),1)
+                         ~^^^^^^^^^^^^^^^
+KeyError: 'complements'
+
+======================================================================
+FAIL: test_complement_ne_contourne_pas_statut_ou_media (__main__.ControleCours.test_complement_ne_contourne_pas_statut_ou_media)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jb/Code/academie/app/tests_cours_copro.py", line 51, in test_complement_ne_contourne_pas_statut_ou_media
+    p.write_text(texte);self.assertTrue(controle(self.r)['erreurs'])
+                        ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: [] is not true
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.028s
+
+FAILED (failures=1, errors=1)

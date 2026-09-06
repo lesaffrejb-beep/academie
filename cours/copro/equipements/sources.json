@@ -1,0 +1,452 @@
+[
+  {
+    "id": "cegibat-condensation",
+    "titre": "Maximiser la performance des chaudières à condensation",
+    "url": "https://cegibat.grdf.fr/dossier-techniques/maximiser-performance-condensation-chaudiere",
+    "nature": "source-technique-industrielle",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Températures de retour et interactions hydrauliques.",
+    "limites": "Source du distributeur gaz ; aucun montage universel prescrit."
+  },
+  {
+    "id": "grdf-metier-distribution",
+    "titre": "Conseiller clientèle acheminement",
+    "url": "https://monparcourspro.grdf.fr/competences-et-metiers/conseiller-clientele-acheminement",
+    "nature": "producteur-service",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Description directe du rôle de GRDF et distinction fournisseur.",
+    "limites": "Ni contrat de concession ni tarif consulté."
+  },
+  {
+    "id": "fcu-reseaux",
+    "titre": "Découvrez les réseaux de chaleur",
+    "url": "https://france-chaleur-urbaine.beta.gouv.fr/reseaux-chaleur",
+    "nature": "service-public",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Sous-station, primaire/secondaire, R1/R2, confirmation de raccordabilité.",
+    "limites": "Pas de contrat local étudié ; tarifs et conditions variables."
+  },
+  {
+    "id": "cegibat-contrats",
+    "titre": "Typologie des contrats d’exploitation en copropriété",
+    "url": "https://cegibat.grdf.fr/dossier-techniques/typologie-contrats-exploitation-copropriete",
+    "nature": "source-technique-industrielle",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Postes P1àP5, inventaires et périmètres.",
+    "limites": "Typologie professionnelle non nomenclature légale uniforme ; source industrie gaz."
+  },
+  {
+    "id": "dila-individualisation",
+    "titre": "Individualisation de la consommation de chauffage et de froid",
+    "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F14745?ori=mcmga",
+    "nature": "information-institutionnelle",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Principe, exceptions, distinction frais communs et individuels.",
+    "limites": "Phrase simplifiée payer uniquement sa consommation non reprise ; aucun cas individuel validé."
+  },
+  {
+    "id": "ademe-pac-principe",
+    "titre": "Se chauffer avec une pompe à chaleur",
+    "url": "https://agirpourlatransition.ademe.fr/particuliers/amenager-maison/chauffer/pompe-chaleur",
+    "nature": "information-institutionnelle",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Régime des émetteurs, réglage après rénovation, association hybride.",
+    "limites": "Page habitat individuel ; mécanismes uniquement transposés, aucune statistique ou économie généralisée au collectif."
+  },
+  {
+    "id": "aqc-legionelles",
+    "titre": "Développement de légionelles dans les réseaux hydrauliques",
+    "url": "https://qualiteconstruction.com/ressource/focus-desordres-construction/developpement-legionelles-reseaux-hydrauliques/",
+    "nature": "retour-experience-technique",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Présentation HTML mars2024 : conception, circulation, température et entretien.",
+    "limites": "PDF44pages non lu ; aucun seuil ou protocole copié."
+  },
+  {
+    "id": "aqc-essais-ecs",
+    "titre": "Production et distribution de l’eau chaude sanitaire",
+    "url": "https://qualiteconstruction.com/ressource/plomberie/production-distribution-eau-chaude-sanitaire/",
+    "nature": "retour-experience-technique",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Présentation HTML des essais : quantité, température et distribution selon étude.",
+    "limites": "Fiche PDF non lue ; pas de réception individuelle validée."
+  },
+  {
+    "id": "dila-temperature",
+    "titre": "À quelle température doit être chauffé un logement ?",
+    "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F32563",
+    "nature": "information-institutionnelle",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Distinction situations selon logement et conditions de mesure.",
+    "limites": "Aucun seuil chiffré ni calcul arrondi de la page repris dans le cours."
+  },
+  {
+    "id": "kone-traction",
+    "titre": "Ascenseur électrique : fonctionnement",
+    "url": "https://www.kone.fr/outils-supports/faq/ascenseur-electrique.html",
+    "nature": "fabricant",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Composition fonctionnelle à traction uniquement.",
+    "limites": "HTML consulté ; normes intégrales non lues ; ni argumentaire commercial ni conformité individuelle repris."
+  },
+  {
+    "id": "kone-hydraulique",
+    "titre": "Comment fonctionne un ascenseur hydraulique",
+    "url": "https://www.kone.fr/outils-supports/faq/ascenseur-hydraulique.html",
+    "nature": "fabricant",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Centrale, vérin, pompe et distinction traction.",
+    "limites": "HTML consulté ; normes intégrales non lues ; ni argumentaire commercial ni conformité individuelle repris."
+  },
+  {
+    "id": "cch-ascenseurs-entretien",
+    "titre": "CCH R134-6 à R134-13 : entretien et contrôle technique",
+    "url": "https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006074096/LEGISCTA000043818735",
+    "nature": "texte-officiel",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Entretien, clauses minimales, contrôle5ans, version2026.",
+    "limites": "HTML consulté ; normes intégrales non lues ; ni argumentaire commercial ni conformité individuelle repris."
+  },
+  {
+    "id": "dila-ascenseurs",
+    "titre": "Ascenseur : sécurité, entretien et contrôle technique",
+    "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F10538?lang=fr",
+    "nature": "information-institutionnelle",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Page15mai2026, sécurité, contrôle indépendant et alerte.",
+    "limites": "HTML consulté ; normes intégrales non lues ; ni argumentaire commercial ni conformité individuelle repris."
+  },
+  {
+    "id": "dgccrf-ascenseurs",
+    "titre": "L’entretien des ascenseurs",
+    "url": "https://www.economie.gouv.fr/dgccrf/les-fiches-pratiques-et-les-faq/lentretien-des-ascenseurs",
+    "nature": "information-institutionnelle",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Gestion des travaux et contrats.",
+    "limites": "HTML consulté ; normes intégrales non lues ; ni argumentaire commercial ni conformité individuelle repris."
+  },
+  {
+    "id": "ministere-ascenseurs-historique",
+    "titre": "Sécurité des ascenseurs",
+    "url": "https://www.ecologie.gouv.fr/politiques-publiques/securite-ascenseurs",
+    "nature": "information-institutionnelle",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Évolutions historiques de certaines anciennes obligations.",
+    "limites": "HTML consulté ; normes intégrales non lues ; ni argumentaire commercial ni conformité individuelle repris."
+  },
+  {
+    "id": "aqc-vmc",
+    "titre": "VMC simple et double flux",
+    "url": "https://qualiteconstruction.com/ressource/fiches-pathologie-batiment/vmc-simple-double-flux/",
+    "nature": "information-technique-primaire",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Parcours d’air, désordres de réseau, bruit et entretien.",
+    "limites": "Pas de notice complète de matériel ni avis technique spécifique ; pas de validation d’une installation."
+  },
+  {
+    "id": "aldes-entretien",
+    "titre": "Entretenir ma solution de ventilation",
+    "url": "https://storeonline.aldes.fr/content/156-entretenir-ma-solution-de-ventilation",
+    "nature": "information-technique-primaire",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Fonctions des organes ; fréquences commerciales non transformées en loi.",
+    "limites": "Pas de notice complète de matériel ni avis technique spécifique ; pas de validation d’une installation."
+  },
+  {
+    "id": "arrete-aeration",
+    "titre": "Arrêté du24mars1982 relatif à l’aération des logements",
+    "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000862344",
+    "nature": "texte-officiel",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Principes, articles3-4 débits,10 courroie,14 hotte,16 entretien,17 champ.",
+    "limites": "Pas de notice complète de matériel ni avis technique spécifique ; pas de validation d’une installation."
+  },
+  {
+    "id": "aqc-autocontrole-vmc",
+    "titre": "Autocontrôle VMC simple et double flux",
+    "url": "https://qualiteconstruction.com/ressource/fiches-autocontrole/autocontrole-vmc-simple-double-flux/",
+    "nature": "information-technique-primaire",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "HTML : conception, installation, mesures et transmission documentaire.",
+    "limites": "Pas de notice complète de matériel ni avis technique spécifique ; pas de validation d’une installation."
+  },
+  {
+    "id": "nicoll-ventiler",
+    "titre": "Comment ventiler le réseau d’évacuation",
+    "url": "https://www.nicoll.fr/fr/comment-ventiler-le-reseau-devacuation",
+    "nature": "information-technique-primaire",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Distinction EU/EV et circulation air/eau.",
+    "limites": "Fabricant ; règle locale citée par la page non généralisée."
+  },
+  {
+    "id": "nicoll-primaire",
+    "titre": "Pourquoi ventiler le réseau d’évacuation",
+    "url": "https://www.nicoll.fr/fr/pourquoi-ventiler-reseau-devacuation",
+    "nature": "information-technique-primaire",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Dépression, garde d’eau, ventilation primaire.",
+    "limites": "Fabricant ; ratios et normes non repris ; détail ventilation secondaire à compléter par norme."
+  },
+  {
+    "id": "aqc-evacuations",
+    "titre": "Pathologies des canalisations eaux-vannes/eaux usées",
+    "url": "https://qualiteconstruction.com/ressource/fiches-pathologie-batiment/pathologies-canalisations-eaux-vannes-usees-interfaces-vrd/",
+    "nature": "information-technique-primaire",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "HTML : causes de difficultés d’écoulement et désamorçage.",
+    "limites": "Aucune pente ou dimension normative prescrite."
+  },
+  {
+    "id": "grundfos-surpression",
+    "titre": "Introduction à la surpression d’eau",
+    "url": "https://www.grundfos.com/fr/learn/ecademy/all-courses/water-boosting-in-commercial-buildings/introduction-to-grundfos-water-boosting-where-to-use-it-and-which-solution-to-choose",
+    "nature": "information-technique-primaire",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Transcription HTML : hauteur, pression et besoins.",
+    "limites": "Fabricant ; aucun produit ou dimensionnement recommandé."
+  },
+  {
+    "id": "grandsire-retours",
+    "titre": "Disconnecteur CAa : fiche technique HTML",
+    "url": "https://www.grandsire.fr/disconnecteur-caa-fiche-technique-2/",
+    "nature": "information-technique-primaire",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Deux mécanismes de retour et fonction protectrice.",
+    "limites": "Aucun seuil, certification annoncée en cours ou choix du modèle repris."
+  },
+  {
+    "id": "dila-assurance-copro",
+    "titre": "Copropriété : assurance des parties communes ou privatives",
+    "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F2027",
+    "nature": "information-institutionnelle",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Gestion assurantielle et nature interassureurs d’IRSI.",
+    "limites": "Page de synthèse ; convention intégrale non lue ; formulations simplificatrices non reprises comme règles absolues."
+  },
+  {
+    "id": "enedis-colonnes",
+    "titre": "Loi ELAN et colonnes montantes électriques",
+    "url": "https://www.enedis.fr/loi-elan-colonnes-montantes-electriques",
+    "nature": "source-technique-primaire",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Fonction, intégration réseau avec exceptions et coûts selon origine des travaux.",
+    "limites": "Ni statut d’une colonne réelle ni barème actuel attribué."
+  },
+  {
+    "id": "afnor-serie",
+    "titre": "La série NF C15-100 est parue",
+    "url": "https://www.afnor.org/actualites/efficacite-energetique/installations-electriques-nf-c15-100/",
+    "nature": "source-technique-primaire",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Présentation de la série publiée2024.",
+    "limites": "Normes intégrales non consultées."
+  },
+  {
+    "id": "afnor-logement-champ",
+    "titre": "Notice NF C15-100-10",
+    "url": "https://norminfo.afnor.org/norme/nf-c15-100-10/installations-electriques-a-basse-tension-partie-10-installations-electriques-a-basse-tension-dans-les-batiments/189332",
+    "nature": "source-technique-primaire",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Champ logement et distinction services généraux/communs.",
+    "limites": "Notice publique seulement ; aucun article de dimensionnement lu."
+  },
+  {
+    "id": "ademe-eclairage-principe",
+    "titre": "Sobriété : leviers d’éclairage",
+    "url": "https://www.ademe.fr/presse/communique-national/comment-les-collectivites-peuvent-se-mobiliser-et-agir-pour-plus-de-sobriete/",
+    "nature": "source-technique-primaire",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "LED et commande selon présence, mécanismes généraux.",
+    "limites": "Contexte collectivités ; aucun exemple, obligation ou chiffre transposé au syndicat."
+  },
+  {
+    "id": "enedis-irve",
+    "titre": "Quelle infrastructure de recharge choisir",
+    "url": "https://www.enedis.fr/infrastructure-installation-borne-recharge-copropriete",
+    "nature": "source-technique-primaire",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Architectures privées et réseau public dans le parking.",
+    "limites": "Ni tarif ni offre ni prescription dimensionnelle validés."
+  },
+  {
+    "id": "inrs-ed6345",
+    "titre": "INRS ED6345, L’électricité, novembre2019",
+    "url": "https://www.inrs.fr/dam/inrs/CataloguePapier/ED/TI-ED-6345.pdf",
+    "nature": "source-technique-primaire",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "PagesPDF18–20et25–30 lues par unités physiques validées usine ; preuve travail/preuve-concrete-2026-09-06/LECTURE-INRS.md.",
+    "limites": "45pagesoriginal non lues ; SHA256 cd6c2c5468da311dfeb249884ae63823eee5d0cb93206b38636bd1ee08994cc3 ; mécanismes seuls, pas actualisation normes ni dessins repris."
+  },
+  {
+    "id": "urmet-organes-acces",
+    "titre": "Urmet — kit centrale et lecteur VIT25PLUS",
+    "url": "https://www.urmet.fr/vit25plus.html",
+    "nature": "fabricant",
+    "consulte_le": "2026-09-06",
+    "portee": "Organes du contrôle d’accès et verrouillages compatibles présentés en HTML.",
+    "limites": "Catalogue commercial ; aucune notice d’installation ni sécurité particulière au matériel posé.",
+    "etat": "consultee"
+  },
+  {
+    "id": "vigik-fonction",
+    "titre": "Association VIGIK — VIGIK+",
+    "url": "https://www.vigik.com/vigik/",
+    "nature": "organisme-du-systeme",
+    "consulte_le": "2026-09-06",
+    "portee": "Distinction accès professionnels et dispositifs résidents, même platine possible.",
+    "limites": "Pas de preuve juridique indépendante des annonces de migration ; aucun calendrier général imposé dans le cours.",
+    "etat": "consultee"
+  },
+  {
+    "id": "arrete-portes-entretien",
+    "titre": "Arrêté du 12 novembre 1990, article 1",
+    "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000006829849",
+    "nature": "texte-officiel",
+    "consulte_le": "2026-09-06",
+    "portee": "Contenu minimal entretien portes automatiques de garage habitation ; article en vigueur consulté.",
+    "limites": "Ne qualifie pas à lui seul tout portail de copropriété ; notice fabricant non lue.",
+    "etat": "consultee"
+  },
+  {
+    "id": "arrete-portes-periodicite",
+    "titre": "Arrêté du 12 novembre 1990, article 3",
+    "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000006829851",
+    "nature": "texte-officiel",
+    "consulte_le": "2026-09-06",
+    "portee": "Deux visites annuelles dans le champ de l’arrêté ; corps article consulté.",
+    "limites": "Ne définit pas l’entretien renforcé éventuellement nécessaire selon usage.",
+    "etat": "consultee"
+  },
+  {
+    "id": "cch-portes",
+    "titre": "CCH R134-58 — portes de garage",
+    "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043818876/2026-04-21",
+    "nature": "texte-officiel",
+    "consulte_le": "2026-09-06",
+    "portee": "Contrat écrit, entretien et vérification périodiques, livret.",
+    "limites": "Version depuis juillet 2021 affichée consultée ; pas tous articles de conception.",
+    "etat": "consultee"
+  },
+  {
+    "id": "ministere-incendie-habitation",
+    "titre": "Ministère — protection contre les incendies",
+    "url": "https://www.ecologie.gouv.fr/politiques-publiques/protection-contre-incendies",
+    "nature": "administration",
+    "consulte_le": "2026-09-06",
+    "portee": "Fonctions de sécurité, distinction habitation et autres régimes, évolution historique.",
+    "limites": "Page de présentation comportant des références historiques : pas catalogue actuel exhaustif des obligations.",
+    "etat": "consultee"
+  },
+  {
+    "id": "arrete-incendie",
+    "titre": "Arrêté du 31 janvier 1986 — protection incendie habitation",
+    "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000474032",
+    "nature": "texte-officiel",
+    "consulte_le": "2026-09-06",
+    "portee": "Lecture HTML ciblée articles 100 à 106, application temporelle et maintenance ; version affichée 2026.",
+    "limites": "Aucune lecture intégrale revendiquée ; classement, parkings et chaufferies à qualifier ; pas obligation universelle d’extincteurs en hall.",
+    "etat": "consultee"
+  },
+  {
+    "id": "dila-carnet",
+    "titre": "DILA — carnet d’entretien de la copropriété",
+    "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F2665",
+    "nature": "administration",
+    "consulte_le": "2026-09-06",
+    "portee": "Contenu, contrats et échéances ; page HTML consultée.",
+    "limites": "Le carnet ne démontre pas la réalisation des prestations ni la levée des réserves.",
+    "etat": "consultee"
+  },
+  {
+    "id": "dila-entretien-chaudiere",
+    "titre": "DILA — entretien annuel de la chaudière",
+    "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F20760",
+    "nature": "administration",
+    "consulte_le": "2026-09-06",
+    "portee": "Entretien chaudières à combustion dans plage de puissance indiquée et rôle du syndicat pour chaudière collective.",
+    "limites": "La phrase générale sur pompes à chaleur ne fixe pas leur régime ; chaudières hors plage et systèmes thermodynamiques à étudier séparément.",
+    "etat": "consultee"
+  },
+  {
+    "id": "dalkia-metier",
+    "titre": "Dalkia — efficacité énergétique habitat",
+    "url": "https://www.dalkia.fr/service-energetique/efficacite-energetique-habitat/",
+    "nature": "entreprise",
+    "consulte_le": "2026-09-06",
+    "portee": "Périmètre déclaré approvisionnement/exploitation/maintenance/rénovation.",
+    "limites": "Présentation commerciale ne prouve ni performance garantie ni contrat de l’immeuble, aucun classement.",
+    "etat": "consultee"
+  },
+  {
+    "id": "arcep-reseaux-mobiles",
+    "titre": "Arcep : extinction 2G/3G, périmètre et équipements concernés",
+    "url": "https://www.arcep.fr/la-regulation/grands-dossiers-reseaux-mobiles/comite-experts-mobile/evaluation-impact-carbone-extinction-reseaux-mobiles-2g-3g.html",
+    "nature": "regulateur",
+    "consulte_le": "2026-09-06",
+    "portee": "HTML consulté, les ascenseurs sont cités parmi les terminaux concernés.",
+    "limites": "Rapport PDF non lu, pas de calendrier national ou propre à une installation déduit de cette page.",
+    "etat": "consultee"
+  },
+  {
+    "id": "aldes-hygro-ab",
+    "titre": "Aldes : guide de choix bouches hygroréglables",
+    "url": "https://storeonline.aldes.fr/content/116-guide-de-choix-bouches-hygroreglables-",
+    "nature": "fabricant",
+    "consulte_le": "2026-09-06",
+    "portee": "HTML, partie habitat collectif : hygro A/B et tresse sensible à humidité.",
+    "limites": "Avis techniques non lus ; débits et suggestion commerciale de régler selon préférences non transposés.",
+    "etat": "consultee"
+  },
+  {
+    "id": "theben-astronomique",
+    "titre": "Theben : contrôle du temps et de la lumière",
+    "url": "https://www.theben.fr/solutions/controle-du-temps-et-de-la-lumiere/",
+    "nature": "fabricant",
+    "consulte_le": "2026-09-06",
+    "portee": "HTML, fonctions horloges classiques et astronomiques consultées.",
+    "limites": "Aucune économie ni interchangeabilité de matériel garantie. Notice de câblage non lue.",
+    "etat": "consultee"
+  },
+  {
+    "id": "nicoll-siphon-disconnecteur",
+    "titre": "Nicoll : fiche descriptive siphons disconnecteurs, juin 2014",
+    "url": "https://www.nicoll.fr/sites/default/files/products/FT_siphons_diconnecteurs_a_coller.pdf",
+    "nature": "fabricant",
+    "consulte_le": "2026-09-06",
+    "portee": "PDF 1 page lu depuis rendu et pivot ; usine unité 1 p.1 validée le 06/09/2026. Empreinte courte 4fca6f2205a55ebf.",
+    "limites": "Document non contractuel juin 2014. Deux chiffres de logos lus en vision signalés par usine à vérifier ; non utilisés dans le cours. Pas de règle sanitaire locale extrapolée.",
+    "etat": "consultee"
+  }
+]

@@ -1,0 +1,372 @@
+[
+  {
+    "id": "ddhc17",
+    "titre": "Déclaration des droits de l’homme et du citoyen — article 17",
+    "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006527444",
+    "nature": "texte",
+    "consulte_le": "2026-09-06",
+    "portee": "Texte de protection de la propriété et conditions de privation, passage consulté.",
+    "limites": "Ne règle pas directement les majorités ou charges de copropriété.",
+    "etat": "consultee"
+  },
+  {
+    "id": "civil544",
+    "titre": "Code civil — article 544",
+    "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006428859",
+    "nature": "texte",
+    "consulte_le": "2026-09-06",
+    "portee": "Définition de la propriété, texte consulté dans le chantier immobilier.",
+    "limites": "Lecture philosophique proposée distincte de la règle positive.",
+    "etat": "consultee"
+  },
+  {
+    "id": "intermediaires",
+    "titre": "GERPHAU — espaces intermédiaires et monde commun",
+    "url": "https://gerphau.com/publication/les-espaces-intermediaires-comme-invitation-architecturale-a-habiter-le-monde-commun/",
+    "nature": "recherche",
+    "consulte_le": "2026-09-06",
+    "portee": "Résumé HTML de présentation : espaces intermédiaires comme lieux de projet, usages et contraintes environnementales.",
+    "limites": "Résumé effectivement consulté ; présentation complète et ouvrages associés non lus.",
+    "etat": "consultee"
+  },
+  {
+    "id": "densite",
+    "titre": "Cerema — densité désirable",
+    "url": "https://www.cerema.fr/fr/actualites/urbanisme-chemin-densite-desirable",
+    "nature": "institutionnelle",
+    "consulte_le": "2026-09-06",
+    "portee": "Article HTML janvier 2024 : densité mesurée/perçue, espaces et services ; méthode de l’étude.",
+    "limites": "Résultats situés, pas causalité universelle ni diagnostic d’une copropriété.",
+    "etat": "consultee"
+  },
+  {
+    "id": "hbm",
+    "titre": "Inventaire régional Auvergne-Rhône-Alpes — groupe Quivogne",
+    "url": "https://patrimoine.auvergnerhonealpes.fr/dossier/IA69000385",
+    "nature": "institutionnelle",
+    "consulte_le": "2026-09-06",
+    "portee": "Notice historique HTML : HBM, air/lumière, étapes de construction et transformation.",
+    "limites": "Un exemple historique, pas l’ensemble du parc français.",
+    "etat": "consultee"
+  },
+  {
+    "id": "logement-histoire",
+    "titre": "DREAL Pays de la Loire — histoire du logement social",
+    "url": "https://www.pays-de-la-loire.developpement-durable.gouv.fr/introduction-a-l-histoire-du-logement-social-a1102.html",
+    "nature": "institutionnelle",
+    "consulte_le": "2026-09-06",
+    "portee": "Passages HTML indexés sur HBM, construction collective et industrialisation.",
+    "limites": "Ouverture directe en maintenance ; diaporama PDF non lu ; pas de chronologie exhaustive revendiquée.",
+    "etat": "consultee"
+  },
+  {
+    "id": "belle-beille",
+    "titre": "Archives d’Angers — histoire de Belle-Beille",
+    "url": "https://archives.angers.fr/chroniques-historiques/les-chroniques-par-annees/pages-histoire-co-2026/la-veritable-histoire-de-belle-beille/index.html",
+    "nature": "institutionnelle",
+    "consulte_le": "2026-09-06",
+    "portee": "Chronique HTML : contexte de crise du logement et construction du quartier après guerre.",
+    "limites": "Aucune attribution de statut copro à l’ensemble historique décrit.",
+    "etat": "consultee"
+  },
+  {
+    "id": "architecture",
+    "titre": "Ministère de la Culture — repères architecture",
+    "url": "https://histoiredesarts.culture.gouv.fr/Fiches-reperes/Architecture",
+    "nature": "institutionnelle",
+    "consulte_le": "2026-09-06",
+    "portee": "HTML : repères de styles, art nouveau, art déco et modernisme.",
+    "limites": "Typologies indicatives ; aucun diagnostic constructif à partir du style seul.",
+    "etat": "consultee"
+  },
+  {
+    "id": "artdeco",
+    "titre": "Ministère de la Culture — Art déco",
+    "url": "https://histoiredesarts.culture.gouv.fr/Mouvements-artistiques/L-Art-deco",
+    "nature": "institutionnelle",
+    "consulte_le": "2026-09-06",
+    "portee": "HTML : géométrie, ornement, modernité et diversité architecturale.",
+    "limites": "Pas de datation précise d’un immeuble non documenté.",
+    "etat": "consultee"
+  },
+  {
+    "id": "civil664",
+    "titre": "Légifrance — notice historique de l’article 664",
+    "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006430162",
+    "nature": "texte",
+    "consulte_le": "2026-09-06",
+    "portee": "Notice HTML : création en 1804 et abrogation ; borne historique.",
+    "limites": "Texte matériel ancien non restitué sur la page : pas de citation ou de règle de répartition historique inventée.",
+    "etat": "consultee"
+  },
+  {
+    "id": "loi1938",
+    "titre": "Légifrance — loi du 28 juin 1938 sur la copropriété",
+    "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000313725",
+    "nature": "texte",
+    "consulte_le": "2026-09-06",
+    "portee": "Intitulé et date de la loi initiale, notice HTML consultée.",
+    "limites": "Scan du Journal officiel non lu ; aucun article de fond de 1938 présenté comme lu.",
+    "etat": "consultee"
+  },
+  {
+    "id": "loi1965",
+    "titre": "Légifrance — loi du 10 juillet 1965",
+    "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000880200/",
+    "nature": "texte",
+    "consulte_le": "2026-09-06",
+    "portee": "Articles actuels 1, 8–10, 14 et 17–18 consultés ; organisation du syndicat, organes et droits.",
+    "limites": "Version actuelle distinguée de la rédaction initiale de 1965 ; aucun historique exhaustif des modifications.",
+    "etat": "consultee"
+  },
+  {
+    "id": "ostrom",
+    "titre": "Académie royale des sciences — prix économie 2009",
+    "url": "https://www.nobelprize.org/prizes/economic-sciences/2009/press-release/?wptouch_preview_theme=enabled",
+    "nature": "institutionnelle",
+    "consulte_le": "2026-09-06",
+    "portee": "Communiqué HTML indexé consulté : travaux d’Ostrom sur la gouvernance des communs.",
+    "limites": "Page canonique directe 403 ; conférence et ouvrage non lus, pas de reproduction des principes détaillés non consultés.",
+    "etat": "consultee"
+  },
+  {
+    "id": "menages",
+    "titre": "Insee Focus 317 — projections de ménages à 2050",
+    "url": "https://www.insee.fr/fr/statistiques/7745319",
+    "nature": "statistique",
+    "consulte_le": "2026-09-06",
+    "portee": "HTML et tableaux janvier 2024 : scénarios, cohabitation, vieillissement et disparités territoriales.",
+    "limites": "Projection conditionnelle fondée sur hypothèses, pas un décompte observé en 2050.",
+    "etat": "consultee"
+  },
+  {
+    "id": "quebec",
+    "titre": "Gouvernement du Québec — mesures copropriété divise",
+    "url": "https://www.quebec.ca/habitation-territoire/achat-vente/condos-coproprietes/mesures-coproprietes",
+    "nature": "institutionnelle",
+    "consulte_le": "2026-09-06",
+    "portee": "HTML actuel : carnet d’entretien et étude du fonds de prévoyance.",
+    "limites": "Périmètre Québec uniquement ; dates transitoires et exceptions à vérifier pour une opération réelle.",
+    "etat": "consultee"
+  },
+  {
+    "id": "commonhold",
+    "titre": "Gouvernement britannique — commonhold property",
+    "url": "https://www.gov.uk/guidance/commonhold-property",
+    "nature": "institutionnelle",
+    "consulte_le": "2026-09-06",
+    "portee": "HTML : unités, association propriétaire et gestionnaire des parties communes ; alternative au leasehold.",
+    "limites": "Angleterre et pays de Galles, pas tout le Royaume-Uni ; projet de réforme distinct du droit entré en vigueur.",
+    "etat": "consultee"
+  },
+  {
+    "id": "strata",
+    "titre": "Gouvernement Nouvelle-Galles du Sud — charges et fonds strata",
+    "url": "https://www.nsw.gov.au/housing-and-construction/strata/living/levies-finances-insurance",
+    "nature": "institutionnelle",
+    "consulte_le": "2026-09-06",
+    "portee": "HTML : fonds administratif, capital works, contributions et exceptions de certains ensembles à deux lots.",
+    "limites": "État australien déterminé, pas règle universelle de l’Australie.",
+    "etat": "consultee"
+  },
+  {
+    "id": "uk-reforme",
+    "titre": "Gouvernement britannique — consultation moving to commonhold",
+    "url": "https://www.gov.uk/government/consultations/moving-to-commonhold-banning-leasehold-for-new-flats/moving-to-commonhold-banning-leasehold-for-new-flats",
+    "nature": "institutionnelle",
+    "consulte_le": "2026-09-06",
+    "portee": "Passages HTML indexés : consultation et ambition de réforme.",
+    "limites": "Projet/consultation ne vaut pas mesure entrée en vigueur.",
+    "etat": "consultee"
+  },
+  {
+    "id": "hatvp",
+    "titre": "HATVP — répertoire des représentants d’intérêts",
+    "url": "https://www.hatvp.fr/le-repertoire/",
+    "nature": "institutionnelle",
+    "consulte_le": "2026-09-06",
+    "portee": "Interface HTML et objet du répertoire consultés.",
+    "limites": "Aucune fiche individuelle ni dépense d’influence contrôlée ici ; absence de résultat ne prouve pas absence d’activité.",
+    "etat": "consultee"
+  },
+  {
+    "id": "arc",
+    "titre": "ARC — qui sommes-nous",
+    "url": "https://arc-copro.fr/qui-sommes-nous.html",
+    "nature": "association",
+    "consulte_le": "2026-09-06",
+    "portee": "Présentation HTML indexée : aide aux conseils syndicaux, contrôle, formation, propositions.",
+    "limites": "Autoprésentation de l’association, pas audit indépendant de ses résultats ou de ses financements.",
+    "etat": "consultee"
+  },
+  {
+    "id": "clcv",
+    "titre": "CLCV — enquête sur les contrats de syndic",
+    "url": "https://www.clcv.org/articles/enquete-clcv-les-contrats-de-syndic",
+    "nature": "association",
+    "consulte_le": "2026-09-06",
+    "portee": "Appel à participation HTML effectivement consulté, avec liens vers résultats distincts.",
+    "limites": "Ne permet pas de transformer les contrats volontaires reçus en échantillon représentatif ; résultats complets liés non examinés.",
+    "etat": "consultee"
+  },
+  {
+    "id": "fnaim",
+    "titre": "FNAIM — propositions sur la politique du logement",
+    "url": "https://www.fnaim.fr/actualite/960/4293-politique-du-logement-quelles-sont-les-propositions-de-la-fnaim-pour-enrayer-la-crise-.htm",
+    "nature": "professionnelle",
+    "consulte_le": "2026-09-06",
+    "portee": "Prise de position HTML du 23 janvier 2024, plaidoyer professionnel.",
+    "limites": "Exemple daté de représentation d’intérêts ; pas programme 2027 ni loi actuelle.",
+    "etat": "consultee"
+  },
+  {
+    "id": "unis",
+    "titre": "UNIS — histoire et représentation professionnelle",
+    "url": "https://www.unis-immo.fr/notre-histoire/",
+    "nature": "professionnelle",
+    "consulte_le": "2026-09-06",
+    "portee": "Présentation HTML indexée des métiers représentés et du rôle patronal.",
+    "limites": "Autoprésentation, pas mesure indépendante de représentativité.",
+    "etat": "consultee"
+  },
+  {
+    "id": "fpi",
+    "titre": "FPI — présentation de la fédération",
+    "url": "https://www.fpifrance.fr/",
+    "nature": "professionnelle",
+    "consulte_le": "2026-09-06",
+    "portee": "Présentation HTML indexée de la fédération des promoteurs.",
+    "limites": "Pas d’utilisation des chiffres de branche non contrôlés ni de conclusion sur un promoteur particulier.",
+    "etat": "consultee"
+  },
+  {
+    "id": "compte-logement",
+    "titre": "SDES — compte du logement 2024",
+    "url": "https://www.statistiques.developpement-durable.gouv.fr/rapport-du-compte-du-logement-2024",
+    "nature": "statistique",
+    "consulte_le": "2026-09-06",
+    "portee": "Synthèse HTML : aides aux occupants et producteurs, dépenses et prélèvements.",
+    "limites": "PDF, séries XLSX et méthodes détaillées non lus ; observation 2024 distincte du droit des aides en 2026.",
+    "etat": "consultee"
+  },
+  {
+    "id": "ps-projet",
+    "titre": "PS — projet socialiste, Vivre libres",
+    "url": "https://projet-socialiste.fr/projet/vivre-libres/",
+    "nature": "politique",
+    "consulte_le": "2026-09-06",
+    "portee": "Projet HTML : sections Se loger et Se chauffer, consultées le 6 septembre 2026.",
+    "limites": "Propositions de parti, pas droit actuel ; diagnostics chiffrés de campagne non adoptés comme statistiques vérifiées.",
+    "etat": "consultee"
+  },
+  {
+    "id": "ps-adoption",
+    "titre": "PS — adoption du projet",
+    "url": "https://parti-socialiste.fr/actualites/le-projet-socialiste-adopte/",
+    "nature": "politique",
+    "consulte_le": "2026-09-06",
+    "portee": "Annonce officielle de juillet 2026 sur adoption du projet.",
+    "limites": "Adoption du projet de parti ne prouve pas programme définitif de chaque candidature présidentielle.",
+    "etat": "consultee"
+  },
+  {
+    "id": "lfi-loyers",
+    "titre": "LFI — engagement des candidats municipaux sur les loyers",
+    "url": "https://lafranceinsoumise.fr/2026/02/04/les-candidats-insoumis-sengagent-pour-faire-baisser-les-loyers-dans-les-communes/",
+    "nature": "politique",
+    "consulte_le": "2026-09-06",
+    "portee": "Article HTML du 4 février 2026, campagne municipale.",
+    "limites": "Périmètre municipal explicitement conservé ; programme national PDF 2025 repéré mais non lu.",
+    "etat": "consultee"
+  },
+  {
+    "id": "ecologistes-municipal",
+    "titre": "Les Écologistes — socle municipal 2026",
+    "url": "https://municipales2026.lesecologistes.fr/pages/1wa5qoXRxHpUHeDrU9rp4V/notre-socle-programmatique",
+    "nature": "politique",
+    "consulte_le": "2026-09-06",
+    "portee": "HTML section logement : rénovation copropriétés, parc social, loyers, tourisme.",
+    "limites": "Propositions municipales, pas règles applicables ni programme présidentiel définitif.",
+    "etat": "consultee"
+  },
+  {
+    "id": "ecologistes-2027",
+    "titre": "Les Écologistes — Projet 2027",
+    "url": "https://lesecologistes.fr/pages/6ImK65GKUnvibm33WGkjkj/projet-2027",
+    "nature": "politique",
+    "consulte_le": "2026-09-06",
+    "portee": "Page HTML de démarche de construction du projet.",
+    "limites": "Pas de chapitre logement détaillé restitué sur cette page ; absence sur cette page ne signifie pas absence dans tout le projet.",
+    "etat": "consultee"
+  },
+  {
+    "id": "pcf-logement",
+    "titre": "PCF — propositions logement février 2026",
+    "url": "https://www.pcf.fr/logement_31erapport_2026",
+    "nature": "politique",
+    "consulte_le": "2026-09-06",
+    "portee": "Communiqué HTML du 3 février 2026, propositions nationales et municipales explicitement séparées.",
+    "limites": "Propositions, pas droit actuel ; données du rapport cité non contrôlées ici.",
+    "etat": "consultee"
+  },
+  {
+    "id": "renaissance-logement",
+    "titre": "Renaissance — accès au logement abordable",
+    "url": "https://parti-renaissance.fr/nos-ambitions/permettre-lacces-a-un-logement-abordable",
+    "nature": "politique",
+    "consulte_le": "2026-09-06",
+    "portee": "Page HTML du corpus municipal 2026 : salariés, garantie locative, tourisme.",
+    "limites": "Périmètre municipal ; les formulations juridiques simplifiées de la page ne sont pas utilisées pour enseigner la loi.",
+    "etat": "consultee"
+  },
+  {
+    "id": "lr-logement",
+    "titre": "Les Républicains — nos idées",
+    "url": "https://republicains.fr/nos-idees/",
+    "nature": "politique",
+    "consulte_le": "2026-09-06",
+    "portee": "Page HTML : construction, simplification des règles et accès des travailleurs.",
+    "limites": "Orientation générale, sans programme logement présidentiel détaillé ni chiffrage comparable.",
+    "etat": "consultee"
+  },
+  {
+    "id": "rn-nimes",
+    "titre": "RN — discours de Nîmes du 4 mars 2026",
+    "url": "https://rassemblementnational.fr/post/discours-de-jordan-bardella-a-nimes",
+    "nature": "politique",
+    "consulte_le": "2026-09-06",
+    "portee": "Texte HTML publié : propriété, squat et proposition référendaire sur accès au logement social.",
+    "limites": "Discours en campagne municipale avec perspective nationale ; mention seul le prononcé fait foi ; pas programme 2027 final.",
+    "etat": "consultee"
+  },
+  {
+    "id": "modem-reperage",
+    "titre": "MoDem — priorités et démarche de propositions",
+    "url": "https://www.mouvementdemocrate.fr/",
+    "nature": "politique",
+    "consulte_le": "2026-09-06",
+    "portee": "Accueil HTML et rubriques effectivement consultés.",
+    "limites": "Pas de chapitre logement national comparable retrouvé dans cette passe ; ne prouve pas absence de propositions.",
+    "etat": "consultee"
+  },
+  {
+    "id": "horizons-reperage",
+    "titre": "Horizons — pôle Idées",
+    "url": "https://horizonsleparti.fr/le-pole-idees/",
+    "nature": "politique",
+    "consulte_le": "2026-09-06",
+    "portee": "Présentation HTML du travail de propositions.",
+    "limites": "Pas de chapitre logement national comparable retrouvé dans cette passe ; ne prouve pas absence de propositions.",
+    "etat": "consultee"
+  },
+  {
+    "id": "clcv-resultats",
+    "titre": "CLCV — conformité des contrats de syndic, résultats publiés en 2025",
+    "url": "https://www.clcv.org/articles/enquete-conformite-des-contrats-de-syndics-35-des-contrats-comportent-de-graves-irregularites",
+    "nature": "association",
+    "consulte_le": "2026-09-06",
+    "portee": "Communiqué HTML du 3 novembre 2025 : échantillon de 195 contrats proposés en 2023, résultats et revendications.",
+    "limites": "Rapport PDF complet non lu ; pas de généralisation nationale du pourcentage, ni reprise de toutes les interprétations juridiques.",
+    "etat": "consultee"
+  }
+]

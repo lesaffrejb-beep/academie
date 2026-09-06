@@ -18,6 +18,8 @@ Conception v2 posée le **02/09/2026** sur le brief de JB
 La conception d'août est archivée intacte dans
 [`archive/conception-2026-08/`](archive/conception-2026-08/README.md).
 
+**Base écrite copro :** [cours et mode d’emploi](cours/copro/README.md), [index du programme](cours/copro/INDEX.md) et [couverture des sujets de JB](cours/copro/complements/COUVERTURE-JB.md). Textes bruts sourcés, cas corrigés et liens transversaux ; statut éditorial distinct des études jouables.
+
 **Partir d’une envie :** [le chemin du professeur](CHEMINS.md) et son [prompt réutilisable](prompts/construire-un-chemin.md) relient demande, acquis à diagnostiquer, sources, exercices et transfert. L’agent instruit le parcours ; le contrôle JSON ne juge pas les compétences.
 
 ## Lire, dans cet ordre

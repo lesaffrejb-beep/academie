@@ -1,0 +1,532 @@
+[
+  {
+    "id": "propriete544",
+    "titre": "Code civil, article 544",
+    "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006428859",
+    "nature": "texte juridique",
+    "consulte_le": "2026-09-06",
+    "portee": "Propriété et limites légales ou réglementaires.",
+    "limites": "Ne résout pas seul les droits concurrents d’un lot.",
+    "etat": "consultee"
+  },
+  {
+    "id": "usufruit578",
+    "titre": "Code civil, article 578",
+    "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006429233",
+    "nature": "texte juridique",
+    "consulte_le": "2026-09-06",
+    "portee": "Définition de l’usufruit.",
+    "limites": "Répartition des charges et représentation en copropriété à examiner séparément.",
+    "etat": "consultee"
+  },
+  {
+    "id": "indivision815-3",
+    "titre": "Code civil, article 815-3",
+    "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006432378",
+    "nature": "texte juridique",
+    "consulte_le": "2026-09-06",
+    "portee": "Administration, disposition, information et mandat tacite.",
+    "limites": "Autres mécanismes judiciaires et conservation non développés exhaustivement.",
+    "etat": "consultee"
+  },
+  {
+    "id": "servitudes",
+    "titre": "Code civil, titre des servitudes",
+    "url": "https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006070721/LEGISCTA000006117907/",
+    "nature": "texte juridique",
+    "consulte_le": "2026-09-06",
+    "portee": "Passages consultés : 637–641, 646, 653–662, 675–691 ; fondement, mitoyenneté, passage et titres.",
+    "limites": "Lecture ciblée HTML ; aucune revendication de revue exhaustive du titre.",
+    "etat": "consultee"
+  },
+  {
+    "id": "mitoyennete-dila",
+    "titre": "Mur mitoyen",
+    "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F2415?successfulShare=true",
+    "nature": "information administrative",
+    "consulte_le": "2026-09-06",
+    "portee": "Preuve, entretien et droits proportionnels ; fiche du 6 mars 2024.",
+    "limites": "Les présomptions doivent être confrontées au Code civil et aux titres.",
+    "etat": "consultee"
+  },
+  {
+    "id": "voisinage1253",
+    "titre": "Code civil, article 1253",
+    "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006437138",
+    "nature": "texte juridique",
+    "consulte_le": "2026-09-06",
+    "portee": "Trouble anormal et conditions cumulatives de l’antériorité.",
+    "limites": "Version actuelle depuis le 17 avril 2024 ; ne pas utiliser l’ancien article homonyme.",
+    "etat": "consultee"
+  },
+  {
+    "id": "propriete545",
+    "titre": "Code civil, article 545",
+    "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006428866",
+    "nature": "texte juridique",
+    "consulte_le": "2026-09-06",
+    "portee": "Protection contre la cession forcée hors cadre légal.",
+    "limites": "Jurisprudence nécessaire pour préciser la sanction d’un empiétement.",
+    "etat": "consultee"
+  },
+  {
+    "id": "empietement-colmar",
+    "titre": "Cour d’appel de Colmar, RG 23/03038",
+    "url": "https://www.courdecassation.fr/decision/69995141cdc6046d47331645",
+    "nature": "jurisprudence",
+    "consulte_le": "2026-09-06",
+    "portee": "Motifs indexés consultés : suppression de l’empiétement et solution technique évitant la démolition intégrale.",
+    "limites": "Ouverture directe sans texte ; seul passage des motifs indexé lu. Décision de cour d’appel, pas arrêt de la Cour de cassation ; dispositif complet non vérifié.",
+    "etat": "consultee"
+  },
+  {
+    "id": "propriete-qpc",
+    "titre": "Conseil constitutionnel, décision 2011-212 QPC",
+    "url": "https://qpc360.conseil-constitutionnel.fr/2012-01-20/decision-2011-212-qpc-20-janvier-2012",
+    "nature": "jurisprudence constitutionnelle",
+    "consulte_le": "2026-09-06",
+    "portee": "Motif indexé consulté distinguant privation et atteinte au droit de propriété.",
+    "limites": "Affaire commerciale ; ne tranche pas une décision de copropriété. Texte intégral à relire pour une analyse de décision complète.",
+    "etat": "consultee"
+  },
+  {
+    "id": "avant-contrat",
+    "titre": "Promesse et compromis de vente",
+    "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F2965",
+    "nature": "information administrative",
+    "consulte_le": "2026-09-06",
+    "portee": "Engagements, conditions et informations du logement ; fiche du 10 avril 2026.",
+    "limites": "Seuls les passages utiles sont repris ; liste des documents recoupée avec les textes propres à la copropriété.",
+    "etat": "consultee"
+  },
+  {
+    "id": "vente-diagnostics",
+    "titre": "Diagnostics à fournir pour la vente",
+    "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F10798?numcr=86900&ori=vitrine",
+    "nature": "information administrative",
+    "consulte_le": "2026-09-06",
+    "portee": "DDT et indication de surface privative en copropriété.",
+    "limites": "Liste et validités à qualifier selon bien, installations, territoire et date ; pas une certification du bâtiment.",
+    "etat": "consultee"
+  },
+  {
+    "id": "etat-date",
+    "titre": "État daté lors de la vente",
+    "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F37294",
+    "nature": "information administrative",
+    "consulte_le": "2026-09-06",
+    "portee": "Rédacteur, coût maximal et distinction des sommes ; fiche du 18 février 2026.",
+    "limites": "Contenu juridique recoupé avec article 5 actuel.",
+    "etat": "consultee"
+  },
+  {
+    "id": "decret5",
+    "titre": "Décret de 1967, article 5 actuel",
+    "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000053191253",
+    "nature": "texte juridique",
+    "consulte_le": "2026-09-06",
+    "portee": "Trois parties, annexes et montant cautionnement ajouté en décembre 2025.",
+    "limites": "Ne confondre ni état daté approximatif sous réserve d’apurement ni créance liquide exigible d’opposition.",
+    "etat": "consultee"
+  },
+  {
+    "id": "mutation-decret",
+    "titre": "Décret de 1967, articles 5-1 et 6 à 6-3",
+    "url": "https://www.legifrance.gouv.fr/codes/section_lc/JORFTEXT000000305770/LEGISCTA000006093846/",
+    "nature": "texte juridique",
+    "consulte_le": "2026-09-06",
+    "portee": "Passages HTML lus : opposition, notification et imputation lors de mutation, article 6-2 actuel.",
+    "limites": "Lecture ciblée ; frais et garanties nécessitent leurs fondements propres.",
+    "etat": "consultee"
+  },
+  {
+    "id": "opposition20",
+    "titre": "Loi de 1965, article 20",
+    "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000049398754",
+    "nature": "texte juridique",
+    "consulte_le": "2026-09-06",
+    "portee": "Opposition du I et contrôle acquéreur distinct au II ; version actuelle depuis avril 2024.",
+    "limites": "Délais de procédure à calculer sur pièces et règles de computation pour un dossier réel.",
+    "etat": "consultee"
+  },
+  {
+    "id": "information2014",
+    "titre": "Réponse ministérielle 57834 du 16 septembre 2014",
+    "url": "https://questions.assemblee-nationale.fr/q14/14-57834QE.htm",
+    "nature": "réponse ministérielle historique",
+    "consulte_le": "2026-09-06",
+    "portee": "Informations préalables issues de documents existants, pas création d’un nouveau document comptable.",
+    "limites": "Réponse ancienne non normative ; ne pas reprendre sa liste et ses dates comme état complet du droit actuel.",
+    "etat": "consultee"
+  },
+  {
+    "id": "bail1989",
+    "titre": "Loi du 6 juillet 1989, lecture ciblée",
+    "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000509310",
+    "nature": "texte juridique",
+    "consulte_le": "2026-09-06",
+    "portee": "Articles 2–3, 6–7 et 23 : champ, information, obligations et charges ; version au 6 septembre 2026.",
+    "limites": "Lecture ciblée HTML, non revue exhaustive de tous les baux et congés.",
+    "etat": "consultee"
+  },
+  {
+    "id": "decence-dila",
+    "titre": "Logement à louer décent",
+    "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F2042",
+    "nature": "information administrative",
+    "consulte_le": "2026-09-06",
+    "portee": "Critères et calendrier selon date du bail et territoire.",
+    "limites": "Ne résume pas les mesures judiciaires ni les exceptions possibles aux travaux.",
+    "etat": "consultee"
+  },
+  {
+    "id": "recuperables",
+    "titre": "Décret 87-713, charges récupérables",
+    "url": "https://www.legifrance.gouv.fr/loda/id/LEGITEXT000006066149",
+    "nature": "texte juridique",
+    "consulte_le": "2026-09-06",
+    "portee": "Article 2 consulté et principe de liste annexée ; personnel, contrats et exclusions.",
+    "limites": "Qualification poste par poste requise, aucune part locative universelle.",
+    "etat": "consultee"
+  },
+  {
+    "id": "charges-dila",
+    "titre": "Charges à payer par le locataire",
+    "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F947?numcr=84400&ori=vitrine",
+    "nature": "information administrative",
+    "consulte_le": "2026-09-06",
+    "portee": "Fonctionnement et menues réparations d’ascenseur ; distinction des modes de paiement.",
+    "limites": "Passages HTML indexés lus, ne remplace pas le décret pour un poste discuté.",
+    "etat": "consultee"
+  },
+  {
+    "id": "reglement-tourisme",
+    "titre": "Règlement de copropriété",
+    "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F2589",
+    "nature": "information administrative",
+    "consulte_le": "2026-09-06",
+    "portee": "Mention des meublés de tourisme dans les nouveaux règlements depuis novembre 2024.",
+    "limites": "Majorité et conditions d’interdiction à confronter au texte légal actuel.",
+    "etat": "consultee"
+  },
+  {
+    "id": "plu",
+    "titre": "Ministère de la Transition écologique — PLU et PLUi",
+    "url": "https://www.ecologie.gouv.fr/politiques-publiques/demarche-outils-elaborer-plan-local-durbanisme-plu-plui",
+    "nature": "institutionnelle",
+    "consulte_le": "2026-09-06",
+    "portee": "Fonction et composition générale du PLU, page HTML consultée.",
+    "limites": "Page ancienne : références législatives anciennes non utilisées ; aucun guide PDF lu.",
+    "etat": "consultee"
+  },
+  {
+    "id": "sup",
+    "titre": "Géoportail de l’urbanisme — cadre des SUP",
+    "url": "https://www.geoportail-urbanisme.gouv.fr/infos_sup/?subcategory=sup_rule",
+    "nature": "institutionnelle",
+    "consulte_le": "2026-09-06",
+    "portee": "Définition, annexion et publication des SUP, HTML consulté.",
+    "limites": "Ne fournit pas les actes applicables à une parcelle particulière.",
+    "etat": "consultee"
+  },
+  {
+    "id": "psmv",
+    "titre": "Ministère de la Culture — élaboration du PSMV",
+    "url": "https://www.culture.gouv.fr/regions/drac-grand-est/services/patrimoine/les-sites-patrimoniaux-remarquables-spr/fiche-n-2.1.-elaboration-du-plan-de-sauvegarde-et-de-mise-en-valeur-maitrise-d-ouvrage-etat",
+    "nature": "institutionnelle",
+    "consulte_le": "2026-09-06",
+    "portee": "PSMV tenant lieu de PLU, règlement graphique et écrit, protection possible des intérieurs.",
+    "limites": "Fiche de procédure générale ; chaque protection dépend du document local.",
+    "etat": "consultee"
+  },
+  {
+    "id": "cadastre",
+    "titre": "DILA — consulter le cadastre",
+    "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F14226",
+    "nature": "institutionnelle",
+    "consulte_le": "2026-09-06",
+    "portee": "Plan et matrice, portée fiscale et absence de fixation des limites de propriété.",
+    "limites": "Ne remplace ni titre ni analyse de bornage.",
+    "etat": "consultee"
+  },
+  {
+    "id": "preemption",
+    "titre": "DILA — vente dans une zone de préemption",
+    "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F16",
+    "nature": "institutionnelle",
+    "consulte_le": "2026-09-06",
+    "portee": "Définition du droit de préemption et nécessité de vérifier son application à une vente.",
+    "limites": "Ne sert pas ici à exposer exhaustivement les exceptions, mandats ou délais de la DIA.",
+    "etat": "consultee"
+  },
+  {
+    "id": "demande-urbanisme",
+    "titre": "DILA : qui dépose une autorisation d’urbanisme",
+    "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F35349",
+    "nature": "institution",
+    "consulte_le": "2026-09-06",
+    "portee": "Qualité du demandeur, syndicat et travaux sur parties communes.",
+    "limites": "Ne décide ni du type d’autorisation ni du droit civil de réaliser les travaux.",
+    "etat": "consultee"
+  },
+  {
+    "id": "dp",
+    "titre": "DILA : déclaration préalable",
+    "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F17578",
+    "nature": "institution",
+    "consulte_le": "2026-09-06",
+    "portee": "Dossier, plans et instruction selon nature du projet.",
+    "limites": "La règle locale et les protections patrimoniales doivent être confrontées au projet.",
+    "etat": "consultee"
+  },
+  {
+    "id": "adil",
+    "titre": "ANIL — réseau et missions des ADIL",
+    "url": "https://www.anil.org/qui-sommes-nous/reseau-des-adil/",
+    "nature": "institutionnelle",
+    "consulte_le": "2026-09-06",
+    "portee": "Information juridique, financière et fiscale, neutralité et limites de mission ; HTML.",
+    "limites": "Ne constitue pas une décision administrative ni un mandat de représentation.",
+    "etat": "consultee"
+  },
+  {
+    "id": "asl",
+    "titre": "Ordonnance du 1er juillet 2004 — associations syndicales de propriétaires",
+    "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000623191/",
+    "nature": "texte",
+    "consulte_le": "2026-09-06",
+    "portee": "Articles 2, 3 et 7 à 9, texte HTML consulté.",
+    "limites": "Ne remplace pas les statuts particuliers ni la vérification de publicité de chaque association.",
+    "etat": "consultee"
+  },
+  {
+    "id": "sci1849",
+    "titre": "Code civil — article 1849",
+    "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006444285/2026-05-06",
+    "nature": "texte",
+    "consulte_le": "2026-09-06",
+    "portee": "Pouvoirs du gérant dans les rapports avec les tiers.",
+    "limites": "Objet social et actes particuliers à analyser ; ne traite pas tout le contentieux des sociétés.",
+    "etat": "consultee"
+  },
+  {
+    "id": "aful",
+    "titre": "Code de l’urbanisme — article L322-1",
+    "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006815268/2020-11-27",
+    "nature": "texte",
+    "consulte_le": "2026-09-06",
+    "portee": "Texte indexé : AFU régies par ordonnance 2004 et dispositions spécifiques du code.",
+    "limites": "Passage indexé consulté ; aucune analyse exhaustive des régimes AFU.",
+    "etat": "consultee"
+  },
+  {
+    "id": "volumes",
+    "titre": "Office notarial de Bourgueil — division volumétrique",
+    "url": "https://loirat-camus.notaires.fr/articles/division-volumetrique-207.htm",
+    "nature": "professionnelle",
+    "consulte_le": "2026-09-06",
+    "portee": "Passages HTML indexés : volumes définis en planimétrie et altimétrie ; distinction de structure.",
+    "limites": "Article ancien utilisé pour le concept, pas pour conclure à un régime juridique actuel dans un cas particulier.",
+    "etat": "consultee"
+  },
+  {
+    "id": "notaire",
+    "titre": "Notaires de France — rôle et acte authentique",
+    "url": "https://contribution-www.notaires.fr/fr/le-role-du-notaire",
+    "nature": "professionnelle",
+    "consulte_le": "2026-09-06",
+    "portee": "Passages HTML indexés sur la fonction d’officier public et d’authentification.",
+    "limites": "Pas une liste exhaustive de toutes les diligences dues dans chaque opération.",
+    "etat": "consultee"
+  },
+  {
+    "id": "agent-immo",
+    "titre": "DGCCRF — profession d’agent immobilier",
+    "url": "https://www.economie.gouv.fr/dgccrf/les-fiches-pratiques-et-les-faq/lagent-immobilier-les-regles-qui-encadrent-la-profession",
+    "nature": "institutionnelle",
+    "consulte_le": "2026-09-06",
+    "portee": "Passages HTML indexés sur carte, habilitation et mandat.",
+    "limites": "Ne traite pas l’ensemble du statut de promoteur ni de bailleur social.",
+    "etat": "consultee"
+  },
+  {
+    "id": "foncier-base",
+    "titre": "DGFiP — base des impôts locaux",
+    "url": "https://www.impots.gouv.fr/particulier/base-de-calcul",
+    "nature": "institutionnelle",
+    "consulte_le": "2026-09-06",
+    "portee": "Lecture HTML des bases et taux de taxe foncière.",
+    "limites": "Aucun taux local ni calcul individuel affirmé.",
+    "etat": "consultee"
+  },
+  {
+    "id": "teom",
+    "titre": "DGFiP — récupération de la TEOM",
+    "url": "https://www.impots.gouv.fr/particulier/questions/je-suis-locataire-mon-proprietaire-me-demande-de-payer-la-taxe-denlevement-des",
+    "nature": "institutionnelle",
+    "consulte_le": "2026-09-06",
+    "portee": "Passage HTML indexé : récupération de la taxe hors frais de gestion et ventilation.",
+    "limites": "Le régime du bail doit être identifié ; ne confond pas TEOM et prestation de nettoyage.",
+    "etat": "consultee"
+  },
+  {
+    "id": "plusvalue",
+    "titre": "DGFiP — plus-values imposées",
+    "url": "https://www.impots.gouv.fr/particulier/plus-values-imposees",
+    "nature": "institutionnelle",
+    "consulte_le": "2026-09-06",
+    "portee": "Mécanisme prix de cession et acquisition corrigés, double abattement IR/social, HTML.",
+    "limites": "Page portant MAJ 2018 malgré indexation récente : aucun régime temporaire ni taux figé repris ; corroborer règles actuelles avant calcul réel.",
+    "etat": "consultee"
+  },
+  {
+    "id": "pv-principale",
+    "titre": "DGFiP — résidence principale et terrain attenant",
+    "url": "https://www.impots.gouv.fr/particulier/questions/jai-cede-ma-residence-principale-et-le-terrain-attenant-la-plus-value-est-elle",
+    "nature": "institutionnelle",
+    "consulte_le": "2026-09-06",
+    "portee": "Passage HTML actualisé juillet 2026 : résidence principale et dépendances, distinction terrain à bâtir.",
+    "limites": "Ne règle pas toutes les exonérations ni toutes les cessions de parties communes.",
+    "etat": "consultee"
+  },
+  {
+    "id": "ifi-declaration",
+    "titre": "DGFiP — déclaration IFI",
+    "url": "https://www.impots.gouv.fr/particulier/questions/comment-declarer-limpot-sur-la-fortune-immobiliere-ifi",
+    "nature": "institutionnelle",
+    "consulte_le": "2026-09-06",
+    "portee": "Passage HTML actualisé juillet 2026 : patrimoine direct et indirect au 1er janvier, seuil strictement supérieur à 1,3 million.",
+    "limites": "Ne constitue pas une estimation individuelle ni une liste exhaustive de passifs déductibles.",
+    "etat": "consultee"
+  },
+  {
+    "id": "ifi-calcul",
+    "titre": "DGFiP — calcul IFI",
+    "url": "https://www.impots.gouv.fr/particulier/calcul-de-lifi",
+    "nature": "institutionnelle",
+    "consulte_le": "2026-09-06",
+    "portee": "HTML : principe de patrimoine net, dettes existantes et effectivement supportées.",
+    "limites": "Page avec éléments datés : barèmes, plafonds sectoriels et dons non utilisés.",
+    "etat": "consultee"
+  },
+  {
+    "id": "tva-neuf",
+    "titre": "DGFiP — achat dans le neuf",
+    "url": "https://www.impots.gouv.fr/particulier/achat-dans-le-neuf",
+    "nature": "institutionnelle",
+    "consulte_le": "2026-09-06",
+    "portee": "HTML : régime dépendant notamment de la qualité du vendeur, distinction achat professionnel/particulier.",
+    "limites": "Ne couvre pas les opérations complexes ni une activité économique dissimulée sous une qualité de particulier.",
+    "etat": "consultee"
+  },
+  {
+    "id": "pv-actuelle",
+    "titre": "DILA — plus-value immobilière, avril 2026",
+    "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F10864",
+    "nature": "institutionnelle",
+    "consulte_le": "2026-09-06",
+    "portee": "HTML : nature des ventes, prix corrigés, assiettes IR et prélèvements sociaux, exonérations sous conditions.",
+    "limites": "Cours ne reprend pas les régimes temporaires et ne fournit pas un calcul individuel.",
+    "etat": "consultee"
+  },
+  {
+    "id": "angers-atlas",
+    "titre": "Ville d’Angers — Atlas du patrimoine",
+    "url": "https://www.angers.fr/vivre-a-angers/culture/patrimoine/angers-patrimoine/patrimoine-architecture/atlas-du-patrimoine/index.html",
+    "nature": "institutionnelle",
+    "consulte_le": "2026-09-06",
+    "portee": "HTML : inventaire et diversité schiste, ardoise, tuffeau ; navigation vers notices.",
+    "limites": "Aucune notice individuelle ou prescription technique déduite de la seule page générale.",
+    "etat": "consultee"
+  },
+  {
+    "id": "belle-beille",
+    "titre": "Archives patrimoniales d’Angers — histoire de Belle-Beille",
+    "url": "https://archives.angers.fr/chroniques-historiques/les-chroniques-par-annees/pages-histoire-co-2026/la-veritable-histoire-de-belle-beille/index.html",
+    "nature": "institutionnelle",
+    "consulte_le": "2026-09-06",
+    "portee": "Texte HTML de la chronique du 3 mai 2026 : crise du logement après guerre et genèse du quartier.",
+    "limites": "PDF joint non lu ; aucun témoignage long reproduit.",
+    "etat": "consultee"
+  },
+  {
+    "id": "angers-psmv",
+    "titre": "ALM — PSMV approuvé et pièces",
+    "url": "https://www.angersloiremetropole.fr/un-territoire-en-mouvement/urbanisme/site-patrimonial-remarquable/index.html",
+    "nature": "institutionnelle",
+    "consulte_le": "2026-09-06",
+    "portee": "HTML : approbation 16 octobre 2024, vigueur 24 octobre, liste des pièces et des fiches.",
+    "limites": "Documents PDF listés non lus dans ce chantier ; aucune conformité parcellaire affirmée.",
+    "etat": "consultee"
+  },
+  {
+    "id": "angers-plui",
+    "titre": "ALM — évolutions du PLUi",
+    "url": "https://www.angersloiremetropole.fr/un-territoire-en-mouvement/plan-local-d-urbanisme-intercommunal/evolutions/index.html",
+    "nature": "institutionnelle",
+    "consulte_le": "2026-09-06",
+    "portee": "HTML : modification 3 approuvée 17 novembre 2025, entrée en vigueur 17 décembre 2025.",
+    "limites": "Ne remplace pas le règlement opposable complet et ses mises à jour ultérieures.",
+    "etat": "consultee"
+  },
+  {
+    "id": "pdh-code",
+    "titre": "CCH — article L302-10",
+    "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000049392211",
+    "nature": "texte",
+    "consulte_le": "2026-09-06",
+    "portee": "Texte indexé intégral : cohérence des politiques et observation départementale de l’habitat.",
+    "limites": "Ne prouve pas le millésime local applicable.",
+    "etat": "consultee"
+  },
+  {
+    "id": "pdh-local",
+    "titre": "Préfecture Maine-et-Loire — politiques locales de l’habitat",
+    "url": "https://www.maine-et-loire.gouv.fr/Actions-de-l-Etat/Urbanisme-Paysage-Accessibilite-Construction-Logement/Logement-Habitat/La-politique-de-l-habitat/Les-politiques-locales",
+    "nature": "institutionnelle",
+    "consulte_le": "2026-09-06",
+    "portee": "Intitulé HTML indexé PDHH 2020–2025 consulté.",
+    "limites": "Ouverture directe échouée ; millésime suivant non retrouvé, aucun PDF du plan lu.",
+    "etat": "consultee"
+  },
+  {
+    "id": "aura-copro",
+    "titre": "Aura — chiffres clés du parc collectif privé et des copropriétés",
+    "url": "https://www.aurangevine.org/production/publications/vue-detaillee/news/chiffres-cles-du-parc-collectif-prive-et-des-coproprietes/",
+    "nature": "institutionnelle",
+    "consulte_le": "2026-09-06",
+    "portee": "Page HTML de présentation consultée : publication locale et périmètre.",
+    "limites": "Libellé chiffré ambigu sur logements/copropriétés ; aucun total repris sans vérification de la publication source, PDF non lu.",
+    "etat": "consultee"
+  },
+  {
+    "id": "anah-observation",
+    "titre": "Anah — registre et observation des fragilités",
+    "url": "https://www.anah.gouv.fr/actualites/le-registre-des-coproprietes-un-outil-precieux-pour-les-territoires",
+    "nature": "institutionnelle",
+    "consulte_le": "2026-09-06",
+    "portee": "HTML : données déclaratives, indicateurs de risque potentiel, couverture imparfaite mentionnée.",
+    "limites": "Article 2022 ; aucun effectif national historique présenté comme actuel.",
+    "etat": "consultee"
+  },
+  {
+    "id": "anah-fragilite",
+    "titre": "Anah — anticiper les fragilités",
+    "url": "https://www.anah.gouv.fr/actualites/coproprietes-fragiles-anticiper-pour-agir-efficacement",
+    "nature": "institutionnelle",
+    "consulte_le": "2026-09-06",
+    "portee": "HTML avril 2025 : croisement terrain/données et diagnostic multicritères.",
+    "limites": "Pas un diagnostic de copropriété particulière ni une statistique angevine.",
+    "etat": "consultee"
+  },
+  {
+    "id": "clerc",
+    "titre": "Notaires de France — clerc ou collaborateur de notaire",
+    "url": "https://www.notaires.fr/fr/lexique/clerc-de-notaire-ou-collaborateur-de-notaire",
+    "nature": "professionnelle",
+    "consulte_le": "2026-09-06",
+    "portee": "Définition HTML et distinction avec les anciennes habilitations.",
+    "limites": "Pas de présomption de pouvoir pour chaque collaborateur ; rôle à vérifier dans le dossier.",
+    "etat": "consultee"
+  }
+]

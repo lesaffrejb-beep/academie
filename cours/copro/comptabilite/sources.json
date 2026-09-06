@@ -1,0 +1,132 @@
+[
+  {
+    "id": "decret-comptes",
+    "titre": "Décret du 14 mars 2005 relatif aux comptes du syndicat",
+    "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000258200/",
+    "nature": "texte-officiel",
+    "consulte_le": "2026-09-06",
+    "portee": "Articles 1 à 12 ; rattachement, durée, ventilation et rôle des annexes.",
+    "limites": "Version affichée au 06/09/2026 ; tableaux graphiques des annexes non consultés.",
+    "etat": "consultee"
+  },
+  {
+    "id": "arrete-comptes",
+    "titre": "Arrêté du 14 mars 2005 relatif aux comptes du syndicat",
+    "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000258165/",
+    "nature": "texte-officiel",
+    "consulte_le": "2026-09-06",
+    "portee": "Organisation et nomenclature comptables ; fonctionnement des comptes.",
+    "limites": "Page consolidée affichée au 29/08/2026, dernière modification indiquée 31/12/2020 ; ne vaut pas lecture de chaque logiciel.",
+    "etat": "consultee"
+  },
+  {
+    "id": "loi-copro",
+    "titre": "Loi du 10 juillet 1965, version consolidée",
+    "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000880200/",
+    "nature": "texte-officiel",
+    "consulte_le": "2026-09-06",
+    "portee": "Budget, fonds de travaux, emprunts, organes, honoraires et recouvrement ; articles cités dans les cours.",
+    "limites": "Texte consulté ; interprétations contentieuses particulières à instruire séparément.",
+    "etat": "consultee"
+  },
+  {
+    "id": "par-plus",
+    "titre": "Prêt avance mutation sans intérêt : fiche officielle",
+    "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F38425",
+    "nature": "institution",
+    "consulte_le": "2026-09-06",
+    "portee": "Nature hypothécaire, résidence principale, distinction parties privatives/communes, intérêt après dix ans.",
+    "limites": "Fiche vérifiée au 01/01/2026 ; aucun dossier individuel ni offre de banque examiné.",
+    "etat": "consultee"
+  },
+  {
+    "id": "eco-ptz-copro",
+    "titre": "Éco-prêt à taux zéro Copropriétés",
+    "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F38064",
+    "nature": "institution",
+    "consulte_le": "2026-09-06",
+    "portee": "Mécanisme collectif et instruction du financement énergétique.",
+    "limites": "Conditions particulières et disponibilité réelle dépendent du projet et du prêteur ; aucun barème recopié.",
+    "etat": "consultee"
+  },
+  {
+    "id": "decret-par",
+    "titre": "Décret 2024-887, article 1",
+    "url": "https://www.legifrance.gouv.fr/jorf/article_jo/JORFARTI000050174695",
+    "nature": "texte-officiel",
+    "consulte_le": "2026-09-06",
+    "portee": "Fondement réglementaire initial du prêt avance mutation sans intérêt.",
+    "limites": "Version initiale ; conditions courantes recoupées avec la fiche officielle de 2026.",
+    "etat": "consultee"
+  },
+  {
+    "id": "tva-travaux",
+    "titre": "DGFiP : taux de TVA sur les travaux dans les logements",
+    "url": "https://www.impots.gouv.fr/professionnel/questions/quel-taux-de-tva-appliquer-pour-les-travaux-realises-dans-les-logements",
+    "nature": "institution",
+    "consulte_le": "2026-09-06",
+    "portee": "Taux 20/10/5,5 ; travaux éligibles, ancienneté, chaudières fossiles, certification depuis 2025.",
+    "limites": "Page modifiée au 05/03/2026 ; critères techniques détaillés et cas d’immeubles mixtes à instruire.",
+    "etat": "consultee"
+  },
+  {
+    "id": "factures-mentions",
+    "titre": "Mentions obligatoires sur une facture",
+    "url": "https://www.service-public.gouv.fr/entreprendre/vosdroits/F31808",
+    "nature": "institution",
+    "consulte_le": "2026-09-06",
+    "portee": "Identification, dates, numérotation, détail, TVA, réforme électronique progressive.",
+    "limites": "Fiche du 11/08/2026 ; obligations particulières selon statut et opération, pas de généralisation B2B au syndicat.",
+    "etat": "consultee"
+  },
+  {
+    "id": "devis-mentions",
+    "titre": "Devis obligatoire : activités concernées",
+    "url": "https://entreprendre.service-public.gouv.fr/vosdroits/F31144",
+    "nature": "institution",
+    "consulte_le": "2026-09-06",
+    "portee": "Contenu et champs sectoriels du devis, notamment bâtiment.",
+    "limites": "Pas de formulaire universel transposable sans vérifier activité et qualité des parties.",
+    "etat": "consultee"
+  },
+  {
+    "id": "decret-copro",
+    "titre": "Décret du 17 mars 1967, version consolidée",
+    "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000305770/",
+    "nature": "texte-officiel",
+    "consulte_le": "2026-09-06",
+    "portee": "Contrat type, forfait et prestations particulières ; approbation et contrôle.",
+    "limites": "Texte HTML et clauses ciblées ; aucun contrat de cabinet réel examiné.",
+    "etat": "consultee"
+  },
+  {
+    "id": "edf-composantes",
+    "titre": "EDF : décomposition du prix de l’électricité",
+    "url": "https://particulier.edf.fr/fr/accueil/guide-energie/electricite/prix-electricite.html",
+    "nature": "professionnel",
+    "consulte_le": "2026-09-06",
+    "portee": "Abonnement, consommation, acheminement intégré, CTA et accise.",
+    "limites": "Fiche fournisseur pour particuliers ; aucune offre réelle de syndicat vérifiée.",
+    "etat": "consultee"
+  },
+  {
+    "id": "edf-facture",
+    "titre": "EDF : comprendre la facture",
+    "url": "https://particulier.edf.fr/fr/accueil/gestion-contrat/facture/comprendre-facture.html",
+    "nature": "professionnel",
+    "consulte_le": "2026-09-06",
+    "portee": "Périodes, index, prix, facturation et régularisation.",
+    "limites": "Présentation pédagogique, pas attestation de tarif actuel propre à un syndicat.",
+    "etat": "consultee"
+  },
+  {
+    "id": "cre-electricite",
+    "titre": "CRE : marché de détail de l’électricité",
+    "url": "https://www.cre.fr/electricite/marche-de-detail-de-lelectricite/presentation.html",
+    "nature": "institution",
+    "consulte_le": "2026-09-06",
+    "portee": "Composantes économiques, offres fixes, fiscalité présentée au 3 septembre 2026.",
+    "limites": "Paragraphes historiques sur ARENH et critères de puissance non repris comme règles actuelles ; pas de barème individuel vérifié.",
+    "etat": "consultee"
+  }
+]

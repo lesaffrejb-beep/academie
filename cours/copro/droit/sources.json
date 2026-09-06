@@ -1,0 +1,372 @@
+[
+  {
+    "id": "loi1965-statut",
+    "titre": "Loi du 10 juillet 1965, définition et organisation de la copropriété",
+    "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000880200/",
+    "nature": "texte-officiel",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Version consolidée affichée en vigueur au 6 septembre 2026. Articles 1, 1-1, 2 à 8, 8-2, 10 et 43 consultés pour les premières sections ; passages précisés dans les cours.",
+    "limites": "Texte légal primaire ; ses différents articles ne sont pas des sources indépendantes. Les régimes transitoires et jurisprudences non consultés restent explicitement à approfondir."
+  },
+  {
+    "id": "cch-immatriculation",
+    "titre": "CCH, immatriculation des syndicats de copropriétaires, L711-1 à L711-7",
+    "url": "https://www.legifrance.gouv.fr/codes/id/LEGISCTA000028779396",
+    "nature": "texte-officiel",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Chapitre HTML consulté, version affichée au 6 septembre 2026 ; finalité du registre, données, déclarants et effets de l'absence de mise à jour.",
+    "limites": "Ne prouve ni la qualité d'une déclaration particulière ni l'état technique de l'immeuble. Aucun accès à des données privées."
+  },
+  {
+    "id": "decret1967-titres",
+    "titre": "Décret du 17 mars 1967, actes et titres, articles 1 à 4",
+    "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000305770/",
+    "nature": "texte-officiel",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Version consolidée actuelle, articles 1 à 4 : distinction règlement/EDD, actes modificatifs et connaissance par acquéreur.",
+    "limites": "Ne tranche pas interprétation particulière des titres ; même décret que les futures références de procédure."
+  },
+  {
+    "id": "rapport2019",
+    "titre": "Rapport au Président relatif à ordonnance 2019-1101 du 30 octobre 2019",
+    "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000039295482",
+    "nature": "texte-officiel",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "HTML effectivement consulté : genèse, objectifs, structure juridique et administration de la copropriété.",
+    "limites": "Justification gouvernementale historique, pas mesure indépendante des effets ; le droit actuel se vérifie dans la loi consolidée. Aucun chiffre statistique du rapport repris comme donnée actuelle."
+  },
+  {
+    "id": "loi1965-organes",
+    "titre": "Loi du 10 juillet 1965 — organes, représentation et traitement des difficultés",
+    "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000880200/",
+    "nature": "texte-officiel",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Version en vigueur au 6 septembre 2026. Articles 14 à 18-2, 21 à 21-5, 25 c, 29-1 A, 29-1 B et début de 29-1 : personne collective, compétences, contrats, archives, conseil, délégation et critères de procédures. Passages HTML effectivement consultés.",
+    "limites": "Même texte primaire que loi1965-statut : ce repère thématique ne constitue pas une source indépendante. Pas de contrôle intégral du contrat type ni des dispositions particulières aux petites copropriétés ; pas de jurisprudence ou étude empirique de gouvernance consultée."
+  },
+  {
+    "id": "decret1967-assemblee",
+    "titre": "Décret du 17 mars 1967 — assemblées générales",
+    "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000305770/",
+    "nature": "texte-officiel",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Version affichée en vigueur au 6 septembre 2026 ; articles 7 à 19-1 effectivement consultés : convocation, pièces art.11 I/II, participation, bureau, présence, procès-verbal et passerelles. Article11 dans sa version du25 décembre2025.",
+    "limites": "Même décret que decret1967-titres, pas une source indépendante. Contrat type et modèle du formulaire de vote non contrôlés intégralement ; jurisprudence des sanctions non consultée."
+  },
+  {
+    "id": "decret1967-notifications",
+    "titre": "Décret du 17 mars 1967 — notifications et coordonnées",
+    "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000305770/",
+    "nature": "texte-officiel",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Articles64 à65 effectivement consultés, notamment64 à64-4 et65 modifiés au25 décembre2025 : procédés électroniques, voie postale demandée, prise d’effet, preuve et départ des délais.",
+    "limites": "Même décret primaire. Les renvois anciens subsistant aux articles64-5 à64-9 ne sont pas réécrits comme un texte consolidé nouveau ; règles techniques du code postal et conformité des prestataires à vérifier pour une application précise."
+  },
+  {
+    "id": "loi1965-assemblee",
+    "titre": "Loi du 10 juillet 1965 — participation, voix, contestation et notification",
+    "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000880200/",
+    "nature": "texte-officiel",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Version en vigueur au6 septembre2026 ; articles17-1 A,22,23,42 et42-1 effectivement consultés.",
+    "limites": "Même loi primaire que les autres repères loi1965. Les cas jurisprudentiels de qualité pour agir, sanctions et computation concrète restent à approfondir ; aucune décision de justice non lue n’est invoquée."
+  },
+  {
+    "id": "loi1965-majorites",
+    "titre": "Loi du10 juillet1965 — majorités et cas particuliers",
+    "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000880200/",
+    "nature": "texte-officiel",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Articles24,24-5-1,25,25-1,25-2,25-2-1,26,26-1 et26-4 effectivement consultés en version en vigueur au6 septembre2026.",
+    "limites": "Même loi, pas source indépendante ; les régimes spéciaux externes et qualifications techniques ne sont pas tous instruits."
+  },
+  {
+    "id": "cass2014-abus",
+    "titre": "Cour de cassation, troisième chambre civile,17 décembre2014,13-25.134",
+    "url": "https://www.legifrance.gouv.fr/juri/id/JURITEXT000029934598/",
+    "nature": "jurisprudence",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Texte intégral HTML consulté, réponse aux deux branches et dispositif : cassation pour caractérisation insuffisante de l’abus et substitution d’appréciation.",
+    "limites": "Arrêt historique publié ; ne transpose pas les règles de changement de destination de2014 à toute situation actuelle. Distinguer réponse de la Cour et moyen annexé."
+  },
+  {
+    "id": "cass2023-abus",
+    "titre": "Cour de cassation, troisième chambre civile,25 mai2023,22-14.180",
+    "url": "https://www.legifrance.gouv.fr/juri/id/JURITEXT000047635915",
+    "nature": "jurisprudence",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Texte intégral HTML consulté ; §5–7 réduction des voix, §9–12 contrôle de l’abus et justification du rejet.",
+    "limites": "Arrêt non publié au bulletin ; comparaison dépendante des faits et preuves retenus. Pas de revue exhaustive postérieure. Deux arrêts distincts, mais une même juridiction."
+  },
+  {
+    "id": "loi1965-charges",
+    "titre": "Loi du10 juillet1965 — charges, répartition et comptes",
+    "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000880200/",
+    "nature": "texte-officiel",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Articles10,10-1,11,12,14-1,14-2-1,14-3 et43 effectivement consultés en version en vigueur au6 septembre2026.",
+    "limites": "Même loi primaire ; pas validation des règles de chauffage individualisé ni computation des délais de cas particuliers."
+  },
+  {
+    "id": "decret1967-comptes",
+    "titre": "Décret du17 mars1967 — comptes et mutation",
+    "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000305770/",
+    "nature": "texte-officiel",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Articles6-2 et6-3,43 à45-1 effectivement consultés, version actuelle ; distinction provisions/avances, comptes individuels, maintenance et dépenses hors budget.",
+    "limites": "Même décret primaire ; ne vaut pas lecture intégrale du décret et arrêté comptables de2005."
+  },
+  {
+    "id": "cass2019-ascenseur",
+    "titre": "Cour de cassation, troisième chambre civile,9 mai2019,18-17.334",
+    "url": "https://www.legifrance.gouv.fr/juri/id/JURITEXT000038488595",
+    "nature": "jurisprudence",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Texte intégral HTML consulté, motifs et dispositif de cassation partielle : égalité des charges entre étages et nécessité de réputer la clause non écrite avant nouvelle répartition.",
+    "limites": "Les coefficients figurant dans les moyens ne sont pas un barème approuvé. Pas transposition automatique des effets temporels à la version actuelle de l’article43."
+  },
+  {
+    "id": "cass2021-equipements",
+    "titre": "Cour de cassation, troisième chambre civile,9 septembre2021,20-15.608",
+    "url": "https://www.legifrance.gouv.fr/juri/id/JURITEXT000044105805",
+    "nature": "jurisprudence",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Texte intégral HTML consulté ; §3–5 utilité par équipement et recherche omise, §6–7 portée temporelle dans le litige jugé.",
+    "limites": "Arrêt non publié ; distinguer le droit applicable aux faits du texte actuel de l’article43. Pas revue exhaustive postérieure."
+  },
+  {
+    "id": "cass2026-ascenseur-a-verifier",
+    "titre": "Cour de cassation, troisième chambre civile,2 juillet2026,24-19.787 — à vérifier",
+    "url": "https://www.legifrance.gouv.fr/juri/id/JURITEXT000054422675",
+    "nature": "jurisprudence",
+    "consulte_le": null,
+    "etat": "a_verifier",
+    "portee": "Repéré par recherche officielle le6 septembre2026 ; texte intégral non ouvert (403/cache).",
+    "limites": "Non utilisé pour établir une proposition juridique ; consultation intégrale nécessaire avant analyse."
+  },
+  {
+    "id": "loi1965-travaux",
+    "titre": "Loi du 10 juillet 1965 — travaux, accès, plan, fonds et surélévation",
+    "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000880200/",
+    "nature": "texte-officiel",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Articles 9, 14-2, 14-2-1, 18, 30, 35 à 37-1 effectivement consultés en version en vigueur au 6 septembre 2026.",
+    "limites": "Même loi primaire ; ce repère thématique ne constitue pas une corroboration indépendante. Pas vérification du droit local d’urbanisme ni des qualifications techniques."
+  },
+  {
+    "id": "decret1967-travaux",
+    "titre": "Décret du 17 mars 1967 — demandes de travaux et urgence",
+    "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000305770/",
+    "nature": "texte-officiel",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Articles 10, 11 et 37 effectivement consultés dans le texte en vigueur au 6 septembre 2026 ; version du décret mise à jour au 25 décembre 2025.",
+    "limites": "Même décret primaire ; pas jurisprudence exhaustive des pièces et autorisations."
+  },
+  {
+    "id": "cch-dtg",
+    "titre": "Code de la construction et de l’habitation — diagnostic technique global",
+    "url": "https://www.legifrance.gouv.fr/codes/id/LEGIARTI000049398074/",
+    "nature": "texte-officiel",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Section L731-1 à L731-5 intégralement consultée en HTML ; version actuelle, L731-1 depuis le 11 avril 2024.",
+    "limites": "La page renvoie à la section entière malgré son identifiant de type article. Décret des qualifications non consulté ; pas lecture des autres diagnostics réglementaires."
+  },
+  {
+    "id": "dila-ppt",
+    "titre": "Service Public — plan pluriannuel de travaux",
+    "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F36760",
+    "nature": "administration",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Page HTML consultée intégralement, vérifiée par DILA le 8 juin 2026 ; champ, calendrier transitoire achevé au 1 janvier 2025 et distinction élaboration/adoption.",
+    "limites": "Introduction ambiguë sur caractère obligatoire du PPPT : le cours distingue élaboration obligatoire et adoption votée, conformément à l’article 14-2. Source administrative explicative, pas norme indépendante."
+  },
+  {
+    "id": "dila-fonds",
+    "titre": "Service Public — fonds de travaux",
+    "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F34026",
+    "nature": "administration",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Page HTML consultée intégralement, vérifiée par DILA le 9 juin 2026 ; champ résidentiel après dix ans et catégories de financement.",
+    "limites": "Divergences repérées avec article 14-2-1 : majorité générale d’utilisation annoncée au lieu de majorité des dépenses concernées ; suspension présentée avec OU au lieu de critère cumulatif en outre lorsqu’un plan existe. Ces passages ne servent pas de règle au cours ; primauté du texte de loi explicitée."
+  },
+  {
+    "id": "loi1965-mutations",
+    "titre": "Loi du 10 juillet 1965 — mutation, défaillance et usage des lots",
+    "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000880200/",
+    "nature": "texte-officiel",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Articles 8-1-1, 9, 9-2, 19 à 20 et 26 d effectivement consultés au 6 septembre 2026 ; article20 depuis le11 avril2024, article9 depuis le18 juin2025.",
+    "limites": "Même loi primaire ; pas droit local des locations ni revue exhaustive des clauses de destination."
+  },
+  {
+    "id": "decret1967-mutations",
+    "titre": "Décret du 17 mars 1967 — titres, état daté et mutation",
+    "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000305770/",
+    "nature": "texte-officiel",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Articles 2 à6-3 effectivement consultés au6 septembre2026 ; articles5 et6-2 dans leur version depuis le25 décembre2025.",
+    "limites": "Même décret primaire ; computation des délais et formalités foncières particulières non étudiées exhaustivement."
+  },
+  {
+    "id": "loi1965-responsabilites",
+    "titre": "Loi du 10 juillet 1965 — responsabilités et assurance",
+    "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000880200/",
+    "nature": "texte-officiel",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Articles9,9-1,14,15 et18 effectivement consultés dans leur version actuelle au6 septembre2026.",
+    "limites": "Même loi primaire ; jurisprudence et clauses d’assurance doivent être distinguées de l’obligation légale."
+  },
+  {
+    "id": "civil-responsabilite",
+    "titre": "Code civil — responsabilité extracontractuelle générale",
+    "url": "https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006070721/LEGISCTA000032021488/",
+    "nature": "texte-officiel",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Articles1240–1244 intégralement consultés, version en vigueur au6 septembre2026 ; article1242 modifié depuis le25 juin2025.",
+    "limites": "Pas revue exhaustive du fait des choses, incendie, animaux ou responsabilité parentale ; cours n’utilise que principes et exception incendie pour montrer nécessité de qualifier."
+  },
+  {
+    "id": "civil-mandat",
+    "titre": "Code civil — obligations du mandataire",
+    "url": "https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006070721/LEGISCTA000006136405/",
+    "nature": "texte-officiel",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Articles1991–1997 intégralement consultés ; page affichant état au5 septembre2026, recherche officielle au6 septembre2026 concordante, versions des articles depuis1804.",
+    "limites": "Utilisation centrale1991–1993 ; ni effets détaillés du quitus ni articulation exhaustive de tous les mandats."
+  },
+  {
+    "id": "civil-voisinage",
+    "titre": "Code civil — troubles anormaux de voisinage",
+    "url": "https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006070721/LEGISCTA000049419511/",
+    "nature": "texte-officiel",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Article1253 intégralement consulté, page explicitement en vigueur au6 septembre2026 ; version depuis17 avril2024.",
+    "limites": "Application temporelle et réserve agricole non développées ; aucun seuil de nuisance inventé."
+  },
+  {
+    "id": "cass2023-responsabilite",
+    "titre": "Cour de cassation, troisième chambre civile,15 juin2023,22-16.155",
+    "url": "https://www.legifrance.gouv.fr/juri/id/JURITEXT000047737970",
+    "nature": "jurisprudence",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Texte intégral HTML consulté : faits, réponse §9–11 et dispositif de cassation partielle ; exonération du syndicat et entier dommage.",
+    "limites": "Arrêt non publié au Bulletin, applique expressément ancien article14 ; décision de renvoi non lue."
+  },
+  {
+    "id": "cass2013-syndic",
+    "titre": "Cour de cassation, troisième chambre civile,17 septembre2013,12-20.566",
+    "url": "https://www.legifrance.gouv.fr/juri/id/JURITEXT000027983354",
+    "nature": "jurisprudence",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Texte intégral HTML consulté, deux réponses aux moyens et dispositif ; causalité contre syndicat, diligences du syndic et recherche de perte de chance de subvention.",
+    "limites": "Arrêt ancien non publié au Bulletin ; aucune valeur d’aide actuelle ni portée générale du quitus déduite du récit."
+  },
+  {
+    "id": "ca2024-renvoi-a-verifier",
+    "titre": "Cour d’appel de Lyon,24 septembre2024,23/07132 — à vérifier",
+    "url": "https://www.courdecassation.fr/decision/66f3a8fb5c2cfc5a084ac991",
+    "nature": "jurisprudence",
+    "consulte_le": null,
+    "etat": "a_verifier",
+    "portee": "Repéré par recherche officielle comme renvoi après22-16.155 ; ouverture HTML vide.",
+    "limites": "Aucune indemnisation finale ni motivation de renvoi présentée comme connue."
+  },
+  {
+    "id": "loi1965-union",
+    "titre": "Loi 1965 — union de syndicats",
+    "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000049398348",
+    "nature": "texte-officiel",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Article 29 intégralement consulté ; version depuis 11 avril 2024, adhésion/retrait et organes.",
+    "limites": "Lecture bornée au périmètre indiqué. Les cas sont fictifs ; pas contrôle complet dun acte, dun projet ou de lensemble du régime."
+  },
+  {
+    "id": "csp-bruits",
+    "titre": "Code de la santé publique — bruits de voisinage",
+    "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000035425967/",
+    "nature": "texte-officiel",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Article R1336-5 intégralement consulté ; version depuis 10 août 2017. Aucun seuil acoustique déduit.",
+    "limites": "Lecture bornée au périmètre indiqué. Les cas sont fictifs ; pas contrôle complet dun acte, dun projet ou de lensemble du régime."
+  },
+  {
+    "id": "service-titre",
+    "titre": "Service Public — copie de titre perdu",
+    "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F2618",
+    "nature": "administration",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Rubriques notaire et publicité foncière effectivement consultées ; version 13 juin 2025.",
+    "limites": "Lecture bornée au périmètre indiqué. Les cas sont fictifs ; pas contrôle complet dun acte, dun projet ou de lensemble du régime."
+  },
+  {
+    "id": "dgfip-titre",
+    "titre": "DGFiP — copie du titre de propriété dun tiers",
+    "url": "https://www.impots.gouv.fr/particulier/questions/puis-je-avoir-copie-du-titre-de-propriete-dun-tiers",
+    "nature": "administration",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Corps intégral HTML consulté ; mise à jour 10 juillet 2026.",
+    "limites": "Lecture bornée au périmètre indiqué. Les cas sont fictifs ; pas contrôle complet dun acte, dun projet ou de lensemble du régime."
+  },
+  {
+    "id": "service-climatisation",
+    "titre": "Service Public — boîtier de climatisation et urbanisme",
+    "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F36778",
+    "nature": "administration",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Rubriques climatisation et PAC consultées en HTML ; version 30 mars 2026. Règles particulières PAC non généralisées au store.",
+    "limites": "Lecture bornée au périmètre indiqué. Les cas sont fictifs ; pas contrôle complet dun acte, dun projet ou de lensemble du régime."
+  },
+  {
+    "id": "urbanisme-aspect",
+    "titre": "Code de lurbanisme — modifications daspect extérieur",
+    "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000034355355",
+    "nature": "texte-officiel",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Article R*421-17 consulté intégralement ; version 22 février 2026 et application travaux mars 2026. Exceptions signalées sans interprétation extensive.",
+    "limites": "Lecture bornée au périmètre indiqué. Les cas sont fictifs ; pas contrôle complet dun acte, dun projet ou de lensemble du régime."
+  },
+  {
+    "id": "decret1967-contrat-type",
+    "titre": "Décret 1967 — contrat type de syndic, lecture partielle",
+    "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000305770/",
+    "nature": "texte-officiel",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Annexe 1 rubriques 3 à 7.1.5 effectivement consultées ; page courante au 6 septembre 2026.",
+    "limites": "Lecture bornée au périmètre indiqué. Les cas sont fictifs ; pas contrôle complet dun acte, dun projet ou de lensemble du régime."
+  }
+]

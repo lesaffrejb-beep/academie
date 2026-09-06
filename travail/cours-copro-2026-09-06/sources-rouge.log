@@ -1,0 +1,19 @@
+.........E
+======================================================================
+ERROR: test_sources_lisibles_gardent_portee_et_reserves (__main__.ControleCours.test_sources_lisibles_gardent_portee_et_reserves)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jb/Code/academie/app/tests_cours_copro.py", line 24, in test_sources_lisibles_gardent_portee_et_reserves
+    texte=(self.r/'cours/copro/SOURCES.md').read_text()
+  File "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/pathlib/__init__.py", line 787, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors, newline=newline) as f:
+         ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/pathlib/__init__.py", line 771, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/var/folders/qq/5q7p33xj69s6r0ys8y0qh3ww0000gn/T/tmp8668wsx_/cours/copro/SOURCES.md'
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.032s
+
+FAILED (errors=1)

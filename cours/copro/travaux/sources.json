@@ -1,0 +1,282 @@
+[
+  {
+    "id": "sps-acteurs",
+    "titre": "INRS : acteurs de la coordination SPS",
+    "url": "https://www.inrs.fr/metiers/btp/coordination-sps/acteurs.html",
+    "nature": "institution",
+    "consulte_le": "2026-09-06",
+    "portee": "Rôles MOA, MOE, entreprises, coordonnateur.",
+    "limites": "Page de2013 ; le seuil écrit dans cette page n’est pas repris comme règle actuelle.",
+    "etat": "consultee"
+  },
+  {
+    "id": "sps-outils",
+    "titre": "INRS : outils de la coordination SPS",
+    "url": "https://www.inrs.fr/metiers/btp/coordination-sps/outils",
+    "nature": "institution",
+    "consulte_le": "2026-09-06",
+    "portee": "Fonctions du DIUO, du registre et de la coordination.",
+    "limites": "Pas une lecture des documents types ni une qualification du chantier.",
+    "etat": "consultee"
+  },
+  {
+    "id": "reception",
+    "titre": "Code civil : article1792-6",
+    "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006443552",
+    "nature": "texte-officiel",
+    "consulte_le": "2026-09-06",
+    "portee": "Réception contradictoire, réserves et parfait achèvement.",
+    "limites": "Ne suffit pas à qualifier tout désordre ni tous les autres régimes de garantie.",
+    "etat": "consultee"
+  },
+  {
+    "id": "honoraires",
+    "titre": "Loi copropriété : article18-1A",
+    "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000043977273/",
+    "nature": "texte-officiel",
+    "consulte_le": "2026-09-06",
+    "portee": "III : vote des honoraires spécifiques, assiette et présentation.",
+    "limites": "Champ des travaux visés à respecter ; aucun taux légal général inventé.",
+    "etat": "consultee"
+  },
+  {
+    "id": "concurrence",
+    "titre": "Loi copropriété : article21",
+    "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000039313574/2026-06-08",
+    "nature": "texte-officiel",
+    "consulte_le": "2026-09-06",
+    "portee": "Seuils décidés par AG : consultation du conseil et mise en concurrence.",
+    "limites": "Page datée du08/06/2026 ; ne pas assimiler le conseil au décideur des travaux.",
+    "etat": "consultee"
+  },
+  {
+    "id": "vigilance",
+    "titre": "Urssaf : attestation de vigilance",
+    "url": "https://www.urssaf.fr/accueil/attestation-vigilance.html",
+    "nature": "institution",
+    "consulte_le": "2026-09-06",
+    "portee": "Contenu indexé consulté : seuil global, authenticité, demande initiale et renouvellement.",
+    "limites": "Ouverture directe indisponible ; contenu corroboré avec DILA F31422, pas contrôle d’une entreprise réelle.",
+    "etat": "consultee"
+  },
+  {
+    "id": "vigilance-dila",
+    "titre": "DILA : attestation de vigilance",
+    "url": "https://entreprendre.service-public.gouv.fr/vosdroits/F31422",
+    "nature": "institution",
+    "consulte_le": "2026-09-06",
+    "portee": "Page vérifiée06/07/2026 : seuil5000HT, montant global et champ.",
+    "limites": "Une attestation sociale ne constitue pas une assurance ni une qualification technique.",
+    "etat": "consultee"
+  },
+  {
+    "id": "norme-privee",
+    "titre": "AFNOR : portée et incorporation de NF P03-001",
+    "url": "https://norminfo.afnor.org/consultation/69080",
+    "nature": "editeur",
+    "consulte_le": "2026-09-06",
+    "portee": "Résumé public : incorporation dans les pièces contractuelles et dérogations.",
+    "limites": "Texte intégral payant non consulté ; aucune clause détaillée ou délai imputé à la norme.",
+    "etat": "consultee"
+  },
+  {
+    "id": "sous-traitance",
+    "titre": "Loi1975 sur la sous-traitance",
+    "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000889241/",
+    "nature": "texte-officiel",
+    "consulte_le": "2026-09-06",
+    "portee": "Articles 1, 3, 12, 13, 14 et 14-1 : responsabilité, acceptation, action directe, caution et réaction du maître d’ouvrage ; passages HTML consultés.",
+    "limites": "Les règles de paiement public ne sont pas transposées aux marchés privés ; champ, actes et sommes doivent être qualifiés dans chaque dossier.",
+    "etat": "consultee"
+  },
+  {
+    "id": "demande-urbanisme",
+    "titre": "DILA : qui dépose une autorisation d’urbanisme",
+    "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F35349",
+    "nature": "institution",
+    "consulte_le": "2026-09-06",
+    "portee": "Qualité du demandeur, syndicat et travaux sur parties communes.",
+    "limites": "Ne décide ni du type d’autorisation ni du droit civil de réaliser les travaux.",
+    "etat": "consultee"
+  },
+  {
+    "id": "dp",
+    "titre": "DILA : déclaration préalable",
+    "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F17578",
+    "nature": "institution",
+    "consulte_le": "2026-09-06",
+    "portee": "Dossier, plans et instruction selon nature du projet.",
+    "limites": "La règle locale et les protections patrimoniales doivent être confrontées au projet.",
+    "etat": "consultee"
+  },
+  {
+    "id": "hauteur",
+    "titre": "INRS : prévention des chutes de hauteur",
+    "url": "https://www.inrs.fr/risques/chutes-hauteur/prevention-chutes-hauteur.html",
+    "nature": "institution",
+    "consulte_le": "2026-09-06",
+    "portee": "Principes de prévention et moyens de protection.",
+    "limites": "Pas dimensionnement, formation, autorisation ou mode opératoire de chantier.",
+    "etat": "consultee"
+  },
+  {
+    "id": "contrat",
+    "titre": "Code civil : force obligatoire du contrat, article1103",
+    "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000032040777/2026-04-18",
+    "nature": "texte-officiel",
+    "consulte_le": "2026-09-06",
+    "portee": "Principe de force obligatoire.",
+    "limites": "Ne dispense ni du contrôle de validité, ni des règles impératives.",
+    "etat": "consultee"
+  },
+  {
+    "id": "forfait",
+    "titre": "Code civil : article1793, construction à forfait",
+    "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000006443573/2026-07-01",
+    "nature": "texte-officiel",
+    "consulte_le": "2026-09-06",
+    "portee": "Conditions textuelles de l’augmentation de prix dans le champ du texte.",
+    "limites": "Ne pas appliquer automatiquement à chaque contrat dit forfaitaire sans qualifier son champ.",
+    "etat": "consultee"
+  },
+  {
+    "id": "concurrence-modalites",
+    "titre": "Décret copropriété : article19-2",
+    "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000022124084/2026-03-09",
+    "nature": "texte-officiel",
+    "consulte_le": "2026-09-06",
+    "portee": "Demandes de plusieurs devis ou devis descriptif soumis à plusieurs entreprises, à défaut de conditions fixées par AG.",
+    "limites": "Pas de nombre universel de trois devis ni garantie de réponse des entreprises.",
+    "etat": "consultee"
+  },
+  {
+    "id": "retenue",
+    "titre": "Loi71-584 : retenues de garantie, articles1 et2",
+    "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000687670",
+    "nature": "texte-officiel",
+    "consulte_le": "2026-09-06",
+    "portee": "Plafond, consignation ou caution, libération et opposition motivée selon le texte.",
+    "limites": "Champ des marchés privés et stipulations à qualifier ; ne pas confondre avec tous les autres mécanismes de garantie.",
+    "etat": "consultee"
+  },
+  {
+    "id": "sps-code",
+    "titre": "Code du travail, L4532-2",
+    "url": "https://code.travail.gouv.fr/code-du-travail/l4532-2",
+    "nature": "texte juridique",
+    "consulte_le": "2026-09-06",
+    "portee": "Coordination des interventions de plusieurs entreprises, simultanées ou successives.",
+    "limites": "Ne dispense pas de qualifier le chantier et les autres obligations.",
+    "etat": "consultee"
+  },
+  {
+    "id": "affichage",
+    "titre": "Affichage des autorisations d’urbanisme",
+    "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F1988",
+    "nature": "information administrative",
+    "consulte_le": "2026-09-06",
+    "portee": "Affichage, durée, lisibilité et preuve ; version vérifiée le 25 février 2026.",
+    "limites": "Le cours ne reconstitue pas le régime contentieux complet.",
+    "etat": "consultee"
+  },
+  {
+    "id": "abords",
+    "titre": "Travaux en abords de monuments historiques",
+    "url": "https://www.culture.gouv.fr/thematiques/monuments-sites/interventions-demarches/travaux-sur-un-objet-un-immeuble-un-espace/realiser-des-travaux-en-abords-d-un-monument-historique?switchTo=esl-ES",
+    "nature": "information administrative",
+    "consulte_le": "2026-09-06",
+    "portee": "Accord et prescriptions ABF, consultation en amont.",
+    "limites": "Ne qualifie pas la protection d’une parcelle déterminée.",
+    "etat": "consultee"
+  },
+  {
+    "id": "ravalement",
+    "titre": "Fréquence du ravalement",
+    "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F640",
+    "nature": "information administrative",
+    "consulte_le": "2026-09-06",
+    "portee": "Distinction des communes avec arrêté préfectoral ; fiche du 6 mars 2026.",
+    "limites": "Arrêté local à obtenir pour une opération réelle.",
+    "etat": "consultee"
+  },
+  {
+    "id": "ravalement-dp",
+    "titre": "Autorisation du ravalement",
+    "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F36779",
+    "nature": "information administrative",
+    "consulte_le": "2026-09-06",
+    "portee": "Aspect extérieur, secteurs protégés et règles locales.",
+    "limites": "Ne remplace pas la lecture du règlement local et des autres travaux associés.",
+    "etat": "consultee"
+  },
+  {
+    "id": "enseigne",
+    "titre": "Enseigne : règles d’installation",
+    "url": "https://entreprendre.service-public.gouv.fr/vosdroits/F24357",
+    "nature": "information administrative",
+    "consulte_le": "2026-09-06",
+    "portee": "Qualification, autorisation administrative et clauses privées ; fiche du 1er juillet 2026.",
+    "limites": "Contenu HTML indexé consulté, pas un dossier individuel.",
+    "etat": "consultee"
+  },
+  {
+    "id": "ppt",
+    "titre": "Plan pluriannuel de travaux",
+    "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F36760",
+    "nature": "information administrative",
+    "consulte_le": "2026-09-06",
+    "portee": "PPPT, adoption du PPT et votes ultérieurs ; fiche du 8 juin 2026.",
+    "limites": "L’expression isolée sans caractère obligatoire ne doit pas masquer l’obligation d’élaboration dans les cas applicables.",
+    "etat": "consultee"
+  },
+  {
+    "id": "dpe-collectif",
+    "titre": "DPE collectif",
+    "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F37504",
+    "nature": "information administrative",
+    "consulte_le": "2026-09-06",
+    "portee": "Objet et différence avec audit et DPE individuel ; fiche du 1er janvier 2026.",
+    "limites": "Le cours ne transforme pas une étiquette collective en diagnostic de chaque logement.",
+    "etat": "consultee"
+  },
+  {
+    "id": "mpr-copro",
+    "titre": "MaPrimeRénov’ Copropriété",
+    "url": "https://france-renov.gouv.fr/aides/maprimerenov-copropriete",
+    "nature": "information administrative",
+    "consulte_le": "2026-09-06",
+    "portee": "Parcours collectif, audit, AMO, demande unique et conditions d’aide.",
+    "limites": "Contenu HTML indexé lu ; ouverture directe en erreur. Aucun barème figé dans ce cours ; recontrôler avant dossier réel.",
+    "etat": "consultee"
+  },
+  {
+    "id": "amo-renov",
+    "titre": "Professionnels et AMO Copropriétés",
+    "url": "https://france-renov.gouv.fr/professionnels",
+    "nature": "information administrative",
+    "consulte_le": "2026-09-06",
+    "portee": "Rôle technique, financier et social de l’AMO et référencement Anah.",
+    "limites": "Passage HTML indexé consulté ; ne vaut pas vérification d’un opérateur donné.",
+    "etat": "consultee"
+  },
+  {
+    "id": "deontologie",
+    "titre": "Code de déontologie des professionnels immobiliers, annexe",
+    "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000038364817",
+    "nature": "texte juridique",
+    "consulte_le": "2026-09-06",
+    "portee": "Articles 4, 6, 8 et 9 : compétence, transparence, intérêts, conflits.",
+    "limites": "Champ d’application à qualifier ; doctrine pédagogique distinguée du texte.",
+    "etat": "consultee"
+  },
+  {
+    "id": "budget-travaux",
+    "titre": "Loi copropriété : article 14-1, budget et travaux hors budget",
+    "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000043977299/",
+    "nature": "texte-officiel",
+    "consulte_le": "2026-09-06",
+    "portee": "I et II : dépenses courantes de maintenance, fonctionnement, administration et travaux exclus du budget ; articulation avec 18-1 A III.",
+    "limites": "Ne dispense pas de qualifier la prestation ni de consulter la liste réglementaire des travaux hors budget.",
+    "etat": "consultee"
+  }
+]

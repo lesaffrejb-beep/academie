@@ -1,0 +1,512 @@
+[
+  {
+    "id": "ademe-isolation",
+    "titre": "ADEME — tout savoir sur l’isolation",
+    "url": "https://agirpourlatransition.ademe.fr/particuliers/amenager-maison/renover/tout-savoir-isolation",
+    "nature": "agence-publique",
+    "consulte_le": "2026-09-06",
+    "portee": "Isolation, continuité et ponts thermiques, ventilation ; HTML.",
+    "limites": "Exemples de maison non transposés au collectif ; formulation erronée sur isolation inversée exclue, chiffres comparatifs et prescriptions générales non repris.",
+    "etat": "consultee"
+  },
+  {
+    "id": "ademe-ete",
+    "titre": "ADEME — canicule et confort du logement",
+    "url": "https://agirpourlatransition.ademe.fr/particuliers/proteger-sante/periode-canicule/canicule-comment-garder-logement-frais",
+    "nature": "agence-publique",
+    "consulte_le": "2026-09-06",
+    "portee": "Apports solaires, ouverture lorsque extérieur frais, ventilation de confort.",
+    "limites": "Conseils généraux ; aucun gain chiffré universel ni scénario climatique particulier repris.",
+    "etat": "consultee"
+  },
+  {
+    "id": "ministere-dpe",
+    "titre": "Ministère — diagnostic de performance énergétique",
+    "url": "https://www.ecologie.gouv.fr/politiques-publiques/diagnostic-performance-energetique-dpe",
+    "nature": "administration",
+    "consulte_le": "2026-09-06",
+    "portee": "Histoire, opposabilité hors recommandations, deux critères, fonctionnement conventionnel et limites.",
+    "limites": "HTML mis à jour décembre 2025 ; mises à jour 2026 vérifiées séparément, anciens calendriers non utilisés comme droit courant.",
+    "etat": "consultee"
+  },
+  {
+    "id": "ministere-dpe-2026",
+    "titre": "Ministère — évolution du calcul du DPE, questions réponses",
+    "url": "https://www.ecologie.gouv.fr/actualites/evolutions-du-calcul-du-dpe-reponses-vos-questions",
+    "nature": "administration",
+    "consulte_le": "2026-09-06",
+    "portee": "Coefficient électrique et attestation mise à jour 2026.",
+    "limites": "Pas démonstration du gain réel de chauffage ni reprise des estimations nationales de logements.",
+    "etat": "consultee"
+  },
+  {
+    "id": "dila-dpe-collectif",
+    "titre": "DILA — DPE collectif",
+    "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F37504",
+    "nature": "administration",
+    "consulte_le": "2026-09-06",
+    "portee": "Champ, territoire, calendrier et distinction individuel/collectif.",
+    "limites": "Calendrier résumé vérifié au texte pour frontières des lots ; prix indicatifs non repris.",
+    "etat": "consultee"
+  },
+  {
+    "id": "aqc-vmc",
+    "titre": "VMC simple et double flux",
+    "url": "https://qualiteconstruction.com/ressource/fiches-pathologie-batiment/vmc-simple-double-flux/",
+    "nature": "information-technique-primaire",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Parcours d’air, désordres de réseau, bruit et entretien.",
+    "limites": "Pas de notice complète de matériel ni avis technique spécifique ; pas de validation d’une installation."
+  },
+  {
+    "id": "arrete-dpe-methode",
+    "titre": "Arrêté du 31 mars 2021 — méthode et logiciels",
+    "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000043353381/",
+    "nature": "texte-officiel",
+    "consulte_le": "2026-09-06",
+    "portee": "Articles HTML définissant 3CL-DPE 2021 et validation des logiciels.",
+    "limites": "Annexes de calcul non lues intégralement ; ne permet pas de produire un DPE.",
+    "etat": "consultee"
+  },
+  {
+    "id": "arrete-dpe-contenu",
+    "titre": "Arrêté du 31 mars 2021 — contenu DPE logement, consolidé",
+    "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000043353335/",
+    "nature": "texte-officiel",
+    "consulte_le": "2026-09-06",
+    "portee": "Lecture ciblée contenu, annexe 3 coefficient 1,9 du 01/01/2026 au 01/01/2027 et début annexe 5.",
+    "limites": "Annexes non reproduites non revendiquées lues ; pas tout le texte ni modèles graphiques.",
+    "etat": "consultee"
+  },
+  {
+    "id": "arrete-dpe-petites-surfaces",
+    "titre": "Arrêté du 25 mars 2024 — petites surfaces",
+    "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000049446315",
+    "nature": "texte-officiel",
+    "consulte_le": "2026-09-06",
+    "portee": "Articles 1 à 5 et début annexe 1 HTML ; effet juillet 2024, surface de référence, adaptation seuils, attestation.",
+    "limites": "Tableau complet petites surfaces non utilisé ; pas grille universelle de classement.",
+    "etat": "consultee"
+  },
+  {
+    "id": "arrete-dpe-2027",
+    "titre": "Arrêté du 19 août 2026 — coefficient électrique, articles 1 et 6",
+    "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054747079",
+    "nature": "texte-officiel",
+    "consulte_le": "2026-09-06",
+    "portee": "Corps indexé officiel des articles 1 et 6 : coefficient 1,7 et entrée en vigueur 01/01/2027 ; article 6 ouvert séparément.",
+    "limites": "Ouverture du texte complet et article 1 renvoie erreur/403 ; corps article 1 restitué par recherche officielle JORFARTI000054747088. Pas lecture intégrale ni règle applicable dès septembre 2026.",
+    "etat": "consultee"
+  },
+  {
+    "id": "cch-dpe-collectif",
+    "titre": "CCH L126-31 — DPE collectif",
+    "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000047299309",
+    "nature": "texte-officiel",
+    "consulte_le": "2026-09-06",
+    "portee": "Article courant affiché depuis 28/05/2026 : champ permis, renouvellement et exception A/B/C.",
+    "limites": "Calendrier de déploiement lu séparément.",
+    "etat": "consultee"
+  },
+  {
+    "id": "loi-calendrier-dpe",
+    "titre": "Loi du 22 août 2021, article 158 VI et IX",
+    "url": "https://www.legifrance.gouv.fr/jorf/article_jo/JORFARTI000043957098",
+    "nature": "texte-officiel",
+    "consulte_le": "2026-09-06",
+    "portee": "Lecture ciblée VI et IX : paliers métropole, lots logements/bureaux/commerces, dérogation ultramarine.",
+    "limites": "Formulation entre cinquante et deux cents conservée sans résoudre arbitrairement chevauchement avec au plus cinquante ; tous paliers métropole échus à date du cours.",
+    "etat": "consultee"
+  },
+  {
+    "id": "dila-dpe-individuel",
+    "titre": "DILA — diagnostic immobilier DPE",
+    "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F16096",
+    "nature": "administration",
+    "consulte_le": "2026-09-06",
+    "portee": "HTML location et vente, certification, identifiant, données, attestations2024/2026.",
+    "limites": "Exceptions générales et conséquences juridiques non transformées en avis sur un cas ; page canonique ne mentionne pas réforme2027 découverte séparément.",
+    "etat": "consultee"
+  },
+  {
+    "id": "loi-decence-6",
+    "titre": "Loi du 6 juillet 1989, article 6",
+    "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000037670751/",
+    "nature": "texte-officiel",
+    "consulte_le": "2026-09-06",
+    "portee": "Texte courant depuis2025 : classes minimales métropole et cinq territoires ultramarins.",
+    "limites": "Autres caractéristiques de décence et baux particuliers non épuisés.",
+    "etat": "consultee"
+  },
+  {
+    "id": "loi-decence-20-1",
+    "titre": "Loi du 6 juillet 1989, article 20-1",
+    "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000038834686/",
+    "nature": "texte-officiel",
+    "consulte_le": "2026-09-06",
+    "portee": "Pouvoirs du juge et limite conditionnelle d’injonction copropriété, sans préjudice autres mesures.",
+    "limites": "Pas avis juridique ni exonération générale des bailleurs.",
+    "etat": "consultee"
+  },
+  {
+    "id": "dila-decence",
+    "titre": "DILA — logement décent",
+    "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F2042",
+    "nature": "administration",
+    "consulte_le": "2026-09-06",
+    "portee": "Lecture ciblée champ, dates bail signé/renouvelé/reconduit, performance.",
+    "limites": "Références anciennes distinguées du droit courant ; pas tout le contentieux.",
+    "etat": "consultee"
+  },
+  {
+    "id": "dila-ppt",
+    "titre": "DILA — PPPT et PPT",
+    "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F36760",
+    "nature": "administration",
+    "consulte_le": "2026-09-06",
+    "portee": "Page juin2026 : âge, dispenseDTG, distinction projet/plan et travaux votés.",
+    "limites": "Expression PPPT sans caractère obligatoire interprétée uniquement comme propositions non adoptées ; établissement en principe obligatoire dans son champ.",
+    "etat": "consultee"
+  },
+  {
+    "id": "dila-dtg",
+    "titre": "DILA — DTG",
+    "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F32059",
+    "nature": "administration",
+    "consulte_le": "2026-09-06",
+    "portee": "Lecture contenu et champ mise en copropriété, intervention autorité.",
+    "limites": "Pas diagnostic de bâtiment ni garantie absence de défauts cachés.",
+    "etat": "consultee"
+  },
+  {
+    "id": "dila-fonds",
+    "titre": "DILA — fonds de travaux",
+    "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F34026",
+    "nature": "administration",
+    "consulte_le": "2026-09-06",
+    "portee": "Page juin2026, champ10ans, minima2,5/5, affectation et séparation entretien courant.",
+    "limites": "Cas de suspension et comptabilité détaillée non développés ; résumé de votes non utilisé comme règle générale.",
+    "etat": "consultee"
+  },
+  {
+    "id": "ministere-audit",
+    "titre": "Ministère — audit énergétique réglementaire",
+    "url": "https://www.ecologie.gouv.fr/politiques-publiques/audit-energetique-reglementaire",
+    "nature": "administration",
+    "consulte_le": "2026-09-06",
+    "portee": "Lecture ciblée contenu, qualification, champ monopropriété et interfaces.",
+    "limites": "Page comporte calendrier outre-mer historique non repris ; ne transpose pas audit vente à toute vente de lot collectif.",
+    "etat": "consultee"
+  },
+  {
+    "id": "ministere-mpr-copro",
+    "titre": "Ministère économie — MaPrimeRénov Copropriété",
+    "url": "https://www.economie.gouv.fr/particuliers/faire-des-economies-denergie/maprimerenov-copropriete-tout-savoir-sur-laide-la-renovation-des-parties-communes",
+    "nature": "administration",
+    "consulte_le": "2026-09-06",
+    "portee": "Conditions copro, AMO, travaux, distinction gaz calcul/coût.",
+    "limites": "Pas reprise de tous bonus ; règles au dépôt et notification à vérifier.",
+    "etat": "consultee"
+  },
+  {
+    "id": "dila-mpr-copro",
+    "titre": "DILA — MaPrimeRénov Copropriété",
+    "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F37827",
+    "nature": "administration",
+    "consulte_le": "2026-09-06",
+    "portee": "Lecture ciblée paliers30/45, gains35/50, assiette25000 et aide accordée au syndicat, demande déposée par le syndic en son nom.",
+    "limites": "Régime métropole général ; exceptions et barèmes de ressources non transposés.",
+    "etat": "consultee"
+  },
+  {
+    "id": "ministere-cee",
+    "titre": "Ministère — dispositif CEE",
+    "url": "https://www.ecologie.gouv.fr/politiques-publiques/dispositif-certificats-deconomies-denergie",
+    "nature": "administration",
+    "consulte_le": "2026-09-06",
+    "portee": "Présentation du mécanisme et unité conventionnelle.",
+    "limites": "HTML seulement ; pas lecture des fiches PDF ni volume applicable à un chantier.",
+    "etat": "consultee"
+  },
+  {
+    "id": "ministere-cee-faq",
+    "titre": "Ministère — FAQ CEE",
+    "url": "https://www.ecologie.gouv.fr/politiques-publiques/questions-reponses-dispositif-cee",
+    "nature": "administration",
+    "consulte_le": "2026-09-06",
+    "portee": "Lecture ciblée RAI, acteurs et conditions ; pas intégralité1780lignes.",
+    "limites": "Chronologie exacte et exceptions à confirmer pour opération ; aucun délai14jours présumé universel.",
+    "etat": "consultee"
+  },
+  {
+    "id": "dila-pret-collectif",
+    "titre": "DILA — emprunt collectif",
+    "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F31418",
+    "nature": "administration",
+    "consulte_le": "2026-09-06",
+    "portee": "Objet et types de prêt, dossier.",
+    "limites": "Pas offre bancaire ni modalités contractuelles universelles.",
+    "etat": "consultee"
+  },
+  {
+    "id": "anil-pret-automatique",
+    "titre": "ANIL — emprunt collectif à adhésion automatique",
+    "url": "https://www.anil.org/aj-copropriete-emprunt-collectif-adhesion/",
+    "nature": "organisme-public-information-logement",
+    "consulte_le": "2026-09-06",
+    "portee": "Régime issu2024 et textes2025, conditions et garanties.",
+    "limites": "Analyse juridique ; pas offre réellement disponible ni conseil pour cas individuel.",
+    "etat": "consultee"
+  },
+  {
+    "id": "dila-eco-ptz",
+    "titre": "DILA — éco-PTZ Copropriétés",
+    "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F38064",
+    "nature": "administration",
+    "consulte_le": "2026-09-06",
+    "portee": "Prêt sans intérêts, catégories de travaux, champ collectif et dossier.",
+    "limites": "Pas chiffres de plafonds repris ; offres/date/critères techniques à vérifier.",
+    "etat": "consultee"
+  },
+  {
+    "id": "grdf-metier-distribution",
+    "titre": "Conseiller clientèle acheminement",
+    "url": "https://monparcourspro.grdf.fr/competences-et-metiers/conseiller-clientele-acheminement",
+    "nature": "producteur-service",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Description directe du rôle de GRDF et distinction fournisseur.",
+    "limites": "Ni contrat de concession ni tarif consulté."
+  },
+  {
+    "id": "fcu-reseaux",
+    "titre": "Découvrez les réseaux de chaleur",
+    "url": "https://france-chaleur-urbaine.beta.gouv.fr/reseaux-chaleur",
+    "nature": "service-public",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Sous-station, primaire/secondaire, R1/R2, confirmation de raccordabilité.",
+    "limites": "Pas de contrat local étudié ; tarifs et conditions variables."
+  },
+  {
+    "id": "cegibat-contrats",
+    "titre": "Typologie des contrats d’exploitation en copropriété",
+    "url": "https://cegibat.grdf.fr/dossier-techniques/typologie-contrats-exploitation-copropriete",
+    "nature": "source-technique-industrielle",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Postes P1àP5, inventaires et périmètres.",
+    "limites": "Typologie professionnelle non nomenclature légale uniforme ; source industrie gaz."
+  },
+  {
+    "id": "dila-individualisation",
+    "titre": "Individualisation de la consommation de chauffage et de froid",
+    "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F14745?ori=mcmga",
+    "nature": "information-institutionnelle",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Principe, exceptions, distinction frais communs et individuels.",
+    "limites": "Phrase simplifiée payer uniquement sa consommation non reprise ; aucun cas individuel validé."
+  },
+  {
+    "id": "ademe-pac-principe",
+    "titre": "Se chauffer avec une pompe à chaleur",
+    "url": "https://agirpourlatransition.ademe.fr/particuliers/amenager-maison/chauffer/pompe-chaleur",
+    "nature": "information-institutionnelle",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Régime des émetteurs, réglage après rénovation, association hybride.",
+    "limites": "Page habitat individuel ; mécanismes uniquement transposés, aucune statistique ou économie généralisée au collectif."
+  },
+  {
+    "id": "enedis-irve",
+    "titre": "Quelle infrastructure de recharge choisir",
+    "url": "https://www.enedis.fr/infrastructure-installation-borne-recharge-copropriete",
+    "nature": "source-technique-primaire",
+    "consulte_le": "2026-09-06",
+    "etat": "consultee",
+    "portee": "Architectures privées et réseau public dans le parking.",
+    "limites": "Ni tarif ni offre ni prescription dimensionnelle validés."
+  },
+  {
+    "id": "loi-trve",
+    "titre": "Code énergie L337-7",
+    "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000049406625",
+    "nature": "texte-officiel",
+    "consulte_le": "2026-09-06",
+    "portee": "Éligibilité TRVE depuisfévrier2025, syndicat immeuble unique usagehabitation.",
+    "limites": "Autres catégories et contrats particuliers à qualifier ; pas exclusion automatique à36kVA.",
+    "etat": "consultee"
+  },
+  {
+    "id": "mediateur-gaz-copro",
+    "titre": "Médiateur énergie — fin TRV gaz copropriétés",
+    "url": "https://www.energie-info.fr/fiche_pratique/ma-copropriete-est-elle-concernee-par-la-disparition-des-tarifs-reglementes-de-gaz-naturel/",
+    "nature": "autorite-publique",
+    "consulte_le": "2026-09-06",
+    "portee": "FinTRVG et données de consultation en copropriété.",
+    "limites": "Mécanisme historique de bascule non transposé à résiliation actuelle de tout contrat.",
+    "etat": "consultee"
+  },
+  {
+    "id": "mediateur-offres",
+    "titre": "Médiateur énergie — comparer les offres",
+    "url": "https://www.energie-info.fr/offre-de-fourniture-delectricite-ou-de-gaz-que-faut-il-regarder/",
+    "nature": "autorite-publique",
+    "consulte_le": "2026-09-06",
+    "portee": "Prix abonnement/kWh, consommation retenue, indexation et service.",
+    "limites": "Pas transposition du droit de résiliation des particuliers à tous syndicats.",
+    "etat": "consultee"
+  },
+  {
+    "id": "cre-prix-repere",
+    "titre": "CRE — prix repère gaz résidentiel",
+    "url": "https://www.cre.fr/consommateurs/prix-reperes-et-references/prix-repere-de-vente-de-gaz-naturel-a-destination-des-clients-residentiels.html",
+    "nature": "regulateur",
+    "consulte_le": "2026-09-06",
+    "portee": "Nature indicative, composantes, temporalité et territoire, page septembre2026.",
+    "limites": "Prix du mois non utilisé comme offre collective ni prévision ; aucune recommandation fournisseur.",
+    "etat": "consultee"
+  },
+  {
+    "id": "dalkia-metier",
+    "titre": "Dalkia — efficacité énergétique habitat",
+    "url": "https://www.dalkia.fr/service-energetique/efficacite-energetique-habitat/",
+    "nature": "entreprise",
+    "consulte_le": "2026-09-06",
+    "portee": "Périmètre déclaré approvisionnement/exploitation/maintenance/rénovation.",
+    "limites": "Présentation commerciale ne prouve ni performance garantie ni contrat de l’immeuble, aucun classement.",
+    "etat": "consultee"
+  },
+  {
+    "id": "cch-repartition-chauffage",
+    "titre": "CCH R174-10 : répartition des frais de chauffage",
+    "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043819469",
+    "nature": "texte-officiel",
+    "consulte_le": "2026-09-06",
+    "portee": "Article intégral HTML, version en vigueur depuis juillet 2021. Coefficient énergie et exceptions historiques.",
+    "limites": "Ne vaut pas analyse de toutes les catégories de charges.",
+    "etat": "consultee"
+  },
+  {
+    "id": "fcu-faq",
+    "titre": "France Chaleur Urbaine : FAQ raccordement et classement",
+    "url": "https://france-chaleur-urbaine.beta.gouv.fr/faq",
+    "nature": "service-public",
+    "consulte_le": "2026-09-06",
+    "portee": "Passages réseau classé, périmètre prioritaire et raccordement consultés.",
+    "limites": "Le classement, le périmètre et les dérogations se vérifient localement.",
+    "etat": "consultee"
+  },
+  {
+    "id": "afpac-dimensionnement",
+    "titre": "AFPAC : présentation du guide MÉMOPAC dimensionnement collectif",
+    "url": "https://www.afpac.org/memopac-guide-dimensionnement-pac-collectives/",
+    "nature": "organisme-professionnel",
+    "consulte_le": "2026-09-06",
+    "portee": "Page HTML de présentation : déperditions, températures, hydraulique, appoint.",
+    "limites": "Guide PDF non lu ; cette présentation ne donne pas une méthode de dimensionnement complète.",
+    "etat": "consultee"
+  },
+  {
+    "id": "ministere-tracc",
+    "titre": "Ministère : trajectoire de réchauffement de référence pour adaptation",
+    "url": "https://www.ecologie.gouv.fr/politiques-publiques/trajectoire-rechauffement-reference-ladaptation-changement-climatique-tracc",
+    "nature": "institutionnel",
+    "consulte_le": "2026-09-06",
+    "portee": "Page HTML : trajectoire nationale et hypothèses de préparation.",
+    "limites": "Ne prédit ni microclimat local ni températures intérieures.",
+    "etat": "consultee"
+  },
+  {
+    "id": "cch-droit-prise",
+    "titre": "CCH L113-16 : droit à la prise",
+    "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041563735",
+    "nature": "texte-officiel",
+    "consulte_le": "2026-09-06",
+    "portee": "Champ et motifs sérieux et légitimes, version actuelle consultée.",
+    "limites": "Ne constitue pas une étude électrique ni une analyse contentieuse de dossier individuel.",
+    "etat": "consultee"
+  },
+  {
+    "id": "cch-prise-procedure",
+    "titre": "CCH R113-8 et R113-10 : notifications et opposition en copropriété",
+    "url": "https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006074096/LEGISCTA000043818327/",
+    "nature": "texte-officiel",
+    "consulte_le": "2026-09-06",
+    "portee": "Section HTML lue, notamment R113-8 et R113-10 ; version 2026.",
+    "limites": "Ne constitue pas une étude électrique ni une analyse contentieuse de dossier individuel.",
+    "etat": "consultee"
+  },
+  {
+    "id": "cch-prise-convention",
+    "titre": "CCH R113-9 : convention du prestataire",
+    "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043818335",
+    "nature": "texte-officiel",
+    "consulte_le": "2026-09-06",
+    "portee": "Article HTML intégral lu, convention et recours.",
+    "limites": "Ne constitue pas une étude électrique ni une analyse contentieuse de dossier individuel.",
+    "etat": "consultee"
+  },
+  {
+    "id": "code-energie-irve",
+    "titre": "Code énergie L353-12 et L353-13 : infrastructures collectives",
+    "url": "https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000023983208/LEGISCTA000043964044/",
+    "nature": "texte-officiel",
+    "consulte_le": "2026-09-06",
+    "portee": "Articles HTML intégraux lus, modèles de financement et conventions.",
+    "limites": "Ne constitue pas une étude électrique ni une analyse contentieuse de dossier individuel.",
+    "etat": "consultee"
+  },
+  {
+    "id": "meteo-effet-serre",
+    "titre": "Météo-France : gaz à effet de serre et climat",
+    "url": "https://meteofrance.com/changement-climatique/gaz-a-effet-de-serre-quels-impacts-sur-le-climat",
+    "nature": "organisme-scientifique",
+    "consulte_le": "2026-09-06",
+    "portee": "Page HTML juillet 2025 consultée : transfert radiatif, amplification anthropique et effets.",
+    "limites": "Pas de reprise des chiffres secondaires, du raccourci sur toxicité du CO2 ni de la formulation excessive sans précédent.",
+    "etat": "consultee"
+  },
+  {
+    "id": "enedis-autoconsommation",
+    "titre": "Enedis : produire et partager son électricité",
+    "url": "https://www.enedis.fr/produire-consommer-son-electricite",
+    "nature": "gestionnaire-reseau",
+    "consulte_le": "2026-09-06",
+    "portee": "Page HTML : PMO, courbes, complément réseau et convention.",
+    "limites": "Conventions PDF et barèmes non lus ; pas de garantie économique.",
+    "etat": "consultee"
+  },
+  {
+    "id": "enedis-partage",
+    "titre": "Enedis : monter une opération d’autoconsommation collective",
+    "url": "https://www.enedis.fr/collectivite-comment-monter-un-projet-dautoconsommation-collective",
+    "nature": "gestionnaire-reseau",
+    "consulte_le": "2026-09-06",
+    "portee": "HTML consulté : coefficients au pas de mesure, participants, convention et gestion.",
+    "limites": "Pas de prescription de structure juridique ni de tarif.",
+    "etat": "consultee"
+  },
+  {
+    "id": "ademe-climatisation",
+    "titre": "ADEME : vagues de chaleur et besoin de climatisation",
+    "url": "https://www.ademe.fr/presse/communique-national/avis-de-lademe-vagues-de-chaleur-la-climatisation-va-t-elle-devenir-indispensable",
+    "nature": "institutionnel",
+    "consulte_le": "2026-09-06",
+    "portee": "Communiqué HTML consulté : besoin de froid, enveloppe, protections et systèmes actifs.",
+    "limites": "Avis PDF non lu ; aucune économie universelle ni consigne transformée en obligation juridique.",
+    "etat": "consultee"
+  },
+  {
+    "id": "dila-travaux-privatifs",
+    "titre": "DILA : travaux privatifs, communes et aspect extérieur",
+    "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F31513?lang=fr",
+    "nature": "service-public",
+    "consulte_le": "2026-09-06",
+    "portee": "HTML lu parties affectant communes et extérieur, climatisation citée.",
+    "limites": "Le cours renvoie au domaine droit ; aucune formalité locale supposée satisfaite.",
+    "etat": "consultee"
+  }
+]

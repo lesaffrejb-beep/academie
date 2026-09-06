@@ -1,0 +1,625 @@
+{
+  "date": "2026-09-06",
+  "statut": "table de rattachement editorial, non validation",
+  "sujets": [
+    {
+      "demande": "Voisinage",
+      "chapitres": [
+        "droit.responsabilites.troubles-anormaux-de-voisinage",
+        "culture.lectures.l-habiter-et-le-voisinage"
+      ],
+      "dossiers": [
+        "juridique-voisinage-climatisation-stores.md"
+      ],
+      "apport": "Qualification du trouble, preuve, usages et coexistence dans l’immeuble.",
+      "limite": "Brouillon éditorial ; vérifier les pièces et conditions du cas réel."
+    },
+    {
+      "demande": "TRACFIN",
+      "chapitres": [
+        "cabinet.donnees.lutte-contre-le-blanchiment"
+      ],
+      "dossiers": [],
+      "apport": "Champ LCB-FT selon l’activité réelle ; syndic, transaction et fraude au RIB distingués.",
+      "limite": "Le cours ne forme pas à lui seul un déclarant habilité."
+    },
+    {
+      "demande": "Climatisation",
+      "chapitres": [
+        "energie.physique.le-confort-d-ete",
+        "equipements.chauffage.pompes-a-chaleur-et-hybrides"
+      ],
+      "dossiers": [
+        "juridique-voisinage-climatisation-stores.md"
+      ],
+      "apport": "Chaleur, rafraîchissement, implantation, bruit, condensats et arbitrage collectif.",
+      "limite": "Brouillon éditorial ; vérifier les pièces et conditions du cas réel."
+    },
+    {
+      "demande": "Store banne",
+      "chapitres": [
+        "energie.physique.le-confort-d-ete"
+      ],
+      "dossiers": [
+        "juridique-voisinage-climatisation-stores.md"
+      ],
+      "apport": "Protection solaire extérieure, fixation, vent et autorisations à articuler.",
+      "limite": "Brouillon éditorial ; vérifier les pièces et conditions du cas réel."
+    },
+    {
+      "demande": "Écologie, réchauffement climatique et comparaison des énergies",
+      "chapitres": [
+        "energie.chauffage-collectif.quelle-energie-pour-quel-immeuble",
+        "energie.physique.le-confort-d-ete"
+      ],
+      "dossiers": [
+        "technique-immeuble-2050.md"
+      ],
+      "apport": "Comparer services, rendement, climat, émissions, coût et robustesse ; adaptation de l’immeuble.",
+      "limite": "Aucun classement universel ou bilan carbone complet attribué sans données du projet."
+    },
+    {
+      "demande": "P1, P2, P3, P4, P5 et ce que paie une facture EDF",
+      "chapitres": [
+        "equipements.chauffage.les-contrats-p1-a-p5",
+        "energie.contrats-energie.gaz-et-electricite-pour-un-immeuble"
+      ],
+      "dossiers": [
+        "gestion-facture-edf-electricite.md"
+      ],
+      "apport": "Séparer prestations d’exploitation de chauffage et fourniture électrique ; lire périmètres, index, périodes et taxes.",
+      "limite": "Les intitulés P4/P5 ne remplacent pas les définitions du contrat."
+    },
+    {
+      "demande": "Sous-traitance",
+      "chapitres": [
+        "travaux.marche-prive.sous-traitance-et-avenants",
+        "travaux.du-besoin-au-devis.attestations-kbis-vigilance"
+      ],
+      "dossiers": [],
+      "apport": "Entreprise titulaire, sous-traitant, acceptation, conditions de paiement et vigilance.",
+      "limite": "Brouillon éditorial ; vérifier les pièces et conditions du cas réel."
+    },
+    {
+      "demande": "Clerc de notaire",
+      "chapitres": [
+        "immobilier.acteurs-et-formes.notaire-agent-promoteur-bailleur-social"
+      ],
+      "dossiers": [
+        "juridique-titre-publicite-fonciere.md"
+      ],
+      "apport": "Sous-section dédiée au collaborateur de l’office, à ses pouvoirs et aux échanges lors d’une vente.",
+      "limite": "Brouillon éditorial ; vérifier les pièces et conditions du cas réel."
+    },
+    {
+      "demande": "Structure",
+      "chapitres": [
+        "pathologie.structure.fissures-structurelles-et-leur-lecture",
+        "pathologie.structure.quand-appeler-un-bureau-d-etudes"
+      ],
+      "dossiers": [],
+      "apport": "Cheminement des charges, mécanismes rivaux, limites de l’observation et demande au BET.",
+      "limite": "Brouillon éditorial ; vérifier les pièces et conditions du cas réel."
+    },
+    {
+      "demande": "Fondations",
+      "chapitres": [
+        "pathologie.structure.fondations-et-tassements"
+      ],
+      "dossiers": [],
+      "apport": "Relation sol, fondation et tassement ; observations discriminantes et investigation.",
+      "limite": "Brouillon éditorial ; vérifier les pièces et conditions du cas réel."
+    },
+    {
+      "demande": "Maître d’œuvre",
+      "chapitres": [
+        "travaux.vocabulaire.moa-moe-bet-csps"
+      ],
+      "dossiers": [],
+      "apport": "Rôles et livrables de maîtrise d’œuvre, AMO, BET et SPS ; limites des mandats.",
+      "limite": "Brouillon éditorial ; vérifier les pièces et conditions du cas réel."
+    },
+    {
+      "demande": "Contrat de syndic",
+      "chapitres": [
+        "cabinet.contrat-de-syndic.le-contrat-type",
+        "cabinet.contrat-de-syndic.forfait-et-prestations-particulieres",
+        "cabinet.contrat-de-syndic.duree-revocation-mise-en-concurrence"
+      ],
+      "dossiers": [],
+      "apport": "Lire le modèle, les prestations, la rémunération, le mandat et les conditions de changement.",
+      "limite": "Brouillon éditorial ; vérifier les pièces et conditions du cas réel."
+    },
+    {
+      "demande": "Dommages-ouvrage",
+      "chapitres": [
+        "sinistres.construction.la-dommages-ouvrage"
+      ],
+      "dossiers": [
+        "gestion-promoteur-assurances-garanties.md"
+      ],
+      "apport": "Préfinancement, souscription, dommage, calendrier et distinction avec responsabilité décennale.",
+      "limite": "Brouillon éditorial ; vérifier les pièces et conditions du cas réel."
+    },
+    {
+      "demande": "Promoteur immobilier",
+      "chapitres": [
+        "immobilier.acteurs-et-formes.notaire-agent-promoteur-bailleur-social",
+        "cabinet.cas-transverses.une-surelevation-proposee-par-un-promoteur"
+      ],
+      "dossiers": [
+        "gestion-promoteur-assurances-garanties.md"
+      ],
+      "apport": "Acteur, montage, intérêts, garanties et contre-expertise d’une surélévation.",
+      "limite": "Brouillon éditorial ; vérifier les pièces et conditions du cas réel."
+    },
+    {
+      "demande": "Avocats",
+      "chapitres": [
+        "procedure.acteurs.l-avocat-et-quand-il-est-obligatoire"
+      ],
+      "dossiers": [],
+      "apport": "Choisir la mission, préparer le dossier, comprendre stratégie, coût et limites.",
+      "limite": "Brouillon éditorial ; vérifier les pièces et conditions du cas réel."
+    },
+    {
+      "demande": "Assurances",
+      "chapitres": [
+        "sinistres.contrat.garantie-et-exclusion",
+        "sinistres.mri.verifier-une-police"
+      ],
+      "dossiers": [],
+      "apport": "Assuré, souscripteur, garantie, exclusion, franchise, MRI/PNO et contrôle d’une police.",
+      "limite": "Brouillon éditorial ; vérifier les pièces et conditions du cas réel."
+    },
+    {
+      "demande": "IRSI",
+      "chapitres": [
+        "sinistres.degat-des-eaux.la-convention-irsi-et-ses-tranches",
+        "sinistres.degat-des-eaux.l-assureur-gestionnaire"
+      ],
+      "dossiers": [],
+      "apport": "Convention d’assureurs, local, assiette, tranches et gestion du sinistre.",
+      "limite": "Convention distincte de la loi et de la garantie ; texte complet et version contractuelle à instruire pour cas limite."
+    },
+    {
+      "demande": "EP",
+      "chapitres": [
+        "equipements.plomberie.colonnes-eu-ev-ep",
+        "pathologie.toitures.cheneaux-et-eaux-pluviales"
+      ],
+      "dossiers": [],
+      "apport": "Eaux pluviales : cheminement, organes, surcharge, entretien et différence EU/EV.",
+      "limite": "Brouillon éditorial ; vérifier les pièces et conditions du cas réel."
+    },
+    {
+      "demande": "VMC « hydro »",
+      "chapitres": [
+        "equipements.ventilation.simple-flux-double-flux-hygro"
+      ],
+      "dossiers": [],
+      "apport": "VMC hygroréglable : humidité, entrées d’air, bouches, extraction et cohérence du système.",
+      "limite": "Le terme retenu est hygroréglable ; pas un réglage universel des débits."
+    },
+    {
+      "demande": "Enduit D2",
+      "chapitres": [
+        "pathologie.facades.enduits-et-classes-d-impermeabilite"
+      ],
+      "dossiers": [
+        "technique-enveloppe-abords-et-finitions.md"
+      ],
+      "apport": "Différencier revêtement décoratif et systèmes d’imperméabilité ; support et désordre avant produit.",
+      "limite": "Brouillon éditorial ; vérifier les pièces et conditions du cas réel."
+    },
+    {
+      "demande": "Lézarde",
+      "chapitres": [
+        "pathologie.structure.microfissure-fissure-lezarde",
+        "pathologie.structure.temoins-et-suivi-d-une-fissure"
+      ],
+      "dossiers": [],
+      "apport": "Aspect, ouverture, évolution, mécanisme et limites d’une classification par largeur seule.",
+      "limite": "Brouillon éditorial ; vérifier les pièces et conditions du cas réel."
+    },
+    {
+      "demande": "Retrait-gonflement des argiles",
+      "chapitres": [
+        "pathologie.structure.fondations-et-tassements",
+        "sinistres.autres-sinistres.catastrophe-naturelle"
+      ],
+      "dossiers": [],
+      "apport": "Sol sensible à l’eau, mouvements différentiels, preuve causale et régime d’indemnisation distinct.",
+      "limite": "Brouillon éditorial ; vérifier les pièces et conditions du cas réel."
+    },
+    {
+      "demande": "Couvertine",
+      "chapitres": [
+        "pathologie.toitures.toiture-terrasse-et-releves",
+        "pathologie.facades.diagnostiquer-une-facade-avant-devis"
+      ],
+      "dossiers": [
+        "technique-enveloppe-abords-et-finitions.md"
+      ],
+      "apport": "Protection de tête d’acrotère ou de mur, points singuliers et chemins d’eau.",
+      "limite": "Brouillon éditorial ; vérifier les pièces et conditions du cas réel."
+    },
+    {
+      "demande": "Toiture-terrasse, étanchéité",
+      "chapitres": [
+        "pathologie.toitures.toiture-terrasse-et-releves",
+        "pathologie.toitures.l-etancheite-materiaux-et-garanties"
+      ],
+      "dossiers": [
+        "technique-enveloppe-abords-et-finitions.md"
+      ],
+      "apport": "Système, relevés, évacuations, usage, diagnostic et réception ; matériau distinct de garantie.",
+      "limite": "Brouillon éditorial ; vérifier les pièces et conditions du cas réel."
+    },
+    {
+      "demande": "Revêtement : usure, poinçonnement, passage intense",
+      "chapitres": [],
+      "dossiers": [
+        "technique-enveloppe-abords-et-finitions.md"
+      ],
+      "apport": "UPEC : usure, poinçonnement, eau et agents chimiques ; comparer classement du local, produit et système posé, avec cas de hall et chariots.",
+      "limite": "Classements complets des locaux non lus ; aucun indice minimal universel inventé."
+    },
+    {
+      "demande": "Machinerie d’ascenseur, contrepoids, moteur",
+      "chapitres": [
+        "equipements.ascenseurs.les-organes-d-un-ascenseur"
+      ],
+      "dossiers": [],
+      "apport": "Traction, cabine, contrepoids, guidage, commande et sécurité ; variantes de technologie.",
+      "limite": "Brouillon éditorial ; vérifier les pièces et conditions du cas réel."
+    },
+    {
+      "demande": "Garde-corps et ferronnerie",
+      "chapitres": [
+        "pathologie.materiaux.les-aciers-et-la-corrosion",
+        "pathologie.structure.balcons-et-corrosion-des-aciers"
+      ],
+      "dossiers": [
+        "technique-enveloppe-abords-et-finitions.md"
+      ],
+      "apport": "Corrosion, section résistante, fixation et exposition ; apparence distincte de capacité mécanique.",
+      "limite": "Brouillon éditorial ; vérifier les pièces et conditions du cas réel."
+    },
+    {
+      "demande": "Espace privé et collectif, porosité",
+      "chapitres": [
+        "culture.lectures.l-habiter-et-le-voisinage"
+      ],
+      "dossiers": [
+        "juridique-espace-prive-collectif.md"
+      ],
+      "apport": "Trois lectures : droit, dispositif matériel et usages ; cour, hall et accès.",
+      "limite": "L’appropriation sociale ne crée pas un droit réel."
+    },
+    {
+      "demande": "Bâtiment autonome",
+      "chapitres": [
+        "energie.chauffage-collectif.quelle-energie-pour-quel-immeuble"
+      ],
+      "dossiers": [
+        "technique-immeuble-2050.md"
+      ],
+      "apport": "Distinguer bilan annuel, autoconsommation, autonomie instantanée, stockage et continuité des services.",
+      "limite": "Brouillon éditorial ; vérifier les pièces et conditions du cas réel."
+    },
+    {
+      "demande": "RCU",
+      "chapitres": [
+        "equipements.chauffage.la-sous-station-de-reseau-de-chaleur",
+        "equipements.chauffage.le-contrat-de-reseau-de-chaleur"
+      ],
+      "dossiers": [],
+      "apport": "Réseau de chaleur urbain, sous-station, frontières et structure du contrat.",
+      "limite": "Brouillon éditorial ; vérifier les pièces et conditions du cas réel."
+    },
+    {
+      "demande": "Dalkia",
+      "chapitres": [
+        "equipements.chauffage.les-exploitants-de-chauffage"
+      ],
+      "dossiers": [],
+      "apport": "Exploitant et périmètre contractuel, intervenants et comparaison des services.",
+      "limite": "Une marque ne garantit pas le contenu d’un contrat ni sa performance locale."
+    },
+    {
+      "demande": "GRDF",
+      "chapitres": [
+        "equipements.chauffage.grdf-le-compteur-et-le-raccordement-gaz"
+      ],
+      "dossiers": [],
+      "apport": "Distribution, fourniture, compteur et raccordement ; frontières à documenter.",
+      "limite": "Brouillon éditorial ; vérifier les pièces et conditions du cas réel."
+    },
+    {
+      "demande": "Siphon disconnecteur",
+      "chapitres": [
+        "equipements.plomberie.ventilation-primaire-et-secondaire",
+        "equipements.plomberie.surpresseur-compteurs-disconnecteur"
+      ],
+      "dossiers": [],
+      "apport": "Différencier garde d’eau du réseau d’évacuation et protection antipollution d’eau potable.",
+      "limite": "Brouillon éditorial ; vérifier les pièces et conditions du cas réel."
+    },
+    {
+      "demande": "Curage",
+      "chapitres": [
+        "equipements.plomberie.surpresseur-compteurs-disconnecteur",
+        "equipements.plomberie.colonnes-eu-ev-ep"
+      ],
+      "dossiers": [],
+      "apport": "Encrassement, obstruction, diagnostic, curage et accès ; traitement de cause et vérification.",
+      "limite": "Brouillon éditorial ; vérifier les pièces et conditions du cas réel."
+    },
+    {
+      "demande": "« Trame désenfumage »",
+      "chapitres": [
+        "equipements.acces.desenfumage-et-extincteurs"
+      ],
+      "dossiers": [],
+      "apport": "Chaîne de désenfumage, amenée d’air, évacuation, commande, repérage et contrôle.",
+      "limite": "Expression ambiguë : trappe, plan ou zones à identifier sur le devis ; aucun équipement unique inventé."
+    },
+    {
+      "demande": "Nid-de-poule",
+      "chapitres": [
+        "pathologie.visite.comment-on-regarde-un-immeuble"
+      ],
+      "dossiers": [
+        "technique-enveloppe-abords-et-finitions.md"
+      ],
+      "apport": "Dégradation d’une voie commune, eau, support, réparation et conditions de réception.",
+      "limite": "Brouillon éditorial ; vérifier les pièces et conditions du cas réel."
+    },
+    {
+      "demande": "Portail, porte automatique, portillon",
+      "chapitres": [
+        "equipements.acces.portails-et-portes-de-garage",
+        "equipements.acces.la-porte-de-parking-en-panne"
+      ],
+      "dossiers": [],
+      "apport": "Mécanique, motorisation, sécurités, usage, diagnostic et indisponibilité.",
+      "limite": "Brouillon éditorial ; vérifier les pièces et conditions du cas réel."
+    },
+    {
+      "demande": "Télécommande",
+      "chapitres": [
+        "equipements.acces.portails-et-portes-de-garage"
+      ],
+      "dossiers": [],
+      "apport": "Distinguer commande individuelle, réception commune, portée et panne mécanique.",
+      "limite": "Brouillon éditorial ; vérifier les pièces et conditions du cas réel."
+    },
+    {
+      "demande": "Interphone",
+      "chapitres": [
+        "equipements.acces.interphone-badges-ventouses-cellules"
+      ],
+      "dossiers": [],
+      "apport": "Platine, liaison, commande, alimentation, droits d’accès et compatibilité.",
+      "limite": "Brouillon éditorial ; vérifier les pièces et conditions du cas réel."
+    },
+    {
+      "demande": "VIGIK+",
+      "chapitres": [
+        "equipements.acces.interphone-badges-ventouses-cellules"
+      ],
+      "dossiers": [],
+      "apport": "Accès professionnels autorisés distincts des badges résidents ; migration et compatibilités.",
+      "limite": "Brouillon éditorial ; vérifier les pièces et conditions du cas réel."
+    },
+    {
+      "demande": "Combiné",
+      "chapitres": [
+        "equipements.acces.interphone-badges-ventouses-cellules"
+      ],
+      "dossiers": [],
+      "apport": "Terminal du logement et chaîne collective ; tests de localisation de panne.",
+      "limite": "Brouillon éditorial ; vérifier les pièces et conditions du cas réel."
+    },
+    {
+      "demande": "GSM ascenseur",
+      "chapitres": [
+        "equipements.ascenseurs.les-organes-d-un-ascenseur"
+      ],
+      "dossiers": [],
+      "apport": "Téléalarme, communication, abonnement, obsolescence du réseau et essai de chaîne.",
+      "limite": "Brouillon éditorial ; vérifier les pièces et conditions du cas réel."
+    },
+    {
+      "demande": "Minuteur astronomique",
+      "chapitres": [
+        "equipements.electricite.eclairage-des-communs"
+      ],
+      "dossiers": [],
+      "apport": "Horloge astronomique, minuterie et détection crépusculaire ; fonctions et programmation différentes.",
+      "limite": "Brouillon éditorial ; vérifier les pièces et conditions du cas réel."
+    },
+    {
+      "demande": "Immeuble 2050",
+      "chapitres": [
+        "energie.physique.le-confort-d-ete"
+      ],
+      "dossiers": [
+        "culture-menages-et-immeuble-2050.md",
+        "technique-immeuble-2050.md"
+      ],
+      "apport": "Scénarios climatiques, usages, accessibilité, vieillissement des services et robustesse.",
+      "limite": "Projection conditionnelle, pas promesse de fonctionnement futur."
+    },
+    {
+      "demande": "Les différents lobbys immobiliers",
+      "chapitres": [],
+      "dossiers": [
+        "culture-lobbying-et-contre-pouvoirs.md"
+      ],
+      "apport": "Représentation d’intérêts, FNAIM/UNIS/FPI, HATVP et méthode d’examen des arguments.",
+      "limite": "Comparaison qualitative ; fiches HATVP individuelles et budgets non audités."
+    },
+    {
+      "demande": "Associations de consommateurs : leurs avis face aux syndicats professionnels",
+      "chapitres": [],
+      "dossiers": [
+        "culture-lobbying-et-contre-pouvoirs.md"
+      ],
+      "apport": "ARC, CLCV et organisations professionnelles : mandat, preuve, méthode d’enquête et revendication.",
+      "limite": "Résultats du corpus CLCV distincts d’une fréquence nationale ; rapport PDF complet non lu."
+    },
+    {
+      "demande": "Copropriété dans le monde comparée à la France",
+      "chapitres": [],
+      "dossiers": [
+        "culture-copropriete-comparee.md"
+      ],
+      "apport": "France, Québec, Angleterre/pays de Galles et Nouvelle-Galles du Sud : propriété, gouvernance et prévoyance.",
+      "limite": "Trois juridictions comparées, pas panorama exhaustif mondial."
+    },
+    {
+      "demande": "Histoire de la copropriété, Napoléon",
+      "chapitres": [
+        "culture.lectures.histoire-de-la-copropriete"
+      ],
+      "dossiers": [],
+      "apport": "Repères 1804, 1938 et 1965, organisation et distinction version initiale/version actuelle.",
+      "limite": "Notices historiques consultées ; scans de textes anciens non intégralement lus."
+    },
+    {
+      "demande": "Ménages, projections, monoparentalité, séparation, vieillissement et maintien chez soi",
+      "chapitres": [],
+      "dossiers": [
+        "culture-menages-et-immeuble-2050.md"
+      ],
+      "apport": "Personne/ménage/foyer fiscal, projections Insee, scénarios d’usage et chaîne d’accessibilité.",
+      "limite": "Les projections nationales ne décrivent pas les occupants d’un immeuble."
+    },
+    {
+      "demande": "AFUL / ASL / Union",
+      "chapitres": [
+        "immobilier.acteurs-et-formes.asl-aful-division-en-volumes-copropriete-horizontale"
+      ],
+      "dossiers": [
+        "juridique-union-de-syndicats.md"
+      ],
+      "apport": "Personnes, périmètres, objets, statuts et budgets distincts ; gouvernance d’ouvrages partagés.",
+      "limite": "Brouillon éditorial ; vérifier les pièces et conditions du cas réel."
+    },
+    {
+      "demande": "SCI",
+      "chapitres": [
+        "immobilier.acteurs-et-formes.la-sci-coproprietaire"
+      ],
+      "dossiers": [],
+      "apport": "Personne morale copropriétaire, représentant, pouvoirs, charges et changement d’interlocuteur.",
+      "limite": "Brouillon éditorial ; vérifier les pièces et conditions du cas réel."
+    },
+    {
+      "demande": "Mitoyenneté",
+      "chapitres": [
+        "immobilier.propriete.la-mitoyennete"
+      ],
+      "dossiers": [],
+      "apport": "Propriété du mur, présomption, titre, entretien et travaux sans confusion avec simple limite.",
+      "limite": "Brouillon éditorial ; vérifier les pièces et conditions du cas réel."
+    },
+    {
+      "demande": "Titre de propriété",
+      "chapitres": [
+        "immobilier.propriete.la-propriete-et-ses-demembrements"
+      ],
+      "dossiers": [
+        "juridique-titre-publicite-fonciere.md"
+      ],
+      "apport": "Acte, droits et articulation avec règlement, état descriptif et mutations.",
+      "limite": "Brouillon éditorial ; vérifier les pièces et conditions du cas réel."
+    },
+    {
+      "demande": "Service de la publicité foncière",
+      "chapitres": [
+        "immobilier.vente.du-compromis-a-l-acte"
+      ],
+      "dossiers": [
+        "juridique-titre-publicite-fonciere.md"
+      ],
+      "apport": "Publicité des actes et vérification documentaire, distinctes du cadastre et de la notification au syndic.",
+      "limite": "Brouillon éditorial ; vérifier les pièces et conditions du cas réel."
+    },
+    {
+      "demande": "Animaux, chiens qui aboient",
+      "chapitres": [
+        "droit.responsabilites.troubles-anormaux-de-voisinage"
+      ],
+      "dossiers": [
+        "juridique-voisinage-climatisation-stores.md"
+      ],
+      "apport": "Faits, répétition, preuve, démarches et qualification du trouble ; règlement et droits articulés.",
+      "limite": "Brouillon éditorial ; vérifier les pièces et conditions du cas réel."
+    },
+    {
+      "demande": "Sociologie, porosité de l’espace social, rue privée ou collective",
+      "chapitres": [
+        "culture.lectures.l-habiter-et-le-voisinage",
+        "culture.lectures.la-ville"
+      ],
+      "dossiers": [
+        "juridique-espace-prive-collectif.md"
+      ],
+      "apport": "Accès physique, statut, appropriation d’usage et effets à l’échelle du voisinage.",
+      "limite": "Brouillon éditorial ; vérifier les pièces et conditions du cas réel."
+    },
+    {
+      "demande": "Théorie des jeux et alignement des intérêts",
+      "chapitres": [
+        "culture.lectures.les-communs-et-le-passager-clandestin",
+        "cabinet.negocier.methode-et-alternatives"
+      ],
+      "dossiers": [],
+      "apport": "Petit modèle de coopération calculé, incitations, information et négociation.",
+      "limite": "Modèle pédagogique fictif ; ne prédit pas les motivations réelles des habitants."
+    },
+    {
+      "demande": "MaPrimeRénov’, CEE et autres aides",
+      "chapitres": [
+        "energie.aides.les-aides-nationales",
+        "energie.aides.les-certificats-d-economies-d-energie",
+        "energie.aides.le-pret-collectif-et-les-aides-locales"
+      ],
+      "dossiers": [],
+      "apport": "Bénéficiaire, éligibilité, cumul, accompagnement, prêt, avance et versement.",
+      "limite": "Brouillon éditorial ; vérifier les pièces et conditions du cas réel."
+    },
+    {
+      "demande": "Aides de l’État",
+      "chapitres": [
+        "energie.aides.les-aides-nationales"
+      ],
+      "dossiers": [
+        "culture-politique-publique-du-logement.md"
+      ],
+      "apport": "Aides aux personnes et au syndicat, prêts et avantages fiscaux ; effets sur la trésorerie.",
+      "limite": "Barème et décision du financeur à vérifier au moment du projet."
+    },
+    {
+      "demande": "Politique de l’État sur le logement",
+      "chapitres": [],
+      "dossiers": [
+        "culture-politique-publique-du-logement.md"
+      ],
+      "apport": "Offre, demande, parc existant, aides, fiscalité, effets attendus et évaluation.",
+      "limite": "Synthèse conceptuelle ; le compte du logement 2024 ne définit pas les aides de 2026."
+    },
+    {
+      "demande": "Programmes des partis pour la présidentielle sur le logement",
+      "chapitres": [],
+      "dossiers": [
+        "culture-programmes-logement-2027.md"
+      ],
+      "apport": "Comparatif daté des documents officiels retrouvés pour neuf organisations, avec statut de chaque document.",
+      "limite": "Plusieurs documents municipaux ou orientations générales ; chapitres nationaux comparables MoDem/Horizons et programmes définitifs 2027 restent à retrouver."
+    }
+  ]
+}

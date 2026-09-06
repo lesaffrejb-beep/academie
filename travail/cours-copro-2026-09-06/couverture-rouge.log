@@ -1,0 +1,20 @@
+.......E...
+======================================================================
+ERROR: test_liste_jb_references_et_rendu (__main__.ControleCours.test_liste_jb_references_et_rendu)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jb/Code/academie/app/tests_cours_copro.py", line 63, in test_liste_jb_references_et_rendu
+    indexer(self.r,r);texte=p.with_suffix('.md').read_text()
+                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/pathlib/__init__.py", line 787, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors, newline=newline) as f:
+         ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/pathlib/__init__.py", line 771, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/var/folders/qq/5q7p33xj69s6r0ys8y0qh3ww0000gn/T/tmpwk8k4vaf/cours/copro/complements/COUVERTURE-JB.md'
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.037s
+
+FAILED (errors=1)

@@ -41,6 +41,7 @@ RACINE = APP.parent
 
 SUITES = [
     ("chemins d'apprentissage", "tests_chemin_apprentissage.py"),
+    ("couverture des cours bruts", "tests_cours_copro.py"),
     ("couverture des spécialités", "tests_expertises.py"),
     ("frontières étude", "tests_etude_relecture.py"),
     ("expérience pédagogique", "tests_experience.py"),

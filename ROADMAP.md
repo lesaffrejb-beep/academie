@@ -180,3 +180,12 @@ récupération. Les comptes d'essai actuels ne seront effacés du VPS
 qu'après publication contrôlée et commande locale confirmée.
 Le stock est de trois études copro et deux IFSI ; les programmes ne sont
 pas des cours déjà fabriqués. [Prompt PDF et préparation de l’essai](prompts/essai-10h-et-pdf.md).
+
+## Base écrite du programme copro
+
+`ACA-COURS-COPRO-1` : [cours bruts](cours/copro/README.md),
+[index](cours/copro/INDEX.md) et [compléments demandés par JB](cours/copro/complements/COUVERTURE-JB.md).
+La rédaction couvre les identifiants du programme avec cas, transferts et sources
+qualifiées. Le [rapport](travail/cours-copro-2026-09-06/LIVRAISON.md) distingue
+présence des textes, contrôles et examen de fond borné. Les brouillons ne sont
+pas automatiquement servis comme études.

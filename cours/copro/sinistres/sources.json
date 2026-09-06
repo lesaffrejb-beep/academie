@@ -1,0 +1,262 @@
+[
+  {
+    "id": "obligations-assure",
+    "titre": "Code des assurances, article L113-2",
+    "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000035731302",
+    "nature": "texte-officiel",
+    "consulte_le": "2026-09-06",
+    "portee": "Déclaration, primes, réponses au risque, délais et conditions de déchéance.",
+    "limites": "Article consulté, pas les contrats particuliers.",
+    "etat": "consultee"
+  },
+  {
+    "id": "garanties-exclusions",
+    "titre": "Code des assurances, article L113-1",
+    "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006791984",
+    "nature": "texte-officiel",
+    "consulte_le": "2026-09-06",
+    "portee": "Principe de couverture des fautes et exclusion formelle et limitée ; faute intentionnelle ou dolosive.",
+    "limites": "Qualification des clauses litigieuses à examiner sur leur texte.",
+    "etat": "consultee"
+  },
+  {
+    "id": "loi-copro",
+    "titre": "Loi du 10 juillet 1965",
+    "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000880200/",
+    "nature": "texte-officiel",
+    "consulte_le": "2026-09-06",
+    "portee": "Responsabilité du syndicat et assurance de responsabilité obligatoire, articles 9-1 et 14.",
+    "limites": "Ne définit pas une police MRI universelle.",
+    "etat": "consultee"
+  },
+  {
+    "id": "catnat-georisques",
+    "titre": "Géorisques : garantie Cat-Nat",
+    "url": "https://www.georisques.gouv.fr/minformer-sur-la-prevention-des-risques/la-garantie-cat-nat",
+    "nature": "institution",
+    "consulte_le": "2026-09-06",
+    "portee": "Principe de reconnaissance et déclaration dans trente jours après publication.",
+    "limites": "Franchises et calendrier complet à contrôler dans les textes pour chaque catégorie.",
+    "etat": "consultee"
+  },
+  {
+    "id": "assurance-copro-fiche",
+    "titre": "Assurances des parties communes et privatives",
+    "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F2027",
+    "nature": "institution",
+    "consulte_le": "2026-09-06",
+    "portee": "Présentation générale des acteurs et existence de la convention IRSI.",
+    "limites": "Fiche simplificatrice : ne pas reprendre comme règle universelle ses formulations sur origine privative, assureur unique ou assurance PNO ; contrat et loi priment. Convention IRSI intégrale non lue.",
+    "etat": "consultee"
+  },
+  {
+    "id": "federation-eau",
+    "titre": "France Assureurs : règlement d’un dégât des eaux",
+    "url": "https://www.franceassureurs.fr/lassurance-protege-finance-et-emploie/lassurance-protege/les-demarches-en-cas-de-sinistre/assurance-habitation-le-reglement-un-degat-des-eaux/",
+    "nature": "organisation-pro",
+    "consulte_le": "2026-09-06",
+    "portee": "Mesures initiales, distinction cause/dommages et expertise.",
+    "limites": "Publication 2021 ; délai déclaré simplifié, priorité au L113-2 ; ne constitue pas la convention IRSI.",
+    "etat": "consultee"
+  },
+  {
+    "id": "inc-irsi",
+    "titre": "INC : conventions de règlement entre assureurs",
+    "url": "https://www.inc-conso.fr/content/les-conventions-de-reglement-des-sinistres-entre-assureurs",
+    "nature": "institution",
+    "consulte_le": "2026-09-06",
+    "portee": "Structure historique IRSI, montant par local, tranches et expertise pour compte commun.",
+    "limites": "Publication 2018, antérieure aux modifications de recherche de fuite ; pas utilisée comme version actuelle intégrale. Seuils recoupés avec fiche Service-Public ; modalités et exceptions à vérifier dans convention applicable.",
+    "etat": "consultee"
+  },
+  {
+    "id": "subrogation",
+    "titre": "Code des assurances : L121-12",
+    "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000051786012",
+    "nature": "texte-officiel",
+    "consulte_le": "2026-09-06",
+    "portee": "Subrogation après paiement, limite du montant et préservation du recours.",
+    "limites": "Version depuis 25/06/2025 ; exceptions et recours conventionnels à distinguer.",
+    "etat": "consultee"
+  },
+  {
+    "id": "tempete-code",
+    "titre": "Code des assurances : L122-7",
+    "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000045296940",
+    "nature": "texte-officiel",
+    "consulte_le": "2026-09-06",
+    "portee": "Extension contre les effets du vent et limites contractuelles.",
+    "limites": "Grêle non assimilée à cette extension ; conditions de la police à lire.",
+    "etat": "consultee"
+  },
+  {
+    "id": "incendie-fiche",
+    "titre": "Service Public : risque incendie ou explosion",
+    "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F21532",
+    "nature": "institution",
+    "consulte_le": "2026-09-06",
+    "portee": "Dommages incendie et garanties complémentaires.",
+    "limites": "Délai simplifié dans la fiche : priorité au L113-2 ; aucune police collective particulière examinée.",
+    "etat": "consultee"
+  },
+  {
+    "id": "dommages-ouvrage-code",
+    "titre": "Code des assurances : L242-1",
+    "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000019265425",
+    "nature": "texte-officiel",
+    "consulte_le": "2026-09-06",
+    "portee": "Préfinancement, délais de décision et offre, interventions exceptionnelles avant expiration de la GPA.",
+    "limites": "Déclaration complète et clauses types à vérifier pour le point de départ opérationnel.",
+    "etat": "consultee"
+  },
+  {
+    "id": "garanties-reception",
+    "titre": "Service Public : garanties après réception",
+    "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F2958",
+    "nature": "institution",
+    "consulte_le": "2026-09-06",
+    "portee": "Présentation GPA, bon fonctionnement, décennale.",
+    "limites": "Fiche généraliste, ne résout pas les qualifications particulières des équipements ajoutés à un existant.",
+    "etat": "consultee"
+  },
+  {
+    "id": "construction-ministere",
+    "titre": "Ministère : assurance construction",
+    "url": "https://www.ecologie.gouv.fr/politiques-publiques/assurance-construction",
+    "nature": "institution",
+    "consulte_le": "2026-09-06",
+    "portee": "Mécanisme de préfinancement et responsabilité des constructeurs.",
+    "limites": "Page de synthèse consultée ; pas les normes techniques ni polices particulières.",
+    "etat": "consultee"
+  },
+  {
+    "id": "reception-code",
+    "titre": "Code civil : article 1792-6",
+    "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006443552",
+    "nature": "texte-officiel",
+    "consulte_le": "2026-09-06",
+    "portee": "Réception, réserves et parfait achèvement.",
+    "limites": "Réception tacite et délais procéduraux particuliers non traités.",
+    "etat": "consultee"
+  },
+  {
+    "id": "biennale-code",
+    "titre": "Code civil : article 1792-3",
+    "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006443534",
+    "nature": "texte-officiel",
+    "consulte_le": "2026-09-06",
+    "portee": "Bon fonctionnement des autres éléments équipements.",
+    "limites": "À articuler avec jurisprudence équipements sur existant.",
+    "etat": "consultee"
+  },
+  {
+    "id": "decennale-code",
+    "titre": "Code civil : article 1792",
+    "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006443502",
+    "nature": "texte-officiel",
+    "consulte_le": "2026-09-06",
+    "portee": "Solidité et impropriété à destination.",
+    "limites": "Qualification et dommage réel à établir.",
+    "etat": "consultee"
+  },
+  {
+    "id": "equipements-2024",
+    "titre": "Cass. 3e civ., 21 mars 2024, 22-18.694",
+    "url": "https://www.legifrance.gouv.fr/juri/id/JURITEXT000049321620",
+    "nature": "jurisprudence",
+    "consulte_le": "2026-09-06",
+    "portee": "Équipements sur existant non constitutifs ouvrage : responsabilité contractuelle.",
+    "limites": "Ne tranche pas abstraitement la qualification de chaque équipement collectif.",
+    "etat": "consultee"
+  },
+  {
+    "id": "cpc-preuve",
+    "titre": "Code de procédure civile : article 145",
+    "url": "https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006070716/LEGISCTA000006165183/",
+    "nature": "texte-officiel",
+    "consulte_le": "2026-09-06",
+    "portee": "Mesure avant procès, motif légitime ; version septembre 2025.",
+    "limites": "Procédure détaillée dans domaine procedure.",
+    "etat": "consultee"
+  },
+  {
+    "id": "cpc-technicien",
+    "titre": "Code de procédure civile : articles 232 à 248",
+    "url": "https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006070716/LEGISCTA000006165189/",
+    "nature": "texte-officiel",
+    "consulte_le": "2026-09-06",
+    "portee": "Mission du technicien, pas appréciation juridique, juge non lié.",
+    "limites": "Lecture ciblée 237,238,246 ; ancien article 240 abrogé non repris.",
+    "etat": "consultee"
+  },
+  {
+    "id": "prescription-assurance",
+    "titre": "Code des assurances : L114-1 à L114-3",
+    "url": "https://www.legifrance.gouv.fr/codes/id/LEGISCTA000006157215",
+    "nature": "texte-officiel",
+    "consulte_le": "2026-09-06",
+    "portee": "Prescription, exception sécheresse et interruptions.",
+    "limites": "Règle transitoire de 2021 à examiner ; opposabilité de la police non automatiquement tranchée.",
+    "etat": "consultee"
+  },
+  {
+    "id": "expertise-federation",
+    "titre": "France Assureurs : rôle et étapes expertise",
+    "url": "https://www.franceassureurs.fr/lassurance-protege-finance-et-emploie/lassurance-protege/les-demarches-en-cas-de-sinistre/indemnisation-des-dommages-le-role-de-expert-assurance-les-etapes-de-expertise/",
+    "nature": "organisation-pro",
+    "consulte_le": "2026-09-06",
+    "portee": "Mission technique et frais expert assuré selon police.",
+    "limites": "Page 2017 ; ancienne dénomination tribunal et généralisation expertise DO non reprises.",
+    "etat": "consultee"
+  },
+  {
+    "id": "reclamation-abe",
+    "titre": "ABE Infoservice : mécontentement et réclamation",
+    "url": "https://www.abe-infoservice.fr/fr/assurance-banque-placements-financiers-que-faire-en-cas-de-mecontentement",
+    "nature": "institution",
+    "consulte_le": "2026-09-06",
+    "portee": "Réclamation écrite, dispositif professionnel et médiation.",
+    "limites": "Syndicat personne morale : éligibilité médiateur à vérifier, pas assimilé automatiquement consommateur.",
+    "etat": "consultee"
+  },
+  {
+    "id": "constructeur-code",
+    "titre": "Code civil, article 1792-1",
+    "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006443512/",
+    "nature": "texte-officiel",
+    "consulte_le": "2026-09-06",
+    "portee": "Personnes réputées constructeurs, notamment vendeur après achèvement.",
+    "limites": "Qualification d’un montage réel non réalisée.",
+    "etat": "consultee"
+  },
+  {
+    "id": "responsabilite-promoteur",
+    "titre": "Code des assurances, article L241-2",
+    "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006795914/",
+    "nature": "texte-officiel",
+    "consulte_le": "2026-09-06",
+    "portee": "Travaux réalisés pour autrui ou en vue de vente.",
+    "limites": "Ne dispense pas de qualifier ouvrages, rôles et champ obligatoire.",
+    "etat": "consultee"
+  },
+  {
+    "id": "garantie-achevement",
+    "titre": "CCH, article L261-10-1",
+    "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000037667804/",
+    "nature": "texte-officiel",
+    "consulte_le": "2026-09-06",
+    "portee": "Garantie financière d’achèvement ou de remboursement dans le champ L261-10 ; défaillance financière.",
+    "limites": "Aucune transposition automatique à une cession de droit de surélévation.",
+    "etat": "consultee"
+  },
+  {
+    "id": "constructeurs-federation",
+    "titre": "France Assureurs : responsabilités des constructeurs",
+    "url": "https://www.franceassureurs.fr/lassurance-protege-finance-et-emploie/lassurance-protege/lassurance-en-pratique-pour-les-professionnels/assurance-construction-les-responsabilites-des-constructeurs/",
+    "nature": "professionnel",
+    "consulte_le": "2026-09-06",
+    "portee": "Distinction couverture de responsabilité et garanties facultatives.",
+    "limites": "Fiche 2019 ; simplifications sur risques avant réception, équipements et sanctions non reprises ; jurisprudence 2024 traitée séparément.",
+    "etat": "consultee"
+  }
+]

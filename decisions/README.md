@@ -68,3 +68,5 @@ lisant le dépôt, une règle née d'un incident. Pas l'avancement
 - [0050 : collecte documentaire et accès pour le premier cercle](0050-essai-lundi-collecte-et-acces.md)
 
 - [0051. Le chemin construit depuis la demande](0051-chemin-professeur-depuis-la-demande.md)
+
+- [0052. Base écrite complète, centrée sur la copropriété](0052-cours-bruts-complets-et-exigence-editoriale.md)

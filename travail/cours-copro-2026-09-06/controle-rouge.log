@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/Users/jb/Code/academie/app/tests_cours_copro.py", line 6, in <module>
+    from cours_copro import controle, indexer
+ModuleNotFoundError: No module named 'cours_copro'

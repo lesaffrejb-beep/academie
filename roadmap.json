@@ -4,6 +4,23 @@
   "_": "Actualisée le 05/09/2026 par audit (ROADMAP.md, décision 0035). done = périmètre et preuves du cahier, pas toute la promesse produit. ready | blocked ; modes deterministic | agent-safe | agent-review | human-only. Les budgets bornent une passe de travail, pas la durée complète. tooling/roadmap.py next ne choisit que les tâches automatisables sans revue.",
   "items": [
     {
+      "id": "ACA-COURS-COPRO-1",
+      "outcome": "Base écrite exigeante de tous les chapitres copro, sans images, indexée et contrôlée.",
+      "status": "done",
+      "mode": "agent-review",
+      "risk": "medium",
+      "priority": 110,
+      "depends_on": [
+        "ACA-PROGRAMME-1"
+      ],
+      "budget": {
+        "max_units": 389,
+        "max_minutes": 1440
+      },
+      "proof": "389 chapitres bruts et 13 compléments, 61 demandes rattachées ; inventaire sans erreur ni alerte, 12 tests ciblés et suite complète verts. Examens croisés bornés et corrections documentés dans travail/cours-copro-2026-09-06/LIVRAISON.md. Statut éditorial brouillon conservé ; aucune intégration jouable ou publication VPS.",
+      "parent_milestone": "ACADEMIE-EXPERTISE"
+    },
+    {
       "id": "ACA-EXPERTISE-1",
       "outcome": "Spécialisations transverses explicites, couverture mesurée et dossiers experts sourcés, au-delà du socle.",
       "status": "ready",
