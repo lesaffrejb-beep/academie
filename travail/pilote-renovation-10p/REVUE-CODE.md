@@ -107,3 +107,60 @@ ici sur le blocage de l'action et la garde de `noteCarte`. La synchronisation
 réelle et l'acceptation sur un téléphone physique restent des preuves
 distinctes. La collecte lourde, les sources PDF et le contenu du chapitre
 ne sont toujours pas couverts par cet avis de code.
+
+## Résultats transmis par l'auteur et revue de l'installateur
+
+L'auteur a transmis les résultats suivants : 18 E2E verts sur le workspace
+et sur un clone de livraison isolé conservant l'authentification originale,
+299 tests Vitest et 6 contrôles de publication verts. Ces exécutions sont
+attribuées à l'auteur, non au relecteur.
+
+Revue statique supplémentaire de `installer_pilote.py`, sans exécution ni
+publication par le relecteur : le manifeste et les empreintes bornent les
+fichiers transférés, le paquet doit correspondre au SHA demandé, la copie
+publique précède les remplacements atomiques par fichier, index puis service
+worker en dernier. Les fichiers de données joueur et l'API ne sont pas
+restaurés par cet installateur. L'installateur ne nécessite pas Node.
+Les anciens assets additionnels sont conservés, ce qui protège les onglets
+encore ouverts. Le contrôle Caddy porte sur la lisibilité des fichiers
+installés ; il ne remplace pas un essai HTTPS authentifié.
+
+Le premier rollback laissait le clone détaché. L'auteur l'a corrigé : main
+initiale exigée, ancien SHA conservé, refus d'une HEAD tierce, restauration
+de la branche et de HEAD, vérification avant autorisation de redémarrer le
+timer. Ce point est corrigé à l'inspection.
+
+Un dernier point a été signalé avant utilisation : la sauvegarde ne doit
+pas précéder la mise au repos du générateur, et le constat d'un service
+actif ne doit pas déclencher une restauration concurrente alors qu'aucune
+mutation de livraison n'a commencé. Au dernier état inspecté, l'arrêt du
+timer arrivait après `cp -a` et le refus du service actif était dans le bloc
+qui restaure la publication. Déplacer arrêt/refus avant sauvegarde et avant
+le bloc de mutation, ou démontrer un verrou réellement partagé par le
+générateur installé. Ne pas attribuer un avis favorable de déploiement à
+cette version tant que ce point reste ouvert.
+
+## Clôture des réserves de l'installateur
+
+Dernière contre-lecture du fichier, 06/09/2026 : **les deux réserves de
+déploiement signalées sont closes à l'inspection statique**.
+
+1. Le rollback restaure bien la branche `main` et son ancien SHA, vérifie
+   ces deux valeurs et laisse le timer arrêté si cette restauration échoue.
+2. L'arrêt du timer puis le contrôle du service précèdent désormais toute
+   sauvegarde et le bloc de mutation. Le service doit être explicitement
+   `ActiveState=inactive` ; tous les autres états, dont `activating`, sont
+   refusés hors du bloc de rollback. Un générateur en cours ne déclenche
+   donc plus une restauration concurrente. Le choix de `systemctl show`
+   évite d'assimiler le code d'échec de `is-active` à une preuve d'arrêt :
+   le [code primaire de systemd](https://raw.githubusercontent.com/systemd/systemd/main/src/systemctl/systemctl-is-active.c)
+   exclut notamment `activating` des états reconnus par cette commande.
+
+Verdict borné : aucun autre bloquant statique trouvé dans l'installateur
+actuellement examiné. Aucun déploiement, test d'échec réel, contrôle ACL
+distant ou redémarrage VPS n'a été exécuté par le relecteur. Les vérifications
+de publication et le retour arrière réel restent à constater lors de
+l'exécution autorisée. Une action administrative indépendante qui démarrerait
+manuellement le générateur pendant la livraison reste hors du verrou de ce
+script si elle ne le respecte pas ; la fenêtre de livraison doit rester
+exclusive.
