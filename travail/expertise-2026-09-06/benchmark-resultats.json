@@ -1,0 +1,1415 @@
+{
+  "date": "2026-09-06T12:33:53.893133+00:00",
+  "machine": "macOS-26.7-arm64-arm-64bit-Mach-O",
+  "python_coordinateur": "3.14.7 (main, Aug  5 2026, 10:29:49) [Clang 21.0.0 (clang-2100.1.1.101)]",
+  "script_sha256": "59df6298950daca1b66608425cebf1c670e924fd0c1b10ea215216a90572b4d1",
+  "fixtures_sha256": "47e264f34c2a57f32574835840d8d1a6e69c5cd8d1ade7a19a1f5683a7eb7453",
+  "documents": [
+    {
+      "id": "angers",
+      "fichier": "sources/707940074f138868.pdf",
+      "sha256": "707940074f1388686398dd795457acbf3ab30d6bcd2ae2a65c3a88f3888b1fba",
+      "pages": 54,
+      "cas": [
+        {
+          "page": 1,
+          "risque": "texte rasterisé manquant dans la couche texte",
+          "present": [
+            "Cahier de",
+            "Recommandations",
+            "PROJET ARRÊTÉ",
+            "9 mai 2023"
+          ]
+        },
+        {
+          "page": 9,
+          "risque": "colonnes et texte masqué",
+          "present": [
+            "bonne cohérence structurelle",
+            "ouvrages environnants tels que les planchers"
+          ],
+          "absent": [
+            "travure",
+            "25 cm"
+          ]
+        },
+        {
+          "page": 12,
+          "risque": "texte masqué inversé",
+          "present": [
+            "Sans calcin, la pierre se détériore vite"
+          ],
+          "absent": [
+            "SEDAÇAF",
+            "Rochefort",
+            "trofehcoR"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "focus",
+      "fichier": "sources/322a2f5e843f45b9.pdf",
+      "sha256": "322a2f5e843f45b99f324a9f185a63d75f6838602081e362002176451855dc43",
+      "pages": 32,
+      "cas": [
+        {
+          "page": 26,
+          "risque": "association ligne-valeurs et contradiction dans la source",
+          "present": [
+            "rénover 55 %"
+          ],
+          "regex": [
+            "référence[\\s|]+58\\s*%[\\s|]+27\\s*%[\\s|]+6\\s*%"
+          ]
+        },
+        {
+          "page": 32,
+          "risque": "texte masqué d'un autre document",
+          "present": [
+            "Discount rates in consumers"
+          ],
+          "absent": [
+            "Ces prélèvements sont corrigés",
+            "tranche de CA"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pdhh",
+      "fichier": "sources/8760dfb3f168df2d.pdf",
+      "sha256": "8760dfb3f168df2df451b23dbab92e88fdeda4575334989953fb1e002ea36d3c",
+      "pages": 180,
+      "cas": [
+        {
+          "page": 6,
+          "risque": "scan dans PDF mixte avec titre/pied de page natifs",
+          "present": [
+            "Arrêté",
+            "PORTANT APPROBATION",
+            "CHEVALIER DE LA LÉGION"
+          ]
+        }
+      ]
+    }
+  ],
+  "resultats": [
+    {
+      "methode": "poppler-layout",
+      "version": "pdftotext version 26.07.0",
+      "mesures": 6,
+      "temoins_ok": 8,
+      "temoins_total": 20,
+      "duree_processus_total_s": 0.5867,
+      "pages": [
+        {
+          "document": "angers",
+          "page": 1,
+          "statut": "mesure",
+          "caracteres": 1363,
+          "texte_sha256": "e5238a73feb7c74928172fe99289e09c729218bbf60c4cd4fd308328142f111f",
+          "temoins": [
+            {
+              "type": "present",
+              "temoin": "Cahier de",
+              "ok": true
+            },
+            {
+              "type": "present",
+              "temoin": "Recommandations",
+              "ok": true
+            },
+            {
+              "type": "present",
+              "temoin": "PROJET ARRÊTÉ",
+              "ok": false
+            },
+            {
+              "type": "present",
+              "temoin": "9 mai 2023",
+              "ok": false
+            }
+          ]
+        },
+        {
+          "document": "angers",
+          "page": 9,
+          "statut": "mesure",
+          "caracteres": 24689,
+          "texte_sha256": "d908361f025c4b758ba67e09f60fcf46d21965e1d94aee12a204e3c29efc02f4",
+          "temoins": [
+            {
+              "type": "present",
+              "temoin": "bonne cohérence structurelle",
+              "ok": true
+            },
+            {
+              "type": "present",
+              "temoin": "ouvrages environnants tels que les planchers",
+              "ok": false
+            },
+            {
+              "type": "absent",
+              "temoin": "travure",
+              "ok": false
+            },
+            {
+              "type": "absent",
+              "temoin": "25 cm",
+              "ok": false
+            }
+          ]
+        },
+        {
+          "document": "angers",
+          "page": 12,
+          "statut": "mesure",
+          "caracteres": 29213,
+          "texte_sha256": "fd8c882ffc7252312642a234ad47dca38496386f3895f59fe5ffe8b8e0b7f234",
+          "temoins": [
+            {
+              "type": "present",
+              "temoin": "Sans calcin, la pierre se détériore vite",
+              "ok": false
+            },
+            {
+              "type": "absent",
+              "temoin": "SEDAÇAF",
+              "ok": false
+            },
+            {
+              "type": "absent",
+              "temoin": "Rochefort",
+              "ok": true
+            },
+            {
+              "type": "absent",
+              "temoin": "trofehcoR",
+              "ok": false
+            }
+          ]
+        },
+        {
+          "document": "focus",
+          "page": 26,
+          "statut": "mesure",
+          "caracteres": 7203,
+          "texte_sha256": "c1e1d63b18c1c9e635fe69e25d1925198f5a5fbf6ddacfc5d2fad0102d02f3d3",
+          "temoins": [
+            {
+              "type": "present",
+              "temoin": "rénover 55 %",
+              "ok": true
+            },
+            {
+              "type": "regex",
+              "temoin": "référence[\\s|]+58\\s*%[\\s|]+27\\s*%[\\s|]+6\\s*%",
+              "ok": true
+            }
+          ]
+        },
+        {
+          "document": "focus",
+          "page": 32,
+          "statut": "mesure",
+          "caracteres": 7400,
+          "texte_sha256": "75c29d152eadb97b1d8d3f56a082f1d1913c4b14b5a6627111a9e19cad5e19d5",
+          "temoins": [
+            {
+              "type": "present",
+              "temoin": "Discount rates in consumers",
+              "ok": true
+            },
+            {
+              "type": "absent",
+              "temoin": "Ces prélèvements sont corrigés",
+              "ok": false
+            },
+            {
+              "type": "absent",
+              "temoin": "tranche de CA",
+              "ok": false
+            }
+          ]
+        },
+        {
+          "document": "pdhh",
+          "page": 6,
+          "statut": "mesure",
+          "caracteres": 101,
+          "texte_sha256": "2f0ba316004b58ee9b83e34150c2a86722fe3f839a467acf372acebbaa6d92c5",
+          "temoins": [
+            {
+              "type": "present",
+              "temoin": "Arrêté",
+              "ok": true
+            },
+            {
+              "type": "present",
+              "temoin": "PORTANT APPROBATION",
+              "ok": false
+            },
+            {
+              "type": "present",
+              "temoin": "CHEVALIER DE LA LÉGION",
+              "ok": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "methode": "poppler-raw",
+      "version": "pdftotext version 26.07.0",
+      "mesures": 6,
+      "temoins_ok": 11,
+      "temoins_total": 20,
+      "duree_processus_total_s": 0.5694,
+      "pages": [
+        {
+          "document": "angers",
+          "page": 1,
+          "statut": "mesure",
+          "caracteres": 509,
+          "texte_sha256": "3544d1df353c70b1f3bdc9f008ef45de728cb33f5bf1bb789aa1177c28d90215",
+          "temoins": [
+            {
+              "type": "present",
+              "temoin": "Cahier de",
+              "ok": true
+            },
+            {
+              "type": "present",
+              "temoin": "Recommandations",
+              "ok": true
+            },
+            {
+              "type": "present",
+              "temoin": "PROJET ARRÊTÉ",
+              "ok": false
+            },
+            {
+              "type": "present",
+              "temoin": "9 mai 2023",
+              "ok": false
+            }
+          ]
+        },
+        {
+          "document": "angers",
+          "page": 9,
+          "statut": "mesure",
+          "caracteres": 6010,
+          "texte_sha256": "6a0244a7aa7b3c86dda3d7b56db8b8a40d8a91cab19952b8f45c754cf981dbcf",
+          "temoins": [
+            {
+              "type": "present",
+              "temoin": "bonne cohérence structurelle",
+              "ok": true
+            },
+            {
+              "type": "present",
+              "temoin": "ouvrages environnants tels que les planchers",
+              "ok": true
+            },
+            {
+              "type": "absent",
+              "temoin": "travure",
+              "ok": false
+            },
+            {
+              "type": "absent",
+              "temoin": "25 cm",
+              "ok": false
+            }
+          ]
+        },
+        {
+          "document": "angers",
+          "page": 12,
+          "statut": "mesure",
+          "caracteres": 7136,
+          "texte_sha256": "9415dfcfa697111373ee79c5cb5ea5fc897da08226085d595c4d4c302cf10587",
+          "temoins": [
+            {
+              "type": "present",
+              "temoin": "Sans calcin, la pierre se détériore vite",
+              "ok": true
+            },
+            {
+              "type": "absent",
+              "temoin": "SEDAÇAF",
+              "ok": true
+            },
+            {
+              "type": "absent",
+              "temoin": "Rochefort",
+              "ok": false
+            },
+            {
+              "type": "absent",
+              "temoin": "trofehcoR",
+              "ok": true
+            }
+          ]
+        },
+        {
+          "document": "focus",
+          "page": 26,
+          "statut": "mesure",
+          "caracteres": 2512,
+          "texte_sha256": "f1d8361bcb53360e4ebec01cd0b05e2c579b8406322a4953fc740e7e0b5a4aac",
+          "temoins": [
+            {
+              "type": "present",
+              "temoin": "rénover 55 %",
+              "ok": true
+            },
+            {
+              "type": "regex",
+              "temoin": "référence[\\s|]+58\\s*%[\\s|]+27\\s*%[\\s|]+6\\s*%",
+              "ok": true
+            }
+          ]
+        },
+        {
+          "document": "focus",
+          "page": 32,
+          "statut": "mesure",
+          "caracteres": 3911,
+          "texte_sha256": "3c9ddc85c90968f2d62d24e04041ef410c4b0e181373de9746e36379f201f0cb",
+          "temoins": [
+            {
+              "type": "present",
+              "temoin": "Discount rates in consumers",
+              "ok": true
+            },
+            {
+              "type": "absent",
+              "temoin": "Ces prélèvements sont corrigés",
+              "ok": false
+            },
+            {
+              "type": "absent",
+              "temoin": "tranche de CA",
+              "ok": false
+            }
+          ]
+        },
+        {
+          "document": "pdhh",
+          "page": 6,
+          "statut": "mesure",
+          "caracteres": 89,
+          "texte_sha256": "4562b7cf19291e152656851d17f330e414355a02167f3333d3b1e442e6a5d9a8",
+          "temoins": [
+            {
+              "type": "present",
+              "temoin": "Arrêté",
+              "ok": true
+            },
+            {
+              "type": "present",
+              "temoin": "PORTANT APPROBATION",
+              "ok": false
+            },
+            {
+              "type": "present",
+              "temoin": "CHEVALIER DE LA LÉGION",
+              "ok": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "methode": "pymupdf-plain",
+      "version": "1.28.2",
+      "mesures": 6,
+      "temoins_ok": 14,
+      "temoins_total": 20,
+      "duree_processus_total_s": 0.9869,
+      "pages": [
+        {
+          "document": "angers",
+          "page": 1,
+          "statut": "mesure",
+          "caracteres": 526,
+          "texte_sha256": "5e3135dec47769e6cc7a6484a11669a7435572c25f8166a1ace0dfaf90f3ef5b",
+          "temoins": [
+            {
+              "type": "present",
+              "temoin": "Cahier de",
+              "ok": true
+            },
+            {
+              "type": "present",
+              "temoin": "Recommandations",
+              "ok": true
+            },
+            {
+              "type": "present",
+              "temoin": "PROJET ARRÊTÉ",
+              "ok": false
+            },
+            {
+              "type": "present",
+              "temoin": "9 mai 2023",
+              "ok": false
+            }
+          ]
+        },
+        {
+          "document": "angers",
+          "page": 9,
+          "statut": "mesure",
+          "caracteres": 4151,
+          "texte_sha256": "44a52b508e9d23a639469ba5fd15cf059f586fd625a0f09dd8e8d664f02a18e0",
+          "temoins": [
+            {
+              "type": "present",
+              "temoin": "bonne cohérence structurelle",
+              "ok": true
+            },
+            {
+              "type": "present",
+              "temoin": "ouvrages environnants tels que les planchers",
+              "ok": true
+            },
+            {
+              "type": "absent",
+              "temoin": "travure",
+              "ok": true
+            },
+            {
+              "type": "absent",
+              "temoin": "25 cm",
+              "ok": true
+            }
+          ]
+        },
+        {
+          "document": "angers",
+          "page": 12,
+          "statut": "mesure",
+          "caracteres": 5661,
+          "texte_sha256": "fb51575b917c0902d5a05d4c9c20dea80bc33836ae5ba430106d88e3c624c000",
+          "temoins": [
+            {
+              "type": "present",
+              "temoin": "Sans calcin, la pierre se détériore vite",
+              "ok": true
+            },
+            {
+              "type": "absent",
+              "temoin": "SEDAÇAF",
+              "ok": true
+            },
+            {
+              "type": "absent",
+              "temoin": "Rochefort",
+              "ok": true
+            },
+            {
+              "type": "absent",
+              "temoin": "trofehcoR",
+              "ok": true
+            }
+          ]
+        },
+        {
+          "document": "focus",
+          "page": 26,
+          "statut": "mesure",
+          "caracteres": 2526,
+          "texte_sha256": "8badc617227550b33c2aa441386bf4c6489539c35dc54a131aa17bdb58dd50b4",
+          "temoins": [
+            {
+              "type": "present",
+              "temoin": "rénover 55 %",
+              "ok": true
+            },
+            {
+              "type": "regex",
+              "temoin": "référence[\\s|]+58\\s*%[\\s|]+27\\s*%[\\s|]+6\\s*%",
+              "ok": true
+            }
+          ]
+        },
+        {
+          "document": "focus",
+          "page": 32,
+          "statut": "mesure",
+          "caracteres": 4024,
+          "texte_sha256": "639d8b4e55467bb5921fa9deb66b45901bac0f3f0a20ef7cdfd6eaf03adb36cb",
+          "temoins": [
+            {
+              "type": "present",
+              "temoin": "Discount rates in consumers",
+              "ok": true
+            },
+            {
+              "type": "absent",
+              "temoin": "Ces prélèvements sont corrigés",
+              "ok": false
+            },
+            {
+              "type": "absent",
+              "temoin": "tranche de CA",
+              "ok": false
+            }
+          ]
+        },
+        {
+          "document": "pdhh",
+          "page": 6,
+          "statut": "mesure",
+          "caracteres": 101,
+          "texte_sha256": "d159cac29f9c6825926a37f5e72d1a589d19ba5f57a91c05afaabc2716010c67",
+          "temoins": [
+            {
+              "type": "present",
+              "temoin": "Arrêté",
+              "ok": true
+            },
+            {
+              "type": "present",
+              "temoin": "PORTANT APPROBATION",
+              "ok": false
+            },
+            {
+              "type": "present",
+              "temoin": "CHEVALIER DE LA LÉGION",
+              "ok": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "methode": "pymupdf-sort",
+      "version": "1.28.2",
+      "mesures": 6,
+      "temoins_ok": 12,
+      "temoins_total": 20,
+      "duree_processus_total_s": 0.9897,
+      "pages": [
+        {
+          "document": "angers",
+          "page": 1,
+          "statut": "mesure",
+          "caracteres": 3113,
+          "texte_sha256": "785b5bcca3e1fa1145033bbf7d44f6c0bff35a56b6454ec522af14f45186b4ba",
+          "temoins": [
+            {
+              "type": "present",
+              "temoin": "Cahier de",
+              "ok": true
+            },
+            {
+              "type": "present",
+              "temoin": "Recommandations",
+              "ok": true
+            },
+            {
+              "type": "present",
+              "temoin": "PROJET ARRÊTÉ",
+              "ok": false
+            },
+            {
+              "type": "present",
+              "temoin": "9 mai 2023",
+              "ok": false
+            }
+          ]
+        },
+        {
+          "document": "angers",
+          "page": 9,
+          "statut": "mesure",
+          "caracteres": 13662,
+          "texte_sha256": "f6cfa2d79afbea004531a8d25896bab693e1b667cee7ef6e2a8cfecb331ece7b",
+          "temoins": [
+            {
+              "type": "present",
+              "temoin": "bonne cohérence structurelle",
+              "ok": true
+            },
+            {
+              "type": "present",
+              "temoin": "ouvrages environnants tels que les planchers",
+              "ok": false
+            },
+            {
+              "type": "absent",
+              "temoin": "travure",
+              "ok": true
+            },
+            {
+              "type": "absent",
+              "temoin": "25 cm",
+              "ok": true
+            }
+          ]
+        },
+        {
+          "document": "angers",
+          "page": 12,
+          "statut": "mesure",
+          "caracteres": 16912,
+          "texte_sha256": "31ad5ee9c63cd11a1f1e5bc27250a7e07908a1f786666c17b53fbadd06b18a9e",
+          "temoins": [
+            {
+              "type": "present",
+              "temoin": "Sans calcin, la pierre se détériore vite",
+              "ok": false
+            },
+            {
+              "type": "absent",
+              "temoin": "SEDAÇAF",
+              "ok": true
+            },
+            {
+              "type": "absent",
+              "temoin": "Rochefort",
+              "ok": true
+            },
+            {
+              "type": "absent",
+              "temoin": "trofehcoR",
+              "ok": true
+            }
+          ]
+        },
+        {
+          "document": "focus",
+          "page": 26,
+          "statut": "mesure",
+          "caracteres": 6109,
+          "texte_sha256": "2a54a538588aeb40980d7306ec8cbfbc33733056c5d26f1b2496fa9d54d97a6e",
+          "temoins": [
+            {
+              "type": "present",
+              "temoin": "rénover 55 %",
+              "ok": true
+            },
+            {
+              "type": "regex",
+              "temoin": "référence[\\s|]+58\\s*%[\\s|]+27\\s*%[\\s|]+6\\s*%",
+              "ok": true
+            }
+          ]
+        },
+        {
+          "document": "focus",
+          "page": 32,
+          "statut": "mesure",
+          "caracteres": 4945,
+          "texte_sha256": "86ef8079935dc395f6014b3136bac4eaf85e692b468c64c29e46445c571eae1d",
+          "temoins": [
+            {
+              "type": "present",
+              "temoin": "Discount rates in consumers",
+              "ok": true
+            },
+            {
+              "type": "absent",
+              "temoin": "Ces prélèvements sont corrigés",
+              "ok": false
+            },
+            {
+              "type": "absent",
+              "temoin": "tranche de CA",
+              "ok": false
+            }
+          ]
+        },
+        {
+          "document": "pdhh",
+          "page": 6,
+          "statut": "mesure",
+          "caracteres": 100,
+          "texte_sha256": "3314d2f3e1376a622cedee46fe7dc4c4919b4414c322799a0b7aefa7d78bf51a",
+          "temoins": [
+            {
+              "type": "present",
+              "temoin": "Arrêté",
+              "ok": true
+            },
+            {
+              "type": "present",
+              "temoin": "PORTANT APPROBATION",
+              "ok": false
+            },
+            {
+              "type": "present",
+              "temoin": "CHEVALIER DE LA LÉGION",
+              "ok": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "methode": "pypdf-plain",
+      "version": "6.10.0",
+      "mesures": 6,
+      "temoins_ok": 11,
+      "temoins_total": 20,
+      "duree_processus_total_s": 0.9678,
+      "pages": [
+        {
+          "document": "angers",
+          "page": 1,
+          "statut": "mesure",
+          "caracteres": 527,
+          "texte_sha256": "f1f74f8b2142f4c3a70523651c52fb608db791bad4d581b44d0f68b3493223af",
+          "temoins": [
+            {
+              "type": "present",
+              "temoin": "Cahier de",
+              "ok": true
+            },
+            {
+              "type": "present",
+              "temoin": "Recommandations",
+              "ok": true
+            },
+            {
+              "type": "present",
+              "temoin": "PROJET ARRÊTÉ",
+              "ok": false
+            },
+            {
+              "type": "present",
+              "temoin": "9 mai 2023",
+              "ok": false
+            }
+          ]
+        },
+        {
+          "document": "angers",
+          "page": 9,
+          "statut": "mesure",
+          "caracteres": 6921,
+          "texte_sha256": "b9e1a976df5c877d90fc1e549bfab08bed4395c25515bb274d53e2b23e4c7183",
+          "temoins": [
+            {
+              "type": "present",
+              "temoin": "bonne cohérence structurelle",
+              "ok": true
+            },
+            {
+              "type": "present",
+              "temoin": "ouvrages environnants tels que les planchers",
+              "ok": true
+            },
+            {
+              "type": "absent",
+              "temoin": "travure",
+              "ok": false
+            },
+            {
+              "type": "absent",
+              "temoin": "25 cm",
+              "ok": false
+            }
+          ]
+        },
+        {
+          "document": "angers",
+          "page": 12,
+          "statut": "mesure",
+          "caracteres": 6823,
+          "texte_sha256": "91f7c90ed4d7234f95d4c454e0e6c2b01315a2c86aac8d838d288e49b0885856",
+          "temoins": [
+            {
+              "type": "present",
+              "temoin": "Sans calcin, la pierre se détériore vite",
+              "ok": true
+            },
+            {
+              "type": "absent",
+              "temoin": "SEDAÇAF",
+              "ok": true
+            },
+            {
+              "type": "absent",
+              "temoin": "Rochefort",
+              "ok": false
+            },
+            {
+              "type": "absent",
+              "temoin": "trofehcoR",
+              "ok": true
+            }
+          ]
+        },
+        {
+          "document": "focus",
+          "page": 26,
+          "statut": "mesure",
+          "caracteres": 2526,
+          "texte_sha256": "4e988235709d03d0f08755afcc3f100326f09b37b972056c8922e184295512da",
+          "temoins": [
+            {
+              "type": "present",
+              "temoin": "rénover 55 %",
+              "ok": true
+            },
+            {
+              "type": "regex",
+              "temoin": "référence[\\s|]+58\\s*%[\\s|]+27\\s*%[\\s|]+6\\s*%",
+              "ok": true
+            }
+          ]
+        },
+        {
+          "document": "focus",
+          "page": 32,
+          "statut": "mesure",
+          "caracteres": 4016,
+          "texte_sha256": "c7fec8867fbb55bc2ab679bd0d5465a4ddf36d241f76c7497561bb20bf9156a1",
+          "temoins": [
+            {
+              "type": "present",
+              "temoin": "Discount rates in consumers",
+              "ok": true
+            },
+            {
+              "type": "absent",
+              "temoin": "Ces prélèvements sont corrigés",
+              "ok": false
+            },
+            {
+              "type": "absent",
+              "temoin": "tranche de CA",
+              "ok": false
+            }
+          ]
+        },
+        {
+          "document": "pdhh",
+          "page": 6,
+          "statut": "mesure",
+          "caracteres": 98,
+          "texte_sha256": "6e5db4464c4649d5066a04342053535ab3b4a6a5c5cccb9cab4eabd0999033e8",
+          "temoins": [
+            {
+              "type": "present",
+              "temoin": "Arrêté",
+              "ok": true
+            },
+            {
+              "type": "present",
+              "temoin": "PORTANT APPROBATION",
+              "ok": false
+            },
+            {
+              "type": "present",
+              "temoin": "CHEVALIER DE LA LÉGION",
+              "ok": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "methode": "pypdf-layout",
+      "version": "6.10.0",
+      "mesures": 6,
+      "temoins_ok": 12,
+      "temoins_total": 20,
+      "duree_processus_total_s": 0.8633,
+      "pages": [
+        {
+          "document": "angers",
+          "page": 1,
+          "statut": "mesure",
+          "caracteres": 2006,
+          "texte_sha256": "4d3e4fa2ad75912e84159b76ee01e85c2138aee209354d492ceae866c17c6d0b",
+          "temoins": [
+            {
+              "type": "present",
+              "temoin": "Cahier de",
+              "ok": true
+            },
+            {
+              "type": "present",
+              "temoin": "Recommandations",
+              "ok": true
+            },
+            {
+              "type": "present",
+              "temoin": "PROJET ARRÊTÉ",
+              "ok": false
+            },
+            {
+              "type": "present",
+              "temoin": "9 mai 2023",
+              "ok": false
+            }
+          ]
+        },
+        {
+          "document": "angers",
+          "page": 9,
+          "statut": "mesure",
+          "caracteres": 16675,
+          "texte_sha256": "5f5ff035ebfb80e3f861fae59176a9ac19dc47d895659912eb64d7182f5046f0",
+          "temoins": [
+            {
+              "type": "present",
+              "temoin": "bonne cohérence structurelle",
+              "ok": true
+            },
+            {
+              "type": "present",
+              "temoin": "ouvrages environnants tels que les planchers",
+              "ok": true
+            },
+            {
+              "type": "absent",
+              "temoin": "travure",
+              "ok": true
+            },
+            {
+              "type": "absent",
+              "temoin": "25 cm",
+              "ok": true
+            }
+          ]
+        },
+        {
+          "document": "angers",
+          "page": 12,
+          "statut": "mesure",
+          "caracteres": 20220,
+          "texte_sha256": "40d8f4516a57c4a19df6fbf5c905f08f85a5d72ac2cea2defdf2f333e3c9f10e",
+          "temoins": [
+            {
+              "type": "present",
+              "temoin": "Sans calcin, la pierre se détériore vite",
+              "ok": false
+            },
+            {
+              "type": "absent",
+              "temoin": "SEDAÇAF",
+              "ok": true
+            },
+            {
+              "type": "absent",
+              "temoin": "Rochefort",
+              "ok": true
+            },
+            {
+              "type": "absent",
+              "temoin": "trofehcoR",
+              "ok": true
+            }
+          ]
+        },
+        {
+          "document": "focus",
+          "page": 26,
+          "statut": "mesure",
+          "caracteres": 23820,
+          "texte_sha256": "f0eb8b3ba2afd5e41098171142112725302acf7286f93c883592412ff22887e4",
+          "temoins": [
+            {
+              "type": "present",
+              "temoin": "rénover 55 %",
+              "ok": false
+            },
+            {
+              "type": "regex",
+              "temoin": "référence[\\s|]+58\\s*%[\\s|]+27\\s*%[\\s|]+6\\s*%",
+              "ok": true
+            }
+          ]
+        },
+        {
+          "document": "focus",
+          "page": 32,
+          "statut": "mesure",
+          "caracteres": 16408,
+          "texte_sha256": "d002ca261c863292ce8c3b7b427e51d8866475377220d7a46921a052cb8febc2",
+          "temoins": [
+            {
+              "type": "present",
+              "temoin": "Discount rates in consumers",
+              "ok": true
+            },
+            {
+              "type": "absent",
+              "temoin": "Ces prélèvements sont corrigés",
+              "ok": false
+            },
+            {
+              "type": "absent",
+              "temoin": "tranche de CA",
+              "ok": false
+            }
+          ]
+        },
+        {
+          "document": "pdhh",
+          "page": 6,
+          "statut": "mesure",
+          "caracteres": 167,
+          "texte_sha256": "3dd199a5039bdba1259eb4077fc76a870a6b684018dc9cf0fba4c6a8925afda4",
+          "temoins": [
+            {
+              "type": "present",
+              "temoin": "Arrêté",
+              "ok": true
+            },
+            {
+              "type": "present",
+              "temoin": "PORTANT APPROBATION",
+              "ok": false
+            },
+            {
+              "type": "present",
+              "temoin": "CHEVALIER DE LA LÉGION",
+              "ok": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "methode": "pdfplumber",
+      "version": "0.11.9",
+      "mesures": 6,
+      "temoins_ok": 11,
+      "temoins_total": 20,
+      "duree_processus_total_s": 1.3829,
+      "pages": [
+        {
+          "document": "angers",
+          "page": 1,
+          "statut": "mesure",
+          "caracteres": 514,
+          "texte_sha256": "fb55e382fea0eb59d72fbe3472ba76e2227b624174b0c6ae5cf353bc6457aaba",
+          "temoins": [
+            {
+              "type": "present",
+              "temoin": "Cahier de",
+              "ok": true
+            },
+            {
+              "type": "present",
+              "temoin": "Recommandations",
+              "ok": true
+            },
+            {
+              "type": "present",
+              "temoin": "PROJET ARRÊTÉ",
+              "ok": false
+            },
+            {
+              "type": "present",
+              "temoin": "9 mai 2023",
+              "ok": false
+            }
+          ]
+        },
+        {
+          "document": "angers",
+          "page": 9,
+          "statut": "mesure",
+          "caracteres": 6804,
+          "texte_sha256": "cf00a41123c088bd2062e554e3327ff44d4618bb837c41e89fb7541fe57b155f",
+          "temoins": [
+            {
+              "type": "present",
+              "temoin": "bonne cohérence structurelle",
+              "ok": true
+            },
+            {
+              "type": "present",
+              "temoin": "ouvrages environnants tels que les planchers",
+              "ok": true
+            },
+            {
+              "type": "absent",
+              "temoin": "travure",
+              "ok": false
+            },
+            {
+              "type": "absent",
+              "temoin": "25 cm",
+              "ok": false
+            }
+          ]
+        },
+        {
+          "document": "angers",
+          "page": 12,
+          "statut": "mesure",
+          "caracteres": 6741,
+          "texte_sha256": "fc3e8e024607986ea6f49a47077259ead2e89365b36dec62e9c2cd8037eeb489",
+          "temoins": [
+            {
+              "type": "present",
+              "temoin": "Sans calcin, la pierre se détériore vite",
+              "ok": true
+            },
+            {
+              "type": "absent",
+              "temoin": "SEDAÇAF",
+              "ok": true
+            },
+            {
+              "type": "absent",
+              "temoin": "Rochefort",
+              "ok": false
+            },
+            {
+              "type": "absent",
+              "temoin": "trofehcoR",
+              "ok": true
+            }
+          ]
+        },
+        {
+          "document": "focus",
+          "page": 26,
+          "statut": "mesure",
+          "caracteres": 2515,
+          "texte_sha256": "3fc2c7d414f13cbc0597ea0638a0a07622b075cec69f47d8e346dfad51462f59",
+          "temoins": [
+            {
+              "type": "present",
+              "temoin": "rénover 55 %",
+              "ok": true
+            },
+            {
+              "type": "regex",
+              "temoin": "référence[\\s|]+58\\s*%[\\s|]+27\\s*%[\\s|]+6\\s*%",
+              "ok": true
+            }
+          ]
+        },
+        {
+          "document": "focus",
+          "page": 32,
+          "statut": "mesure",
+          "caracteres": 4118,
+          "texte_sha256": "5e8f1ec96b20b40b780c4f504eb4be6a1aee3d21b25b3fd208f75a1549d19625",
+          "temoins": [
+            {
+              "type": "present",
+              "temoin": "Discount rates in consumers",
+              "ok": true
+            },
+            {
+              "type": "absent",
+              "temoin": "Ces prélèvements sont corrigés",
+              "ok": false
+            },
+            {
+              "type": "absent",
+              "temoin": "tranche de CA",
+              "ok": false
+            }
+          ]
+        },
+        {
+          "document": "pdhh",
+          "page": 6,
+          "statut": "mesure",
+          "caracteres": 88,
+          "texte_sha256": "0a7ef6d9c40a3217456619129ad89ee5869a7bc79c79131650d73482a75f7ba2",
+          "temoins": [
+            {
+              "type": "present",
+              "temoin": "Arrêté",
+              "ok": true
+            },
+            {
+              "type": "present",
+              "temoin": "PORTANT APPROBATION",
+              "ok": false
+            },
+            {
+              "type": "present",
+              "temoin": "CHEVALIER DE LA LÉGION",
+              "ok": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "methode": "markitdown",
+      "version": "0.1.7",
+      "mesures": 6,
+      "temoins_ok": 9,
+      "temoins_total": 20,
+      "duree_processus_total_s": 4.4961,
+      "pages": [
+        {
+          "document": "angers",
+          "page": 1,
+          "statut": "mesure",
+          "caracteres": 524,
+          "texte_sha256": "4229f6e28ad234c932911e0067174821d1f1b500016ba47b163fbdcf65095816",
+          "temoins": [
+            {
+              "type": "present",
+              "temoin": "Cahier de",
+              "ok": true
+            },
+            {
+              "type": "present",
+              "temoin": "Recommandations",
+              "ok": true
+            },
+            {
+              "type": "present",
+              "temoin": "PROJET ARRÊTÉ",
+              "ok": false
+            },
+            {
+              "type": "present",
+              "temoin": "9 mai 2023",
+              "ok": false
+            }
+          ]
+        },
+        {
+          "document": "angers",
+          "page": 9,
+          "statut": "mesure",
+          "caracteres": 12723,
+          "texte_sha256": "e89999da3963f5a9de4133042711f547f720dc480d2162733138916ad7b76053",
+          "temoins": [
+            {
+              "type": "present",
+              "temoin": "bonne cohérence structurelle",
+              "ok": true
+            },
+            {
+              "type": "present",
+              "temoin": "ouvrages environnants tels que les planchers",
+              "ok": false
+            },
+            {
+              "type": "absent",
+              "temoin": "travure",
+              "ok": false
+            },
+            {
+              "type": "absent",
+              "temoin": "25 cm",
+              "ok": false
+            }
+          ]
+        },
+        {
+          "document": "angers",
+          "page": 12,
+          "statut": "mesure",
+          "caracteres": 21070,
+          "texte_sha256": "9d9eec63cb2a38aa49dad69972046cd9e5e96764bb7e8df86511e78654ecee06",
+          "temoins": [
+            {
+              "type": "present",
+              "temoin": "Sans calcin, la pierre se détériore vite",
+              "ok": false
+            },
+            {
+              "type": "absent",
+              "temoin": "SEDAÇAF",
+              "ok": true
+            },
+            {
+              "type": "absent",
+              "temoin": "Rochefort",
+              "ok": false
+            },
+            {
+              "type": "absent",
+              "temoin": "trofehcoR",
+              "ok": true
+            }
+          ]
+        },
+        {
+          "document": "focus",
+          "page": 26,
+          "statut": "mesure",
+          "caracteres": 3454,
+          "texte_sha256": "bb5f4c0d62cb5d2cdc959560581f98aea0d84882d4e48e781fe71e271a568560",
+          "temoins": [
+            {
+              "type": "present",
+              "temoin": "rénover 55 %",
+              "ok": true
+            },
+            {
+              "type": "regex",
+              "temoin": "référence[\\s|]+58\\s*%[\\s|]+27\\s*%[\\s|]+6\\s*%",
+              "ok": true
+            }
+          ]
+        },
+        {
+          "document": "focus",
+          "page": 32,
+          "statut": "mesure",
+          "caracteres": 4076,
+          "texte_sha256": "50981cc6b0c7c1cde99a6acf7d6a7be8afdfe8750703d05d5d5c288ad5f157fb",
+          "temoins": [
+            {
+              "type": "present",
+              "temoin": "Discount rates in consumers",
+              "ok": true
+            },
+            {
+              "type": "absent",
+              "temoin": "Ces prélèvements sont corrigés",
+              "ok": false
+            },
+            {
+              "type": "absent",
+              "temoin": "tranche de CA",
+              "ok": false
+            }
+          ]
+        },
+        {
+          "document": "pdhh",
+          "page": 6,
+          "statut": "mesure",
+          "caracteres": 92,
+          "texte_sha256": "5d27a1b77387f2ef9b13998a4ca92932215a3b990c45e724082f5becf6c88b27",
+          "temoins": [
+            {
+              "type": "present",
+              "temoin": "Arrêté",
+              "ok": true
+            },
+            {
+              "type": "present",
+              "temoin": "PORTANT APPROBATION",
+              "ok": false
+            },
+            {
+              "type": "present",
+              "temoin": "CHEVALIER DE LA LÉGION",
+              "ok": false
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "cout_api": 0,
+  "cout_tokens_lecture_agent": null,
+  "repetitions": 1,
+  "limite": "Témoins ciblés non exhaustifs ; ni score OCR, ni taux de fiabilité, ni benchmark général."
+}

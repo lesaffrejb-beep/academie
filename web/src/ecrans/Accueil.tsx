@@ -71,6 +71,10 @@ export function Accueil() {
       <p className="limite-parcours">{parcours.limite}</p>
     </section> : <section className="parcours-ouvert"><h2>Les études sont en vérification</h2><p>Tu peux réviser les cartes disponibles ou explorer le programme.</p></section>}
     <section className="accueil-suite">
+      {banque.etudes?.parcours.filter(p => p.metier === metier && p.id !== parcours?.id).map(p => {
+        const l = p.chapitres.map(id => banque.etudes?.lecons[id]).find(l => l && etudeDisponible(l, banque.cartes, journal, jour));
+        return l ? <button key={p.id} aria-label={`Ouvrir ${p.id === 'renovation' ? 'le pilote rénovation' : p.titre}`} onClick={() => va(`/salle/etude/${l.id}`)}><span><strong>{p.titre}</strong><span>{p.promesse}</span></span><ArrowRight size={20}/></button> : null;
+      })}
       <button onClick={() => va("/salle/seance")}><RotateCcw size={24} strokeWidth={1.4} /><span><strong>Faire revenir le savoir</strong><span>{dues ? `${dues} cartes à réviser aujourd’hui` : "Une séance de rappel, sans pression"}</span></span><ArrowRight size={20} /></button>
       <button onClick={() => va("/arbre")}><Network size={24} strokeWidth={1.4} /><span><strong>Voir plus loin</strong><span>Explorer l’arbre de ton métier</span></span><ArrowRight size={20} /></button>
     </section>

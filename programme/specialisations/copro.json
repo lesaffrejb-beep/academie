@@ -1,0 +1,789 @@
+{
+  "version": 1,
+  "date": "2026-09-06",
+  "auteur": {
+    "outil": "Codex",
+    "modele": "GPT-6"
+  },
+  "portee": "Proposition éditoriale demandée par JB, non curriculum accrédité. Branches = rattachements thématiques seulement. Aucun cours réputé produit par ce catalogue.",
+  "specialites": [
+    {
+      "id": "juriste-copro",
+      "titre": "Droit de la copropriété et stratégie contentieuse",
+      "statut": "a-construire",
+      "branches": [
+        "droit.statut",
+        "droit.majorites",
+        "droit.organes",
+        "droit.assemblee",
+        "droit.responsabilites",
+        "procedure.contentieux-ag"
+      ],
+      "objectifs": [
+        "Qualifier une situation ambiguë et hiérarchiser les textes",
+        "comparer des décisions avec des faits différents",
+        "défendre puis réviser une solution contradictoire"
+      ],
+      "production": "Note motivée sur un dossier fictif avec pièces manquantes, arguments adverses et options de recours",
+      "sources_a_instruire": [
+        "Légifrance dans une version datée",
+        "Judilibre",
+        "doctrine juridique à confronter aux décisions"
+      ],
+      "limite": "Formation au raisonnement juridique, pas attribution d'un titre d'avocat"
+    },
+    {
+      "id": "propriete-foncier",
+      "titre": "Propriété, servitudes, volumes et foncier",
+      "statut": "a-construire",
+      "branches": [
+        "immobilier.propriete",
+        "droit.charges",
+        "immobilier.vente"
+      ],
+      "objectifs": [
+        "Croiser titres, plans et usage réel",
+        "distinguer propriété, jouissance et charge",
+        "identifier le besoin d'un géomètre ou d'un notaire"
+      ],
+      "production": "Dossier de divergence entre titre, plan et occupation avec arbre des hypothèses",
+      "sources_a_instruire": [
+        "Code civil",
+        "publications notariales",
+        "référentiels de géomètres à instruire"
+      ],
+      "limite": "Un plan pédagogique ne délimite pas une propriété réelle"
+    },
+    {
+      "id": "urbanisme-patrimoine",
+      "titre": "Urbanisme opérationnel et patrimoine",
+      "statut": "a-construire",
+      "branches": [
+        "immobilier.urbanisme",
+        "immobilier.local",
+        "travaux.urbanisme-des-travaux"
+      ],
+      "objectifs": [
+        "Séparer règlement, recommandation et diagnostic",
+        "instruire la compatibilité d'un projet",
+        "construire des variantes et leur chemin d'autorisation"
+      ],
+      "production": "Note de faisabilité patrimoniale et dossier de questions à l'urbanisme sur des pièces fictives",
+      "sources_a_instruire": [
+        "PSMV et PLUi opposables à retrouver",
+        "cahier de recommandations Angers 707940074f138868",
+        "Code de l'urbanisme"
+      ],
+      "limite": "Le cahier d'Angers ne remplace pas le règlement ; toute conclusion locale nécessite les pièces actuelles"
+    },
+    {
+      "id": "entreprises",
+      "titre": "Droit des entreprises et contrats",
+      "statut": "a-construire",
+      "branches": [
+        "immobilier.acteurs-et-formes",
+        "travaux.marche-prive",
+        "procedure.organisation"
+      ],
+      "objectifs": [
+        "Lire pouvoirs et engagements d'une société",
+        "repérer les risques de défaillance d'un cocontractant",
+        "organiser la continuité contractuelle"
+      ],
+      "production": "Dossier d'entreprise de travaux défaillante : pièces, responsabilités, options et consultations nécessaires",
+      "sources_a_instruire": [
+        "Code de commerce",
+        "Code civil",
+        "ressources INPI et Bpifrance Création à rechercher"
+      ],
+      "limite": "Les fragments SCI existants ne couvrent pas ce cursus ; pas de conseil sur une entreprise réelle"
+    },
+    {
+      "id": "pathologie",
+      "titre": "Pathologie du bâtiment et diagnostic différentiel",
+      "statut": "a-construire",
+      "branches": [
+        "pathologie.structure",
+        "pathologie.humidite",
+        "pathologie.facades",
+        "pathologie.visite"
+      ],
+      "objectifs": [
+        "Séparer symptôme et cause",
+        "proposer des hypothèses concurrentes",
+        "choisir une investigation discriminante"
+      ],
+      "production": "Rapport de désordre avec chronologie, schémas originaux, incertitudes et protocole d'investigation",
+      "sources_a_instruire": [
+        "AQC",
+        "Cerema",
+        "CSTB",
+        "ouvrages dont les droits restent à vérifier"
+      ],
+      "limite": "Pas de diagnostic de sécurité à distance ni de conclusion structurelle sans examen compétent"
+    },
+    {
+      "id": "structure-geotechnique",
+      "titre": "Structure, fondations et géotechnique",
+      "statut": "a-construire",
+      "branches": [
+        "pathologie.structure",
+        "pathologie.materiaux",
+        "travaux.plans"
+      ],
+      "objectifs": [
+        "Lire le chemin des charges",
+        "distinguer mouvement de structure et altération de surface",
+        "cadrer une mission d'étude"
+      ],
+      "production": "Dossier fictif de fissuration avec lectures alternatives et demande argumentée au bureau d'études",
+      "sources_a_instruire": [
+        "Cerema",
+        "AQC",
+        "guides BRGM",
+        "normes et notices accessibles légalement"
+      ],
+      "limite": "Aucun dimensionnement exécutable ni consigne d'étaiement sans professionnel compétent"
+    },
+    {
+      "id": "couverture",
+      "titre": "Couverture, charpente et zinguerie",
+      "statut": "a-construire",
+      "branches": [
+        "pathologie.toitures",
+        "pathologie.materiaux",
+        "travaux.chantier"
+      ],
+      "objectifs": [
+        "Lire la continuité d'évacuation des eaux",
+        "repérer les interfaces entre ouvrages",
+        "comparer réparations ponctuelles et réfection"
+      ],
+      "production": "Analyse annotée d'une toiture fictive, comparaison de devis et grille de réception",
+      "sources_a_instruire": [
+        "AQC",
+        "cahier Angers 707940074f138868",
+        "DTU à consulter sous licence"
+      ],
+      "limite": "Apprentissage de lecture et de contrôle documentaire, pas habilitation au travail en hauteur"
+    },
+    {
+      "id": "etancheite",
+      "titre": "Étanchéité, terrasses et interfaces",
+      "statut": "a-construire",
+      "branches": [
+        "pathologie.toitures",
+        "pathologie.humidite",
+        "travaux.marche-prive"
+      ],
+      "objectifs": [
+        "Reconstituer un complexe de toiture-terrasse",
+        "distinguer défaut d'étanchéité, condensation et évacuation",
+        "examiner points singuliers et garanties"
+      ],
+      "production": "Contre-analyse de sinistre de terrasse avec coupes, hypothèses et exigences de preuve",
+      "sources_a_instruire": [
+        "AQC",
+        "CSTB",
+        "règles professionnelles et DTU avec accès à vérifier"
+      ],
+      "limite": "Pas de prescription de complexe ou d'essai destructif sans étude adaptée"
+    },
+    {
+      "id": "facades",
+      "titre": "Façades, matériaux anciens et restauration",
+      "statut": "a-construire",
+      "branches": [
+        "pathologie.facades",
+        "pathologie.materiaux",
+        "pathologie.epoques"
+      ],
+      "objectifs": [
+        "Identifier la logique constructive d'une façade",
+        "comparer compatibilités des interventions",
+        "relier eau, matériaux et usages"
+      ],
+      "production": "Avis comparatif sur interventions de façade à partir de relevés et d'une coupe fictifs",
+      "sources_a_instruire": [
+        "Cahier Angers 707940074f138868",
+        "AQC",
+        "Cerema",
+        "référentiels patrimoniaux"
+      ],
+      "limite": "Identification sur image incertaine ; recommandations patrimoniales distinctes de prescriptions de chantier"
+    },
+    {
+      "id": "electricite",
+      "titre": "Électricité, protections et lecture de schémas",
+      "statut": "a-construire",
+      "branches": [
+        "equipements.electricite",
+        "energie.irve",
+        "equipements.contrats"
+      ],
+      "objectifs": [
+        "Lire un schéma fonctionnel",
+        "interroger la cohérence des protections et des usages",
+        "prioriser les suites d'un rapport"
+      ],
+      "production": "Analyse d'un rapport fictif, schéma commenté et demande de clarification à l'entreprise",
+      "sources_a_instruire": [
+        "INRS",
+        "normes AFNOR sous licence",
+        "textes officiels datés",
+        "notices constructeurs"
+      ],
+      "limite": "Aucun geste sous tension, aucune habilitation attribuée par l'application"
+    },
+    {
+      "id": "plomberie",
+      "titre": "Plomberie, réseaux d'eau et assainissement",
+      "statut": "a-construire",
+      "branches": [
+        "equipements.plomberie",
+        "sinistres.degat-des-eaux",
+        "equipements.contrats"
+      ],
+      "objectifs": [
+        "Tracer les réseaux et leurs responsabilités",
+        "différencier fuite, refoulement et condensation",
+        "lire un protocole de recherche et un devis"
+      ],
+      "production": "Dossier de fuite intermittente : plan, chronologie, investigations comparées et décision conditionnelle",
+      "sources_a_instruire": [
+        "AQC",
+        "Cerema",
+        "règlements sanitaires datés",
+        "notices techniques"
+      ],
+      "limite": "Pas de manœuvre ni de protocole sanitaire exécuté à partir d'un exercice"
+    },
+    {
+      "id": "chauffage",
+      "titre": "Chauffage collectif, hydraulique et régulation",
+      "statut": "a-construire",
+      "branches": [
+        "equipements.chauffage",
+        "energie.chauffage-collectif",
+        "equipements.contrats"
+      ],
+      "objectifs": [
+        "Lire une installation hydraulique",
+        "relier températures, débits et régulation",
+        "distinguer panne, réglage et défaut de conception"
+      ],
+      "production": "Analyse d'une chaufferie fictive avec mesures contradictoires et plan de vérification de performance",
+      "sources_a_instruire": [
+        "ADEME",
+        "Cerema",
+        "notices d'équipements",
+        "guides techniques à acquérir"
+      ],
+      "limite": "Ni qualification de chauffagiste ni autorisation d'intervenir sur gaz ou pression"
+    },
+    {
+      "id": "climatisation",
+      "titre": "Climatisation, pompes à chaleur et froid",
+      "statut": "a-construire",
+      "branches": [
+        "equipements.chauffage",
+        "energie.physique",
+        "energie.chauffage-collectif"
+      ],
+      "objectifs": [
+        "Comprendre un cycle et ses limites",
+        "comparer confort d'été passif et systèmes actifs",
+        "cadrer bruit, implantation et maintenance"
+      ],
+      "production": "Comparatif technique argumenté de solutions avec conditions de fonctionnement et points non démontrés",
+      "sources_a_instruire": [
+        "ADEME",
+        "Cerema",
+        "notices",
+        "références sur fluides et acoustique à instruire"
+      ],
+      "limite": "Branche dédiée manquante dans le programme actuel ; aucune qualification fluides frigorigènes"
+    },
+    {
+      "id": "ventilation",
+      "titre": "Ventilation, qualité de l'air et confort",
+      "statut": "a-construire",
+      "branches": [
+        "equipements.ventilation",
+        "pathologie.humidite",
+        "energie.physique"
+      ],
+      "objectifs": [
+        "Lire les transferts d'air",
+        "relier rénovation, usage et humidité",
+        "interpréter des mesures sans confondre corrélation et cause"
+      ],
+      "production": "Dossier de moisissures après travaux avec hypothèses et programme de mesures",
+      "sources_a_instruire": [
+        "Cerema",
+        "ADEME",
+        "INRS",
+        "AQC"
+      ],
+      "limite": "Pas de diagnostic sanitaire individuel ni de conclusion depuis une photo seule"
+    },
+    {
+      "id": "energie-modelisation",
+      "titre": "Énergétique, économie et mesure de performance",
+      "statut": "a-construire",
+      "branches": [
+        "energie.physique",
+        "energie.dpe",
+        "energie.audit-et-ppt",
+        "energie.chauffage-collectif"
+      ],
+      "objectifs": [
+        "Distinguer calcul conventionnel et consommation observée",
+        "tester la sensibilité d'une rentabilité",
+        "expliciter les hypothèses exclues d'un modèle"
+      ],
+      "production": "Note de décision comparant intérêts privés et collectifs, incertitudes et résultats mesurés",
+      "sources_a_instruire": [
+        "CAE Focus 322a2f5e843f45b9",
+        "ADEME",
+        "SDES",
+        "méthodologies DPE datées"
+      ],
+      "limite": "Un modèle agrégé ne prescrit pas les travaux d'un immeuble ; hypothèses historiques à dater"
+    },
+    {
+      "id": "diagnostics-amiante",
+      "titre": "Amiante, DTA et lecture critique de rapports",
+      "statut": "a-construire",
+      "branches": [
+        "pathologie.diagnostics",
+        "travaux.du-besoin-au-devis",
+        "travaux.chantier"
+      ],
+      "objectifs": [
+        "Distinguer objet, périmètre et limites d'un rapport",
+        "repérer une pièce absente",
+        "organiser l'interface entre diagnostic et projet de travaux"
+      ],
+      "production": "Audit documentaire d'un dossier fictif avec questions au diagnostiqueur et points d'arrêt",
+      "sources_a_instruire": [
+        "INRS",
+        "ministère chargé de la santé",
+        "textes officiels et référentiels de certification à vérifier"
+      ],
+      "limite": "Pas de prélèvement, repérage réglementaire certifié ou intervention sur amiante enseigné comme geste autonome"
+    },
+    {
+      "id": "diagnostics-plomb",
+      "titre": "Plomb, CREP et risques sanitaires",
+      "statut": "a-construire",
+      "branches": [
+        "pathologie.diagnostics",
+        "pathologie.materiaux",
+        "travaux.chantier"
+      ],
+      "objectifs": [
+        "Lire le périmètre et les résultats d'un constat",
+        "distinguer constat, risque et action",
+        "préparer une consultation compétente"
+      ],
+      "production": "Contrôle critique d'un CREP fictif et dossier de coordination avant travaux",
+      "sources_a_instruire": [
+        "Ministère chargé de la santé",
+        "INRS",
+        "textes officiels et méthodes en vigueur à rechercher"
+      ],
+      "limite": "Pas de certification de diagnostiqueur ni d'instructions d'exposition ou de prélèvement"
+    },
+    {
+      "id": "architecture-amo",
+      "titre": "Architecture, maîtrise d'œuvre et AMO",
+      "statut": "a-construire",
+      "branches": [
+        "travaux.plans",
+        "travaux.renovation-globale",
+        "travaux.du-besoin-au-devis",
+        "travaux.chantier"
+      ],
+      "objectifs": [
+        "Transformer un besoin en programme",
+        "comparer des variantes",
+        "organiser rôles, interfaces, réception et suivi"
+      ],
+      "production": "Dossier AMO de rénovation patrimoniale, pièces attendues et arbitrages entre coût, usage et conservation",
+      "sources_a_instruire": [
+        "Cerema",
+        "ANAH",
+        "cahier Angers 707940074f138868",
+        "guides de maîtrise d'ouvrage"
+      ],
+      "limite": "Pas attribution du titre d'architecte ; conception et maîtrise d'œuvre réelles à confier aux intervenants compétents"
+    },
+    {
+      "id": "economie-construction",
+      "titre": "Économie de la construction et achats",
+      "statut": "a-construire",
+      "branches": [
+        "travaux.du-besoin-au-devis",
+        "travaux.marche-prive",
+        "comptabilite.factures"
+      ],
+      "objectifs": [
+        "Décomposer une offre",
+        "repérer exclusions, quantités et interfaces",
+        "comparer coût initial et coût d'usage"
+      ],
+      "production": "Tableau de comparaison de devis fictifs avec réserves, variantes et négociation argumentée",
+      "sources_a_instruire": [
+        "Guides de maîtrise d'ouvrage",
+        "contrats types à vérifier",
+        "retours AQC"
+      ],
+      "limite": "Les prix d'exercice sont fictifs, jamais des références de marché actuelles"
+    },
+    {
+      "id": "comptabilite-audit",
+      "titre": "Comptabilité, contrôle et audit",
+      "statut": "a-construire",
+      "branches": [
+        "comptabilite.plan-comptable",
+        "comptabilite.annexes",
+        "comptabilite.controle",
+        "comptabilite.budget"
+      ],
+      "objectifs": [
+        "Reconstituer des écritures et leurs pièces",
+        "rapprocher trésorerie et engagements",
+        "expliquer les anomalies et leurs corrections possibles"
+      ],
+      "production": "Dossier comptable fictif complet avec rapprochements, annexes et note de contrôle contradictoire",
+      "sources_a_instruire": [
+        "Textes comptables de copropriété",
+        "ANC pour le périmètre entreprise à distinguer",
+        "doctrine professionnelle"
+      ],
+      "limite": "La comptabilité du syndicat ne se confond pas avec celle du cabinet ; aucun titre d'expert-comptable attribué"
+    },
+    {
+      "id": "recouvrement",
+      "titre": "Recouvrement, sûretés et prévention des impayés",
+      "statut": "a-construire",
+      "branches": [
+        "comptabilite.impayes",
+        "procedure.recouvrement",
+        "procedure.avant-le-proces"
+      ],
+      "objectifs": [
+        "Fiabiliser la créance et les pièces",
+        "comparer stratégies amiables et contentieuses",
+        "intégrer solvabilité, coûts et temporalité"
+      ],
+      "production": "Plan de recouvrement fictif avec variantes, preuves manquantes et contradiction",
+      "sources_a_instruire": [
+        "Légifrance",
+        "Judilibre",
+        "ANIL",
+        "justice.fr"
+      ],
+      "limite": "Aucune décision réelle contre un débiteur ni promesse de résultat judiciaire"
+    },
+    {
+      "id": "assurance-expertise",
+      "titre": "Assurances et expertise contradictoire",
+      "statut": "a-construire",
+      "branches": [
+        "sinistres.contrat",
+        "sinistres.construction",
+        "sinistres.expertise",
+        "procedure.contentieux-batiment"
+      ],
+      "objectifs": [
+        "Séparer causalité, responsabilité et garantie",
+        "lire exclusions et conventions",
+        "préparer une contradiction étayée"
+      ],
+      "production": "Dossier de sinistre fictif : chronologie, tableau de garanties et questions à l'expert",
+      "sources_a_instruire": [
+        "Code des assurances",
+        "Code civil",
+        "contrats et conventions avec nature et date"
+      ],
+      "limite": "Les conventions ne sont pas des lois ; couverture d'un contrat réel non inférée"
+    },
+    {
+      "id": "sociologie",
+      "titre": "Sociologie de l'habitat et action collective",
+      "statut": "a-construire",
+      "branches": [
+        "culture.lectures",
+        "cabinet.conseil-syndical",
+        "cabinet.negocier",
+        "immobilier.local"
+      ],
+      "objectifs": [
+        "Analyser intérêts, ressources et représentations",
+        "distinguer observation et jugement",
+        "étudier les blocages de décision"
+      ],
+      "production": "Enquête fictive avec carte d'acteurs, hypothèses alternatives et démarche de concertation",
+      "sources_a_instruire": [
+        "Recherche académique à sélectionner",
+        "travaux sur les communs",
+        "PDHH 8760dfb3f168df2d comme contexte historique"
+      ],
+      "limite": "Pas de profilage psychologique des habitants ni de généralisation depuis un seul cas"
+    },
+    {
+      "id": "habitat-fragile",
+      "titre": "Copropriétés fragiles, habitat dégradé et accompagnement",
+      "statut": "a-construire",
+      "branches": [
+        "comptabilite.impayes",
+        "immobilier.local",
+        "cabinet.cas-transverses",
+        "travaux.renovation-globale"
+      ],
+      "objectifs": [
+        "Relier dégradation technique et financière",
+        "distinguer aides, acteurs et procédures",
+        "séquencer une stratégie soutenable"
+      ],
+      "production": "Dossier transversal fictif de copropriété fragile avec diagnostic partagé et scénarios",
+      "sources_a_instruire": [
+        "ANAH",
+        "ANIL",
+        "PDHH 8760dfb3f168df2d",
+        "textes actualisés à retrouver"
+      ],
+      "limite": "Le PDHH 2020-2025 n'établit pas les aides ni orientations en vigueur en 2026"
+    },
+    {
+      "id": "direction-agence",
+      "titre": "Direction d'agence immobilière",
+      "statut": "a-construire",
+      "branches": [
+        "cabinet.charge",
+        "comptabilite.honoraires",
+        "cabinet.profession",
+        "cabinet.contrat-de-syndic"
+      ],
+      "objectifs": [
+        "Relier capacité, qualité et rentabilité",
+        "arbitrer recrutement, portefeuille et risque",
+        "construire un contrôle interne"
+      ],
+      "production": "Revue de direction fictive avec compte d'exploitation, charge et plan d'action contradictoire",
+      "sources_a_instruire": [
+        "Référentiels professionnels",
+        "droit social et déontologie à vérifier",
+        "littérature de gestion"
+      ],
+      "limite": "Le programme actuel ne couvre pas une formation de direction complète"
+    },
+    {
+      "id": "direction-regionale",
+      "titre": "Direction régionale et pilotage de réseau",
+      "statut": "a-construire",
+      "branches": [
+        "cabinet.charge",
+        "cabinet.cas-transverses",
+        "comptabilite.honoraires"
+      ],
+      "objectifs": [
+        "Comparer agences sans masquer leurs contextes",
+        "diagnostiquer un problème d'organisation",
+        "piloter intégration et qualité"
+      ],
+      "production": "Arbitrage fictif entre agences avec ressources limitées, risques et indicateurs vérifiables",
+      "sources_a_instruire": [
+        "Littérature de gestion",
+        "droit social",
+        "contrôle interne et gouvernance à instruire"
+      ],
+      "limite": "Pas d'évaluation RH réelle ni de classement des élèves ; données d'entreprise uniquement fictives"
+    },
+    {
+      "id": "proptech",
+      "titre": "Entrepreneuriat et direction de proptech",
+      "statut": "a-construire",
+      "branches": [
+        "cabinet.donnees",
+        "cabinet.profession",
+        "comptabilite.honoraires"
+      ],
+      "objectifs": [
+        "Vérifier un problème utilisateur",
+        "construire et tester un modèle économique",
+        "arbitrer architecture, données, distribution et risques"
+      ],
+      "production": "Dossier de lancement fictif avec hypothèses falsifiables, prototype, économie unitaire et risques",
+      "sources_a_instruire": [
+        "Bpifrance Création",
+        "INPI",
+        "CNIL",
+        "documentation technique primaire à sélectionner"
+      ],
+      "limite": "Aucune branche produit complète aujourd'hui ; pas de promesse de viabilité ou de financement"
+    },
+    {
+      "id": "rh-social",
+      "titre": "Management, droit social et personnel d'immeuble",
+      "statut": "a-construire",
+      "branches": [
+        "cabinet.charge",
+        "cabinet.profession",
+        "droit.responsabilites"
+      ],
+      "objectifs": [
+        "Distinguer employeur, mandataire et intervenant",
+        "analyser charge et organisation",
+        "préparer une décision documentée"
+      ],
+      "production": "Cas fictif d'organisation du travail avec risques, dialogue et vérifications juridiques",
+      "sources_a_instruire": [
+        "Code du travail",
+        "convention collective applicable",
+        "INRS"
+      ],
+      "limite": "Pas de décision sur un salarié réel ni de conseil individuel sans pièces"
+    },
+    {
+      "id": "incendie-accessibilite",
+      "titre": "Incendie, accessibilité et sécurité d'usage",
+      "statut": "a-construire",
+      "branches": [
+        "equipements.acces",
+        "travaux.plans",
+        "pathologie.visite",
+        "sinistres.autres-sinistres"
+      ],
+      "objectifs": [
+        "Identifier le périmètre d'une vérification",
+        "lire cheminements et interfaces",
+        "prioriser la consultation de spécialistes"
+      ],
+      "production": "Audit documentaire fictif avec plan annoté, inconnues et circuit de décision",
+      "sources_a_instruire": [
+        "Textes officiels datés",
+        "Cerema",
+        "INRS",
+        "guides publics"
+      ],
+      "limite": "Aucun avis de conformité ni protocole de secours opérationnel depuis l'application"
+    },
+    {
+      "id": "acoustique",
+      "titre": "Acoustique et nuisances",
+      "statut": "a-construire",
+      "branches": [
+        "energie.physique",
+        "equipements.chauffage",
+        "immobilier.propriete"
+      ],
+      "objectifs": [
+        "Distinguer source, transmission et réception",
+        "organiser la collecte des observations",
+        "comparer mesures et solutions proposées"
+      ],
+      "production": "Dossier de nuisance fictive avec hypothèses, conditions de mesure et critique de devis",
+      "sources_a_instruire": [
+        "Cerema",
+        "CSTB",
+        "textes officiels",
+        "méthodes de mesure sous licence"
+      ],
+      "limite": "Pas de conclusion de conformité sonore sans mesures et contexte appropriés"
+    },
+    {
+      "id": "resilience",
+      "titre": "Adaptation climatique, eau et résilience",
+      "statut": "a-construire",
+      "branches": [
+        "energie.physique",
+        "pathologie.structure",
+        "sinistres.autres-sinistres",
+        "immobilier.urbanisme"
+      ],
+      "objectifs": [
+        "Relier exposition, vulnérabilité et conséquences",
+        "comparer adaptations et effets secondaires",
+        "organiser une stratégie révisable"
+      ],
+      "production": "Scénarios fictifs chaleur, eau et retrait-gonflement avec priorisation multicritère",
+      "sources_a_instruire": [
+        "BRGM",
+        "Géorisques",
+        "Cerema",
+        "ADEME"
+      ],
+      "limite": "Une carte de risque ne diagnostique pas un bâtiment particulier"
+    },
+    {
+      "id": "ascenseurs",
+      "titre": "Ascenseurs et équipements de sécurité",
+      "statut": "a-construire",
+      "branches": [
+        "equipements.ascenseurs",
+        "equipements.acces",
+        "equipements.contrats"
+      ],
+      "objectifs": [
+        "Lire fonctions et interfaces",
+        "comparer maintenance et modernisation",
+        "exploiter les rapports de contrôle"
+      ],
+      "production": "Audit d'un contrat et d'un historique de pannes fictifs avec stratégie de suivi",
+      "sources_a_instruire": [
+        "Textes officiels",
+        "notices",
+        "référentiels de contrôle accessibles légalement"
+      ],
+      "limite": "Pas de dépannage, déverrouillage ou manipulation autonome enseigné"
+    },
+    {
+      "id": "donnees-fraude",
+      "titre": "Données, cybersécurité, fraude et IA",
+      "statut": "a-construire",
+      "branches": [
+        "cabinet.donnees",
+        "comptabilite.controle",
+        "cabinet.ecrire"
+      ],
+      "objectifs": [
+        "Vérifier provenance et droits d'accès",
+        "détecter une demande frauduleuse",
+        "évaluer une sortie IA contre des pièces"
+      ],
+      "production": "Dossier fictif de fraude documentaire et test d'un assistant avec journal de preuves",
+      "sources_a_instruire": [
+        "CNIL",
+        "ANSSI",
+        "documentation technique primaire",
+        "jeux d'essai fictifs"
+      ],
+      "limite": "Pas d'envoi de données clients à un tiers ; l'IA n'est pas un arbitre de vérité"
+    },
+    {
+      "id": "raisonnement-mesure",
+      "titre": "Mesure, statistiques et raisonnement causal",
+      "statut": "a-construire",
+      "branches": [
+        "energie.physique",
+        "comptabilite.controle",
+        "culture.lectures"
+      ],
+      "objectifs": [
+        "Distinguer mesure, estimation et hypothèse",
+        "analyser biais et ordres de grandeur",
+        "réviser une décision face à une donnée contradictoire"
+      ],
+      "production": "Critique d'une étude et analyse de sensibilité reproductible sur données fictives",
+      "sources_a_instruire": [
+        "CAE Focus 322a2f5e843f45b9",
+        "INSEE",
+        "ressources académiques méthodologiques"
+      ],
+      "limite": "La corrélation ne démontre pas la cause ; aucune certitude fabriquée par un score"
+    }
+  ]
+}

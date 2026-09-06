@@ -38,6 +38,18 @@
       ],
       "public": "Étudiant en soins infirmiers",
       "limite": "Entraînement théorique ; les gestes et la compétence clinique se travaillent en formation supervisée."
+    },
+    {
+      "id": "renovation",
+      "metier": "copro",
+      "titre": "Lire une étude de rénovation",
+      "promesse": "Pilote : dix pages, trois supports, huit exercices et une note critique.",
+      "accroche": "Rentable pour qui ? Savoir lire les hypothèses avant de conclure.",
+      "rang": 2,
+      "chapitres": ["satellite.travaux.rentabilite-renovation"],
+      "etiquettes": ["Critiquer un modèle"],
+      "public": "Gestionnaire de copropriété",
+      "limite": "Lecture critique d'une étude de 2024. Ni audit du bâtiment, ni garantie financière, ni certification d'expertise. Réponses libres autoévaluées, sans notation IA."
     }
   ]
 }

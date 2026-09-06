@@ -222,8 +222,8 @@
       "parti": "",
       "fiabilite": "A",
       "verifie": "2026-09-03",
-      "on_en_tire": "vocabulaire et pathologies du bâti ancien angevin, règles du site patrimonial ; dessins de Viollet-le-Duc (domaine public) réutilisables",
-      "on_n_en_tire_pas": "les photos et dessins de l'agence (droits réservés)"
+      "on_en_tire": "candidats : vocabulaire et recommandations du bâti ancien angevin ; lecture intégrale non achevée au 06/09/2026",
+      "on_n_en_tire_pas": "le règlement opposable actuel du PSMV ; les photos et dessins de l'agence ; une licence sur une reproduction déduite du seul auteur historique"
     },
     {
       "id": "cae-focus-106",
@@ -232,11 +232,11 @@
       "domaine_web": "cae-eco.fr",
       "motif": null,
       "nature": "institution",
-      "parti": "",
+      "parti": "Analyse publiée sous la responsabilité des auteurs, pas une prescription technique",
       "fiabilite": "A",
-      "verifie": "2026-09-03",
-      "on_en_tire": "coûts, bénéfices, valeur inobservée, rénovation performante contre par gestes (niveau IV)",
-      "on_n_en_tire_pas": "ses chiffres au-delà de 2024 sans revérification"
+      "verifie": "2026-09-06",
+      "on_en_tire": "méthode, perspectives privées et sociales, frictions calibrées, sensibilité ; 32 pages contrôlées par l'usine et fiche acceptée, réserves de fond dans travail/expertise-2026-09-06/SOURCES.md",
+      "on_n_en_tire_pas": "un devis, une aide acquise, une règle de droit, une prescription de travaux ou des chiffres actuels ; le sceau de lecture ne valide pas le fond ni les références citées"
     },
     {
       "id": "pdhh-49",
@@ -248,8 +248,8 @@
       "parti": "",
       "fiabilite": "A",
       "verifie": "2026-09-03",
-      "on_en_tire": "méthode et orientations : habitat indigne, précarité énergétique, copropriétés fragiles du 49",
-      "on_n_en_tire_pas": "ses chiffres (période close) ; ses actions comme des règles"
+      "on_en_tire": "candidats : méthode et orientations historiques sur l'habitat ; lecture intégrale non achevée au 06/09/2026",
+      "on_n_en_tire_pas": "ses chiffres comme actuels (période close) ; ses actions comme des règles ou des aides en vigueur"
     },
     {
       "id": "editeurs",

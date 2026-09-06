@@ -523,3 +523,43 @@ mouvement réduit (`prefers-reduced-motion: reduce`).
 **Source et état des preuves** : Schultz et al. (1997), Hattie & Timperley (2007),
 `decisions/0038` et `decisions/0041`.
 
+## 38. Du passage sourcé à la production professionnelle (06/09/2026)
+
+**Ce qu'on fait** : fixer la production attendue et sa grille avant de
+transformer des passages de documents en leçon et exercices. Distinguer
+extraction fidèle, validité des affirmations, contenu jouable et compétence
+observée. Associer exemple raisonné, erreur plausible, tentative, correction
+explicative et cas nouveau ; le rôle ou le schéma reçoit ses propres données.
+
+**Pourquoi** : la récupération, l'explication et le transfert répondent à
+des objectifs différents ; une conversion de PDF ou un QCM de vocabulaire
+ne prouve pas un jugement expert. Le protocole est un choix de fabrication
+à éprouver, pas une méthode dont l'efficacité globale serait déjà démontrée.
+
+**Contrôles et limites** : contrôle systématique des assertions critiques,
+relecture indépendante et sondage reproductible des autres pages. Les
+témoins d'extraction ne donnent aucun taux général de fiabilité. Une réponse
+libre comparée à une correction statique n'est pas analysée par une IA.
+Le routage OCR et la traçabilité assertion → descendants restent à automatiser.
+
+**Sources et état des preuves** : mécanismes pédagogiques et limites déjà
+examinés aux §2–6 et dans `CADRAGE-SCIENTIFIQUE.md` (R3/R4/R15/R16) ; aucun
+effet quantifié nouveau. Capacités techniques documentées par
+[Docling](https://docling-project.github.io/docling/),
+[MarkItDown](https://github.com/microsoft/markitdown) et
+[OCRmyPDF](https://ocrmypdf.readthedocs.io/en/latest/cookbook.html).
+Essai local, règles de coût, témoins et procédure de reprise dans
+`travail/expertise-2026-09-06/PIPELINE.md` et `BENCHMARK.md` ; décision 0047.
+
+### Pilote documentaire hybride : des supports à la production
+
+Le pilote `travail/pilote-renovation-10p/` concrétise les décisions 0047-0049 :
+texte natif et structure OCR confrontés au rendu, contradictions conservées,
+schémas originaux, tentative, explication, exercices puis note critique.
+Cette application des mécanismes existants de rappel, retour explicatif et
+transfert ne démontre pas un nouvel effet pédagogique. Références scientifiques :
+`CADRAGE-SCIENTIFIQUE.md`, R3/R4/R15/R16. Les réponses libres sont autoévaluées,
+sans analyse IA ; un support manquant ne permet pas de créditer l'exercice.
+La récupération des figures suit la documentation primaire
+[Docling](https://docling-project.github.io/docling/examples/export_figures/),
+mais une région détectée n'est pas un support complet ni un droit de diffusion.

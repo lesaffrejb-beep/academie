@@ -6,6 +6,7 @@ import { va } from "../app/routage";
 import { accentDuRang } from "../app/theme";
 import type { Carte, Lecon, LigneJournal, Source } from "../donnees/types";
 import { etudeDisponible, repriseEtude } from "../moteur/etude";
+import { SupportEtude } from "./SupportEtude";
 
 export function Etude({ id }: {id: string}) {
   const { banque, journal, jour } = useMagasin();
@@ -27,6 +28,7 @@ function SalleEtude({lecon, cartes}: {lecon: Lecon; cartes: Carte[]}) {
   const [coches, setCoches] = useState<number[]>([]);
   const [occupe, setOccupe] = useState(false);
   const [erreur, setErreur] = useState("");
+  const [supportCharge, setSupportCharge] = useState<string | null>(null);
   const titre = useRef<HTMLHeadingElement>(null);
   const verrou = useRef(false);
   const parcours = banque?.etudes?.parcours.find(p => p.chapitres.includes(lecon.id));
@@ -35,6 +37,7 @@ function SalleEtude({lecon, cartes}: {lecon: Lecon; cartes: Carte[]}) {
   const originale = exercices[index];
   const decalage = originale ? Array.from(originale.id).reduce((n,c) => n + c.charCodeAt(0),0) % (originale.choix?.length || 1) : 0;
   const carte: Carte | undefined = originale ? {...originale, choix: originale.choix ? [...originale.choix.slice(decalage), ...originale.choix.slice(0,decalage)] : undefined} : undefined;
+  const supportNecessaire = Boolean(carte && (carte.image != null || ['photo', 'plan', 'relier', 'datation'].includes(carte.type)));
   const cleBrouillon = clePrivee(`academie-etude-brouillon:${lecon.id}:${lecon.version}:${etape}:${index}`);
   useEffect(() => {
     try {
@@ -66,7 +69,7 @@ function SalleEtude({lecon, cartes}: {lecon: Lecon; cartes: Carte[]}) {
     finally { verrou.current = false; setOccupe(false); }
   }
   async function noteCarte(noteFsrs: 1 | 2 | 3 | 4) {
-    if (!carte) return;
+    if (!carte || (supportNecessaire && supportCharge !== carte.id)) return;
     await enregistre(index + 1 < exercices.length ? "exercices" : "synthese", {
       mode: aide ? "synthese" : "revision", carte:carte.id,
       ...(aide ? {} : {note:noteFsrs}), reponse_libre:carte.choix?.[choix ?? -1]?.texte ?? texte,
@@ -96,9 +99,10 @@ function SalleEtude({lecon, cartes}: {lecon: Lecon; cartes: Carte[]}) {
       {etape === "exercices" && carte && <>
         <p className="etude-intro">Question {index + 1} sur {exercices.length} · {carte.type === "qcm" ? "Décider" : "Rappeler sans aide"}</p>
         <h2 className="question-etude">{carte.question}</h2>
+        {supportNecessaire && <SupportEtude key={carte.id} image={carte.image} onCharge={ok => setSupportCharge(ok ? carte.id : null)} />}
         {carte.choix ? <div className="etude-choix">{carte.choix.map((c,i) => <button key={i} aria-pressed={choix === i} disabled={revelee} onClick={() => brouillon({choix:i})}><span>{String.fromCharCode(65+i)}</span>{c.texte}</button>)}</div>
           : <label className="reponse-etude">Ta réponse<textarea disabled={revelee} rows={3} maxLength={5000} value={texte} onChange={e => ecritTexte(e.target.value)} /></label>}
-        {!revelee ? <><button className="aide-etude" onClick={() => brouillon({aide:true})}><Lightbulb size={18}/>Un indice</button>{aide && <p className="indice-etude">{String(carte.aide ?? "Identifie la règle qui change la décision, puis l’information manquante.")}</p>}<div className="etude-actions"><button className="action-etude" disabled={carte.choix ? choix === null : !texte.trim()} onClick={() => brouillon({revelee:true})}>Voir le retour<ArrowRight size={19}/></button></div></>
+        {!revelee ? <><button className="aide-etude" onClick={() => brouillon({aide:true})}><Lightbulb size={18}/>Un indice</button>{aide && <p className="indice-etude">{String(carte.aide ?? "Identifie la règle qui change la décision, puis l’information manquante.")}</p>}<div className="etude-actions"><button className="action-etude" disabled={supportNecessaire && supportCharge !== carte.id || (carte.choix ? choix === null : !texte.trim())} onClick={() => brouillon({revelee:true})}>Voir le retour<ArrowRight size={19}/></button></div></>
           : <section className="retour-etude" aria-live="polite"><h3>{carte.choix ? carte.choix[choix ?? -1]?.correct ? "C’est ça." : "À reprendre." : "Compare ton raisonnement"}</h3><p>{carte.reponse}</p><p>{carte.explication}</p>{carte.choix && !carte.choix[choix ?? -1]?.correct && <p>{carte.choix[choix ?? -1]?.pourquoi_faux}</p>}{source}
             <p className="etude-intro">{aide ? "Réponse avec indice : aucun rappel autonome n’est crédité." : "Comment ce rappel s’est-il passé ?"}</p>{aide ? <button className="action-etude" disabled={occupe} onClick={() => void noteCarte(1)}>Continuer avec cette aide</button> : <div className="etude-notes">{(["À revoir", "Difficile", "Bien", "Évident"] as const).map((n,i) => <button key={n} disabled={occupe} onClick={() => void noteCarte(carte.choix && !carte.choix[choix ?? -1]?.correct ? 1 : (i + 1) as 1|2|3|4)}>{n}</button>)}</div>}</section>}
       </>}

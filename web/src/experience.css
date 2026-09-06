@@ -262,3 +262,8 @@
   .chapitre-ouvert:hover:not(:disabled) .chapitre-etat svg { transform: none; }
   .accueil-suite button:active { transform: none; }
 }
+/* Supports de lecture : cadre stable, zoom explicite et défilement contenu. */
+.etude-support {margin: 1.5rem 0; min-width: 0;}
+.etude-support-cadre {max-width: 100%; overflow-x: auto; border-radius: 12px;}
+.etude-support img {display: block; width: 100%; height: auto;}
+.etude-support figcaption {font-size: .8rem; color: var(--c-encre-2); margin: .65rem 0;}

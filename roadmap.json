@@ -4,6 +4,18 @@
   "_": "Actualisée le 05/09/2026 par audit (ROADMAP.md, décision 0035). done = périmètre et preuves du cahier, pas toute la promesse produit. ready | blocked ; modes deterministic | agent-safe | agent-review | human-only. Les budgets bornent une passe de travail, pas la durée complète. tooling/roadmap.py next ne choisit que les tâches automatisables sans revue.",
   "items": [
     {
+      "id": "ACA-EXPERTISE-1",
+      "outcome": "Construire les spécialisations sur des preuves ; premier pilote de dix pages vers une étude jouable.",
+      "status": "ready",
+      "mode": "agent-review",
+      "risk": "medium",
+      "priority": 100,
+      "depends_on": ["ACA-PROGRAMME-1"],
+      "budget": {"max_units": 1, "max_minutes": 180},
+      "proof": "Pilote de lecture critique relu et testé ; couverture experte et transfert pédagogique restent à construire.",
+      "parent_milestone": "ACADEMIE-EXPERTISE"
+    },
+    {
       "id": "ACA-PORT-1",
       "outcome": "Le moteur, la banque, la publication et les tests fonctionnent dans un dépôt autonome sans ERP.",
       "status": "done",

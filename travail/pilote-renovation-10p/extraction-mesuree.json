@@ -1,0 +1,641 @@
+{
+  "version": 1,
+  "date": "2026-09-06T13:24:41.047850+00:00",
+  "source_sha256": "322a2f5e843f45b99f324a9f185a63d75f6838602081e362002176451855dc43",
+  "script_sha256": "63f6371ebdd9e65e86e855cf9f4a0a30c3c9ee679dc59b75ea98bebfd75a8d81",
+  "pages_prevues": [
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22
+  ],
+  "versions": {
+    "docling": "2.126.0",
+    "docling-core": "2.95.0",
+    "pymupdf": "1.28.2",
+    "rapidocr": "3.9.2"
+  },
+  "poppler": "pdftotext version 26.07.0",
+  "cout_api_usd": 0,
+  "pages": [
+    {
+      "page": 13,
+      "statut": "success",
+      "secondes": 11.743,
+      "comparaison": {
+        "identiques": false,
+        "similarite_sequence": 0.8055,
+        "verdict": "a_arbitrer_sur_image"
+      },
+      "assets": [
+        {
+          "fichier": "focus-0013-006.png",
+          "type": "TableItem",
+          "sha256": "dbd8ca570a21abf52497695ffef0e10290be2081c1f1be08c98a8c86e89d0099",
+          "prov": [
+            {
+              "page_no": 13,
+              "bbox": {
+                "l": 47.861478012417784,
+                "t": 619.5028732743796,
+                "r": 524.5208688776413,
+                "b": 526.9666393256471,
+                "coord_origin": "BOTTOMLEFT"
+              },
+              "charspan": [
+                0,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "fichier": "focus-0013-008.png",
+          "type": "TableItem",
+          "sha256": "96ddf688d7ecd5ba8ac61b1f71a8f529af6dbc1378b8ce68a5b85dc7a5056c80",
+          "prov": [
+            {
+              "page_no": 13,
+              "bbox": {
+                "l": 47.71026040992481,
+                "t": 497.57234761253955,
+                "r": 524.5801229821532,
+                "b": 444.1820456719115,
+                "coord_origin": "BOTTOMLEFT"
+              },
+              "charspan": [
+                0,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "fichier": "focus-0013-016.png",
+          "type": "PictureItem",
+          "sha256": "8956ddef99fcbebd293209da777e88ce6bc75d57c0aab370db3459a7976419f0",
+          "prov": [
+            {
+              "page_no": 13,
+              "bbox": {
+                "l": 443.8632917853233,
+                "t": 48.82180705598296,
+                "r": 547.2227500712759,
+                "b": 29.647127330354124,
+                "coord_origin": "BOTTOMLEFT"
+              },
+              "charspan": [
+                0,
+                0
+              ]
+            }
+          ]
+        }
+      ],
+      "sorties": {
+        "page-0013.png": "cad1bc67e34ce3ad33d1555775f2b78fad7f6a5ab846366111402af0174e3bae",
+        "poppler-0013.txt": "df03d64154fb0583e124d8a0a0ecda4337f7af6bf36a06e8c7906e424cff605a",
+        "focus-0013.md": "43cc5675ec4ef9b7b37282383fddf8102b33b66336e2388204d4bc386e4a87ce"
+      }
+    },
+    {
+      "page": 14,
+      "statut": "success",
+      "secondes": 5.212,
+      "comparaison": {
+        "identiques": false,
+        "similarite_sequence": 0.7856,
+        "verdict": "a_arbitrer_sur_image"
+      },
+      "assets": [
+        {
+          "fichier": "focus-0014-003.png",
+          "type": "PictureItem",
+          "sha256": "34bf676c1d275577d8d9b9e219eb805d96393ef0042b4b931acc66f5cb4a0c47",
+          "prov": [
+            {
+              "page_no": 14,
+              "bbox": {
+                "l": 73.03171252794714,
+                "t": 585.172504699417,
+                "r": 546.0835716237317,
+                "b": 366.77690661795066,
+                "coord_origin": "BOTTOMLEFT"
+              },
+              "charspan": [
+                0,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "fichier": "focus-0014-011.png",
+          "type": "PictureItem",
+          "sha256": "f23b3e9acf36efe79b5991cf5e3bcd6e21594aa143ac6873cdae07b8e10f7c0b",
+          "prov": [
+            {
+              "page_no": 14,
+              "bbox": {
+                "l": 47.20193700408935,
+                "t": 47.33634440587423,
+                "r": 150.77988718030275,
+                "b": 28.4980465103838,
+                "coord_origin": "BOTTOMLEFT"
+              },
+              "charspan": [
+                0,
+                0
+              ]
+            }
+          ]
+        }
+      ],
+      "sorties": {
+        "page-0014.png": "34b9dca6dd49489c8406ab8ce94ab68105aabd25827bd2aaa767d4ce5ae2334a",
+        "poppler-0014.txt": "ee9ae0c49ad083896090a4ecf9ce4940b18338a73e1f9d5743344cea85fb7996",
+        "focus-0014.md": "2eaedb28d923866d1ed16db2b0498fd2a5e7874a05a436ae7dd1b1d3c0cce417"
+      }
+    },
+    {
+      "page": 15,
+      "statut": "success",
+      "secondes": 4.262,
+      "comparaison": {
+        "identiques": false,
+        "similarite_sequence": 0.9675,
+        "verdict": "a_arbitrer_sur_image"
+      },
+      "assets": [
+        {
+          "fichier": "focus-0015-011.png",
+          "type": "PictureItem",
+          "sha256": "5b36746252186f035f06181757e3eb42b0e275b23f6398d20c7429a19720a122",
+          "prov": [
+            {
+              "page_no": 15,
+              "bbox": {
+                "l": 443.801629720803,
+                "t": 48.852869891893874,
+                "r": 547.2684708309301,
+                "b": 29.543198038495348,
+                "coord_origin": "BOTTOMLEFT"
+              },
+              "charspan": [
+                0,
+                0
+              ]
+            }
+          ]
+        }
+      ],
+      "sorties": {
+        "page-0015.png": "6dbffdd387593720039e7c8b295bef188eeb62288cc5d3ab1f5d1a62968c1bd8",
+        "poppler-0015.txt": "930d2ddf9000b16dedaa41f8b316aedea3819ca247a421acbd5e1c337fc5684f",
+        "focus-0015.md": "9ad0916201053140aebf98a2f3972f58f48e89d540966a778f01117c7bbdbca4"
+      }
+    },
+    {
+      "page": 16,
+      "statut": "success",
+      "secondes": 5.319,
+      "comparaison": {
+        "identiques": false,
+        "similarite_sequence": 0.9632,
+        "verdict": "a_arbitrer_sur_image"
+      },
+      "assets": [
+        {
+          "fichier": "focus-0016-011.png",
+          "type": "PictureItem",
+          "sha256": "eb477f43853b8f1f993810a771e5926977503e5e10f4c38abb9e423f49aa01b6",
+          "prov": [
+            {
+              "page_no": 16,
+              "bbox": {
+                "l": 47.22128450554969,
+                "t": 47.43880904535217,
+                "r": 150.68637298655668,
+                "b": 28.343037466742317,
+                "coord_origin": "BOTTOMLEFT"
+              },
+              "charspan": [
+                0,
+                0
+              ]
+            }
+          ]
+        }
+      ],
+      "sorties": {
+        "page-0016.png": "fa05966cc99cfef20403d66466c97254c1daf9ec8f151ccff5cf1495e0aea7b1",
+        "poppler-0016.txt": "125de3d940e74fcea3881d53a960c7de02ea19b8edda7816242c6eb6ff9e145b",
+        "focus-0016.md": "b71dedf292613f05374188e0be8b6deb2e34ecd950492fe24a2f73c90b88f1ff"
+      }
+    },
+    {
+      "page": 17,
+      "statut": "success",
+      "secondes": 4.736,
+      "comparaison": {
+        "identiques": false,
+        "similarite_sequence": 0.8763,
+        "verdict": "a_arbitrer_sur_image"
+      },
+      "assets": [
+        {
+          "fichier": "focus-0017-000.png",
+          "type": "TableItem",
+          "sha256": "eeaf284354abfe294220ddb9c9c90237280e76405826e3f1108ef6f43d351e0a",
+          "prov": [
+            {
+              "page_no": 17,
+              "bbox": {
+                "l": 47.47950773595003,
+                "t": 746.6791887494447,
+                "r": 500.0886093336271,
+                "b": 638.19835230594,
+                "coord_origin": "BOTTOMLEFT"
+              },
+              "charspan": [
+                0,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "fichier": "focus-0017-010.png",
+          "type": "PictureItem",
+          "sha256": "8956ddef99fcbebd293209da777e88ce6bc75d57c0aab370db3459a7976419f0",
+          "prov": [
+            {
+              "page_no": 17,
+              "bbox": {
+                "l": 443.8269590216515,
+                "t": 48.83340222066488,
+                "r": 547.209826336547,
+                "b": 29.73659317995191,
+                "coord_origin": "BOTTOMLEFT"
+              },
+              "charspan": [
+                0,
+                0
+              ]
+            }
+          ]
+        }
+      ],
+      "sorties": {
+        "page-0017.png": "32c7b3e40d3e64884e130b9a7adf8c788ffc796a55532ca20fb0ebf4207aa2ba",
+        "poppler-0017.txt": "9c4bfd1f206e9de235e1b5ae0746225554f0cb6014ad11e5e5a20df914ae460e",
+        "focus-0017.md": "d22f917c65d6d3cd415467d96876597b7fbff9e576685639cf809b1cefc6cc1b"
+      }
+    },
+    {
+      "page": 18,
+      "statut": "success",
+      "secondes": 3.61,
+      "comparaison": {
+        "identiques": false,
+        "similarite_sequence": 0.6808,
+        "verdict": "a_arbitrer_sur_image"
+      },
+      "assets": [
+        {
+          "fichier": "focus-0018-000.png",
+          "type": "PictureItem",
+          "sha256": "369ea418f1c27fa4fcdff69834bf3aede34118da8fa0b9a8615d28a5a8f883f2",
+          "prov": [
+            {
+              "page_no": 18,
+              "bbox": {
+                "l": 49.050899764758626,
+                "t": 749.9937886281137,
+                "r": 568.662494454403,
+                "b": 583.7461163620031,
+                "coord_origin": "BOTTOMLEFT"
+              },
+              "charspan": [
+                0,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "fichier": "focus-0018-010.png",
+          "type": "PictureItem",
+          "sha256": "ac9b8996a3ba079ac8ff11a94d585a15b2829024834ed4aac13ddc7389280456",
+          "prov": [
+            {
+              "page_no": 18,
+              "bbox": {
+                "l": 47.274328206875175,
+                "t": 47.377659808451085,
+                "r": 150.77405016332023,
+                "b": 28.44336615483155,
+                "coord_origin": "BOTTOMLEFT"
+              },
+              "charspan": [
+                0,
+                0
+              ]
+            }
+          ]
+        }
+      ],
+      "sorties": {
+        "page-0018.png": "298304a7f84aafd4614f5b95d6e075c716c02aafe57ca35294b8ab01806a800a",
+        "poppler-0018.txt": "a17f41ee0530355a54d04de6fda05fe0e855774a44cc9284f7c869b26ed6b644",
+        "focus-0018.md": "1610bd4a917ecd231defc974f08a8fcf035e57386f3972702a2d785d5ca0c71a"
+      }
+    },
+    {
+      "page": 19,
+      "statut": "success",
+      "secondes": 1.692,
+      "comparaison": {
+        "identiques": false,
+        "similarite_sequence": 0.7007,
+        "verdict": "a_arbitrer_sur_image"
+      },
+      "assets": [
+        {
+          "fichier": "focus-0019-000.png",
+          "type": "PictureItem",
+          "sha256": "c24230de7606787810ddd7cc0fdb8c852e1faaa241a9af654fdf95e79e6ed82e",
+          "prov": [
+            {
+              "page_no": 19,
+              "bbox": {
+                "l": 49.122258440388926,
+                "t": 748.6286486967725,
+                "r": 296.52137712721856,
+                "b": 553.9229561236239,
+                "coord_origin": "BOTTOMLEFT"
+              },
+              "charspan": [
+                0,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "fichier": "focus-0019-008.png",
+          "type": "PictureItem",
+          "sha256": "00a1be79d836b62f57c17ba3534d9d384d67212ba60982fc2037455d9fc11c71",
+          "prov": [
+            {
+              "page_no": 19,
+              "bbox": {
+                "l": 443.8653034987481,
+                "t": 48.786350262929545,
+                "r": 547.2358566890434,
+                "b": 29.638217361703937,
+                "coord_origin": "BOTTOMLEFT"
+              },
+              "charspan": [
+                0,
+                0
+              ]
+            }
+          ]
+        }
+      ],
+      "sorties": {
+        "page-0019.png": "03303e8c0d74016298df86cdbe5fad76676681d14e7700b430ff73fbe1fda90f",
+        "poppler-0019.txt": "8f4b2a3ede08fa84c94f21778cb5a98e9ce755146f74aa591fb22a0b74506a18",
+        "focus-0019.md": "9ae85b0953cc0bf899b692e9f79f129713678c77f30f3a1ce1d5f588d2081bdd"
+      }
+    },
+    {
+      "page": 20,
+      "statut": "success",
+      "secondes": 4.015,
+      "comparaison": {
+        "identiques": false,
+        "similarite_sequence": 0.5909,
+        "verdict": "a_arbitrer_sur_image"
+      },
+      "assets": [
+        {
+          "fichier": "focus-0020-000.png",
+          "type": "TableItem",
+          "sha256": "901cfa93fd1bb7b310a6c4906f881177f3e0a4068be43c11774991a54ac45b71",
+          "prov": [
+            {
+              "page_no": 20,
+              "bbox": {
+                "l": 69.84957813652089,
+                "t": 749.2359988457687,
+                "r": 548.7242807793328,
+                "b": 447.97348144132565,
+                "coord_origin": "BOTTOMLEFT"
+              },
+              "charspan": [
+                0,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "fichier": "focus-0020-008.png",
+          "type": "PictureItem",
+          "sha256": "ac9b8996a3ba079ac8ff11a94d585a15b2829024834ed4aac13ddc7389280456",
+          "prov": [
+            {
+              "page_no": 20,
+              "bbox": {
+                "l": 47.26860168172849,
+                "t": 47.321270691787845,
+                "r": 150.78319431525108,
+                "b": 28.453679748680088,
+                "coord_origin": "BOTTOMLEFT"
+              },
+              "charspan": [
+                0,
+                0
+              ]
+            }
+          ]
+        }
+      ],
+      "sorties": {
+        "page-0020.png": "360efe1a630b8341a79ab19888c3cef361d842d0cd36f65f94ba4bcdc04078bd",
+        "poppler-0020.txt": "55cf93d4ebcac927724df830854dd1f9b6c5f8664161f339162eb1d25e5ca993",
+        "focus-0020.md": "04bc3628f803aeb51f4c72f3037950490c01984cecd3cd1cd50ba887bd3dd5ea"
+      }
+    },
+    {
+      "page": 21,
+      "statut": "success",
+      "secondes": 2.779,
+      "comparaison": {
+        "identiques": false,
+        "similarite_sequence": 0.5149,
+        "verdict": "a_arbitrer_sur_image"
+      },
+      "assets": [
+        {
+          "fichier": "focus-0021-000.png",
+          "type": "PictureItem",
+          "sha256": "747016a6a2d1b8f4af4c51146440aca506ae545616ac5f271d4aeec42bb19319",
+          "prov": [
+            {
+              "page_no": 21,
+              "bbox": {
+                "l": 47.43403844047393,
+                "t": 769.669593063137,
+                "r": 524.3930336336481,
+                "b": 526.9285278501534,
+                "coord_origin": "BOTTOMLEFT"
+              },
+              "charspan": [
+                0,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "fichier": "focus-0021-003.png",
+          "type": "PictureItem",
+          "sha256": "980c5d26ac3c4362c0f113c567b639c8d0c2d5a33dba1d83bcc5757959d9e04e",
+          "prov": [
+            {
+              "page_no": 21,
+              "bbox": {
+                "l": 49.60967602887249,
+                "t": 353.40478294861856,
+                "r": 409.45945648275284,
+                "b": 139.25896529100282,
+                "coord_origin": "BOTTOMLEFT"
+              },
+              "charspan": [
+                0,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "fichier": "focus-0021-006.png",
+          "type": "PictureItem",
+          "sha256": "5b36746252186f035f06181757e3eb42b0e275b23f6398d20c7429a19720a122",
+          "prov": [
+            {
+              "page_no": 21,
+              "bbox": {
+                "l": 443.9089211034582,
+                "t": 48.79037805697692,
+                "r": 547.3453426681621,
+                "b": 29.625767816466578,
+                "coord_origin": "BOTTOMLEFT"
+              },
+              "charspan": [
+                0,
+                0
+              ]
+            }
+          ]
+        }
+      ],
+      "sorties": {
+        "page-0021.png": "8529dac24b4a03c2d24fa751a060c3b9e80b6875e3cbf16f967f1f0c80c352e7",
+        "poppler-0021.txt": "b4c14098e184f6ce8dd1d592ac5e11b76d13823d8ac435d7d189031fac604f92",
+        "focus-0021.md": "8455aa9ccb2356ce91d5e076fc927681c69ccb4ca9ed7057cf0379feee2ce675"
+      }
+    },
+    {
+      "page": 22,
+      "statut": "success",
+      "secondes": 3.742,
+      "comparaison": {
+        "identiques": false,
+        "similarite_sequence": 0.2917,
+        "verdict": "a_arbitrer_sur_image"
+      },
+      "assets": [
+        {
+          "fichier": "focus-0022-001.png",
+          "type": "PictureItem",
+          "sha256": "86a1a782098688cf56883babaf3d80d0976d839875aabbad5860543ed8984908",
+          "prov": [
+            {
+              "page_no": 22,
+              "bbox": {
+                "l": 72.7459882606148,
+                "t": 688.9538361541676,
+                "r": 342.13963083827895,
+                "b": 478.2154712334495,
+                "coord_origin": "BOTTOMLEFT"
+              },
+              "charspan": [
+                0,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "fichier": "focus-0022-004.png",
+          "type": "PictureItem",
+          "sha256": "c004010323689cc57f7f30d56e76da7c957783f2f1afb503112c53b458d03662",
+          "prov": [
+            {
+              "page_no": 22,
+              "bbox": {
+                "l": 72.31964217683932,
+                "t": 381.5252237670608,
+                "r": 578.5479323017709,
+                "b": 224.3990861362629,
+                "coord_origin": "BOTTOMLEFT"
+              },
+              "charspan": [
+                0,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "fichier": "focus-0022-008.png",
+          "type": "PictureItem",
+          "sha256": "ac9b8996a3ba079ac8ff11a94d585a15b2829024834ed4aac13ddc7389280456",
+          "prov": [
+            {
+              "page_no": 22,
+              "bbox": {
+                "l": 47.294723475744256,
+                "t": 47.317059816192796,
+                "r": 150.8301038146563,
+                "b": 28.482362524472023,
+                "coord_origin": "BOTTOMLEFT"
+              },
+              "charspan": [
+                0,
+                0
+              ]
+            }
+          ]
+        }
+      ],
+      "sorties": {
+        "page-0022.png": "0b2ab997927146ad2c50fb8e374dbd8b952a8ba23b2386d8adb8c4922dd5d23d",
+        "poppler-0022.txt": "2bf19af5e58dccb6f4ed31d52223b9d6e2df82458a9c5cf5b91b578e7f64eb4d",
+        "focus-0022.md": "e76054378bb51c89e28f32659cd3be36821abd3ba3b3b013acf397b680507298"
+      }
+    }
+  ],
+  "limite": "Similarité textuelle non assimilable à une fiabilité. Recadrages automatiques à contrôler.",
+  "secondes_total": 54.443
+}

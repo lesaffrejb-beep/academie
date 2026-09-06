@@ -237,6 +237,10 @@ def charge_etudes(retenues, aujourdhui):
 
 def charge_metiers(retenues):
     """Un même moteur, des banques distinctes par métier, un journal privé commun."""
+    import valide_chapitres as v2
+    chapitres, _ = v2.charge_chapitres()
+    satellites = {ch['id']: ch.get('rattachement_propose') for ch, _ in chapitres
+                  if ch.get('satellite')}
     metiers = {}
     for fichier in sorted((ACADEMIE / "programme").glob("*.json")):
         p = json.loads(fichier.read_text(encoding="utf-8"))
@@ -247,7 +251,9 @@ def charge_metiers(retenues):
         metiers[fichier.stem] = {
             "domaines": domaines, "chapitres": [chapitre_public(c) for c in p["chapitres"]],
             "branches": p.get("branches", {}), "niveaux": p.get("niveaux", {}),
-            "cartes": [c["id"] for c in retenues if c.get("chapitre") in ids or (not c.get("chapitre") and c["domaine"] in domaines)],
+            "cartes": [c["id"] for c in retenues if c.get("chapitre") in ids
+                       or satellites.get(c.get("chapitre")) in ids
+                       or (not c.get("chapitre") and c["domaine"] in domaines)],
         }
     return metiers
 

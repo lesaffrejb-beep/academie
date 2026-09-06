@@ -1,7 +1,7 @@
 {
   "_": "Catalogue des cursus ; compteurs recalculés par le build depuis les programmes et les études servies. Nouveau cursus enregistre une demande privée pour JB.",
   "version": "0.1",
-  "mis_a_jour_le": "2026-09-05",
+  "mis_a_jour_le": "2026-09-06",
   "parcours": [
     {
       "cle": "copro",
@@ -11,8 +11,8 @@
       "sommaire": "SYLLABUS.md",
       "etat": "squelette",
       "chapitres": 389,
-      "chapitres_ecrits": 3,
-      "cartes_jouables": 93,
+      "chapitres_ecrits": 4,
+      "cartes_jouables": 101,
       "aujourd_hui": "Essayer les études disponibles et les rappels ; le programme complet reste à écrire.",
       "ouvert_a": "tous"
     },

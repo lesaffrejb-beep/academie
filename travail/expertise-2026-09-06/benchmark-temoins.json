@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "auteur": "Codex / GPT-6, 2026-09-06 ; témoins confrontés aux pages rendues, revue indépendante encore requise",
+  "portee": "Six pages difficiles choisies, pas un échantillon représentatif. Présence/absence/association textuelle seulement, ni CER/WER ni fidélité de table complète.",
+  "documents": [
+    {
+      "id": "angers", "fichier": "sources/707940074f138868.pdf",
+      "sha256": "707940074f1388686398dd795457acbf3ab30d6bcd2ae2a65c3a88f3888b1fba", "pages": 54,
+      "cas": [
+        {"page": 1, "risque": "texte rasterisé manquant dans la couche texte", "present": ["Cahier de", "Recommandations", "PROJET ARRÊTÉ", "9 mai 2023"]},
+        {"page": 9, "risque": "colonnes et texte masqué", "present": ["bonne cohérence structurelle", "ouvrages environnants tels que les planchers"], "absent": ["travure", "25 cm"]},
+        {"page": 12, "risque": "texte masqué inversé", "present": ["Sans calcin, la pierre se détériore vite"], "absent": ["SEDAÇAF", "Rochefort", "trofehcoR"]}
+      ]
+    },
+    {
+      "id": "focus", "fichier": "sources/322a2f5e843f45b9.pdf",
+      "sha256": "322a2f5e843f45b99f324a9f185a63d75f6838602081e362002176451855dc43", "pages": 32,
+      "cas": [
+        {"page": 26, "risque": "association ligne-valeurs et contradiction dans la source", "present": ["rénover 55 %"], "regex": ["référence[\\s|]+58\\s*%[\\s|]+27\\s*%[\\s|]+6\\s*%"]},
+        {"page": 32, "risque": "texte masqué d'un autre document", "present": ["Discount rates in consumers"], "absent": ["Ces prélèvements sont corrigés", "tranche de CA"]}
+      ]
+    },
+    {
+      "id": "pdhh", "fichier": "sources/8760dfb3f168df2d.pdf",
+      "sha256": "8760dfb3f168df2df451b23dbab92e88fdeda4575334989953fb1e002ea36d3c", "pages": 180,
+      "cas": [
+        {"page": 6, "risque": "scan dans PDF mixte avec titre/pied de page natifs", "present": ["Arrêté", "PORTANT APPROBATION", "CHEVALIER DE LA LÉGION"]}
+      ]
+    }
+  ]
+}

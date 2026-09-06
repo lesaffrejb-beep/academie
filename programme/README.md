@@ -1,5 +1,11 @@
 # programme/
 
+Depuis le 06/09/2026, `specialisations/copro.json` décrit les spécialisations
+transversales à construire (décision 0046). Ce n'est pas une banque ni une
+preuve de couverture. `python3 app/couverture_expertises.py --write`
+recalcule leur [inventaire](../travail/expertise-2026-09-06/COUVERTURE.md).
+Les objectifs ne sont jamais déclarés acquis à partir d'un simple rattachement.
+
 Le programme d'un métier en données : `copro.json` pour le gestionnaire
 de copropriété. `catalogue.json` liste les parcours proposés à l'arrivée
 (`COMMENCER.md` §2) ; ses compteurs se mettent à jour à chaque lot de

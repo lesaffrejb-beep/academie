@@ -1,0 +1,547 @@
+{
+  "id": "satellite.travaux.rentabilite-renovation",
+  "titre": "Une rénovation rentable pour qui ?",
+  "domaine": "travaux",
+  "branche": "renovation-globale",
+  "niveau": 4,
+  "prerequis": [],
+  "ponts": [
+    "travaux.renovation-globale.les-scenarios"
+  ],
+  "satellite": true,
+  "rattachement_propose": "travaux.renovation-globale.les-scenarios",
+  "objectifs": [
+    "Distinguer rentabilité privée, valeur sociale et trésorerie disponible.",
+    "Détecter une lecture trompeuse des courbes et des paramètres.",
+    "Rédiger les limites et vérifications nécessaires avant de transférer une étude à un projet."
+  ],
+  "amorce": {
+    "question": "Une étude nationale annonce un potentiel rentable de rénovation. Le conseil syndical veut en déduire que son projet se paiera tout seul. Que lui réponds-tu ?",
+    "aide": "Sépare le point de vue, les hypothèses et le bâtiment réellement étudié.",
+    "reponse_attendue": "L'étude peut éclairer le raisonnement, pas garantir la rentabilité de ce projet. Il faut distinguer bénéfices privés et sociaux, financement, données du bâtiment et limites du modèle."
+  },
+  "lecon": "Le conseil syndical reçoit une étude nationale et demande si elle prouve que son projet sera rentable. La bonne réponse commence par une distinction : rentable pour qui, sous quelles hypothèses, et à quelle échelle ? Ce pilote travaille dix pages du Focus 106 de juin 2024. Il apprend à critiquer un modèle ; il ne fournit ni un audit énergétique du bâtiment ni des paramètres financiers actuels.\n\nLa perspective privée s'intéresse aux bénéfices du propriétaire. Elle peut inclure des économies monétaires, du confort et une valeur patrimoniale supposée. Tout cela n'est pas de la trésorerie disponible pour payer les travaux. La perspective sociale valorise aussi des effets comme les émissions évitées et, selon la variante, la santé. Un bénéfice social n'est pas automatiquement un versement au ménage.\n\nL'actualisation ramène des bénéfices futurs à une valeur comparable aujourd'hui. Le résultat dépend de l'horizon, des prix anticipés et du taux retenu. Le modèle différencie également les freins à l'investissement : accès au crédit, situation locative, coordination collective et préférence pour le présent. Ses coefficients calibrés décrivent ces freins ; ils ne constituent pas une facture supplémentaire à appliquer au chantier.\n\nAvant de lire les courbes, examiner ce que le modèle représente et ce qu'il écarte. Il travaille sur des segments statistiques, croisant logement, propriétaire et occupant. Il ne visite pas l'immeuble. Certaines dépenses et contraintes restent hors calcul, notamment la ventilation et des contraintes architecturales ou acoustiques. Ce qui manque au modèle reste à vérifier dans le projet réel, pas à supprimer du programme de travaux.\n\nUne courbe de gisement ordonne les segments pour montrer l'étendue d'un potentiel. Lire son abscisse est indispensable : logements, émissions évitées et économies d'énergie ne sont pas interchangeables. Le classement privé peut aussi différer du classement social. Comparer leurs ordonnées au même rang ne mesure donc pas nécessairement l'écart pour un même logement. Pour cela, il faut retrouver les identifiants des segments.\n\nExemple de raisonnement : un résultat favorable pour une fraction du parc n'autorise pas à promettre cette même économie à chaque copropriétaire. Il faut identifier le scénario, les hypothèses, les coûts exclus et les caractéristiques du bâtiment, puis examiner comment la conclusion change lorsqu'ils varient. Les graphiques montrent une agrégation ; ils ne décident pas du projet.\n\nLa source elle-même peut contenir des incohérences. Page 13, le texte et le tableau inversent des libellés de santé. Nous conservons ce désaccord sans enseigner les montants litigieux. Deux extractions concordantes ne suffisent donc pas : il faut contrôler le sens contre la page et, au besoin, rechercher une confirmation extérieure.\n\nTu vas t'entraîner à séparer bénéfice, encaissement et hypothèse, lire des supports et produire une note critique. Les schémas sont des créations pédagogiques originales. Les réponses libres sont conservées puis comparées par toi au corrigé : aucune IA ne les note ici. Ce parcours ponctuel ne prouve pas une compétence d'expert acquise.",
+  "synthese": {
+    "consigne": "Cas fictif : un prestataire invoque un graphique national pour garantir une baisse de facture et conseille d'omettre un poste absent du modèle. Rédige une réponse au conseil syndical : ce qu'on peut retenir, ce qu'on ne peut pas conclure et les pièces ou analyses à demander.",
+    "attendus": [
+      "Identifier la perspective et distinguer valeur sociale de trésorerie.",
+      "Vérifier axes, dénominateur et identité des segments comparés.",
+      "Identifier hypothèses, date et exclusions du modèle.",
+      "Demander données et étude de faisabilité propres au bâtiment.",
+      "Demander une analyse de sensibilité plutôt qu'une garantie issue d'un agrégat.",
+      "Conserver les contradictions de source et suspendre les chiffres litigieux."
+    ]
+  },
+  "sources": [
+    {
+      "texte": "Focus 106, Analyse socio-économique de la rénovation énergétique, juin 2024, pages 13-22. Lecture critique de ce modèle historique, pas un devis ni une prescription.",
+      "url": "https://www.cae-eco.fr/staticfiles/pdf/focus-106-modelisation-reno-240625.pdf#page=13",
+      "nature": "institution"
+    }
+  ],
+  "provenance": {
+    "auteur": "modele",
+    "modele": "Identifiant non exposé (Codex)",
+    "genere_le": "2026-09-06",
+    "session": "pilote-renovation-10p-auteur-20260906",
+    "sources_retrouvees": 1,
+    "sources_concordantes": 0,
+    "sans_source": false
+  },
+  "statut": "valide",
+  "partage": "banque",
+  "verifie": "2026-09-06",
+  "version": 1,
+  "cartes": [
+    {
+      "id": "renovation-pilote-perspectives",
+      "chapitre": "satellite.travaux.rentabilite-renovation",
+      "domaine": "travaux",
+      "branche": "renovation-globale",
+      "type": "photo",
+      "niveau": 4,
+      "question": "Le schéma distingue deux perspectives. Un bénéfice climatique valorisé rembourse-t-il, à lui seul, les mensualités du propriétaire ?",
+      "reponse": "Non. La valeur sociale attribuée aux émissions évitées n'est pas un encaissement du propriétaire. Il faut identifier séparément ses économies monétaires et son financement.",
+      "explication": "L'étude distingue bénéfices privés et sociaux. Même la valeur privée comprend du confort et une capitalisation supposée, qui ne sont pas tous des flux de trésorerie disponibles.",
+      "vigilance": "Les paramètres de l'étude ne remplacent pas les données d'un projet réel.",
+      "source": [
+        {
+          "texte": "Focus 106, Analyse socio-économique de la rénovation énergétique, juin 2024, pages 14, 19-20. Lecture critique de ce modèle historique, pas un devis ni une prescription.",
+          "url": "https://www.cae-eco.fr/staticfiles/pdf/focus-106-modelisation-reno-240625.pdf#page=14",
+          "nature": "institution"
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "modele": "Identifiant non exposé (Codex)",
+        "genere_le": "2026-09-06",
+        "session": "pilote-renovation-10p-auteur-20260906",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "verifie": "2026-09-06",
+      "peremption": null,
+      "statut": "valide",
+      "partage": "banque",
+      "image": {
+        "fichier": "images/renovation-perspectives.svg",
+        "alt": "Deux perspectives : propriétaire, économies et confort ; société, bénéfices climatiques et de santé selon le modèle. Aucun flux de versement n'est dessiné.",
+        "licence": "Création pédagogique originale Académie ; diffusion dans ce pilote autorisée par JB.",
+        "credit": "Académie · Schéma pédagogique original, sans reprise de la figure du PDF.",
+        "source": "https://www.cae-eco.fr/staticfiles/pdf/focus-106-modelisation-reno-240625.pdf#page=20"
+      },
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "Identifiant non exposé",
+        "date": "2026-09-06",
+        "rapport": "travail/pilote-renovation-10p/RELECTURE.md",
+        "session": "pilote-renovation-10p-revue-20260906",
+        "assertions": [
+          "Perspectives privées/sociales et distinction de trésorerie.",
+          "Seuil crédit hypothétique, frictions calibrées non facturables.",
+          "Exclusions, permutations des segments, dénominateurs et anomalie santé contrôlés."
+        ],
+        "sources": [
+          "Focus 106, PDF SHA256 322a2f5e843f45b99f324a9f185a63d75f6838602081e362002176451855dc43, pages 13-22"
+        ],
+        "reserves": [
+          "Pilote de lecture critique ; ne prouve pas une expertise N4 acquise.",
+          "Fonctionnement du client et persistance à vérifier séparément."
+        ]
+      }
+    },
+    {
+      "id": "renovation-pilote-credit",
+      "chapitre": "satellite.travaux.rentabilite-renovation",
+      "domaine": "travaux",
+      "branche": "renovation-globale",
+      "type": "qcm",
+      "niveau": 4,
+      "question": "Le Focus modélise un refus de crédit lorsque l'annuité dépasse 5 % du revenu annuel. Comment reprendre ce chiffre dans une note au conseil syndical ?",
+      "reponse": "Comme une hypothèse de simulation qui demande encore une confirmation empirique, pas comme une règle bancaire applicable au dossier.",
+      "explication": "La page 15 qualifie expressément le statut de cette hypothèse. Une simulation ne décide ni de l'éligibilité du ménage ni du prêt réel.",
+      "vigilance": "Les paramètres de l'étude ne remplacent pas les données d'un projet réel.",
+      "source": [
+        {
+          "texte": "Focus 106, Analyse socio-économique de la rénovation énergétique, juin 2024, pages 15. Lecture critique de ce modèle historique, pas un devis ni une prescription.",
+          "url": "https://www.cae-eco.fr/staticfiles/pdf/focus-106-modelisation-reno-240625.pdf#page=15",
+          "nature": "institution"
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "modele": "Identifiant non exposé (Codex)",
+        "genere_le": "2026-09-06",
+        "session": "pilote-renovation-10p-auteur-20260906",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "verifie": "2026-09-06",
+      "peremption": null,
+      "statut": "valide",
+      "partage": "banque",
+      "choix": [
+        {
+          "texte": "Hypothèse de simulation à distinguer des conditions réelles du financement.",
+          "correct": true
+        },
+        {
+          "texte": "Plafond légal que toutes les banques doivent appliquer.",
+          "correct": false,
+          "pourquoi_faux": "Le document ne présente pas ce seuil comme une loi."
+        },
+        {
+          "texte": "Preuve que tout ménage en dessous de ce seuil obtiendra un prêt.",
+          "correct": false,
+          "pourquoi_faux": "La simulation n'est pas une décision de crédit individuelle."
+        },
+        {
+          "texte": "Taux d'intérêt annuel à inscrire dans le devis.",
+          "correct": false,
+          "pourquoi_faux": "Une annuité rapportée au revenu n'est pas un taux d'intérêt."
+        }
+      ],
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "Identifiant non exposé",
+        "date": "2026-09-06",
+        "rapport": "travail/pilote-renovation-10p/RELECTURE.md",
+        "session": "pilote-renovation-10p-revue-20260906",
+        "assertions": [
+          "Perspectives privées/sociales et distinction de trésorerie.",
+          "Seuil crédit hypothétique, frictions calibrées non facturables.",
+          "Exclusions, permutations des segments, dénominateurs et anomalie santé contrôlés."
+        ],
+        "sources": [
+          "Focus 106, PDF SHA256 322a2f5e843f45b99f324a9f185a63d75f6838602081e362002176451855dc43, pages 13-22"
+        ],
+        "reserves": [
+          "Pilote de lecture critique ; ne prouve pas une expertise N4 acquise.",
+          "Fonctionnement du client et persistance à vérifier séparément."
+        ]
+      }
+    },
+    {
+      "id": "renovation-pilote-frictions",
+      "chapitre": "satellite.travaux.rentabilite-renovation",
+      "domaine": "travaux",
+      "branche": "renovation-globale",
+      "type": "libre",
+      "niveau": 4,
+      "question": "Dans un cas fictif, on te propose d'ajouter 18 000 € et 14 000 € au devis d'un appartement loué, parce que ces montants figurent dans le Focus. Que corriges-tu ?",
+      "reponse": "Le total arithmétique est 32 000 €, mais ces montants sont des coûts implicites calibrés pour représenter des frictions locatives et collectives. Ce ne sont pas des postes facturables constatés sur cet appartement.",
+      "explication": "Il faut rechercher les obstacles propres au projet et les coûts réellement documentés. Ajouter ces coefficients au devis mélangerait comptabilité du chantier et représentation économique.",
+      "vigilance": "Les paramètres de l'étude ne remplacent pas les données d'un projet réel.",
+      "source": [
+        {
+          "texte": "Focus 106, Analyse socio-économique de la rénovation énergétique, juin 2024, pages 15-16. Lecture critique de ce modèle historique, pas un devis ni une prescription.",
+          "url": "https://www.cae-eco.fr/staticfiles/pdf/focus-106-modelisation-reno-240625.pdf#page=15",
+          "nature": "institution"
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "modele": "Identifiant non exposé (Codex)",
+        "genere_le": "2026-09-06",
+        "session": "pilote-renovation-10p-auteur-20260906",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "verifie": "2026-09-06",
+      "peremption": null,
+      "statut": "valide",
+      "partage": "banque",
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "Identifiant non exposé",
+        "date": "2026-09-06",
+        "rapport": "travail/pilote-renovation-10p/RELECTURE.md",
+        "session": "pilote-renovation-10p-revue-20260906",
+        "assertions": [
+          "Perspectives privées/sociales et distinction de trésorerie.",
+          "Seuil crédit hypothétique, frictions calibrées non facturables.",
+          "Exclusions, permutations des segments, dénominateurs et anomalie santé contrôlés."
+        ],
+        "sources": [
+          "Focus 106, PDF SHA256 322a2f5e843f45b99f324a9f185a63d75f6838602081e362002176451855dc43, pages 13-22"
+        ],
+        "reserves": [
+          "Pilote de lecture critique ; ne prouve pas une expertise N4 acquise.",
+          "Fonctionnement du client et persistance à vérifier séparément."
+        ]
+      }
+    },
+    {
+      "id": "renovation-pilote-perimetre",
+      "chapitre": "satellite.travaux.rentabilite-renovation",
+      "domaine": "travaux",
+      "branche": "renovation-globale",
+      "type": "qcm",
+      "niveau": 4,
+      "question": "Un scénario est rentable dans le modèle et combine isolation et pompe à chaleur. Peut-on le présenter comme techniquement réalisable sur l'immeuble ?",
+      "reponse": "Pas sans étude du bâtiment : le modèle exclut notamment des coûts induits, la VMC et certaines contraintes architecturales et acoustiques.",
+      "explication": "La base représente des segments du parc, non une visite de l'immeuble. La page 18 explicite les exclusions ; ignorer un poste dans le calcul ne rend pas ce poste inutile.",
+      "vigilance": "Les paramètres de l'étude ne remplacent pas les données d'un projet réel.",
+      "source": [
+        {
+          "texte": "Focus 106, Analyse socio-économique de la rénovation énergétique, juin 2024, pages 17-18. Lecture critique de ce modèle historique, pas un devis ni une prescription.",
+          "url": "https://www.cae-eco.fr/staticfiles/pdf/focus-106-modelisation-reno-240625.pdf#page=17",
+          "nature": "institution"
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "modele": "Identifiant non exposé (Codex)",
+        "genere_le": "2026-09-06",
+        "session": "pilote-renovation-10p-auteur-20260906",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "verifie": "2026-09-06",
+      "peremption": null,
+      "statut": "valide",
+      "partage": "banque",
+      "choix": [
+        {
+          "texte": "Non : vérifier les données du bâtiment, les exclusions et la faisabilité technique.",
+          "correct": true
+        },
+        {
+          "texte": "Oui, puisque tous les logements d'un segment sont identiques en pratique.",
+          "correct": false,
+          "pourquoi_faux": "Un archétype statistique ne décrit pas toutes les contraintes du bâtiment."
+        },
+        {
+          "texte": "Oui, si on retire la ventilation du chantier comme du modèle.",
+          "correct": false,
+          "pourquoi_faux": "L'exclusion du calcul n'autorise pas la suppression d'un équipement."
+        },
+        {
+          "texte": "Oui : une rentabilité sociale positive prouve la faisabilité acoustique.",
+          "correct": false,
+          "pourquoi_faux": "Le critère économique ne mesure pas cette faisabilité."
+        }
+      ],
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "Identifiant non exposé",
+        "date": "2026-09-06",
+        "rapport": "travail/pilote-renovation-10p/RELECTURE.md",
+        "session": "pilote-renovation-10p-revue-20260906",
+        "assertions": [
+          "Perspectives privées/sociales et distinction de trésorerie.",
+          "Seuil crédit hypothétique, frictions calibrées non facturables.",
+          "Exclusions, permutations des segments, dénominateurs et anomalie santé contrôlés."
+        ],
+        "sources": [
+          "Focus 106, PDF SHA256 322a2f5e843f45b99f324a9f185a63d75f6838602081e362002176451855dc43, pages 13-22"
+        ],
+        "reserves": [
+          "Pilote de lecture critique ; ne prouve pas une expertise N4 acquise.",
+          "Fonctionnement du client et persistance à vérifier séparément."
+        ]
+      }
+    },
+    {
+      "id": "renovation-pilote-classements",
+      "chapitre": "satellite.travaux.rentabilite-renovation",
+      "domaine": "travaux",
+      "branche": "renovation-globale",
+      "type": "photo",
+      "niveau": 4,
+      "question": "Dans ce schéma fictif, les rangs sont triés séparément. Peut-on comparer la première case privée à la première case sociale pour mesurer l'écart d'un même logement ?",
+      "reponse": "Non : la première case privée représente A, la première case sociale représente C. Il faut rejoindre les données par l'identité du segment avant de comparer ses deux valeurs.",
+      "explication": "L'encadré 3 de la page 20 avertit du changement d'ordre. Les rangs sont comparables comme rangs, pas comme identifiants de logements. La figure 8 illustre ce qui se passe lorsqu'on conserve les mêmes segments.",
+      "vigilance": "Les paramètres de l'étude ne remplacent pas les données d'un projet réel.",
+      "source": [
+        {
+          "texte": "Focus 106, Analyse socio-économique de la rénovation énergétique, juin 2024, pages 20-21. Lecture critique de ce modèle historique, pas un devis ni une prescription.",
+          "url": "https://www.cae-eco.fr/staticfiles/pdf/focus-106-modelisation-reno-240625.pdf#page=20",
+          "nature": "institution"
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "modele": "Identifiant non exposé (Codex)",
+        "genere_le": "2026-09-06",
+        "session": "pilote-renovation-10p-auteur-20260906",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "verifie": "2026-09-06",
+      "peremption": null,
+      "statut": "valide",
+      "partage": "banque",
+      "image": {
+        "fichier": "images/renovation-classements.svg",
+        "alt": "Exemple fictif : classement privé A, B, C ; classement social C, A, B. Les lettres sont les identifiants des mêmes trois segments.",
+        "licence": "Création pédagogique originale Académie ; diffusion dans ce pilote autorisée par JB.",
+        "credit": "Académie · Schéma pédagogique original, sans reprise de la figure du PDF.",
+        "source": "https://www.cae-eco.fr/staticfiles/pdf/focus-106-modelisation-reno-240625.pdf#page=20"
+      },
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "Identifiant non exposé",
+        "date": "2026-09-06",
+        "rapport": "travail/pilote-renovation-10p/RELECTURE.md",
+        "session": "pilote-renovation-10p-revue-20260906",
+        "assertions": [
+          "Perspectives privées/sociales et distinction de trésorerie.",
+          "Seuil crédit hypothétique, frictions calibrées non facturables.",
+          "Exclusions, permutations des segments, dénominateurs et anomalie santé contrôlés."
+        ],
+        "sources": [
+          "Focus 106, PDF SHA256 322a2f5e843f45b99f324a9f185a63d75f6838602081e362002176451855dc43, pages 13-22"
+        ],
+        "reserves": [
+          "Pilote de lecture critique ; ne prouve pas une expertise N4 acquise.",
+          "Fonctionnement du client et persistance à vérifier séparément."
+        ]
+      }
+    },
+    {
+      "id": "renovation-pilote-anomalie",
+      "chapitre": "satellite.travaux.rentabilite-renovation",
+      "domaine": "travaux",
+      "branche": "renovation-globale",
+      "type": "libre",
+      "niveau": 4,
+      "question": "Un paragraphe et un tableau du même document inversent les libellés mortalité et morbidité. Deux extracteurs reproduisent cette contradiction. Que fais-tu avant d'en tirer une carte ?",
+      "reponse": "Je conserve les deux localisations et je vérifie le PDF rendu. Si la contradiction est bien dans la source, je la signale et je suspends l'association chiffrée litigieuse ; je cherche une clarification ou une autre source avant de l'enseigner.",
+      "explication": "C'est le cas du texte et du tableau 6a page 13. L'accord entre extracteurs prouve au mieux la reproduction de la source, pas la justesse de son contenu. Ce pilote n'enseigne pas les montants de santé litigieux.",
+      "vigilance": "Les paramètres de l'étude ne remplacent pas les données d'un projet réel.",
+      "source": [
+        {
+          "texte": "Focus 106, Analyse socio-économique de la rénovation énergétique, juin 2024, pages 13. Lecture critique de ce modèle historique, pas un devis ni une prescription.",
+          "url": "https://www.cae-eco.fr/staticfiles/pdf/focus-106-modelisation-reno-240625.pdf#page=13",
+          "nature": "institution"
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "modele": "Identifiant non exposé (Codex)",
+        "genere_le": "2026-09-06",
+        "session": "pilote-renovation-10p-auteur-20260906",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "verifie": "2026-09-06",
+      "peremption": null,
+      "statut": "valide",
+      "partage": "banque",
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "Identifiant non exposé",
+        "date": "2026-09-06",
+        "rapport": "travail/pilote-renovation-10p/RELECTURE.md",
+        "session": "pilote-renovation-10p-revue-20260906",
+        "assertions": [
+          "Perspectives privées/sociales et distinction de trésorerie.",
+          "Seuil crédit hypothétique, frictions calibrées non facturables.",
+          "Exclusions, permutations des segments, dénominateurs et anomalie santé contrôlés."
+        ],
+        "sources": [
+          "Focus 106, PDF SHA256 322a2f5e843f45b99f324a9f185a63d75f6838602081e362002176451855dc43, pages 13-22"
+        ],
+        "reserves": [
+          "Pilote de lecture critique ; ne prouve pas une expertise N4 acquise.",
+          "Fonctionnement du client et persistance à vérifier séparément."
+        ]
+      }
+    },
+    {
+      "id": "renovation-pilote-axes",
+      "chapitre": "satellite.travaux.rentabilite-renovation",
+      "domaine": "travaux",
+      "branche": "renovation-globale",
+      "type": "photo",
+      "niveau": 4,
+      "question": "Ces trois intitulés d'abscisse correspondent-ils au même pourcentage ? Que dois-tu préciser avant de présenter un résultat de courbe ?",
+      "reponse": "Non. Part des logements, part des émissions évitées et part des économies d'énergie ont des dénominateurs différents. Il faut préciser l'axe, sa référence, la perspective, le scénario et les hypothèses.",
+      "explication": "Un pourcentage de logements dont la VAN est positive ne donne pas le même pourcentage d'économie sur chaque facture. Les figures 9 et 11 changent le cumul en abscisse ; les résultats agrégés ne sont pas une promesse individuelle.",
+      "vigilance": "Les paramètres de l'étude ne remplacent pas les données d'un projet réel.",
+      "source": [
+        {
+          "texte": "Focus 106, Analyse socio-économique de la rénovation énergétique, juin 2024, pages 19-22. Lecture critique de ce modèle historique, pas un devis ni une prescription.",
+          "url": "https://www.cae-eco.fr/staticfiles/pdf/focus-106-modelisation-reno-240625.pdf#page=19",
+          "nature": "institution"
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "modele": "Identifiant non exposé (Codex)",
+        "genere_le": "2026-09-06",
+        "session": "pilote-renovation-10p-auteur-20260906",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "verifie": "2026-09-06",
+      "peremption": null,
+      "statut": "valide",
+      "partage": "banque",
+      "image": {
+        "fichier": "images/renovation-axes.svg",
+        "alt": "Trois cumuls différents : logements du parc ; émissions évitées par rapport à 2018 ; économies d'énergie par rapport à 2018. Schéma de lecture, sans données chiffrées inventées.",
+        "licence": "Création pédagogique originale Académie ; diffusion dans ce pilote autorisée par JB.",
+        "credit": "Académie · Schéma pédagogique original, sans reprise de la figure du PDF.",
+        "source": "https://www.cae-eco.fr/staticfiles/pdf/focus-106-modelisation-reno-240625.pdf#page=20"
+      },
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "Identifiant non exposé",
+        "date": "2026-09-06",
+        "rapport": "travail/pilote-renovation-10p/RELECTURE.md",
+        "session": "pilote-renovation-10p-revue-20260906",
+        "assertions": [
+          "Perspectives privées/sociales et distinction de trésorerie.",
+          "Seuil crédit hypothétique, frictions calibrées non facturables.",
+          "Exclusions, permutations des segments, dénominateurs et anomalie santé contrôlés."
+        ],
+        "sources": [
+          "Focus 106, PDF SHA256 322a2f5e843f45b99f324a9f185a63d75f6838602081e362002176451855dc43, pages 13-22"
+        ],
+        "reserves": [
+          "Pilote de lecture critique ; ne prouve pas une expertise N4 acquise.",
+          "Fonctionnement du client et persistance à vérifier séparément."
+        ]
+      }
+    },
+    {
+      "id": "renovation-pilote-sensibilite",
+      "chapitre": "satellite.travaux.rentabilite-renovation",
+      "domaine": "travaux",
+      "branche": "renovation-globale",
+      "type": "libre",
+      "niveau": 4,
+      "question": "Le conseil syndical veut retenir un seul résultat de rentabilité. Quelles familles d'hypothèses demandes-tu de faire varier, et quelle conclusion refuses-tu ?",
+      "reponse": "Je demande la sensibilité aux prix de l'énergie, à l'horizon et à l'actualisation, aux performances réellement atteintes et aux coûts exclus ou propres au bâtiment. Je refuse de convertir un résultat national conditionnel en garantie de gain pour cet immeuble.",
+      "explication": "Les pages 14 et 16-18 exposent l'horizon, les anticipations, les préférences et les limites de représentation ; les pages 21-22 agrègent des situations hétérogènes. La liste de contrôles est une proposition pédagogique, pas une procédure certifiée.",
+      "vigilance": "Les paramètres de l'étude ne remplacent pas les données d'un projet réel.",
+      "source": [
+        {
+          "texte": "Focus 106, Analyse socio-économique de la rénovation énergétique, juin 2024, pages 14, 16-18, 21-22. Lecture critique de ce modèle historique, pas un devis ni une prescription.",
+          "url": "https://www.cae-eco.fr/staticfiles/pdf/focus-106-modelisation-reno-240625.pdf#page=14",
+          "nature": "institution"
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "modele": "Identifiant non exposé (Codex)",
+        "genere_le": "2026-09-06",
+        "session": "pilote-renovation-10p-auteur-20260906",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "verifie": "2026-09-06",
+      "peremption": null,
+      "statut": "valide",
+      "partage": "banque",
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "Identifiant non exposé",
+        "date": "2026-09-06",
+        "rapport": "travail/pilote-renovation-10p/RELECTURE.md",
+        "session": "pilote-renovation-10p-revue-20260906",
+        "assertions": [
+          "Perspectives privées/sociales et distinction de trésorerie.",
+          "Seuil crédit hypothétique, frictions calibrées non facturables.",
+          "Exclusions, permutations des segments, dénominateurs et anomalie santé contrôlés."
+        ],
+        "sources": [
+          "Focus 106, PDF SHA256 322a2f5e843f45b99f324a9f185a63d75f6838602081e362002176451855dc43, pages 13-22"
+        ],
+        "reserves": [
+          "Pilote de lecture critique ; ne prouve pas une expertise N4 acquise.",
+          "Fonctionnement du client et persistance à vérifier séparément."
+        ]
+      }
+    }
+  ],
+  "verifie_par": {
+    "outil": "Codex",
+    "modele": "Identifiant non exposé",
+    "date": "2026-09-06",
+    "rapport": "travail/pilote-renovation-10p/RELECTURE.md",
+    "session": "pilote-renovation-10p-revue-20260906",
+    "assertions": [
+      "Perspectives privées/sociales et distinction de trésorerie.",
+      "Seuil crédit hypothétique, frictions calibrées non facturables.",
+      "Exclusions, permutations des segments, dénominateurs et anomalie santé contrôlés."
+    ],
+    "sources": [
+      "Focus 106, PDF SHA256 322a2f5e843f45b99f324a9f185a63d75f6838602081e362002176451855dc43, pages 13-22"
+    ],
+    "reserves": [
+      "Pilote de lecture critique ; ne prouve pas une expertise N4 acquise.",
+      "Fonctionnement du client et persistance à vérifier séparément."
+    ]
+  }
+}

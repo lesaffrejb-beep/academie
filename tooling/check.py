@@ -160,12 +160,34 @@ def controle_programme(errors):
             errors.append(f"programme : {l}")
 
 
+def controle_expertises(errors):
+    sys.path.insert(0, str(ROOT / "app"))
+    from couverture_expertises import verifier
+    try:
+        catalogue = json.loads((ROOT / "programme/specialisations/copro.json").read_text())
+        programme = json.loads((ROOT / "programme/copro.json").read_text())
+        errors.extend(f"expertises : {e}" for e in verifier(catalogue, programme))
+    except (OSError, ValueError, TypeError) as exc:
+        errors.append(f"expertises : {exc}")
+
+
+def est_sortie_benchmark(path):
+    """Sortie tierce brute par page, hors textes éditoriaux (décision 0047)."""
+    try:
+        p = path.relative_to(ROOT / "sources" / "benchmark-pdf")
+    except ValueError:
+        return False
+    return len(p.parts) == 2 and re.fullmatch(r"[a-z][a-z0-9-]*-[0-9]{4}\.md", p.name) is not None
+
+
 def controle_tirets(errors):
     cibles = [ROOT / d for d in DOCS_V2 if (ROOT / d).is_file()]
     cibles += list(fichiers(DOSSIERS_V2, {".md", ".json", ".sql", ".ts", ".tsx"}))
     for f in cibles:
         if "sources" in f.parts and re.fullmatch(r"[0-9a-f]{16}", f.name.split(".")[0] or ""):
             continue  # un pivot ou une fiche cite le document tel quel ; ses tirets ne sont pas les nôtres
+        if est_sortie_benchmark(f):
+            continue  # preuve brute d'extraction, jamais réécrite pour satisfaire la typographie
         txt = lit(f)
         if "—" in txt:
             n = txt.count("—")
@@ -278,7 +300,7 @@ def main() -> int:
     errors: list[str] = []
     for controle in (controle_fichiers_requis, controle_fichiers_suivis,
                      controle_json, controle_ancien_couplage, controle_client_archipel,
-                     controle_roadmap, controle_decisions, controle_programme, controle_tirets, controle_voix,
+                     controle_roadmap, controle_decisions, controle_programme, controle_expertises, controle_tirets, controle_voix,
                      controle_contenu, controle_imports, controle_usine, controle_chapitres):
         controle(errors)
     for error in errors:

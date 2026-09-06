@@ -40,6 +40,23 @@ les formulations avant/après. Elle ne vaut pas audit juridique intégral.
 
 ## 1. Le métier en une page
 
+### Ambition élargie et état réel, 06/09/2026
+
+Le socle ne suffit pas à l'ambition de JB. Les spécialisations doivent
+permettre de diagnostiquer, instruire, arbitrer et soutenir une contradiction
+dans les disciplines du bâtiment, du droit, des finances, de l'habitat et
+de la direction. La [cartographie des spécialisations](programme/specialisations/copro.json)
+porte leurs objectifs et productions attendues ; le [rapport de couverture](travail/expertise-2026-09-06/COUVERTURE.md)
+compte le contenu local disponible sans le confondre avec le programme.
+Le [protocole de fabrication](travail/expertise-2026-09-06/PROTOCOLE.md)
+organise leur construction (`ACA-EXPERTISE-1`, décision 0046).
+
+Les intitulés de niveaux restent ceux du programme existant. Ils ne prouvent
+ni autonomie professionnelle ni qualification pour exercer un autre métier.
+La maîtrise pratique, le jugement expert et les validations de terrain
+doivent avoir leurs preuves propres. Les spécialisations ne seront plus
+laissées aux seules découvertes occasionnelles dans la boîte.
+
 Un gestionnaire de copropriété administre des immeubles pour le compte
 de leurs copropriétaires réunis en syndicat. Son année tourne autour de
 l'**assemblée générale** : arrêter les comptes, préparer le conseil
