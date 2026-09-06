@@ -33,7 +33,7 @@ le corps de l’arrêté visible sur la page 6 est absent du texte NotebookLM
 récupéré. Voir [le test du scan](SCAN.md). Cet exemple ne démontre aucun gain
 OCR du panneau et impose de conserver la référence PDF et les images. Les deux chemins laissent à faire la compréhension des schémas, les références de pages, le contrôle des assertions et la fabrication pédagogique. Aucune économie monétaire globale chiffrable sans temps complet et consommation d'abonnement observés.
 
-Preuves brutes temporaires : `/private/tmp/academie-benchmark-notebooklm/` (textes local et NotebookLM, différences de séquence, rendu page 8). Les textes source restent hors du dépôt. Aucun contenu pédagogique modifié.
+Preuves brutes conservées et empreintes vérifiées : `/Users/jb/.codex/visualizations/2026/09/06/01a07779-1d3c-7203-a4f5-f7ddc4deb94e/notebooklm-benchmark-texte/` (textes local et NotebookLM, différences de séquence, rendu page 8). Les textes source restent hors du dépôt. Aucun contenu pédagogique modifié.
 
 Recontrôle indépendant du scan par le coordinateur : rendu page6 examiné,
 six repères recherchés à nouveau dans toute la capture ; mêmes absences.

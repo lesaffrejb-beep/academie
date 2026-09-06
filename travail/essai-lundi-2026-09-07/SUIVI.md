@@ -32,8 +32,11 @@ sur main. L'objectif ne se réduit pas au benchmark ni au premier module.
 - Science : portée des références corrigée dans METHODE36-37, revue distincte
   des résumés primaires. Aucune efficacité d'apprentissage locale prétendue.
 - VPS : inspection lecture seule réalisée ; migration0003 nécessaire,
-  Node absent, environ987MiB libres au constat. Script/paquet en préparation.
-- Publication et push de cette passe : non réalisés au moment de ce point.
+  Node absent, environ987MiB libres au constat. Paquet 6946f16 transmis et contrôle distant20fichiers/7études vert ;
+  installation bloquée par revue automatique, confirmation directe demandée.
+- Push sur main : 6946f1647d49570124a13bd547f87a80a27414bc, confirmé.
+  CI check34047707064 et client34047707140 réussies.
+  Publication VPS : non réalisée, aucun service arrêté ni migration effectuée.
 
 ## Contrôles
 
@@ -46,9 +49,10 @@ antérieures ont été suivies de vrais rejeux autorisés avec sockets localhost
 ## Ce qui reste requis
 
 1. Interactions Étude et reprise terminées localement, rendu ordinateur/téléphone examiné.
-2. Revoir script de publication, préparer paquet depuis SHAcommité, sauvegarder,
-   migrer sans perdre une ligne, installer API/client et prouver usage authentifié.
-3. Pousser les grandes passes sur main et consigner SHA/paquet/état VPS.
+2. Après confirmation directe exigée par la revue automatique, appliquer le
+   paquet revu et contrôlé ; sauvegarder, migrer sans perdre une ligne, installer
+   API/client et prouver usage authentifié.
+3. Grande passe poussée sur main ; consigner ensuite le résultat VPS réel.
 4. Poursuivre tous médias accessibles, qualifier captures et réserves, fabriquer
    les prochains dossiers experts depuis des passages et supports examinés.
 5. Vérifier le parcours réel de lundi ; distinguer tests automatisés, observation
@@ -71,3 +75,9 @@ réponse et cases lisibles ; repères mobiles ajustés pour éviter leurs coupur
 325 tests TypeScript et six de publication verts avant les seules retouches
 de brouillon et présentation finales, vérifiées depuis par E2E et compilation.
 17 tests de paquet/conservation SQLite verts. Aucun brut documentaire dans le paquet.
+
+Le refus automatique de l’installation porte sur `sudo --appliquer` et
+la reconnaissance de l’autorisation utilisateur. Le transfert a été autorisé
+après présentation de l’objectif enregistré, mais cette même preuve ne suffit
+pas à la revue pour la migration. Une confirmation directe est en attente ;
+le paquet reste vérifié et prêt. Voir `../publication-2026-09-06/PUBLICATION-VPS.md`.
