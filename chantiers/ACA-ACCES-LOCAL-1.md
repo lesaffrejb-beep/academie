@@ -52,3 +52,25 @@ python3 app/tests.py && python3 tooling/check.py
 
 La publication et l'exécution de la purge sur le VPS restent un geste
 humain distinct.
+
+## Extension demandée par JB le 06/09 : entrée du petit groupe
+
+Outil : Codex ; modèle : GPT-6. Le groupe initial choisit son pseudo dans
+une liste, puis saisit son mot de passe. L'inscription propose le cursus
+avant la création ; le choix reste écrit dans le journal append-only après
+conservation de la clé. Un pseudo masqué reste accessible par saisie.
+
+Le périmètre couvre aussi l'annuaire de connexion dans l'API et son client,
+les tests de projection de l'identité locale et les tests navigateur. Aucun
+compte ni ancien journal n'est supprimé et aucune migration n'est nécessaire.
+
+Preuves supplémentaires, tests rouges avant correction :
+
+- L'annuaire sans session ne livre que pseudo de connexion et nom affiché
+  des comptes visibles, sans identifiant, cursus, réponse, secret ni profil
+  technique ; masquages et suppression retirent l'entrée.
+- Cliquer son pseudo puis saisir son mot de passe reconnecte le bon compte.
+- Choisir son cursus pendant l'inscription ouvre ce cursus après conservation
+  de la clé, et le journal distant conserve le choix.
+- La clé ne reste jamais dans le stockage navigateur et l'écran de conservation
+  reste affiché lors d'une récupération d'un compte ayant déjà un cursus.

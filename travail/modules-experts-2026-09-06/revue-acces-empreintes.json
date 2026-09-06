@@ -1,0 +1,10 @@
+{
+  "serveur/academie_etat/app.py": "682f520c0a53900c13b0d95a5f5d4bf743f24b621b96f294cb27084a00ba4ac2",
+  "serveur/academie_etat/auth.py": "984270545ed65714e334a38d066d7ff78fe57074c60ce08385e2e96b35283e1f",
+  "web/src/app/compte.ts": "6cfe0a8d175b98b6ff5f3a29f2b3cec3ef288f9dbd40287d6d6a899d9825e240",
+  "web/src/ecrans/Arrivee/Arrivee.tsx": "53c89c5b50949ff6ea4b36554fa7e4f6efb194d3dc80d1365ef2a158a648f1fb",
+  "web/src/donnees/api.ts": "67a24a61f91c798bf9a0419663be62e4621fa8618fe7370f78c165b599f7430c",
+  "serveur/tests/test_onboarding.py": "9ee34d1522eed1e3ee08884d26c694707669828c5b844447b1cd6efaaf0a8b02",
+  "web/src/app/compte.test.ts": "8b0ce3f7f62a061b8b2c67d1a565966942c5d469e371acca1d2c6184476e452a",
+  "web/tests/onboarding/comptes.spec.ts": "90524d458f99bc79965cbf13218144833f79ebf84fa7584189e4a7ab3800993c"
+}

@@ -142,3 +142,26 @@ test("une mauvaise reponse QCM explique le choix et conserve la confiance", asyn
   await expect(page.getByRole("heading", { name: "La séance est terminée." })).toBeVisible();
   expect((await journal(page)).find((l) => l.mode === "revision")?.confiance).toBe(true);
 });
+
+for (const clavier of [false,true]) {
+  test(`la synthèse conserve texte et critères cochés par ${clavier ? "clavier" : "clic"}`,async({page})=>{
+    await ouvre(page,[{...CARTE,type:"synthese",attendus:["Séparer faits et hypothèses","Conserver les inconnues"]}]);
+    await page.getByRole("textbox",{name:"Ta réponse"}).fill("Avis provisoire : donnée inconnue.\nJe conserve ma réserve.");
+    await page.getByRole("button",{name:"Voir la réponse"}).click();
+    await page.getByRole("checkbox",{name:"Conserver les inconnues"}).check();
+    if (clavier) {await page.locator("h1").focus();await page.keyboard.press("3");}
+    else await page.getByRole("button",{name:"Bien",exact:true}).click();
+    await expect(page.getByRole("heading",{name:"La séance est terminée."})).toBeVisible();
+    expect((await journal(page)).find(l=>l.mode==="revision")).toMatchObject({
+      reponse_libre:"Avis provisoire : donnée inconnue.\nJe conserve ma réserve.",attendus_coches:[1],
+    });
+  });
+}
+
+test("un refus du presse-papier ne confirme pas la copie",async({page})=>{
+  await page.addInitScript(()=>Object.defineProperty(navigator,"clipboard",{value:{writeText:async()=>{throw new Error("refus");}}}));
+  await ouvre(page,[{...CARTE,type:"role",question:"Dialogue : « Tu es un interlocuteur de test. Expose tes réserves. »"}]);
+  await page.getByRole("button",{name:"Copier",exact:true}).click();
+  await expect(page.getByRole("alert")).toContainText("Copie impossible");
+  await expect(page.getByRole("button",{name:"Copié",exact:true})).toHaveCount(0);
+});

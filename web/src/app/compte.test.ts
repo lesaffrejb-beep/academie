@@ -1,5 +1,5 @@
-import { describe, it, expect } from "vitest";
-import { nomJournal, clePrivee, valideCompte } from "./compte";
+import { describe, it, expect, vi } from "vitest";
+import { nomJournal, clePrivee, valideCompte, memoriseCompte, compteMemorise } from "./compte";
 import { ligneValide } from "../donnees/api";
 
 describe("compte et sauvegarde", () => {
@@ -12,6 +12,16 @@ describe("compte et sauvegarde", () => {
     expect(valideCompte("abcdefghijklm", " ")).toBeTruthy();
     expect(valideCompte("court", "A")).toBeTruthy();
     expect(valideCompte("abcdefghijklm", "A")).toBe("");
+  });
+  it("ne conserve aucun secret reçu avec le profil", () => {
+    const donnees = new Map<string,string>();
+    vi.stubGlobal("localStorage", {setItem:(k:string,v:string)=>donnees.set(k,v),getItem:(k:string)=>donnees.get(k)});
+    try {
+      const compte = {id:"identite",titre_affiche:"Essai",cree_le:"2026-09-06",cursus:null,cle_recuperation:"SECRET-A-NE-PAS-CONSERVER"};
+      memoriseCompte(compte);
+      expect(JSON.stringify([...donnees.values()])).not.toContain(compte.cle_recuperation);
+      expect(compteMemorise()?.id).toBe(compte.id);
+    } finally {vi.unstubAllGlobals();}
   });
   it("accepte uniquement un événement de cursus bien formé", () => {
     const l = {quand:"2026-09-05T12:00:00Z", nonce:"abcdefgh", mode:"cursus"};

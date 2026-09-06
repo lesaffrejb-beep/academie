@@ -318,6 +318,30 @@ def valide_carte(carte: dict, chapitre: dict, ref_ch: str, parc: set[str],
         att = carte.get("attendus") or []
         if not 3 <= len(att) <= 10:
             err.append(f"{ref} : `{t}` exige 3 à 10 attendus")
+    if "paires" in carte:
+        paires = carte["paires"]
+        if not isinstance(paires, list) or not 1 <= len(paires) <= 26:
+            err.append(f"{ref} : `paires` exige une liste de 1 à 26 paires")
+        elif any(not isinstance(p, dict) or any(
+                not isinstance(p.get(c), str) or not p[c].strip()
+                for c in ("gauche", "droite")) for p in paires):
+            err.append(f"{ref} : `paires` exige des textes gauche/droite non vides")
+    if "etapes" in carte:
+        etapes = carte["etapes"]
+        if not isinstance(etapes, list) or not etapes:
+            err.append(f"{ref} : `etapes` exige une liste non vide")
+        else:
+            numeros = set()
+            for e in etapes:
+                if (not isinstance(e, dict) or type(e.get("num")) is not int
+                        or not 1 <= e["num"] <= 9007199254740991
+                        or not isinstance(e.get("titre"), str) or not e["titre"].strip()
+                        or ("cible" in e and type(e["cible"]) is not bool)):
+                    err.append(f"{ref} : `etapes` exige num entier positif sûr pour le client, titre non vide et cible booléenne facultative")
+                elif e["num"] in numeros:
+                    err.append(f"{ref} : `etapes` exige des numéros uniques")
+                else:
+                    numeros.add(e["num"])
     if t == "lecture" and not isinstance(carte.get("document"), dict):
         err.append(f"{ref} : lecture sans `document`")
     if t == "ecoute" and not isinstance(carte.get("audio"), dict):

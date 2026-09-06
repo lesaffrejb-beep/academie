@@ -97,6 +97,9 @@ class Application:
             profil, jeton = fonction(self.conn, data, entetes.get("user-agent", "")[:120])
             return self._json(201 if route == "/compte" else 200, profil, {"set-cookie": self._cookie(jeton)})
 
+        if route == "/auth/comptes" and methode == "GET":
+            return self._json(200, {"comptes": auth.comptes_connexion(self.conn)})
+
         if route == "/eleves" and methode == "GET":
             self._profil(entetes)
             return self._json(200, {"eleves": auth.eleves(self.conn)})

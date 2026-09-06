@@ -9,7 +9,10 @@ export const compteActuel = () => identite;
 export function poseCompte(c: Compte | null) { identite = c; }
 const MEMOIRE = "academie-compte-reprise";
 export function memoriseCompte(c: Compte) {
-  try {localStorage.setItem(MEMOIRE, JSON.stringify(c));} catch { /* reprise hors ligne indisponible */ }
+  // Une réponse d'inscription contient aussi une clé : seule l'identité persiste.
+  const identite = {id:c.id,titre_affiche:c.titre_affiche,cree_le:c.cree_le,cursus:c.cursus,
+    compte_personnel:c.compte_personnel,reglages:{visibilite:c.reglages?.visibilite}};
+  try {localStorage.setItem(MEMOIRE, JSON.stringify(identite));} catch { /* reprise hors ligne indisponible */ }
 }
 export function compteMemorise(): Compte | null {
   try { const c = JSON.parse(localStorage.getItem(MEMOIRE) ?? "null");

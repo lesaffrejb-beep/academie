@@ -7,6 +7,7 @@ import { accentDuRang } from "../app/theme";
 import type { Carte, Lecon, LigneJournal, Source } from "../donnees/types";
 import { etudeDisponible, repriseEtude } from "../moteur/etude";
 import { SupportEtude } from "./SupportEtude";
+import {ModuleRelier,ModuleRole,ModuleDatation} from "./ModulesSeance";
 
 export function Etude({ id }: {id: string}) {
   const { banque, journal, jour } = useMagasin();
@@ -37,14 +38,17 @@ function SalleEtude({lecon, cartes}: {lecon: Lecon; cartes: Carte[]}) {
   const originale = exercices[index];
   const decalage = originale ? Array.from(originale.id).reduce((n,c) => n + c.charCodeAt(0),0) % (originale.choix?.length || 1) : 0;
   const carte: Carte | undefined = originale ? {...originale, choix: originale.choix ? [...originale.choix.slice(decalage), ...originale.choix.slice(0,decalage)] : undefined} : undefined;
-  const supportNecessaire = Boolean(carte && (carte.image != null || ['photo', 'plan', 'relier', 'datation'].includes(carte.type)));
+  const supportNecessaire = Boolean(carte && (Object.hasOwn(carte, 'image') || ['photo', 'plan'].includes(carte.type)));
   const cleBrouillon = clePrivee(`academie-etude-brouillon:${lecon.id}:${lecon.version}:${etape}:${index}`);
   useEffect(() => {
     try {
       const b = JSON.parse((localStorage.getItem(cleBrouillon) ?? sessionStorage.getItem(cleBrouillon)) ?? "{}");
       setTexte(typeof b.texte === "string" ? b.texte : ""); setAide(b.aide === true);
       setChoix(typeof b.choix === "number" ? b.choix : null); setConfiance(b.confiance === true); setRevelee(b.revelee === true);
-    } catch { setTexte(""); setAide(false); setChoix(null); setConfiance(false); setRevelee(false); }
+      const indices:number[]=Array.isArray(b.coches) ? b.coches.filter((i:unknown):i is number=>
+        typeof i === "number" && Number.isInteger(i) && i>=0 && i<lecon.synthese.attendus.length) : [];
+      setCoches([...new Set(indices)].sort((a,b)=>a-b));
+    } catch { setTexte(""); setAide(false); setChoix(null); setConfiance(false); setRevelee(false); setCoches([]); }
     titre.current?.focus({preventScroll:true});
     window.scrollTo(0,0);
   }, [cleBrouillon]);
@@ -52,9 +56,9 @@ function SalleEtude({lecon, cartes}: {lecon: Lecon; cartes: Carte[]}) {
     const echap = (e: KeyboardEvent) => { if (e.key === "Escape" && !verrou.current) va("/"); };
     window.addEventListener("keydown", echap); return () => window.removeEventListener("keydown", echap);
   }, []);
-  function brouillon(changement: {texte?:string; aide?:boolean; choix?:number; confiance?:boolean; revelee?:boolean}) {
-    const b = {texte, aide, choix, confiance, revelee, ...changement};
-    setTexte(b.texte); setAide(b.aide); setChoix(b.choix); setConfiance(b.confiance); setRevelee(b.revelee);
+  function brouillon(changement: {texte?:string; aide?:boolean; choix?:number; confiance?:boolean; revelee?:boolean; coches?:number[]}) {
+    const b = {texte, aide, choix, confiance, revelee, coches, ...changement};
+    setTexte(b.texte); setAide(b.aide); setChoix(b.choix); setConfiance(b.confiance); setRevelee(b.revelee); setCoches(b.coches);
     try { localStorage.setItem(cleBrouillon,JSON.stringify(b)); } catch { /* brouillon en mémoire */ }
   }
   function ecritTexte(t: string) { brouillon({texte:t}); }
@@ -101,6 +105,9 @@ function SalleEtude({lecon, cartes}: {lecon: Lecon; cartes: Carte[]}) {
         <h2 className="question-etude">{carte.question}</h2>
         {supportNecessaire && <SupportEtude key={carte.id} image={carte.image} onCharge={ok => setSupportCharge(ok ? carte.id : null)} />}
         {carte.choix ? <div className="etude-choix">{carte.choix.map((c,i) => <button key={i} aria-pressed={choix === i} disabled={revelee} onClick={() => brouillon({choix:i})}><span>{String.fromCharCode(65+i)}</span>{c.texte}</button>)}</div>
+          : carte.type === "relier" ? <ModuleRelier key={carte.id} carte={carte} reponse={texte} surChangementReponse={ecritTexte} revele={revelee}/>
+          : carte.type === "role" ? <ModuleRole key={carte.id} carte={carte} reponse={texte} surChangementReponse={ecritTexte} revele={revelee}/>
+          : carte.type === "datation" ? <ModuleDatation key={carte.id} carte={carte} reponse={texte} surChangementReponse={ecritTexte} revele={revelee}/>
           : <label className="reponse-etude">Ta réponse<textarea disabled={revelee} rows={3} maxLength={5000} value={texte} onChange={e => ecritTexte(e.target.value)} /></label>}
         {!revelee ? <><button className="aide-etude" onClick={() => brouillon({aide:true})}><Lightbulb size={18}/>Un indice</button>{aide && <p className="indice-etude">{String(carte.aide ?? "Identifie la règle qui change la décision, puis l’information manquante.")}</p>}<div className="etude-actions"><button className="action-etude" disabled={supportNecessaire && supportCharge !== carte.id || (carte.choix ? choix === null : !texte.trim())} onClick={() => brouillon({revelee:true})}>Voir le retour<ArrowRight size={19}/></button></div></>
           : <section className="retour-etude" aria-live="polite"><h3>{carte.choix ? carte.choix[choix ?? -1]?.correct ? "C’est ça." : "À reprendre." : "Compare ton raisonnement"}</h3><p>{carte.reponse}</p><p>{carte.explication}</p>{carte.choix && !carte.choix[choix ?? -1]?.correct && <p>{carte.choix[choix ?? -1]?.pourquoi_faux}</p>}{source}
@@ -114,7 +121,7 @@ function SalleEtude({lecon, cartes}: {lecon: Lecon; cartes: Carte[]}) {
       {etape === "grille" && <>
         <h2 className="question-etude">Ce que ta réponse doit faire apparaître</h2>
         <p className="reponse-conservee">{reprise.reponse}</p><p>Coche uniquement ce que tu avais écrit. Cette autoévaluation ne certifie pas une compétence.</p>
-        <div className="grille-etude">{lecon.synthese.attendus.map((a,i) => <label key={i}><input type="checkbox" checked={coches.includes(i)} onChange={e => setCoches(e.target.checked ? [...coches,i] : coches.filter(n => n !== i))}/>{a}</label>)}</div>{source}
+        <div className="grille-etude">{lecon.synthese.attendus.map((a,i) => <label key={i}><input type="checkbox" checked={coches.includes(i)} onChange={e => brouillon({coches:e.target.checked ? [...coches,i].sort((a,b)=>a-b) : coches.filter(n => n !== i)})}/>{a}</label>)}</div>{source}
         <div className="etude-actions"><button className="action-etude" disabled={occupe} onClick={() => void enregistre("terminee",{reponse_libre:reprise.reponse})}>Garder cette étape<Check size={19}/></button></div>
       </>}
       {etape === "terminee" && <section className="etude-cloture"><span className="sceau-etude"><Check size={32}/></span><h2>Un peu plus clair.<br /><em>À faire revenir.</em></h2><p>Tu as parcouru cette étude. Tes rappels sont planifiés à partir de tes réponses.</p><p className="etude-intro">Ce qui reste à froid et se transfère : non mesuré.</p><div className="etude-actions">{prochaineId ? <button className="action-etude" onClick={() => va(`/salle/etude/${prochaineId}`)}>Continuer le parcours<ArrowRight size={19}/></button> : <button className="action-etude" onClick={() => va("/")}>Retour au parcours<ArrowRight size={19}/></button>}<button className="lien-action" onClick={() => void enregistre("tentative",{},0)}>Recommencer l’étude</button></div></section>}

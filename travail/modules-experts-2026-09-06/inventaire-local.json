@@ -1,0 +1,55 @@
+{
+  "date": "2026-09-06",
+  "portee": "artefact local ; sans journal joueur ; aucune preuve VPS",
+  "artefact_sha256": "362dfef6f0e5aced60cbc0a4abc064ac6c4f02c71866c69cfdb69a4ad7b5cf18",
+  "cartes_total": 111,
+  "types": {
+    "flash": 57,
+    "qcm": 36,
+    "role": 2,
+    "libre": 5,
+    "photo": 4,
+    "relier": 1,
+    "datation": 1,
+    "plan": 1,
+    "synthese": 4
+  },
+  "etudes": [
+    {
+      "id": "droit.assemblee.le-proces-verbal-et-sa-notification",
+      "statut": "valide",
+      "cartes": 5,
+      "cartes_absentes": []
+    },
+    {
+      "id": "droit.majorites.l-article-24",
+      "statut": "valide",
+      "cartes": 7,
+      "cartes_absentes": []
+    },
+    {
+      "id": "droit.organes.le-syndic-et-ses-missions",
+      "statut": "valide",
+      "cartes": 5,
+      "cartes_absentes": []
+    },
+    {
+      "id": "methodes.communication.les-transmissions-orales",
+      "statut": "valide",
+      "cartes": 5,
+      "cartes_absentes": []
+    },
+    {
+      "id": "pharmaco.securite.les-cinq-b",
+      "statut": "valide",
+      "cartes": 5,
+      "cartes_absentes": []
+    },
+    {
+      "id": "satellite.travaux.rentabilite-renovation",
+      "statut": "valide",
+      "cartes": 8,
+      "cartes_absentes": []
+    }
+  ]
+}

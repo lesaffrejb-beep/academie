@@ -7,7 +7,8 @@ import { accentDuRang } from "../app/theme";
 import { compose } from "../moteur/composeur";
 import { Bouton } from "./Ui";
 import { Glyphe } from "./Icones";
-import { GrapheMindmap, GrapheStudio } from "./GrapheSavoir";
+import { GrapheMindmap } from "./GrapheSavoir";
+import { GraphePrerequis } from "./GraphePrerequis";
 
 export function Arbre() {
   const { banque, monde, etats, jour, journal } = useMagasin();
@@ -31,33 +32,14 @@ export function Arbre() {
         <h1 className="titre-page">{LIB.arbre}</h1>
         <p>{monde.noeuds.length} {LIB.chapitres}<span className="separateur">/</span>{banque.cartes.length} {LIB.cartesDisponibles}</p>
       </div>
-      <div className="flex items-center gap-1.5 p-1 rounded-full bg-[var(--c-surface-creuse)] border border-[var(--c-bordure-subtile)]">
-        <button
-          type="button"
-          onClick={() => setVueMode("domaines")}
-          className={`px-3 py-1 rounded-full text-xs font-medium transition ${vueMode === "domaines" ? "bg-[var(--c-surface-elevee)] text-[var(--c-encre)] shadow-sm" : "text-[var(--c-encre-2)] hover:text-[var(--c-encre)]"}`}
-        >
-          Domaines
-        </button>
-        <button
-          type="button"
-          onClick={() => setVueMode("graphe")}
-          className={`px-3 py-1 rounded-full text-xs font-medium transition ${vueMode === "graphe" ? "bg-[var(--c-surface-elevee)] text-[var(--c-encre)] shadow-sm" : "text-[var(--c-encre-2)] hover:text-[var(--c-encre)]"}`}
-        >
-          Graphe
-        </button>
+      <div className="graphe-vues" role="group" aria-label="Vue du programme">
+        <button type="button" onClick={() => setVueMode("domaines")} aria-pressed={vueMode === "domaines"}>Domaines</button>
+        <button type="button" onClick={() => setVueMode("graphe")} aria-pressed={vueMode === "graphe"}>Graphe des prérequis</button>
       </div>
     </header>
 
     {vueMode === "graphe" ? (
-      <div className="my-6">
-        <GrapheStudio
-          monde={monde}
-          banque={banque}
-          selectionInitiale={selection}
-          surSelectionDomaine={selectionne}
-        />
-      </div>
+      <GraphePrerequis monde={monde} banque={banque} journal={journal} jour={jour} />
     ) : (
       <div className="exploration-composition">
       <div className="index-domaines" data-testid="atlas" aria-label="Domaines du programme">

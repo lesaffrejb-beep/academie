@@ -192,26 +192,38 @@
     },
     "paires": {
       "type": "array",
+      "minItems": 1,
+      "maxItems": 26,
       "items": {
         "type": "object",
         "required": [
-          "element",
-          "cible"
+          "gauche",
+          "droite"
         ],
         "properties": {
-          "element": {
-            "type": "string"
+          "gauche": {
+            "type": "string",
+            "pattern": "\\S"
           },
-          "cible": {
-            "type": "string"
+          "droite": {
+            "type": "string",
+            "pattern": "\\S"
           }
         }
       }
     },
     "etapes": {
       "type": "array",
+      "minItems": 1,
+      "description": "Numéros uniques contrôlés par app/valide_chapitres.py ; entiers représentables exactement par le client JavaScript.",
       "items": {
-        "type": "string"
+        "type": "object",
+        "required": ["num", "titre"],
+        "properties": {
+          "num": {"type": "integer", "minimum": 1, "maximum": 9007199254740991},
+          "titre": {"type": "string", "pattern": "\\S"},
+          "cible": {"type": "boolean"}
+        }
       }
     },
     "document": {

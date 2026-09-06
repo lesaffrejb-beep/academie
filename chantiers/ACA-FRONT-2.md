@@ -138,3 +138,65 @@ avec Source Sans 3 auto-hébergée, sans dépendre de la police propriétaire
 absente. Garder les modules et animations existants ; corriger les contrastes
 des textes et boutons dans les deux thèmes, puis vérifier le rendu mobile
 et ordinateur du trajet compte → cursus → étude → élèves. Décision 0043.
+
+## Restauration autorisée du 06/09 : le graphe des prérequis
+
+Demande de JB : retrouver le graphe des cursus pendant la préparation de
+l'essai de lundi. Outil : Codex ; modèle : GPT-6. Mode : Operate / Read.
+La vue Domaines reste disponible. La vue Graphe expose tous les chapitres
+du cursus courant dans un index filtrable et les vrais liens immédiats
+prérequis → chapitre sélectionné → suites. Les liens interdomaines sont
+identifiés. Aucun lien de hiérarchie n'est présenté comme prérequis.
+
+Périmètre borné : `web/src/ecrans/Arbre.tsx`, nouveau composant et styles
+`GraphePrerequis`, projection pure de graphe et ses tests, E2E dédiés,
+preuve dans `travail/graphe-2026-09-06/`. Pas de nouveau moteur de
+progression, de mécanique pédagogique, de dépendance, d'authentification
+ou de donnée joueur. Les états restent ceux du moteur existant et les
+accès aux études reprennent son contrôle de serviceabilité.
+
+Tests rouges avant code : exactitude et orientation des liens, prérequis
+interdomaines, référence absente conservée comme inconnue, recherche
+accentuée, séparation du cursus et absence de progression fictive.
+Navigateur : recherche et clavier, sélection d'un prérequis, ouverture
+réelle d'une étude, chapitre sans carte, rendu 375/1280 Papier/Nuit et texte
+agrandi, absence de débordement de page. Contrôles du dépôt ensuite.
+
+## Fiabilité des exercices autorisée du 06/09
+
+Outil : Codex ; modèle : GPT-6. Mode Operate / Read. La préparation de
+l'essai du lundi inclut la correction des quatre défauts constatés dans
+la salle de révision, sans nouvelle mécanique ni modification du contrat.
+
+Périmètre : `Seance.tsx`, `ModulesSeance.tsx`, leurs fonctions de support,
+les tests unitaires et `web/tests/e2e/exercices.spec.ts`. Les appariements
+et chronologies reprennent seulement les données explicites de la carte ;
+sans données suffisantes, la question et la réponse libre restent visibles.
+Aucun exemple de ventilation ni délai de recouvrement n'est ajouté.
+La révision conserve le texte saisi et les critères cochés dans les champs
+existants `reponse_libre` et `attendus_coches` du journal. La confirmation
+« Copié » dépend de la réussite du presse-papier ; un refus reste explicite.
+
+Tests rouges : rendu de cartes sans paires ni étapes, extraction de trois
+repères explicites sans ajout, conservation du texte et des critères au
+clic comme au clavier, refus du presse-papier sans succès affiché. Puis
+contrôles unitaires, E2E intégrés, tests applicatifs et contrôle du dépôt.
+
+### Branchement des formats dans l'étude, 06/09
+
+Le trajet d'étude réutilise les modules Relier, Rôle et Datation ; photo et
+plan conservent SupportEtude et son contrôle de chargement/zoom. Une seule
+image est rendue. La réponse reste contrôlée par le brouillon d'étude.
+Les associations de Relier sont dérivées de la première ligne de réponse
+structurée, avec contrôle des identifiants affichés ; un commentaire ne
+crée pas d'association. Le texte libre après cette ligne reste conservé.
+Périmètre : Etude.tsx, supportSeance.ts, ModuleRelier dans ModulesSeance.tsx,
+preuves et tests de contre-expertise. Test avant code : associations absentes
+dans Étude ; puis clic, rechargement, explication conservée et fin du parcours.
+
+La reprise de la grille de synthèse conserve aussi les critères cochés dans
+le brouillon isolé par compte, chapitre, version, étape et index. La lecture
+n'interprète que les indices entiers des critères existants, sans doublons,
+et les ordonne. Le journal reste écrit lors de Garder cette étape. Le test
+attend la fin de l'écriture avant rechargement puis contrôle séparément la
+reprise de l'étape, du texte et des choix de la grille avant validation finale.

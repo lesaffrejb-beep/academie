@@ -105,6 +105,30 @@ def main() -> int:
     code, sortie = lance([chapitre()])
     verifie("un chapitre conforme passe", code == 0, sortie)
 
+    supports = {"paires": [{"gauche": "Observation", "droite": "Mesure"}] * 26,
+                "etapes": [{"num": 1, "titre": "Observer"},
+                           {"num": 2, "titre": "Comparer", "cible": False}]}
+    code, sortie = lance([chapitre(cartes=[carte(**supports)])])
+    verifie("les supports structurés du client passent, jusqu'à 26 paires", code == 0, sortie)
+    invalides = {
+        "paires": [None, {}, [], [None], [{"element": "A", "cible": "B"}],
+                   [{"gauche": " ", "droite": "Mesure"}],
+                   [{"gauche": "Observation", "droite": 3}],
+                   [{"gauche": "A", "droite": "B"}] * 27],
+        "etapes": [None, {}, [], ["Observer"], [{"num": 1, "titre": " "}],
+                   [{"num": True, "titre": "Observer"}],
+                   [{"num": 0, "titre": "Observer"}],
+                   [{"num": 1.5, "titre": "Observer"}],
+                   [{"num": 9007199254740992, "titre": "Observer"}],
+                   [{"num": 1, "titre": "Observer", "cible": "oui"}],
+                   [{"num": 1, "titre": "Observer"}, {"num": 1, "titre": "Comparer"}]],
+    }
+    for champ, valeurs in invalides.items():
+        for i, valeur in enumerate(valeurs):
+            code, sortie = lance([chapitre(cartes=[carte(**{champ: valeur})])])
+            verifie(f"{champ} malformé, cas {i + 1}, est refusé sans crash",
+                    code == 1 and f"`{champ}`" in sortie and "Traceback" not in sortie, sortie)
+
     code, sortie = lance([chapitre(provenance=None)])
     verifie("un chapitre sans provenance est refusé", code == 1 and "manquant ou vide `provenance`" in sortie, sortie)
 

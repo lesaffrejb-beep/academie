@@ -46,6 +46,8 @@ de valideur). Les schémas machine sont dans
 | `type` | ajoute `cas`, `dessin`, `feuille-blanche`, `synthese`, `lecture`, `ecoute` | `BLUEPRINT.md` §7 |
 | `pas` | obligatoire si `type: cas` : liste ordonnée de `{situation, choix[], correct, pourquoi}` | le cas en pas |
 | `attendus` | obligatoire si `type` vaut `dessin`, `feuille-blanche` ou `synthese` : 3 à 10 éléments de contrôle | l'auto-correction par liste (`decisions/0011`) |
+| `paires` | facultatif ; si présent, 1 à 26 objets `{gauche, droite}` avec textes non blancs | supports explicites à associer ; identifiants du client de a à z |
+| `etapes` | facultatif ; si présent, liste non vide de `{num, titre, cible?}` ; `num` entier positif unique ≤ 9 007 199 254 740 991, `titre` non blanc, `cible` booléen facultatif | chronologie explicite ; numéros techniques représentables exactement par le client |
 | `document` | obligatoire si `type: lecture` : `{titre, url, nature, methode}` | la lecture guidée |
 | `audio` | obligatoire si `type: ecoute` : `{fichier, empreinte_texte, licence}` | l'écoute (plus tard) |
 | `chrono` | facultatif ; secondes ; interdit sur `libre`, `lecture`, `synthese`, `dessin`, `cas` | la fluence seulement |
@@ -55,6 +57,14 @@ de valideur). Les schémas machine sont dans
 | `historique` | facultatif ; liste de `{date, statut, motif, par}` ajoutée par les outils et les runs de vérification, jamais éditée à la main | auditabilité, `decisions/0019` et `0021` |
 | `a_recouper` | dérivé par le valideur, jamais écrit à la main : vrai si aucune source n'est `texte-officiel`, `jurisprudence`, `institution` ou `norme`, ou si `sans_source` | le marqueur à l'écran |
 | `note_confiance` | dérivée par le valideur, jamais écrite à la main : **A** si au moins deux sources de fiabilité A ou B concordantes, relue par un agent frais (`verifie_par`), vérifiée depuis moins de douze mois ; **B** si une source A ou B, relue ; **C** sinon (sources C seulement, sans source, relecture manquante ou vérification trop ancienne). Affichée en lettre sur la carte et le nœud | le dossier du professeur (`decisions/0022`) |
+
+Alignement du 06/09/2026 (`ACA-EXPERTISE-1`) : le schéma des supports
+structurés suit les données et types déjà utilisés par le client. Le
+valideur Python contrôle leur forme lorsqu'ils sont présents ; le
+générateur les transporte sans réécriture. Cela ne rend aucun support
+obligatoire, ne change pas les règles d'image existantes et ne migre aucun
+journal. L'unicité des numéros d'étapes est contrôlée par le valideur,
+car JSON Schema ne peut pas exprimer une clé unique dans une liste d'objets.
 
 ## 3. Le chapitre
 

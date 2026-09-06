@@ -363,8 +363,10 @@ def genere_v2(chapitres: list[dict], banque_v1: list[dict] | None = None,
 
 def test_v2_traverse_la_chaine() -> list[str]:
     """Une carte v2 part de `chapitres/` et arrive à l'écran entière."""
+    supports = {"paires": [{"gauche": "Décider", "droite": "Assemblée"}],
+                "etapes": [{"num": 1, "titre": "Lire les pièces", "cible": True}]}
     charge, sortie, code = genere_v2([chapitre_v2(statut="valide",
-                                                  verifie_par="agent frais")])
+        verifie_par="agent frais", cartes=[carte_v2("droit-majorites-definition", **supports)])])
     if charge is None:
         return [f"aucune sortie pour une banque v2 valide (code {code}) : {sortie[-400:]}"]
     err = []
@@ -375,6 +377,9 @@ def test_v2_traverse_la_chaine() -> list[str]:
     if "droit-majorites-definition" not in servies:
         return err + [f"la carte du chapitre n'est pas servie : {sorted(servies)}"]
     c = servies["droit-majorites-definition"]
+    for champ, contenu in supports.items():
+        if c.get(champ) != contenu:
+            err.append(f"support interactif {champ} perdu entre chapitre et banque servie")
     for champ in ("chapitre", "provenance", "note_confiance", "a_recouper"):
         if champ not in c:
             err.append(f"la carte v2 servie n'a pas `{champ}` : le joueur ne peut "

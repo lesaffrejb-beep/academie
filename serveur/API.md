@@ -102,6 +102,7 @@ une route de classement public.
 | Méthode | Route | Sens |
 |---|---|---|
 | POST | `/compte` | crée `pseudo` et `phrase_secrete`, rend le profil et une clé de récupération affichable une fois |
+| GET | `/auth/comptes` | sans session, liste les pseudos visibles pour choisir son compte |
 | POST | `/auth/connexion` | reçoit `pseudo` et `phrase_secrete`, pose un cookie de session |
 | POST | `/auth/recuperation` | reçoit `pseudo`, `cle_recuperation`, `phrase_secrete`, renouvelle la phrase et la clé |
 | POST | `/auth/deconnexion` | révoque la session courante |
@@ -145,6 +146,18 @@ L'événement journal `mode:cursus` exige `cursus` dans le catalogue.
 Le premier choix fixe le cursus du compte ; les réémissions du même
 choix sont acceptées, un choix différent est refusé 422. Le profil rend
 `cursus` calculé depuis le journal. Import et export gardent l'événement.
+
+`GET /auth/comptes` ne requiert pas de session personnelle et rend seulement
+`{comptes:[{pseudo,titre_affiche}]}`. Le pseudo est l'identifiant de connexion
+normalisé ; le titre peut avoir changé. Seuls les comptes personnels visibles
+sont proposés, sans identifiant interne, cursus ni activité. Le masquage retire
+le compte des deux annuaires ; la connexion par saisie reste possible. La
+protection d'accès commune du VPS s'applique toujours avant cette API.
+
+Le choix du cursus se présente à l'inscription. Après conservation de la clé,
+le client crée l'événement de cursus et attend sa confirmation serveur avant
+l'ouverture de l'étude. La clé reste en mémoire jusqu'à conservation explicite,
+y compris pendant une récupération ; la projection persistée du profil l'exclut.
 
 `GET /eleves` authentifié ne rend que `{eleves:[{id,pseudo,cursus}]}`.
 Les profils supprimés, masqués ou `reglages.visibilite=false` sont absents.

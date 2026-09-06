@@ -199,7 +199,7 @@ def connecter_compte(conn, data, appareil=""):
     limiter(conn, limite)
     row = conn.execute("SELECT id, phrase_secrete_hache, supprime_le FROM profils WHERE pseudo_connexion = ?", (pseudo,)).fetchone()
     hache = row["phrase_secrete_hache"] if row else hacher_secret("", bytes(16))
-    # Même calcul coûteux pour un pseudo absent ; aucune énumération de comptes.
+    # Même calcul coûteux pour un pseudo absent ; refus identique pour tous.
     if not correspond(phrase, hache) or row is None or row["supprime_le"]:
         raise Refus(401, "connexion-refusee", "Pseudo ou phrase secrète incorrect.")
     conn.execute("DELETE FROM tentatives_auth WHERE cle = ?", (limite,))
@@ -243,6 +243,16 @@ def eleves(conn):
             continue
         resultat.append({"id": row["id"], "pseudo": row["titre_affiche"], "cursus": cursus})
     return resultat
+
+
+def comptes_connexion(conn):
+    """Les pseudos visibles du petit groupe, sans données d'apprentissage."""
+    visibles = {p["id"] for p in eleves(conn)}
+    return [{"pseudo": row["pseudo_connexion"], "titre_affiche": row["titre_affiche"]}
+            for row in conn.execute("SELECT id, pseudo_connexion, titre_affiche FROM profils "
+                                    "WHERE pseudo_connexion IS NOT NULL AND phrase_secrete_hache IS NOT NULL "
+                                    "AND supprime_le IS NULL ORDER BY titre_affiche, id")
+            if row["id"] in visibles]
 
 
 def demander_cursus(conn, pid, data):

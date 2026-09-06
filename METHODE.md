@@ -473,55 +473,63 @@ Hattie & Timperley (2007). Choix ergonomique et pédagogique documenté dans
 
 ## 36. Les modules de progression et d'émulation (05/09/2026)
 
-**Ce qu’on fait** : le profil de l'apprenant rassemble cinq modules :
-- **Passeport de maîtrise** : carte de visite professionnelle sobre, reflétant le
-  titre officiel déduit du socle et arborant les brevets de spécialité acquis.
-- **Ligue hebdomadaire** : cercle restreint de pairs, mesurant exclusivement
-  les cartes stabilisées de la semaine pondérées par le niveau, avec option de
-  retrait discret et sans reporting hiérarchique.
-- **Trophées de jalon** : constat factuel de six jalons de régularité et de
-  profondeur d'apprentissage (premier pas, régularité, mémoire profonde,
-  gardien du socle, synthèse, grand chelem).
-- **Insignes de spécialité** : brevets par branche technique, attestant
-  de la maturité d'un pan du programme et épinglables sur le passeport.
-- **Branches ponts** : dossiers transverses reliant plusieurs domaines pour
-  mettre en pratique le transfert interdisciplinaire.
+**Ce qu’on fait** : le profil rassemble des repères de progression : passeport,
+jalons, insignes de branche, comparaison facultative au sein du cercle et
+accès à des dossiers transverses. Les règles de calcul sont des conventions
+produit ; l’état livré et ses limites se vérifient dans la roadmap et le code.
+Un titre ou un insigne décrit les critères atteints dans l’application,
+sans certifier une compétence professionnelle.
 
-**Pourquoi** : soutenir la régularité et le sentiment d'efficacité personnelle
-sans recourir aux artifices extrinsèques préjudiciables à la motivation
-intrinsèque (Deci & Ryan, 2000 ; Slavin, 1995). L'émulation repose sur la
-stabilisation réelle des acquis et la maîtrise de cas réels.
+**Pourquoi** : rendre le travail accompli lisible et soutenir l’envie de
+revenir sont les objectifs de conception. Deci et Ryan (2000) distinguent
+les besoins de compétence, d’autonomie et de relation ; ce cadre ne prouve
+pas que notre passeport ou notre comparaison améliore la motivation.
+Les formes de récompense et leur contexte doivent être distingués, comme
+au §9. Les travaux de Slavin concernent l’apprentissage coopératif dans des
+conditions définies ; une comparaison de compteurs ne reproduit pas ce travail.
 
-**Contrôles et limites** : le calcul est déterministe et s'effectue localement
-à partir du journal append-only. Aucune mesure du temps passé ni de la rapidité
-d'exécution n'est prise en compte. L'accès aux ponts exige une maturité minimale
-avérée dans les branches concernées.
+**Contrôles et limites** : les indicateurs proviennent du journal et des
+règles du moteur. Une stabilité estimée ou une autoévaluation favorable
+n’est pas une maîtrise du métier observée. Les cas transverses doivent
+permettre une production et un retour sur le raisonnement ; leur accès ne
+suffit pas à prouver le transfert. Visibilité consentie, absence de reporting
+hiérarchique et effet sur le rituel restent à contrôler séparément.
 
-**Source et état des preuves** : Deci & Ryan (2000), Slavin (1995), `decisions/0010`,
-`decisions/0014`, `decisions/0015` et `decisions/0040`.
+**Sources et état des preuves** : [Deci et Ryan (2000)](https://selfdeterminationtheory.org/SDT/documents/2000_DeciRyan_PIWhatWhy.pdf),
+résumé consulté ; [Slavin (2012)](https://onlinelibrary.wiley.com/doi/abs/10.1002/9781118133880.hop207008),
+résumé de l’auteur sur la coopération scolaire consulté. La référence
+antérieure « Slavin, 1995 » ne vaut pas lecture du livre : aucune efficacité
+de ces modules n’en est déduite. Choix produit : `decisions/0010`,
+`decisions/0014`, `decisions/0015` et `decisions/0040`. Détail de la
+correction du 06/09 dans `travail/modules-experts-2026-09-06/SCIENCE.md`.
 
-## 37. Feedback gratifiant, jauge de palier et rituels tactiles (05/09/2026)
+## 37. Feedback visuel et repères de séance (05/09/2026)
 
-**Ce qu’on fait** : l'apprentissage intègre des micro-animations mesurées :
-- **Toast d'EXP** : pastille jaillissant lors d'une réussite ou d'une note
-  de révision, matérialisant l'effort consenti sans interrompre le geste.
-- **Jauge liquide et palier** : affichage continu de la progression vers le
-  palier suivant, enrichi d'un balayage discret et d'un défilement numérique fluide.
-- **Rituel tactile hebdomadaire** : visualisation concrète des jours pratiqués,
-  mettant en valeur la régularité sans pénalité en cas d'absence.
+**Ce qu’on fait** : des retours visuels signalent une réponse enregistrée,
+un changement de palier ou les jours pratiqués. Leur amplitude et leur
+temporalité sont des choix d’interface. Un retour d’enregistrement ne doit
+apparaître comme réussi qu’après confirmation du stockage concerné.
 
-**Pourquoi** : l'erreur de prédiction dopaminergique (Schultz et al., 1997)
-participe à la consolidation de l'attention et à la motivation d'effort. Un
-feedback sensoriel immédiat et sobre valorise la réussite cognitive sans
-verser dans l'addiction des jeux d'argent.
+**Pourquoi** : rendre une action et son résultat perceptibles est l’objectif
+pratique. L’explication d’une erreur porte sur la réponse et la démarche
+(§4) ; une animation ne remplace pas ce retour pédagogique. Schultz, Dayan
+et Montague (1997) rapprochent les signaux de neurones dopaminergiques chez
+le primate des erreurs de prédiction de récompense. Cela ne démontre ni
+une consolidation de l’attention par nos animations, ni une meilleure
+rétention chez les adultes utilisant Académie.
 
-**Contrôles et limites** : l'expérience pédagogique prime sur l'effet visuel.
-Le vocabulaire d'arcade reste banni (aucune référence aux quêtes, boss, combos
-ou streaks). Les animations respectent impérativement la préférence de
-mouvement réduit (`prefers-reduced-motion: reduce`).
+**Contrôles et limites** : aucun effet dopaminergique ni gain de mémorisation
+n’est attribué au client. Vérifier lisibilité, compréhension du retour,
+reprise après erreur et respect de `prefers-reduced-motion: reduce`.
+L’effet sur l’usage et l’apprentissage reste à observer ; le choix visuel
+ne garantit ni son bénéfice ni son innocuité pour tous les élèves.
 
-**Source et état des preuves** : Schultz et al. (1997), Hattie & Timperley (2007),
-`decisions/0038` et `decisions/0041`.
+**Sources et état des preuves** : [Schultz, Dayan et Montague (1997)](https://www.gatsby.ucl.ac.uk/~dayan/papers/sdm97.html),
+résumé des auteurs consulté ; Hattie et Timperley (2007), portée du feedback
+et limites déjà consignées au §4 et dans `CADRAGE-SCIENTIFIQUE.md`.
+Choix d’interface : `decisions/0038` et `decisions/0041`. Correction du
+06/09 documentée dans `travail/modules-experts-2026-09-06/SCIENCE.md` ;
+aucune mécanique ni valeur du moteur changée par cette correction.
 
 ## 38. Du passage sourcé à la production professionnelle (06/09/2026)
 

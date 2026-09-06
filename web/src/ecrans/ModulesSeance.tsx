@@ -13,6 +13,7 @@ import {
   X,
 } from "lucide-react";
 import type { Carte } from "../donnees/types";
+import {pairesDe,etapesDe,associationsDe,combineAssociations} from "./supportSeance";
 import { LIB } from "../app/i18n";
 
 /**
@@ -32,6 +33,7 @@ export function ModuleRole({
   revele: boolean;
 }) {
   const [copie, setCopie] = useState(false);
+  const [erreurCopie,setErreurCopie] = useState(false);
 
   // Extraction du prompt entre guillemets français ou anglais
   const promptExtrait = useMemo(() => {
@@ -56,14 +58,13 @@ export function ModuleRole({
 
   const copierPrompt = async () => {
     const texteACopier = promptExtrait || carte.question;
+    setCopie(false);setErreurCopie(false);
     try {
       await navigator.clipboard.writeText(texteACopier);
       setCopie(true);
       setTimeout(() => setCopie(false), 2200);
     } catch {
-      // Fallback si presse-papier restreint
-      setCopie(true);
-      setTimeout(() => setCopie(false), 1500);
+      setErreurCopie(true);
     }
   };
 
@@ -112,12 +113,13 @@ export function ModuleRole({
               title="Copier le prompt pour simulateur IA ou binôme"
             >
               {copie ? <Check size={13} /> : <Copy size={13} />}
-              <span>{copie ? "Copié !" : "Copier"}</span>
+              <span>{copie ? "Copié" : "Copier"}</span>
             </button>
           </div>
         ) : null}
       </div>
 
+      {erreurCopie && <p role="alert">Copie impossible. Sélectionne le texte pour le copier manuellement.</p>}
       {/* Saisie de la stratégie et des notes */}
       <div className="salle-reponse-libre">
         <label htmlFor="reponse-carte" className="text-xs font-semibold text-[var(--c-encre)]">
@@ -125,6 +127,7 @@ export function ModuleRole({
         </label>
         <textarea
           id="reponse-carte"
+          maxLength={5000}
           rows={4}
           value={reponse}
           readOnly={revele}
@@ -151,79 +154,44 @@ export function ModuleRelier({
   surChangementReponse: (valeur: string) => void;
   revele: boolean;
 }) {
-  // Parsing des éléments gauche (1 à 6) et droite (a à f) depuis la question
-  const donneesPaires = useMemo(() => {
-    if (carte.paires && Array.isArray(carte.paires) && carte.paires.length > 0) {
-      return {
-        gauches: carte.paires.map((p, i) => ({ id: p.gauche || String(i + 1), label: p.gauche })),
-        droites: carte.paires.map((p, i) => ({ id: String.fromCharCode(97 + i), label: p.droite })),
-      };
-    }
-
-    const itemsDroite: { id: string; label: string }[] = [];
-    const regexRoles = /\(([a-f])\)\s*([^;.]+)/gi;
-    let m: RegExpExecArray | null;
-    while ((m = regexRoles.exec(carte.question)) !== null) {
-      if (m[1] && m[2]) {
-        itemsDroite.push({ id: m[1].toLowerCase(), label: m[2].trim() });
-      }
-    }
-
-    const repGauche = Array.from({ length: Math.max(itemsDroite.length, 6) }).map((_, i) => ({
-      id: String(i + 1),
-      label: `Repère ${i + 1}`,
-    }));
-
-    return {
-      gauches: repGauche,
-      droites: itemsDroite.length > 0 ? itemsDroite : [
-        { id: "a", label: "Dépression et aspiration" },
-        { id: "b", label: "Amortissement des vibrations" },
-        { id: "c", label: "Conversion d énergie électrique" },
-        { id: "d", label: "Transmission de couple" },
-        { id: "e", label: "Protection et canalisation du rejet" },
-        { id: "f", label: "Collecte de l air extrait" },
-      ],
-    };
-  }, [carte.paires, carte.question]);
+  const donneesPaires = useMemo(() => pairesDe(carte), [carte]);
 
   const [selectionGauche, setSelectionGauche] = useState<string | null>(null);
-  const [liens, setLiens] = useState<Record<string, string>>({});
+  const [erreurAssociation,setErreurAssociation]=useState("");
+  const {liens,explication} = useMemo(()=>associationsDe(reponse,donneesPaires),[reponse,donneesPaires]);
 
   const synchroniserReponse = (nouveauxLiens: Record<string, string>) => {
-    const chaine = Object.entries(nouveauxLiens)
-      .sort(([k1], [k2]) => k1.localeCompare(k2, undefined, { numeric: true }))
-      .map(([g, d]) => `${g}-${d}`)
-      .join(", ");
-    surChangementReponse(chaine);
+    try {
+      const prochaine=combineAssociations(nouveauxLiens,explication);
+      surChangementReponse(prochaine);setErreurAssociation("");return true;
+    } catch (erreur) {
+      setErreurAssociation(erreur instanceof Error ? erreur.message : "L’association ne peut pas être ajoutée. Ton texte reste conservé.");
+      return false;
+    }
   };
 
   const lier = (droiteId: string) => {
     if (!selectionGauche || revele) return;
     const maj = { ...liens, [selectionGauche]: droiteId };
-    setLiens(maj);
-    setSelectionGauche(null);
-    synchroniserReponse(maj);
+    if (synchroniserReponse(maj)) setSelectionGauche(null);
   };
 
   const dissocier = (gaucheId: string) => {
     if (revele) return;
     const maj = { ...liens };
     delete maj[gaucheId];
-    setLiens(maj);
     synchroniserReponse(maj);
   };
 
   const reinitialiser = () => {
     if (revele) return;
-    setLiens({});
-    setSelectionGauche(null);
-    surChangementReponse("");
+    if (synchroniserReponse({})) setSelectionGauche(null);
   };
 
   return (
     <div className="module-relier flex flex-col gap-4">
-      <div className="rounded-2xl border border-[var(--c-bordure-subtile)] bg-[var(--c-surface)] p-4 shadow-sm">
+      {erreurAssociation && <p role="alert">{erreurAssociation}</p>}
+      {donneesPaires ? <div className="rounded-2xl border border-[var(--c-bordure-subtile)] bg-[var(--c-surface)] p-4 shadow-sm">
         <div className="flex items-center justify-between pb-3 mb-3 border-b border-[var(--c-bordure-subtile)]">
           <span className="text-xs font-semibold text-[var(--c-encre)] flex items-center gap-1.5">
             <Link2 size={15} className="text-[var(--c-accent)]" />
@@ -255,6 +223,7 @@ export function ModuleRelier({
                 return (
                   <button
                     key={g.id}
+                    data-association={liens[g.id]}
                     type="button"
                     disabled={revele}
                     onClick={() => setSelectionGauche(g.id)}
@@ -267,7 +236,7 @@ export function ModuleRelier({
                         : "border-[var(--c-bordure-subtile)] bg-[var(--c-surface)] text-[var(--c-encre)] hover:border-[var(--c-accent)]")
                     }
                   >
-                    <span>{g.label}</span>
+                    <span>{g.id}. {g.label}</span>
                     {estLie ? (
                       <span className="w-5 h-5 rounded-full bg-[var(--c-accent)] text-[var(--c-sur-accent)] text-[10px] font-mono flex items-center justify-center">
                         {liens[g.id]}
@@ -302,8 +271,8 @@ export function ModuleRelier({
                         : "border-[var(--c-bordure-subtile)] bg-[var(--c-surface)] text-[var(--c-encre-2)] opacity-75")
                     }
                   >
-                    <span className="flex items-baseline gap-1.5">
-                      <strong className="font-mono text-[var(--c-accent)]">({d.id})</strong>
+                    <span className="flex min-w-0 items-baseline gap-1.5">
+                      <strong className="shrink-0 whitespace-nowrap font-mono text-[var(--c-accent)]">({d.id})</strong>
                       <span>{d.label}</span>
                     </span>
                     {repAssocie ? (
@@ -312,7 +281,7 @@ export function ModuleRelier({
                           e.stopPropagation();
                           dissocier(repAssocie);
                         }}
-                        className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-[var(--c-accent)] text-[var(--c-sur-accent)] flex items-center gap-1 hover:opacity-90"
+                        className="shrink-0 whitespace-nowrap text-[10px] font-mono px-2 py-0.5 rounded-full bg-[var(--c-accent)] text-[var(--c-sur-accent)] flex items-center gap-1 hover:opacity-90"
                       >
                         Repère {repAssocie}
                         {!revele ? <X size={10} /> : null}
@@ -340,12 +309,13 @@ export function ModuleRelier({
               ))}
           </div>
         ) : null}
-      </div>
+      </div> : <p>Réponds à partir des éléments de la question et du document.</p>}
 
       <div className="salle-reponse-libre">
         <label htmlFor="reponse-carte">{LIB.taReponse}</label>
         <textarea
           id="reponse-carte"
+          maxLength={5000}
           rows={2}
           value={reponse}
           readOnly={revele}
@@ -434,6 +404,7 @@ export function ModulePhotoPlan({
         <label htmlFor="reponse-carte">{LIB.taReponse}</label>
         <textarea
           id="reponse-carte"
+          maxLength={5000}
           rows={3}
           value={reponse}
           readOnly={revele}
@@ -466,39 +437,11 @@ export function ModuleDatation({
   surChangementReponse: (valeur: string) => void;
   revele: boolean;
 }) {
-  const etapesProcedure = useMemo<EtapeChronologie[]>(() => {
-    // 1. Étapes déclarées directement dans la carte
-    if (carte.etapes && Array.isArray(carte.etapes) && carte.etapes.length > 0) {
-      return carte.etapes as EtapeChronologie[];
-    }
-    // 2. Extraction dynamique d'étapes numérotées depuis la question
-    const regexEtape = /(?:^|\s)([1-9])[\s.)-]+\s*([^;.\n]+)/g;
-    const extraites: EtapeChronologie[] = [];
-    let match: RegExpExecArray | null;
-    while ((match = regexEtape.exec(carte.question)) !== null) {
-      const num = Number(match[1]);
-      const titre = match[2]?.trim() ?? "";
-      if (titre && !extraites.some((e) => e.num === num)) {
-        extraites.push({ num, titre, cible: titre.includes("?") || carte.question.includes(`étape ${num}`) });
-      }
-    }
-    if (extraites.length >= 3) {
-      return extraites.sort((a, b) => a.num - b.num);
-    }
-    // 3. Modèle procédural canonique pour le recouvrement de charges et la déchéance du terme
-    return [
-      { num: 1, titre: "Relance simple" },
-      { num: 2, titre: "Mise en demeure" },
-      { num: 3, titre: "Délai de 30 jours", cible: true },
-      { num: 4, titre: "Déchéance du terme" },
-      { num: 5, titre: "Titre exécutoire" },
-      { num: 6, titre: "Mesures d exécution" },
-    ];
-  }, [carte.etapes, carte.question]);
+  const etapesProcedure = useMemo(() => etapesDe(carte), [carte]);
 
   return (
     <div className="module-datation flex flex-col gap-4">
-      <div className="rounded-2xl border border-[var(--c-bordure-subtile)] bg-[var(--c-surface)] p-4 shadow-sm">
+      {etapesProcedure.length > 0 ? <div className="rounded-2xl border border-[var(--c-bordure-subtile)] bg-[var(--c-surface)] p-4 shadow-sm">
         <span className="text-[11px] uppercase font-mono tracking-wider text-[var(--c-encre-2)] mb-3 block">
           Frise chronologique de la procédure
         </span>
@@ -534,12 +477,13 @@ export function ModuleDatation({
             </div>
           ))}
         </div>
-      </div>
+      </div> : <p>Réponds à partir des repères présents dans la question et le document.</p>}
 
       <div className="salle-reponse-libre">
         <label htmlFor="reponse-carte">{LIB.taReponse}</label>
         <textarea
           id="reponse-carte"
+          maxLength={5000}
           rows={3}
           value={reponse}
           readOnly={revele}
@@ -560,27 +504,26 @@ export function ModuleSynthese({
   reponse,
   surChangementReponse,
   revele,
+  attendusCoches,
+  surChangementAttendus,
 }: {
   carte: Carte;
   reponse: string;
   surChangementReponse: (valeur: string) => void;
   revele: boolean;
+  attendusCoches:number[];
+  surChangementAttendus:(indices:number[])=>void;
 }) {
   const [aideOuverte, setAideOuverte] = useState(false);
   const attendus = useMemo(() => {
     return Array.isArray(carte.attendus) ? (carte.attendus as string[]) : [];
   }, [carte.attendus]);
 
-  const [critèresCoches, setCritèresCoches] = useState<Record<number, boolean>>({});
-
-  const basculerCritere = (index: number) => {
-    setCritèresCoches((prev) => ({
-      ...prev,
-      [index]: !prev[index],
-    }));
+  const basculerCritere = (index:number) => {
+    surChangementAttendus(attendusCoches.includes(index)
+      ? attendusCoches.filter(i=>i!==index) : [...attendusCoches,index].sort((a,b)=>a-b));
   };
-
-  const nbCoches = Object.values(critèresCoches).filter(Boolean).length;
+  const nbCoches=attendusCoches.length;
 
   return (
     <div className="module-synthese flex flex-col gap-4">
@@ -611,6 +554,7 @@ export function ModuleSynthese({
         <label htmlFor="reponse-carte">{LIB.taReponse}</label>
         <textarea
           id="reponse-carte"
+          maxLength={5000}
           rows={4}
           value={reponse}
           readOnly={revele}
@@ -633,7 +577,7 @@ export function ModuleSynthese({
 
           <ul className="flex flex-col gap-2">
             {attendus.map((critere, i) => {
-              const estCoche = !!critèresCoches[i];
+              const estCoche = attendusCoches.includes(i);
 
               return (
                 <li key={i}>

@@ -10,7 +10,7 @@ import { accentDuRang } from "../app/theme";
 import { auHasard, compose } from "../moteur/composeur";
 import { aujourdhuiOrdinal } from "../moteur/etats";
 import { cartesServiables } from "../moteur/serviceabilite";
-import type { Carte } from "../donnees/types";
+import type { Carte, LigneJournal } from "../donnees/types";
 import { Bouton, Jauge } from "./Ui";
 import { EclatParticules, ToastExp, VoletGlissant } from "./MicroAnimations";
 import {
@@ -20,6 +20,7 @@ import {
   ModuleSynthese,
 } from "./ModulesSeance";
 
+type TraceReponse = Pick<LigneJournal,"reponse_libre"|"attendus_coches">;
 const MOTEUR_VERSION = "web-2.0.0";
 const NIVEAUX = ["", "I", "II", "III", "IV", "V"];
 
@@ -75,7 +76,7 @@ export function Seance({ portee }: { portee?: string }) {
     if (tirage.cartes.length && !carte) va("/salle/cloture");
   }, [carte, tirage.cartes.length]);
 
-  const enregistre = useCallback(async (valeur: 1 | 2 | 3 | 4 | "signalement", confiance = false, duree = 0) => {
+  const enregistre = useCallback(async (valeur: 1 | 2 | 3 | 4 | "signalement", confiance = false, duree = 0, trace:TraceReponse = {}) => {
     if (!carte || verrou.current) return;
     if (!cartesServiables([carte], journal, aujourdhuiOrdinal()).length) {
       setIndex(position + 1);
@@ -89,7 +90,7 @@ export function Seance({ portee }: { portee?: string }) {
       await note(valeur === "signalement"
         ? { mode: "signalement", carte: carte.id }
         : { mode: "revision", format, carte: carte.id, note: valeur,
-          duree_ms: Math.max(0, duree), confiance,
+          duree_ms: Math.max(0, duree), confiance, ...trace,
           ...(tirage.neuves.has(carte.id) ? { origine: "nouveau" } : {}) });
       setIndex(position + 1);
     } catch {
@@ -124,7 +125,7 @@ export function Seance({ portee }: { portee?: string }) {
 
 function Exercice({ carte, graine, enregistrement, enregistre }: {
   carte: Carte; graine: number; enregistrement: boolean;
-  enregistre: (valeur: 1 | 2 | 3 | 4 | "signalement", confiance?: boolean, duree?: number) => Promise<void>;
+  enregistre: (valeur: 1 | 2 | 3 | 4 | "signalement", confiance?: boolean, duree?: number, trace?:TraceReponse) => Promise<void>;
 }) {
   const [revele, setRevele] = useState(false);
   const [eclat, setEclat] = useState(false);
@@ -132,6 +133,7 @@ function Exercice({ carte, graine, enregistrement, enregistre }: {
   const [confiance, setConfiance] = useState(false);
   const [choisi, setChoisi] = useState<number | null>(null);
   const [reponse, setReponse] = useState("");
+  const [attendusCoches,setAttendusCoches] = useState<number[]>([]);
   const [imageAbsente, setImageAbsente] = useState(false);
   const [zoomImage, setZoomImage] = useState(1);
   const debut = useRef(Date.now());
@@ -155,7 +157,7 @@ function Exercice({ carte, graine, enregistrement, enregistre }: {
         const gain = (noteChoisie === 4 ? 30 : noteChoisie === 3 ? 20 : noteChoisie === 2 ? 10 : 5);
         setExpGagnee(gain);
         if (noteChoisie >= 3) setEclat(true);
-        void enregistre(noteChoisie, confiance, Date.now() - debut.current);
+        void enregistre(noteChoisie, confiance, Date.now() - debut.current, {reponse_libre:qcm && choisi!==null ? carte.choix?.[choisi]?.texte ?? "" : reponse,attendus_coches:attendusCoches});
       } else if (!revele && qcm && ["1", "2", "3", "4"].includes(e.key)) {
         const choix = Number(e.key) - 1;
         if (carte.choix?.[choix]) {
@@ -173,7 +175,7 @@ function Exercice({ carte, graine, enregistrement, enregistre }: {
     }
     window.addEventListener("keydown", clavier);
     return () => window.removeEventListener("keydown", clavier);
-  }, [carte.choix, confiance, correct, enregistre, enregistrement, qcm, revele]);
+  }, [carte.choix, confiance, correct, enregistre, enregistrement, qcm, revele, choisi, reponse, attendusCoches]);
 
   return <>
     <article className={`salle-carte salle-carte-${carte.type}`}>
@@ -246,6 +248,8 @@ function Exercice({ carte, graine, enregistrement, enregistre }: {
         />
       ) : (carte.type === "synthese" || carte.type === "cas") ? (
         <ModuleSynthese
+          attendusCoches={attendusCoches}
+          surChangementAttendus={setAttendusCoches}
           carte={carte}
           reponse={reponse}
           surChangementReponse={setReponse}
@@ -280,7 +284,7 @@ function Exercice({ carte, graine, enregistrement, enregistre }: {
       ) : carte.type !== "flash" ? (
         <div className="salle-reponse-libre">
           <label htmlFor="reponse-carte">{LIB.taReponse}</label>
-          <textarea id="reponse-carte" rows={4} value={reponse} readOnly={revele}
+          <textarea id="reponse-carte" maxLength={5000} rows={4} value={reponse} readOnly={revele}
             onChange={(e) => setReponse(e.target.value)} />
         </div>
       ) : null}
@@ -321,7 +325,7 @@ function Exercice({ carte, graine, enregistrement, enregistre }: {
               const gain = (i === 3 ? 30 : i === 2 ? 20 : i === 1 ? 10 : 5);
               setExpGagnee(gain);
               if (i >= 2) setEclat(true);
-              void enregistre((i + 1) as 1 | 2 | 3 | 4, confiance, Date.now() - debut.current);
+              void enregistre((i + 1) as 1 | 2 | 3 | 4, confiance, Date.now() - debut.current, {reponse_libre:qcm && choisi!==null ? carte.choix?.[choisi]?.texte ?? "" : reponse,attendus_coches:attendusCoches});
             }}
             enfants={libelle} />)}
       </div>

@@ -29,3 +29,14 @@ populations, comparaisons et limites de consultation. La session
 la contre-passe sur ces retouches et les résultats des contrôles doivent
 être consignés avant clôture du chantier. Aucun résultat d’usage humain
 n’est déduit de cette correction documentaire.
+
+
+## Extension du 06/09 : progression et feedback visuel
+
+Demande de JB : modules plus formateurs et fondés sur la science. Corriger les
+extrapolations des §36-37 de METHODE ajoutées après la revue précédente :
+maîtrise déduite des compteurs, bénéfice motivationnel garanti et argument
+dopaminergique appliqué aux animations. Sources primaires et niveau réel de
+consultation dans `travail/modules-experts-2026-09-06/SCIENCE.md`. Les
+mécaniques et valeurs du moteur restent inchangées ; les validations produit
+et la rétention mesurée ne sont pas déduites de cette passe documentaire.

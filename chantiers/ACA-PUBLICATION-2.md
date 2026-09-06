@@ -45,3 +45,19 @@ instruction remplace la restriction d'accès de convenance ci-dessus pour
 cette livraison. Sauvegarder Caddy et SQLite, conserver les autres routes,
 valider la configuration avant rechargement et prouver le trajet authentifié.
 Le catalogue requis par l'onboarding doit faire partie du paquet vérifié.
+
+## Préparation du 06/09, autorisation explicite de JB
+
+L'objectif courant autorise les grandes passes sur main et la publication
+sur VPS pour l'essai de lundi. Le coordinateur remet le paquet et le SHA
+à publier avant le geste distant. La préparation inclut `deploy/` : outil
+stdlib de comparaison des tables SQLite avant/après migration, tests sur
+bases temporaires et procédure datée dans `travail/publication-2026-09-06/`.
+Cet outil lit les bases sans imprimer leurs données ni les copier vers le
+Mac. Il prouve la conservation exacte des anciennes colonnes et lignes,
+sans prétendre prouver la justesse pédagogique ou le trajet physique.
+
+Tests rouges : lignes changées malgré comptes égaux, journal perdu, table
+ou colonne disparue, ajout de colonnes conservant l'ancien état, base
+absente refusée sans création. Aucune nouvelle dépendance, aucune migration
+écrite par cette préparation. Sauvegardes privées restent sur le VPS.

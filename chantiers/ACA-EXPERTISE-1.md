@@ -127,3 +127,46 @@ uniquement les fichiers du pilote ; aucune modification des comptes, de
 l'API ni des migrations. Sauvegarde, empreintes et reprise du générateur
 périodique exigées. Vérification locale puis publique ; toute barrière
 d'authentification est rapportée sans prétendre avoir validé l'usage réel.
+
+### Passe du 06/09 : collecte NotebookLM et essai de lundi
+
+JB demande explicitement la collecte du carnet, des modules approfondis,
+l'accès par pseudo, le graphe et la publication VPS, avec push sur main.
+La collecte conserve localement texte brut, références des images, occurrences,
+empreintes et erreurs ; une capture n'est pas une lecture validée. Les pièces
+client et sources ambiguës restent exclues du dépôt. Les doublons ne sont
+fusionnés qu'après comparaison de contenu. Les ressources sources ne montent
+pas au VPS. La publication autorisée concerne le produit et les cours relus.
+
+Périmètre complémentaire : `travail/modules-experts-2026-09-06/`, rapport de
+collecte, `chapitres/satellites/contre-expertise-renovation.json`, parcours
+rénovation, preuves et décision 0050. Le nouveau module utilise le Focus déjà
+scellé, des cas fictifs et un support original existant ; relecture indépendante
+avant promotion. Les autres brouillons restent exclus tant que les assertions
+ne sont pas confrontées à leurs passages. Contrôle de contrat et parcours
+navigable requis, avec sauvegarde de la réponse et du retour par compte.
+
+Le catalogue `programme/catalogue.json` accompagne les modules ajoutés : ses
+compteurs suivent les cartes et études effectivement générées. Les formats
+interactifs déjà présents en Séance peuvent être réutilisés dans Étude avec
+le même journal de tentative, sans nouveau mécanisme ni double média.
+La génération `app/genere.py` doit transporter les champs publics structurés
+`paires` et `etapes` jusqu'au client ; `app/tests_chaine.py` vérifie cette
+jointure avant publication. Sans ces supports, les exercices reviennent
+à une réponse libre et ne rendent pas l'interaction pourtant préparée.
+
+Le même périmètre comprend l'alignement de `contrats/carte-v2.schema.json`
+et `CONTRAT-CARTE-V2.md` sur ces supports déjà utilisés par le client :
+`paires` en objets gauche/droite, `etapes` en objets num/titre/cible.
+`app/valide_chapitres.py` contrôle ces champs facultatifs quand présents,
+avec tests rouges puis verts dans `app/tests_chapitres.py` : listes non
+vides, textes non blancs, numéros entiers positifs uniques, cible booléenne
+facultative, au plus 26 paires (identifiants du client de a à z). Aucune
+migration ni modification du journal ou des questions n'est nécessaire.
+
+Preuve navigateur complémentaire : `web/tests/e2e/contre-expertise.spec.ts`
+parcourt le pilote puis ouvre la contre-expertise par Continuer le parcours.
+Elle vérifie tentative, sept exercices existants, sources, schéma chargé,
+brouillon après rechargement et synthèse avec critères conservés dans le
+journal du compte fictif. Cette preuve de front n'est ni une mesure de
+compétence ni une preuve de synchronisation d'un compte réel sur le VPS.

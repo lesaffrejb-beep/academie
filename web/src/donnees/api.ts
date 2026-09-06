@@ -75,6 +75,7 @@ export const api = {
   },
 
   profil: () => appelle<Compte>("/profil"),
+  comptesConnexion: () => appelle<{comptes:{pseudo:string;titre_affiche:string}[]}>("/auth/comptes"),
   inscription: (pseudo: string, phrase_secrete: string) => appelle<CompteEtCle>("/compte", {method:"POST", body:JSON.stringify({pseudo, phrase_secrete})}),
   connexion: (pseudo: string, phrase_secrete: string) => appelle<Compte>("/auth/connexion", {method:"POST", body:JSON.stringify({pseudo, phrase_secrete})}),
   recuperation: (pseudo: string, cle_recuperation: string, phrase_secrete: string) => appelle<CompteEtCle>("/auth/recuperation", {method:"POST", body:JSON.stringify({pseudo, cle_recuperation, phrase_secrete})}),

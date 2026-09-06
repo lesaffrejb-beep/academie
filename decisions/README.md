@@ -64,3 +64,5 @@ lisant le dépôt, une règle née d'un incident. Pas l'avancement
 | [0047](0047-pipeline-documentaire-econome-et-auditable.md) | 06/09/2026 | Extraction locale graduée, benchmark sur pièces, assertions et sondages indépendants |
 | [0048](0048-supports-visuels-du-document-aux-exercices.md) | 06/09/2026 | Figures, légendes, données spatiales et preuves d'usage dans les exercices |
 | [0049](0049-pilote-documentaire-hybride-dix-pages.md) | 06/09/2026 | Dix pages croisées, supports contrôlés, étude satellite et publication isolée |
+
+- [0050 : collecte documentaire et accès pour le premier cercle](0050-essai-lundi-collecte-et-acces.md)

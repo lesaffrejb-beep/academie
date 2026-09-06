@@ -1,0 +1,21 @@
+{
+  "occurrences": 200,
+  "titres_distincts": 188,
+  "statuts": {
+    "held_for_source_review": 18,
+    "text_captured": 181,
+    "empty_source": 1
+  },
+  "textes_distincts": 169,
+  "caracteres": 11513261,
+  "references_images": 7816,
+  "racine_locale": "/Users/jb/.codex/visualizations/2026/09/06/01a07779-1d3c-7203-a4f5-f7ddc4deb94e/notebooklm-collecte",
+  "manifest_sha256": "ce3b7f108632ab4c595434e8e42c06538c58e7f5670900bea87634631fea39eb",
+  "medias_aqc": {
+    "repertoire_local": "/Users/jb/.codex/visualizations/2026/09/06/01a07779-1d3c-7203-a4f5-f7ddc4deb94e/notebooklm-medias",
+    "fichiers_canoniques": 25,
+    "empreintes_distinctes": 23,
+    "telechargements_conserves": 33,
+    "exhaustivite": "trois occurrences DOM, pas PDF originaux"
+  }
+}

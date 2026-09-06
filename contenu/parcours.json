@@ -43,11 +43,17 @@
       "id": "renovation",
       "metier": "copro",
       "titre": "Lire une étude de rénovation",
-      "promesse": "Pilote : dix pages, trois supports, huit exercices et une note critique.",
+      "promesse": "Lire le modèle, confronter les pièces et défendre un avis révisable.",
       "accroche": "Rentable pour qui ? Savoir lire les hypothèses avant de conclure.",
       "rang": 2,
-      "chapitres": ["satellite.travaux.rentabilite-renovation"],
-      "etiquettes": ["Critiquer un modèle"],
+      "chapitres": [
+        "satellite.travaux.rentabilite-renovation",
+        "satellite.travaux.contre-expertise-renovation"
+      ],
+      "etiquettes": [
+        "Critiquer un modèle",
+        "Défendre puis réviser un avis"
+      ],
       "public": "Gestionnaire de copropriété",
       "limite": "Lecture critique d'une étude de 2024. Ni audit du bâtiment, ni garantie financière, ni certification d'expertise. Réponses libres autoévaluées, sans notation IA."
     }

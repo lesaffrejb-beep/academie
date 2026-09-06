@@ -1,0 +1,522 @@
+{
+  "id": "satellite.travaux.contre-expertise-renovation",
+  "titre": "Défendre puis réviser un avis de rénovation",
+  "domaine": "travaux",
+  "branche": "renovation-globale",
+  "niveau": 4,
+  "prerequis": [],
+  "ponts": [
+    "travaux.renovation-globale.les-scenarios"
+  ],
+  "satellite": true,
+  "rattachement_propose": "travaux.renovation-globale.les-scenarios",
+  "objectifs": [
+    "Classer chaque pièce comme observation, hypothèse, résultat de modèle ou information manquante.",
+    "Comparer des scénarios avec un périmètre commun et chercher une preuve qui pourrait inverser son avis.",
+    "Expliquer une décision conditionnelle à un interlocuteur puis la réviser sans effacer son raisonnement initial."
+  ],
+  "amorce": {
+    "question": "Dossier fictif : l'offre A annonce le meilleur gain économique mais ne détaille ni la ventilation ni l'acoustique. L'offre B inclut leur examen et présente une trésorerie moins favorable. Le conseil veut choisir A immédiatement. Quel avis provisoire donnes-tu et quelle pièce pourrait te faire changer d'avis ?",
+    "aide": "Le résultat le plus élevé porte-t-il sur le même périmètre ? Sépare classement, faisabilité et financement.",
+    "reponse_attendue": "Je ne peux pas départager ces offres sur leur résultat affiché. Je demande leur périmètre commun, la distinction des gains monétaires et non monétaires, les coûts inclus et la faisabilité. Si les postes absents sont chiffrés, techniquement étudiés et ne renversent pas le classement, A pourra être réexaminée. B n'est pas automatiquement préférable."
+  },
+  "lecon": "Un avis professionnel utile engage un raisonnement vérifiable. Il nomme ce qui est établi, ce qui est supposé, ce qui manque et la preuve susceptible de changer la conclusion. Ce module prolonge la lecture du Focus 106 de juin 2024. Il utilise des dossiers fictifs pour exercer ce raisonnement ; il n'attribue pas une compétence d'expert et ne donne pas de paramètres financiers actuels.\n\nCommence par qualifier les pièces. Une consommation enregistrée est une observation, avec son périmètre et ses conditions. Une anticipation du prix de l'énergie est une hypothèse. Un gain calculé est un résultat dépendant d'entrées et de conventions. Un poste non renseigné demeure inconnu. Ces catégories répondent à des questions différentes : d'où vient l'information, comment est-elle produite et à quoi permet-elle de conclure ? Dans le Focus, la contrainte de crédit est une hypothèse encore à étayer ; les frictions locatives et collectives sont calibrées. Les convertir en règles bancaires ou en factures ferait changer leur nature.\n\nPose ensuite le point de vue. Le modèle distingue bénéfices privés et sociaux ; les bénéfices privés comprennent aussi du confort et une capitalisation supposée. Un avantage pour la société ne remplit pas automatiquement le compte bancaire du propriétaire. Une valeur patrimoniale espérée ne constitue pas davantage une mensualité disponible. Un projet peut donc paraître favorable selon un indicateur et rencontrer une difficulté de financement. Les deux informations se conservent, sans qualifier le ménage d'irrationnel par défaut.\n\nLa comparaison exige un périmètre commun. Dans notre dossier fictif, A omet des investigations présentes dans B. Le classement affiché ne tranche donc pas encore le choix. Le Focus écarte lui-même certains coûts induits, la ventilation ainsi que des contraintes architecturales et acoustiques faute de données suffisantes. Cette exclusion délimite le modèle. Elle ne dispense pas d'étudier ces postes dans un projet. Inversement, découvrir une omission ne prouve pas que l'offre concurrente est bonne : il faut la confronter aux mêmes exigences.\n\nExemple raisonné : le conseil préfère A car son résultat est supérieur. Tu reconnais ce résultat dans le périmètre annoncé, identifies les postes absents, puis demandes un scénario comparable. Tu distingues trois issues : les nouvelles données confirment A ; elles inversent le classement ; elles restent insuffisantes. Ton avis annonce ces conditions à l'avance. Le contrôle ne consiste pas à accumuler des pièces mais à demander celles qui discriminent les issues.\n\nL'analyse de sensibilité fait varier une hypothèse en explicitant ce qui reste fixe. Elle peut montrer qu'une conclusion dépend fortement des prix anticipés, de l'horizon ou des exclusions. Elle ne remplace pas une mesure du bâtiment. Si plusieurs entrées changent ensemble, on peut décrire le nouveau scénario ; on ne peut pas attribuer sa différence à une seule entrée sans comparaison supplémentaire. Ce raisonnement est appliqué ici aux limites du modèle, sans prétendre reproduire son calcul intégral.\n\nEnfin, un avis doit pouvoir être révisé sans être réécrit comme si l'incertitude n'avait jamais existé. Conserve la première conclusion, la pièce nouvelle, ce qu'elle résout et ce qu'elle laisse ouvert. Une note finale sépare la décision proposée, ses raisons, ses conditions et son suivi. La réponse attendue comporte donc aussi un argument contre ton option et une information capable de te faire changer d'avis.\n\nLes exercices demandent une tentative avant le retour, une explication de l'erreur plausible et une application à un cas nouveau. Ils appliquent les mécanismes de rappel et d'auto-explication déjà documentés dans METHODE.md ; aucune efficacité propre à ce module n'a encore été mesurée. Les réponses libres sont à comparer au corrigé par l'élève. La conservation logicielle et la reprise doivent être éprouvées dans le parcours retenu avant publication.",
+  "synthese": {
+    "consigne": "Cas nouveau fictif : C présente une valeur sociale favorable et une mensualité non financée. D présente un gain social inférieur mais un financement annoncé, sans justificatif ni examen acoustique. Produis une note au conseil : avis provisoire, arguments pour et contre chaque option, pièces décisives et conditions qui changeraient ton avis. Aucune offre ne doit être inventée complète.",
+    "attendus": [
+      "Distinguer valeur sociale et trésorerie disponible sans assimiler l'une à l'autre.",
+      "Conserver le financement annoncé de D comme information à documenter, pas comme accord acquis.",
+      "Évaluer l'acoustique et les autres exclusions dans chaque scénario pertinent.",
+      "Demander une comparaison à périmètre commun ; accepter que le choix reste indécidable.",
+      "Donner au moins une raison favorable et une limite pour chaque option.",
+      "Nommer une pièce discriminante et la conclusion qui changerait selon son contenu.",
+      "Prévoir une trace de la révision de l'avis après information nouvelle."
+    ]
+  },
+  "sources": [
+    {
+      "texte": "CAE, Focus 106, juin 2024, pages PDF 14-18. Raisonnement historique sur le modèle ; cas entièrement fictifs, sans prescription actuelle.",
+      "url": "https://www.cae-eco.fr/staticfiles/pdf/focus-106-modelisation-reno-240625.pdf#page=14",
+      "nature": "institution",
+      "parti": "Analyse économique publiée sous la responsabilité des auteurs ; hypothèses et exclusions explicites."
+    }
+  ],
+  "provenance": {
+    "auteur": "modele",
+    "outil": "Codex",
+    "modele": "GPT-6 (identifiant précis non exposé)",
+    "genere_le": "2026-09-06",
+    "session": "objectif-lundi-20260906/contenu_expert",
+    "sources_retrouvees": 1,
+    "sources_concordantes": 0,
+    "sans_source": false
+  },
+  "statut": "valide",
+  "partage": "banque",
+  "verifie": "2026-09-06",
+  "version": 1,
+  "cartes": [
+    {
+      "id": "contre-expertise-statut-information",
+      "chapitre": "satellite.travaux.contre-expertise-renovation",
+      "domaine": "travaux",
+      "branche": "renovation-globale",
+      "type": "flash",
+      "niveau": 4,
+      "question": "Quel changement de sens commet-on en transformant une friction calibrée du modèle en ligne à ajouter au devis du bâtiment ?",
+      "reponse": "On transforme un paramètre qui représente des freins observés à l'investissement en dépense contractuelle du projet. La source ne permet pas cette conversion.",
+      "explication": "Le Focus estime les frictions à partir des comportements de rénovation. Une dépense réelle doit être établie par les pièces de l'opération.",
+      "source": [
+        {
+          "texte": "CAE, Focus 106, juin 2024, pages PDF 15-16. Raisonnement historique sur le modèle ; cas entièrement fictifs, sans prescription actuelle.",
+          "url": "https://www.cae-eco.fr/staticfiles/pdf/focus-106-modelisation-reno-240625.pdf#page=15",
+          "nature": "institution",
+          "parti": "Analyse économique publiée sous la responsabilité des auteurs ; hypothèses et exclusions explicites."
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "outil": "Codex",
+        "modele": "GPT-6 (identifiant précis non exposé)",
+        "genere_le": "2026-09-06",
+        "session": "objectif-lundi-20260906/contenu_expert",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "verifie": "2026-09-06",
+      "peremption": null,
+      "statut": "valide",
+      "partage": "banque",
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6",
+        "date": "2026-09-06",
+        "rapport": "travail/modules-experts-2026-09-06/RELECTURE-CONTENU.md",
+        "session": "objectif-lundi-20260906/root",
+        "assertions": [
+          "Perspectives et trésorerie, frictions calibrées, exclusions, avis conditionnel confrontés au Focus pages 14-18."
+        ],
+        "sources": [
+          "Focus 106, empreinte 322a2f5e843f45b9, pages PDF 14-18"
+        ],
+        "reserves": [
+          "Lecture critique historique ; cas fictifs ; aucune certification ni conseil financier actuel."
+        ]
+      }
+    },
+    {
+      "id": "contre-expertise-comparabilite",
+      "chapitre": "satellite.travaux.contre-expertise-renovation",
+      "domaine": "travaux",
+      "branche": "renovation-globale",
+      "type": "qcm",
+      "niveau": 4,
+      "question": "Dossier fictif : A exclut ventilation et acoustique, B prévoit leur examen. A affiche un résultat économique supérieur. Quelle conclusion est défendable ?",
+      "reponse": "Le classement reste à réexaminer sur un périmètre commun avant de départager les offres.",
+      "explication": "Une valeur calculée ne compense pas l'absence d'information sur un poste. B peut aussi présenter des limites : constater celles de A ne certifie pas B.",
+      "source": [
+        {
+          "texte": "CAE, Focus 106, juin 2024, pages PDF 18. Raisonnement historique sur le modèle ; cas entièrement fictifs, sans prescription actuelle.",
+          "url": "https://www.cae-eco.fr/staticfiles/pdf/focus-106-modelisation-reno-240625.pdf#page=18",
+          "nature": "institution",
+          "parti": "Analyse économique publiée sous la responsabilité des auteurs ; hypothèses et exclusions explicites."
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "outil": "Codex",
+        "modele": "GPT-6 (identifiant précis non exposé)",
+        "genere_le": "2026-09-06",
+        "session": "objectif-lundi-20260906/contenu_expert",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "verifie": "2026-09-06",
+      "peremption": null,
+      "statut": "valide",
+      "partage": "banque",
+      "choix": [
+        {
+          "texte": "Retenir A : les contraintes absentes du modèle ne peuvent pas influencer son classement.",
+          "correct": false,
+          "pourquoi_faux": "Elles ne sont pas calculées ; cela ne signifie ni coût nul ni absence de contrainte pour le projet."
+        },
+        {
+          "texte": "Réexaminer le classement sur un périmètre commun ; aucune offre n'est encore démontrée préférable.",
+          "correct": true
+        },
+        {
+          "texte": "Retenir B définitivement : la présence d'un examen acoustique prouve sa faisabilité complète.",
+          "correct": false,
+          "pourquoi_faux": "Un examen prévu n'est pas son résultat, et il ne qualifie pas tous les autres postes."
+        }
+      ],
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6",
+        "date": "2026-09-06",
+        "rapport": "travail/modules-experts-2026-09-06/RELECTURE-CONTENU.md",
+        "session": "objectif-lundi-20260906/root",
+        "assertions": [
+          "Perspectives et trésorerie, frictions calibrées, exclusions, avis conditionnel confrontés au Focus pages 14-18."
+        ],
+        "sources": [
+          "Focus 106, empreinte 322a2f5e843f45b9, pages PDF 14-18"
+        ],
+        "reserves": [
+          "Lecture critique historique ; cas fictifs ; aucune certification ni conseil financier actuel."
+        ]
+      }
+    },
+    {
+      "id": "contre-expertise-flux",
+      "chapitre": "satellite.travaux.contre-expertise-renovation",
+      "domaine": "travaux",
+      "branche": "renovation-globale",
+      "type": "photo",
+      "niveau": 4,
+      "question": "À partir du schéma, le propriétaire peut-il couvrir une échéance en additionnant économies monétaires, confort et bénéfice climatique ? Explique quelle donnée manque pour répondre à sa difficulté de trésorerie.",
+      "reponse": "Non. Le confort et la valeur climatique ne sont pas des encaissements. Il faut établir les flux effectivement disponibles, les dépenses et le financement du propriétaire.",
+      "explication": "Le schéma sépare des perspectives économiques. Il ne représente aucun mécanisme de versement ni accord de financement.",
+      "source": [
+        {
+          "texte": "CAE, Focus 106, juin 2024, pages PDF 14. Raisonnement historique sur le modèle ; cas entièrement fictifs, sans prescription actuelle.",
+          "url": "https://www.cae-eco.fr/staticfiles/pdf/focus-106-modelisation-reno-240625.pdf#page=14",
+          "nature": "institution",
+          "parti": "Analyse économique publiée sous la responsabilité des auteurs ; hypothèses et exclusions explicites."
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "outil": "Codex",
+        "modele": "GPT-6 (identifiant précis non exposé)",
+        "genere_le": "2026-09-06",
+        "session": "objectif-lundi-20260906/contenu_expert",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "verifie": "2026-09-06",
+      "peremption": null,
+      "statut": "valide",
+      "partage": "banque",
+      "image": {
+        "fichier": "images/renovation-perspectives.svg",
+        "alt": "Deux perspectives : propriétaire, économies et confort ; société, bénéfices climatiques et de santé selon le modèle. Aucun flux de versement n'est dessiné.",
+        "licence": "Création pédagogique originale Académie ; diffusion dans ce pilote autorisée par JB.",
+        "credit": "Académie · Schéma pédagogique original, sans reprise de la figure du PDF.",
+        "source": "https://www.cae-eco.fr/staticfiles/pdf/focus-106-modelisation-reno-240625.pdf#page=20"
+      },
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6",
+        "date": "2026-09-06",
+        "rapport": "travail/modules-experts-2026-09-06/RELECTURE-CONTENU.md",
+        "session": "objectif-lundi-20260906/root",
+        "assertions": [
+          "Perspectives et trésorerie, frictions calibrées, exclusions, avis conditionnel confrontés au Focus pages 14-18."
+        ],
+        "sources": [
+          "Focus 106, empreinte 322a2f5e843f45b9, pages PDF 14-18"
+        ],
+        "reserves": [
+          "Lecture critique historique ; cas fictifs ; aucune certification ni conseil financier actuel."
+        ]
+      }
+    },
+    {
+      "id": "contre-expertise-apparier",
+      "chapitre": "satellite.travaux.contre-expertise-renovation",
+      "domaine": "travaux",
+      "branche": "renovation-globale",
+      "type": "relier",
+      "niveau": 4,
+      "question": "Relie chaque bénéfice à sa catégorie dans les choix affichés. Le schéma te sert de support. Explique ensuite pourquoi ces résultats ne forment pas tous une trésorerie. Si tu réponds par écrit : 1 économie monétaire ; 2 confort ; 3 émissions évitées ; a composante monétaire privée ; b bénéfice privé non monétaire ; c effet climatique valorisé socialement.",
+      "reponse": "1-a, 2-b, 3-c. La valorisation agrège des natures différentes ; seuls les flux effectivement réalisés et disponibles peuvent être confrontés aux décaissements.",
+      "explication": "Les catégories suivent la décomposition du Focus. La valeur sociale ne préjuge pas de sa redistribution, et le confort n'est pas une recette bancaire.",
+      "source": [
+        {
+          "texte": "CAE, Focus 106, juin 2024, pages PDF 14. Raisonnement historique sur le modèle ; cas entièrement fictifs, sans prescription actuelle.",
+          "url": "https://www.cae-eco.fr/staticfiles/pdf/focus-106-modelisation-reno-240625.pdf#page=14",
+          "nature": "institution",
+          "parti": "Analyse économique publiée sous la responsabilité des auteurs ; hypothèses et exclusions explicites."
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "outil": "Codex",
+        "modele": "GPT-6 (identifiant précis non exposé)",
+        "genere_le": "2026-09-06",
+        "session": "objectif-lundi-20260906/contenu_expert",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "verifie": "2026-09-06",
+      "peremption": null,
+      "statut": "valide",
+      "partage": "banque",
+      "image": {
+        "fichier": "images/renovation-perspectives.svg",
+        "alt": "Deux perspectives : propriétaire, économies et confort ; société, bénéfices climatiques et de santé selon le modèle. Aucun flux de versement n'est dessiné.",
+        "licence": "Création pédagogique originale Académie ; diffusion dans ce pilote autorisée par JB.",
+        "credit": "Académie · Schéma pédagogique original, sans reprise de la figure du PDF.",
+        "source": "https://www.cae-eco.fr/staticfiles/pdf/focus-106-modelisation-reno-240625.pdf#page=20"
+      },
+      "paires": [
+        {
+          "gauche": "Économie monétaire",
+          "droite": "Composante monétaire des bénéfices privés"
+        },
+        {
+          "gauche": "Confort",
+          "droite": "Bénéfice privé non assimilable à un encaissement"
+        },
+        {
+          "gauche": "Émissions évitées",
+          "droite": "Effet climatique valorisé socialement"
+        }
+      ],
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6",
+        "date": "2026-09-06",
+        "rapport": "travail/modules-experts-2026-09-06/RELECTURE-CONTENU.md",
+        "session": "objectif-lundi-20260906/root",
+        "assertions": [
+          "Perspectives et trésorerie, frictions calibrées, exclusions, avis conditionnel confrontés au Focus pages 14-18."
+        ],
+        "sources": [
+          "Focus 106, empreinte 322a2f5e843f45b9, pages PDF 14-18"
+        ],
+        "reserves": [
+          "Lecture critique historique ; cas fictifs ; aucune certification ni conseil financier actuel."
+        ]
+      }
+    },
+    {
+      "id": "contre-expertise-sensibilite",
+      "chapitre": "satellite.travaux.contre-expertise-renovation",
+      "domaine": "travaux",
+      "branche": "renovation-globale",
+      "type": "libre",
+      "niveau": 4,
+      "question": "Cas fictif : un analyste augmente le prix anticipé de l'énergie et réduit simultanément l'horizon du calcul. Le résultat final est moins favorable. Peut-on attribuer cette baisse à l'horizon seul ? Quelle comparaison demander ?",
+      "reponse": "On ne peut pas isoler l'effet de l'horizon à partir de ce changement conjoint. Demander une comparaison où seul l'horizon varie, puis une où seul le prix anticipé varie, avec les autres entrées et le périmètre explicités.",
+      "explication": "Le Focus explicite actualisation et anticipation des prix. La comparaison proposée est une transposition méthodologique : elle ne reproduit pas un résultat numérique de l'étude.",
+      "source": [
+        {
+          "texte": "CAE, Focus 106, juin 2024, pages PDF 14-16. Raisonnement historique sur le modèle ; cas entièrement fictifs, sans prescription actuelle.",
+          "url": "https://www.cae-eco.fr/staticfiles/pdf/focus-106-modelisation-reno-240625.pdf#page=14",
+          "nature": "institution",
+          "parti": "Analyse économique publiée sous la responsabilité des auteurs ; hypothèses et exclusions explicites."
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "outil": "Codex",
+        "modele": "GPT-6 (identifiant précis non exposé)",
+        "genere_le": "2026-09-06",
+        "session": "objectif-lundi-20260906/contenu_expert",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "verifie": "2026-09-06",
+      "peremption": null,
+      "statut": "valide",
+      "partage": "banque",
+      "aide": "Quelle autre entrée a changé au même moment ?",
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6",
+        "date": "2026-09-06",
+        "rapport": "travail/modules-experts-2026-09-06/RELECTURE-CONTENU.md",
+        "session": "objectif-lundi-20260906/root",
+        "assertions": [
+          "Perspectives et trésorerie, frictions calibrées, exclusions, avis conditionnel confrontés au Focus pages 14-18."
+        ],
+        "sources": [
+          "Focus 106, empreinte 322a2f5e843f45b9, pages PDF 14-18"
+        ],
+        "reserves": [
+          "Lecture critique historique ; cas fictifs ; aucune certification ni conseil financier actuel."
+        ]
+      }
+    },
+    {
+      "id": "contre-expertise-information-discriminante",
+      "chapitre": "satellite.travaux.contre-expertise-renovation",
+      "domaine": "travaux",
+      "branche": "renovation-globale",
+      "type": "libre",
+      "niveau": 4,
+      "question": "Dossier fictif : A reste en tête quand seul le prix anticipé varie. Son examen acoustique manque toujours. Un collègue conclut : l'analyse de sensibilité a donc démontré la faisabilité. Quelle est l'erreur et quelle pièce demander ?",
+      "reponse": "La stabilité du classement face au prix ne renseigne pas la contrainte acoustique exclue. Demander une étude adaptée à la configuration envisagée et expliquer quelles conclusions elle autoriserait, sans prédire son résultat.",
+      "explication": "Un test sur une hypothèse ne couvre pas une dimension hors modèle. L'absence acoustique est expressément signalée dans la note technique du Focus.",
+      "source": [
+        {
+          "texte": "CAE, Focus 106, juin 2024, pages PDF 18. Raisonnement historique sur le modèle ; cas entièrement fictifs, sans prescription actuelle.",
+          "url": "https://www.cae-eco.fr/staticfiles/pdf/focus-106-modelisation-reno-240625.pdf#page=18",
+          "nature": "institution",
+          "parti": "Analyse économique publiée sous la responsabilité des auteurs ; hypothèses et exclusions explicites."
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "outil": "Codex",
+        "modele": "GPT-6 (identifiant précis non exposé)",
+        "genere_le": "2026-09-06",
+        "session": "objectif-lundi-20260906/contenu_expert",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "verifie": "2026-09-06",
+      "peremption": null,
+      "statut": "valide",
+      "partage": "banque",
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6",
+        "date": "2026-09-06",
+        "rapport": "travail/modules-experts-2026-09-06/RELECTURE-CONTENU.md",
+        "session": "objectif-lundi-20260906/root",
+        "assertions": [
+          "Perspectives et trésorerie, frictions calibrées, exclusions, avis conditionnel confrontés au Focus pages 14-18."
+        ],
+        "sources": [
+          "Focus 106, empreinte 322a2f5e843f45b9, pages PDF 14-18"
+        ],
+        "reserves": [
+          "Lecture critique historique ; cas fictifs ; aucune certification ni conseil financier actuel."
+        ]
+      }
+    },
+    {
+      "id": "contre-expertise-contradictoire",
+      "chapitre": "satellite.travaux.contre-expertise-renovation",
+      "domaine": "travaux",
+      "branche": "renovation-globale",
+      "type": "role",
+      "niveau": 4,
+      "question": "Simulation fictive. Objectif : obtenir une comparaison loyale et une décision conditionnelle. Le binôme joue ce rôle : « Tu es membre du conseil syndical. Tu préfères A parce que son résultat annoncé est supérieur. Les postes de ventilation et d'acoustique ne sont pas détaillés. Tu demandes au gestionnaire pourquoi cela empêche de conclure. Si sa réponse l'explique, demande quelle preuve pourrait finalement lui faire préférer A. N'invente aucun diagnostic ni accord de financement. » Écris ta réponse au conseil et la condition qui ferait changer ton avis.",
+      "reponse": "Je retiens l'intérêt du résultat affiché pour A dans son périmètre. Pour le comparer à B, je demande les postes manquants et la faisabilité propre au projet. Si ces pièces rendent les périmètres comparables, établissent la faisabilité et maintiennent son avantage selon les critères retenus, je réexaminerai A favorablement. À défaut, l'avis reste ouvert.",
+      "explication": "L'exercice porte sur la formulation d'une preuve attendue et la révision d'un avis, pas sur une négociation forcée vers B. Le rôle se joue en binôme ou par écrit ; aucun appel de modèle n'est nécessaire.",
+      "source": [
+        {
+          "texte": "CAE, Focus 106, juin 2024, pages PDF 14-18. Raisonnement historique sur le modèle ; cas entièrement fictifs, sans prescription actuelle.",
+          "url": "https://www.cae-eco.fr/staticfiles/pdf/focus-106-modelisation-reno-240625.pdf#page=14",
+          "nature": "institution",
+          "parti": "Analyse économique publiée sous la responsabilité des auteurs ; hypothèses et exclusions explicites."
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "outil": "Codex",
+        "modele": "GPT-6 (identifiant précis non exposé)",
+        "genere_le": "2026-09-06",
+        "session": "objectif-lundi-20260906/contenu_expert",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "verifie": "2026-09-06",
+      "peremption": null,
+      "statut": "valide",
+      "partage": "banque",
+      "aide": "Reconnais l'argument valable puis énonce ce qu'il ne couvre pas.",
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6",
+        "date": "2026-09-06",
+        "rapport": "travail/modules-experts-2026-09-06/RELECTURE-CONTENU.md",
+        "session": "objectif-lundi-20260906/root",
+        "assertions": [
+          "Perspectives et trésorerie, frictions calibrées, exclusions, avis conditionnel confrontés au Focus pages 14-18."
+        ],
+        "sources": [
+          "Focus 106, empreinte 322a2f5e843f45b9, pages PDF 14-18"
+        ],
+        "reserves": [
+          "Lecture critique historique ; cas fictifs ; aucune certification ni conseil financier actuel."
+        ]
+      }
+    },
+    {
+      "id": "contre-expertise-revision",
+      "chapitre": "satellite.travaux.contre-expertise-renovation",
+      "domaine": "travaux",
+      "branche": "renovation-globale",
+      "type": "synthese",
+      "niveau": 4,
+      "question": "Suite fictive : une nouvelle pièce confirme que le financement de A n'est pas acquis ; B n'a toujours pas livré son examen acoustique. Rédige la mise à jour de ton avis en conservant ce qui était connu auparavant.",
+      "reponse": "La nouvelle pièce ferme l'hypothèse d'un financement acquis pour A, sans établir son impossibilité définitive. Elle ne résout pas l'acoustique de B. Je conserve l'avis comparatif ouvert, indique l'effet de la pièce sur A et demande séparément les informations de B. Ni l'échec d'une hypothèse ni un poste documenté ne prouvent la supériorité globale de l'autre offre.",
+      "explication": "Le Focus distingue contrainte financière et contraintes techniques. Le dossier fictif exerce cette distinction sans appliquer son hypothèse de refus bancaire à une personne réelle.",
+      "source": [
+        {
+          "texte": "CAE, Focus 106, juin 2024, pages PDF 15-18. Raisonnement historique sur le modèle ; cas entièrement fictifs, sans prescription actuelle.",
+          "url": "https://www.cae-eco.fr/staticfiles/pdf/focus-106-modelisation-reno-240625.pdf#page=15",
+          "nature": "institution",
+          "parti": "Analyse économique publiée sous la responsabilité des auteurs ; hypothèses et exclusions explicites."
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "outil": "Codex",
+        "modele": "GPT-6 (identifiant précis non exposé)",
+        "genere_le": "2026-09-06",
+        "session": "objectif-lundi-20260906/contenu_expert",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "verifie": "2026-09-06",
+      "peremption": null,
+      "statut": "valide",
+      "partage": "banque",
+      "attendus": [
+        "Conserver la première situation et identifier la pièce nouvelle.",
+        "Distinguer financement non acquis et impossibilité définitive de financement.",
+        "Maintenir explicitement l'inconnue acoustique de B.",
+        "Réviser l'avis selon chaque dimension sans faire gagner B par défaut.",
+        "Nommer les informations encore décisives."
+      ],
+      "aide": "Une information défavorable à A résout-elle une question encore ouverte pour B ?",
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6",
+        "date": "2026-09-06",
+        "rapport": "travail/modules-experts-2026-09-06/RELECTURE-CONTENU.md",
+        "session": "objectif-lundi-20260906/root",
+        "assertions": [
+          "Perspectives et trésorerie, frictions calibrées, exclusions, avis conditionnel confrontés au Focus pages 14-18."
+        ],
+        "sources": [
+          "Focus 106, empreinte 322a2f5e843f45b9, pages PDF 14-18"
+        ],
+        "reserves": [
+          "Lecture critique historique ; cas fictifs ; aucune certification ni conseil financier actuel."
+        ]
+      }
+    }
+  ],
+  "verifie_par": {
+    "outil": "Codex",
+    "modele": "GPT-6",
+    "date": "2026-09-06",
+    "rapport": "travail/modules-experts-2026-09-06/RELECTURE-CONTENU.md",
+    "session": "objectif-lundi-20260906/root",
+    "assertions": [
+      "Perspectives et trésorerie, frictions calibrées, exclusions, avis conditionnel confrontés au Focus pages 14-18."
+    ],
+    "sources": [
+      "Focus 106, empreinte 322a2f5e843f45b9, pages PDF 14-18"
+    ],
+    "reserves": [
+      "Lecture critique historique ; cas fictifs ; aucune certification ni conseil financier actuel."
+    ]
+  }
+}

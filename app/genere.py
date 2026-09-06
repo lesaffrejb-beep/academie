@@ -97,7 +97,8 @@ CHAMPS = ("id", "domaine", "branche", "niveau", "prerequis", "type",
 # que la v1 ne connaissait pas.
 CHAMPS_V2 = CHAMPS + (
     "chapitre", "provenance", "verifie_par", "a_recouper", "note_confiance",
-    "pas", "attendus", "document", "audio", "chrono", "confiance", "aide")
+    "pas", "attendus", "document", "audio", "chrono", "confiance", "aide",
+    "paires", "etapes")
 
 
 def carte_publique(carte: dict) -> dict:

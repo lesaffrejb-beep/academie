@@ -53,6 +53,21 @@ class Onboarding(unittest.TestCase):
         for e in b["eleves"]: self.assertEqual(set(e),{"id","pseudo","cursus"})
         self.assertEqual(requete(self.a,"PATCH","/profil",{"visibilite":False},cookie=d,profil=q["id"])[0],200)
         self.assertNotIn(q["id"],[e["id"] for e in requete(self.a,"GET","/eleves",cookie=c,profil=p["id"])[2]["eleves"]])
+    def test_annuaire_connexion_visible_et_minimal(self):
+        p,c=self.compte(); q,d=self.compte("Bob")
+        # Le nom affiché peut diverger du pseudo de connexion.
+        requete(self.a,"PATCH","/profil",{"titre_affiche":"Alice du groupe"},cookie=c,profil=p["id"])
+        s,_,b=requete(self.a,"GET","/auth/comptes")
+        self.assertEqual(s,200)
+        self.assertEqual(b,{"comptes":[{"pseudo":"alice","titre_affiche":"Alice du groupe"},{"pseudo":"bob","titre_affiche":"Bob"}]})
+        requete(self.a,"PATCH","/profil",{"visibilite":False},cookie=d,profil=q["id"])
+        self.assertEqual(len(requete(self.a,"GET","/auth/comptes")[2]["comptes"]),1)
+        self.a.conn.execute("INSERT INTO masquages (profil,domaine,depuis) VALUES (?, '*', '2026-09-06')",(p["id"],))
+        self.assertEqual(requete(self.a,"GET","/auth/comptes")[2],{"comptes":[]})
+        self.a.conn.execute("DELETE FROM masquages WHERE profil=?",(p["id"],))
+        requete(self.a,"DELETE","/profil",cookie=c,profil=p["id"])
+        self.assertEqual(requete(self.a,"GET","/auth/comptes")[2],{"comptes":[]})
+
     def test_demandes(self):
         p,c=self.compte()
         self.assertEqual(requete(self.a,"POST","/demandes-cursus",{"texte":" "},cookie=c,profil=p["id"])[0],422)
