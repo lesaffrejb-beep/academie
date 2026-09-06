@@ -1,0 +1,22 @@
+
+> academie-client@2.0.0 e2e
+> playwright test tests/e2e/facade.spec.ts
+
+[WebServer] (node:22379) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] <script src="/academie/registerSW.js"> in "/index.html" can't be bundled without type="module" attribute
+[WebServer] (node:22468) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 4 tests using 1 worker
+
+(node:22511) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 [ordinateur] › tests/e2e/facade.spec.ts:21:1 › le parcours façade garde la tentative, huit exercices et la synthèse (3.6s)
+  ✓  2 [ordinateur] › tests/e2e/facade.spec.ts:124:1 › le cursus IFSI ne sert pas le parcours façade (375ms)
+(node:22666) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  3 [telephone] › tests/e2e/facade.spec.ts:21:1 › le parcours façade garde la tentative, huit exercices et la synthèse (3.3s)
+  ✓  4 [telephone] › tests/e2e/facade.spec.ts:124:1 › le cursus IFSI ne sert pas le parcours façade (402ms)
+
+  4 passed (16.1s)

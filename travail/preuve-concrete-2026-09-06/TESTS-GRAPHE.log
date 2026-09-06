@@ -1,0 +1,58 @@
+
+> academie-client@2.0.0 e2e
+> playwright test graphe.spec.ts
+
+[WebServer] (node:34178) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] <script src="/academie/registerSW.js"> in "/index.html" can't be bundled without type="module" attribute
+[WebServer] (node:34224) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 10 tests using 1 worker
+
+(node:34231) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] 9:03:13 PM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓   1 [ordinateur] › tests/e2e/graphe.spec.ts:9:1 › les vrais liens se parcourent au clavier et les chapitres vides restent honnêtes (689ms)
+[WebServer] 9:03:14 PM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓   2 [ordinateur] › tests/e2e/graphe.spec.ts:32:1 › le graphe donne accès à une étude serviable (552ms)
+[WebServer] 9:03:14 PM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓   3 [ordinateur] › tests/e2e/graphe.spec.ts:40:1 › un parent du programme ouvre son approfondissement façade et garde le retour (753ms)
+[WebServer] 9:03:15 PM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓   4 [ordinateur] › tests/e2e/graphe.spec.ts:66:1 › les satellites copro restent absents de l’index IFSI (468ms)
+[WebServer] 9:03:15 PM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓   5 [ordinateur] › tests/e2e/graphe.spec.ts:74:1 › filtre du cursus, recherche vide et rendus accessibles (842ms)
+(node:34281) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] 9:03:17 PM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓   6 [telephone] › tests/e2e/graphe.spec.ts:9:1 › les vrais liens se parcourent au clavier et les chapitres vides restent honnêtes (751ms)
+[WebServer] 9:03:18 PM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓   7 [telephone] › tests/e2e/graphe.spec.ts:32:1 › le graphe donne accès à une étude serviable (584ms)
+[WebServer] 9:03:18 PM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓   8 [telephone] › tests/e2e/graphe.spec.ts:40:1 › un parent du programme ouvre son approfondissement façade et garde le retour (769ms)
+[WebServer] 9:03:19 PM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓   9 [telephone] › tests/e2e/graphe.spec.ts:66:1 › les satellites copro restent absents de l’index IFSI (413ms)
+[WebServer] 9:03:20 PM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓  10 [telephone] › tests/e2e/graphe.spec.ts:74:1 › filtre du cursus, recherche vide et rendus accessibles (723ms)
+
+  10 passed (15.1s)

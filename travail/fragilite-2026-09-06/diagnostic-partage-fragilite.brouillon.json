@@ -1,0 +1,419 @@
+{
+  "id": "satellite.droit.diagnostic-partage-fragilite",
+  "titre": "Fragilité : du signal au diagnostic partagé",
+  "domaine": "droit",
+  "branche": "organes",
+  "niveau": 3,
+  "prerequis": [
+    "droit.organes.le-syndicat-des-coproprietaires",
+    "droit.organes.le-syndic-et-ses-missions",
+    "droit.organes.le-conseil-syndical",
+    "comptabilite.budget.le-budget-previsionnel"
+  ],
+  "ponts": [
+    "comptabilite.impayes.le-plan-de-recouvrement",
+    "immobilier.local.les-fragilites-observees"
+  ],
+  "satellite": true,
+  "rattachement_propose": "droit.organes.administrateur-provisoire-et-procedure-d-alerte",
+  "objectifs": [
+    "Croiser gouvernance, finances collectives, bâti et situation des ménages sans transformer un signal en diagnostic.",
+    "Départager des hypothèses concurrentes par des pièces utiles et conserver les informations inconnues.",
+    "Proposer au conseil une priorité conditionnelle, nommer les interlocuteurs utiles et réviser cet avis après une pièce nouvelle."
+  ],
+  "amorce": {
+    "question": "Dossier entièrement fictif : un relevé présente des soldes débiteurs sans historique, un procès-verbal reporte l'entretien de toiture faute de pièces techniques, une occupante signale une trace humide et un propriétaire déclare une baisse de ressources ; quelle analyse provisoire présentes-tu au conseil et quelle information demandes-tu en premier ?",
+    "aide": "La première pièce dépend du risque qu'elle permet de qualifier ; ne donne ni origine à l'humidité ni intention au débiteur.",
+    "reponse_attendue": "Les informations signalent des questions financières, de décision collective, de bâti et de solvabilité, sans établir une cause commune. La trace humide appelle une qualification technique de sa nature et de son urgence ; l'historique comptable, les pièces de préparation du vote et l'examen de la situation déclarée servent en parallèle à départager les autres hypothèses. La priorité se réévalue selon le risque constaté, sans conclure à une procédure judiciaire à partir de ces seuls éléments."
+  },
+  "lecon": "Un diagnostic partagé relie des constats documentés à des décisions possibles. Il n'exige pas que tous les acteurs donnent la même explication au départ. Tu rends visibles leurs désaccords, les informations qui manquent et ce qui ferait changer l'analyse. Le guide Anah distingue, page 10, la gouvernance, les finances de la copropriété, l'état du bâti, puis la solvabilité des propriétaires et la situation sociale des occupants. L'étude utilise ces quatre dimensions comme porte d'entrée, sans les réduire à un score.\n\nLe dossier est entièrement fictif. Un relevé comporte des soldes débiteurs sans historique. Le procès-verbal reporte l'entretien de toiture faute de pièces techniques. Une occupante signale une trace humide. Un propriétaire déclare une baisse de ressources. Tu sais que ces informations existent ; tu ne sais encore ni si les soldes sont correctement établis, ni pourquoi ils persistent, ni d'où vient l'humidité, ni si la baisse déclarée empêche le paiement. Un report documenté ne démontre pas à lui seul une incapacité durable à décider.\n\nCommence par distinguer le fait et son interprétation. Le procès-verbal atteste le report et son motif consigné ; il ne prouve pas toutes les causes de l'absence de pièces. Le signalement de l'occupante appelle une investigation, sans devenir un diagnostic de toiture. La déclaration du propriétaire demande un examen adapté, sans autoriser un jugement sur sa bonne foi. Pour chaque pièce, précise sa date, son périmètre et ce qu'elle permet effectivement d'établir. Une information absente reste inconnue, même si elle rendrait le récit plus cohérent.\n\nFormule ensuite des hypothèses qui conduisent à des vérifications différentes. Des soldes débiteurs peuvent correspondre à des difficultés de paiement, à une contestation ou à une anomalie de tenue des comptes : ce sont ici des possibilités à tester, pas les causes démontrées du dossier. L'historique des appels et règlements, les justificatifs du solde et les échanges utiles permettent de les départager. Pour le vote reporté, cherche les pièces demandées et les échanges de préparation avant d'attribuer le report à un conflit. Tu demandes une pièce parce que son contenu pourrait modifier l'avis.\n\nLes dimensions se croisent sans se remplacer. Des travaux non décidés peuvent laisser une question technique ouverte ; cela ne prouve pas que la trace humide vient de ces travaux différés. Une trésorerie collective tendue ne décrit pas chaque ménage. À l'inverse, un ménage en difficulté ne suffit pas à caractériser l'ensemble. La page 12 refuse de déduire les difficultés du seul niveau socioéconomique, du quartier ou de l'époque de construction. La page 16 rappelle qu'une difficulté sur un axe ne condamne pas la copropriété à un état général de difficulté.\n\nÉlargis l'enquête si le dossier le demande. Le schéma de la page 22 ajoute les caractéristiques structurelles et l'environnement urbain aux catégories financières, de gouvernance, de bâti et de situation des ménages. Le schéma de la page 16 organise autrement les axes d'intervention. Ces représentations servent à chercher les angles oubliés ; ce ne sont ni une échelle de gravité, ni des critères légaux interchangeables. Le dossier peut donc rester incomplet après l'examen des quatre dimensions initiales.\n\nPrioriser consiste à rendre une action dépendante d'un constat précis. Dans ce cas, faire qualifier la trace humide permet d'apprécier sa nature et son urgence sans attendre que toute la comptabilité soit reconstituée. Si l'examen établit une situation nécessitant une intervention urgente, celle-ci devient prioritaire ; sinon, la préparation technique et financière des décisions peut être planifiée. L'examen des comptes et des difficultés déclarées continue en parallèle. Cette organisation est une proposition pédagogique : le schéma de la page 8 distingue urgence, planification, soutien et relais, mais ne décide pas à la place du gestionnaire.\n\nDemain, tu sauras rédiger une note utile au conseil : constats, hypothèses concurrentes, pièces demandées, interlocuteurs à solliciter, action conditionnelle et information qui déclenche sa révision. Tu conserveras aussi les désaccords et l'avis précédent. Une pièce rassurante sur le bâti ne clôt pas automatiquement les questions financières ou sociales ; une difficulté persistante ne suffit pas à choisir un dispositif public ou judiciaire. Le diagnostic partagé prépare ces décisions, dont les conditions doivent être vérifiées séparément.",
+  "synthese": {
+    "consigne": "Cas nouveau entièrement fictif : des comptes rapprochés confirment des soldes débiteurs persistants mais aucun examen des situations individuelles n'est fourni ; une visite exclut l'urgence pour les désordres qu'elle a examinés, sans couvrir l'ensemble du bâtiment ; le vote de travaux a été reporté faute de devis comparables. Le conseil propose de classer le dossier après la visite rassurante. Rédige la note qui accepte ou refuse cette proposition, distingue les quatre dimensions, donne des hypothèses concurrentes et précise ce qui changerait ta priorité.",
+    "attendus": [
+      "Limiter la conclusion de la visite aux désordres examinés ; ne pas déclarer tout le bâti sain.",
+      "Conserver les soldes confirmés comme fait financier sans leur attribuer une cause individuelle.",
+      "Distinguer défaut de pièces pour voter et blocage durable de gouvernance.",
+      "Garder la solvabilité et la situation sociale comme inconnues à examiner, sans stéréotype.",
+      "Proposer des hypothèses concurrentes et une pièce permettant de les départager.",
+      "Prévoir des démarches parallèles et une priorité révisable selon une information nommée.",
+      "Associer chaque demande à un interlocuteur pertinent sans attribuer au conseil un pouvoir non établi.",
+      "Expliquer pourquoi une visite rassurante ne suffit pas à clore toutes les dimensions et conserver la trace de l'avis révisé."
+    ]
+  },
+  "sources": [
+    {
+      "texte": "Anah, Gérer et accompagner les copropriétés fragiles, édition 2026, pages PDF 8. Copie locale 0a7537d478616271. Cas et démarche de comparaison des hypothèses : adaptation pédagogique fictive, pas prescription juridique.",
+      "url": "https://www.anah.gouv.fr/sites/default/files/2026-08/082026_guide_gerer-coproprietes-fragiles.pdf#page=8",
+      "nature": "institution",
+      "parti": "Guide de prévention et de gestion ; ne remplace ni un diagnostic du dossier ni les textes applicables aux procédures."
+    },
+    {
+      "texte": "Anah, Gérer et accompagner les copropriétés fragiles, édition 2026, pages PDF 10-16. Copie locale 0a7537d478616271. Cas et démarche de comparaison des hypothèses : adaptation pédagogique fictive, pas prescription juridique.",
+      "url": "https://www.anah.gouv.fr/sites/default/files/2026-08/082026_guide_gerer-coproprietes-fragiles.pdf#page=10",
+      "nature": "institution",
+      "parti": "Guide de prévention et de gestion ; ne remplace ni un diagnostic du dossier ni les textes applicables aux procédures."
+    },
+    {
+      "texte": "Anah, Gérer et accompagner les copropriétés fragiles, édition 2026, pages PDF 22. Copie locale 0a7537d478616271. Cas et démarche de comparaison des hypothèses : adaptation pédagogique fictive, pas prescription juridique.",
+      "url": "https://www.anah.gouv.fr/sites/default/files/2026-08/082026_guide_gerer-coproprietes-fragiles.pdf#page=22",
+      "nature": "institution",
+      "parti": "Guide de prévention et de gestion ; ne remplace ni un diagnostic du dossier ni les textes applicables aux procédures."
+    }
+  ],
+  "provenance": {
+    "auteur": "modele",
+    "outil": "Codex",
+    "modele": "GPT-6 (identifiant précis non exposé)",
+    "genere_le": "2026-09-06",
+    "session": "objectif-lundi-20260906/acces_profils/fragilite",
+    "sources_retrouvees": 1,
+    "sources_concordantes": 0,
+    "sans_source": false
+  },
+  "statut": "brouillon",
+  "partage": "banque",
+  "verifie": "2026-09-06",
+  "version": 1,
+  "cartes": [
+    {
+      "id": "fragilite-dimensions",
+      "chapitre": "satellite.droit.diagnostic-partage-fragilite",
+      "domaine": "droit",
+      "branche": "organes",
+      "type": "flash",
+      "niveau": 3,
+      "question": "Dans un dossier où les soldes débiteurs sont connus mais où la situation des ménages ne l'est pas, pourquoi la rubrique financière ne suffit-elle pas à décrire la fragilité ?",
+      "reponse": "Les comptes décrivent la situation collective ; ils ne démontrent ni la capacité de paiement de chaque propriétaire ni la situation sociale des occupants. L'analyse conserve séparément gouvernance, finances, bâti et situation des ménages.",
+      "explication": "La page 10 nomme ces dimensions distinctes ; leur interdépendance ne permet pas de déduire l'une de l'autre.",
+      "source": [
+        {
+          "texte": "Anah, Gérer et accompagner les copropriétés fragiles, édition 2026, pages PDF 10. Copie locale 0a7537d478616271. Cas et démarche de comparaison des hypothèses : adaptation pédagogique fictive, pas prescription juridique.",
+          "url": "https://www.anah.gouv.fr/sites/default/files/2026-08/082026_guide_gerer-coproprietes-fragiles.pdf#page=10",
+          "nature": "institution",
+          "parti": "Guide de prévention et de gestion ; ne remplace ni un diagnostic du dossier ni les textes applicables aux procédures."
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "outil": "Codex",
+        "modele": "GPT-6 (identifiant précis non exposé)",
+        "genere_le": "2026-09-06",
+        "session": "objectif-lundi-20260906/acces_profils/fragilite",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "verifie": "2026-09-06",
+      "peremption": null,
+      "statut": "brouillon",
+      "partage": "banque"
+    },
+    {
+      "id": "fragilite-report-decision",
+      "chapitre": "satellite.droit.diagnostic-partage-fragilite",
+      "domaine": "droit",
+      "branche": "organes",
+      "type": "qcm",
+      "niveau": 3,
+      "question": "Cas fictif : le procès-verbal reporte l'entretien de toiture faute de pièces techniques et une trace humide est signalée ; quelle conclusion conserve la portée exacte des informations ?",
+      "reponse": "Le report et le signalement sont établis comme informations du dossier ; les causes, la gravité du désordre et l'existence d'un blocage durable restent à examiner.",
+      "explication": "Le guide relie plusieurs dimensions sans condamner automatiquement la copropriété ; le cas exerce la différence entre un signal et une conclusion sur son origine.",
+      "source": [
+        {
+          "texte": "Anah, Gérer et accompagner les copropriétés fragiles, édition 2026, pages PDF 10, 16. Copie locale 0a7537d478616271. Cas et démarche de comparaison des hypothèses : adaptation pédagogique fictive, pas prescription juridique.",
+          "url": "https://www.anah.gouv.fr/sites/default/files/2026-08/082026_guide_gerer-coproprietes-fragiles.pdf#page=10",
+          "nature": "institution",
+          "parti": "Guide de prévention et de gestion ; ne remplace ni un diagnostic du dossier ni les textes applicables aux procédures."
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "outil": "Codex",
+        "modele": "GPT-6 (identifiant précis non exposé)",
+        "genere_le": "2026-09-06",
+        "session": "objectif-lundi-20260906/acces_profils/fragilite",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "verifie": "2026-09-06",
+      "peremption": null,
+      "statut": "brouillon",
+      "partage": "banque",
+      "choix": [
+        {
+          "texte": "La trace humide prouve que le report a dégradé la toiture.",
+          "correct": false,
+          "pourquoi_faux": "Le dossier n'établit ni l'origine du désordre ni ce lien causal."
+        },
+        {
+          "texte": "Le report et le signalement demandent des vérifications distinctes avant de conclure sur leurs causes et leur gravité.",
+          "correct": true
+        },
+        {
+          "texte": "Le motif inscrit au procès-verbal exclut toute difficulté de gouvernance.",
+          "correct": false,
+          "pourquoi_faux": "Le motif du report ne décrit pas à lui seul toute la préparation ni le fonctionnement des instances."
+        }
+      ]
+    },
+    {
+      "id": "fragilite-soldes-hypotheses",
+      "chapitre": "satellite.droit.diagnostic-partage-fragilite",
+      "domaine": "droit",
+      "branche": "organes",
+      "type": "libre",
+      "niveau": 3,
+      "question": "Cas fictif : un relevé affiche des soldes débiteurs sans historique ni échanges joints ; propose des explications concurrentes et associe à chacune une pièce qui pourrait la confirmer ou l'affaiblir.",
+      "reponse": "Une difficulté de paiement appelle l'examen adapté de la situation déclarée ; une contestation appelle les échanges et justificatifs ; une anomalie comptable appelle le rapprochement des appels et règlements. Ces possibilités restent ouvertes tant que les pièces ne les départagent pas.",
+      "explication": "La dimension financière ne se confond pas avec la solvabilité ; le guide cite aussi des problèmes de gestion et des éléments contestés. Les hypothèses particulières du cas sont une construction pédagogique.",
+      "source": [
+        {
+          "texte": "Anah, Gérer et accompagner les copropriétés fragiles, édition 2026, pages PDF 10, 15. Copie locale 0a7537d478616271. Cas et démarche de comparaison des hypothèses : adaptation pédagogique fictive, pas prescription juridique.",
+          "url": "https://www.anah.gouv.fr/sites/default/files/2026-08/082026_guide_gerer-coproprietes-fragiles.pdf#page=10",
+          "nature": "institution",
+          "parti": "Guide de prévention et de gestion ; ne remplace ni un diagnostic du dossier ni les textes applicables aux procédures."
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "outil": "Codex",
+        "modele": "GPT-6 (identifiant précis non exposé)",
+        "genere_le": "2026-09-06",
+        "session": "objectif-lundi-20260906/acces_profils/fragilite",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "verifie": "2026-09-06",
+      "peremption": null,
+      "statut": "brouillon",
+      "partage": "banque",
+      "aide": "N'attribue pas une intention à partir d'un solde ; dis quelle information ferait abandonner ton hypothèse."
+    },
+    {
+      "id": "fragilite-contre-stereotype",
+      "chapitre": "satellite.droit.diagnostic-partage-fragilite",
+      "domaine": "droit",
+      "branche": "organes",
+      "type": "qcm",
+      "niveau": 3,
+      "question": "Cas fictif : le conseil décrit un immeuble ancien occupé par des ménages modestes mais ne produit aucune information sur ses comptes, son entretien ou ses décisions ; que peut-on conclure ?",
+      "reponse": "Ces caractéristiques ne suffisent pas à conclure à une copropriété en difficulté ; il faut examiner son fonctionnement et les informations manquantes.",
+      "explication": "La page 12 distingue les facteurs de contexte d'une explication automatique par les revenus, la localisation ou l'époque constructive.",
+      "source": [
+        {
+          "texte": "Anah, Gérer et accompagner les copropriétés fragiles, édition 2026, pages PDF 12. Copie locale 0a7537d478616271. Cas et démarche de comparaison des hypothèses : adaptation pédagogique fictive, pas prescription juridique.",
+          "url": "https://www.anah.gouv.fr/sites/default/files/2026-08/082026_guide_gerer-coproprietes-fragiles.pdf#page=12",
+          "nature": "institution",
+          "parti": "Guide de prévention et de gestion ; ne remplace ni un diagnostic du dossier ni les textes applicables aux procédures."
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "outil": "Codex",
+        "modele": "GPT-6 (identifiant précis non exposé)",
+        "genere_le": "2026-09-06",
+        "session": "objectif-lundi-20260906/acces_profils/fragilite",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "verifie": "2026-09-06",
+      "peremption": null,
+      "statut": "brouillon",
+      "partage": "banque",
+      "choix": [
+        {
+          "texte": "L'ancienneté et les revenus suffisent à établir la difficulté générale.",
+          "correct": false,
+          "pourquoi_faux": "Ces caractéristiques ne démontrent aucun dysfonctionnement concret du dossier."
+        },
+        {
+          "texte": "Des comptes absents prouvent que les difficultés sont dissimulées.",
+          "correct": false,
+          "pourquoi_faux": "L'absence de pièces ne prouve ni difficulté ni dissimulation."
+        },
+        {
+          "texte": "Le diagnostic reste ouvert ; demander les éléments de fonctionnement, de finances, de bâti et de situation des ménages.",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "fragilite-priorite-conditionnelle",
+      "chapitre": "satellite.droit.diagnostic-partage-fragilite",
+      "domaine": "droit",
+      "branche": "organes",
+      "type": "libre",
+      "niveau": 3,
+      "question": "Cas fictif : une trace humide reste sans diagnostic tandis que les comptes doivent être reconstitués ; propose une organisation des vérifications qui varie selon ce que l'examen technique établira.",
+      "reponse": "Faire qualifier la nature et l'urgence du désordre tout en reconstituant les comptes et les conditions de décision ; si un besoin d'intervention urgente est établi, le traiter en priorité avec l'interlocuteur compétent, sinon planifier la suite technique et financière. La priorité change selon un constat, pas selon une origine supposée de l'humidité.",
+      "explication": "La page 8 distingue urgence, planification, soutien et relais ; elle ne fournit ni diagnostic de ce cas ni règle universelle d'ordonnancement. Aucune mesure technique ou procédure précise n'est prescrite ici.",
+      "source": [
+        {
+          "texte": "Anah, Gérer et accompagner les copropriétés fragiles, édition 2026, pages PDF 8, 16. Copie locale 0a7537d478616271. Cas et démarche de comparaison des hypothèses : adaptation pédagogique fictive, pas prescription juridique.",
+          "url": "https://www.anah.gouv.fr/sites/default/files/2026-08/082026_guide_gerer-coproprietes-fragiles.pdf#page=8",
+          "nature": "institution",
+          "parti": "Guide de prévention et de gestion ; ne remplace ni un diagnostic du dossier ni les textes applicables aux procédures."
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "outil": "Codex",
+        "modele": "GPT-6 (identifiant précis non exposé)",
+        "genere_le": "2026-09-06",
+        "session": "objectif-lundi-20260906/acces_profils/fragilite",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "verifie": "2026-09-06",
+      "peremption": null,
+      "statut": "brouillon",
+      "partage": "banque"
+    },
+    {
+      "id": "fragilite-angles-manquants",
+      "chapitre": "satellite.droit.diagnostic-partage-fragilite",
+      "domaine": "droit",
+      "branche": "organes",
+      "type": "libre",
+      "niveau": 3,
+      "question": "Après avoir examiné les quatre dimensions de la page 10, quels angles supplémentaires de la grille de suivi de la page 22 pourraient encore manquer au dossier ?",
+      "reponse": "Les caractéristiques structurelles et l'environnement urbain restent à examiner selon le contexte, par exemple une organisation juridique complexe ou des équipements exigeant une gestion particulière. Les quatre dimensions initiales ne constituent pas une grille exhaustive ni un score légal.",
+      "explication": "La page 22 présente six catégories de suivi ; la page 16 représente des axes d'intervention selon un autre découpage. Le nombre et les libellés ne se substituent pas aux faits du dossier.",
+      "source": [
+        {
+          "texte": "Anah, Gérer et accompagner les copropriétés fragiles, édition 2026, pages PDF 10, 16, 22. Copie locale 0a7537d478616271. Cas et démarche de comparaison des hypothèses : adaptation pédagogique fictive, pas prescription juridique.",
+          "url": "https://www.anah.gouv.fr/sites/default/files/2026-08/082026_guide_gerer-coproprietes-fragiles.pdf#page=10",
+          "nature": "institution",
+          "parti": "Guide de prévention et de gestion ; ne remplace ni un diagnostic du dossier ni les textes applicables aux procédures."
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "outil": "Codex",
+        "modele": "GPT-6 (identifiant précis non exposé)",
+        "genere_le": "2026-09-06",
+        "session": "objectif-lundi-20260906/acces_profils/fragilite",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "verifie": "2026-09-06",
+      "peremption": null,
+      "statut": "brouillon",
+      "partage": "banque"
+    },
+    {
+      "id": "fragilite-conseil-partage",
+      "chapitre": "satellite.droit.diagnostic-partage-fragilite",
+      "domaine": "droit",
+      "branche": "organes",
+      "type": "role",
+      "niveau": 3,
+      "question": "Simulation fictive : le conseil affirme « La toiture est reportée parce que les débiteurs refusent de payer », alors que le procès-verbal mentionne des pièces techniques manquantes ; formule une réponse qui reconnaît l'inquiétude, conteste le lien non démontré et organise les vérifications.",
+      "reponse": "Le report et les soldes débiteurs méritent un examen, mais aucune pièce ne relie encore le vote au refus supposé de payer. Demander au syndic les éléments comptables et de préparation de la décision, faire préciser la question technique et recueillir les explications utiles permettra de discuter une conclusion étayée avec le conseil.",
+      "explication": "Le guide appelle à considérer gouvernance, finances, bâti et situation des personnes ; le rôle entraîne une formulation partageable sans imputer une intention. Il se joue en binôme ou par écrit, sans interlocuteur automatique.",
+      "source": [
+        {
+          "texte": "Anah, Gérer et accompagner les copropriétés fragiles, édition 2026, pages PDF 10, 15-16. Copie locale 0a7537d478616271. Cas et démarche de comparaison des hypothèses : adaptation pédagogique fictive, pas prescription juridique.",
+          "url": "https://www.anah.gouv.fr/sites/default/files/2026-08/082026_guide_gerer-coproprietes-fragiles.pdf#page=10",
+          "nature": "institution",
+          "parti": "Guide de prévention et de gestion ; ne remplace ni un diagnostic du dossier ni les textes applicables aux procédures."
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "outil": "Codex",
+        "modele": "GPT-6 (identifiant précis non exposé)",
+        "genere_le": "2026-09-06",
+        "session": "objectif-lundi-20260906/acces_profils/fragilite",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "verifie": "2026-09-06",
+      "peremption": null,
+      "statut": "brouillon",
+      "partage": "banque",
+      "aide": "Le partenaire joue un membre du conseil inquiet du report ; il demande quelle pièce justifierait de réviser l'explication, sans inventer de fait nouveau."
+    },
+    {
+      "id": "fragilite-menage-inconnu",
+      "chapitre": "satellite.droit.diagnostic-partage-fragilite",
+      "domaine": "droit",
+      "branche": "organes",
+      "type": "role",
+      "niveau": 3,
+      "question": "Simulation fictive : un propriétaire déclare « Mes ressources ont baissé, je ne peux pas tout régler » sans autre pièce ; que lui réponds-tu pour comprendre la situation sans promettre une aide ni qualifier sa bonne foi ?",
+      "reponse": "Préciser avec lui les difficultés déclarées et les éléments utiles à leur examen permettra de distinguer sa situation du seul solde collectif. Une orientation vers un interlocuteur adapté peut être étudiée selon les besoins identifiés, sans annoncer un financement acquis ni une conclusion sur son intention.",
+      "explication": "La solvabilité des propriétaires et la situation sociale des occupants sont une dimension propre du guide ; une déclaration reste à documenter. Le module n'enseigne aucun barème, droit à une aide ou procédure de recouvrement.",
+      "source": [
+        {
+          "texte": "Anah, Gérer et accompagner les copropriétés fragiles, édition 2026, pages PDF 10, 12. Copie locale 0a7537d478616271. Cas et démarche de comparaison des hypothèses : adaptation pédagogique fictive, pas prescription juridique.",
+          "url": "https://www.anah.gouv.fr/sites/default/files/2026-08/082026_guide_gerer-coproprietes-fragiles.pdf#page=10",
+          "nature": "institution",
+          "parti": "Guide de prévention et de gestion ; ne remplace ni un diagnostic du dossier ni les textes applicables aux procédures."
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "outil": "Codex",
+        "modele": "GPT-6 (identifiant précis non exposé)",
+        "genere_le": "2026-09-06",
+        "session": "objectif-lundi-20260906/acces_profils/fragilite",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "verifie": "2026-09-06",
+      "peremption": null,
+      "statut": "brouillon",
+      "partage": "banque",
+      "aide": "Le partenaire reprend seulement la déclaration du cas et demande ce qu'il doit expliquer ; il ne fournit pas de revenu, de justificatif ou d'accord imaginaire."
+    },
+    {
+      "id": "fragilite-revision-avis",
+      "chapitre": "satellite.droit.diagnostic-partage-fragilite",
+      "domaine": "droit",
+      "branche": "organes",
+      "type": "synthese",
+      "niveau": 3,
+      "question": "Suite fictive : le rapprochement comptable corrige certains soldes mais en confirme d'autres, la visite écarte l'urgence pour le désordre examiné et les pièces techniques nécessaires au vote sont désormais disponibles ; rédige la révision de l'avis sans effacer les inconnues restantes.",
+      "reponse": "La correction retire une partie du signal financier initial mais laisse les soldes confirmés à expliquer ; la visite réduit l'incertitude sur l'urgence de ce désordre sans certifier tout le bâtiment. Les pièces techniques permettent de reprendre la préparation de la décision, tandis que les situations individuelles et le financement restent à examiner avant une conclusion générale.",
+      "explication": "L'interdépendance décrite page 16 demande de conserver chaque dimension ; la grille de suivi page 22 aide à vérifier ce qu'une nouvelle pièce résout réellement. La conservation de l'avis antérieur est une consigne pédagogique de cette étude.",
+      "source": [
+        {
+          "texte": "Anah, Gérer et accompagner les copropriétés fragiles, édition 2026, pages PDF 10, 16, 22. Copie locale 0a7537d478616271. Cas et démarche de comparaison des hypothèses : adaptation pédagogique fictive, pas prescription juridique.",
+          "url": "https://www.anah.gouv.fr/sites/default/files/2026-08/082026_guide_gerer-coproprietes-fragiles.pdf#page=10",
+          "nature": "institution",
+          "parti": "Guide de prévention et de gestion ; ne remplace ni un diagnostic du dossier ni les textes applicables aux procédures."
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "outil": "Codex",
+        "modele": "GPT-6 (identifiant précis non exposé)",
+        "genere_le": "2026-09-06",
+        "session": "objectif-lundi-20260906/acces_profils/fragilite",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "verifie": "2026-09-06",
+      "peremption": null,
+      "statut": "brouillon",
+      "partage": "banque",
+      "attendus": [
+        "Distinguer les soldes corrigés et les soldes confirmés sans inventer leur cause.",
+        "Limiter la conclusion technique au désordre et au risque examinés.",
+        "Distinguer pièces désormais disponibles et décision effectivement prise.",
+        "Conserver la situation des ménages et le financement comme informations à examiner.",
+        "Nommer une prochaine vérification et la condition qui modifierait la priorité.",
+        "Conserver l'avis antérieur et expliquer ce qui change avec les pièces nouvelles."
+      ]
+    }
+  ]
+}

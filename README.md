@@ -1,6 +1,6 @@
 # academie, l'école d'un métier jouée tous les jours
 
-**Passe du 06/09 :** [suivi de l’essai de lundi](travail/essai-lundi-2026-09-07/SUIVI.md). Accès par pseudo et cursus, graphe des prérequis, réponses et critères conservés, nouveau module de contre-expertise rénovation. La banque locale contient 119 cartes et sept études ; le suivi distingue les contrôles locaux de la publication VPS. [Comparatif NotebookLM](travail/benchmark-notebooklm-2026-09-06/RESULTATS.md) : texte et médias récupérables, mais omission constatée sur une vraie page scannée.
+**Passe du 06/09 :** [suivi de l’essai de lundi](travail/essai-lundi-2026-09-07/SUIVI.md). Accès par pseudo et cursus, graphe des prérequis, réponses et critères conservés. Les nouveaux dossiers de contre-expertise rénovation, [fragilité](travail/fragilite-2026-09-06/RELECTURE-INDEPENDANTE.md), [façade ancienne](travail/facade-2026-09-06/RELECTURE-INDEPENDANTE.md) et [protections électriques](travail/preuve-concrete-2026-09-06/NOTIONS-ELECTRICITE.md) portent la banque locale à 144 cartes et dix études. Le suivi distingue les contrôles locaux de la publication VPS, encore en attente de confirmation directe. [Comparatif NotebookLM](travail/benchmark-notebooklm-2026-09-06/RESULTATS.md) : texte et médias récupérables, mais omission constatée sur une vraie page scannée.
 
 **Livraison locale du 05/09 :** [expérience et preuves](travail/experience-2026-09-05/LIVRAISON.md), [roadmap priorisée](ROADMAP.md). Deux parcours jouables, cinq chapitres et 27 cartes v2 relus indépendamment, en complément des 76 cartes v1. Accueil Copropriété/IFSI, étude reprenable et réponses aidées distinctes des rappels autonomes. L'[audit initial](travail/audit-2026-09-05/AUDIT.md) est conservé comme photographie avant ces corrections. Le [client a été installé sur le VPS le 05/09](travail/experience-2026-09-05/PUBLICATION-VPS.md), avec ACL Caddy et sauvegardes ; L’[essai comptes du soir](travail/onboarding/PUBLICATION-VPS.md) est publié : palette bleue, mail/mot de passe, cursus et sauvegardes séparées. Accueil HTTPS authentifié affiché ; soumission du compte technique refusée par la revue automatique du navigateur, parcours joueur VPS et trajet physique encore à constater.
 
@@ -17,6 +17,8 @@ Conception v2 posée le **02/09/2026** sur le brief de JB
 ([`travail/2026-09-02-brief-jb.md`](travail/2026-09-02-brief-jb.md)).
 La conception d'août est archivée intacte dans
 [`archive/conception-2026-08/`](archive/conception-2026-08/README.md).
+
+**Partir d’une envie :** [le chemin du professeur](CHEMINS.md) et son [prompt réutilisable](prompts/construire-un-chemin.md) relient demande, acquis à diagnostiquer, sources, exercices et transfert. L’agent instruit le parcours ; le contrôle JSON ne juge pas les compétences.
 
 ## Lire, dans cet ordre
 

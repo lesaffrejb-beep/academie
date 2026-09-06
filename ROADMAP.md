@@ -5,7 +5,8 @@
 La demande de JB ouvre `ACA-EXPERTISE-1` : [cahier](chantiers/ACA-EXPERTISE-1.md),
 [cartographie et compteurs](travail/expertise-2026-09-06/COUVERTURE.md),
 [fabrication reproductible](travail/expertise-2026-09-06/PROTOCOLE.md).
-Première unité : audit et cartographie, pas cursus experts terminés.
+Passe du 06/09 : cinq approfondissements relus et jouables localement ;
+[chemin depuis la demande et exemple électrique](travail/preuve-concrete-2026-09-06/LIVRAISON.md). Les cursus experts restent à construire.
 Les dossiers avancés et l'exploitation intégrale des sources restent ouverts.
 Ce chantier n'autorise ni publication ni envoi de documents internes.
 

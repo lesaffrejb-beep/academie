@@ -1,0 +1,21 @@
+{
+  "date": "2026-09-06",
+  "volume": "/Volumes/NOIR 1",
+  "fichiers": [
+    {
+      "fichier": "INRS-ED6345-original-2019.pdf",
+      "source": "/Users/jb/.codex/visualizations/2026/09/06/01a07779-1d3c-7203-a4f5-f7ddc4deb94e/notebooklm-export-originaux/electricite/INRS-ED6345-original-2019.pdf",
+      "archive": "/Volumes/NOIR 1/Academie/sources-publiques/2026-09-06-electricite/INRS-ED6345-original-2019.pdf",
+      "octets": 4683052,
+      "sha256": "cd6c2c5468da311dfeb249884ae63823eee5d0cb93206b38636bd1ee08994cc3"
+    },
+    {
+      "fichier": "promotelec-lexique-installation.pdf",
+      "source": "/Users/jb/.codex/visualizations/2026/09/06/01a07779-1d3c-7203-a4f5-f7ddc4deb94e/notebooklm-export-originaux/electricite/promotelec-lexique-installation.pdf",
+      "archive": "/Volumes/NOIR 1/Academie/sources-publiques/2026-09-06-electricite/promotelec-lexique-installation.pdf",
+      "octets": 126505,
+      "sha256": "cf23f4d8b905b506db70fc0afd3a2bd3de30be3c543025bead5db9080b05476b"
+    }
+  ],
+  "limite": "Deux originaux publics copiés ; ni archive complète NotebookLM ni migration des dossiers existants."
+}

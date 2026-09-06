@@ -1,0 +1,19 @@
+{
+  "contract_errors": [],
+  "cards": 9,
+  "formats": [
+    "flash",
+    "libre",
+    "qcm",
+    "role",
+    "synthese"
+  ],
+  "all_draft": true,
+  "no_reviewer": true,
+  "no_images": true,
+  "lesson_chars": 4037,
+  "parent_exists": true,
+  "candidate_sha256": "70fd94306d97aa2e049cf6632716511b972110d83a79c715e0a36fa04540995a",
+  "source_sha256_matches": true,
+  "qcm_four_choices_one_correct": true
+}

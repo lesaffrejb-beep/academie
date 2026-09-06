@@ -40,6 +40,7 @@ APP = Path(__file__).resolve().parent
 RACINE = APP.parent
 
 SUITES = [
+    ("chemins d'apprentissage", "tests_chemin_apprentissage.py"),
     ("couverture des spécialités", "tests_expertises.py"),
     ("frontières étude", "tests_etude_relecture.py"),
     ("expérience pédagogique", "tests_experience.py"),

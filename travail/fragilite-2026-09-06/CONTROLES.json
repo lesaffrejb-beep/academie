@@ -1,0 +1,20 @@
+{
+  "controle": "app.valide_chapitres.valide_chapitre(candidat, chemin_absolu, programme_copro_par_id, set(), date(2026,9,6))",
+  "statut": "conforme",
+  "sha256_candidat": "9d8fa7d8101cb7314732705b88565503b78ff94fdc87bd9d84c7253e9cae7d1a",
+  "cartes": 9,
+  "types": [
+    "flash",
+    "libre",
+    "qcm",
+    "role",
+    "synthese"
+  ],
+  "lecon_mots": 681,
+  "lecon_caracteres": 4492,
+  "erreurs": [],
+  "brouillon_partout": true,
+  "aucun_verifie_par": true,
+  "scan_confidentialite": "Motifs généraux du valideur avec parc vide ; aucune donnée client consultée.",
+  "limite": "Conformité structurelle seulement ; relecture indépendante et usage non établis."
+}

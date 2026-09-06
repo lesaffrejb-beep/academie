@@ -1,0 +1,1 @@
+toutes les pages sont relues ; reste la fiche (`usine.py fiche`) puis la ligne de registre

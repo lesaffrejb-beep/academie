@@ -1117,7 +1117,7 @@ export function GrapheMindmap({
               {LIB.arbre} · {region.titre}
             </span>
             <p className="text-xs text-[var(--c-encre-2)]">
-              {branches.length} branches · {noeuds.length} chapitres
+              {branches.length} branches · {noeuds.filter(n => !n.satellite).length} chapitres du socle · {noeuds.filter(n => n.satellite).length} approfondissements
             </p>
           </div>
         </div>

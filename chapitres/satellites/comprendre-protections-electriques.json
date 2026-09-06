@@ -1,0 +1,474 @@
+{
+  "id": "satellite.equipements.comprendre-protections-electriques",
+  "titre": "Électricité : comprendre ce qui protège",
+  "domaine": "equipements",
+  "branche": "electricite",
+  "niveau": 2,
+  "prerequis": [],
+  "ponts": [
+    "equipements.electricite.tgbt-et-colonnes-montantes"
+  ],
+  "satellite": true,
+  "rattachement_propose": "equipements.electricite.tgbt-et-colonnes-montantes",
+  "objectifs": [
+    "Distinguer surintensité, défaut d’isolement, contact direct et contact indirect.",
+    "Expliquer les fonctions des protections sans les confondre.",
+    "Repérer une affirmation incomplète dans un dossier fictif et demander les preuves pertinentes."
+  ],
+  "amorce": {
+    "question": "Cas fictif : une offre propose un interrupteur différentiel et promet de remplacer toute protection du circuit. Que faut-il comprendre pour apprécier cette promesse ?",
+    "aide": "Écris ton explication actuelle ; elle sert de point de départ, sans niveau supposé.",
+    "reponse_attendue": "Il faut distinguer la fonction différentielle de la protection contre les surintensités, puis connaître les dispositifs réellement prévus. Le mot différentiel ne décrit pas à lui seul toutes les fonctions."
+  },
+  "lecon": "Un gestionnaire reçoit une phrase : « On pose un différentiel, donc tout sera protégé. » Pour discuter cette proposition, commence par demander quel phénomène chaque fonction de protection traite. La présence d’un appareil et le fonctionnement de l’équipement ne décrivent pas à eux seuls la sécurité de l’installation. Cette étude explique les mécanismes ; elle ne permet pas de choisir un calibre ni de réaliser un câblage.\n\nUne surintensité est un courant trop important dans un circuit. Une surcharge peut résulter d’usages cumulés ; un court-circuit constitue un autre mécanisme de surintensité. L’échauffement qui en résulte peut endommager les conducteurs et contribuer à un incendie. Le disjoncteur assure une protection contre les surcharges et les courts-circuits dans les conditions prévues pour le circuit. Ce n’est pas une garantie contre toute cause d’incendie : l’INRS décrit aussi, par exemple, les mauvais contacts.\n\nUn défaut d’isolement peut créer un passage du courant hors de son trajet normal. La fonction différentielle détecte un déséquilibre entre les courants qui entrent et sortent du circuit surveillé, puis provoque une coupure lorsque ses conditions de déclenchement sont atteintes. Elle répond à un mécanisme différent de la surcharge. Les dessins comparent ces phénomènes sans représenter une installation à reproduire.\n\nLe nom complet de l’appareil compte. Un interrupteur différentiel assure la fonction différentielle ; il n’ajoute pas, à lui seul, la protection contre les surintensités. Un disjoncteur différentiel combine la fonction différentielle et la protection contre les surintensités. Le mot « différentiel » dans un devis ne suffit donc pas à décrire toutes les fonctions présentes. Il faut connaître l’appareil exact et son association avec le reste de l’installation.\n\nDistingue ensuite deux situations de contact. Toucher une partie normalement sous tension correspond à un contact direct. Toucher une partie conductrice accessible, normalement hors tension mais mise accidentellement sous tension par un défaut, correspond à un contact indirect. Cette partie est appelée une masse. L’enveloppe métallique n’est donc pas dangereuse par définition : le défaut décrit dans le cas change la situation.\n\nContre le contact direct, l’INRS présente notamment l’isolation, les enveloppes et les barrières qui empêchent l’accès aux parties actives. Une protection différentielle complémentaire ne suffit pas à elle seule à rendre sûr le contact avec une partie sous tension. Pour le contact indirect, une disposition courante associe mise à la terre des masses et coupure automatique. D’autres dispositions existent, comme la double isolation ; on ne peut donc pas déduire que tout appareil doit avoir le même raccordement de terre. Selon l’installation, la coupure automatique peut faire intervenir une protection différentielle ou une protection contre les surintensités : les fonctions expliquées ici ne remplacent pas l’étude de leur coordination.\n\nExemple fictif : une offre propose un interrupteur différentiel et affirme qu’il remplace toute protection du circuit. L’argument est incomplet : la fonction annoncée ne démontre pas la protection contre les surintensités. Demande la désignation des appareils, les fonctions conservées ou ajoutées et leur justification dans le dossier professionnel. Inversement, l’absence de ces informations dans le devis ne prouve pas que l’installation en est dépourvue.\n\nPour raisonner dans un autre dossier, suis le même ordre : décrire le phénomène, nommer la fonction concernée, distinguer ce qui est documenté de ce qui manque, puis préciser ce qui permettrait de revoir l’avis. Les mécanismes proviennent de la brochure INRS et le vocabulaire des appareils est recoupé avec Promotelec. Les formulations générales du lexique ne sont pas des garanties universelles. Aucun seuil, jugement de conformité ou geste d’intervention n’est enseigné dans cette introduction.",
+  "synthese": {
+    "consigne": "Nouveau cas fictif : un rapport décrit une enveloppe métallique mise sous tension par un défaut ; le devis suivant dit seulement « différentiel posé, équipement fonctionnel ». Explique le mécanisme, les informations qui manquent et les conditions d’un avis révisé.",
+    "attendus": [
+      "Qualifier comme indirect le contact avec la masse mise sous tension par un défaut.",
+      "Distinguer le défaut d’isolement d’une surcharge.",
+      "Expliquer ce que garantit et ne garantit pas le seul mot différentiel.",
+      "Demander les fonctions, désignations et éléments professionnels pertinents sans fixer un calibre.",
+      "Distinguer fonctionnement rapporté, sécurité documentée et informations absentes.",
+      "Dire quelle information ferait évoluer l’avis."
+    ]
+  },
+  "sources": [
+    {
+      "texte": "INRS, ED 6345, L’électricité (2019), pages PDF 18–20 et 25–28. Mécanismes et prévention ; passages ciblés contrôlés, original complet non relu.",
+      "url": "https://www.inrs.fr/dam/inrs/CataloguePapier/ED/TI-ED-6345.pdf#page=18",
+      "nature": "institution",
+      "parti": "Brochure de prévention ; aucune prescription actuelle de dimensionnement déduite.",
+      "empreinte": "cd6c2c5468da311dfeb249884ae63823eee5d0cb93206b38636bd1ee08994cc3"
+    },
+    {
+      "texte": "Promotelec, lexique de l’installation électrique, page unique : fonctions des appareils. Édition non établie.",
+      "url": "https://www.promotelec.com/app/uploads/2023/09/Lexique-installation-eletrique.pdf",
+      "nature": "association",
+      "parti": "Vulgarisation des équipements électriques ; les garanties absolues sur les chocs ne sont pas reprises.",
+      "empreinte": "cf23f4d8b905b506db70fc0afd3a2bd3de30be3c543025bead5db9080b05476b"
+    }
+  ],
+  "provenance": {
+    "auteur": "modele",
+    "outil": "Codex",
+    "modele": "GPT-6 (identifiant précis non exposé)",
+    "genere_le": "2026-09-06",
+    "session": "professeur-20260906/root/electricite",
+    "sources_retrouvees": 2,
+    "sources_concordantes": 1,
+    "sans_source": false
+  },
+  "statut": "valide",
+  "partage": "banque",
+  "verifie": "2026-09-06",
+  "version": 1,
+  "cartes": [
+    {
+      "id": "electricite-mecanismes",
+      "chapitre": "satellite.equipements.comprendre-protections-electriques",
+      "domaine": "equipements",
+      "branche": "electricite",
+      "niveau": 2,
+      "type": "photo",
+      "question": "Le schéma compare A et B : associe à chaque anomalie la fonction de protection pertinente et explique pourquoi les deux fonctions ne sont pas interchangeables.",
+      "reponse": "A appelle une protection contre les surintensités. B illustre un défaut avec fuite, que la fonction différentielle peut détecter par un déséquilibre des courants. Détecter une fuite ne suffit pas à traiter une surcharge.",
+      "explication": "Le dessin isole deux mécanismes pour les comparer. Une installation associe des protections selon sa conception ; cette simplification ne suffit pas à choisir des appareils.",
+      "source": [
+        {
+          "texte": "INRS, ED 6345, L’électricité (2019), pages PDF 27–28. Mécanismes et prévention ; passages ciblés contrôlés, original complet non relu.",
+          "url": "https://www.inrs.fr/dam/inrs/CataloguePapier/ED/TI-ED-6345.pdf#page=27",
+          "nature": "institution",
+          "parti": "Brochure de prévention ; aucune prescription actuelle de dimensionnement déduite.",
+          "empreinte": "cd6c2c5468da311dfeb249884ae63823eee5d0cb93206b38636bd1ee08994cc3"
+        },
+        {
+          "texte": "Promotelec, lexique de l’installation électrique, page unique : fonctions des appareils. Édition non établie.",
+          "url": "https://www.promotelec.com/app/uploads/2023/09/Lexique-installation-eletrique.pdf",
+          "nature": "association",
+          "parti": "Vulgarisation des équipements électriques ; les garanties absolues sur les chocs ne sont pas reprises.",
+          "empreinte": "cf23f4d8b905b506db70fc0afd3a2bd3de30be3c543025bead5db9080b05476b"
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "outil": "Codex",
+        "modele": "GPT-6 (identifiant précis non exposé)",
+        "genere_le": "2026-09-06",
+        "session": "professeur-20260906/root/electricite",
+        "sources_retrouvees": 2,
+        "sources_concordantes": 1,
+        "sans_source": false
+      },
+      "verifie": "2026-09-06",
+      "peremption": null,
+      "statut": "valide",
+      "partage": "banque",
+      "image": {
+        "fichier": "images/electricite-mecanismes.svg",
+        "alt": "Deux situations : A, des usages cumulés augmentent le courant et échauffent le circuit ; B, un défaut crée un passage de courant hors du trajet normal.",
+        "licence": "Création pédagogique originale Académie ; aucune figure du PDF reproduite.",
+        "credit": "Académie · schéma original fondé sur les mécanismes décrits par l’INRS",
+        "source": "https://www.inrs.fr/dam/inrs/CataloguePapier/ED/TI-ED-6345.pdf#page=27"
+      },
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6 (identifiant précis non exposé)",
+        "session": "professeur-20260906/graphe/relecture-electricite",
+        "date": "2026-09-06",
+        "rapport": "travail/preuve-concrete-2026-09-06/RELECTURE-ELECTRICITE.md",
+        "assertions": [
+          "Le schéma compare A et B : associe à chaque anomalie la fonction de protection pertinente et explique pourquoi les deux fonctions ne sont pas interchangeables. : réponse et explication confrontées aux passages indiqués."
+        ],
+        "sources": [
+          "INRS, ED 6345, L’électricité (2019), pages PDF 27–28. Mécanismes et prévention ; passages ciblés contrôlés, original complet non relu.",
+          "Promotelec, lexique de l’installation électrique, page unique : fonctions des appareils. Édition non établie."
+        ]
+      }
+    },
+    {
+      "id": "electricite-appareils",
+      "chapitre": "satellite.equipements.comprendre-protections-electriques",
+      "domaine": "equipements",
+      "branche": "electricite",
+      "niveau": 2,
+      "type": "flash",
+      "question": "Quelle fonction le disjoncteur différentiel ajoute-t-il à celle de l’interrupteur différentiel ?",
+      "reponse": "La protection contre les surintensités : surcharges et courts-circuits. Les deux assurent une fonction différentielle ; l’interrupteur différentiel ne remplace pas à lui seul cette protection supplémentaire.",
+      "explication": "Il faut lire le nom complet et la documentation de l’appareil, puis son association avec le circuit.",
+      "source": [
+        {
+          "texte": "INRS, ED 6345, L’électricité (2019), pages PDF 27–28. Mécanismes et prévention ; passages ciblés contrôlés, original complet non relu.",
+          "url": "https://www.inrs.fr/dam/inrs/CataloguePapier/ED/TI-ED-6345.pdf#page=27",
+          "nature": "institution",
+          "parti": "Brochure de prévention ; aucune prescription actuelle de dimensionnement déduite.",
+          "empreinte": "cd6c2c5468da311dfeb249884ae63823eee5d0cb93206b38636bd1ee08994cc3"
+        },
+        {
+          "texte": "Promotelec, lexique de l’installation électrique, page unique : fonctions des appareils. Édition non établie.",
+          "url": "https://www.promotelec.com/app/uploads/2023/09/Lexique-installation-eletrique.pdf",
+          "nature": "association",
+          "parti": "Vulgarisation des équipements électriques ; les garanties absolues sur les chocs ne sont pas reprises.",
+          "empreinte": "cf23f4d8b905b506db70fc0afd3a2bd3de30be3c543025bead5db9080b05476b"
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "outil": "Codex",
+        "modele": "GPT-6 (identifiant précis non exposé)",
+        "genere_le": "2026-09-06",
+        "session": "professeur-20260906/root/electricite",
+        "sources_retrouvees": 2,
+        "sources_concordantes": 1,
+        "sans_source": false
+      },
+      "verifie": "2026-09-06",
+      "peremption": null,
+      "statut": "valide",
+      "partage": "banque",
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6 (identifiant précis non exposé)",
+        "session": "professeur-20260906/graphe/relecture-electricite",
+        "date": "2026-09-06",
+        "rapport": "travail/preuve-concrete-2026-09-06/RELECTURE-ELECTRICITE.md",
+        "assertions": [
+          "Quelle fonction le disjoncteur différentiel ajoute-t-il à celle de l’interrupteur différentiel ? : réponse et explication confrontées aux passages indiqués."
+        ],
+        "sources": [
+          "INRS, ED 6345, L’électricité (2019), pages PDF 27–28. Mécanismes et prévention ; passages ciblés contrôlés, original complet non relu.",
+          "Promotelec, lexique de l’installation électrique, page unique : fonctions des appareils. Édition non établie."
+        ]
+      }
+    },
+    {
+      "id": "electricite-contacts",
+      "chapitre": "satellite.equipements.comprendre-protections-electriques",
+      "domaine": "equipements",
+      "branche": "electricite",
+      "niveau": 2,
+      "type": "photo",
+      "question": "Dans ces situations fictives A et B, lequel est un contact direct, lequel est indirect ? Explique ce qui change dans l’origine de la mise sous tension.",
+      "reponse": "A est un contact direct : la partie touchée est normalement sous tension. B est un contact indirect : une masse normalement hors tension est devenue sous tension à cause d’un défaut d’isolement.",
+      "explication": "Ce qui distingue les situations est l’état normal de la partie touchée et l’effet du défaut ; la seule présence de métal ne suffit pas.",
+      "source": [
+        {
+          "texte": "INRS, ED 6345, L’électricité (2019), pages PDF 18–19 et 27. Mécanismes et prévention ; passages ciblés contrôlés, original complet non relu.",
+          "url": "https://www.inrs.fr/dam/inrs/CataloguePapier/ED/TI-ED-6345.pdf#page=18",
+          "nature": "institution",
+          "parti": "Brochure de prévention ; aucune prescription actuelle de dimensionnement déduite.",
+          "empreinte": "cd6c2c5468da311dfeb249884ae63823eee5d0cb93206b38636bd1ee08994cc3"
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "outil": "Codex",
+        "modele": "GPT-6 (identifiant précis non exposé)",
+        "genere_le": "2026-09-06",
+        "session": "professeur-20260906/root/electricite",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "verifie": "2026-09-06",
+      "peremption": null,
+      "statut": "valide",
+      "partage": "banque",
+      "image": {
+        "fichier": "images/electricite-contacts.svg",
+        "alt": "A : une personne touche une partie normalement sous tension. B : elle touche une enveloppe conductrice mise sous tension par un défaut interne.",
+        "licence": "Création pédagogique originale Académie ; aucune figure du PDF reproduite.",
+        "credit": "Académie · schéma original fondé sur les mécanismes décrits par l’INRS",
+        "source": "https://www.inrs.fr/dam/inrs/CataloguePapier/ED/TI-ED-6345.pdf#page=18"
+      },
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6 (identifiant précis non exposé)",
+        "session": "professeur-20260906/graphe/relecture-electricite",
+        "date": "2026-09-06",
+        "rapport": "travail/preuve-concrete-2026-09-06/RELECTURE-ELECTRICITE.md",
+        "assertions": [
+          "Dans ces situations fictives A et B, lequel est un contact direct, lequel est indirect ? Explique ce qui change dans l’origine de la mise sous tension. : réponse et explication confrontées aux passages indiqués."
+        ],
+        "sources": [
+          "INRS, ED 6345, L’électricité (2019), pages PDF 18–19 et 27. Mécanismes et prévention ; passages ciblés contrôlés, original complet non relu."
+        ]
+      }
+    },
+    {
+      "id": "electricite-fonctionne",
+      "chapitre": "satellite.equipements.comprendre-protections-electriques",
+      "domaine": "equipements",
+      "branche": "electricite",
+      "niveau": 2,
+      "type": "qcm",
+      "question": "Cas fictif : le dossier indique seulement « l’équipement fonctionne ». Que cette phrase permet-elle de conclure sur ses protections ?",
+      "reponse": "Elle décrit un fonctionnement rapporté ; elle n’établit ni l’état de l’isolement ni les fonctions de protection effectivement présentes. Il faut des éléments adaptés à ces questions.",
+      "explication": "C’est une inférence pédagogique : les mécanismes de défaut et de protection décrits par l’INRS ne sont pas démontrés par la seule observation du fonctionnement.",
+      "source": [
+        {
+          "texte": "INRS, ED 6345, L’électricité (2019), pages PDF 19 et 25–27. Mécanismes et prévention ; passages ciblés contrôlés, original complet non relu.",
+          "url": "https://www.inrs.fr/dam/inrs/CataloguePapier/ED/TI-ED-6345.pdf#page=19",
+          "nature": "institution",
+          "parti": "Brochure de prévention ; aucune prescription actuelle de dimensionnement déduite.",
+          "empreinte": "cd6c2c5468da311dfeb249884ae63823eee5d0cb93206b38636bd1ee08994cc3"
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "outil": "Codex",
+        "modele": "GPT-6 (identifiant précis non exposé)",
+        "genere_le": "2026-09-06",
+        "session": "professeur-20260906/root/electricite",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "verifie": "2026-09-06",
+      "peremption": null,
+      "statut": "valide",
+      "partage": "banque",
+      "choix": [
+        {
+          "texte": "Le fonctionnement suffit à démontrer toutes les protections.",
+          "correct": false,
+          "pourquoi_faux": "La phrase ne renseigne ni les appareils de protection ni leur état."
+        },
+        {
+          "texte": "Le fonctionnement est rapporté ; la protection reste à documenter.",
+          "correct": true
+        },
+        {
+          "texte": "Le manque de détails prouve que toute protection est absente.",
+          "correct": false,
+          "pourquoi_faux": "Une information absente du dossier ne prouve pas une absence dans l’installation."
+        }
+      ],
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6 (identifiant précis non exposé)",
+        "session": "professeur-20260906/graphe/relecture-electricite",
+        "date": "2026-09-06",
+        "rapport": "travail/preuve-concrete-2026-09-06/RELECTURE-ELECTRICITE.md",
+        "assertions": [
+          "Cas fictif : le dossier indique seulement « l’équipement fonctionne ». Que cette phrase permet-elle de conclure sur ses protections ? : réponse et explication confrontées aux passages indiqués."
+        ],
+        "sources": [
+          "INRS, ED 6345, L’électricité (2019), pages PDF 19 et 25–27. Mécanismes et prévention ; passages ciblés contrôlés, original complet non relu."
+        ]
+      }
+    },
+    {
+      "id": "electricite-complement",
+      "chapitre": "satellite.equipements.comprendre-protections-electriques",
+      "domaine": "equipements",
+      "branche": "electricite",
+      "niveau": 2,
+      "type": "libre",
+      "question": "Pourquoi la présence d’un différentiel n’autorise-t-elle pas à considérer une partie nue sous tension comme accessible sans danger ?",
+      "reponse": "Un différentiel adapté peut compléter les protections contre le contact direct ; sa présence seule n’empêche pas le contact et ne rend pas accessible sans danger une partie sous tension. Les mesures empêchant l’accès aux parties actives, comme l’isolation ou les enveloppes, restent essentielles.",
+      "explication": "L’INRS précise que la protection différentielle complémentaire n’est pas efficace à elle seule. La coupure ne doit pas devenir une promesse d’absence de choc.",
+      "source": [
+        {
+          "texte": "INRS, ED 6345, L’électricité (2019), pages PDF 25–27. Mécanismes et prévention ; passages ciblés contrôlés, original complet non relu.",
+          "url": "https://www.inrs.fr/dam/inrs/CataloguePapier/ED/TI-ED-6345.pdf#page=25",
+          "nature": "institution",
+          "parti": "Brochure de prévention ; aucune prescription actuelle de dimensionnement déduite.",
+          "empreinte": "cd6c2c5468da311dfeb249884ae63823eee5d0cb93206b38636bd1ee08994cc3"
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "outil": "Codex",
+        "modele": "GPT-6 (identifiant précis non exposé)",
+        "genere_le": "2026-09-06",
+        "session": "professeur-20260906/root/electricite",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "verifie": "2026-09-06",
+      "peremption": null,
+      "statut": "valide",
+      "partage": "banque",
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6 (identifiant précis non exposé)",
+        "session": "professeur-20260906/graphe/relecture-electricite",
+        "date": "2026-09-06",
+        "rapport": "travail/preuve-concrete-2026-09-06/RELECTURE-ELECTRICITE.md",
+        "assertions": [
+          "Pourquoi la présence d’un différentiel n’autorise-t-elle pas à considérer une partie nue sous tension comme accessible sans danger ? : réponse et explication confrontées aux passages indiqués."
+        ],
+        "sources": [
+          "INRS, ED 6345, L’électricité (2019), pages PDF 25–27. Mécanismes et prévention ; passages ciblés contrôlés, original complet non relu."
+        ]
+      }
+    },
+    {
+      "id": "electricite-devis",
+      "chapitre": "satellite.equipements.comprendre-protections-electriques",
+      "domaine": "equipements",
+      "branche": "electricite",
+      "niveau": 2,
+      "type": "libre",
+      "question": "Cas fictif : un devis propose « un interrupteur différentiel pour remplacer toute protection du circuit ». Quelle erreur technique repères-tu, et quelle information demander sans conclure que l’installation est dépourvue de protection ?",
+      "reponse": "L’interrupteur différentiel ne protège pas à lui seul contre les surintensités. Demande quels dispositifs assurent cette fonction, lesquels restent en place et comment l’ensemble est justifié pour le circuit. Le devis incomplet ne prouve pas leur absence réelle.",
+      "explication": "Le transfert au devis exige de mobiliser la distinction des appareils, puis de conserver la différence entre une lacune du document et l’état réel de l’installation.",
+      "source": [
+        {
+          "texte": "INRS, ED 6345, L’électricité (2019), pages PDF 27–28. Mécanismes et prévention ; passages ciblés contrôlés, original complet non relu.",
+          "url": "https://www.inrs.fr/dam/inrs/CataloguePapier/ED/TI-ED-6345.pdf#page=27",
+          "nature": "institution",
+          "parti": "Brochure de prévention ; aucune prescription actuelle de dimensionnement déduite.",
+          "empreinte": "cd6c2c5468da311dfeb249884ae63823eee5d0cb93206b38636bd1ee08994cc3"
+        },
+        {
+          "texte": "Promotelec, lexique de l’installation électrique, page unique : fonctions des appareils. Édition non établie.",
+          "url": "https://www.promotelec.com/app/uploads/2023/09/Lexique-installation-eletrique.pdf",
+          "nature": "association",
+          "parti": "Vulgarisation des équipements électriques ; les garanties absolues sur les chocs ne sont pas reprises.",
+          "empreinte": "cf23f4d8b905b506db70fc0afd3a2bd3de30be3c543025bead5db9080b05476b"
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "outil": "Codex",
+        "modele": "GPT-6 (identifiant précis non exposé)",
+        "genere_le": "2026-09-06",
+        "session": "professeur-20260906/root/electricite",
+        "sources_retrouvees": 2,
+        "sources_concordantes": 1,
+        "sans_source": false
+      },
+      "verifie": "2026-09-06",
+      "peremption": null,
+      "statut": "valide",
+      "partage": "banque",
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6 (identifiant précis non exposé)",
+        "session": "professeur-20260906/graphe/relecture-electricite",
+        "date": "2026-09-06",
+        "rapport": "travail/preuve-concrete-2026-09-06/RELECTURE-ELECTRICITE.md",
+        "assertions": [
+          "Cas fictif : un devis propose « un interrupteur différentiel pour remplacer toute protection du circuit ». Quelle erreur technique repères-tu, et quelle information demander sans conclure que l’installation est dépourvue de protection ? : réponse et explication confrontées aux passages indiqués."
+        ],
+        "sources": [
+          "INRS, ED 6345, L’électricité (2019), pages PDF 27–28. Mécanismes et prévention ; passages ciblés contrôlés, original complet non relu.",
+          "Promotelec, lexique de l’installation électrique, page unique : fonctions des appareils. Édition non établie."
+        ]
+      }
+    },
+    {
+      "id": "electricite-synthese",
+      "chapitre": "satellite.equipements.comprendre-protections-electriques",
+      "domaine": "equipements",
+      "branche": "electricite",
+      "niveau": 2,
+      "type": "synthese",
+      "question": "Nouveau cas fictif : un rapport décrit une enveloppe métallique mise sous tension par un défaut ; le devis suivant dit seulement « différentiel posé, équipement fonctionnel ». Explique le mécanisme, les informations qui manquent et les conditions d’un avis révisé.",
+      "reponse": "Le défaut rend possible un contact indirect avec la masse. Le mot différentiel ne décrit pas toutes les fonctions de protection et le fonctionnement ne démontre pas leur efficacité. Demande la nature exacte des appareils, les dispositions de protection contre les contacts et les surintensités, ainsi que les vérifications professionnelles adaptées. L’avis évolue sur ces éléments, pas sur la seule étiquette.",
+      "explication": "Le cas change d’entrée : il part d’un défaut rapporté et demande de relier mécanisme, fonctions et limites de preuve. Aucune conclusion de conformité ne peut être produite à partir de ces seules phrases.",
+      "source": [
+        {
+          "texte": "INRS, ED 6345, L’électricité (2019), pages PDF 18–19 et 25–28. Mécanismes et prévention ; passages ciblés contrôlés, original complet non relu.",
+          "url": "https://www.inrs.fr/dam/inrs/CataloguePapier/ED/TI-ED-6345.pdf#page=18",
+          "nature": "institution",
+          "parti": "Brochure de prévention ; aucune prescription actuelle de dimensionnement déduite.",
+          "empreinte": "cd6c2c5468da311dfeb249884ae63823eee5d0cb93206b38636bd1ee08994cc3"
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "outil": "Codex",
+        "modele": "GPT-6 (identifiant précis non exposé)",
+        "genere_le": "2026-09-06",
+        "session": "professeur-20260906/root/electricite",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "verifie": "2026-09-06",
+      "peremption": null,
+      "statut": "valide",
+      "partage": "banque",
+      "attendus": [
+        "Qualifier comme indirect le contact avec la masse mise sous tension par un défaut.",
+        "Distinguer le défaut d’isolement d’une surcharge.",
+        "Expliquer ce que garantit et ne garantit pas le seul mot différentiel.",
+        "Demander les fonctions, désignations et éléments professionnels pertinents sans fixer un calibre.",
+        "Distinguer fonctionnement rapporté, sécurité documentée et informations absentes.",
+        "Dire quelle information ferait évoluer l’avis."
+      ],
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6 (identifiant précis non exposé)",
+        "session": "professeur-20260906/graphe/relecture-electricite",
+        "date": "2026-09-06",
+        "rapport": "travail/preuve-concrete-2026-09-06/RELECTURE-ELECTRICITE.md",
+        "assertions": [
+          "Nouveau cas fictif : un rapport décrit une enveloppe métallique mise sous tension par un défaut ; le devis suivant dit seulement « différentiel posé, équipement fonctionnel ». Explique le mécanisme, les informations qui manquent et les conditions d’un avis révisé. : réponse et explication confrontées aux passages indiqués."
+        ],
+        "sources": [
+          "INRS, ED 6345, L’électricité (2019), pages PDF 18–19 et 25–28. Mécanismes et prévention ; passages ciblés contrôlés, original complet non relu."
+        ]
+      }
+    }
+  ],
+  "verifie_par": {
+    "outil": "Codex",
+    "modele": "GPT-6 (identifiant précis non exposé)",
+    "session": "professeur-20260906/graphe/relecture-electricite",
+    "date": "2026-09-06",
+    "rapport": "travail/preuve-concrete-2026-09-06/RELECTURE-ELECTRICITE.md",
+    "assertions": [
+      "Distinctions surintensité, défaut d’isolement et fonctions des appareils confrontées aux passages contrôlés.",
+      "Contacts direct et indirect, dispositions de protection et limites de l’inférence documentaire contrôlés.",
+      "Deux SVG originaux rendus et inspectés ; aucune procédure de câblage ou garantie universelle enseignée."
+    ],
+    "sources": [
+      "INRS ED 6345 (2019), PDF 18–20 et 25–28 ; lecture usine partielle 18–20 et 25–30, original non intégralement relu.",
+      "Promotelec, lexique de l’installation électrique, PDF 1 ; vocabulaire corroboré, formulations absolues écartées."
+    ]
+  }
+}

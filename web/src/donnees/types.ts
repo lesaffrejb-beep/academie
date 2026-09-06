@@ -18,6 +18,7 @@ export interface Source {
   texte: string;
   url?: string;
   nature?: string;
+  parti?: string;
 }
 
 export interface Choix {
@@ -151,6 +152,7 @@ export interface Chapitre {
   prerequis?: string[];
   ponts?: string[];
   satellite?: boolean;
+  rattachement_propose?: string;
   statut?: string;
 }
 

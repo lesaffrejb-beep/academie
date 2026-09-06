@@ -1,0 +1,136 @@
+{
+  "url": "https://data.geopf.fr/annexes/gpu/documents/PSMV_244900015/e4859efbaa6a6b73f60a338e11f14048/244900015_cahier_recommandations_20241016.pdf",
+  "downloaded_path": "/private/tmp/academie-angers-cahier-public-20241016.pdf",
+  "sha256_public": "37599e98bfa1d90b13aa7ee1b7ca54e26f700b3614c2e9cc74a94e1c55ae4ea3",
+  "sha256_local": "707940074f1388686398dd795457acbf3ab30d6bcd2ae2a65c3a88f3888b1fba",
+  "pages_local": 54,
+  "pages_public": 54,
+  "comparisons": [
+    {
+      "page": 1,
+      "same_layout_text": false,
+      "same_whitespace_normalized_text": false,
+      "local_chars": 514,
+      "public_chars": 532,
+      "similarity_sequence_matcher": 0.978967,
+      "diff_path": "/private/tmp/academie-angers-comparaison/diff-p01.txt"
+    },
+    {
+      "page": 2,
+      "same_layout_text": false,
+      "same_whitespace_normalized_text": false,
+      "local_chars": 1225,
+      "public_chars": 1225,
+      "similarity_sequence_matcher": 0.93551,
+      "diff_path": "/private/tmp/academie-angers-comparaison/diff-p02.txt",
+      "renders": {
+        "local": {
+          "path": "/private/tmp/academie-angers-comparaison/local-p02.png",
+          "sha256": "1a1c98ee60ce7ff7ffafdb3a7aa8a95267716e152c6c97bdc6a5a0e5abd3b1d6"
+        },
+        "public": {
+          "path": "/private/tmp/academie-angers-comparaison/public-p02.png",
+          "sha256": "797032f19e3204abeba22e9664cdfe3c6180c1ea926bdfaee1f18053e8968d51"
+        }
+      }
+    },
+    {
+      "page": 11,
+      "same_layout_text": true,
+      "same_whitespace_normalized_text": true,
+      "local_chars": 2568,
+      "public_chars": 2568,
+      "similarity_sequence_matcher": 1.0,
+      "diff_path": "/private/tmp/academie-angers-comparaison/diff-p11.txt",
+      "renders": {
+        "local": {
+          "path": "/private/tmp/academie-angers-comparaison/local-p11.png",
+          "sha256": "a2042b1f95769d1f9483cd1e16fe33f13b08d666d68e509b97729686180af4cc"
+        },
+        "public": {
+          "path": "/private/tmp/academie-angers-comparaison/public-p11.png",
+          "sha256": "993faeabe8da61efffd64d9b60211c49e0f72b4864095f223711902b38855244"
+        }
+      }
+    },
+    {
+      "page": 12,
+      "same_layout_text": true,
+      "same_whitespace_normalized_text": true,
+      "local_chars": 6537,
+      "public_chars": 6537,
+      "similarity_sequence_matcher": 1.0,
+      "diff_path": "/private/tmp/academie-angers-comparaison/diff-p12.txt",
+      "renders": {
+        "local": {
+          "path": "/private/tmp/academie-angers-comparaison/local-p12.png",
+          "sha256": "ee5ac04dac94abc80416859eb058fd9c497900143d0d8232be83b388a4a37f82"
+        },
+        "public": {
+          "path": "/private/tmp/academie-angers-comparaison/public-p12.png",
+          "sha256": "bd63fd7700a520152941dd8d86a07b81ec7d337377a873cdedc3978b33f70566"
+        }
+      }
+    },
+    {
+      "page": 13,
+      "same_layout_text": true,
+      "same_whitespace_normalized_text": true,
+      "local_chars": 6314,
+      "public_chars": 6314,
+      "similarity_sequence_matcher": 1.0,
+      "diff_path": "/private/tmp/academie-angers-comparaison/diff-p13.txt",
+      "renders": {
+        "local": {
+          "path": "/private/tmp/academie-angers-comparaison/local-p13.png",
+          "sha256": "24a0049510efc265017cb88cfeff900ee042f2285c9fb7a68a4e93b9678ffc04"
+        },
+        "public": {
+          "path": "/private/tmp/academie-angers-comparaison/public-p13.png",
+          "sha256": "1fb798b076a8cabd8ee59f017f2607ced4d3a1323a81e70afd82020f0849b8bc"
+        }
+      }
+    },
+    {
+      "page": 14,
+      "same_layout_text": true,
+      "same_whitespace_normalized_text": true,
+      "local_chars": 4935,
+      "public_chars": 4935,
+      "similarity_sequence_matcher": 1.0,
+      "diff_path": "/private/tmp/academie-angers-comparaison/diff-p14.txt",
+      "renders": {
+        "local": {
+          "path": "/private/tmp/academie-angers-comparaison/local-p14.png",
+          "sha256": "e1e3f814ad5ed7cade57637bf20000753f7f50946aaa9291da082c4af7fc108b"
+        },
+        "public": {
+          "path": "/private/tmp/academie-angers-comparaison/public-p14.png",
+          "sha256": "d5038109acc724dab702b5baf9b487d8e67373e6363cc2f59ff043070c980d85"
+        }
+      }
+    }
+  ],
+  "checked_at": "2026-09-06T17:44:17.771672+00:00",
+  "binary_identical": false,
+  "public_bytes": 47648818,
+  "local_bytes": 12570504,
+  "scope_verdict": "Concordance des passages utilisés, pas identité des PDF ni lecture intégrale du PDF public.",
+  "public_cover_difference": "Ajout DOCUMENT APPROUVÉ et horodatage interne 22/03/2023 2:23 au lieu de 2:17.",
+  "page_2_difference": "Changement de casse des titres et déplacement de la parenthèse pièces écrite et graphique ; portée des recommandations inchangée.",
+  "visual_checked_pages": [
+    2,
+    11,
+    12,
+    13,
+    14
+  ],
+  "page_mapping": {
+    "2": "Sommaire et statut de recommandations",
+    "11": "Fiche 3.1",
+    "12": "Fiche 3.2",
+    "13": "Fiche 3.3",
+    "14": "Fiche 3.4"
+  },
+  "local_source_or_usine_modified": false
+}

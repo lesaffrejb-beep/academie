@@ -18,8 +18,8 @@ import { LIB } from "../app/i18n";
 
 /**
  * 1. MODULE JEU DE ROLE & MISE EN SITUATION (type: "role")
- * Extrait le prompt de dialogue et l'objectif de négociation,
- * offre un bouton de copie tactile pour jouer le rôle en IA ou en binôme.
+ * Conserve le scénario et ses consignes pour jouer le rôle en binôme
+ * ou dans un simulateur choisi par l'élève.
  */
 export function ModuleRole({
   carte,
@@ -34,6 +34,7 @@ export function ModuleRole({
 }) {
   const [copie, setCopie] = useState(false);
   const [erreurCopie,setErreurCopie] = useState(false);
+  const scenario = carte.question;
 
   // Extraction du prompt entre guillemets français ou anglais
   const promptExtrait = useMemo(() => {
@@ -57,10 +58,9 @@ export function ModuleRole({
   }, [carte.question]);
 
   const copierPrompt = async () => {
-    const texteACopier = promptExtrait || carte.question;
     setCopie(false);setErreurCopie(false);
     try {
-      await navigator.clipboard.writeText(texteACopier);
+      await navigator.clipboard.writeText(scenario);
       setCopie(true);
       setTimeout(() => setCopie(false), 2200);
     } catch {
@@ -89,7 +89,7 @@ export function ModuleRole({
           {objectif ? (
             <span className="inline-flex items-center gap-1 text-[11px] px-2.5 py-1 rounded-full bg-[var(--c-surface-creuse)] text-[var(--c-encre)] border border-[var(--c-bordure-subtile)] font-medium">
               <Target size={12} className="text-[var(--c-accent)]" />
-              <span>Négociation</span>
+              <span>Objectif</span>
             </span>
           ) : null}
         </div>
@@ -103,20 +103,18 @@ export function ModuleRole({
         ) : null}
 
         {/* Bloc du prompt prêt à copier */}
-        {promptExtrait ? (
-          <div className="relative mt-2 p-3.5 rounded-xl border border-[var(--c-trait)] bg-[var(--c-surface-elevee)] text-xs text-[var(--c-encre)] font-sans italic">
-            <p className="pr-24">« {promptExtrait} »</p>
+          <div className="flex flex-col gap-3 mt-2 p-3.5 rounded-xl border border-[var(--c-trait)] bg-[var(--c-surface-elevee)] text-xs text-[var(--c-encre)] font-sans">
+            <p className="whitespace-pre-wrap">{scenario}</p>
             <button
               type="button"
               onClick={copierPrompt}
-              className="bouton-tactile absolute top-3 right-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-[var(--c-accent)] text-[var(--c-sur-accent)] text-[11px] font-medium shadow-sm transition"
-              title="Copier le prompt pour simulateur IA ou binôme"
+              className="bouton-tactile self-end inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-[var(--c-accent)] text-[var(--c-sur-accent)] text-[11px] font-medium shadow-sm transition"
+              title="Copier le prompt complet pour simulateur IA ou binôme"
             >
               {copie ? <Check size={13} /> : <Copy size={13} />}
               <span>{copie ? "Copié" : "Copier"}</span>
             </button>
           </div>
-        ) : null}
       </div>
 
       {erreurCopie && <p role="alert">Copie impossible. Sélectionne le texte pour le copier manuellement.</p>}
@@ -132,7 +130,7 @@ export function ModuleRole({
           value={reponse}
           readOnly={revele}
           onChange={(e: ChangeEvent<HTMLTextAreaElement>) => surChangementReponse(e.target.value)}
-          placeholder="Note ici ta stratégie, tes questions au prestataire et les points non négociables..."
+          placeholder="Rédige ta réponse à l’interlocuteur et les questions utiles à la situation."
         />
       </div>
     </div>

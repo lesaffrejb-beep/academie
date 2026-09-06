@@ -170,3 +170,132 @@ Elle vérifie tentative, sept exercices existants, sources, schéma chargé,
 brouillon après rechargement et synthèse avec critères conservés dans le
 journal du compte fictif. Cette preuve de front n'est ni une mesure de
 compétence ni une preuve de synchronisation d'un compte réel sur le VPS.
+
+### Suite : fragilité et façade ancienne
+
+Les dossiers transverses demandés sont poursuivis dans
+`travail/fragilite-2026-09-06/` et `travail/facade-2026-09-06/`.
+Après confrontation des assertions aux passages des pivots déjà scellés et
+relecture par un agent distinct, leur intégration peut ajouter
+`chapitres/satellites/diagnostic-partage-fragilite.json` et
+`chapitres/satellites/facade-ancienne-avant-devis.json`, les entrées de
+`contenu/parcours.json`, les compteurs du catalogue et les artefacts générés.
+Les brouillons initiaux et les réserves restent conservés sous `travail/`.
+
+Le diagnostic de fragilité distingue les dimensions du guide Anah des
+hypothèses du cas fictif ; il ne couvre pas les conditions des dispositifs
+judiciaires. La façade ancienne confronte des observations, matériaux et
+propositions d'intervention ; les recommandations patrimoniales datées ne
+deviennent pas des prescriptions techniques ou juridiques universelles.
+Pas de nouvelle mécanique ni de reproduction d'une figure source.
+
+Preuve d'intégration, rouge avant ajout puis verte après : un élève copro
+ouvre chaque nouveau parcours depuis l'accueil, retrouve les sources,
+termine les exercices effectivement servis et reprend ses réponses après
+rechargement. La synthèse et ses critères cochés restent dans son journal ;
+le parcours IFSI n'affiche pas ces études. Les tests correspondants peuvent
+être ajoutés sous `web/tests/e2e/`. Les validations globales précèdent le
+push ; installation VPS et usage sur les appareils restent des preuves
+distinctes.
+
+La relecture du rôle Fragilité révèle une perte de contexte dans
+`web/src/ecrans/ModulesSeance.tsx` : la première citation du personnage est
+copiée seule, sans situation ni consigne. Le rôle doit afficher et copier
+le scénario complet (question), y compris sans guillemets. L'aide reste
+derrière la demande d'indice pour ne pas créditer un rappel autonome aidé. Une
+citation peut encore identifier l'interlocuteur quand elle le nomme
+explicitement. Test rouge de contexte, test sans citation, puis vérification
+du presse-papiers dans le parcours Fragilité ; aucune conversation automatique
+ni modification des réponses du journal.
+
+Le panneau Sources d'Étude doit aussi restituer le parti déjà fourni par
+chaque source, conserver une nature absente comme inconnue et ne pas
+qualifier toutes les publications de règles. Ajustement borné à
+`Etude.tsx`, au type `Source` et aux tests de rendu : un éditeur commercial
+ne devient pas une institution, une source sans nature ne reçoit pas une
+qualification inventée. Aucun changement du schéma de banque.
+
+Contrôle final de l'arbre : la génération transmettait les cartes satellites
+à leur cursus mais omettait leurs nœuds. Corriger `app/genere.py` et les
+tests de chaîne/études pour ajouter les satellites dont l'étude est servie,
+avec leur rattachement déclaré, uniquement dans le programme du parent.
+Les brouillons, périmés, études écartées et autres cursus restent exclus.
+Conserver les prérequis tels qu'écrits, sans convertir le rattachement en
+prérequis. Le client (`progression.ts`, `graphe.ts`, `GraphePrerequis.tsx`,
+types et tests associés) rend séparément rattachement et approfondissements.
+Preuve rouge puis verte : parent réel du programme, module satellite
+visible, ouverture de son étude depuis le graphe, absence dans l'autre
+cursus. Les compteurs du programme gardent le socle distinct des extensions.
+
+### Preuve concrète demandée par JB : une branche électrique illustrée
+
+JB demande où en sont réellement la collecte, les notions et le programme,
+puis un exemple complet qui comble un manque d'illustration. La branche
+`equipements.electricite` possède cinq chapitres prévus ; aucun cursus
+professionnel d'électricien n'est déclaré livré. Ce lot ajoute une première
+étude de fondations, sans prétendre remplir tout le chapitre TGBT ni former
+à l'exécution de travaux électriques.
+
+Périmètre : `travail/preuve-concrete-2026-09-06/`,
+`chapitres/satellites/comprendre-protections-electriques.json`,
+`banque/images/electricite-*.svg`, `contenu/parcours.json`,
+`programme/catalogue.json`, registre de sources si nécessaire, banque générée,
+`web/tests/e2e/electricite.spec.ts`. Rattachement au chapitre existant
+`equipements.electricite.tgbt-et-colonnes-montantes` sans inventer de prérequis.
+Les PDF publics originaux restent hors dépôt, avec empreintes et pagination.
+Lecture par unités usine, portée et limites conservées, relecture distincte
+avant promotion. Les schémas originaux expliquent les mécanismes sans donner
+un plan de câblage ; les exercices utilisent des cas fictifs.
+
+Preuve rouge puis verte : étude absente avant ajout, présente ensuite avec
+ses supports chargés ; sources paginées accessibles, réponse conservée après
+rechargement, exercice visuel réellement parcouru et étude exclue d'IFSI.
+Un état avant/après distingue collecte, lecture contrôlée, cours servis,
+publication et apprentissage constaté. Aucun score de maîtrise n'est déduit
+du nombre de cartes. Les mécanismes déjà présents sont réutilisés.
+
+Visibilité du contenu disponible : `web/src/ecrans/Arbre.tsx`, son test SSR
+et le libellé de la miniature dans `web/src/ecrans/GrapheSavoir.tsx`
+distinguent chapitres prévus du socle, études effectivement disponibles
+et approfondissements. Aucun total d'études incluant les satellites n'est
+rapporté au seul nombre de chapitres du socle. Les conditions existantes
+de serviceabilité restent la référence ; ni programme ni état joueur ne
+changent. Preuves ciblées dans `travail/preuve-concrete-2026-09-06/`.
+
+La visibilité demandée inclut `web/src/ecrans/Arbre.tsx` et ses tests :
+séparer le socle prévu, les études réellement disponibles dans ce socle
+et les approfondissements, sans compter les satellites dans un taux du
+socle. Régression rouge sur un exemple mêlant socle et satellite, puis
+contrôle ciblé et rendu réel. Pas de pourcentage de compétence acquis.
+
+### Demande vers chemin d'apprentissage, professeur ancré dans la copro
+
+JB précise le 06/09 : partir de « je veux apprendre X », de ce qu'il sait
+ou reste à diagnostiquer, puis construire un chemin raisonné vers X, avec
+ramifications sans plafond et rattachement au métier de gestionnaire.
+Le professeur est l'agent qui instruit la demande ; le script contrôle
+la cohérence et les références, sans prétendre remplacer ce jugement.
+
+Périmètre supplémentaire : `CHEMINS.md`, `prompts/construire-un-chemin.md`,
+`app/chemin_apprentissage.py`, `app/tests_chemin_apprentissage.py`,
+`app/tests.py`, `contrats/chemin-apprentissage-v1.schema.json`,
+`METHODE.md`, décision suivante et son index, exemples et preuves sous
+`travail/preuve-concrete-2026-09-06/`, lien README. Aucun appel de modèle
+depuis le serveur, aucune modification ou invention d'état joueur.
+
+Le dossier contient demande, cible observable, ancrage réel dans le cursus,
+préacquis connus/inconnus et leurs preuves, diagnostic et bifurcations,
+étapes avec niveau justifié, dépendances et transversalités, inventaire de
+sources présentes ou à trouver, supports et exercices justifiés, critères
+de transfert et reprise après échec. Les nouveaux chapitres sont des
+propositions jusqu'à leur fabrication et leur relecture. Un format varié
+ne vaut pas apprentissage, un plan cohérent ne vaut pas cours disponible.
+
+Tests rouges : référence de chapitre ou source inventée, cycle entre étapes,
+acquis observé sans preuve, source annoncée présente sans original identifié,
+étape dite disponible sans étude servie, transfert absent, diagnostic sans
+suite définie. Un exemple électrique réel et un exemple fictif d'élève
+avancé montrent deux chemins sans attribuer ces acquis à JB. Contrôles
+locaux et revue indépendante avant commit, sans publier de données joueur.
+
+Routage documentaire autorisé pour rendre le protocole retrouvable : ajout d’un lien dans `AGENTS.md` vers `CHEMINS.md` et le prompt, sans modifier les règles dures.

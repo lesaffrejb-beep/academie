@@ -9,7 +9,54 @@ permettre lundi matin d'essayer plusieurs modules/formats ; publier sur VPS
 proprement, de façon reproductible et auditable ; pousser les grandes passes
 sur main. L'objectif ne se réduit pas au benchmark ni au premier module.
 
-## État de la passe
+## Demande vers chemin, puis exemple électrique
+
+Le 06/09, le protocole `CHEMINS.md` et le contrôle JSON permettent de
+préparer une demande, expliciter les prérequis inconnus et contrôler
+sources, références, dépendances et étude associée. L’agent instruit le
+chemin en conversation ; aucune adaptation automatique du client annoncée.
+L’exemple électrique bifurque selon le diagnostic, avec une extension
+rapport complet explicitement à construire. Le dossier de preuve est
+`travail/preuve-concrete-2026-09-06/`.
+
+Une nouvelle unité relue indépendamment ajoute sept cartes et deux SVG
+originaux. Banque locale : 144 cartes, dix études ; copro 134 cartes et
+huit études, dont trois du socle et cinq approfondissements. Le socle
+reste de 389 chapitres prévus. Les deux originaux publics INRS/Promotelec
+sont copiés sur le SSD monté `/Volumes/NOIR 1`, empreintes contrôlées.
+La collecte NotebookLM complète ne se transforme pas automatiquement en cours.
+
+## Dernière passe locale : fragilité et façade
+
+Le 06/09 vers 19 h 50, les deux dossiers relus ajoutent dix-huit cartes.
+Banque générée : 137 cartes, neuf études ; copro 127 cartes/sept études,
+IFSI dix cartes/deux études. Les parcours sont accessibles depuis l'accueil,
+avec des rattachements réels à l'arbre et des cas fictifs. Source Anah pour
+la fragilité ; cahier d'Angers pour la façade, avec passages et pagination
+confrontés au PDF public. Les brouillons et rapports restent conservés.
+
+Les jeux de rôle affichent et copient désormais la question complète,
+même sans guillemets ; l'indice reste derrière la demande d'aide. Le panneau
+Sources montre le parti déclaré et la nature réelle, conserve l'inconnu et
+ne présente plus toute source comme une règle.
+
+Tests rouges puis verts : quatre E2E Fragilité et quatre E2E Façade,
+ordinateur et téléphone, reprise des réponses et critères, copie complète,
+exclusion IFSI. Captures examinées. Neuf tests de rendu ciblés verts après
+les dernières corrections ; suite TypeScript 329 tests et six de publication
+verts avant le dernier garde sur une nature héritée JavaScript, couvert
+depuis par les tests ciblés et la compilation du parcours Façade.
+`python3 app/tests.py` tout vert après les deux intégrations ;
+`python3 tooling/check.py` zéro erreur. Preuves détaillées dans les deux
+dossiers `travail/fragilite-2026-09-06/` et `travail/facade-2026-09-06/`.
+
+Le paquet VPS 6946f16 préparé lors de la passe précédente ne contient pas
+ces deux dossiers. Aucune installation n'a eu lieu depuis le refus de revue
+automatique ; sa confirmation directe reste en attente. La collecte des
+médias continue, avec inventaires séparant fichiers récupérés et références
+manquantes. Aucun état partiel n'est une preuve d'exhaustivité du corpus.
+
+## État de la passe initiale
 
 - Texte NotebookLM : passage sur 200 occurrences, 181 captures/169 empreintes
   distinctes ; 18 réserves documentaires et une source vide. Manifeste local

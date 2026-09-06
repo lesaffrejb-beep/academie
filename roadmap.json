@@ -10,9 +10,14 @@
       "mode": "agent-review",
       "risk": "medium",
       "priority": 100,
-      "depends_on": ["ACA-PROGRAMME-1"],
-      "budget": {"max_units": 1, "max_minutes": 180},
-      "proof": "Première unité : cartographie et rapport testés ; lecture complète des sources et dossiers experts restent à produire.",
+      "depends_on": [
+        "ACA-PROGRAMME-1"
+      ],
+      "budget": {
+        "max_units": 1,
+        "max_minutes": 180
+      },
+      "proof": "06/09 : cinq approfondissements relus et servis localement, dont protections électriques avec deux SVG ; protocole de chemin depuis la demande et contrôle testé (11 cas). Preuves : travail/preuve-concrete-2026-09-06/LIVRAISON.md. Couverture complète, transformation du corpus et apprentissage restent ouverts.",
       "parent_milestone": "ACADEMIE-EXPERTISE"
     },
     {

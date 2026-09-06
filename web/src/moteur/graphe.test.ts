@@ -29,7 +29,7 @@ describe("graphe du programme, sans progression propre", () => {
     expect(g.absents).toEqual(["absent"]);
   });
   it("ne fabrique ni nœud ni progression pour une référence inconnue", () => {
-    expect(voisinageChapitre(noeuds, "inexistant")).toEqual({centre: null, prerequis: [], suites: [], liens: [], absents: []});
+    expect(voisinageChapitre(noeuds, "inexistant")).toEqual({centre: null, prerequis: [], suites: [], liens: [], absents: [], rattachement: null, approfondissements: [], rattachementAbsent: null});
     expect(voisinageChapitre(noeuds, "cible").centre?.cartesTotales).toBe(0);
     expect(voisinageChapitre(noeuds, "cible").centre?.etat).toBe("inconnu");
   });
@@ -38,5 +38,21 @@ describe("graphe du programme, sans progression propre", () => {
     expect(chercheChapitres(noeuds, "", "droit", "bases")).toEqual([base, cible, suite, autre]);
     expect(chercheChapitres(noeuds, "energie", "droit")).toEqual([]);
     expect(chercheChapitres([base], "pont")).toEqual([]);
+  });
+  it("parcourt les rattachements déclarés sans en faire des prérequis", () => {
+    const satellite = {...n("satellite"), satellite: true, rattachementPropose: "base"};
+    const nodes = [base, satellite];
+    const parent = voisinageChapitre(nodes, "base");
+    expect(parent.approfondissements).toEqual([satellite]);
+    expect(parent.suites).toEqual([]);
+    expect(parent.liens).toEqual([]);
+    const enfant = voisinageChapitre(nodes, "satellite");
+    expect(enfant.rattachement).toBe(base);
+    expect(enfant.prerequis).toEqual([]);
+    expect(enfant.liens).toEqual([]);
+    const orphelin = voisinageChapitre([satellite], "satellite");
+    expect(orphelin.rattachement).toBeNull();
+    expect(orphelin.rattachementAbsent).toBe("base");
+    expect(voisinageChapitre(nodes, "inexistant").approfondissements).toEqual([]);
   });
 });

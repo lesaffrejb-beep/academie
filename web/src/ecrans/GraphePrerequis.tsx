@@ -119,6 +119,16 @@ export function GraphePrerequis({monde, banque, journal, jour}: {
             <section className="graphe-groupe" data-groupe="suites"><h4>Pour aller plus loin</h4><div className="graphe-noeuds">{graphe.suites.length ? graphe.suites.map(n => noeud(n)) : <p className="graphe-absence">Aucune suite directe déclarée.</p>}</div></section>
           </div>
           {graphe.absents.length ? <p className="graphe-absence">Prérequis absent{graphe.absents.length > 1 ? "s" : ""} de ce programme : {graphe.absents.join(", ")}.</p> : null}
+          {graphe.rattachement || graphe.rattachementAbsent || graphe.approfondissements.length ? <div className="graphe-rattachements">
+            <p className="graphe-legende">Ces liens situent les études dans le programme. Ils ne déclarent pas de prérequis.</p>
+            {graphe.rattachement || graphe.rattachementAbsent ? <section className="graphe-groupe" aria-label="Rattachement" data-groupe="rattachement">
+              <h4>Rattachement</h4>
+              {graphe.rattachement ? noeud(graphe.rattachement) : <p className="graphe-absence">Chapitre de rattachement absent de ce programme : {graphe.rattachementAbsent}.</p>}
+            </section> : null}
+            {graphe.approfondissements.length ? <section className="graphe-groupe" aria-label="Approfondissements" data-groupe="approfondissements">
+              <h4>Approfondissements</h4><div className="graphe-noeuds">{graphe.approfondissements.map(n => noeud(n))}</div>
+            </section> : null}
+          </div> : null}
           <section className="graphe-detail" data-testid="graphe-detail" aria-label="Étudier le chapitre sélectionné">
             <div><h3>{centre.titre}</h3><p>{etat(centre)}</p>
               {nombreCartes ? <p>{nombreCartes} carte{nombreCartes > 1 ? "s" : ""} disponible{nombreCartes > 1 ? "s" : ""} · {centre.cartesAcquises} à stabilité suffisante selon le moteur de rappel.</p> : <p>Aucune carte disponible pour ce chapitre.</p>}

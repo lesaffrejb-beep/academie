@@ -1,0 +1,11 @@
+{
+  "statut": "cohérence structurelle",
+  "coherent": true,
+  "erreurs": [],
+  "sources_manquantes": [
+    "rapport-complet"
+  ],
+  "limites": [
+    "Ni jugement pédagogique, ni validation d'acquis, ni publication."
+  ]
+}

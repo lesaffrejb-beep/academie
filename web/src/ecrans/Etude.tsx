@@ -131,5 +131,14 @@ function SalleEtude({lecon, cartes}: {lecon: Lecon; cartes: Carte[]}) {
   </div>;
 }
 function DossierSources({sources,lecon}: {sources: Source[]; lecon: Lecon}) {
-  return <details className="sources-etude"><summary>Sources et fabrication</summary><ul>{sources.map((s,i) => <li key={i}><span>{s.nature === "texte-officiel" ? "Texte officiel" : "Institution"}</span>{s.url && /^https:\/\//.test(s.url) ? <a href={s.url} target="_blank" rel="noreferrer">{s.texte}<ExternalLink size={13}/></a> : s.texte}</li>)}</ul><p>Écrit par {lecon.provenance.modele ?? "auteur non renseigné"} · {lecon.provenance.genere_le}. Relecture : {lecon.verifie_par.modele}, {lecon.verifie_par.date}.</p><p>Les sources établissent les règles. Les situations fictives et l’ordre des exercices sont des choix pédagogiques.</p></details>;
+  const natures:Record<string,string>={"texte-officiel":"Texte officiel",jurisprudence:"Jurisprudence",institution:"Institution",norme:"Norme",doctrine:"Doctrine",editeur:"Éditeur","presse-pro":"Presse professionnelle","organisation-pro":"Organisation professionnelle",association:"Association","support-interne":"Support interne",terrain:"Terrain"};
+  return <details className="sources-etude"><summary>Sources et fabrication</summary>
+    <ul>{sources.map((s,i) => <li key={i}>
+      <span>{s.nature?.trim() ? Object.hasOwn(natures,s.nature) ? natures[s.nature] : s.nature : "Nature non renseignée"}</span>
+      {s.url && /^https:\/\//.test(s.url) ? <a href={s.url} target="_blank" rel="noreferrer">{s.texte}<ExternalLink size={13}/></a> : s.texte}
+      {s.parti?.trim() && <p>{s.parti}</p>}
+    </li>)}</ul>
+    <p>Écrit par {lecon.provenance.modele ?? "auteur non renseigné"} · {lecon.provenance.genere_le}. Relecture : {lecon.verifie_par.modele}, {lecon.verifie_par.date}.</p>
+    <p>Les sources étayent le contenu. Les situations fictives et l’ordre des exercices sont des choix pédagogiques.</p>
+  </details>;
 }

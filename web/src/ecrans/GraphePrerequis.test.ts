@@ -17,3 +17,24 @@ it("un prérequis absent du programme reste déclaré, sans se dire inexistant",
   expect(html).not.toContain("Aucun prérequis déclaré.");
   expect(html).toContain("Aucun prérequis disponible dans ce programme.");
 });
+
+it("transmet le rattachement du chapitre et affiche ses approfondissements séparément", () => {
+  const banque: Banque = {cartes: [], domaines: {}, quotas: {revisions_par_seance: 10, nouveau_par_seance: 10, plafond_reprise: 20}, progression: {
+    seuil_stabilite_acquise_jours: 21, seuil_ouverture_region: .75,
+    examen_obligatoire_pour_100: true, examen_nb_cartes: 12, examen_score_reussite: .8,
+  }, chapitres: [
+    {id: "parent", titre: "Le chapitre parent", domaine: "d", branche: "b"},
+    {id: "satellite", titre: "Une étude approfondie", domaine: "d", branche: "b", satellite: true, rattachement_propose: "parent"},
+  ]};
+  const monde = carteMonde([], [], banque, new Map(), [], 0);
+  expect(monde.noeuds.find(n => n.id === "satellite")?.rattachementPropose).toBe("parent");
+  const html = renderToStaticMarkup(createElement(GraphePrerequis, {monde, banque, journal: [], jour: 0}));
+  expect(html).toContain('aria-label="Approfondissements"');
+  expect(html).toContain("Aucune suite directe déclarée.");
+  expect(html).toContain("Aucun prérequis déclaré.");
+  banque.chapitres!.reverse();
+  const inverse = carteMonde([], [], banque, new Map(), [], 0);
+  const enfant = renderToStaticMarkup(createElement(GraphePrerequis, {monde: inverse, banque, journal: [], jour: 0}));
+  expect(enfant).toContain('aria-label="Rattachement"');
+  expect(enfant).toContain("Le chapitre parent");
+});

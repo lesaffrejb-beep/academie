@@ -1,0 +1,251 @@
+{
+  "version": 1,
+  "statut": "brouillon",
+  "demande": "Je veux comprendre les protections électriques pour discuter une proposition faite à la copropriété.",
+  "cible_observable": "Expliquer les fonctions de protection et produire un avis conditionnel sur une proposition fictive courte.",
+  "metier": "copro",
+  "ancrage": {
+    "chapitre": "equipements.electricite.tgbt-et-colonnes-montantes",
+    "justification": "L’équipement collectif donne le point d’entrée ; les mécanismes forment une extension autonome et ne couvrent pas le chapitre TGBT."
+  },
+  "prerequis": [
+    {
+      "notion": "Différencier surintensité et fuite",
+      "etat": "inconnu"
+    },
+    {
+      "notion": "Distinguer fait observé et conclusion",
+      "etat": "inconnu"
+    }
+  ],
+  "diagnostic": {
+    "productions": [
+      {
+        "consigne": "Un devis propose un interrupteur différentiel et dit remplacer toutes les protections. Explique ce que cette phrase établit et ce qui manque, sans consulter le cours.",
+        "criteres": [
+          "Distinction différentielle/surintensité expliquée",
+          "Dispositifs présents non inventés",
+          "Demande complémentaire pertinente"
+        ]
+      }
+    ],
+    "reussite": [
+      "avis"
+    ],
+    "echec": [
+      "mecanismes",
+      "avis"
+    ]
+  },
+  "sources": [
+    {
+      "id": "inrs",
+      "titre": "INRS ED 6345 : PDF 18–20 et 25–30 seulement",
+      "statut": "presente",
+      "url": "https://www.inrs.fr/dam/inrs/CataloguePapier/ED/TI-ED-6345.pdf",
+      "empreinte": "cd6c2c5468da311dfeb249884ae63823eee5d0cb93206b38636bd1ee08994cc3",
+      "chemin_original": "/Users/jb/.codex/visualizations/2026/09/06/01a07779-1d3c-7203-a4f5-f7ddc4deb94e/notebooklm-export-originaux/electricite/INRS-ED6345-original-2019.pdf"
+    },
+    {
+      "id": "promotelec",
+      "titre": "Lexique Promotelec : page unique, assertions bornées",
+      "statut": "presente",
+      "url": "https://www.promotelec.com/app/uploads/2023/09/Lexique-installation-eletrique.pdf",
+      "empreinte": "cf23f4d8b905b506db70fc0afd3a2bd3de30be3c543025bead5db9080b05476b",
+      "chemin_original": "/Users/jb/.codex/visualizations/2026/09/06/01a07779-1d3c-7203-a4f5-f7ddc4deb94e/notebooklm-export-originaux/electricite/promotelec-lexique-installation.pdf"
+    },
+    {
+      "id": "rapport-complet",
+      "titre": "Rapport électrique pédagogique complet et référentiel courant",
+      "statut": "a_trouver",
+      "manque": "Le manuel de mécanismes ne couvre ni un rapport complet ni la qualification professionnelle. Retrouver un exemple public sans données client et le texte applicable auprès de son émetteur."
+    }
+  ],
+  "etapes": [
+    {
+      "id": "mecanismes",
+      "titre": "Comprendre les mécanismes avant de discuter une protection",
+      "niveau": 2,
+      "justification_niveau": "Relier défaut, courant et fonction de protection ; niveau du travail, acquis de l’élève inconnus.",
+      "dependances": [],
+      "chapitre": "satellite.equipements.comprendre-protections-electriques",
+      "disponibilite": "disponible",
+      "transversalites": [],
+      "notions": [
+        "Surintensité et défaut d’isolement",
+        "Contact direct et indirect",
+        "Interrupteur et disjoncteur différentiels"
+      ],
+      "sources": [
+        "inrs",
+        "promotelec"
+      ],
+      "exercices": [
+        {
+          "format": "photo",
+          "consigne": "Associer chaque anomalie A/B à une fonction, puis expliquer pourquoi elles ne sont pas interchangeables.",
+          "justification": "Le visuel rend les trajets comparables ; le texte demande une explication causale.",
+          "criteres": [
+            "Distinguer surintensité et fuite",
+            "Nommer la fonction correspondante",
+            "Ne pas transformer le schéma en câblage"
+          ],
+          "sources": [
+            "inrs",
+            "promotelec"
+          ],
+          "support": {
+            "chemin": "banque/images/electricite-mecanismes.svg",
+            "justification": "Faire comparer les relations, sans recopier une figure source."
+          }
+        },
+        {
+          "format": "photo",
+          "consigne": "Distinguer les deux types de contact et expliquer le rôle du défaut.",
+          "justification": "Varier le point d’entrée tout en gardant le mécanisme central.",
+          "criteres": [
+            "État normal de la partie",
+            "Conséquence du défaut",
+            "Distinction direct et indirect"
+          ],
+          "sources": [
+            "inrs"
+          ],
+          "support": {
+            "chemin": "banque/images/electricite-contacts.svg",
+            "justification": "Faire comparer les relations, sans recopier une figure source."
+          }
+        }
+      ],
+      "transfert": {
+        "cas_nouveau": "Une offre affirme qu’un interrupteur différentiel remplace toute protection ; expliquer ce qui manque.",
+        "criteres": [
+          "Fonction de surintensité distincte",
+          "Ne pas déduire une absence réelle du manque documentaire"
+        ]
+      },
+      "reprise_echec": {
+        "consigne": "Faire expliquer à nouveau le trajet normal puis le défaut, avec le schéma ; retenter sans le schéma.",
+        "etapes": [
+          "mecanismes"
+        ]
+      }
+    },
+    {
+      "id": "avis",
+      "titre": "Mobiliser les mécanismes dans un avis sur un devis fictif",
+      "niveau": 2,
+      "justification_niveau": "Appliquer la distinction à une affirmation courte. Ce n’est pas la maîtrise d’un rapport électrique complet.",
+      "dependances": [],
+      "chapitre": "satellite.equipements.comprendre-protections-electriques",
+      "disponibilite": "disponible",
+      "transversalites": [
+        {
+          "chapitre": "travaux.du-besoin-au-devis.comparer-des-devis",
+          "justification": "Comparer des fonctions effectivement documentées, conserver les exclusions."
+        },
+        {
+          "chapitre": "equipements.electricite.lire-un-rapport-electrique",
+          "justification": "Prépare une lecture plus complète ; ce chapitre reste à écrire."
+        }
+      ],
+      "notions": [
+        "Fonction annoncée et preuve disponible",
+        "Avis conditionnel et information manquante"
+      ],
+      "sources": [
+        "inrs",
+        "promotelec"
+      ],
+      "exercices": [
+        {
+          "format": "libre",
+          "consigne": "Critiquer la promesse de remplacement de toute protection par un interrupteur différentiel.",
+          "justification": "La production oblige à mobiliser le mécanisme dans le vocabulaire du dossier.",
+          "criteres": [
+            "Nommer la protection manquante dans la promesse",
+            "Demander les dispositifs conservés",
+            "Ne pas inventer leur absence"
+          ],
+          "sources": [
+            "inrs",
+            "promotelec"
+          ]
+        }
+      ],
+      "transfert": {
+        "cas_nouveau": "Une masse est mise sous tension ; le document ne dit que différentiel posé et équipement fonctionnel. Produire un avis.",
+        "criteres": [
+          "Qualifier contact indirect",
+          "Distinguer fonctionnement et protections documentées",
+          "Dire quelles pièces feraient réviser l’avis"
+        ]
+      },
+      "reprise_echec": {
+        "consigne": "Si les fonctions sont confondues, reprendre mécanismes ; si seule la prudence documentaire manque, réécrire l’avis en séparant faits et inconnues.",
+        "etapes": [
+          "mecanismes",
+          "avis"
+        ]
+      }
+    },
+    {
+      "id": "rapport-complet",
+      "titre": "Lire un rapport électrique complet",
+      "niveau": 3,
+      "justification_niveau": "Croiser plusieurs constats, leur portée et les pièces, au-delà du cas court ; contenu et sources restent à construire.",
+      "dependances": [
+        "avis"
+      ],
+      "chapitre": "equipements.electricite.lire-un-rapport-electrique",
+      "disponibilite": "a_construire",
+      "transversalites": [
+        {
+          "chapitre": "travaux.du-besoin-au-devis.le-cahier-des-charges",
+          "justification": "Transformer les lacunes du dossier en demande professionnelle précise."
+        }
+      ],
+      "notions": [
+        "Portée des constats",
+        "Conditions d’un avis motivé"
+      ],
+      "sources": [
+        "rapport-complet"
+      ],
+      "exercices": [
+        {
+          "format": "lecture",
+          "consigne": "À construire après obtention d’un exemple public : annoter constats, limites et demandes complémentaires.",
+          "justification": "Le document complet permettra d’observer les interactions entre rubriques.",
+          "criteres": [
+            "Rattacher chaque conclusion à un constat",
+            "Conserver les zones non couvertes"
+          ],
+          "sources": [
+            "rapport-complet"
+          ]
+        }
+      ],
+      "transfert": {
+        "cas_nouveau": "À construire : autre rapport public avec limites différentes et contre-argument à traiter.",
+        "criteres": [
+          "Réviser l’avis sur la nouvelle pièce",
+          "Ne pas appliquer mécaniquement le premier cas"
+        ]
+      },
+      "reprise_echec": {
+        "consigne": "Identifier si l’erreur concerne un mécanisme ou la lecture des preuves ; choisir la reprise correspondante.",
+        "etapes": [
+          "mecanismes",
+          "rapport-complet"
+        ]
+      }
+    }
+  ],
+  "contexte": {
+    "nature": "Exemple éditorial, aucun acquis ni réponse de JB enregistré.",
+    "decision_diagnostic": "Réussite sur les critères : aller au cas de transfert ; sinon effectuer mécanismes puis avis. Les deux premières étapes sont des usages du même module, pas deux nouveaux cours.",
+    "adaptation": "La sélection dépend d’une production réelle lue par l’agent. L’application ne change pas automatiquement le parcours depuis ce JSON.",
+    "extension": "La lecture d’un rapport complet est une suite optionnelle à construire ; un cursus d’électricien exige un référentiel et une pratique accompagnée distincts."
+  }
+}

@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 750" role="img" aria-labelledby="titre desc">
+<title id="titre">Deux anomalies, deux mécanismes</title><desc id="desc">A : le courant demandé par plusieurs usages dépasse ce que le circuit peut supporter. B : un défaut d'isolement crée un passage de courant hors du trajet normal. Le dessin compare les phénomènes, sans représenter un câblage.</desc>
+<defs><marker id="fleche" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#9c4823"/></marker></defs>
+<rect width="600" height="750" rx="22" fill="#f5f2eb"/>
+<g font-family="Arial,sans-serif" fill="#25353b">
+<text x="32" y="49" font-size="29" font-weight="bold">Deux anomalies à distinguer</text>
+<text x="32" y="83" font-size="21">Quelle fonction de protection répond à chacune ?</text>
+<rect x="25" y="110" width="550" height="252" rx="16" fill="#fff" stroke="#c6c5bd"/>
+<text x="47" y="150" font-size="27" font-weight="bold">A · Trop de courant dans le circuit</text>
+<rect x="50" y="188" width="142" height="68" rx="9" fill="#e6edf0"/>
+<text x="121" y="230" font-size="23" text-anchor="middle">Alimentation</text>
+<path d="M205 222H360" stroke="#9c4823" stroke-width="10" marker-end="url(#fleche)"/>
+<rect x="398" y="185" width="125" height="30" rx="5" fill="#ebdfd4"/><rect x="398" y="228" width="125" height="30" rx="5" fill="#ebdfd4"/>
+<text x="397" y="292" font-size="23">Usages cumulés</text>
+<text x="48" y="333" font-size="24">Le circuit risque de s'échauffer.</text>
+<rect x="25" y="385" width="550" height="282" rx="16" fill="#fff" stroke="#c6c5bd"/>
+<text x="47" y="427" font-size="27" font-weight="bold">B · Une fuite hors du trajet normal</text>
+<path d="M65 484H465" stroke="#486b82" stroke-width="7" marker-end="url(#fleche)"/>
+<text x="60" y="469" font-size="21">Trajet normal du courant</text>
+<circle cx="277" cy="484" r="11" fill="#9c4823"/>
+<path d="M277 495V560H420" fill="none" stroke="#9c4823" stroke-width="7" marker-end="url(#fleche)"/>
+<text x="48" y="557" font-size="22">Défaut</text><text x="48" y="587" font-size="22">d'isolement</text>
+<text x="315" y="600" font-size="22">Passage indésirable</text>
+<text x="48" y="640" font-size="23">Ce défaut peut exposer à un choc électrique.</text>
+<text x="32" y="707" font-size="20">Schéma de raisonnement · aucun plan de câblage</text>
+<text x="32" y="733" font-size="17">Académie · dessin original · INRS ED 6345 et lexique Promotelec</text>
+</g></svg>

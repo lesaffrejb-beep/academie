@@ -82,7 +82,7 @@ BLOCS_CONFIG = ("domaines", "quotas", "fsrs", "progression", "quiz",
 # notions, la compétence, les exercices, l'étude) est de la matière de
 # fabrication, elle ne traverse pas.
 CHAMPS_CHAPITRE = ("id", "titre", "domaine", "branche", "sous_branche",
-                   "niveau", "prerequis", "ponts", "satellite", "statut")
+                   "niveau", "prerequis", "ponts", "satellite", "rattachement_propose", "statut")
 
 # Champs servis au front. On n'expose pas `origine` (chemin interne du
 # repo, sans intérêt pour le joueur) ni les champs de travail.
@@ -136,6 +136,15 @@ def chapitre_public(chapitre: dict) -> dict:
     """Le nœud tel que le client le reçoit : la forme de l'arbre, rien d'autre."""
     return {c: chapitre[c] for c in CHAMPS_CHAPITRE
             if c in chapitre and chapitre[c] not in (None, [], "")}
+
+
+def chapitres_publics(programme: dict, lecons: dict) -> list[dict]:
+    """Le socle et les extensions réellement servies, sans inventer de prérequis."""
+    socle = programme.get("chapitres", [])
+    ids = {ch["id"] for ch in socle}
+    extensions = [ch for ch in lecons.values() if ch.get("satellite")
+                  and ch.get("rattachement_propose") in ids and ch["id"] not in ids]
+    return [chapitre_public(ch) for ch in [*socle, *extensions]]
 
 
 def sert_la_carte_v2(carte: dict, chapitre: dict, couches: set[str],
@@ -229,6 +238,7 @@ def charge_etudes(retenues, aujourdhui):
         if any(c.get("peremption") and c["peremption"] < aujourdhui.isoformat() for c in cartes):
             continue
         lecons[ch["id"]] = {k: ch[k] for k in ("id", "titre", "domaine", "branche", "niveau", "objectifs", "amorce", "lecon", "synthese", "sources", "provenance", "verifie_par", "verifie", "version", "statut")}
+        lecons[ch["id"]].update(chapitre_public(ch))
         lecons[ch["id"]]["peremption"] = ch.get("peremption")
         lecons[ch["id"]]["cartes"] = [c["id"] for c in cartes]
     fichier = ACADEMIE / "contenu" / "parcours.json"
@@ -236,7 +246,7 @@ def charge_etudes(retenues, aujourdhui):
     return {"version": 1, "lecons": lecons, "parcours": [p for p in parcours if all(c in lecons for c in p["chapitres"])]}
 
 
-def charge_metiers(retenues):
+def charge_metiers(retenues, lecons=None):
     """Un même moteur, des banques distinctes par métier, un journal privé commun."""
     import valide_chapitres as v2
     chapitres, _ = v2.charge_chapitres()
@@ -250,7 +260,7 @@ def charge_metiers(retenues):
         ids = {c["id"] for c in p["chapitres"]}
         domaines = p["domaines"]
         metiers[fichier.stem] = {
-            "domaines": domaines, "chapitres": [chapitre_public(c) for c in p["chapitres"]],
+            "domaines": domaines, "chapitres": chapitres_publics(p, lecons or {}),
             "branches": p.get("branches", {}), "niveaux": p.get("niveaux", {}),
             "cartes": [c["id"] for c in retenues if c.get("chapitre") in ids
                        or satellites.get(c.get("chapitre")) in ids
@@ -407,12 +417,12 @@ def main() -> int:
     # (ACA-ARBRE-1). Le client recalcule les états avec ça et le journal,
     # sans jamais rien demander au serveur.
     programme = charge_programme()
+    charge["etudes"] = charge_etudes(retenues, aujourdhui)
     if programme:
-        charge["chapitres"] = [chapitre_public(c) for c in programme.get("chapitres", [])]
+        charge["chapitres"] = chapitres_publics(programme, charge["etudes"]["lecons"])
         charge["branches"] = programme.get("branches", {})
         charge["niveaux"] = programme.get("niveaux", {})
-    charge["etudes"] = charge_etudes(retenues, aujourdhui)
-    charge["metiers"] = charge_metiers(retenues)
+    charge["metiers"] = charge_metiers(retenues, charge["etudes"]["lecons"])
     # Le contrat de la charge servie. Il n'est pas un vœu : il dit au
     # client ce qu'il peut supposer de CHAQUE carte du lot. Tant qu'une
     # carte v1 est servie — sans `chapitre`, sans `provenance` —

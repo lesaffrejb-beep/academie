@@ -8,11 +8,15 @@ export function voisinageChapitre(noeuds: Noeud[], id: string) {
   const centre = parId.get(id) ?? null;
   const prerequis = centre?.prerequis.map(p => parId.get(p)).filter((n): n is Noeud => Boolean(n)) ?? [];
   const suites = centre ? noeuds.filter(n => n.prerequis.includes(id)) : [];
+  const rattachement = centre?.rattachementPropose ? parId.get(centre.rattachementPropose) ?? null : null;
+  const approfondissements = centre ? noeuds.filter(n => n.rattachementPropose === id) : [];
+  const rattachementAbsent = centre?.rattachementPropose && !rattachement ? centre.rattachementPropose : null;
   const liens: LienPrerequis[] = centre ? [
     ...prerequis.map(n => ({source: n.id, cible: id, interDomaine: n.domaine !== centre.domaine})),
     ...suites.map(n => ({source: id, cible: n.id, interDomaine: n.domaine !== centre.domaine})),
   ] : [];
-  return {centre, prerequis, suites, liens, absents: centre?.prerequis.filter(p => !parId.has(p)) ?? []};
+  return {centre, prerequis, suites, liens, rattachement, approfondissements, rattachementAbsent,
+    absents: centre?.prerequis.filter(p => !parId.has(p)) ?? []};
 }
 
 function normalise(texte: string) {

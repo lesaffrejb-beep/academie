@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 730" role="img" aria-labelledby="titre desc">
+<title id="titre">Deux situations de contact électrique</title><desc id="desc">A : une main atteint un conducteur nu normalement sous tension. B : une main touche une carcasse métallique rendue accidentellement sous tension par un défaut d'isolement. Les flèches montrent les contacts possibles, pas des gestes à réaliser.</desc>
+<rect width="600" height="730" rx="22" fill="#f5f2eb"/>
+<g font-family="Arial,sans-serif" fill="#25353b">
+<text x="32" y="48" font-size="30" font-weight="bold">Qu'est-ce qui est touché ?</text>
+<text x="32" y="81" font-size="22">Nomme le contact dans chaque situation.</text>
+<rect x="25" y="107" width="550" height="245" rx="16" fill="#fff" stroke="#c6c5bd"/>
+<text x="47" y="148" font-size="27" font-weight="bold">Situation A</text>
+<rect x="70" y="187" width="134" height="20" rx="8" fill="#486b82"/><path d="M201 197H305" stroke="#a05a24" stroke-width="12"/>
+<path d="M305 197L408 221" stroke="#a54a3a" stroke-width="4" stroke-dasharray="8 6"/>
+<rect x="404" y="204" width="123" height="43" rx="19" fill="#ead9c8" stroke="#9e7960"/>
+<text x="423" y="233" font-size="21">Contact</text>
+<text x="48" y="283" font-size="25">Conducteur nu</text><text x="48" y="321" font-size="23">normalement sous tension.</text>
+<rect x="25" y="375" width="550" height="255" rx="16" fill="#fff" stroke="#c6c5bd"/>
+<text x="47" y="416" font-size="27" font-weight="bold">Situation B</text>
+<rect x="70" y="446" width="195" height="96" rx="12" fill="#dde2e4" stroke="#536b76" stroke-width="3"/>
+<path d="M86 472H157L180 496H260" fill="none" stroke="#9c4823" stroke-width="7"/>
+<circle cx="260" cy="496" r="9" fill="#a54a3a"/>
+<path d="M270 496H407" stroke="#a54a3a" stroke-width="4" stroke-dasharray="8 6"/>
+<rect x="404" y="475" width="123" height="43" rx="19" fill="#ead9c8" stroke="#9e7960"/>
+<text x="423" y="504" font-size="21">Contact</text>
+<text x="48" y="577" font-size="24">Carcasse métallique rendue</text><text x="48" y="611" font-size="24">sous tension par un défaut.</text>
+<text x="32" y="672" font-size="21">Situations fictives · aucun geste à reproduire</text>
+<text x="32" y="708" font-size="18">Académie · dessin original · INRS ED 6345</text>
+</g></svg>

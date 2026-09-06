@@ -37,6 +37,40 @@ test("le graphe donne accès à une étude serviable", async ({ page }) => {
   await expect(page.getByRole("textbox", {name:"Ta réponse"})).toBeVisible();
 });
 
+test("un parent du programme ouvre son approfondissement façade et garde le retour", async ({page}, testInfo) => {
+  await ouvre(page);
+  await page.getByRole("searchbox", {name: "Chercher un chapitre"}).fill("Diagnostiquer une façade avant devis");
+  await page.getByRole("list", {name: "Chapitres du programme"}).getByRole("button").click();
+  const satellite = "satellite.pathologie.facade-ancienne-avant-devis";
+  const parent = "pathologie.facades.diagnostiquer-une-facade-avant-devis";
+  const approfondissement = page.getByRole("region", {name: "Approfondissements", exact: true}).getByRole("button", {name: /Façade ancienne/});
+  await expect(approfondissement).toBeVisible();
+  await expect(page.getByTestId("graphe-relations").locator(`[data-noeud="${satellite}"]`)).toHaveCount(0);
+  await approfondissement.focus();
+  await page.keyboard.press("Enter");
+  await expect(page.getByTestId("graphe-relations").locator(`[data-noeud="${satellite}"]`)).toBeFocused();
+  const rattachement = page.getByRole("region", {name: "Rattachement", exact: true}).getByRole("button");
+  await expect(rattachement).toHaveAttribute("data-noeud", parent);
+  await expect(page.getByTestId("graphe-relations").getByText("Aucun prérequis déclaré.", {exact: true})).toBeVisible();
+  await rattachement.click();
+  await expect(page.getByTestId("graphe-relations").locator(`[data-noeud="${parent}"]`)).toBeFocused();
+  await approfondissement.click();
+  await page.screenshot({path: testInfo.outputPath("graphe-facade.png"), fullPage: true});
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1)).toBe(true);
+  await page.getByTestId("graphe-detail").getByRole("button", {name: "Étudier ce chapitre"}).click();
+  await expect(page).toHaveURL(new RegExp(satellite));
+  await expect(page.getByRole("textbox", {name: "Ta réponse", exact: true})).toBeVisible();
+  await expect(page.getByRole("heading", {name: "Façade ancienne : instruire avant de choisir un devis", exact: true})).toBeVisible();
+});
+
+test("les satellites copro restent absents de l’index IFSI", async ({page}) => {
+  await sessionTest(page, "ifsi");
+  await ouvre(page);
+  await page.getByRole("searchbox", {name: "Chercher un chapitre"}).fill("satellite.pathologie.facade-ancienne-avant-devis");
+  await expect(page.getByText("Aucun chapitre ne correspond à ces filtres.")).toBeVisible();
+  await expect(page.getByRole("list", {name: "Chapitres du programme"}).getByRole("button")).toHaveCount(0);
+});
+
 test("filtre du cursus, recherche vide et rendus accessibles", async ({ page }) => {
   await sessionTest(page, "ifsi");
   await ouvre(page);

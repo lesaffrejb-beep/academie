@@ -171,6 +171,7 @@ export interface Noeud {
   sousBranche: string | null;
   niveau: number | null;
   satellite: boolean;
+  rattachementPropose?: string;
   prerequis: string[];
   etat: EtatNoeud;
   remplissage: number;
@@ -295,6 +296,7 @@ export function noeudsEtBranches(
       sousBranche: ch.sous_branche ?? null,
       niveau: ch.niveau ?? null,
       satellite: Boolean(ch.satellite),
+      ...(ch.rattachement_propose ? {rattachementPropose: ch.rattachement_propose} : {}),
       prerequis: [...(ch.prerequis ?? [])],
       etat,
       remplissage: arrondi4(remplissage),

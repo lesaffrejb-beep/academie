@@ -56,6 +56,57 @@
       ],
       "public": "Gestionnaire de copropriété",
       "limite": "Lecture critique d'une étude de 2024. Ni audit du bâtiment, ni garantie financière, ni certification d'expertise. Réponses libres autoévaluées, sans notation IA."
+    },
+    {
+      "id": "fragilite",
+      "metier": "copro",
+      "titre": "Qualifier une copropriété fragile",
+      "promesse": "Croiser les dimensions, demander les pièces utiles et réviser un diagnostic partagé.",
+      "accroche": "Un solde débiteur, un vote reporté, une trace humide : que sait-on vraiment ?",
+      "rang": 4,
+      "chapitres": [
+        "satellite.droit.diagnostic-partage-fragilite"
+      ],
+      "etiquettes": [
+        "Signaux et hypothèses",
+        "Priorité conditionnelle"
+      ],
+      "public": "Gestionnaire de copropriété",
+      "limite": "Cas fictifs appuyés sur le guide Anah 2026. Diagnostic partagé en amont des décisions ; conditions des procédures judiciaires et aides non enseignées. Réponses libres autoévaluées."
+    },
+    {
+      "id": "facade",
+      "metier": "copro",
+      "titre": "Comprendre une façade ancienne",
+      "promesse": "Reconnaître les inconnues, relier les ouvrages et discuter les interventions sur pièces.",
+      "accroche": "Une façade plus claire sera-t-elle mieux conservée ? Instruire le dossier avant de choisir un devis.",
+      "rang": 5,
+      "chapitres": [
+        "satellite.pathologie.facade-ancienne-avant-devis"
+      ],
+      "etiquettes": [
+        "Matériaux et eaux",
+        "Comparer les interventions"
+      ],
+      "public": "Gestionnaire de copropriété",
+      "limite": "Cas fictifs appuyés sur les recommandations patrimoniales d’Angers. Prépare le dialogue avec les professionnels ; aucun diagnostic de bâtiment ni prescription réglementaire actuelle. Réponses libres autoévaluées."
+    },
+    {
+      "id": "electricite",
+      "metier": "copro",
+      "titre": "Comprendre les protections électriques",
+      "promesse": "Relier les mécanismes aux protections, puis discuter une proposition sur pièces.",
+      "accroche": "Une surcharge et une fuite appellent-elles la même protection ?",
+      "rang": 6,
+      "chapitres": [
+        "satellite.equipements.comprendre-protections-electriques"
+      ],
+      "etiquettes": [
+        "Mécanismes et schémas",
+        "Appliquer au dossier"
+      ],
+      "public": "Gestionnaire de copropriété",
+      "limite": "Mécanismes et cas fictifs ; aucune procédure de câblage, prescription de dimensionnement ou qualification professionnelle. Réponses libres autoévaluées."
     }
   ]
 }

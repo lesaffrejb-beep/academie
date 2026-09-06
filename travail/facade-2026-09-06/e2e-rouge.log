@@ -1,0 +1,52 @@
+
+> academie-client@2.0.0 e2e
+> playwright test tests/e2e/facade.spec.ts --project=ordinateur --grep garde la tentative
+
+[WebServer] (node:21589) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] <script src="/academie/registerSW.js"> in "/index.html" can't be bundled without type="module" attribute
+[WebServer] (node:21625) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 1 test using 1 worker
+
+(node:21635) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  1 [ordinateur] › tests/e2e/facade.spec.ts:21:1 › le parcours façade garde la tentative, huit exercices et la synthèse (10.5s)
+
+
+  1) [ordinateur] › tests/e2e/facade.spec.ts:21:1 › le parcours façade garde la tentative, huit exercices et la synthèse
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('button', { name: 'Ouvrir Comprendre une façade ancienne', exact: true })
+    Expected: visible
+    Timeout: 10000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 10000ms
+      - waiting for getByRole('button', { name: 'Ouvrir Comprendre une façade ancienne', exact: true })
+
+
+      30 |   }}));
+      31 |   await page.goto("./");
+    > 32 |   await expect(page.getByRole("button",{name:ouverture,exact:true})).toBeVisible({timeout:10_000});
+         |                                                                      ^
+      33 |   await page.getByRole("button",{name:ouverture,exact:true}).click();
+      34 |   await expect(page.getByRole("heading",{name:titre,exact:true})).toBeVisible();
+      35 |   await expect(page).toHaveURL(new RegExp(chapitre));
+        at /Users/jb/Code/academie/web/tests/e2e/facade.spec.ts:32:70
+
+    Error Context: test-results/facade-le-parcours-façade--624dd-it-exercices-et-la-synthèse-ordinateur/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/facade-le-parcours-façade--624dd-it-exercices-et-la-synthèse-ordinateur/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/facade-le-parcours-façade--624dd-it-exercices-et-la-synthèse-ordinateur/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [ordinateur] › tests/e2e/facade.spec.ts:21:1 › le parcours façade garde la tentative, huit exercices et la synthèse

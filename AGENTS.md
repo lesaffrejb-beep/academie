@@ -29,3 +29,8 @@ Adaptateurs par outil, tous muets : `CLAUDE.md` (Claude Code), `GEMINI.md`
 `.cursor/rules/academie.mdc` (Cursor) ; Codex lit ce fichier tel quel.
 Ils renvoient ici et n'ajoutent rien. L'accueil d'un élève est
 `COMMENCER.md`, les prompts prêts à coller sont dans `prompts/`.
+
+Pour une demande « je veux apprendre X », appliquer `CHEMINS.md` et
+`prompts/construire-un-chemin.md` : cible observable, ancrage, diagnostic,
+sources et chemin révisable. Le script vérifie la cohérence du dossier ;
+l’agent instruit les choix pédagogiques depuis des productions réelles.

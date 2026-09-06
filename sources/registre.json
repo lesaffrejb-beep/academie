@@ -531,6 +531,21 @@
       "verifie": "2026-09-06",
       "on_en_tire": "restauration du tuffeau, enduits à la chaux, menuiseries en bois, ferronneries et amélioration thermique du bâti ancien ; 54 pages contrôlées et scellées par l'usine",
       "on_n_en_tire_pas": "une autorisation de travaux sans dépôt de dossier d'urbanisme réglementaire"
+    },
+    {
+      "id": "promotelec",
+      "source": "Promotelec, lexique de l’installation électrique",
+      "reference": "https://www.promotelec.com/app/uploads/2023/09/Lexique-installation-eletrique.pdf",
+      "domaine_web": "promotelec.com",
+      "motif": null,
+      "nature": "association",
+      "parti": "Vulgarisation des équipements électriques ; les garanties absolues sur les chocs ne sont pas reprises.",
+      "fiabilite": "B",
+      "verifie": "",
+      "repere_le": "2026-09-06",
+      "preuve_reperage": "Lexique PDF une page contrôlé par l’usine ; fonctions des appareils recoupées avec INRS ED6345 PDF27–28. Voir travail/preuve-concrete-2026-09-06/LECTURE-INRS.md.",
+      "on_en_tire": "Vocabulaire des appareils et mécanisme du déséquilibre, dans les passages recoupés.",
+      "on_n_en_tire_pas": "Garantie contre toute électrisation, conformité d’une installation ou droit de reproduire les figures."
     }
   ]
 }

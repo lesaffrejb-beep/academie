@@ -1,0 +1,47 @@
+
+> academie-client@2.0.0 e2e
+> playwright test tests/e2e/fragilite.spec.ts --project=ordinateur --grep garde la tentative
+
+[WebServer] (node:19683) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] <script src="/academie/registerSW.js"> in "/index.html" can't be bundled without type="module" attribute
+[WebServer] (node:19721) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 1 test using 1 worker
+
+(node:19728) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  1 [ordinateur] › tests/e2e/fragilite.spec.ts:21:1 › le parcours fragilité garde la tentative, huit exercices et la synthèse (1.0m)
+
+
+  1) [ordinateur] › tests/e2e/fragilite.spec.ts:21:1 › le parcours fragilité garde la tentative, huit exercices et la synthèse
+
+    Test timeout of 60000ms exceeded.
+
+    Error: locator.click: Test timeout of 60000ms exceeded.
+    Call log:
+      - waiting for getByRole('button', { name: 'Ouvrir Qualifier une copropriété fragile', exact: true })
+
+
+      30 |   }}));
+      31 |   await page.goto("./");
+    > 32 |   await page.getByRole("button",{name:ouverture,exact:true}).click();
+         |                                                              ^
+      33 |   await expect(page.getByRole("heading",{name:titre,exact:true})).toBeVisible();
+      34 |   await expect(page).toHaveURL(new RegExp(chapitre));
+      35 |
+        at /Users/jb/Code/academie/web/tests/e2e/fragilite.spec.ts:32:62
+
+    Error Context: test-results/fragilite-le-parcours-frag-6d8dd-it-exercices-et-la-synthèse-ordinateur/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/fragilite-le-parcours-frag-6d8dd-it-exercices-et-la-synthèse-ordinateur/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/fragilite-le-parcours-frag-6d8dd-it-exercices-et-la-synthèse-ordinateur/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [ordinateur] › tests/e2e/fragilite.spec.ts:21:1 › le parcours fragilité garde la tentative, huit exercices et la synthèse

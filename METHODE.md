@@ -571,3 +571,29 @@ sans analyse IA ; un support manquant ne permet pas de créditer l'exercice.
 La récupération des figures suit la documentation primaire
 [Docling](https://docling-project.github.io/docling/examples/export_figures/),
 mais une région détectée n'est pas un support complet ni un droit de diffusion.
+
+## 39. Le chemin construit depuis une demande (06/09/2026)
+
+**Ce qu'on fait** : partir d'une capacité choisie, sonder les préacquis,
+proposer des étapes avec critères et bifurcations, puis ajuster l'aide
+aux réponses réelles. Le niveau décrit une capacité locale. Les extensions
+restent reliées au métier ; leur présence ne certifie aucune profession.
+
+**Pourquoi** : les connaissances antérieures, la tâche et les buts changent
+ce qui peut aider l'élève. Exemple raisonné, essai, explication et cas
+nouveau sont choisis selon l'objectif, avec rappels assurés par le moteur
+existant. Le protocole complet est un choix de conception à éprouver.
+
+**Sources** : résumé et conclusions 5-1/5-4 de
+[How People Learn II (2018)](https://www.nationalacademies.org/read/24783/chapter/2),
+consultés ; recommandations de la page officielle
+[IES, Organizing Instruction and Study (2007)](https://ies.ed.gov/ncee/wwc/practiceguide/1),
+consultées : alterner exemples et problèmes, associer graphique et
+explication, relier concret et abstrait, rappeler et expliquer.
+Le guide distingue des niveaux de preuve ; ses recommandations ne prouvent
+pas l'efficacité d'un professeur IA ni le transfert professionnel local.
+
+**Contrôles** : dossier cohérent, notions sourcées, relecture indépendante,
+parcours réel, puis production de l'élève et essai différé. Le script ne
+juge pas une réponse libre ; aucune réussite personnelle n'est inventée.
+Détail : CHEMINS.md et décision 0051.

@@ -1,0 +1,36 @@
+✓ couverture des spécialités
+✓ frontières étude
+✓ expérience pédagogique
+✓ chronologie adversaire
+✓ chronologie du journal
+✓ moteur FSRS
+✓ séance du jour
+✓ carte-monde
+✓ quiz + carnet d'erreurs
+✓ chaîne donnée → écran
+✓ chapitres v2
+✓ preparation migration v2
+✓ usine pas à pas
+✓ programme
+✓ programme IFSI 2026
+✓ corrections copro et artefacts
+✗ serveur d'état
+        socketserver.TCPServer.server_bind(self)
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+      File "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/socketserver.py", line 478, in server_bind
+        self.socket.bind(self.server_address)
+        ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+    PermissionError: [Errno 1] Operation not permitted
+
+    ----------------------------------------------------------------------
+    Ran 43 tests in 2.622s
+
+    FAILED (errors=1)
+
+✓ registre des sources
+✓ rituel
+✓ export Anki
+✓ banque réelle — banque : 84 carte(s) — 4 brouillon, 4 signale, 76 valide
+✓ chapitres réels — chapitres : 9 chapitre(s), 55 carte(s) — 12 brouillon, 43 valide ; notes A 23, B 20, C 12
+
+1 suite(s) en échec : serveur d'état

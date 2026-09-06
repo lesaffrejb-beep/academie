@@ -1,0 +1,88 @@
+{
+  "version": 1,
+  "statut": "brouillon",
+  "demande": "Exemple fictif avancé : défendre puis réviser un avis au conseil syndical",
+  "cible_observable": "Justifier un avis conditionnel dans un cas nouveau",
+  "metier": "copro",
+  "ancrage": {
+    "chapitre": "droit.organes.le-syndic-et-ses-missions",
+    "justification": "Délimiter la décision du gestionnaire"
+  },
+  "prerequis": [
+    {
+      "notion": "Lire une consigne",
+      "etat": "inconnu"
+    },
+    {
+      "notion": "Argumenter une comparaison",
+      "etat": "declare"
+    }
+  ],
+  "diagnostic": {
+    "productions": [
+      {
+        "consigne": "Expliquer un premier choix",
+        "criteres": [
+          "Nommer une limite"
+        ]
+      }
+    ],
+    "reussite": [
+      "comparer"
+    ],
+    "echec": [
+      "comparer"
+    ]
+  },
+  "sources": [
+    {
+      "id": "guide",
+      "titre": "Guide à identifier",
+      "statut": "a_trouver",
+      "manque": "Original public à retrouver"
+    }
+  ],
+  "etapes": [
+    {
+      "id": "comparer",
+      "titre": "Comparer deux avis",
+      "niveau": 2,
+      "justification_niveau": "Relier une règle et sa limite",
+      "dependances": [],
+      "chapitre": "droit.organes.le-syndic-et-ses-missions",
+      "disponibilite": "a_construire",
+      "transversalites": [],
+      "notions": [
+        "Périmètre de décision"
+      ],
+      "sources": [
+        "guide"
+      ],
+      "exercices": [
+        {
+          "format": "libre",
+          "consigne": "Comparer les explications",
+          "justification": "Rendre le raisonnement observable",
+          "criteres": [
+            "Séparer fait et hypothèse"
+          ],
+          "sources": [
+            "guide"
+          ]
+        }
+      ],
+      "transfert": {
+        "cas_nouveau": "Défendre un avis dans un autre dossier fictif",
+        "criteres": [
+          "Adapter la limite"
+        ]
+      },
+      "reprise_echec": {
+        "consigne": "Reprendre la distinction puis retenter",
+        "etapes": [
+          "comparer"
+        ]
+      }
+    }
+  ]
+}

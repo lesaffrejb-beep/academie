@@ -1,0 +1,619 @@
+{
+  "id": "satellite.pathologie.facade-ancienne-avant-devis",
+  "titre": "Façade ancienne : instruire avant de choisir un devis",
+  "domaine": "pathologie",
+  "branche": "facades",
+  "niveau": 4,
+  "prerequis": [],
+  "ponts": [
+    "pathologie.facades.diagnostiquer-une-facade-avant-devis"
+  ],
+  "satellite": true,
+  "rattachement_propose": "pathologie.facades.diagnostiquer-une-facade-avant-devis",
+  "objectifs": [
+    "Séparer constat, hypothèse causale et matériau encore inconnu.",
+    "Définir les questions d'un diagnostic reliant support, revêtement et gestion des eaux.",
+    "Comparer des propositions sur leur objet et réviser un avis lorsque les preuves évoluent."
+  ],
+  "amorce": {
+    "question": "Cas fictif : une façade claire porte des traces sous les appuis et un revêtement sans fissure visible ; un devis propose un nettoyage uniforme, sans reconnaissance du matériau ni examen des ouvrages d'eau : quel avis provisoire donnes-tu au conseil ?",
+    "aide": "Écris ce qui est vu, supposé et manquant avant de choisir une intervention.",
+    "reponse_attendue": "Le dossier ne permet pas encore de définir le nettoyage. La couleur et l'aspect du revêtement ne qualifient ni le matériau ni son état ; je demande un diagnostic reliant support, transformations et trajets de l'eau, avec les limites d'accès et les pièces qui pourraient changer l'avis."
+  },
+  "lecon": "Avant de comparer des devis pour une façade ancienne, tu dois savoir ce que la comparaison cherche à résoudre. Une couleur irrégulière, une pierre creusée et un revêtement qui masque les moulures ne posent pas nécessairement la même question. Ce dossier s'appuie sur le cahier de recommandations d'Angers, fiche Façades en pierre rédigée en 2023. Ses exemples servent à apprendre un raisonnement préalable ; ils ne définissent ni les travaux d'un bâtiment réel ni ses obligations actuelles.\n\nCommence par séparer les observations, les hypothèses et les inconnues. Dans un dossier fictif, « traces au pied du mur » décrit un constat rapporté. « Remontées capillaires » propose une explication. « Nature du support non reconnue » indique une limite. Passer directement du constat à un produit ferait disparaître les questions encore ouvertes. Une hypothèse devient utile quand tu précises quelle observation professionnelle pourrait la conforter ou la contredire.\n\nReconnais ensuite les matériaux et l'histoire de la façade. Le cahier distingue la pierre de taille, assemblée selon un appareil, des maçonneries de moellons généralement enduites. Il décrit le tuffeau comme une pierre calcaire poreuse et fragile. Une façade claire ne suffit pourtant pas à identifier ce matériau. Des archives, des transformations et un diagnostic sur place permettent de comprendre ce qui est conservé, recouvert ou remplacé. Ne transforme pas un exemple angevin en identification de toute façade ancienne.\n\nLis aussi la façade comme un ensemble d'ouvrages qui orientent l'eau. Le schéma du cahier relie couverture et évacuation, corniche, appui, larmier et soubassement. Un larmier vise à éloigner les eaux du parement ; des rejaillissements peuvent atteindre les parties basses. Cette lecture conduit à examiner les relations entre les traces, les joints et les ouvrages. Elle ne prouve pas que toute humidité vienne de la pluie. Demande au diagnostic de distinguer ce qui est observé, inaccessible et encore susceptible de plusieurs explications.\n\nLe choix d'une intervention dépend de cette connaissance. Le cahier souligne qu'un nettoyage inadapté peut accélérer les dégradations et endommager l'épiderme protecteur du tuffeau, appelé calcin. Une pierre rendue plus claire n'est donc pas une preuve suffisante de conservation. Les éléments permettant d'apprécier l'adéquation d'une méthode, dont des échantillons sur place dans le cadre professionnel, doivent répondre à l'état réel du support. Tu n'as pas à déduire ici une pression, un produit ou une méthode de remplacement.\n\nLa même prudence vaut pour les revêtements. Le cahier montre des situations où un enduit inadapté retient l'humidité et où un aspect extérieur intact masque une dégradation du tuffeau. Ce risque donne une question à instruire, pas une raison de supprimer tous les enduits. La distinction initiale entre pierre de taille et moellons reste nécessaire. Il faut établir la nature du revêtement, celle du support et leur comportement, puis faire définir une intervention compatible.\n\nExemple fictif : A propose de retrouver une teinte uniforme ; B prévoit de reconnaître le support mais ne décrit pas les parties accessibles. Tu peux reconnaître l'intérêt d'un entretien sans approuver A sur son seul résultat esthétique. Tu peux demander le contenu du diagnostic B sans le considérer complet par son intitulé. Ton avis compare les objets, relève les exclusions et annonce ce qui permettrait ensuite de choisir. Si un rapport confirme le tuffeau mais laisse la corniche inaccessible, seule une partie de l'incertitude est levée.\n\nEnfin, le cahier indique lui-même que ses fiches ne remplacent pas le règlement. Le dossier ne tranche aucune prescription opposable actuelle. Pour préparer le dialogue, rédige une demande de diagnostic distinguant matériaux, histoire, eaux, revêtements et limites d'accès, puis un avis conditionnel à réviser sur pièces. Cette production prépare le dialogue avec les professionnels ; elle ne certifie pas une compétence de diagnostic.",
+  "synthese": {
+    "consigne": "Cas nouveau fictif : un rapport identifie localement du tuffeau, propose une explication aux traces et laisse les ouvrages hauts non examinés ; une offre promet de rendre les moulures lisibles mais ne précise pas le procédé : rédige une note au conseil distinguant acquis, hypothèses, inconnues, demande complémentaire et condition d'évolution de ton avis.",
+    "attendus": [
+      "Limiter l'identification du tuffeau aux zones effectivement reconnues.",
+      "Conserver l'explication des traces comme hypothèse tant qu'elle n'est pas établie.",
+      "Demander l'examen des ouvrages hauts et des trajets de l'eau pertinents.",
+      "Demander comment le procédé sera apprécié au regard du support et de son état.",
+      "Reconnaître l'intérêt patrimonial sans le confondre avec une preuve de compatibilité.",
+      "Formuler une condition précise de révision de l'avis.",
+      "Ne déduire aucune prescription juridique actuelle du cahier de recommandations."
+    ]
+  },
+  "sources": [
+    {
+      "texte": "Angers, Cahier de recommandations du PSMV, pages PDF 2 et 11-14. Passages confrontés entre la fiche de 2023 et le document public diffusé en 2024. Cas fictifs ; recommandations patrimoniales.",
+      "url": "https://data.geopf.fr/annexes/gpu/documents/PSMV_244900015/e4859efbaa6a6b73f60a338e11f14048/244900015_cahier_recommandations_20241016.pdf#page=11",
+      "nature": "institution",
+      "parti": "Recommandations patrimoniales locales ; ne remplacent pas le règlement.",
+      "empreinte": "37599e98bfa1d90b13aa7ee1b7ca54e26f700b3614c2e9cc74a94e1c55ae4ea3"
+    }
+  ],
+  "provenance": {
+    "auteur": "modele",
+    "outil": "Codex",
+    "modele": "GPT-6 (identifiant précis non exposé)",
+    "genere_le": "2026-09-06",
+    "session": "objectif-lundi-20260906/graphe-facade",
+    "sources_retrouvees": 1,
+    "sources_concordantes": 0,
+    "sans_source": false
+  },
+  "statut": "valide",
+  "partage": "banque",
+  "verifie": "2026-09-06",
+  "version": 1,
+  "cartes": [
+    {
+      "id": "facade-ancienne-materiau-inconnu",
+      "chapitre": "satellite.pathologie.facade-ancienne-avant-devis",
+      "domaine": "pathologie",
+      "branche": "facades",
+      "type": "flash",
+      "niveau": 4,
+      "question": "Dans un dossier fictif, une façade claire est décrite comme du tuffeau sans reconnaissance des matériaux : que peux-tu tenir pour établi ?",
+      "reponse": "Seul l'aspect clair rapporté est établi ; la nature tuffeau reste une hypothèse à vérifier. Le diagnostic doit reconnaître matériaux, dispositions constructives et transformations avant de définir l'intervention.",
+      "explication": "Le cahier distingue pierre de taille et maçonnerie de moellons, puis demande une connaissance détaillée du support et de son histoire.",
+      "vigilance": "Une ressemblance ne suffit pas à choisir un procédé de nettoyage.",
+      "source": [
+        {
+          "texte": "Angers, Cahier de recommandations du PSMV, pages PDF 11. Passages confrontés entre la fiche de 2023 et le document public diffusé en 2024. Cas fictifs ; recommandations patrimoniales.",
+          "url": "https://data.geopf.fr/annexes/gpu/documents/PSMV_244900015/e4859efbaa6a6b73f60a338e11f14048/244900015_cahier_recommandations_20241016.pdf#page=11",
+          "nature": "institution",
+          "parti": "Recommandations patrimoniales locales ; ne remplacent pas le règlement.",
+          "empreinte": "37599e98bfa1d90b13aa7ee1b7ca54e26f700b3614c2e9cc74a94e1c55ae4ea3"
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "outil": "Codex",
+        "modele": "GPT-6 (identifiant précis non exposé)",
+        "genere_le": "2026-09-06",
+        "session": "objectif-lundi-20260906/graphe-facade",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "verifie": "2026-09-06",
+      "peremption": null,
+      "statut": "valide",
+      "partage": "banque",
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6 (identifiant précis non exposé)",
+        "session": "objectif-lundi-20260906/root/relecture-facade",
+        "date": "2026-09-06",
+        "rapport": "travail/facade-2026-09-06/RELECTURE-INDEPENDANTE.md",
+        "assertions": [
+          "Page 11 : pierre de taille/moellons, tuffeau local, diagnostic des matériaux et de leur histoire.",
+          "Pages 12-13 : ouvrages qui orientent les eaux, calcin et adéquation du nettoyage au support ; aucune recette de travaux reprise.",
+          "Page 14 : revêtement inadapté, humidité retenue et portée limitée des exemples ; aucune suppression générale des enduits.",
+          "Page 2 : recommandations distinctes du règlement ; hypothèses, limites d’accès et conditions de révision appliquées à des cas fictifs."
+        ],
+        "sources": [
+          "Copie locale 707940074f138868 : usine 54/54 ; passages 2, 11-14 confrontés et rendus 12-14 examinés.",
+          "PDF officiel 37599e98bfa1d90b : pages 11-14 texte identique vérifié par le coordinateur ; différence p2 documentée."
+        ]
+      }
+    },
+    {
+      "id": "facade-ancienne-traces-et-causes",
+      "chapitre": "satellite.pathologie.facade-ancienne-avant-devis",
+      "domaine": "pathologie",
+      "branche": "facades",
+      "type": "qcm",
+      "niveau": 4,
+      "question": "Cas fictif : des traces apparaissent sous des appuis et au pied du mur après pluie, sans autre examen ; quelle conclusion est défendable ?",
+      "reponse": "Les traces orientent l'examen des trajets de l'eau mais ne départagent pas encore ruissellement, rejaillissement et autres apports d'humidité. Il faut confronter leur localisation aux ouvrages et aux observations complémentaires.",
+      "explication": "Le schéma du cahier représente plusieurs trajets de l'eau autour d'une façade. Une position de tache ne devient pas à elle seule la preuve d'une cause unique.",
+      "vigilance": "La date d'observation après pluie ne démontre pas que la pluie explique tout.",
+      "source": [
+        {
+          "texte": "Angers, Cahier de recommandations du PSMV, pages PDF 12. Passages confrontés entre la fiche de 2023 et le document public diffusé en 2024. Cas fictifs ; recommandations patrimoniales.",
+          "url": "https://data.geopf.fr/annexes/gpu/documents/PSMV_244900015/e4859efbaa6a6b73f60a338e11f14048/244900015_cahier_recommandations_20241016.pdf#page=12",
+          "nature": "institution",
+          "parti": "Recommandations patrimoniales locales ; ne remplacent pas le règlement.",
+          "empreinte": "37599e98bfa1d90b13aa7ee1b7ca54e26f700b3614c2e9cc74a94e1c55ae4ea3"
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "outil": "Codex",
+        "modele": "GPT-6 (identifiant précis non exposé)",
+        "genere_le": "2026-09-06",
+        "session": "objectif-lundi-20260906/graphe-facade",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "verifie": "2026-09-06",
+      "peremption": null,
+      "statut": "valide",
+      "partage": "banque",
+      "choix": [
+        {
+          "texte": "Des remontées capillaires expliquent nécessairement toutes les traces.",
+          "correct": false,
+          "pourquoi_faux": "Une trace basse ne suffit pas à établir cette origine, ni à expliquer celles sous les appuis."
+        },
+        {
+          "texte": "Plusieurs apports restent possibles ; examiner leurs trajets avant de conclure.",
+          "correct": true
+        },
+        {
+          "texte": "La pluie étant observée, les joints et les ouvrages de toiture sont hors sujet.",
+          "correct": false,
+          "pourquoi_faux": "Ces ouvrages participent précisément à l'orientation et à l'évacuation des eaux."
+        },
+        {
+          "texte": "L'aspect des traces permet de choisir immédiatement la peinture qui convient.",
+          "correct": false,
+          "pourquoi_faux": "L'aspect ne renseigne ni complètement le support ni la cause de l'humidité."
+        }
+      ],
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6 (identifiant précis non exposé)",
+        "session": "objectif-lundi-20260906/root/relecture-facade",
+        "date": "2026-09-06",
+        "rapport": "travail/facade-2026-09-06/RELECTURE-INDEPENDANTE.md",
+        "assertions": [
+          "Page 11 : pierre de taille/moellons, tuffeau local, diagnostic des matériaux et de leur histoire.",
+          "Pages 12-13 : ouvrages qui orientent les eaux, calcin et adéquation du nettoyage au support ; aucune recette de travaux reprise.",
+          "Page 14 : revêtement inadapté, humidité retenue et portée limitée des exemples ; aucune suppression générale des enduits.",
+          "Page 2 : recommandations distinctes du règlement ; hypothèses, limites d’accès et conditions de révision appliquées à des cas fictifs."
+        ],
+        "sources": [
+          "Copie locale 707940074f138868 : usine 54/54 ; passages 2, 11-14 confrontés et rendus 12-14 examinés.",
+          "PDF officiel 37599e98bfa1d90b : pages 11-14 texte identique vérifié par le coordinateur ; différence p2 documentée."
+        ]
+      }
+    },
+    {
+      "id": "facade-ancienne-parcours-eau",
+      "chapitre": "satellite.pathologie.facade-ancienne-avant-devis",
+      "domaine": "pathologie",
+      "branche": "facades",
+      "type": "libre",
+      "niveau": 4,
+      "question": "Cas fictif : un devis ne décrit que le parement ; quels ouvrages et relations demandes-tu d'examiner pour comprendre les traces autour d'une corniche, d'un appui, d'un larmier et du soubassement ?",
+      "reponse": "Demande un examen reliant couverture et évacuation des eaux, corniche, appuis, larmiers, joints et pied de façade aux traces localisées. Le rapport doit dire ce qui a été observé, ce qui reste inaccessible et quelles causes demeurent possibles.",
+      "explication": "Le cahier présente la corniche comme protection, le larmier comme moyen d'écarter les eaux du parement, et les rejaillissements comme une voie d'altération au pied du mur. Ce sont des pistes d'examen, pas un diagnostic du cas.",
+      "vigilance": "Une liste d'ouvrages sans relation avec les traces ne résout pas la cause.",
+      "source": [
+        {
+          "texte": "Angers, Cahier de recommandations du PSMV, pages PDF 12-14. Passages confrontés entre la fiche de 2023 et le document public diffusé en 2024. Cas fictifs ; recommandations patrimoniales.",
+          "url": "https://data.geopf.fr/annexes/gpu/documents/PSMV_244900015/e4859efbaa6a6b73f60a338e11f14048/244900015_cahier_recommandations_20241016.pdf#page=12",
+          "nature": "institution",
+          "parti": "Recommandations patrimoniales locales ; ne remplacent pas le règlement.",
+          "empreinte": "37599e98bfa1d90b13aa7ee1b7ca54e26f700b3614c2e9cc74a94e1c55ae4ea3"
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "outil": "Codex",
+        "modele": "GPT-6 (identifiant précis non exposé)",
+        "genere_le": "2026-09-06",
+        "session": "objectif-lundi-20260906/graphe-facade",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "verifie": "2026-09-06",
+      "peremption": null,
+      "statut": "valide",
+      "partage": "banque",
+      "aide": "Relie l'arrivée, le chemin et l'évacuation de l'eau aux zones observées.",
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6 (identifiant précis non exposé)",
+        "session": "objectif-lundi-20260906/root/relecture-facade",
+        "date": "2026-09-06",
+        "rapport": "travail/facade-2026-09-06/RELECTURE-INDEPENDANTE.md",
+        "assertions": [
+          "Page 11 : pierre de taille/moellons, tuffeau local, diagnostic des matériaux et de leur histoire.",
+          "Pages 12-13 : ouvrages qui orientent les eaux, calcin et adéquation du nettoyage au support ; aucune recette de travaux reprise.",
+          "Page 14 : revêtement inadapté, humidité retenue et portée limitée des exemples ; aucune suppression générale des enduits.",
+          "Page 2 : recommandations distinctes du règlement ; hypothèses, limites d’accès et conditions de révision appliquées à des cas fictifs."
+        ],
+        "sources": [
+          "Copie locale 707940074f138868 : usine 54/54 ; passages 2, 11-14 confrontés et rendus 12-14 examinés.",
+          "PDF officiel 37599e98bfa1d90b : pages 11-14 texte identique vérifié par le coordinateur ; différence p2 documentée."
+        ]
+      }
+    },
+    {
+      "id": "facade-ancienne-nettoyage-calcin",
+      "chapitre": "satellite.pathologie.facade-ancienne-avant-devis",
+      "domaine": "pathologie",
+      "branche": "facades",
+      "type": "qcm",
+      "niveau": 4,
+      "question": "Cas fictif : une proposition promet une pierre très claire après nettoyage, sans diagnostic ni essai sur place ; quel point doit conditionner l'avis ?",
+      "reponse": "L'adéquation du procédé au matériau, à son état et à son épiderme doit être établie avant de retenir la proposition. La clarté obtenue ne suffit pas à démontrer la conservation de la pierre.",
+      "explication": "Le cahier explique le rôle protecteur du calcin et le risque d'altération par un nettoyage inadapté ; il indique l'intérêt d'échantillons sur place pour apprécier la méthode.",
+      "vigilance": "Le module ne choisit ni abrasif, ni pression, ni produit de traitement.",
+      "source": [
+        {
+          "texte": "Angers, Cahier de recommandations du PSMV, pages PDF 12-13. Passages confrontés entre la fiche de 2023 et le document public diffusé en 2024. Cas fictifs ; recommandations patrimoniales.",
+          "url": "https://data.geopf.fr/annexes/gpu/documents/PSMV_244900015/e4859efbaa6a6b73f60a338e11f14048/244900015_cahier_recommandations_20241016.pdf#page=12",
+          "nature": "institution",
+          "parti": "Recommandations patrimoniales locales ; ne remplacent pas le règlement.",
+          "empreinte": "37599e98bfa1d90b13aa7ee1b7ca54e26f700b3614c2e9cc74a94e1c55ae4ea3"
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "outil": "Codex",
+        "modele": "GPT-6 (identifiant précis non exposé)",
+        "genere_le": "2026-09-06",
+        "session": "objectif-lundi-20260906/graphe-facade",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "verifie": "2026-09-06",
+      "peremption": null,
+      "statut": "valide",
+      "partage": "banque",
+      "choix": [
+        {
+          "texte": "Choisir la proposition dont la photographie paraît la plus claire.",
+          "correct": false,
+          "pourquoi_faux": "L'apparence ne démontre pas que l'épiderme de la pierre est préservé."
+        },
+        {
+          "texte": "Refuser définitivement tout nettoyage, quel que soit le diagnostic.",
+          "correct": false,
+          "pourquoi_faux": "Le cahier conditionne le procédé au support ; il ne conclut pas à une impossibilité générale."
+        },
+        {
+          "texte": "Demander diagnostic du support et éléments permettant d'évaluer l'adéquation du procédé.",
+          "correct": true
+        },
+        {
+          "texte": "Retenir le procédé utilisé sur une pierre plus dure du voisinage.",
+          "correct": false,
+          "pourquoi_faux": "La méthode ne se transpose pas sans identification et examen de la pierre concernée."
+        }
+      ],
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6 (identifiant précis non exposé)",
+        "session": "objectif-lundi-20260906/root/relecture-facade",
+        "date": "2026-09-06",
+        "rapport": "travail/facade-2026-09-06/RELECTURE-INDEPENDANTE.md",
+        "assertions": [
+          "Page 11 : pierre de taille/moellons, tuffeau local, diagnostic des matériaux et de leur histoire.",
+          "Pages 12-13 : ouvrages qui orientent les eaux, calcin et adéquation du nettoyage au support ; aucune recette de travaux reprise.",
+          "Page 14 : revêtement inadapté, humidité retenue et portée limitée des exemples ; aucune suppression générale des enduits.",
+          "Page 2 : recommandations distinctes du règlement ; hypothèses, limites d’accès et conditions de révision appliquées à des cas fictifs."
+        ],
+        "sources": [
+          "Copie locale 707940074f138868 : usine 54/54 ; passages 2, 11-14 confrontés et rendus 12-14 examinés.",
+          "PDF officiel 37599e98bfa1d90b : pages 11-14 texte identique vérifié par le coordinateur ; différence p2 documentée."
+        ]
+      }
+    },
+    {
+      "id": "facade-ancienne-enduit-contradictoire",
+      "chapitre": "satellite.pathologie.facade-ancienne-avant-devis",
+      "domaine": "pathologie",
+      "branche": "facades",
+      "type": "role",
+      "niveau": 4,
+      "question": "Cas fictif : un conseiller demande de retirer tous les enduits parce qu'un guide montre du tuffeau dégradé sous ciment ; comment réponds-tu sans minimiser le risque ni généraliser ?",
+      "reponse": "Le risque montré mérite un examen du support, du revêtement et de l'humidité ; il ne prouve pas que tout enduit sur toute maçonnerie soit inadapté. Je demande une reconnaissance et un avis motivé avant de définir les travaux.",
+      "explication": "Le cahier distingue le parement en pierre de taille de maçonneries de moellons généralement enduites. La page consacrée aux revêtements inadaptés ne justifie donc pas une suppression indifférenciée.",
+      "vigilance": "Ne remplace pas une généralisation favorable à l'enduit par une généralisation inverse.",
+      "source": [
+        {
+          "texte": "Angers, Cahier de recommandations du PSMV, pages PDF 11-14. Passages confrontés entre la fiche de 2023 et le document public diffusé en 2024. Cas fictifs ; recommandations patrimoniales.",
+          "url": "https://data.geopf.fr/annexes/gpu/documents/PSMV_244900015/e4859efbaa6a6b73f60a338e11f14048/244900015_cahier_recommandations_20241016.pdf#page=11",
+          "nature": "institution",
+          "parti": "Recommandations patrimoniales locales ; ne remplacent pas le règlement.",
+          "empreinte": "37599e98bfa1d90b13aa7ee1b7ca54e26f700b3614c2e9cc74a94e1c55ae4ea3"
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "outil": "Codex",
+        "modele": "GPT-6 (identifiant précis non exposé)",
+        "genere_le": "2026-09-06",
+        "session": "objectif-lundi-20260906/graphe-facade",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "verifie": "2026-09-06",
+      "peremption": null,
+      "statut": "valide",
+      "partage": "banque",
+      "aide": "Reconnais le risque décrit, puis nomme ce qu'il faut établir dans le cas présent.",
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6 (identifiant précis non exposé)",
+        "session": "objectif-lundi-20260906/root/relecture-facade",
+        "date": "2026-09-06",
+        "rapport": "travail/facade-2026-09-06/RELECTURE-INDEPENDANTE.md",
+        "assertions": [
+          "Page 11 : pierre de taille/moellons, tuffeau local, diagnostic des matériaux et de leur histoire.",
+          "Pages 12-13 : ouvrages qui orientent les eaux, calcin et adéquation du nettoyage au support ; aucune recette de travaux reprise.",
+          "Page 14 : revêtement inadapté, humidité retenue et portée limitée des exemples ; aucune suppression générale des enduits.",
+          "Page 2 : recommandations distinctes du règlement ; hypothèses, limites d’accès et conditions de révision appliquées à des cas fictifs."
+        ],
+        "sources": [
+          "Copie locale 707940074f138868 : usine 54/54 ; passages 2, 11-14 confrontés et rendus 12-14 examinés.",
+          "PDF officiel 37599e98bfa1d90b : pages 11-14 texte identique vérifié par le coordinateur ; différence p2 documentée."
+        ]
+      }
+    },
+    {
+      "id": "facade-ancienne-comparaison-offres",
+      "chapitre": "satellite.pathologie.facade-ancienne-avant-devis",
+      "domaine": "pathologie",
+      "branche": "facades",
+      "type": "qcm",
+      "niveau": 4,
+      "question": "Cas fictif : A promet une teinte uniforme et B prévoit un diagnostic sans annoncer de traitement définitif ; que peux-tu conclure sur ces offres ?",
+      "reponse": "Leurs prestations et leurs résultats attendus diffèrent : il faut préciser le besoin et rendre les périmètres comparables avant de choisir. La présence d'un diagnostic dans B ne prouve pas à elle seule sa qualité, mais l'uniformité annoncée par A ne démontre pas sa compatibilité avec le support.",
+      "explication": "Le cahier subordonne l'intervention à la connaissance du matériau et de son état ; l'appréciation esthétique ne remplace pas cet examen.",
+      "vigilance": "Un intitulé de prestation ne prouve pas qu'elle sera suffisamment réalisée.",
+      "source": [
+        {
+          "texte": "Angers, Cahier de recommandations du PSMV, pages PDF 11-13. Passages confrontés entre la fiche de 2023 et le document public diffusé en 2024. Cas fictifs ; recommandations patrimoniales.",
+          "url": "https://data.geopf.fr/annexes/gpu/documents/PSMV_244900015/e4859efbaa6a6b73f60a338e11f14048/244900015_cahier_recommandations_20241016.pdf#page=11",
+          "nature": "institution",
+          "parti": "Recommandations patrimoniales locales ; ne remplacent pas le règlement.",
+          "empreinte": "37599e98bfa1d90b13aa7ee1b7ca54e26f700b3614c2e9cc74a94e1c55ae4ea3"
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "outil": "Codex",
+        "modele": "GPT-6 (identifiant précis non exposé)",
+        "genere_le": "2026-09-06",
+        "session": "objectif-lundi-20260906/graphe-facade",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "verifie": "2026-09-06",
+      "peremption": null,
+      "statut": "valide",
+      "partage": "banque",
+      "choix": [
+        {
+          "texte": "A est préférable puisque son résultat esthétique est plus précis.",
+          "correct": false,
+          "pourquoi_faux": "La précision esthétique laisse ouverte la question du matériau et des risques."
+        },
+        {
+          "texte": "B est nécessairement complète parce que le mot diagnostic figure au devis.",
+          "correct": false,
+          "pourquoi_faux": "Le contenu, les limites et les compétences mobilisées doivent être explicités."
+        },
+        {
+          "texte": "Les offres sont équivalentes puisqu'elles concernent la même façade.",
+          "correct": false,
+          "pourquoi_faux": "Leur objet et leurs investigations diffèrent, même si le bâtiment est le même."
+        },
+        {
+          "texte": "Clarifier le besoin, les investigations et les exclusions avant la comparaison.",
+          "correct": true
+        }
+      ],
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6 (identifiant précis non exposé)",
+        "session": "objectif-lundi-20260906/root/relecture-facade",
+        "date": "2026-09-06",
+        "rapport": "travail/facade-2026-09-06/RELECTURE-INDEPENDANTE.md",
+        "assertions": [
+          "Page 11 : pierre de taille/moellons, tuffeau local, diagnostic des matériaux et de leur histoire.",
+          "Pages 12-13 : ouvrages qui orientent les eaux, calcin et adéquation du nettoyage au support ; aucune recette de travaux reprise.",
+          "Page 14 : revêtement inadapté, humidité retenue et portée limitée des exemples ; aucune suppression générale des enduits.",
+          "Page 2 : recommandations distinctes du règlement ; hypothèses, limites d’accès et conditions de révision appliquées à des cas fictifs."
+        ],
+        "sources": [
+          "Copie locale 707940074f138868 : usine 54/54 ; passages 2, 11-14 confrontés et rendus 12-14 examinés.",
+          "PDF officiel 37599e98bfa1d90b : pages 11-14 texte identique vérifié par le coordinateur ; différence p2 documentée."
+        ]
+      }
+    },
+    {
+      "id": "facade-ancienne-revision-avis",
+      "chapitre": "satellite.pathologie.facade-ancienne-avant-devis",
+      "domaine": "pathologie",
+      "branche": "facades",
+      "type": "libre",
+      "niveau": 4,
+      "question": "Cas fictif : le rapport confirme désormais le tuffeau mais laisse inaccessible une corniche et ne conclut pas sur l'origine des traces ; comment révises-tu ton avis initial ?",
+      "reponse": "La nature du matériau n'est plus une simple hypothèse dans le périmètre reconnu ; les causes et l'état de la corniche restent indéterminés. L'avis doit conserver ces limites et préciser quelle investigation professionnelle pourrait les lever avant de définir l'intervention.",
+      "explication": "Le diagnostic détaillé demandé dans le cahier porte à la fois sur les matériaux et sur l'état global, avec recherche des causes. Une information nouvelle peut résoudre une question sans fermer le dossier.",
+      "vigilance": "N'étends pas une reconnaissance locale à toutes les parties non examinées.",
+      "source": [
+        {
+          "texte": "Angers, Cahier de recommandations du PSMV, pages PDF 11-14. Passages confrontés entre la fiche de 2023 et le document public diffusé en 2024. Cas fictifs ; recommandations patrimoniales.",
+          "url": "https://data.geopf.fr/annexes/gpu/documents/PSMV_244900015/e4859efbaa6a6b73f60a338e11f14048/244900015_cahier_recommandations_20241016.pdf#page=11",
+          "nature": "institution",
+          "parti": "Recommandations patrimoniales locales ; ne remplacent pas le règlement.",
+          "empreinte": "37599e98bfa1d90b13aa7ee1b7ca54e26f700b3614c2e9cc74a94e1c55ae4ea3"
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "outil": "Codex",
+        "modele": "GPT-6 (identifiant précis non exposé)",
+        "genere_le": "2026-09-06",
+        "session": "objectif-lundi-20260906/graphe-facade",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "verifie": "2026-09-06",
+      "peremption": null,
+      "statut": "valide",
+      "partage": "banque",
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6 (identifiant précis non exposé)",
+        "session": "objectif-lundi-20260906/root/relecture-facade",
+        "date": "2026-09-06",
+        "rapport": "travail/facade-2026-09-06/RELECTURE-INDEPENDANTE.md",
+        "assertions": [
+          "Page 11 : pierre de taille/moellons, tuffeau local, diagnostic des matériaux et de leur histoire.",
+          "Pages 12-13 : ouvrages qui orientent les eaux, calcin et adéquation du nettoyage au support ; aucune recette de travaux reprise.",
+          "Page 14 : revêtement inadapté, humidité retenue et portée limitée des exemples ; aucune suppression générale des enduits.",
+          "Page 2 : recommandations distinctes du règlement ; hypothèses, limites d’accès et conditions de révision appliquées à des cas fictifs."
+        ],
+        "sources": [
+          "Copie locale 707940074f138868 : usine 54/54 ; passages 2, 11-14 confrontés et rendus 12-14 examinés.",
+          "PDF officiel 37599e98bfa1d90b : pages 11-14 texte identique vérifié par le coordinateur ; différence p2 documentée."
+        ]
+      }
+    },
+    {
+      "id": "facade-ancienne-recommandation-reglement",
+      "chapitre": "satellite.pathologie.facade-ancienne-avant-devis",
+      "domaine": "pathologie",
+      "branche": "facades",
+      "type": "role",
+      "niveau": 4,
+      "question": "Un interlocuteur présente la fiche-conseil Angers comme la preuve d'une obligation opposable actuelle pour son projet : quelle distinction poses-tu ?",
+      "reponse": "Cette fiche expose des recommandations et précise qu'elle ne se substitue pas au règlement. Pour qualifier les prescriptions applicables au projet, il faut retrouver les pièces réglementaires et leur portée ; ce dossier ne fournit pas cette vérification juridique actuelle.",
+      "explication": "La page de sommaire sépare expressément les fiches-conseil des prescriptions opposables du règlement du PSMV. Une recommandation technique ne devient pas une règle juridique par sa seule publication institutionnelle.",
+      "vigilance": "Ne donne ni autorisation supposée, ni délai, ni procédure actuelle non vérifiée.",
+      "source": [
+        {
+          "texte": "Angers, Cahier de recommandations du PSMV, pages PDF 2. Passages confrontés entre la fiche de 2023 et le document public diffusé en 2024. Cas fictifs ; recommandations patrimoniales.",
+          "url": "https://data.geopf.fr/annexes/gpu/documents/PSMV_244900015/e4859efbaa6a6b73f60a338e11f14048/244900015_cahier_recommandations_20241016.pdf#page=2",
+          "nature": "institution",
+          "parti": "Recommandations patrimoniales locales ; ne remplacent pas le règlement.",
+          "empreinte": "37599e98bfa1d90b13aa7ee1b7ca54e26f700b3614c2e9cc74a94e1c55ae4ea3"
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "outil": "Codex",
+        "modele": "GPT-6 (identifiant précis non exposé)",
+        "genere_le": "2026-09-06",
+        "session": "objectif-lundi-20260906/graphe-facade",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "verifie": "2026-09-06",
+      "peremption": null,
+      "statut": "valide",
+      "partage": "banque",
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6 (identifiant précis non exposé)",
+        "session": "objectif-lundi-20260906/root/relecture-facade",
+        "date": "2026-09-06",
+        "rapport": "travail/facade-2026-09-06/RELECTURE-INDEPENDANTE.md",
+        "assertions": [
+          "Page 11 : pierre de taille/moellons, tuffeau local, diagnostic des matériaux et de leur histoire.",
+          "Pages 12-13 : ouvrages qui orientent les eaux, calcin et adéquation du nettoyage au support ; aucune recette de travaux reprise.",
+          "Page 14 : revêtement inadapté, humidité retenue et portée limitée des exemples ; aucune suppression générale des enduits.",
+          "Page 2 : recommandations distinctes du règlement ; hypothèses, limites d’accès et conditions de révision appliquées à des cas fictifs."
+        ],
+        "sources": [
+          "Copie locale 707940074f138868 : usine 54/54 ; passages 2, 11-14 confrontés et rendus 12-14 examinés.",
+          "PDF officiel 37599e98bfa1d90b : pages 11-14 texte identique vérifié par le coordinateur ; différence p2 documentée."
+        ]
+      }
+    },
+    {
+      "id": "facade-ancienne-note-au-conseil",
+      "chapitre": "satellite.pathologie.facade-ancienne-avant-devis",
+      "domaine": "pathologie",
+      "branche": "facades",
+      "type": "synthese",
+      "niveau": 4,
+      "question": "Cas fictif nouveau : une façade présente un pied de mur taché, des moulures masquées et un revêtement intact en apparence ; le matériau reste inconnu, alors que le conseil veut valider un simple nettoyage : quel avis provisoire rédiges-tu ?",
+      "reponse": "L'aspect ne permet pas de qualifier le support ni d'écarter un problème sous le revêtement ; le nettoyage reste à définir après diagnostic. Demande reconnaissance des matériaux et de l'histoire de la façade, examen des trajets de l'eau et des ouvrages, puis une proposition motivée dont les limites et les conditions de révision sont explicites.",
+      "explication": "Le cahier relie l'histoire du bâti, les matériaux, la gestion des eaux et les revêtements à l'analyse préalable. Le cas est inventé et aucune cause n'y est établie.",
+      "vigilance": "L'avis organise les questions à résoudre, il n'est pas un ordre de travaux.",
+      "source": [
+        {
+          "texte": "Angers, Cahier de recommandations du PSMV, pages PDF 11-14. Passages confrontés entre la fiche de 2023 et le document public diffusé en 2024. Cas fictifs ; recommandations patrimoniales.",
+          "url": "https://data.geopf.fr/annexes/gpu/documents/PSMV_244900015/e4859efbaa6a6b73f60a338e11f14048/244900015_cahier_recommandations_20241016.pdf#page=11",
+          "nature": "institution",
+          "parti": "Recommandations patrimoniales locales ; ne remplacent pas le règlement.",
+          "empreinte": "37599e98bfa1d90b13aa7ee1b7ca54e26f700b3614c2e9cc74a94e1c55ae4ea3"
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "outil": "Codex",
+        "modele": "GPT-6 (identifiant précis non exposé)",
+        "genere_le": "2026-09-06",
+        "session": "objectif-lundi-20260906/graphe-facade",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "verifie": "2026-09-06",
+      "peremption": null,
+      "statut": "valide",
+      "partage": "banque",
+      "attendus": [
+        "Séparer observations rapportées, hypothèses et inconnues.",
+        "Demander la reconnaissance des matériaux et des transformations.",
+        "Relier les traces aux eaux et aux ouvrages sans fixer une cause unique.",
+        "Exiger une appréciation du procédé au regard du support et de son état.",
+        "Conserver un argument favorable à l'entretien sans en déduire le traitement.",
+        "Nommer l'information susceptible de faire réviser l'avis."
+      ],
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6 (identifiant précis non exposé)",
+        "session": "objectif-lundi-20260906/root/relecture-facade",
+        "date": "2026-09-06",
+        "rapport": "travail/facade-2026-09-06/RELECTURE-INDEPENDANTE.md",
+        "assertions": [
+          "Page 11 : pierre de taille/moellons, tuffeau local, diagnostic des matériaux et de leur histoire.",
+          "Pages 12-13 : ouvrages qui orientent les eaux, calcin et adéquation du nettoyage au support ; aucune recette de travaux reprise.",
+          "Page 14 : revêtement inadapté, humidité retenue et portée limitée des exemples ; aucune suppression générale des enduits.",
+          "Page 2 : recommandations distinctes du règlement ; hypothèses, limites d’accès et conditions de révision appliquées à des cas fictifs."
+        ],
+        "sources": [
+          "Copie locale 707940074f138868 : usine 54/54 ; passages 2, 11-14 confrontés et rendus 12-14 examinés.",
+          "PDF officiel 37599e98bfa1d90b : pages 11-14 texte identique vérifié par le coordinateur ; différence p2 documentée."
+        ]
+      }
+    }
+  ],
+  "verifie_par": {
+    "outil": "Codex",
+    "modele": "GPT-6 (identifiant précis non exposé)",
+    "session": "objectif-lundi-20260906/root/relecture-facade",
+    "date": "2026-09-06",
+    "rapport": "travail/facade-2026-09-06/RELECTURE-INDEPENDANTE.md",
+    "assertions": [
+      "Page 11 : pierre de taille/moellons, tuffeau local, diagnostic des matériaux et de leur histoire.",
+      "Pages 12-13 : ouvrages qui orientent les eaux, calcin et adéquation du nettoyage au support ; aucune recette de travaux reprise.",
+      "Page 14 : revêtement inadapté, humidité retenue et portée limitée des exemples ; aucune suppression générale des enduits.",
+      "Page 2 : recommandations distinctes du règlement ; hypothèses, limites d’accès et conditions de révision appliquées à des cas fictifs."
+    ],
+    "sources": [
+      "Copie locale 707940074f138868 : usine 54/54 ; passages 2, 11-14 confrontés et rendus 12-14 examinés.",
+      "PDF officiel 37599e98bfa1d90b : pages 11-14 texte identique vérifié par le coordinateur ; différence p2 documentée."
+    ]
+  }
+}

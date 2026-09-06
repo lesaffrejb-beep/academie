@@ -5,6 +5,8 @@ import { useMagasin } from "../app/magasin";
 import { va } from "../app/routage";
 import { accentDuRang } from "../app/theme";
 import { compose } from "../moteur/composeur";
+import { etudeDisponible } from "../moteur/etude";
+import type { Noeud } from "../moteur/progression";
 import { Bouton } from "./Ui";
 import { Glyphe } from "./Icones";
 import { GrapheMindmap } from "./GrapheSavoir";
@@ -22,6 +24,20 @@ export function Arbre() {
   const neuves = seance.nouveau.length;
   const noeuds = monde.noeuds.filter((n) => n.domaine === region?.cle);
   const branches = monde.branches.filter((b) => b.domaine === region?.cle);
+  const etudesDisponibles = new Set(monde.noeuds.filter(n => {
+    const lecon = banque.etudes?.lecons[n.id];
+    return lecon && etudeDisponible(lecon, banque.cartes, journal, jour);
+  }).map(n => n.id));
+  const couverture = (chapitres: Noeud[]) => {
+    const socle = chapitres.filter(n => !n.satellite).length;
+    const etudesSocle = chapitres.filter(n => !n.satellite && etudesDisponibles.has(n.id)).length;
+    const approfondissements = chapitres.filter(n => n.satellite && etudesDisponibles.has(n.id)).length;
+    const disponibles = etudesSocle + approfondissements;
+    return <>
+      <p className="mesure-apercu">{`${socle} chapitre${socle > 1 ? "s" : ""} prévu${socle > 1 ? "s" : ""} dans le socle`}</p>
+      <p className="mesure-apercu">{`${disponibles} étude${disponibles !== 1 ? "s" : ""} disponible${disponibles !== 1 ? "s" : ""} : ${etudesSocle} du socle · ${approfondissements} approfondissement${approfondissements > 1 ? "s" : ""}`}</p>
+    </>;
+  };
   const cap = seance.arriereReetale > 0 ? voix("cap.reprise", { dues }, jour)
     : dues || neuves ? `${dues} ${dues === 1 ? LIB.carteDue : LIB.cartesDues} · ${neuves} ${neuves === 1 ? LIB.carteNeuve : LIB.cartesNeuves}` : voix("cap.rien", {}, jour);
   const choisi = (index: number) => selectionne((index + regions.length) % regions.length);
@@ -30,7 +46,8 @@ export function Arbre() {
     <header className="titre-arbre">
       <div>
         <h1 className="titre-page">{LIB.arbre}</h1>
-        <p>{monde.noeuds.length} {LIB.chapitres}<span className="separateur">/</span>{banque.cartes.length} {LIB.cartesDisponibles}</p>
+        {couverture(monde.noeuds)}
+        <p>{banque.cartes.length} {LIB.cartesDisponibles}</p>
       </div>
       <div className="graphe-vues" role="group" aria-label="Vue du programme">
         <button type="button" onClick={() => setVueMode("domaines")} aria-pressed={vueMode === "domaines"}>Domaines</button>
@@ -71,7 +88,8 @@ export function Arbre() {
           </div>
         </div>
         <h2>{region.titre}</h2>
-        <p className="mesure-apercu">{noeuds.length} {LIB.chapitres} · {region.cartesTotales} {LIB.cartesDisponibles}</p>
+        {couverture(noeuds)}
+        <p className="mesure-apercu">{region.cartesTotales} {LIB.cartesDisponibles}</p>
         <ul className="branches-apercu">{branches.map((b) => <li key={b.cle}><span />{b.titre}</li>)}</ul>
         <GrapheMindmap region={region} branches={branches} noeuds={noeuds} classe="mt-3 mb-4" />
         <button className="lien-action" onClick={() => va(`/domaine/${region.cle}`)}>{LIB.explorerDomaine}<ArrowRight size={18} /></button>

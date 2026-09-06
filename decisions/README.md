@@ -66,3 +66,5 @@ lisant le dépôt, une règle née d'un incident. Pas l'avancement
 | [0049](0049-pilote-documentaire-hybride-dix-pages.md) | 06/09/2026 | Dix pages croisées, supports contrôlés, étude satellite et publication isolée |
 
 - [0050 : collecte documentaire et accès pour le premier cercle](0050-essai-lundi-collecte-et-acces.md)
+
+- [0051. Le chemin construit depuis la demande](0051-chemin-professeur-depuis-la-demande.md)

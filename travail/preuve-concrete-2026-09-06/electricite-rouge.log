@@ -1,0 +1,52 @@
+
+> academie-client@2.0.0 e2e
+> playwright test electricite.spec.ts --project=ordinateur
+
+[WebServer] (node:29274) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] <script src="/academie/registerSW.js"> in "/index.html" can't be bundled without type="module" attribute
+[WebServer] (node:29322) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 2 tests using 1 worker
+
+(node:29332) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  1 [ordinateur] › tests/e2e/electricite.spec.ts:5:1 › électricité : du schéma à une réponse conservée (7.6s)
+(node:29363) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] 8:36:53 PM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓  2 [ordinateur] › tests/e2e/electricite.spec.ts:47:1 › électricité : le module copro ne fuit pas vers IFSI (446ms)
+
+
+  1) [ordinateur] › tests/e2e/electricite.spec.ts:5:1 › électricité : du schéma à une réponse conservée
+
+    TimeoutError: locator.click: Timeout 7000ms exceeded.
+    Call log:
+      - waiting for getByRole('button', { name: 'Ouvrir Comprendre les protections électriques', exact: true })
+
+
+       6 |   await page.route("**/api/v1/journal",route=>route.fulfill({json:{acceptees:route.request().postDataJSON().lignes.length,ignorees:0,manquantes:[],jusqu_a:new Date().toISOString()}}));
+       7 |   await page.goto("./");
+    >  8 |   await page.getByRole("button",{name:"Ouvrir Comprendre les protections électriques",exact:true}).click({timeout:7000});
+         |                                                                                                    ^
+       9 |   await expect(page.getByRole("heading",{name:titre,exact:true})).toBeVisible();
+      10 |   const reponse=()=>page.getByRole("textbox",{name:"Ta réponse",exact:true});
+      11 |   await reponse().fill("Une surcharge et un défaut d’isolement ne sont pas le même phénomène.");
+        at /Users/jb/Code/academie/web/tests/e2e/electricite.spec.ts:8:100
+
+    Error Context: test-results/electricite-électricité-du-schéma-à-une-réponse-conservée-ordinateur/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/electricite-électricité-du-schéma-à-une-réponse-conservée-ordinateur/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/electricite-électricité-du-schéma-à-une-réponse-conservée-ordinateur/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [ordinateur] › tests/e2e/electricite.spec.ts:5:1 › électricité : du schéma à une réponse conservée
+  1 passed (16.7s)

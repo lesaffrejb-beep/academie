@@ -1,0 +1,106 @@
+
+> academie-client@2.0.0 e2e
+> playwright test tests/e2e/fragilite.spec.ts
+
+[WebServer] (node:20269) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] <script src="/academie/registerSW.js"> in "/index.html" can't be bundled without type="module" attribute
+[WebServer] (node:20301) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 4 tests using 1 worker
+
+(node:20307) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  1 [ordinateur] › tests/e2e/fragilite.spec.ts:21:1 › le parcours fragilité garde la tentative, huit exercices et la synthèse (10.9s)
+(node:20336) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] 7:41:01 PM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓  2 [ordinateur] › tests/e2e/fragilite.spec.ts:122:1 › le cursus IFSI ne sert pas le parcours fragilité (479ms)
+(node:20349) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  3 [telephone] › tests/e2e/fragilite.spec.ts:21:1 › le parcours fragilité garde la tentative, huit exercices et la synthèse (10.8s)
+(node:20373) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] 7:41:14 PM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓  4 [telephone] › tests/e2e/fragilite.spec.ts:122:1 › le cursus IFSI ne sert pas le parcours fragilité (454ms)
+
+
+  1) [ordinateur] › tests/e2e/fragilite.spec.ts:21:1 › le parcours fragilité garde la tentative, huit exercices et la synthèse
+
+    Error: expect(locator).toHaveCount(expected) failed
+
+    Locator:  locator('.sources-etude a')
+    Expected: 3
+    Received: 1
+    Timeout:  10000ms
+
+    Call log:
+      - Expect "toHaveCount" with timeout 10000ms
+      - waiting for locator('.sources-etude a')
+        24 × locator resolved to 1 element
+           - unexpected value "1"
+
+
+      45 |   await page.getByText("Sources et fabrication",{exact:true}).click();
+      46 |   const sources=page.locator(".sources-etude a");
+    > 47 |   await expect(sources).toHaveCount(3);
+         |                         ^
+      48 |   for (const [index,numero] of [8,10,22].entries()) {
+      49 |     await expect(sources.nth(index)).toHaveAttribute("href",
+      50 |       `https://www.anah.gouv.fr/sites/default/files/2026-08/082026_guide_gerer-coproprietes-fragiles.pdf#page=${numero}`);
+        at /Users/jb/Code/academie/web/tests/e2e/fragilite.spec.ts:47:25
+
+    Error Context: test-results/fragilite-le-parcours-frag-6d8dd-it-exercices-et-la-synthèse-ordinateur/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/fragilite-le-parcours-frag-6d8dd-it-exercices-et-la-synthèse-ordinateur/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/fragilite-le-parcours-frag-6d8dd-it-exercices-et-la-synthèse-ordinateur/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [telephone] › tests/e2e/fragilite.spec.ts:21:1 › le parcours fragilité garde la tentative, huit exercices et la synthèse
+
+    Error: expect(locator).toHaveCount(expected) failed
+
+    Locator:  locator('.sources-etude a')
+    Expected: 3
+    Received: 1
+    Timeout:  10000ms
+
+    Call log:
+      - Expect "toHaveCount" with timeout 10000ms
+      - waiting for locator('.sources-etude a')
+        24 × locator resolved to 1 element
+           - unexpected value "1"
+
+
+      45 |   await page.getByText("Sources et fabrication",{exact:true}).click();
+      46 |   const sources=page.locator(".sources-etude a");
+    > 47 |   await expect(sources).toHaveCount(3);
+         |                         ^
+      48 |   for (const [index,numero] of [8,10,22].entries()) {
+      49 |     await expect(sources.nth(index)).toHaveAttribute("href",
+      50 |       `https://www.anah.gouv.fr/sites/default/files/2026-08/082026_guide_gerer-coproprietes-fragiles.pdf#page=${numero}`);
+        at /Users/jb/Code/academie/web/tests/e2e/fragilite.spec.ts:47:25
+
+    Error Context: test-results/fragilite-le-parcours-frag-6d8dd-it-exercices-et-la-synthèse-telephone/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/fragilite-le-parcours-frag-6d8dd-it-exercices-et-la-synthèse-telephone/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/fragilite-le-parcours-frag-6d8dd-it-exercices-et-la-synthèse-telephone/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2 failed
+    [ordinateur] › tests/e2e/fragilite.spec.ts:21:1 › le parcours fragilité garde la tentative, huit exercices et la synthèse
+    [telephone] › tests/e2e/fragilite.spec.ts:21:1 › le parcours fragilité garde la tentative, huit exercices et la synthèse
+  2 passed (31.4s)
