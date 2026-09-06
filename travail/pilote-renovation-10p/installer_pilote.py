@@ -83,8 +83,9 @@ def main():
         backup = Path('/var/lib/academie/sauvegardes') / ('avant-pilote-10p-' + datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ'))
         timer_actif = subprocess.call(['systemctl','is-active','--quiet','academie-publication.timer']) == 0
         run('systemctl','stop','academie-publication.timer')
-        if subprocess.call(['systemctl','is-active','--quiet','academie-publication.service']) == 0:
-            raise RuntimeError('Générateur en cours : aucun fichier modifié ; timer laissé arrêté')
+        etat_service = run('systemctl','show','--property=ActiveState','--value','academie-publication.service')
+        if etat_service != 'inactive':
+            raise RuntimeError(f'Générateur {etat_service} : aucun fichier modifié ; timer laissé arrêté')
         backup.mkdir(mode=0o700)
         run('cp','-a',str(PUBLIC),str(backup/'publication'))
         (backup/'commit-avant.txt').write_text(ancien+'\n')
