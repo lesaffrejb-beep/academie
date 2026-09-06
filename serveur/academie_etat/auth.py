@@ -1,7 +1,6 @@
-"""Profils, jetons et sessions. Un jeton n'est jamais stocké en clair :
-la table `sessions` porte son SHA-256. Trois genres : `magic` (lien à
-usage unique, court), `cookie` (session d'un an), `outil` (Bearer pour
-les outils de la machine)."""
+"""Profils et sessions. Un jeton n'est jamais stocké en clair :
+la table `sessions` porte son SHA-256. Deux genres : `cookie` (session
+d'un an), `outil` (Bearer pour les outils de la machine)."""
 from __future__ import annotations
 
 import hashlib
@@ -15,7 +14,7 @@ import sqlite3
 import uuid
 from datetime import datetime, timedelta, timezone
 
-DUREES = {"magic": timedelta(hours=24), "cookie": timedelta(days=365), "outil": timedelta(days=365)}
+DUREES = {"cookie": timedelta(days=365), "outil": timedelta(days=365)}
 
 
 def maintenant() -> str:
@@ -26,10 +25,10 @@ def hacher(jeton: str) -> str:
     return hashlib.sha256(jeton.encode("utf-8")).hexdigest()
 
 
-def creer_profil(conn: sqlite3.Connection, titre_affiche: str, mail: str | None = None) -> str:
+def creer_profil(conn: sqlite3.Connection, titre_affiche: str) -> str:
     pid = str(uuid.uuid4())
-    conn.execute("INSERT INTO profils (id, mail, titre_affiche, cree_le) VALUES (?, ?, ?, ?)",
-                 (pid, mail, titre_affiche, maintenant()))
+    conn.execute("INSERT INTO profils (id, titre_affiche, cree_le) VALUES (?, ?, ?)",
+                 (pid, titre_affiche, maintenant()))
     return pid
 
 
@@ -68,23 +67,14 @@ def revoquer(conn: sqlite3.Connection, jeton: str) -> bool:
     return cur.rowcount == 1
 
 
-def echanger_magic(conn: sqlite3.Connection, jeton: str, appareil: str | None = None) -> str | None:
-    """Un lien magique s'échange une fois contre un cookie d'un an."""
-    profil = verifier(conn, jeton, genres=("magic",))
-    if profil is None:
-        return None
-    revoquer(conn, jeton)
-    return creer_jeton(conn, profil, "cookie", appareil)
-
-
 def profil_public(conn: sqlite3.Connection, pid: str) -> dict | None:
-    row = conn.execute("SELECT id, titre_affiche, cree_le, reglages, supprime_le, mot_de_passe_hache FROM profils WHERE id = ?", (pid,)).fetchone()
+    row = conn.execute("SELECT id, titre_affiche, cree_le, reglages, supprime_le, phrase_secrete_hache FROM profils WHERE id = ?", (pid,)).fetchone()
     if row is None:
         return None
     domaines = [r["domaine"] for r in conn.execute("SELECT domaine FROM adoptions WHERE profil = ? ORDER BY adopte_le", (pid,))]
     return {"id": row["id"], "titre_affiche": row["titre_affiche"], "cree_le": row["cree_le"],
             "reglages": json.loads(row["reglages"] or "{}"), "domaines": domaines,
-            "compte_personnel": bool(row["mot_de_passe_hache"]),
+            "compte_personnel": bool(row["phrase_secrete_hache"]),
             "suppression_demandee_le": row["supprime_le"], "cursus": cursus_actuel(conn, pid)}
 
 
@@ -127,17 +117,43 @@ def cursus_actuel(conn, pid):
     return json.loads(row[0])["cursus"] if row else None
 
 
-def mail_normalise(valeur):
+def pseudo_normalise(valeur):
     from .app import Refus
-    if not isinstance(valeur, str) or len(valeur) > 254 or not re.fullmatch(r"[^\s@]+@[^\s@]+\.[^\s@]+", valeur.strip()):
-        raise Refus(422, "mail-invalide", "Indique une adresse mail valide.")
+    if not isinstance(valeur, str) or not 1 <= len(valeur.strip()) <= 60:
+        raise Refus(422, "pseudo-invalide", "Choisis un pseudo entre 1 et 60 caractères.")
     return valeur.strip().casefold()
 
 
-def hacher_mdp(mdp, sel=None):
+def hacher_secret(secret, sel=None):
     sel = sel or secrets.token_bytes(16)
-    empreinte = hashlib.scrypt(mdp.encode(), salt=sel, n=32768, r=8, p=1, maxmem=64*1024*1024)
+    empreinte = hashlib.scrypt(secret.encode(), salt=sel, n=32768, r=8, p=1, maxmem=64*1024*1024)
     return "scrypt$32768$8$1$" + sel.hex() + "$" + empreinte.hex()
+
+
+def correspond(secret, hache):
+    if not isinstance(secret, str) or not hache:
+        return False
+    sel = bytes.fromhex(hache.split("$")[4])
+    return hmac.compare_digest(hacher_secret(secret, sel), hache)
+
+
+def phrase_valide(valeur):
+    from .app import Refus
+    if not isinstance(valeur, str) or not 12 <= len(valeur) <= 256:
+        raise Refus(422, "phrase-invalide", "Choisis une phrase secrète entre 12 et 256 caractères.")
+    return valeur
+
+
+def creer_cle_recuperation():
+    brut = secrets.token_hex(16).upper()
+    return "-".join(brut[i:i + 4] for i in range(0, len(brut), 4))
+
+
+def cle_normalisee(valeur):
+    if not isinstance(valeur, str):
+        return None
+    cle = valeur.replace("-", "").replace(" ", "").upper()
+    return cle if re.fullmatch(r"[0-9A-F]{32}", cle) else None
 
 
 def limiter(conn, cle, maximum=12):
@@ -152,43 +168,69 @@ def limiter(conn, cle, maximum=12):
 
 def inscrire(conn, data, appareil=""):
     from .app import Refus
-    mail = mail_normalise(data.get("mail"))
-    pseudo, mdp = data.get("pseudo"), data.get("mot_de_passe")
-    if not isinstance(pseudo, str) or not 1 <= len(pseudo.strip()) <= 60:
-        raise Refus(422, "pseudo-invalide", "Choisis un pseudo entre 1 et 60 caractères.")
-    if not isinstance(mdp, str) or not 12 <= len(mdp) <= 256:
-        raise Refus(422, "mot-de-passe-invalide", "Choisis un mot de passe entre 12 et 256 caractères.")
-    if conn.execute("SELECT 1 FROM profils WHERE lower(mail) = ?", (mail,)).fetchone():
-        raise Refus(409, "compte-existant", "Ce compte existe déjà. Connecte-toi ou demande un lien de secours.")
-    hache = hacher_mdp(mdp)
+    pseudo = data.get("pseudo")
+    pseudo_connexion = pseudo_normalise(pseudo)
+    phrase = phrase_valide(data.get("phrase_secrete"))
+    cle = creer_cle_recuperation()
     conn.execute("BEGIN IMMEDIATE")
     try:
-        pid = creer_profil(conn, pseudo.strip(), mail)
-        conn.execute("UPDATE profils SET mot_de_passe_hache = ? WHERE id = ?", (hache, pid))
+        pid = creer_profil(conn, pseudo.strip())
+        conn.execute("UPDATE profils SET pseudo_connexion=?, phrase_secrete_hache=?, cle_recuperation_hache=? WHERE id = ?",
+                     (pseudo_connexion, hacher_secret(phrase), hacher_secret(cle_normalisee(cle)), pid))
         jeton = creer_jeton(conn, pid, "cookie", appareil)
         conn.execute("COMMIT")
+    except sqlite3.IntegrityError:
+        conn.execute("ROLLBACK")
+        raise Refus(409, "compte-existant", "Ce pseudo est déjà utilisé. Connecte-toi ou choisis-en un autre.")
     except Exception:
         conn.execute("ROLLBACK")
         raise
-    return profil_public(conn, pid), jeton
+    return {**profil_public(conn, pid), "cle_recuperation": cle}, jeton
 
 
 def connecter_compte(conn, data, appareil=""):
     from .app import Refus
-    mail = mail_normalise(data.get("mail"))
-    mdp = data.get("mot_de_passe")
-    if not isinstance(mdp, str) or len(mdp) > 256:
-        raise Refus(401, "connexion-refusee", "Adresse ou mot de passe incorrect.")
-    limiter(conn, "mail:" + hacher(mail))
-    row = conn.execute("SELECT id, mot_de_passe_hache, supprime_le FROM profils WHERE lower(mail) = ?", (mail,)).fetchone()
-    hache = row["mot_de_passe_hache"] if row else None
-    # Même calcul coûteux pour un compte absent ; aucune recherche de mail exposée.
-    sel = bytes.fromhex(hache.split("$")[4]) if hache else bytes(16)
-    candidat = hacher_mdp(mdp, sel)
-    if not hache or not hmac.compare_digest(candidat, hache) or row["supprime_le"]:
-        raise Refus(401, "connexion-refusee", "Adresse ou mot de passe incorrect.")
-    conn.execute("DELETE FROM tentatives_auth WHERE cle = ?", ("mail:" + hacher(mail),))
+    try: pseudo = pseudo_normalise(data.get("pseudo"))
+    except Refus: raise Refus(401, "connexion-refusee", "Pseudo ou phrase secrète incorrect.")
+    phrase = data.get("phrase_secrete")
+    if not isinstance(phrase, str) or len(phrase) > 256:
+        raise Refus(401, "connexion-refusee", "Pseudo ou phrase secrète incorrect.")
+    limite = "pseudo:" + hacher(pseudo)
+    limiter(conn, limite)
+    row = conn.execute("SELECT id, phrase_secrete_hache, supprime_le FROM profils WHERE pseudo_connexion = ?", (pseudo,)).fetchone()
+    hache = row["phrase_secrete_hache"] if row else hacher_secret("", bytes(16))
+    # Même calcul coûteux pour un pseudo absent ; aucune énumération de comptes.
+    if not correspond(phrase, hache) or row is None or row["supprime_le"]:
+        raise Refus(401, "connexion-refusee", "Pseudo ou phrase secrète incorrect.")
+    conn.execute("DELETE FROM tentatives_auth WHERE cle = ?", (limite,))
     return profil_public(conn, row["id"]), creer_jeton(conn, row["id"], "cookie", appareil)
+
+
+def recuperer_compte(conn, data, appareil=""):
+    from .app import Refus
+    try: pseudo = pseudo_normalise(data.get("pseudo"))
+    except Refus: raise Refus(401, "recuperation-refusee", "Pseudo ou clé de récupération incorrect.")
+    cle = cle_normalisee(data.get("cle_recuperation"))
+    phrase = phrase_valide(data.get("phrase_secrete"))
+    limite = "recuperation:" + hacher(pseudo)
+    limiter(conn, limite, 8)
+    row = conn.execute("SELECT id, cle_recuperation_hache, supprime_le FROM profils WHERE pseudo_connexion = ?", (pseudo,)).fetchone()
+    hache = row["cle_recuperation_hache"] if row else hacher_secret("0" * 32, bytes(16))
+    if not cle or not correspond(cle, hache) or row is None or row["supprime_le"]:
+        raise Refus(401, "recuperation-refusee", "Pseudo ou clé de récupération incorrect.")
+    nouvelle_cle = creer_cle_recuperation()
+    conn.execute("BEGIN IMMEDIATE")
+    try:
+        conn.execute("UPDATE profils SET phrase_secrete_hache=?, cle_recuperation_hache=? WHERE id=?",
+                     (hacher_secret(phrase), hacher_secret(cle_normalisee(nouvelle_cle)), row["id"]))
+        conn.execute("UPDATE sessions SET revoque_le=COALESCE(revoque_le, ?) WHERE profil=?", (maintenant(), row["id"]))
+        jeton = creer_jeton(conn, row["id"], "cookie", appareil)
+        conn.execute("DELETE FROM tentatives_auth WHERE cle = ?", (limite,))
+        conn.execute("COMMIT")
+    except Exception:
+        conn.execute("ROLLBACK")
+        raise
+    return {**profil_public(conn, row["id"]), "cle_recuperation": nouvelle_cle}, jeton
 
 
 def eleves(conn):
@@ -213,26 +255,24 @@ def demander_cursus(conn, pid, data):
     return {"id": identifiant, "ok": True}
 
 
-def activer_compte(conn, pid, data):
-    """Doter le profil de la session d'identifiants sans déplacer son journal."""
-    from .app import Refus
-    mail = mail_normalise(data.get("mail"))
-    pseudo, mdp = data.get("pseudo"), data.get("mot_de_passe")
-    if not isinstance(pseudo, str) or not 1 <= len(pseudo.strip()) <= 60:
-        raise Refus(422, "pseudo-invalide", "Choisis un pseudo entre 1 et 60 caractères.")
-    if not isinstance(mdp, str) or not 12 <= len(mdp) <= 256:
-        raise Refus(422, "mot-de-passe-invalide", "Choisis un mot de passe entre 12 et 256 caractères.")
-    conn.execute("BEGIN IMMEDIATE")
+def effacer_comptes(conn):
+    """Purge locale de l'essai, après le geste humain de la CLI.
+
+    Les tables ne contiennent que des données de joueurs ou de leurs
+    tentatives. Les migrations restent afin que la même base redémarre
+    sans ambiguïté, et les bases de navigateurs restent hors de portée.
+    """
+    tables = [r[0] for r in conn.execute("SELECT name FROM sqlite_master WHERE type='table' AND name NOT LIKE 'sqlite_%' AND name <> 'migrations'")]
+    profils = conn.execute("SELECT COUNT(*) FROM profils").fetchone()[0]
+    conn.execute("PRAGMA foreign_keys = OFF")
     try:
-        row = conn.execute("SELECT mot_de_passe_hache FROM profils WHERE id=?", (pid,)).fetchone()
-        if not row or row[0]:
-            raise Refus(409, "compte-deja-personnel", "Ce compte possède déjà ses identifiants. Reconnecte-toi avec eux.")
-        if conn.execute("SELECT 1 FROM profils WHERE lower(mail)=? AND id<>?", (mail,pid)).fetchone():
-            raise Refus(409, "compte-existant", "Cette adresse possède déjà un compte. Utilise une autre adresse ou connecte-toi à ce compte.")
-        conn.execute("UPDATE profils SET mail=?, titre_affiche=?, mot_de_passe_hache=? WHERE id=?",
-                     (mail,pseudo.strip(),hacher_mdp(mdp),pid))
+        conn.execute("BEGIN IMMEDIATE")
+        for table in tables:
+            conn.execute(f'DELETE FROM "{table}"')
         conn.execute("COMMIT")
     except Exception:
         conn.execute("ROLLBACK")
         raise
-    return profil_public(conn,pid)
+    finally:
+        conn.execute("PRAGMA foreign_keys = ON")
+    return profils

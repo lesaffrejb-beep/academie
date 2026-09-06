@@ -22,9 +22,8 @@ export function oublieCompte(diffuse = true) {
 }
 export const nomJournal = (id: string) => `academie-journal-compte:${id}`;
 export const clePrivee = (cle: string, id = identite?.id ?? "anonyme") => `${cle}:compte:${id}`;
-export function valideCompte(mail: string, mdp: string, pseudo: string): string {
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(mail.trim())) return "Indique une adresse mail valide.";
+export function valideCompte(phrase: string, pseudo: string): string {
   if (!pseudo.trim() || pseudo.trim().length > 60) return "Choisis un pseudo entre 1 et 60 caractères.";
-  if (mdp.length < 12 || mdp.length > 256) return "Choisis un mot de passe entre 12 et 256 caractères.";
+  if (phrase.length < 12 || phrase.length > 256) return "Choisis une phrase secrète entre 12 et 256 caractères.";
   return "";
 }

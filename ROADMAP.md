@@ -1,5 +1,14 @@
 # Roadmap Académie, 05/09/2026
 
+## Actualisation du 06/09 : ambition expertise
+
+La demande de JB ouvre `ACA-EXPERTISE-1` : [cahier](chantiers/ACA-EXPERTISE-1.md),
+[cartographie et compteurs](travail/expertise-2026-09-06/COUVERTURE.md),
+[fabrication reproductible](travail/expertise-2026-09-06/PROTOCOLE.md).
+Première unité : audit et cartographie, pas cursus experts terminés.
+Les dossiers avancés et l'exploitation intégrale des sources restent ouverts.
+Ce chantier n'autorise ni publication ni envoi de documents internes.
+
 Cap : une école de métier qui donne envie de revenir et rend capable de
 comprendre, rappeler, expliquer et agir, y compris sans IA. L'arbre reste
 vaste ; la prochaine livraison doit être petite et complète.
@@ -160,5 +169,13 @@ ACA-ONBOARDING-1 est intégré sur main pour l’essai autorisé (0042, 0043) :
 mail/mot de passe, pseudo, cursus unique, sauvegardes par compte et annuaire
 minimal masquable. [Preuves et limites](travail/onboarding/LIVRAISON.md).
 Publication VPS constatée le soir (code 6c9c6bc) ; [contrôles et limites](travail/onboarding/PUBLICATION-VPS.md). Le parcours joueur public, le trajet physique et dix heures humaines par cursus restent à constater.
+
+## Accès local à préparer
+
+ACA-ACCES-LOCAL-1 remplace l'accès par mail par un pseudo unique, une
+phrase secrète et une clé de récupération à conserver localement. La clé
+est affichée une seule fois. Sans phrase ni clé, il n'y a aucune
+récupération. Les comptes d'essai actuels ne seront effacés du VPS
+qu'après publication contrôlée et commande locale confirmée.
 Le stock est de trois études copro et deux IFSI ; les programmes ne sont
 pas des cours déjà fabriqués. [Prompt PDF et préparation de l’essai](prompts/essai-10h-et-pdf.md).

@@ -7,25 +7,36 @@ except ImportError:
 
 class Onboarding(unittest.TestCase):
     def setUp(self): self.a, _, _ = application()
-    def compte(self, mail="alice@example.test", cursus="copro"):
-        s,h,p=requete(self.a,"POST","/compte",{"mail":mail,"mot_de_passe":"Phrase secrète assez longue", "pseudo":"Alice", "cursus":cursus})
+    def compte(self, pseudo="Alice", cursus="copro"):
+        s,h,p=requete(self.a,"POST","/compte",{"phrase_secrete":"Phrase secrète assez longue", "pseudo":pseudo, "cursus":cursus})
         self.assertEqual(s,201,p)
         return p, h["set-cookie"].split(";",1)[0].split("=",1)[1]
     def test_compte_connexion_et_sel(self):
-        p,c=self.compte(); q,d=self.compte("bob@example.test","ifsi")
-        rows=self.a.conn.execute("SELECT mot_de_passe_hache FROM profils WHERE mot_de_passe_hache IS NOT NULL").fetchall()
+        p,c=self.compte(); q,d=self.compte("Bob","ifsi")
+        rows=self.a.conn.execute("SELECT phrase_secrete_hache, cle_recuperation_hache FROM profils WHERE phrase_secrete_hache IS NOT NULL").fetchall()
         self.assertNotEqual(rows[0][0],rows[1][0]); self.assertNotIn("Phrase secrète",str([tuple(r) for r in rows]))
+        self.assertNotIn(p["cle_recuperation"],str([tuple(r) for r in rows]))
         self.assertEqual(requete(self.a,"GET","/profil",cookie=c,profil=p["id"])[2]["cursus"],None)
-        s,h,b=requete(self.a,"POST","/auth/connexion",{"mail":" ALICE@example.test ","mot_de_passe":"Phrase secrète assez longue"})
+        s,h,b=requete(self.a,"POST","/auth/connexion",{"pseudo":" alice ","phrase_secrete":"Phrase secrète assez longue"})
         self.assertEqual(s,200);self.assertEqual(b["id"],p["id"])
-        self.assertEqual(requete(self.a,"POST","/auth/connexion",{"mail":"alice@example.test","mot_de_passe":"incorrect"})[0],401)
+        self.assertEqual(requete(self.a,"POST","/auth/connexion",{"pseudo":"alice","phrase_secrete":"incorrect"})[0],401)
     def test_validation(self):
-        for champ,v in [("mail","x"),("pseudo"," "),("mot_de_passe","court"),("mot_de_passe",[1]),("mail",None)]:
-            data={"mail":"x@example.test","pseudo":"X","mot_de_passe":"Une phrase suffisamment longue"};data[champ]=v
+        for champ,v in [("pseudo"," "),("phrase_secrete","court"),("phrase_secrete",[1]),("pseudo",None)]:
+            data={"pseudo":"X","phrase_secrete":"Une phrase suffisamment longue"};data[champ]=v
             self.assertEqual(requete(self.a,"POST","/compte",data)[0],422)
-        self.compte(); self.assertEqual(requete(self.a,"POST","/compte",{"mail":"ALICE@example.test","pseudo":"A","mot_de_passe":"Une phrase suffisamment longue"})[0],409)
+        self.compte(); self.assertEqual(requete(self.a,"POST","/compte",{"pseudo":"ALICE","phrase_secrete":"Une phrase suffisamment longue"})[0],409)
+    def test_recuperation_remplace_cle_et_sessions(self):
+        p,c=self.compte(); cle=p["cle_recuperation"]
+        s,h,b=requete(self.a,"POST","/auth/recuperation",{"pseudo":"alice","cle_recuperation":cle,"phrase_secrete":"Une nouvelle phrase suffisamment longue"})
+        self.assertEqual(s,200); self.assertEqual(b["id"],p["id"]); self.assertIn("cle_recuperation",b)
+        nouveau=h["set-cookie"].split(";",1)[0].split("=",1)[1]
+        self.assertNotEqual(cle,b["cle_recuperation"])
+        self.assertEqual(requete(self.a,"GET","/profil",cookie=c,profil=p["id"])[0],401)
+        self.assertEqual(requete(self.a,"POST","/auth/recuperation",{"pseudo":"alice","cle_recuperation":cle,"phrase_secrete":"Encore une phrase suffisamment longue"})[0],401)
+        self.assertEqual(requete(self.a,"POST","/auth/connexion",{"pseudo":"alice","phrase_secrete":"Une nouvelle phrase suffisamment longue"})[0],200)
+        self.assertEqual(requete(self.a,"GET","/profil",cookie=nouveau,profil=p["id"])[0],200)
     def test_journaux_et_cursus_isoles(self):
-        p,c=self.compte();q,d=self.compte("bob@example.test")
+        p,c=self.compte();q,d=self.compte("Bob")
         event=ligne(1,mode="cursus",cursus="ifsi")
         self.assertEqual(requete(self.a,"POST","/journal",{"lignes":[event]},cookie=c,profil=p["id"])[0],200)
         self.assertEqual(requete(self.a,"GET","/profil",cookie=c,profil=p["id"])[2]["cursus"],"ifsi")
@@ -33,7 +44,7 @@ class Onboarding(unittest.TestCase):
         self.assertEqual(requete(self.a,"POST","/journal",{"lignes":[ligne(2,mode="cursus",cursus="copro")]},cookie=c,profil=p["id"])[0],422)
         self.assertEqual(requete(self.a,"POST","/journal",{"lignes":[ligne(3,mode="cursus",cursus="inconnu")]},cookie=d,profil=q["id"])[0],422)
     def test_cookie_change_et_annuaire_prive(self):
-        p,c=self.compte();q,d=self.compte("bob@example.test")
+        p,c=self.compte();q,d=self.compte("Bob")
         s,_,_=self.a.traiter("POST","/journal",b'{"lignes":[]}',{"cookie":"academie_session="+d,"x-academie-profil":p["id"]})
         self.assertEqual(s,409)
         self.assertEqual(requete(self.a,"GET","/eleves")[0],401)
@@ -88,24 +99,18 @@ class Onboarding(unittest.TestCase):
         entetes["x-academie-profil"]=p["id"]
         self.assertEqual(self.a.traiter("POST","/journal",json.dumps({"lignes":[ligne(50)]}).encode(),entetes)[0],200)
 
-    def test_activation_ancien_profil_conserve_journal(self):
-        from academie_etat import auth
-        pid=auth.creer_profil(self.a.conn,"Ancien élève")
-        token=auth.creer_jeton(self.a.conn,pid,"cookie")
-        requete(self.a,"POST","/journal",{"lignes":[ligne(52)]},cookie=token,profil=pid)
-        data={"mail":"reprise@example.test","pseudo":"Compte personnel","mot_de_passe":"Une phrase personnelle assez longue"}
-        self.assertFalse(requete(self.a,"GET","/profil",cookie=token)[2].get("compte_personnel",True))
-        s,_,c=requete(self.a,"POST","/compte/activer",data,cookie=token,profil=pid)
-        self.assertEqual(s,200);self.assertEqual(c["id"],pid);self.assertTrue(c["compte_personnel"])
-        self.assertEqual(requete(self.a,"POST","/auth/connexion",data)[2]["id"],pid)
-        self.assertEqual(self.a.conn.execute("SELECT COUNT(*) FROM journal WHERE profil=?",(pid,)).fetchone()[0],1)
-        self.assertEqual(requete(self.a,"POST","/compte/activer",data,cookie=token,profil=pid)[0],409)
-
-    def test_activation_refuse_mail_autre_compte_et_onglet_ancien(self):
-        from academie_etat import auth
-        self.compte()
-        pid=auth.creer_profil(self.a.conn,"Ancien élève");token=auth.creer_jeton(self.a.conn,pid,"cookie")
-        data={"mail":"alice@example.test","pseudo":"Reprise","mot_de_passe":"Une phrase personnelle assez longue"}
-        self.assertEqual(requete(self.a,"POST","/compte/activer",data,cookie=token,profil=pid)[0],409)
-        self.assertEqual(requete(self.a,"POST","/compte/activer",data,cookie=token)[0],409)
-        self.assertIsNone(self.a.conn.execute("SELECT mot_de_passe_hache FROM profils WHERE id=?",(pid,)).fetchone()[0])
+    def test_reinitialisation_locale_exige_confirmation_et_efface(self):
+        import tempfile
+        from pathlib import Path
+        from contextlib import redirect_stdout
+        from io import StringIO
+        from academie_etat import cli, db
+        with tempfile.TemporaryDirectory() as td:
+            chemin=Path(td)/"etat.sqlite"; conn=db.connecter(chemin)
+            self.compte(); self.a.conn.backup(conn); conn.close()
+            with self.assertRaises(SystemExit): cli.main(["--base",str(chemin),"reinitialiser-comptes"])
+            sortie=StringIO()
+            with redirect_stdout(sortie): self.assertEqual(cli.main(["--base",str(chemin),"reinitialiser-comptes","--confirmer","SUPPRIMER LES COMPTES"]),0)
+            vide=db.connecter(chemin)
+            self.assertEqual(vide.execute("SELECT COUNT(*) FROM profils").fetchone()[0],0)
+            self.assertIn("effacés",sortie.getvalue())

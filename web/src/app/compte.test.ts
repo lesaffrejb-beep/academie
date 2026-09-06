@@ -8,11 +8,10 @@ describe("compte et sauvegarde", () => {
     expect(nomJournal("alice")).not.toBe("academie-journal");
     expect(clePrivee("brouillon", "alice")).not.toBe(clePrivee("brouillon", "bob"));
   });
-  it("refuse mail invalide, pseudo vide et mot de passe court", () => {
-    expect(valideCompte("x", "abcdefghijklm", "A")).toBeTruthy();
-    expect(valideCompte("a@b.fr", "abcdefghijklm", " ")).toBeTruthy();
-    expect(valideCompte("a@b.fr", "court", "A")).toBeTruthy();
-    expect(valideCompte("a@b.fr", "abcdefghijklm", "A")).toBe("");
+  it("refuse pseudo vide et phrase secrète courte", () => {
+    expect(valideCompte("abcdefghijklm", " ")).toBeTruthy();
+    expect(valideCompte("court", "A")).toBeTruthy();
+    expect(valideCompte("abcdefghijklm", "A")).toBe("");
   });
   it("accepte uniquement un événement de cursus bien formé", () => {
     const l = {quand:"2026-09-05T12:00:00Z", nonce:"abcdefgh", mode:"cursus"};

@@ -25,22 +25,8 @@ class Auth(unittest.TestCase):
         self.assertIsNone(auth.verifier(self.conn, self.jeton))
         self.assertFalse(auth.revoquer(self.conn, self.jeton))
 
-    def test_magic_link_usage_unique(self):
-        magic = auth.creer_jeton(self.conn, self.profil, "magic")
-        self.assertIsNone(auth.verifier(self.conn, magic), "un lien magique n'est pas une session")
-        s, e, r = requete(self.appli, "GET", f"/auth/lien?jeton={magic}")
-        self.assertEqual(s, 200)
-        cookie = e["set-cookie"].split(";")[0].split("=", 1)[1]
-        self.assertEqual(auth.verifier(self.conn, cookie), self.profil)
-        s, _, r = requete(self.appli, "GET", f"/auth/lien?jeton={magic}")
-        self.assertEqual((s, r["erreur"]), (401, "lien-invalide"))
-        s, _, r = requete(self.appli, "GET", "/profil", cookie=cookie)
-        self.assertEqual((s, r["id"]), (200, self.profil))
-
     def test_deconnexion(self):
-        magic = auth.creer_jeton(self.conn, self.profil, "magic")
-        _, e, _ = requete(self.appli, "GET", f"/auth/lien?jeton={magic}")
-        cookie = e["set-cookie"].split(";")[0].split("=", 1)[1]
+        cookie = auth.creer_jeton(self.conn, self.profil, "cookie")
         requete(self.appli, "POST", "/auth/deconnexion", cookie=cookie, profil=self.profil)
         s, _, _ = requete(self.appli, "GET", "/profil", cookie=cookie)
         self.assertEqual(s, 401)

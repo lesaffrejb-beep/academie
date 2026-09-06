@@ -7,11 +7,13 @@
 PRAGMA journal_mode = WAL;
 PRAGMA foreign_keys = ON;
 
--- Un joueur. L'identifiant est opaque ; le mail ne sert qu'au magic link.
+-- Un joueur. L'identifiant est opaque ; aucun mail n'est conservé.
 CREATE TABLE profils (
   id            TEXT PRIMARY KEY,               -- uuid
-  mail          TEXT UNIQUE,                    -- nul tant que JB crée les profils à la main
   titre_affiche TEXT NOT NULL,                  -- ce que les autres voient, choisi par le joueur
+  pseudo_connexion TEXT UNIQUE,                 -- identifiant public, unique dans cette Académie
+  phrase_secrete_hache TEXT,                    -- scrypt, jamais la phrase en clair
+  cle_recuperation_hache TEXT,                  -- scrypt, clé affichée une fois seulement
   cree_le       TEXT NOT NULL,                  -- ISO 8601
   supprime_le   TEXT,                           -- demande de suppression ; effacement effectif sous 48 h
   reglages      TEXT NOT NULL DEFAULT '{}'      -- JSON : thème, semaine type, notifications
@@ -21,7 +23,7 @@ CREATE TABLE profils (
 CREATE TABLE sessions (
   jeton_hache   TEXT PRIMARY KEY,               -- SHA-256 du jeton, jamais le jeton
   profil        TEXT NOT NULL REFERENCES profils(id) ON DELETE CASCADE,
-  genre         TEXT NOT NULL CHECK (genre IN ('cookie', 'outil', 'magic')),
+  genre         TEXT NOT NULL CHECK (genre IN ('cookie', 'outil')),
   cree_le       TEXT NOT NULL,
   expire_le     TEXT NOT NULL,
   revoque_le    TEXT,

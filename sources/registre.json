@@ -505,6 +505,32 @@
       "url_droits": "https://www.bnf.fr/fr/conditions-de-reutilisations-des-donnees-de-la-bnf",
       "on_en_tire": "une référence historique à instruire pour culture.lectures.l-architecture-et-ses-styles",
       "on_n_en_tire_pas": "une lecture du traité, une vérité historique neutre ou une autorisation de reprise de ses images"
+    },
+    {
+      "id": "anah-coproprietes-fragiles-2026",
+      "source": "Guide Anah 2026, « Gérer et accompagner les copropriétés fragiles »",
+      "reference": "anah.gouv.fr",
+      "domaine_web": "anah.gouv.fr",
+      "motif": null,
+      "nature": "institution",
+      "parti": "Guide méthodologique et pratique à destination des gestionnaires pour agir dès les premières difficultés",
+      "fiabilite": "A",
+      "verifie": "2026-09-06",
+      "on_en_tire": "méthodologie de prévention, repérage des impayés, procédures amiables et judiciaires, dispositifs d'accompagnement public ; 195 pages relues et contrôlées par l'usine",
+      "on_n_en_tire_pas": "un conseil juridique individualisé sur un litige particulier ou l'attribution automatique d'une aide sans dossier"
+    },
+    {
+      "id": "angers-psmv-recommandations-2023",
+      "source": "Plan de Sauvegarde et de Mise en Valeur d'Angers - Cahier de recommandations (Ville d'Angers, Angers Loire Métropole, DRAC Pays de la Loire, 2023)",
+      "reference": "angers.fr ; copie locale 707940074f138868.pdf",
+      "domaine_web": "angers.fr",
+      "motif": null,
+      "nature": "institution",
+      "parti": "Cahier de recommandations architecturales pour le cœur du Site patrimonial remarquable",
+      "fiabilite": "A",
+      "verifie": "2026-09-06",
+      "on_en_tire": "restauration du tuffeau, enduits à la chaux, menuiseries en bois, ferronneries et amélioration thermique du bâti ancien ; 54 pages contrôlées et scellées par l'usine",
+      "on_n_en_tire_pas": "une autorisation de travaux sans dépôt de dossier d'urbanisme réglementaire"
     }
   ]
 }

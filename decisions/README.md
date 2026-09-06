@@ -59,7 +59,8 @@ lisant le dépôt, une règle née d'un incident. Pas l'avancement
 
 | [0043](0043-palette-bleue-et-livraison-essai.md) | 05/09/2026 | Palette bleue et publication de l’essai autorisée par JB |
 | [0044](0044-acces-compte-et-reprise.md) | 05/09/2026 | Accueil accessible, compte personnel et reprise explicite du travail |
-| [0046](0046-specialisations-et-preuves-de-couverture.md) | 06/09/2026 | Spécialités transverses et preuves distinctes de couverture |
-| [0047](0047-pipeline-documentaire-econome-et-auditable.md) | 06/09/2026 | Extraction locale graduée et vérifications indépendantes |
-| [0048](0048-supports-visuels-du-document-aux-exercices.md) | 06/09/2026 | Supports visuels et droits distincts |
-| [0049](0049-pilote-documentaire-hybride-dix-pages.md) | 06/09/2026 | Dix pages jusqu'à une étude satellite publiée |
+| [0045](0045-acces-local-phrase-et-cle-de-recuperation.md) | 06/09/2026 | Accès local par pseudo, phrase secrète et clé de récupération, sans mail |
+| [0046](0046-specialisations-et-preuves-de-couverture.md) | 06/09/2026 | Spécialités transverses et distinction entre programme, contenu et expertise |
+| [0047](0047-pipeline-documentaire-econome-et-auditable.md) | 06/09/2026 | Extraction locale graduée, benchmark sur pièces, assertions et sondages indépendants |
+| [0048](0048-supports-visuels-du-document-aux-exercices.md) | 06/09/2026 | Figures, légendes, données spatiales et preuves d'usage dans les exercices |
+| [0049](0049-pilote-documentaire-hybride-dix-pages.md) | 06/09/2026 | Dix pages croisées, supports contrôlés, étude satellite et publication isolée |

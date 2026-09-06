@@ -89,17 +89,13 @@ class Application:
         if route == "/sante" and methode == "GET":
             return self._json(200, {"ok": True, "moteur_version": VERSION, "contrats": CONTRATS})
 
-        if route in ("/compte", "/auth/connexion") and methode == "POST":
+        if route in ("/compte", "/auth/connexion", "/auth/recuperation") and methode == "POST":
             data = self._corps(corps)
             auth.limiter(self.conn, "origine:" + entetes.get("x-adresse-pair", "local"), 100)
-            fonction = auth.inscrire if route == "/compte" else auth.connecter_compte
+            fonction = {"/compte": auth.inscrire, "/auth/connexion": auth.connecter_compte,
+                        "/auth/recuperation": auth.recuperer_compte}[route]
             profil, jeton = fonction(self.conn, data, entetes.get("user-agent", "")[:120])
             return self._json(201 if route == "/compte" else 200, profil, {"set-cookie": self._cookie(jeton)})
-
-        if route == "/compte/activer" and methode == "POST":
-            profil = self._profil(entetes)
-            auth.limiter(self.conn, "activation:" + profil)
-            return self._json(200, auth.activer_compte(self.conn, profil, self._corps(corps)))
 
         if route == "/eleves" and methode == "GET":
             self._profil(entetes)
@@ -108,18 +104,6 @@ class Application:
         if route == "/demandes-cursus" and methode == "POST":
             profil = self._profil(entetes)
             return self._json(201, auth.demander_cursus(self.conn, profil, self._corps(corps)))
-
-        if route == "/auth/lien" and methode in ("GET", "POST"):
-            jeton = (params.get("jeton") or [None])[0]
-            if jeton is None and methode == "POST":
-                jeton = self._corps(corps).get("jeton")
-            appareil = entetes.get("user-agent", "")[:120]
-            with self.verrou:
-                cookie = auth.echanger_magic(self.conn, jeton, appareil)
-            if cookie is None:
-                raise Refus(401, "lien-invalide", "ce lien a expiré ou a déjà servi")
-            return self._json(200, {"ok": True, "profil": auth.verifier(self.conn, cookie)},
-                              {"set-cookie": self._cookie(cookie)})
 
         if route == "/auth/deconnexion" and methode == "POST":
             self._profil(entetes)

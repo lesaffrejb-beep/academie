@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 550" width="860" height="550">
+  <rect width="860" height="550" rx="16" fill="#f8f9fa"/>
+  <g font-family="system-ui, -apple-system, sans-serif" fill="#1a3d5c">
+    <text x="36" y="38" font-size="20" font-weight="bold">MATRICE D'ACTION : FAIRE FACE AUX FRAGILITÉS</text>
+    <text x="36" y="58" font-size="13" fill="#5a6b78">Repères Anah 2026 : arbitrer entre gestion interne, appui expert et relai extérieur</text>
+
+    <!-- En-têtes colonnes -->
+    <rect x="36" y="78" width="254" height="30" rx="6" fill="#e2e8f0"/>
+    <text x="163" y="98" font-size="13" font-weight="bold" text-anchor="middle" fill="#2d3748">1. AGIR SEUL</text>
+
+    <rect x="302" y="78" width="256" height="30" rx="6" fill="#fed7aa"/>
+    <text x="430" y="98" font-size="13" font-weight="bold" text-anchor="middle" fill="#9a3412">2. CHERCHER DU SOUTIEN</text>
+
+    <rect x="570" y="78" width="254" height="30" rx="6" fill="#fef08a"/>
+    <text x="697" y="98" font-size="13" font-weight="bold" text-anchor="middle" fill="#854d0e">3. TROUVER UN RELAI</text>
+
+    <!-- Ligne URGENT -->
+    <g transform="translate(0, 118)">
+      <!-- Badge Urgent -->
+      <rect x="36" y="0" width="80" height="22" rx="4" fill="#fee2e2"/>
+      <text x="42" y="15" font-size="11" font-weight="bold" fill="#b91c1c">URGENT</text>
+
+      <!-- Col 1 -->
+      <rect x="36" y="28" width="254" height="164" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+      <text x="48" y="52" font-size="13" font-weight="bold" fill="#1e293b">Premiers impayés</text>
+      <text x="48" y="70" font-size="12" fill="#64748b">Relance rapide, échéancier amiable</text>
+      <text x="48" y="98" font-size="13" font-weight="bold" fill="#1e293b">Sauvegarde du bâti</text>
+      <text x="48" y="116" font-size="12" fill="#64748b">Fuite toiture, arrêt ascenseur (art. 18)</text>
+      <text x="48" y="144" font-size="13" font-weight="bold" fill="#1e293b">Troubles de voisinage</text>
+      <text x="48" y="162" font-size="12" fill="#64748b">Rappel au règlement de copropriété</text>
+
+      <!-- Col 2 -->
+      <rect x="302" y="28" width="256" height="164" rx="8" fill="#fff7ed" stroke="#fdba74" stroke-width="1.5"/>
+      <text x="314" y="52" font-size="13" font-weight="bold" fill="#9a3412">Contentieux d'impayés</text>
+      <text x="314" y="70" font-size="12" fill="#7c2d12">Mise en demeure, commissaire de justice</text>
+      <text x="314" y="98" font-size="13" font-weight="bold" fill="#9a3412">Arrêté d'insalubrité ou péril</text>
+      <text x="314" y="116" font-size="12" fill="#7c2d12">Assistance d'un avocat spécialisé</text>
+      <text x="314" y="144" font-size="13" font-weight="bold" fill="#9a3412">Blocage de trésorerie avéré</text>
+      <text x="314" y="162" font-size="12" fill="#7c2d12">Saisine mandataire ad hoc (art. 29-1 A)</text>
+
+      <!-- Col 3 -->
+      <rect x="570" y="28" width="254" height="164" rx="8" fill="#fefce8" stroke="#fde047" stroke-width="1.5"/>
+      <text x="582" y="52" font-size="13" font-weight="bold" fill="#854d0e">Squat et insécurité grave</text>
+      <text x="582" y="70" font-size="12" fill="#713f12">Signalement mairie, préfecture, police</text>
+      <text x="582" y="98" font-size="13" font-weight="bold" fill="#854d0e">Conflits destructeurs</text>
+      <text x="582" y="116" font-size="12" fill="#713f12">Médiation externe, conciliateur</text>
+      <text x="582" y="144" font-size="13" font-weight="bold" fill="#854d0e">Impossibilité d'administrer</text>
+      <text x="582" y="162" font-size="12" fill="#713f12">Administrateur provisoire (art. 29-1)</text>
+    </g>
+
+    <!-- Ligne A PLANIFIER -->
+    <g transform="translate(0, 324)">
+      <!-- Badge A planifier -->
+      <rect x="36" y="0" width="95" height="22" rx="4" fill="#dcfce7"/>
+      <text x="42" y="15" font-size="11" font-weight="bold" fill="#15803d">A PLANIFIER</text>
+
+      <!-- Col 1 -->
+      <rect x="36" y="28" width="254" height="138" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+      <text x="48" y="52" font-size="13" font-weight="bold" fill="#1e293b">Budget et transition</text>
+      <text x="48" y="70" font-size="12" fill="#64748b">Reprise comptable, régularisations</text>
+      <text x="48" y="98" font-size="13" font-weight="bold" fill="#1e293b">Entretien courant préventif</text>
+      <text x="48" y="116" font-size="12" fill="#64748b">Contrats de maintenance et visites</text>
+
+      <!-- Col 2 -->
+      <rect x="302" y="28" width="256" height="138" rx="8" fill="#fff7ed" stroke="#fdba74" stroke-width="1.5"/>
+      <text x="314" y="52" font-size="13" font-weight="bold" fill="#9a3412">Rénovation globale</text>
+      <text x="314" y="70" font-size="12" fill="#7c2d12">France Rénov', opérateur AMO, aides Anah</text>
+      <text x="314" y="98" font-size="13" font-weight="bold" fill="#9a3412">Évolution des statuts</text>
+      <text x="314" y="116" font-size="12" fill="#7c2d12">Scission, refonte règlement (notaire/géomètre)</text>
+
+      <!-- Col 3 -->
+      <rect x="570" y="28" width="254" height="138" rx="8" fill="#fefce8" stroke="#fde047" stroke-width="1.5"/>
+      <text x="582" y="52" font-size="13" font-weight="bold" fill="#854d0e">Précarité des occupants</text>
+      <text x="582" y="70" font-size="12" fill="#713f12">Relais services sociaux (FSL, ADIL, CCAS)</text>
+      <text x="582" y="98" font-size="13" font-weight="bold" fill="#854d0e">Opérations publiques</text>
+      <text x="582" y="116" font-size="12" fill="#713f12">Dispositifs programmés (OPAH, POPAC)</text>
+    </g>
+
+    <!-- Pied -->
+    <text x="36" y="524" font-size="11" fill="#94a3b8">Source : Anah, Gérer les copropriétés fragiles (2026), page 8 · Schéma pédagogique original Académie</text>
+  </g>
+</svg>

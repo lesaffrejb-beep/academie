@@ -4,11 +4,12 @@ Squelette écrit le 02/09/2026 (`ARCHITECTURE.md` §6, `decisions/0006`),
 codé le 03/09/2026 par le chantier `ACA-JOURNAL-SYNC-1` : paquet
 `academie_etat/` (stdlib seule : `http.server`, `sqlite3`), migrations,
 21 tests dans `tests/` (union, idempotence, lot de 501, ligne fautive
-indexée, jetons hachés, expiration, révocation, lien magique à usage
-unique, suppression sous 48 h, import v0 vers v1, parité FSRS sur les
+indexée, jetons hachés, expiration, révocation, suppression sous 48 h,
+import v0 vers v1, parité FSRS sur les
 vecteurs, socket réelle). Lancer : `python3 -m unittest discover -s serveur/tests`,
 ou `python3 app/tests.py` qui l'inclut. Routes servies : `/sante`,
-`/journal`, `/journal/export`, `/auth/lien`, `/auth/deconnexion`,
+`/journal`, `/journal/export`, `/compte`, `/auth/connexion`,
+`/auth/recuperation`, `/auth/deconnexion`,
 `/profil` (GET, PATCH, DELETE), `/boite`. `GET /journal/export` sort le
 journal en JSONL : c'est l'entrée de `python3 app/rituel.py <fichier>`,
 le tableau de bord du rituel (`ACA-RITUAL-METRICS-1`), qui lit sans rien
@@ -61,7 +62,7 @@ serveur/
   academie_etat/       le paquet Python
     __init__.py
     app.py             création de l'application, routage
-    auth.py            jetons, magic links, cookies de session
+    auth.py            sessions, phrases et clés de récupération
     journal.py         union append-only, export
     livraisons.py      réception, re-validation, quarantaine
     cercles.py         membres, visibilité, défis, ligue (plus tard)
@@ -79,10 +80,8 @@ serveur/
 - Chaque écriture est idempotente : rejouer la même requête ne change
   rien.
 - Chaque refus a un motif court, lisible par un humain et par un agent.
-- Les identifiants de joueurs sont opaques ; aucun mail n'apparaît dans
-  une URL ni dans un journal.
+- Les identifiants de joueurs sont opaques ; la phrase et la clé ne
+  figurent ni dans une URL, ni dans un journal, ni dans SQLite en clair.
 - La version du contrat (`carte-v2`, `journal-v1`) est vérifiée sur
   chaque requête qui porte des données.
-- Aucune dépendance à labor, au socle PostGIS ni à un service tiers, à
-  une exception près : le fournisseur d'envoi de mail des magic links
-  (`decisions/0020`).
+- Aucune dépendance à labor, au socle PostGIS ni à un service tiers.

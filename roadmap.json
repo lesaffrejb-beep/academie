@@ -5,14 +5,14 @@
   "items": [
     {
       "id": "ACA-EXPERTISE-1",
-      "outcome": "Construire les spécialisations sur des preuves ; premier pilote de dix pages vers une étude jouable.",
+      "outcome": "Spécialisations transverses explicites, couverture mesurée et dossiers experts sourcés, au-delà du socle.",
       "status": "ready",
       "mode": "agent-review",
       "risk": "medium",
       "priority": 100,
       "depends_on": ["ACA-PROGRAMME-1"],
       "budget": {"max_units": 1, "max_minutes": 180},
-      "proof": "Pilote de lecture critique relu et testé ; couverture experte et transfert pédagogique restent à construire.",
+      "proof": "Première unité : cartographie et rapport testés ; lecture complète des sources et dossiers experts restent à produire.",
       "parent_milestone": "ACADEMIE-EXPERTISE"
     },
     {
@@ -749,6 +749,24 @@
       },
       "proof": "Journal exporté sans lignes origine=quiz ; paramètres versionnés ; rétention réelle avant/après.",
       "parent_milestone": "ACADEMIE-V2-OUVERTURE"
+    },
+    {
+      "id": "ACA-ACCES-LOCAL-1",
+      "outcome": "Les joueurs créent un compte par pseudo et phrase secrète, conservent une clé de récupération affichée une seule fois et peuvent reprendre l'accès sans mail ; la purge des comptes d'essai exige une confirmation locale.",
+      "status": "in_progress",
+      "mode": "agent-review",
+      "risk": "medium",
+      "priority": 85,
+      "depends_on": [
+        "ACA-ONBOARDING-1"
+      ],
+      "budget": {
+        "max_units": 1,
+        "max_minutes": 180,
+        "max_tokens": 30000
+      },
+      "proof": "06/09 local : 42 tests serveur, 295 tests client, build, 76 parcours Playwright, tests.py et check.py verts ; création, connexion, récupération, invalidation de clé et purge confirmée couverts. Relecture fraîche, publication et purge VPS distinctes.",
+      "parent_milestone": "ACADEMIE-V2-JOUEUR"
     },
     {
       "id": "ACA-ONBOARDING-1",

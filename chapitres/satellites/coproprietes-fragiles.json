@@ -1,0 +1,394 @@
+{
+  "id": "satellite.droit.coproprietes-fragiles",
+  "titre": "Gérer les copropriétés fragiles : repères et matrice d'action",
+  "domaine": "droit",
+  "branche": "organes",
+  "niveau": 2,
+  "prerequis": [
+    "droit.organes.le-syndicat-des-coproprietaires",
+    "droit.organes.le-syndic-et-ses-missions",
+    "droit.organes.le-conseil-syndical"
+  ],
+  "ponts": [
+    "comptabilite.impayes.le-plan-de-recouvrement",
+    "immobilier.local.les-fragilites-observees"
+  ],
+  "satellite": true,
+  "rattachement_propose": "droit.organes.administrateur-provisoire-et-procedure-d-alerte",
+  "objectifs": [
+    "Distinguer copropriété fragile en amont et copropriété en difficulté judiciaire sous administration provisoire.",
+    "Identifier les trois composantes de la fragilité : financière, technique et gouvernance.",
+    "Mobiliser la matrice d'action de l'Anah pour arbitrer entre gestion interne, appui expert et relais extérieur."
+  ],
+  "amorce": {
+    "question": "Un conseil syndical s'inquiète : le taux d'impayés atteint 12 % du budget et deux copropriétaires ne viennent plus aux assemblées. Faut-il saisir le juge pour nommer un administrateur provisoire ?",
+    "aide": "Distingue la fragilité précoce d'une cessation de paiement ou d'un blocage complet au sens de l'article 29-1.",
+    "reponse_attendue": "Non, cette situation relève d'une fragilité précoce et non d'une administration judiciaire. Le syndic et le conseil doivent intervenir en amont : diagnostic des causes, plan de recouvrement, rétablissement du dialogue et éventuel recours à un accompagnement public."
+  },
+  "lecon": "Une copropriété en difficulté ne bascule pas du jour au lendemain dans le blocage judiciaire. Entre le fonctionnement ordinaire d'un immeuble sain et la désignation d'un administrateur provisoire au titre de l'article 29-1 de la loi du 10 juillet 1965, il existe une phase intermédiaire déterminante : la fragilité. Ce chapitre s'appuie sur le guide de référence publié par l'Anah en 2026, « Gérer les copropriétés fragiles : repères pour l'action ». Il donne au syndic et aux membres du conseil syndical les repères méthodologiques pour agir avant qu'il ne soit trop tard.\n\nLa fragilité d'une copropriété repose sur trois composantes indissociables. La première est financière : retards de paiement de charges, trésorerie tendue, dettes fournisseurs ou fonds de travaux insuffisant. La deuxième est technique : vieillissement des installations, absence d'entretien préventif, retards pris sur les travaux de toiture ou de ravalement, apparition d'infiltrations ou de pannes récurrentes. La troisième relève de la gouvernance et de la vie sociale : absentéisme aux assemblées générales, renouvellement impossible du conseil syndical, conflits d'usage ou perte de confiance envers le syndic. Lorsqu'un de ces trois piliers faiblit, il entraîne mécaniquement les deux autres dans une spirale négative.\n\nContrairement à une idée reçue tenace, la fragilité ne concerne pas uniquement les grands ensembles de banlieue construits dans les années soixante. L'Anah rappelle qu'elle frappe aussi de plein fouet les petits immeubles anciens des centres-villes patrimoniaux. Dans ces petites copropriétés de moins de dix lots, l'absence fréquente de syndic professionnel, l'hétérogénéité des revenus des propriétaires et le coût élevé de réfection des parties communes anciennes créent une vulnérabilité discrète mais redoutable.\n\nPour guider le praticien, l'Anah formalise une matrice décisionnelle articulée selon deux axes : l'urgence temporelle (urgent ou à planifier) et le mode opératoire (agir seul, chercher du soutien, ou trouver un relai). Devant un premier impayé ou une panne ponctuelle, le syndic agit seul : relance immédiate, proposition d'échéancier et commande de sauvegarde technique. Dès que la dette se consolide ou qu'un arrêté municipal est notifié, le syndic cherche du soutien : recours au commissaire de justice, saisine d'un avocat spécialisé ou désignation d'un mandataire ad hoc au titre de l'article 29-1 A. Enfin, lorsque la situation échappe aux compétences de gestion privée (squat, insalubrité d'un lot, conflits destructeurs ou blocage institutionnel complet), le syndic doit trouver un relai : signalement au service communal d'hygiène, médiation conventionnelle, recours aux services sociaux (FSL, CCAS) ou demande d'administration provisoire (article 29-1).\n\nLe redressement réussi d'une copropriété fragile exige d'agir simultanément sur six axes d'intervention : juridique (statuts, scission, mise en conformité du règlement), comptable (fiabilisation des comptes, apurement des dettes), gouvernance (mobilisation du conseil syndical, réunions de concertation), technique (hiérarchisation des travaux, diagnostics), humain (accompagnement des occupants en difficulté) et partenarial (mobilisation des aides Anah et des collectivités locales). Anticiper, communiquer et s'entourer transforment une gestion de crise subie en un redressement méthodique et durable.",
+  "synthese": {
+    "consigne": "Un syndic prend en gestion un immeuble de 12 lots en centre-ville. Le compte bancaire est débiteur de 4 500 euros, deux copropriétaires cumulent 6 mois d'impayés et la toiture fuit. Rédige en cinq points la stratégie d'intervention immédiate selon la grille Anah.",
+    "attendus": [
+      "Mesures d'urgence : commande des travaux conservatoires de mise hors d'eau de la toiture (agir seul)",
+      "Relance et traitement des impayés : distinguer bonne foi (échéancier) et contentieux (commissaire de justice)",
+      "Régularisation comptable et établissement d'un budget prévisionnel réaliste",
+      "Gouvernance : organiser une réunion d'information avec les copropriétaires pour réactiver le conseil syndical",
+      "Orientation vers les partenaires publics : solliciter l'Anah ou la collectivité pour les aides à la rénovation"
+    ]
+  },
+  "sources": [
+    {
+      "texte": "Anah, Gérer les copropriétés fragiles : repères pour l'action, 2026, pages 8-24. Diagnostic, matrice d'intervention et accompagnement des copropriétés.",
+      "url": "https://www.anah.gouv.fr/",
+      "nature": "institution"
+    }
+  ],
+  "provenance": {
+    "auteur": "modele",
+    "modele": "Antigravity / Gemini 3.8 Flash",
+    "genere_le": "2026-09-06",
+    "session": "usine-0a7537d478616271-20260906",
+    "sources_retrouvees": 1,
+    "sources_concordantes": 0,
+    "sans_source": false
+  },
+  "statut": "brouillon",
+  "partage": "banque",
+  "verifie": "2026-09-06",
+  "version": 1,
+  "cartes": [
+    {
+      "id": "copro-fragile-matrice-action",
+      "chapitre": "satellite.droit.coproprietes-fragiles",
+      "domaine": "droit",
+      "branche": "organes",
+      "type": "photo",
+      "niveau": 2,
+      "question": "D'après la matrice d'action de l'Anah, quelle démarche le syndic doit-il adopter face à des impayés persistants ou à un arrêté de mise en sécurité ?",
+      "reponse": "Chercher du soutien : faire appel à des spécialistes juridiques ou techniques (commissaire de justice, avocat spécialisé, mandataire ad hoc).",
+      "explication": "Le schéma distingue trois modes d'action : agir seul pour les premiers impayés et la sauvegarde immédiate, chercher du soutien pour le contentieux et les blocages juridiques, et trouver un relai pour l'insalubrité ou l'impossibilité d'administrer.",
+      "vigilance": "Agir seul trop longtemps sur un impayé qui s'installe aggrave le déficit de trésorerie de l'immeuble.",
+      "source": [
+        {
+          "texte": "Anah, Gérer les copropriétés fragiles : repères pour l'action, 2026, page 8",
+          "url": "https://www.anah.gouv.fr/",
+          "nature": "institution"
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "modele": "Antigravity / Gemini 3.8 Flash",
+        "genere_le": "2026-09-06",
+        "session": "usine-0a7537d478616271-20260906",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "verifie": "2026-09-06",
+      "peremption": null,
+      "statut": "brouillon",
+      "partage": "banque",
+      "image": {
+        "fichier": "images/copro-fragile-matrice.svg",
+        "alt": "Matrice décisionnelle Anah 2026 croisant le degré d'urgence (urgent, à planifier) et les modes d'action (agir seul, chercher du soutien, trouver un relai).",
+        "licence": "Création pédagogique originale Académie d'après Anah 2026 ; diffusion autorisée.",
+        "credit": "Académie d'après le guide Anah 2026.",
+        "source": "https://www.anah.gouv.fr/"
+      }
+    },
+    {
+      "id": "copro-fragile-trois-dimensions",
+      "chapitre": "satellite.droit.coproprietes-fragiles",
+      "domaine": "droit",
+      "branche": "organes",
+      "type": "qcm",
+      "niveau": 2,
+      "question": "Quels sont les trois piliers dont la dégradation conjointe caractérise la fragilité d'une copropriété selon l'Anah ?",
+      "reponse": "La situation financière, l'état du bâti et la gouvernance.",
+      "choix": [
+        {
+          "texte": "La situation financière, l'état du bâti et la gouvernance.",
+          "correct": true
+        },
+        {
+          "texte": "La localisation géographique, l'âge moyen des copropriétaires et la taille du syndic.",
+          "correct": false,
+          "pourquoi_faux": "Ce sont des données sociodémographiques, pas les composantes fonctionnelles de la fragilité."
+        },
+        {
+          "texte": "Le nombre d'étages, le type de chauffage et la présence d'ascenseurs.",
+          "correct": false,
+          "pourquoi_faux": "Ce sont des caractéristiques techniques du bâtiment, pas les piliers de la fragilité."
+        },
+        {
+          "texte": "Le niveau des impôts locaux, le zonage PLU et la présence de commerces en rez-de-chaussée.",
+          "correct": false,
+          "pourquoi_faux": "Ces éléments relèvent de l'environnement urbain et fiscal."
+        }
+      ],
+      "explication": "L'Anah (rapport Braye, loi ALUR, guide 2026) identifie trois domaines interdépendants : la gouvernance (syndic, conseil syndical, AG), la finance (trésorerie, impayés) et le bâti (entretien, sécurité).",
+      "vigilance": "Une faiblesse non traitée sur l'un des trois piliers contamine rapidement les deux autres.",
+      "source": [
+        {
+          "texte": "Anah, Gérer les copropriétés fragiles : repères pour l'action, 2026, pages 10-11",
+          "url": "https://www.anah.gouv.fr/",
+          "nature": "institution"
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "modele": "Antigravity / Gemini 3.8 Flash",
+        "genere_le": "2026-09-06",
+        "session": "usine-0a7537d478616271-20260906",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "verifie": "2026-09-06",
+      "peremption": null,
+      "statut": "brouillon",
+      "partage": "banque"
+    },
+    {
+      "id": "copro-fragile-mythe-centre-ville",
+      "chapitre": "satellite.droit.coproprietes-fragiles",
+      "domaine": "droit",
+      "branche": "organes",
+      "type": "flash",
+      "niveau": 2,
+      "question": "Pourquoi est-il faux de croire que les copropriétés fragiles ne se trouvent que dans les grands ensembles périphériques ?",
+      "reponse": "L'Anah souligne que les petits immeubles anciens de centre-ville sont également très vulnérables, souvent dépourvus de syndic professionnel et porteurs de charges de réhabilitation lourdes.",
+      "explication": "Dans un petit immeuble ancien, un seul copropriétaire défaillant ou un besoin urgent de toiture peut paralyser l'ensemble de la copropriété faute de trésorerie mutualisée.",
+      "vigilance": "Ne pas sous-estimer le risque d'impayés et de dégradation dans les petites copropriétés patrimoniales.",
+      "source": [
+        {
+          "texte": "Anah, Gérer les copropriétés fragiles : repères pour l'action, 2026, page 12",
+          "url": "https://www.anah.gouv.fr/",
+          "nature": "institution"
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "modele": "Antigravity / Gemini 3.8 Flash",
+        "genere_le": "2026-09-06",
+        "session": "usine-0a7537d478616271-20260906",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "verifie": "2026-09-06",
+      "peremption": null,
+      "statut": "brouillon",
+      "partage": "banque"
+    },
+    {
+      "id": "copro-fragile-axes-intervention",
+      "chapitre": "satellite.droit.coproprietes-fragiles",
+      "domaine": "droit",
+      "branche": "organes",
+      "type": "qcm",
+      "niveau": 2,
+      "question": "Combien d'axes d'intervention interdépendants l'Anah recommande-t-elle de mobiliser pour redresser durablement une copropriété fragilisée ?",
+      "reponse": "Six axes : gouvernance, juridique, comptable, technique (bâti), humain (personnes) et environnement (partenarial).",
+      "choix": [
+        {
+          "texte": "Six axes : gouvernance, juridique, comptable, technique, humain et partenarial.",
+          "correct": true
+        },
+        {
+          "texte": "Un seul axe : le recouvrement forcé et judiciaire des charges impayées.",
+          "correct": false,
+          "pourquoi_faux": "Le recouvrement seul ne résout ni les pannes de gouvernance ni la dégradation du bâti."
+        },
+        {
+          "texte": "Deux axes : la démolition partielle et le relogement des ménages.",
+          "correct": false,
+          "pourquoi_faux": "La démolition est une mesure extrême réservée à des situations irrémédiables de renouvellement urbain lourd."
+        },
+        {
+          "texte": "Trois axes : la mise sous tutelle, la vente aux enchères et l'expulsion.",
+          "correct": false,
+          "pourquoi_faux": "Il ne s'agit pas de mesures de redressement de copropriété mais de voies d'exécution individuelles."
+        }
+      ],
+      "explication": "Le guide Anah (page 16) structure l'action globale autour de ces six dimensions complémentaires pour éviter qu'un redressement comptable n'échoue par abandon du bâti ou de la gouvernance.",
+      "vigilance": "Un plan de redressement exclusivement comptable sans volet bâti ni mobilisation des occupants est voué à l'échec.",
+      "source": [
+        {
+          "texte": "Anah, Gérer les copropriétés fragiles : repères pour l'action, 2026, page 16",
+          "url": "https://www.anah.gouv.fr/",
+          "nature": "institution"
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "modele": "Antigravity / Gemini 3.8 Flash",
+        "genere_le": "2026-09-06",
+        "session": "usine-0a7537d478616271-20260906",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "verifie": "2026-09-06",
+      "peremption": null,
+      "statut": "brouillon",
+      "partage": "banque"
+    },
+    {
+      "id": "copro-fragile-spirale-degradation",
+      "chapitre": "satellite.droit.coproprietes-fragiles",
+      "domaine": "droit",
+      "branche": "organes",
+      "type": "flash",
+      "niveau": 2,
+      "question": "Comment s'enchaîne la spirale de dégradation d'une copropriété fragile décrite par l'Anah ?",
+      "reponse": "Hausse des charges -> impayés croissants -> trésorerie déficitaire -> report des travaux d'entretien -> dégradation du bâti -> désaffection des assemblées générales et décrochage.",
+      "explication": "Quand l'entretien est différé par manque de trésorerie, la facture ultérieure des réparations augmente, ce qui accroît encore les impayés et décourage les copropriétaires solvables.",
+      "vigilance": "Rompre la chaîne au plus tôt en traitant les impayés dès le premier trimestre et en sécurisant les travaux de sauvegarde.",
+      "source": [
+        {
+          "texte": "Anah, Gérer les copropriétés fragiles : repères pour l'action, 2026, page 18",
+          "url": "https://www.anah.gouv.fr/",
+          "nature": "institution"
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "modele": "Antigravity / Gemini 3.8 Flash",
+        "genere_le": "2026-09-06",
+        "session": "usine-0a7537d478616271-20260906",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "verifie": "2026-09-06",
+      "peremption": null,
+      "statut": "brouillon",
+      "partage": "banque"
+    },
+    {
+      "id": "copro-fragile-distinction-judiciaire",
+      "chapitre": "satellite.droit.coproprietes-fragiles",
+      "domaine": "droit",
+      "branche": "organes",
+      "type": "flash",
+      "niveau": 2,
+      "question": "Quelle est la différence fondamentale entre une copropriété fragile et une copropriété placée sous administration provisoire (article 29-1) ?",
+      "reponse": "La copropriété fragile conserve ses organes normaux (syndic, conseil syndical, AG) et agit en prévention, tandis que l'administration provisoire dessaisit le syndic et l'assemblée en constatant l'impossibilité d'administrer l'immeuble.",
+      "explication": "L'administration provisoire judiciaire intervient en aval, en cas de blocage grave ou d'insuffisance financière irrémédiable. La gestion de la fragilité vise précisément à éviter ce dessaisissement.",
+      "vigilance": "Ne pas attendre l'impasse financière totale pour demander un mandataire ad hoc (article 29-1 A) ou actionner les aides publiques.",
+      "source": [
+        {
+          "texte": "Anah, Gérer les copropriétés fragiles : repères pour l'action, 2026, pages 8 et 10",
+          "url": "https://www.anah.gouv.fr/",
+          "nature": "institution"
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "modele": "Antigravity / Gemini 3.8 Flash",
+        "genere_le": "2026-09-06",
+        "session": "usine-0a7537d478616271-20260906",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "verifie": "2026-09-06",
+      "peremption": null,
+      "statut": "brouillon",
+      "partage": "banque"
+    },
+    {
+      "id": "copro-fragile-indicateurs-alerte",
+      "chapitre": "satellite.droit.coproprietes-fragiles",
+      "domaine": "droit",
+      "branche": "organes",
+      "type": "qcm",
+      "niveau": 2,
+      "question": "Parmi les situations suivantes, laquelle constitue un signal d'alerte précoce de fragilité financière selon le guide Anah ?",
+      "reponse": "Des dettes fournisseurs récurrentes combinées à un taux d'impayés dépassant 15 % du budget prévisionnel.",
+      "choix": [
+        {
+          "texte": "Des dettes fournisseurs récurrentes combinées à un taux d'impayés dépassant 15 % du budget prévisionnel.",
+          "correct": true
+        },
+        {
+          "texte": "Un fonds de travaux voté au taux légal de 5 % sans dépense engagée la première année.",
+          "correct": false,
+          "pourquoi_faux": "C'est un fonctionnement d'épargne préventive parfaitement normal et conforme à la loi."
+        },
+        {
+          "texte": "Le départ d'un copropriétaire bailleur ayant vendu son lot à un accédant à la propriété.",
+          "correct": false,
+          "pourquoi_faux": "La rotation des propriétaires est courante et ne préjuge pas d'une fragilité financière."
+        },
+        {
+          "texte": "L'organisation d'une assemblée générale avec trois semaines de délai de convocation.",
+          "correct": false,
+          "pourquoi_faux": "Le délai de 21 jours est le délai légal régulier fixé par le décret du 17 mars 1967."
+        }
+      ],
+      "explication": "Le guide Anah (pages 22-24) retient le taux d'impayés sur budget prévisionnel et l'accumulation de dettes envers les prestataires ou concessionnaires comme marqueurs clés de fragilité.",
+      "vigilance": "Les dettes fournisseurs révèlent que les impayés ne sont plus absorbés par le fonds de roulement.",
+      "source": [
+        {
+          "texte": "Anah, Gérer les copropriétés fragiles : repères pour l'action, 2026, pages 22-24",
+          "url": "https://www.anah.gouv.fr/",
+          "nature": "institution"
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "modele": "Antigravity / Gemini 3.8 Flash",
+        "genere_le": "2026-09-06",
+        "session": "usine-0a7537d478616271-20260906",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "verifie": "2026-09-06",
+      "peremption": null,
+      "statut": "brouillon",
+      "partage": "banque"
+    },
+    {
+      "id": "copro-fragile-premiers-reflexes",
+      "chapitre": "satellite.droit.coproprietes-fragiles",
+      "domaine": "droit",
+      "branche": "organes",
+      "type": "feuille-blanche",
+      "niveau": 2,
+      "question": "Sur une feuille, en trois minutes : liste les cinq actions immédiates du syndic qui reprend un mandat comportant 15 % d'impayés et un conseil syndical inactif.",
+      "reponse": "Audit comptable de l'antériorité de la dette ; prise de contact direct avec le conseil syndical pour relancer la concertation ; mise en place d'échéanciers amiables pour les occupants de bonne foi ; envoi des mises en demeure contentieuses pour les débiteurs négligents ; identification des travaux urgents de sauvegarde du bâti.",
+      "explication": "Ces cinq actions combinent l'axe comptable, l'axe gouvernance et l'axe technique pour stabiliser la trésorerie et rétablir le dialogue dès la prise de fonction.",
+      "attendus": [
+        "audit comptable et pointage des soldes débiteurs",
+        "réactivation du conseil syndical et rencontre sur place",
+        "distinction amiable (échéancier) et contentieux (mise en demeure)",
+        "sauvegarde technique du bâti et travaux indispensables",
+        "présentation d'un plan d'apurement transparent en assemblée générale"
+      ],
+      "vigilance": "Ne jamais laisser s'installer le silence entre le syndic, le conseil syndical et les copropriétaires débiteurs.",
+      "source": [
+        {
+          "texte": "Anah, Gérer les copropriétés fragiles : repères pour l'action, 2026, pages 6-8",
+          "url": "https://www.anah.gouv.fr/",
+          "nature": "institution"
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "modele": "Antigravity / Gemini 3.8 Flash",
+        "genere_le": "2026-09-06",
+        "session": "usine-0a7537d478616271-20260906",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "verifie": "2026-09-06",
+      "peremption": null,
+      "statut": "brouillon",
+      "partage": "banque"
+    }
+  ]
+}

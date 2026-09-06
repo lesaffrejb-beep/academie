@@ -71,7 +71,7 @@ est refusée. Un fichier de
 |---|---|---|
 | GET | `/profil` | `{"id", "titre_affiche", "cree_le", "domaines"}` |
 | PATCH | `/profil` | réglages : thème, semaine type, notifications, visibilité par domaine |
-| DELETE | `/profil` | `202` ; effacement complet sous 48 h, confirmation par mail au joueur |
+| DELETE | `/profil` | `202` ; effacement complet sous 48 h, à la demande du joueur connecté |
 
 ## Boîte (file d'attente)
 
@@ -101,24 +101,28 @@ une route de classement public.
 
 | Méthode | Route | Sens |
 |---|---|---|
-| POST | `/auth/lien` | envoie un magic link au mail du profil (inscription, nouvel appareil) |
-| GET | `/auth/entrer?jeton=` | pose le cookie de session (≥ 1 an) |
-| POST | `/auth/sortir` | révoque la session |
+| POST | `/compte` | crée `pseudo` et `phrase_secrete`, rend le profil et une clé de récupération affichable une fois |
+| POST | `/auth/connexion` | reçoit `pseudo` et `phrase_secrete`, pose un cookie de session |
+| POST | `/auth/recuperation` | reçoit `pseudo`, `cle_recuperation`, `phrase_secrete`, renouvelle la phrase et la clé |
+| POST | `/auth/deconnexion` | révoque la session courante |
 
-Tant qu'il n'y a pas de comptes, JB crée les profils et génère les liens
-à la main avec un outil de ligne de commande du paquet.
+La phrase et la clé sont hachées par scrypt avec un sel distinct. La clé
+est aléatoire sur 128 bits, ne revient que dans la réponse de création ou
+de récupération, et ne peut pas être retrouvée ensuite. Sans phrase et
+sans clé, il n'existe pas de récupération.
 
-## Essai comptes, 05/09/2026 (0042)
+## Accès local, 06/09/2026 (0045)
 
-Implémentation locale : `POST /compte` reçoit `mail`, `mot_de_passe`,
-`pseudo` ; répond 201 avec le profil et un cookie HttpOnly, SameSite=Strict,
-Secure en production. Mot de passe de 12 à 256 caractères, scrypt
-N=32768/r=8/p=1 et sel aléatoire par compte. Le mail est normalisé ;
-aucune vérification de possession du mail ni aucun envoi automatique.
-`POST /auth/connexion` reçoit mail/mot_de_passe, répond 200 et renouvelle
-la session. Refus 401 générique ; 422 pour données invalides, 409 pour
-compte existant, 429 pour limitation. Les corps POST/PATCH non vides
-exigent application/json sur HTTP, pour empêcher les formulaires tiers.
+`POST /compte` reçoit `pseudo`, `phrase_secrete` et répond 201 avec le
+profil, le cookie HttpOnly SameSite=Strict, Secure en production et la
+clé de récupération. La phrase fait 12 à 256 caractères. Le pseudo est
+normalisé pour la connexion et reste unique. `POST /auth/connexion`
+répond 200 et renouvelle la session. `POST /auth/recuperation` exige la
+clé actuelle, remplace phrase et clé, puis révoque toutes les sessions
+antérieures. Les refus 401 ne distinguent pas un pseudo absent d'un
+secret incorrect ; 422 signale les données invalides, 409 un pseudo
+existant et 429 la limitation. Les corps POST/PATCH non vides exigent
+application/json sur HTTP, pour empêcher les formulaires tiers.
 La limite d'origine se fonde sur le pair socket ; derrière Caddy local,
 seule la dernière adresse ajoutée à X-Forwarded-For est utilisée. Le proxy
 doit ajouter le vrai pair, pas conserver seul un en-tête contrôlé par le
@@ -145,12 +149,12 @@ choix sont acceptées, un choix différent est refusé 422. Le profil rend
 `GET /eleves` authentifié ne rend que `{eleves:[{id,pseudo,cursus}]}`.
 Les profils supprimés, masqués ou `reglages.visibilite=false` sont absents.
 `PATCH /profil {visibilite: boolean}` masque/rétablit le profil. Aucune
-route nouvelle ne rend réponses, erreurs, temps, mail ou agrégat.
+route nouvelle ne rend réponses, erreurs, temps ou agrégat.
 Ce petit annuaire n'implémente pas les défis et autres cercles complets.
 
 `POST /demandes-cursus {texte}` authentifié enregistre de 1 à 2000
 caractères. `python3 -m academie_etat --base <base> demandes` les relit.
-Aucun envoi de mail. Le lien magique CLI existant reste le secours.
+Aucun envoi de mail.
 
 La migration 0002 ajoute les comptes et étend les modes du journal en
 conservant les lignes. Elle n'a été appliquée qu'aux bases d'essai.
@@ -170,15 +174,13 @@ automatiquement dans un compte. L'export HTTP par cookie demande également
 cet en-tête ; l'export de l'interface lit sa propre base locale.
 
 
-## Activation et reprise du 05/09/2026 (0044)
+## Réinitialisation de l'essai (0045)
 
-`GET /profil` ajoute `compte_personnel`, booléen indiquant la présence
-d'identifiants personnels ; aucun hash n'est exposé. `POST /compte/activer`
-reçoit mail, mot_de_passe et pseudo avec la session et X-Academie-Profil.
-Il transforme uniquement un ancien profil sans mot de passe, conserve son
-identifiant, son journal et ses sessions. Même validation que l'inscription ;
-409 si le profil est déjà personnel ou si le mail appartient à un autre
-profil. Transaction atomique et limitation des tentatives par profil.
+Après publication conjointe du client et de l'API, JB peut effacer les
+comptes d'essai, leurs sessions et données distantes par
+`python3 -m academie_etat --base <base> reinitialiser-comptes --confirmer
+'SUPPRIMER LES COMPTES'`. La commande ne touche pas les bases IndexedDB
+des navigateurs et ne peut pas s'exécuter sans la confirmation littérale.
 
 L'accueil est joignable par `#/arrivee` même connecté. L'entrée HTTPS
 `/academie-acces/` sert le même client sous un scope distinct du service

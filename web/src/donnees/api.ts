@@ -57,6 +57,7 @@ export interface Sante {
   moteur_version?: string;
   contrats?: string[];
 }
+export type CompteEtCle = Compte & { cle_recuperation: string };
 
 export const api = {
   sante: () => appelle<Sante>("/sante"),
@@ -74,9 +75,9 @@ export const api = {
   },
 
   profil: () => appelle<Compte>("/profil"),
-  inscription: (mail: string, mot_de_passe: string, pseudo: string) => appelle<Compte>("/compte", {method:"POST", body:JSON.stringify({mail, mot_de_passe, pseudo})}),
-  connexion: (mail: string, mot_de_passe: string) => appelle<Compte>("/auth/connexion", {method:"POST", body:JSON.stringify({mail, mot_de_passe})}),
-  activeCompte: (mail: string, mot_de_passe: string, pseudo: string) => appelle<Compte>("/compte/activer", {method:"POST", body:JSON.stringify({mail, mot_de_passe, pseudo})}),
+  inscription: (pseudo: string, phrase_secrete: string) => appelle<CompteEtCle>("/compte", {method:"POST", body:JSON.stringify({pseudo, phrase_secrete})}),
+  connexion: (pseudo: string, phrase_secrete: string) => appelle<Compte>("/auth/connexion", {method:"POST", body:JSON.stringify({pseudo, phrase_secrete})}),
+  recuperation: (pseudo: string, cle_recuperation: string, phrase_secrete: string) => appelle<CompteEtCle>("/auth/recuperation", {method:"POST", body:JSON.stringify({pseudo, cle_recuperation, phrase_secrete})}),
   deconnexion: () => appelle<{ok:boolean}>("/auth/deconnexion", {method:"POST"}),
   visibilite: (visibilite: boolean) => appelle<{ok:boolean}>("/profil", {method:"PATCH", body:JSON.stringify({visibilite})}),
   eleves: () => appelle<{eleves:{id:string; pseudo:string; cursus:string|null}[]}>("/eleves"),

@@ -19,6 +19,7 @@
 .arrivee label { display:grid; gap:7px; font-weight:600; }
 .arrivee input,.arrivee textarea { width:100%; min-height:48px; border:1px solid var(--c-trait); border-radius:8px; padding:10px 12px; background:var(--c-fond); color:var(--c-encre); font:400 17px var(--f-texte); }
 .arrivee-detail { font-size:14px; color:var(--c-encre-2); }
+.arrivee-cle { display:block; padding:14px; border:1px solid var(--c-trait); border-radius:8px; background:var(--c-fond); color:var(--c-encre); font:600 18px/1.5 var(--f-texte); letter-spacing:.08em; overflow-wrap:anywhere; }
 .arrivee .action-etude { width:100%; justify-content:center; }
 .arrivee-erreur { color:var(--c-erreur); padding:12px; border:1px solid currentColor; border-radius:8px; }
 .arrivee-cursus { display:grid; gap:12px; margin:24px 0; }
