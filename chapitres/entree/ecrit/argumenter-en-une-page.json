@@ -1,0 +1,229 @@
+{
+  "id": "entree.ecrit.argumenter-en-une-page",
+  "titre": "Argumenter en une page",
+  "domaine": "entree",
+  "branche": "ecrit",
+  "niveau": 2,
+  "prerequis": [],
+  "objectifs": [
+    "Écrire une réponse structurée, personnelle et sans jargon",
+    "Défendre une position conditionnelle et traiter une objection."
+  ],
+  "amorce": {
+    "question": "Cas fictif : faut-il proposer uniquement des inscriptions numériques à une activité associative ? Donne une raison et une objection avant de conclure.",
+    "aide": "Une position doit rencontrer une objection réelle puis préciser ses conditions.",
+    "reponse_attendue": "Le numérique peut simplifier certaines démarches, mais un accès exclusif peut gêner des personnes ; une solution doit examiner les possibilités réelles du public."
+  },
+  "lecon": "Argumenter ne consiste pas à additionner des affirmations. Il faut répondre à une question, donner une raison et montrer ce qui pourrait modifier sa conclusion. Les attendus présentés par l’Onisep comprennent l’expression et le raisonnement. Le travail proposé ici est un exercice original de préparation générale ; ce n’est ni un sujet officiel ni une promesse de réussite à la sélection.\n\nConsidère une activité associative fictive qui veut passer à l’inscription entièrement numérique. Une première réponse dit : « C’est moderne, donc c’est mieux. » Le mot moderne ne démontre aucun bénéfice précis. Reformule l’argument : un formulaire peut faciliter le regroupement des demandes si les personnes savent l’utiliser et peuvent y accéder. Les conditions font partie du raisonnement ; elles ne sont pas une gêne à dissimuler.\n\nConstruis maintenant l’objection la plus sérieuse. Certaines personnes peuvent rencontrer des difficultés d’accès ou de compréhension. Cela ne démontre pas que tout outil numérique est mauvais. Cela demande d’examiner la possibilité d’un accompagnement ou d’un autre canal. Tu peux défendre un formulaire sans défendre l’exclusivité numérique. Une distinction bien posée est souvent plus utile qu’une conclusion extrême.\n\nÉcris un court développement qui suit le problème. Le premier paragraphe pose la question et ta réponse provisoire. Le suivant explique une raison avec un exemple explicitement fictif. Un autre examine l’objection et modifie la proposition si nécessaire. Termine par une condition ou une information à vérifier. Il s’agit d’une structure de travail proposée ; il n’existe pas dans cette leçon de nombre officiel de paragraphes imposé.\n\nRelis en cherchant les sauts logiques. Un exemple possible ne prouve pas la fréquence d’un phénomène. Une intention ne démontre pas un effet. Un mot valorisant ne remplace pas un mécanisme expliqué. Si tu utilises un chiffre sur une situation réelle, il faudra une source vérifiable ; dans notre cas, tu peux argumenter sans en inventer.\n\nPour la synthèse, change le public : l’activité souhaite accueillir de nouveaux participants qui connaissent peu son fonctionnement. Révise ta proposition. La grille n’exige pas une opinion prédéterminée ; elle demande un argument explicite, une objection comprise et une conclusion proportionnée. Une réponse différente peut être solide si elle suit les mêmes exigences de justification.",
+  "synthese": {
+    "consigne": "Une association fictive accueille de nouveaux participants et veut imposer un formulaire numérique. Propose une décision conditionnelle, un argument, une objection et une information à vérifier.",
+    "attendus": [
+      "Position compréhensible.",
+      "Mécanisme expliqué sans chiffre inventé.",
+      "Objection traitée sans caricature.",
+      "Condition de révision indiquée."
+    ]
+  },
+  "sources": [
+    {
+      "texte": "Onisep : diplôme d’État infirmier, attendus",
+      "url": "https://www.onisep.fr/ressources/univers-formation/formations/post-bac/diplome-d-etat-d-infirmier",
+      "nature": "institution",
+      "consulte_le": "2026-09-07",
+      "parti": "Organisme public ; portée pédagogique ou information sur la candidature, pas promesse d’admission."
+    }
+  ],
+  "provenance": {
+    "auteur": "modele",
+    "modele": "GPT-6",
+    "outil": "Codex",
+    "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root",
+    "genere_le": "2026-09-07",
+    "sources_retrouvees": 1,
+    "sources_concordantes": 0,
+    "sans_source": false
+  },
+  "statut": "valide",
+  "partage": "banque",
+  "verifie": "2026-09-07",
+  "peremption": "2027-01-07",
+  "version": 1,
+  "cartes": [
+    {
+      "id": "entree-ecrit-argumenter-en-une-page-rentree-1",
+      "chapitre": "entree.ecrit.argumenter-en-une-page",
+      "domaine": "entree",
+      "branche": "ecrit",
+      "niveau": 2,
+      "type": "flash",
+      "question": "Quelle différence entre un slogan et un argument ?",
+      "reponse": "Un argument explique pourquoi une proposition répond au problème ; un slogan peut seulement la valoriser.",
+      "explication": "Exercice de raisonnement, pas barème officiel.",
+      "aide": "Une position doit rencontrer une objection réelle puis préciser ses conditions.",
+      "source": [
+        {
+          "texte": "Onisep : diplôme d’État infirmier, attendus",
+          "url": "https://www.onisep.fr/ressources/univers-formation/formations/post-bac/diplome-d-etat-d-infirmier",
+          "nature": "institution",
+          "consulte_le": "2026-09-07",
+          "parti": "Organisme public ; portée pédagogique ou information sur la candidature, pas promesse d’admission."
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "modele": "GPT-6",
+        "outil": "Codex",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root",
+        "genere_le": "2026-09-07",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "statut": "valide",
+      "partage": "banque",
+      "verifie": "2026-09-07",
+      "peremption": "2027-01-07",
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root/revue_ifsi",
+        "date": "2026-09-07",
+        "rapport": "travail/rentree-2026-09-07/RELECTURE-IFSI.md",
+        "assertions": [
+          "Sources HTML et exercices examinés indépendamment ; cas fictifs, réponses et calculs contrôlés dans le rapport.",
+          "Carte examinée : entree-ecrit-argumenter-en-une-page-rentree-1"
+        ],
+        "sources": [
+          "https://www.onisep.fr/ressources/univers-formation/formations/post-bac/diplome-d-etat-d-infirmier"
+        ],
+        "reserves": [
+          "Aucune admission, aptitude clinique ou efficacité chez Arthur démontrée.",
+          "Titre historique FPC pour le calcul ; usage préparatoire général explicitement indiqué."
+        ]
+      }
+    },
+    {
+      "id": "entree-ecrit-argumenter-en-une-page-rentree-2",
+      "chapitre": "entree.ecrit.argumenter-en-une-page",
+      "domaine": "entree",
+      "branche": "ecrit",
+      "niveau": 2,
+      "type": "libre",
+      "question": "Le numérique facilite certains dossiers. Cela suffit-il à imposer ce canal à tous ?",
+      "reponse": "Non : il faut examiner les conditions d’accès et les alternatives utiles.",
+      "explication": "Le bénéfice dans un cas ne prouve pas un bénéfice universel.",
+      "aide": "Une position doit rencontrer une objection réelle puis préciser ses conditions.",
+      "source": [
+        {
+          "texte": "Onisep : diplôme d’État infirmier, attendus",
+          "url": "https://www.onisep.fr/ressources/univers-formation/formations/post-bac/diplome-d-etat-d-infirmier",
+          "nature": "institution",
+          "consulte_le": "2026-09-07",
+          "parti": "Organisme public ; portée pédagogique ou information sur la candidature, pas promesse d’admission."
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "modele": "GPT-6",
+        "outil": "Codex",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root",
+        "genere_le": "2026-09-07",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "statut": "valide",
+      "partage": "banque",
+      "verifie": "2026-09-07",
+      "peremption": "2027-01-07",
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root/revue_ifsi",
+        "date": "2026-09-07",
+        "rapport": "travail/rentree-2026-09-07/RELECTURE-IFSI.md",
+        "assertions": [
+          "Sources HTML et exercices examinés indépendamment ; cas fictifs, réponses et calculs contrôlés dans le rapport.",
+          "Carte examinée : entree-ecrit-argumenter-en-une-page-rentree-2"
+        ],
+        "sources": [
+          "https://www.onisep.fr/ressources/univers-formation/formations/post-bac/diplome-d-etat-d-infirmier"
+        ],
+        "reserves": [
+          "Aucune admission, aptitude clinique ou efficacité chez Arthur démontrée.",
+          "Titre historique FPC pour le calcul ; usage préparatoire général explicitement indiqué."
+        ]
+      }
+    },
+    {
+      "id": "entree-ecrit-argumenter-en-une-page-rentree-3",
+      "chapitre": "entree.ecrit.argumenter-en-une-page",
+      "domaine": "entree",
+      "branche": "ecrit",
+      "niveau": 2,
+      "type": "libre",
+      "question": "Une objection solide oblige-t-elle toujours à abandonner sa proposition ?",
+      "reponse": "Non, elle peut conduire à la préciser, la conditionner ou la réviser.",
+      "explication": "Le raisonnement doit répondre à l’objection, pas l’ignorer.",
+      "aide": "Une position doit rencontrer une objection réelle puis préciser ses conditions.",
+      "source": [
+        {
+          "texte": "Onisep : diplôme d’État infirmier, attendus",
+          "url": "https://www.onisep.fr/ressources/univers-formation/formations/post-bac/diplome-d-etat-d-infirmier",
+          "nature": "institution",
+          "consulte_le": "2026-09-07",
+          "parti": "Organisme public ; portée pédagogique ou information sur la candidature, pas promesse d’admission."
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "modele": "GPT-6",
+        "outil": "Codex",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root",
+        "genere_le": "2026-09-07",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "statut": "valide",
+      "partage": "banque",
+      "verifie": "2026-09-07",
+      "peremption": "2027-01-07",
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root/revue_ifsi",
+        "date": "2026-09-07",
+        "rapport": "travail/rentree-2026-09-07/RELECTURE-IFSI.md",
+        "assertions": [
+          "Sources HTML et exercices examinés indépendamment ; cas fictifs, réponses et calculs contrôlés dans le rapport.",
+          "Carte examinée : entree-ecrit-argumenter-en-une-page-rentree-3"
+        ],
+        "sources": [
+          "https://www.onisep.fr/ressources/univers-formation/formations/post-bac/diplome-d-etat-d-infirmier"
+        ],
+        "reserves": [
+          "Aucune admission, aptitude clinique ou efficacité chez Arthur démontrée.",
+          "Titre historique FPC pour le calcul ; usage préparatoire général explicitement indiqué."
+        ]
+      }
+    }
+  ],
+  "verifie_par": {
+    "outil": "Codex",
+    "modele": "GPT-6",
+    "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root/revue_ifsi",
+    "date": "2026-09-07",
+    "rapport": "travail/rentree-2026-09-07/RELECTURE-IFSI.md",
+    "assertions": [
+      "Sources HTML et exercices examinés indépendamment ; cas fictifs, réponses et calculs contrôlés dans le rapport."
+    ],
+    "sources": [
+      "https://www.onisep.fr/ressources/univers-formation/formations/post-bac/diplome-d-etat-d-infirmier"
+    ],
+    "reserves": [
+      "Aucune admission, aptitude clinique ou efficacité chez Arthur démontrée.",
+      "Titre historique FPC pour le calcul ; usage préparatoire général explicitement indiqué."
+    ]
+  }
+}

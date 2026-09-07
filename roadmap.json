@@ -947,6 +947,21 @@
       "proof": "Livraison locale du 05/09 : travail/experience-2026-09-05/LIVRAISON.md. Suites Python et contrôle verts,270 tests client + 5 publication,build, 70 scénarios navigateur vérifiés (69/70 puis minuit corrigé 2/2), relectures indépendantes. Publication et observation humaine restent séparées.",
       "parent_milestone": "ACADEMIE-1",
       "note": "Périmètre local du cahier terminé, décision 0036. Journal exact et reprise, contrat mixte,5 leçons / 27 cartes v2 en 2 parcours, écran accueil/étude et documentation. Les tests ne prouvent pas la rétention ni la synchronisation physique."
+    },
+    {
+      "id": "ACA-RENTREE-1",
+      "outcome": "Accès personnel, cursus ajoutables et dix séances copro/préparation IFSI accessibles sur VPS.",
+      "status": "ready",
+      "mode": "agent-review",
+      "risk": "medium",
+      "priority": 110,
+      "depends_on": [],
+      "budget": {
+        "max_units": 20,
+        "max_minutes": 480
+      },
+      "proof": "travail/rentree-2026-09-07/SUIVI.md",
+      "parent_milestone": "ACADEMIE-1"
     }
   ]
 }

@@ -41,7 +41,7 @@ afterEach(() => {
 });
 
 function distribution(racine) {
-  for (const nom of ["index.html", "sw.js", "registerSW.js", "icone.svg", "voix.json", "catalogue.json",
+  for (const nom of ["index.html", "sw.js", "registerSW.js", "icone.svg", "voix.json", "catalogue.json", "cours.json", "reprise.html", "reprise.js",
     "assets/app.js", "assets/app.css", "assets/police.woff2", "images/schema.svg"]) {
     ecrit(racine, nom, nom === "voix.json" ? "{}" : `contenu ${nom}`);
   }
@@ -117,7 +117,7 @@ test("les sources en lecture seule construisent ; un build refuse conserve l ind
   const racine = path.join(travail, "sources");
   const sortie = path.join(travail, "public");
   fs.mkdirSync(racine);
-  for (const nom of ["app", "banque", "chapitres", "programme", "contenu", "academie.json"]) {
+  for (const nom of ["app", "banque", "chapitres", "programme", "contenu", "cours", "academie.json"]) {
     fs.cpSync(path.join(RACINE, nom), path.join(racine, nom), {
       recursive: true, filter: (f) => !f.split(path.sep).includes("__pycache__"),
     });

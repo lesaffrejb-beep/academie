@@ -1,0 +1,26 @@
+[WebServer] (node:63197) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] <script src="/academie/registerSW.js"> in "/index.html" can't be bundled without type="module" attribute
+[WebServer] (node:63238) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 6 tests using 1 worker
+
+(node:63242) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] 8:32:06 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓  1 [ordinateur] › tests/e2e/etude.spec.ts:20:1 › le métier IFSI ouvre ses propres contenus (652ms)
+  ✓  2 [ordinateur] › tests/e2e/facade.spec.ts:124:1 › le cursus IFSI ne sert pas le parcours façade (418ms)
+  ✓  3 [ordinateur] › tests/e2e/fragilite.spec.ts:121:1 › le cursus IFSI ne sert pas le parcours fragilité (396ms)
+(node:63299) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] 8:32:08 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓  4 [telephone] › tests/e2e/etude.spec.ts:20:1 › le métier IFSI ouvre ses propres contenus (639ms)
+  ✓  5 [telephone] › tests/e2e/facade.spec.ts:124:1 › le cursus IFSI ne sert pas le parcours façade (412ms)
+  ✓  6 [telephone] › tests/e2e/fragilite.spec.ts:121:1 › le cursus IFSI ne sert pas le parcours fragilité (388ms)
+
+  6 passed (11.6s)

@@ -1,0 +1,35 @@
+
+> academie-client@2.0.0 build
+> tsc --noEmit && vite build
+
+vite v5.4.11 building for production...
+<script src="/academie/registerSW.js"> in "/index.html" can't be bundled without type="module" attribute
+transforming...
+✓ 1895 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/manifest.webmanifest                                       0.33 kB
+dist/index.html                                                 0.94 kB │ gzip:   0.47 kB
+dist/images/renovation-perspectives.svg                         0.95 kB │ gzip:   0.48 kB
+dist/images/renovation-axes.svg                                 1.03 kB │ gzip:   0.46 kB
+dist/catalogue.json                                             1.14 kB │ gzip:   0.58 kB
+dist/images/renovation-classements.svg                          1.52 kB │ gzip:   0.53 kB
+dist/images/electricite-contacts.svg                            2.30 kB │ gzip:   0.93 kB
+dist/images/electricite-mecanismes.svg                          2.55 kB │ gzip:   1.13 kB
+dist/images/frise-recouvrement-charges.svg                      4.95 kB │ gzip:   1.48 kB
+dist/images/vmc-caisson-coupe.svg                               5.04 kB │ gzip:   1.57 kB
+dist/voix.json                                                  7.05 kB │ gzip:   2.68 kB
+dist/assets/source-sans-3-latin-wght-normal-BqRLTx4X.woff2     28.74 kB
+dist/assets/fraunces-latin-wght-normal-ukD16Tqj.woff2          36.62 kB
+dist/banque.json                                            1,140.36 kB │ gzip: 169.55 kB
+dist/cours.json                                             2,084.06 kB │ gzip: 544.23 kB
+dist/assets/index-CXATNql-.css                                 88.93 kB │ gzip:  18.10 kB
+dist/assets/index-C1mcvYuN.js                                 443.42 kB │ gzip: 138.37 kB
+✓ built in 1.80s
+
+PWA v0.21.1
+mode      generateSW
+precache  22 entries (3762.99 KiB)
+files generated
+  dist/sw.js
+  dist/workbox-4bb8bbd8.js

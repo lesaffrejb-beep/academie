@@ -47,7 +47,7 @@ export function Arbre() {
       <div>
         <h1 className="titre-page">{LIB.arbre}</h1>
         {couverture(monde.noeuds)}
-        <p>{banque.cartes.length} {LIB.cartesDisponibles}</p>
+        <p>{banque.cartes.length} exercices de rappel disponibles. Une carte est une question à travailler, pas un cours entier.</p>
       </div>
       <div className="graphe-vues" role="group" aria-label="Vue du programme">
         <button type="button" onClick={() => setVueMode("domaines")} aria-pressed={vueMode === "domaines"}>Domaines</button>

@@ -2,11 +2,11 @@ import {test,expect,type Page} from "@playwright/test";
 const mdp="Phrase de test suffisamment longue";
 async function inscrit(page:Page,pseudo:string,cursus:string) {
   await page.getByLabel("Ton pseudo",{exact:true}).fill(pseudo);
-  await page.getByLabel("Phrase secrète",{exact:true}).fill(mdp);
+  await page.getByLabel("Mot de passe",{exact:true}).fill(mdp);
+  await page.getByLabel("Phrase secrète de récupération",{exact:true}).fill("Phrase de récupération pour le test");
   await page.getByRole("radio",{name:new RegExp(cursus)}).check();
   await page.getByRole("button",{name:"Créer mon espace",exact:true}).click();
-  const cle=await page.locator(".arrivee-cle").textContent();
-  await page.getByRole("button",{name:"J’ai enregistré ma clé",exact:true}).click();
+  const cle="Phrase de récupération pour le test";
   await expect(page.getByLabel("Ta réponse",{exact:true})).toHaveValue("");
   return cle!;
 }
@@ -24,8 +24,8 @@ test("deux comptes : contenu, sauvegarde, reconnexion, masquage et reprise hors 
   await eleves(page);
   await expect(page.getByText("Sauvegarde synchronisée.",{exact:true})).toBeVisible();
   await page.getByRole("button",{name:"Me déconnecter",exact:true}).click();
-  await inscrit(page,pseudoB,"Entrer en IFSI");
-  await expect(page.getByRole("heading",{name:"Les cinq B",exact:true})).toBeVisible();
+  await inscrit(page,pseudoB,"IFSI :");
+  await expect(page.getByRole("heading",{name:"La voie Parcoursup",exact:true})).toBeVisible();
   await expect(page.getByText("Réponse privée A à conserver",{exact:true})).toHaveCount(0);
   await eleves(page);
   await expect(page.getByText(pseudoA,{exact:true})).toBeVisible();
@@ -34,7 +34,7 @@ test("deux comptes : contenu, sauvegarde, reconnexion, masquage et reprise hors 
   await page.getByRole("button",{name:"Me déconnecter",exact:true}).click();
   await page.getByRole("button",{name:"Me connecter",exact:true}).click();
   await page.getByLabel("Ton pseudo",{exact:true}).fill(pseudoA);
-  await page.getByLabel("Phrase secrète",{exact:true}).fill(mdp);
+  await page.getByLabel("Mot de passe",{exact:true}).fill(mdp);
   await page.getByRole("button",{name:"Me connecter",exact:true}).last().click();
   await page.getByRole("button",{name:"Apprendre",exact:true}).click();
   await page.getByRole("button",{name:"Reprendre l’étude",exact:true}).click();
@@ -53,7 +53,7 @@ test("deux comptes : contenu, sauvegarde, reconnexion, masquage et reprise hors 
   await nouveau.goto("http://127.0.0.1:5197/academie/");
   await nouveau.getByRole("button",{name:"Me connecter",exact:true}).click();
   await nouveau.getByLabel("Ton pseudo",{exact:true}).fill(pseudoA);
-  await nouveau.getByLabel("Phrase secrète",{exact:true}).fill(mdp);
+  await nouveau.getByLabel("Mot de passe",{exact:true}).fill(mdp);
   await nouveau.getByRole("button",{name:"Me connecter",exact:true}).last().click();
   await nouveau.getByRole("button",{name:"Reprendre l’étude",exact:true}).click();
   await nouveau.getByText("Retrouver ta première réponse",{exact:true}).click();
@@ -154,9 +154,9 @@ test("la clé remplace une phrase perdue et devient invalide",async({page})=>{
   await page.getByRole("button",{name:"Me déconnecter",exact:true}).click();
   await page.getByRole("button",{name:"Retrouver mon accès",exact:true}).click();
   await page.getByLabel("Ton pseudo",{exact:true}).fill(pseudo);
-  await page.getByLabel("Clé de récupération",{exact:true}).fill(cle);
-  await page.getByLabel("Nouvelle phrase secrète",{exact:true}).fill("Nouvelle phrase de test suffisamment longue");
-  await page.getByRole("button",{name:"Changer ma phrase",exact:true}).click();
+  await page.getByLabel("Phrase ou clé de récupération",{exact:true}).fill(cle);
+  await page.getByLabel("Nouveau mot de passe",{exact:true}).fill("Nouvelle phrase de test suffisamment longue");
+  await page.getByRole("button",{name:"Changer mon mot de passe",exact:true}).click();
   await expect(page.getByRole("heading",{name:"Garde ta clé de récupération.",exact:true})).toBeVisible();
   const nouvelle=await page.locator(".arrivee-cle").textContent();
   expect(nouvelle).not.toBe(cle);
@@ -170,7 +170,7 @@ test("la clé remplace une phrase perdue et devient invalide",async({page})=>{
   await page.getByRole("button",{name:"Élèves",exact:true}).click();
   await page.getByRole("button",{name:"Me déconnecter",exact:true}).click();
   await page.getByRole("button",{name:pseudo,exact:true}).click();
-  await page.getByLabel("Phrase secrète",{exact:true}).fill("Nouvelle phrase de test suffisamment longue");
+  await page.getByLabel("Mot de passe",{exact:true}).fill("Nouvelle phrase de test suffisamment longue");
   await page.getByRole("button",{name:"Me connecter",exact:true}).last().click();
   await expect(page.getByRole("button",{name:"Apprendre",exact:true})).toBeVisible();
   expect((await (await page.request.get("/academie/api/v1/profil")).json()).id).toBe(profilInitial.id);
@@ -186,13 +186,12 @@ test("inscription avec cursus puis clic sur le pseudo et mot de passe",async({pa
   const pseudo="Accès direct " + crypto.randomUUID();
   await page.goto("./");
   await page.getByLabel("Ton pseudo",{exact:true}).fill(pseudo);
-  await page.getByLabel("Phrase secrète",{exact:true}).fill(mdp);
+  await page.getByLabel("Mot de passe",{exact:true}).fill(mdp);
+  await page.getByLabel("Phrase secrète de récupération",{exact:true}).fill("Phrase de récupération pour le test");
   await page.getByRole("radio",{name:/Gestion de copropriété/}).check();
   await page.getByRole("button",{name:"Créer mon espace",exact:true}).click();
-  const cle=await page.locator(".arrivee-cle").textContent();
-  expect(cle).toBeTruthy();
+  const cle="Phrase de récupération pour le test";
   expect(await page.evaluate(()=>JSON.stringify({...localStorage}))).not.toContain(cle);
-  await page.getByRole("button",{name:"J’ai enregistré ma clé",exact:true}).click();
   await expect(page.getByLabel("Ta réponse",{exact:true})).toBeVisible();
   expect((await (await page.request.get("/academie/api/v1/profil")).json()).cursus).toBe("copro");
   expect(await page.evaluate(()=>JSON.stringify({...localStorage}))).not.toContain(cle);
@@ -203,8 +202,39 @@ test("inscription avec cursus puis clic sur le pseudo et mot de passe",async({pa
   await page.getByRole("button",{name:"Me déconnecter",exact:true}).click();
   await page.getByRole("button",{name:pseudo,exact:true}).click();
   await expect(page.getByLabel("Ton pseudo",{exact:true})).toHaveValue(pseudo.toLowerCase());
-  await expect(page.getByLabel("Phrase secrète",{exact:true})).toBeFocused();
-  await page.getByLabel("Phrase secrète",{exact:true}).fill(mdp);
+  await expect(page.getByLabel("Mot de passe",{exact:true})).toBeFocused();
+  await page.getByLabel("Mot de passe",{exact:true}).fill(mdp);
   await page.getByRole("button",{name:"Me connecter",exact:true}).last().click();
   await expect(page.getByRole("button",{name:"Reprendre l’étude",exact:true})).toBeVisible();
+});
+
+test('ajout de cursus, retour et brouillon conservé après rechargement',async({page})=>{
+ const pseudo='Cursus continu '+crypto.randomUUID();await page.goto('./');
+ await inscrit(page,pseudo,'Gestion de copropriété');
+ await page.getByRole('textbox',{name:'Ta réponse',exact:true}).fill('Brouillon personnel conservé');
+ await page.reload();await expect(page.getByRole('textbox',{name:'Ta réponse',exact:true})).toHaveValue('Brouillon personnel conservé');
+ await page.getByRole('button',{name:'Quitter l’étude',exact:true}).click();
+ await page.getByRole('link',{name:'Mon compte',exact:true}).click();
+ await page.getByRole('button',{name:/IFSI : de l’entrée aux spécialisations.*Ajouter et commencer/}).click();
+ await expect(page.getByRole('heading',{name:'Préparer ton entrée en IFSI',exact:true})).toBeVisible();
+ await expect(page.getByText('Un seul chemin : admission → formation IFSI → exercice et spécialisations → approfondissements.',{exact:true})).toBeVisible();
+ await expect(page.getByRole('link',{name:'Ouvrir la bibliothèque de cours'})).toHaveCount(0);
+ await page.getByRole('link',{name:'Mon compte',exact:true}).click();
+ await page.getByRole('button',{name:/Gestion de copropriété.*Reprendre ce cursus/}).click();
+ await expect(page.getByRole('heading',{name:'Tenir le fil d’une assemblée',exact:true})).toBeVisible();
+ await page.getByRole('button',{name:'Commencer l’étude',exact:true}).click();
+ await expect(page.getByRole('textbox',{name:'Ta réponse',exact:true})).toHaveValue('Brouillon personnel conservé');
+});
+
+test('la reprise du code conserve compte et brouillon local',async({page,context})=>{
+ await page.goto('./');await inscrit(page,'Reprise code '+crypto.randomUUID(),'Gestion de copropriété');
+ await page.getByRole('textbox',{name:'Ta réponse',exact:true}).fill('Brouillon conservé pendant actualisation');
+ const avant=await (await page.request.get('/academie/api/v1/profil')).json();
+ // Le point d’entrée de secours est hors du scope des deux anciens workers.
+ const secours=await context.newPage();await secours.goto('/academie-reprise/');
+ await secours.getByRole('button',{name:'Actualiser et ouvrir Académie'}).click();
+ await expect(secours.getByRole('heading',{name:'Tenir le fil d’une assemblée',exact:true})).toBeVisible();
+ expect((await (await secours.request.get('/academie/api/v1/profil')).json()).id).toBe(avant.id);
+ await secours.getByRole('button',{name:'Commencer l’étude',exact:true}).click();
+ await expect(secours.getByRole('textbox',{name:'Ta réponse',exact:true})).toHaveValue('Brouillon conservé pendant actualisation');
 });

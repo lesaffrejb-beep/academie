@@ -1,0 +1,57 @@
+
+> academie-client@2.0.0 test
+> vitest run && node --test tests/publication.test.mjs
+
+
+ RUN  v2.1.8 /Users/jb/Code/academie/web
+
+ ✓ tests/hotes.test.ts (86 tests) 19ms
+ ✓ src/moteur/progressionAvancee.test.ts (5 tests) 2ms
+ ✓ src/moteur/journal.monotone.test.ts (7 tests) 45ms
+ ✓ src/moteur/journal.relecture.test.ts (13 tests) 64ms
+ ✓ src/moteur/parite.test.ts (39 tests) 22ms
+ ✓ src/moteur/parite-arbre.test.ts (31 tests) 10ms
+ ✓ src/moteur/parite-semaine.test.ts (29 tests) 7ms
+ ✓ src/moteur/journal.test.ts (18 tests) 157ms
+ ✓ src/moteur/serviceabilite.test.ts (10 tests) 6ms
+ ✓ tests/voix.test.ts (25 tests) 20ms
+ ✓ src/ecrans/Etude.formats.test.ts (9 tests) 46ms
+ ✓ src/moteur/graphe.test.ts (4 tests) 2ms
+ ✓ src/moteur/etude.relecture.test.ts (8 tests) 6ms
+ ✓ src/donnees/banque.test.ts (2 tests) 4ms
+ ✓ src/ecrans/ModulesSeance.test.ts (7 tests) 14ms
+ ✓ src/moteur/etude.test.ts (4 tests) 5ms
+ ✓ src/ecrans/GraphePrerequis.test.ts (2 tests) 11ms
+ ✓ src/donnees/api.etude.test.ts (13 tests) 4ms
+ ✓ src/app/magasin.metier.test.ts (2 tests) 5ms
+ ✓ src/app/compte.test.ts (4 tests) 3ms
+ ✓ tests/contrastes.test.ts (2 tests) 4ms
+ ✓ src/donnees/api.test.ts (10 tests) 22ms
+ ✓ src/ecrans/Arbre.test.ts (2 tests) 11ms
+ ✓ src/ecrans/supportSeance.test.ts (2 tests) 3ms
+ ✓ src/app/magasin.test.ts (2 tests) 7ms
+ ✓ src/moteur/chronologie.test.ts (4 tests) 4ms
+ ✓ src/donnees/demarrages.test.ts (1 test) 7ms
+ ✓ src/ecrans/supportEtude.test.ts (1 test) 3ms
+ ✓ src/ecrans/Barre.rentree.test.ts (1 test) 6ms
+
+ Test Files  29 passed (29)
+      Tests  343 passed (343)
+   Start at  08:16:49
+   Duration  1.67s (transform 986ms, setup 0ms, collect 3.50s, tests 518ms, environment 4ms, prepare 1.85s)
+
+<script src="/academie/registerSW.js"> in "/index.html" can't be bundled without type="module" attribute
+✔ un asset manque : aucune partie de la publication existante ne bouge (9.341ms)
+✔ les ressources non inventoriees ou alterees refusent la distribution (6.151541ms)
+✔ un lien vers le depot ne peut devenir une sortie de publication (1.753584ms)
+✔ les ressources precedent l index, le service worker vient en dernier (13.875791ms)
+✔ les sources en lecture seule construisent ; un build refuse conserve l index (10129.939042ms)
+✔ un catalogue absent refuse une publication inutilisable à la première connexion (7.288459ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 10280.083125

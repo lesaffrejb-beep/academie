@@ -41,7 +41,7 @@ class Onboarding(unittest.TestCase):
         self.assertEqual(requete(self.a,"POST","/journal",{"lignes":[event]},cookie=c,profil=p["id"])[0],200)
         self.assertEqual(requete(self.a,"GET","/profil",cookie=c,profil=p["id"])[2]["cursus"],"ifsi")
         self.assertEqual(requete(self.a,"POST","/journal",{"lignes":[]},cookie=d,profil=q["id"])[2]["manquantes"],[])
-        self.assertEqual(requete(self.a,"POST","/journal",{"lignes":[ligne(2,mode="cursus",cursus="copro")]},cookie=c,profil=p["id"])[0],422)
+        self.assertEqual(requete(self.a,"POST","/journal",{"lignes":[ligne(2,mode="cursus",cursus="copro")]},cookie=c,profil=p["id"])[0],200)
         self.assertEqual(requete(self.a,"POST","/journal",{"lignes":[ligne(3,mode="cursus",cursus="inconnu")]},cookie=d,profil=q["id"])[0],422)
     def test_cookie_change_et_annuaire_prive(self):
         p,c=self.compte();q,d=self.compte("Bob")

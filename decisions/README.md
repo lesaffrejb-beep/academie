@@ -70,3 +70,5 @@ lisant le dépôt, une règle née d'un incident. Pas l'avancement
 - [0051. Le chemin construit depuis la demande](0051-chemin-professeur-depuis-la-demande.md)
 
 - [0052. Base écrite complète, centrée sur la copropriété](0052-cours-bruts-complets-et-exigence-editoriale.md)
+
+- [0053 : cursus continus et interface bleue](0053-rentree-cursus-continu-et-interface-bleue.md).

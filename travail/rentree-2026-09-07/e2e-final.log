@@ -1,0 +1,813 @@
+[WebServer] (node:62190) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] <script src="/academie/registerSW.js"> in "/index.html" can't be bundled without type="module" attribute
+[WebServer] (node:62236) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 116 tests using 1 worker
+
+(node:62254) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] 8:28:56 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+[WebServer] 8:28:56 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓    1 [ordinateur] › tests/e2e/accueil-visuel.spec.ts:4:1 › le thème se choisit dès l’accueil et persiste après rechargement (833ms)
+[WebServer] 8:28:57 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+[WebServer] 8:28:57 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓    2 [ordinateur] › tests/e2e/accueil-visuel.spec.ts:15:1 › les chapitres et le cas réel sont accessibles au téléphone dans les deux métiers (905ms)
+[WebServer] 8:28:57 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓    3 [ordinateur] › tests/e2e/atlas.spec.ts:3:1 › la tablette conserve toutes les cibles dans le cadre de l'atlas (462ms)
+[WebServer] 8:28:58 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓    4 [ordinateur] › tests/e2e/atlas.spec.ts:19:1 › l'atlas ouvre les vrais chapitres et distingue le programme du contenu (743ms)
+[WebServer] 8:28:59 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+[WebServer] 8:29:00 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓    5 [ordinateur] › tests/e2e/atlas.spec.ts:37:1 › le rail et la carte restent lisibles avec deux thèmes et texte agrandi (1.6s)
+[WebServer] 8:29:00 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓    6 [ordinateur] › tests/e2e/atlas.spec.ts:52:2 › les domaines sont nommés et le programme ne simule pas des relations (389ms)
+[WebServer] 8:29:01 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓    7 [ordinateur] › tests/e2e/boite.spec.ts:2:1 › ancienne adresse de la boîte revient à l’accueil sans onglet Boîte (376ms)
+  ✓    8 [ordinateur] › tests/e2e/contre-expertise.spec.ts:21:1 › le parcours rénovation ouvre la contre-expertise et conserve ses productions (4.6s)
+  ✓    9 [ordinateur] › tests/e2e/direction-artistique.spec.ts:51:3 › direction artistique › aucun hexadécimal hors des tokens dans le CSS servi (218ms)
+[WebServer] 8:29:06 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+[WebServer] 8:29:06 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+[WebServer] 8:29:06 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓   10 [ordinateur] › tests/e2e/direction-artistique.spec.ts:80:3 › direction artistique › rien ne déborde, ni à 375 ni à 1280, ni à 200 % de texte (627ms)
+  ✓   11 [ordinateur] › tests/e2e/direction-artistique.spec.ts:100:3 › direction artistique › les deux thèmes rendent, et l'encre n'est pas la couleur du fond (231ms)
+[WebServer] 8:29:07 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓   12 [ordinateur] › tests/e2e/direction-artistique.spec.ts:121:3 › direction artistique › le mouvement réduit est respecté (520ms)
+[WebServer] 8:29:07 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+[WebServer] 8:29:08 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓   13 [ordinateur] › tests/e2e/direction-artistique.spec.ts:141:3 › direction artistique › la souris n'est jamais nécessaire dans une salle (591ms)
+[WebServer] 8:29:08 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓   14 [ordinateur] › tests/e2e/direction-artistique.spec.ts:184:3 › direction artistique › le focus se voit sur le chemin principal (434ms)
+[WebServer] 8:29:10 AM [vite] http proxy error: /academie/api/v1/profil
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓   15 [ordinateur] › tests/e2e/electricite.spec.ts:5:1 › électricité : du schéma à une réponse conservée (2.2s)
+[WebServer] 8:29:11 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓   16 [ordinateur] › tests/e2e/electricite.spec.ts:47:1 › électricité : le module copro ne fuit pas vers IFSI (388ms)
+[WebServer] 8:29:11 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+[WebServer] 8:29:11 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+[WebServer] 8:29:11 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓   17 [ordinateur] › tests/e2e/etude.relecture.spec.ts:28:1 › l'indice survit au rechargement de la tentative (791ms)
+[WebServer] 8:29:12 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+[WebServer] 8:29:12 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+[WebServer] 8:29:12 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+[WebServer] 8:29:12 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓   18 [ordinateur] › tests/e2e/etude.relecture.spec.ts:40:1 › une réponse avec indice ne reçoit aucune note de rappel autonome (743ms)
+[WebServer] 8:29:13 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+[WebServer] 8:29:13 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+[WebServer] 8:29:13 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+[WebServer] 8:29:13 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+[WebServer] 8:29:13 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+[WebServer] 8:29:13 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓   19 [ordinateur] › tests/e2e/etude.relecture.spec.ts:55:1 › un QCM conserve le choix initial et le retour après rechargement (970ms)
+[WebServer] 8:29:14 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+[WebServer] 8:29:14 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+[WebServer] 8:29:14 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓   20 [ordinateur] › tests/e2e/etude.spec.ts:4:1 › l'accueil conduit à une tentative et conserve la réponse après fermeture (817ms)
+[WebServer] 8:29:14 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✘   21 [ordinateur] › tests/e2e/etude.spec.ts:20:1 › le métier IFSI ouvre ses propres contenus (10.4s)
+(node:62387) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] 8:29:26 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+[WebServer] 8:29:26 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓   22 [ordinateur] › tests/e2e/etude.spec.ts:29:1 › une étude entière hors ligne garde production et rappels, puis recommence sans ancien corrigé (1.6s)
+[WebServer] 8:29:28 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓   23 [ordinateur] › tests/e2e/etude.spec.ts:54:1 › l'accueil et l'étude restent lisibles avec texte agrandi (457ms)
+  ✓   24 [ordinateur] › tests/e2e/exercices.spec.ts:44:1 › une seule ouverture et une seule note pour un double clic (293ms)
+  ✓   25 [ordinateur] › tests/e2e/exercices.spec.ts:57:3 › photo montre sa vraie image et permet une reponse (340ms)
+  ✓   26 [ordinateur] › tests/e2e/exercices.spec.ts:57:3 › relier montre sa vraie image et permet une reponse (290ms)
+  ✓   27 [ordinateur] › tests/e2e/exercices.spec.ts:57:3 › datation montre sa vraie image et permet une reponse (329ms)
+  ✓   28 [ordinateur] › tests/e2e/exercices.spec.ts:57:3 › plan montre sa vraie image et permet une reponse (333ms)
+  ✓   29 [ordinateur] › tests/e2e/exercices.spec.ts:71:1 › les vraies sources sont repliees puis consultables apres reponse (296ms)
+  ✓   30 [ordinateur] › tests/e2e/exercices.spec.ts:80:1 › signaler retire immediatement la carte sans lui donner une note (403ms)
+  ✓   31 [ordinateur] › tests/e2e/exercices.spec.ts:92:1 › une panne de stockage garde la correction et propose de reessayer (496ms)
+  ✓   32 [ordinateur] › tests/e2e/exercices.spec.ts:111:1 › une seance de chapitre ne sert aucune carte d un autre chapitre (319ms)
+  ✓   33 [ordinateur] › tests/e2e/exercices.spec.ts:123:1 › la carte expire a minuit dans une salle deja ouverte (251ms)
+  ✓   34 [ordinateur] › tests/e2e/exercices.spec.ts:131:1 › une mauvaise reponse QCM explique le choix et conserve la confiance (409ms)
+  ✓   35 [ordinateur] › tests/e2e/exercices.spec.ts:147:3 › la synthèse conserve texte et critères cochés par clic (1.3s)
+  ✓   36 [ordinateur] › tests/e2e/exercices.spec.ts:147:3 › la synthèse conserve texte et critères cochés par clavier (1.5s)
+  ✓   37 [ordinateur] › tests/e2e/exercices.spec.ts:161:1 › un refus du presse-papier ne confirme pas la copie (319ms)
+  ✓   38 [ordinateur] › tests/e2e/facade.spec.ts:21:1 › le parcours façade garde la tentative, huit exercices et la synthèse (3.3s)
+  ✘   39 [ordinateur] › tests/e2e/facade.spec.ts:124:1 › le cursus IFSI ne sert pas le parcours façade (10.4s)
+(node:62482) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   40 [ordinateur] › tests/e2e/fragilite.spec.ts:21:1 › le parcours fragilité garde la tentative, huit exercices et la synthèse (3.1s)
+  ✘   41 [ordinateur] › tests/e2e/fragilite.spec.ts:121:1 › le cursus IFSI ne sert pas le parcours fragilité (10.4s)
+(node:62538) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] 8:30:04 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓   42 [ordinateur] › tests/e2e/graphe.spec.ts:9:1 › les vrais liens se parcourent au clavier et les chapitres vides restent honnêtes (751ms)
+[WebServer] 8:30:05 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓   43 [ordinateur] › tests/e2e/graphe.spec.ts:32:1 › le graphe donne accès à une étude serviable (572ms)
+[WebServer] 8:30:06 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓   44 [ordinateur] › tests/e2e/graphe.spec.ts:40:1 › un parent du programme ouvre son approfondissement façade et garde le retour (807ms)
+[WebServer] 8:30:06 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓   45 [ordinateur] › tests/e2e/graphe.spec.ts:66:1 › les satellites copro restent absents de l’index IFSI (505ms)
+[WebServer] 8:30:07 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓   46 [ordinateur] › tests/e2e/graphe.spec.ts:74:1 › filtre du cursus, recherche vide et rendus accessibles (846ms)
+[WebServer] 8:30:08 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓   47 [ordinateur] › tests/e2e/hors-ligne.spec.ts:148:3 › hors-ligne › la première question s'affiche en moins de trois secondes, réseau coupé (501ms)
+[WebServer] 8:30:08 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓   48 [ordinateur] › tests/e2e/hors-ligne.spec.ts:165:3 › hors-ligne › une séance jouée réseau coupé s'écrit localement et attend (852ms)
+[WebServer] 8:30:09 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓   49 [ordinateur] › tests/e2e/hors-ligne.spec.ts:196:3 › hors-ligne › au retour du réseau, la file part vers le serveur (764ms)
+[WebServer] 8:30:10 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+[WebServer] 8:30:10 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+[WebServer] 8:30:10 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓   50 [ordinateur] › tests/e2e/hors-ligne.spec.ts:250:3 › hors-ligne › aucun hôte tiers n'est contacté pendant une séance (678ms)
+[WebServer] 8:30:11 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+[WebServer] 8:30:11 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+[WebServer] 8:30:11 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+[WebServer] 8:30:11 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+[WebServer] 8:30:11 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+[WebServer] 8:30:11 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+[WebServer] 8:30:12 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+[WebServer] 8:30:12 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+[WebServer] 8:30:12 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+[WebServer] 8:30:12 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+[WebServer] 8:30:12 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+[WebServer] 8:30:12 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+[WebServer] 8:30:12 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+[WebServer] 8:30:12 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓   51 [ordinateur] › tests/e2e/pilote-renovation.spec.ts:11:1 › le pilote affiche les supports, mène à une production et reste lisible (1.9s)
+[WebServer] 8:30:13 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+[WebServer] 8:30:13 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+[WebServer] 8:30:13 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓   52 [ordinateur] › tests/e2e/pilote-renovation.spec.ts:40:1 › support introuvable : pas de réponse créditée (622ms)
+[WebServer] 8:30:13 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+[WebServer] 8:30:13 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+[WebServer] 8:30:13 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓   53 [ordinateur] › tests/e2e/pilote-renovation.spec.ts:54:40 › support malformé "" : retour bloqué (619ms)
+[WebServer] 8:30:14 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+[WebServer] 8:30:14 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+[WebServer] 8:30:14 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓   54 [ordinateur] › tests/e2e/pilote-renovation.spec.ts:54:40 › support malformé false : retour bloqué (618ms)
+[WebServer] 8:30:14 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+[WebServer] 8:30:15 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+[WebServer] 8:30:15 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓   55 [ordinateur] › tests/e2e/pilote-renovation.spec.ts:54:40 › support malformé null : retour bloqué (620ms)
+  ✓   56 [ordinateur] › tests/e2e/profil.spec.ts:3:1 › un refus de session reste visible et peut être réessayé (454ms)
+[WebServer] 8:30:16 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓   57 [ordinateur] › tests/e2e/rentree.spec.ts:2:1 › bibliothèque brute, source et dix séances avec graphe (835ms)
+[WebServer] 8:30:16 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓   58 [ordinateur] › tests/e2e/rentree.spec.ts:15:1 › IFSI reste continu, sans bibliothèque copro et avec huit premières études (495ms)
+(node:62614) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] 8:30:18 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+[WebServer] 8:30:18 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓   59 [telephone] › tests/e2e/accueil-visuel.spec.ts:4:1 › le thème se choisit dès l’accueil et persiste après rechargement (797ms)
+[WebServer] 8:30:19 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+[WebServer] 8:30:19 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓   60 [telephone] › tests/e2e/accueil-visuel.spec.ts:15:1 › les chapitres et le cas réel sont accessibles au téléphone dans les deux métiers (832ms)
+[WebServer] 8:30:19 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓   61 [telephone] › tests/e2e/atlas.spec.ts:3:1 › la tablette conserve toutes les cibles dans le cadre de l'atlas (483ms)
+[WebServer] 8:30:20 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓   62 [telephone] › tests/e2e/atlas.spec.ts:19:1 › l'atlas ouvre les vrais chapitres et distingue le programme du contenu (695ms)
+[WebServer] 8:30:20 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+[WebServer] 8:30:21 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓   63 [telephone] › tests/e2e/atlas.spec.ts:37:1 › le rail et la carte restent lisibles avec deux thèmes et texte agrandi (1.2s)
+[WebServer] 8:30:22 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓   64 [telephone] › tests/e2e/atlas.spec.ts:52:2 › les domaines sont nommés et le programme ne simule pas des relations (386ms)
+[WebServer] 8:30:22 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓   65 [telephone] › tests/e2e/boite.spec.ts:2:1 › ancienne adresse de la boîte revient à l’accueil sans onglet Boîte (375ms)
+  ✓   66 [telephone] › tests/e2e/contre-expertise.spec.ts:21:1 › le parcours rénovation ouvre la contre-expertise et conserve ses productions (5.2s)
+  ✓   67 [telephone] › tests/e2e/direction-artistique.spec.ts:51:3 › direction artistique › aucun hexadécimal hors des tokens dans le CSS servi (204ms)
+[WebServer] 8:30:28 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+[WebServer] 8:30:28 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+[WebServer] 8:30:28 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓   68 [telephone] › tests/e2e/direction-artistique.spec.ts:80:3 › direction artistique › rien ne déborde, ni à 375 ni à 1280, ni à 200 % de texte (621ms)
+  ✓   69 [telephone] › tests/e2e/direction-artistique.spec.ts:100:3 › direction artistique › les deux thèmes rendent, et l'encre n'est pas la couleur du fond (232ms)
+[WebServer] 8:30:29 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓   70 [telephone] › tests/e2e/direction-artistique.spec.ts:121:3 › direction artistique › le mouvement réduit est respecté (493ms)
+[WebServer] 8:30:29 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+[WebServer] 8:30:29 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓   71 [telephone] › tests/e2e/direction-artistique.spec.ts:141:3 › direction artistique › la souris n'est jamais nécessaire dans une salle (511ms)
+[WebServer] 8:30:30 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓   72 [telephone] › tests/e2e/direction-artistique.spec.ts:184:3 › direction artistique › le focus se voit sur le chemin principal (379ms)
+  ✓   73 [telephone] › tests/e2e/electricite.spec.ts:5:1 › électricité : du schéma à une réponse conservée (2.5s)
+[WebServer] 8:30:33 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓   74 [telephone] › tests/e2e/electricite.spec.ts:47:1 › électricité : le module copro ne fuit pas vers IFSI (396ms)
+[WebServer] 8:30:33 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+[WebServer] 8:30:33 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+[WebServer] 8:30:33 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓   75 [telephone] › tests/e2e/etude.relecture.spec.ts:28:1 › l'indice survit au rechargement de la tentative (750ms)
+[WebServer] 8:30:34 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+[WebServer] 8:30:34 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+[WebServer] 8:30:34 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+[WebServer] 8:30:34 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓   76 [telephone] › tests/e2e/etude.relecture.spec.ts:40:1 › une réponse avec indice ne reçoit aucune note de rappel autonome (737ms)
+[WebServer] 8:30:35 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+[WebServer] 8:30:35 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+[WebServer] 8:30:35 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+[WebServer] 8:30:35 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+[WebServer] 8:30:35 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+[WebServer] 8:30:35 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓   77 [telephone] › tests/e2e/etude.relecture.spec.ts:55:1 › un QCM conserve le choix initial et le retour après rechargement (1.1s)
+[WebServer] 8:30:36 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+[WebServer] 8:30:36 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+[WebServer] 8:30:36 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓   78 [telephone] › tests/e2e/etude.spec.ts:4:1 › l'accueil conduit à une tentative et conserve la réponse après fermeture (820ms)
+[WebServer] 8:30:37 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✘   79 [telephone] › tests/e2e/etude.spec.ts:20:1 › le métier IFSI ouvre ses propres contenus (10.4s)
+(node:62734) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] 8:30:48 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+[WebServer] 8:30:48 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓   80 [telephone] › tests/e2e/etude.spec.ts:29:1 › une étude entière hors ligne garde production et rappels, puis recommence sans ancien corrigé (1.9s)
+[WebServer] 8:30:50 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓   81 [telephone] › tests/e2e/etude.spec.ts:54:1 › l'accueil et l'étude restent lisibles avec texte agrandi (502ms)
+  ✓   82 [telephone] › tests/e2e/exercices.spec.ts:44:1 › une seule ouverture et une seule note pour un double clic (362ms)
+  ✓   83 [telephone] › tests/e2e/exercices.spec.ts:57:3 › photo montre sa vraie image et permet une reponse (367ms)
+  ✓   84 [telephone] › tests/e2e/exercices.spec.ts:57:3 › relier montre sa vraie image et permet une reponse (439ms)
+  ✓   85 [telephone] › tests/e2e/exercices.spec.ts:57:3 › datation montre sa vraie image et permet une reponse (524ms)
+  ✓   86 [telephone] › tests/e2e/exercices.spec.ts:57:3 › plan montre sa vraie image et permet une reponse (435ms)
+  ✓   87 [telephone] › tests/e2e/exercices.spec.ts:71:1 › les vraies sources sont repliees puis consultables apres reponse (383ms)
+  ✓   88 [telephone] › tests/e2e/exercices.spec.ts:80:1 › signaler retire immediatement la carte sans lui donner une note (411ms)
+  ✓   89 [telephone] › tests/e2e/exercices.spec.ts:92:1 › une panne de stockage garde la correction et propose de reessayer (391ms)
+  ✓   90 [telephone] › tests/e2e/exercices.spec.ts:111:1 › une seance de chapitre ne sert aucune carte d un autre chapitre (463ms)
+  ✓   91 [telephone] › tests/e2e/exercices.spec.ts:123:1 › la carte expire a minuit dans une salle deja ouverte (334ms)
+  ✓   92 [telephone] › tests/e2e/exercices.spec.ts:131:1 › une mauvaise reponse QCM explique le choix et conserve la confiance (463ms)
+  ✓   93 [telephone] › tests/e2e/exercices.spec.ts:147:3 › la synthèse conserve texte et critères cochés par clic (1.3s)
+  ✓   94 [telephone] › tests/e2e/exercices.spec.ts:147:3 › la synthèse conserve texte et critères cochés par clavier (1.3s)
+  ✓   95 [telephone] › tests/e2e/exercices.spec.ts:161:1 › un refus du presse-papier ne confirme pas la copie (294ms)
+  ✓   96 [telephone] › tests/e2e/facade.spec.ts:21:1 › le parcours façade garde la tentative, huit exercices et la synthèse (3.1s)
+  ✘   97 [telephone] › tests/e2e/facade.spec.ts:124:1 › le cursus IFSI ne sert pas le parcours façade (10.4s)
+(node:62954) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   98 [telephone] › tests/e2e/fragilite.spec.ts:21:1 › le parcours fragilité garde la tentative, huit exercices et la synthèse (3.7s)
+  ✘   99 [telephone] › tests/e2e/fragilite.spec.ts:121:1 › le cursus IFSI ne sert pas le parcours fragilité (10.4s)
+(node:63000) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] 8:31:28 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓  100 [telephone] › tests/e2e/graphe.spec.ts:9:1 › les vrais liens se parcourent au clavier et les chapitres vides restent honnêtes (758ms)
+[WebServer] 8:31:28 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓  101 [telephone] › tests/e2e/graphe.spec.ts:32:1 › le graphe donne accès à une étude serviable (601ms)
+[WebServer] 8:31:29 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓  102 [telephone] › tests/e2e/graphe.spec.ts:40:1 › un parent du programme ouvre son approfondissement façade et garde le retour (743ms)
+[WebServer] 8:31:30 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓  103 [telephone] › tests/e2e/graphe.spec.ts:66:1 › les satellites copro restent absents de l’index IFSI (498ms)
+[WebServer] 8:31:30 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓  104 [telephone] › tests/e2e/graphe.spec.ts:74:1 › filtre du cursus, recherche vide et rendus accessibles (724ms)
+[WebServer] 8:31:31 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓  105 [telephone] › tests/e2e/hors-ligne.spec.ts:148:3 › hors-ligne › la première question s'affiche en moins de trois secondes, réseau coupé (617ms)
+[WebServer] 8:31:32 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓  106 [telephone] › tests/e2e/hors-ligne.spec.ts:165:3 › hors-ligne › une séance jouée réseau coupé s'écrit localement et attend (910ms)
+[WebServer] 8:31:33 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓  107 [telephone] › tests/e2e/hors-ligne.spec.ts:196:3 › hors-ligne › au retour du réseau, la file part vers le serveur (781ms)
+[WebServer] 8:31:33 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+[WebServer] 8:31:34 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+[WebServer] 8:31:34 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓  108 [telephone] › tests/e2e/hors-ligne.spec.ts:250:3 › hors-ligne › aucun hôte tiers n'est contacté pendant une séance (644ms)
+[WebServer] 8:31:34 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+[WebServer] 8:31:34 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+[WebServer] 8:31:34 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+[WebServer] 8:31:35 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+[WebServer] 8:31:35 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+[WebServer] 8:31:35 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+[WebServer] 8:31:35 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+[WebServer] 8:31:35 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+[WebServer] 8:31:35 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+[WebServer] 8:31:35 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+[WebServer] 8:31:36 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+[WebServer] 8:31:36 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+[WebServer] 8:31:36 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+[WebServer] 8:31:36 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓  109 [telephone] › tests/e2e/pilote-renovation.spec.ts:11:1 › le pilote affiche les supports, mène à une production et reste lisible (2.3s)
+[WebServer] 8:31:36 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+[WebServer] 8:31:37 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+[WebServer] 8:31:37 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓  110 [telephone] › tests/e2e/pilote-renovation.spec.ts:40:1 › support introuvable : pas de réponse créditée (625ms)
+[WebServer] 8:31:37 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+[WebServer] 8:31:37 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+[WebServer] 8:31:37 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓  111 [telephone] › tests/e2e/pilote-renovation.spec.ts:54:40 › support malformé "" : retour bloqué (604ms)
+[WebServer] 8:31:38 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+[WebServer] 8:31:38 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+[WebServer] 8:31:38 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓  112 [telephone] › tests/e2e/pilote-renovation.spec.ts:54:40 › support malformé false : retour bloqué (609ms)
+[WebServer] 8:31:38 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+[WebServer] 8:31:38 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+[WebServer] 8:31:38 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓  113 [telephone] › tests/e2e/pilote-renovation.spec.ts:54:40 › support malformé null : retour bloqué (618ms)
+  ✓  114 [telephone] › tests/e2e/profil.spec.ts:3:1 › un refus de session reste visible et peut être réessayé (463ms)
+[WebServer] 8:31:39 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓  115 [telephone] › tests/e2e/rentree.spec.ts:2:1 › bibliothèque brute, source et dix séances avec graphe (847ms)
+[WebServer] 8:31:40 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓  116 [telephone] › tests/e2e/rentree.spec.ts:15:1 › IFSI reste continu, sans bibliothèque copro et avec huit premières études (451ms)
+
+
+  1) [ordinateur] › tests/e2e/etude.spec.ts:20:1 › le métier IFSI ouvre ses propres contenus ───────
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('heading', { name: 'Prendre soin commence ici' })
+    Expected: visible
+    Timeout: 10000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 10000ms
+      - waiting for getByRole('heading', { name: 'Prendre soin commence ici' })
+
+
+      22 |   await sessionTest(page,"ifsi");
+      23 |   await page.reload();
+    > 24 |   await expect(page.getByRole("heading",{name:"Prendre soin commence ici"})).toBeVisible();
+         |                                                                              ^
+      25 |   await page.getByRole("button",{name:"Commencer l’étude",exact:true}).click();
+      26 |   await expect(page.getByRole("heading",{name:"Les cinq B",exact:true})).toBeVisible();
+      27 | });
+        at /Users/jb/Code/academie/web/tests/e2e/etude.spec.ts:24:78
+
+    Error Context: test-results/etude-le-métier-IFSI-ouvre-ses-propres-contenus-ordinateur/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/etude-le-métier-IFSI-ouvre-ses-propres-contenus-ordinateur/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/etude-le-métier-IFSI-ouvre-ses-propres-contenus-ordinateur/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [ordinateur] › tests/e2e/facade.spec.ts:124:1 › le cursus IFSI ne sert pas le parcours façade ─
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('heading', { name: 'Prendre soin commence ici', exact: true })
+    Expected: visible
+    Timeout: 10000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 10000ms
+      - waiting for getByRole('heading', { name: 'Prendre soin commence ici', exact: true })
+
+
+      128 |   await sessionTest(page,"ifsi");
+      129 |   await page.goto("./");
+    > 130 |   await expect(page.getByRole("heading",{name:"Prendre soin commence ici",exact:true})).toBeVisible();
+          |                                                                                         ^
+      131 |   await expect(page.getByRole("button",{name:ouverture,exact:true})).toHaveCount(0);
+      132 |   await page.goto(`./#/salle/etude/${chapitre}`);
+      133 |   await expect(page.getByRole("heading",{name:"Cette étude est en vérification",exact:true})).toBeVisible();
+        at /Users/jb/Code/academie/web/tests/e2e/facade.spec.ts:130:89
+
+    Error Context: test-results/facade-le-cursus-IFSI-ne-sert-pas-le-parcours-façade-ordinateur/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/facade-le-cursus-IFSI-ne-sert-pas-le-parcours-façade-ordinateur/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/facade-le-cursus-IFSI-ne-sert-pas-le-parcours-façade-ordinateur/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [ordinateur] › tests/e2e/fragilite.spec.ts:121:1 › le cursus IFSI ne sert pas le parcours fragilité 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('heading', { name: 'Prendre soin commence ici', exact: true })
+    Expected: visible
+    Timeout: 10000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 10000ms
+      - waiting for getByRole('heading', { name: 'Prendre soin commence ici', exact: true })
+
+
+      125 |   await sessionTest(page,"ifsi");
+      126 |   await page.goto("./");
+    > 127 |   await expect(page.getByRole("heading",{name:"Prendre soin commence ici",exact:true})).toBeVisible();
+          |                                                                                         ^
+      128 |   await expect(page.getByRole("button",{name:ouverture,exact:true})).toHaveCount(0);
+      129 |   await page.goto(`./#/salle/etude/${chapitre}`);
+      130 |   await expect(page.getByRole("heading",{name:"Cette étude est en vérification",exact:true})).toBeVisible();
+        at /Users/jb/Code/academie/web/tests/e2e/fragilite.spec.ts:127:89
+
+    Error Context: test-results/fragilite-le-cursus-IFSI-ne-sert-pas-le-parcours-fragilité-ordinateur/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/fragilite-le-cursus-IFSI-ne-sert-pas-le-parcours-fragilité-ordinateur/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/fragilite-le-cursus-IFSI-ne-sert-pas-le-parcours-fragilité-ordinateur/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4) [telephone] › tests/e2e/etude.spec.ts:20:1 › le métier IFSI ouvre ses propres contenus ────────
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('heading', { name: 'Prendre soin commence ici' })
+    Expected: visible
+    Timeout: 10000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 10000ms
+      - waiting for getByRole('heading', { name: 'Prendre soin commence ici' })
+
+
+      22 |   await sessionTest(page,"ifsi");
+      23 |   await page.reload();
+    > 24 |   await expect(page.getByRole("heading",{name:"Préparer ton entrée en IFSI"})).toBeVisible();
+         |                                                                              ^
+      25 |   await page.getByRole("button",{name:"Commencer l’étude",exact:true}).click();
+      26 |   await expect(page.getByRole("heading",{name:"Les cinq B",exact:true})).toBeVisible();
+      27 | });
+        at /Users/jb/Code/academie/web/tests/e2e/etude.spec.ts:24:78
+
+    Error Context: test-results/etude-le-métier-IFSI-ouvre-ses-propres-contenus-telephone/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/etude-le-métier-IFSI-ouvre-ses-propres-contenus-telephone/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/etude-le-métier-IFSI-ouvre-ses-propres-contenus-telephone/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  5) [telephone] › tests/e2e/facade.spec.ts:124:1 › le cursus IFSI ne sert pas le parcours façade ──
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('heading', { name: 'Prendre soin commence ici', exact: true })
+    Expected: visible
+    Timeout: 10000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 10000ms
+      - waiting for getByRole('heading', { name: 'Prendre soin commence ici', exact: true })
+
+
+      128 |   await sessionTest(page,"ifsi");
+      129 |   await page.goto("./");
+    > 130 |   await expect(page.getByRole("heading",{name:"Préparer ton entrée en IFSI",exact:true})).toBeVisible();
+          |                                                                                         ^
+      131 |   await expect(page.getByRole("button",{name:ouverture,exact:true})).toHaveCount(0);
+      132 |   await page.goto(`./#/salle/etude/${chapitre}`);
+      133 |   await expect(page.getByRole("heading",{name:"Cette étude est en vérification",exact:true})).toBeVisible();
+        at /Users/jb/Code/academie/web/tests/e2e/facade.spec.ts:130:89
+
+    Error Context: test-results/facade-le-cursus-IFSI-ne-sert-pas-le-parcours-façade-telephone/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/facade-le-cursus-IFSI-ne-sert-pas-le-parcours-façade-telephone/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/facade-le-cursus-IFSI-ne-sert-pas-le-parcours-façade-telephone/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  6) [telephone] › tests/e2e/fragilite.spec.ts:121:1 › le cursus IFSI ne sert pas le parcours fragilité 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('heading', { name: 'Prendre soin commence ici', exact: true })
+    Expected: visible
+    Timeout: 10000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 10000ms
+      - waiting for getByRole('heading', { name: 'Prendre soin commence ici', exact: true })
+
+
+      125 |   await sessionTest(page,"ifsi");
+      126 |   await page.goto("./");
+    > 127 |   await expect(page.getByRole("heading",{name:"Préparer ton entrée en IFSI",exact:true})).toBeVisible();
+          |                                                                                         ^
+      128 |   await expect(page.getByRole("button",{name:ouverture,exact:true})).toHaveCount(0);
+      129 |   await page.goto(`./#/salle/etude/${chapitre}`);
+      130 |   await expect(page.getByRole("heading",{name:"Cette étude est en vérification",exact:true})).toBeVisible();
+        at /Users/jb/Code/academie/web/tests/e2e/fragilite.spec.ts:127:89
+
+    Error Context: test-results/fragilite-le-cursus-IFSI-ne-sert-pas-le-parcours-fragilité-telephone/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/fragilite-le-cursus-IFSI-ne-sert-pas-le-parcours-fragilité-telephone/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/fragilite-le-cursus-IFSI-ne-sert-pas-le-parcours-fragilité-telephone/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  6 failed
+    [ordinateur] › tests/e2e/etude.spec.ts:20:1 › le métier IFSI ouvre ses propres contenus ────────
+    [ordinateur] › tests/e2e/facade.spec.ts:124:1 › le cursus IFSI ne sert pas le parcours façade ──
+    [ordinateur] › tests/e2e/fragilite.spec.ts:121:1 › le cursus IFSI ne sert pas le parcours fragilité 
+    [telephone] › tests/e2e/etude.spec.ts:20:1 › le métier IFSI ouvre ses propres contenus ─────────
+    [telephone] › tests/e2e/facade.spec.ts:124:1 › le cursus IFSI ne sert pas le parcours façade ───
+    [telephone] › tests/e2e/fragilite.spec.ts:121:1 › le cursus IFSI ne sert pas le parcours fragilité 
+  110 passed (2.9m)

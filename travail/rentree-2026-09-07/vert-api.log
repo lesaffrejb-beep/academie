@@ -1,0 +1,41 @@
+........../Users/jb/Code/academie/serveur/academie_etat/journal.py:159: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x109a706d0>
+  rows = conn.execute("SELECT quand, mode, nonce, ligne FROM journal WHERE profil = ? ORDER BY recu_le, quand", (profil,))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Users/jb/Code/academie/serveur/academie_etat/journal.py:159: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x109a707c0>
+  rows = conn.execute("SELECT quand, mode, nonce, ligne FROM journal WHERE profil = ? ORDER BY recu_le, quand", (profil,))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Users/jb/Code/academie/serveur/academie_etat/journal.py:159: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x109a708b0>
+  rows = conn.execute("SELECT quand, mode, nonce, ligne FROM journal WHERE profil = ? ORDER BY recu_le, quand", (profil,))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Users/jb/Code/academie/serveur/academie_etat/journal.py:159: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x109a709a0>
+  rows = conn.execute("SELECT quand, mode, nonce, ligne FROM journal WHERE profil = ? ORDER BY recu_le, quand", (profil,))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Users/jb/Code/academie/serveur/academie_etat/journal.py:159: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x109a70a90>
+  rows = conn.execute("SELECT quand, mode, nonce, ligne FROM journal WHERE profil = ? ORDER BY recu_le, quand", (profil,))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Users/jb/Code/academie/serveur/academie_etat/journal.py:159: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x109a70b80>
+  rows = conn.execute("SELECT quand, mode, nonce, ligne FROM journal WHERE profil = ? ORDER BY recu_le, quand", (profil,))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Users/jb/Code/academie/serveur/academie_etat/journal.py:159: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x109a70c70>
+  rows = conn.execute("SELECT quand, mode, nonce, ligne FROM journal WHERE profil = ? ORDER BY recu_le, quand", (profil,))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Users/jb/Code/academie/serveur/academie_etat/journal.py:159: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x109a70d60>
+  rows = conn.execute("SELECT quand, mode, nonce, ligne FROM journal WHERE profil = ? ORDER BY recu_le, quand", (profil,))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Users/jb/Code/academie/serveur/academie_etat/journal.py:159: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x109a71b70>
+  rows = conn.execute("SELECT quand, mode, nonce, ligne FROM journal WHERE profil = ? ORDER BY recu_le, quand", (profil,))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Users/jb/Code/academie/serveur/academie_etat/journal.py:159: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x109a71300>
+  rows = conn.execute("SELECT quand, mode, nonce, ligne FROM journal WHERE profil = ? ORDER BY recu_le, quand", (profil,))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Users/jb/Code/academie/serveur/academie_etat/journal.py:159: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x109a71c60>
+  rows = conn.execute("SELECT quand, mode, nonce, ligne FROM journal WHERE profil = ? ORDER BY recu_le, quand", (profil,))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+...usage: academie-etat [-h] [--base BASE]
+                     {servir,profil,jeton,purger,reinitialiser-comptes,demandes,importer} ...
+academie-etat: error: confirmation exacte attendue : SUPPRIMER LES COMPTES
+..
+----------------------------------------------------------------------
+Ran 15 tests in 3.089s
+
+OK

@@ -1,0 +1,229 @@
+{
+  "id": "entree.parcoursup.attendus-et-preuves",
+  "titre": "Relier ses expériences aux attendus",
+  "domaine": "entree",
+  "branche": "parcoursup",
+  "niveau": 1,
+  "prerequis": [],
+  "objectifs": [
+    "Associer une expérience personnelle à un attendu publié",
+    "Distinguer un exemple vérifiable d’une affirmation générale"
+  ],
+  "amorce": {
+    "question": "Cas fictif : « Je suis très empathique et organisé » suffit-il à montrer ce qu’un candidat sait faire ?",
+    "aide": "Cherche une situation, une action personnelle et un résultat observable.",
+    "reponse_attendue": "Il faut un exemple précis, limité à ce que le candidat a réellement fait, et expliquer son lien avec un attendu."
+  },
+  "lecon": "Une qualité déclarée n’est pas encore une preuve. La fiche Onisep du diplôme présente des attendus portant notamment sur l’intérêt sanitaire et social, les relations, l’expression, le raisonnement scientifique et arithmétique, ainsi que l’organisation. Leur détail guide ta réflexion ; il ne fournit pas une recette de candidature gagnante. Nous allons les utiliser pour examiner une expérience sans la gonfler.\n\nExercice original : pendant un travail de groupe, une candidate fictive a constaté que plusieurs consignes étaient comprises différemment. Elle a proposé une reformulation commune puis réparti les tâches avec les participants. Que peut-elle en tirer ? Elle peut décrire son action de clarification et de coopération. Elle ne peut pas en conclure qu’elle sait gérer une équipe de soins. Le lien avec un attendu est une interprétation raisonnable de l’expérience, pas une compétence clinique certifiée.\n\nConstruis une trace en trois moments : la situation rend l’action compréhensible ; ton action dit ce que tu as personnellement réalisé ; le recul précise ce que tu as appris ou ce que tu ferais autrement. Évite les formules qui rendent ton rôle impossible à distinguer de celui des autres. « Nous avons réussi » peut être vrai, mais ne dit pas comment tu as contribué. « J’ai tout organisé » mérite d’être corrigé si la répartition avait été collective.\n\nUn exemple modeste peut être plus instructif qu’une grande affirmation. Une activité familiale, scolaire, sportive ou associative peut fournir une situation à analyser. L’exercice ne t’invite pas à inventer un stage, une responsabilité ou une difficulté surmontée. Si tu n’as pas encore d’exemple pour une capacité, écris que tu souhaites l’explorer et indique une prochaine action possible.\n\nLe piège inverse serait de remplir mécaniquement toutes les catégories avec le même récit. Choisis plutôt ce que l’expérience montre effectivement. Dans le cas précédent, la clarification des consignes soutient l’expression et la coopération. Elle ne montre pas nécessairement l’arithmétique. La grille de correction cherchera un lien argumenté, une action identifiable et une limite honnête. Cette démarche est un entraînement original à l’explicitation ; seule la formation visée publie ses critères d’examen.",
+  "synthese": {
+    "consigne": "Cas fictif : dans une association, un candidat a aidé à reformuler des consignes et à préparer le matériel avec deux personnes. Propose un paragraphe précis puis une limite.",
+    "attendus": [
+      "Action personnelle identifiable.",
+      "Lien justifié avec un attendu.",
+      "Contribution collective conservée.",
+      "Aucune compétence infirmière inventée."
+    ]
+  },
+  "sources": [
+    {
+      "texte": "Onisep : diplôme d’État infirmier, attendus",
+      "url": "https://www.onisep.fr/ressources/univers-formation/formations/post-bac/diplome-d-etat-d-infirmier",
+      "nature": "institution",
+      "consulte_le": "2026-09-07",
+      "parti": "Organisme public ; portée pédagogique ou information sur la candidature, pas promesse d’admission."
+    }
+  ],
+  "provenance": {
+    "auteur": "modele",
+    "modele": "GPT-6",
+    "outil": "Codex",
+    "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root",
+    "genere_le": "2026-09-07",
+    "sources_retrouvees": 1,
+    "sources_concordantes": 0,
+    "sans_source": false
+  },
+  "statut": "valide",
+  "partage": "banque",
+  "verifie": "2026-09-07",
+  "peremption": "2027-01-07",
+  "version": 1,
+  "cartes": [
+    {
+      "id": "entree-parcoursup-attendus-et-preuves-rentree-1",
+      "chapitre": "entree.parcoursup.attendus-et-preuves",
+      "domaine": "entree",
+      "branche": "parcoursup",
+      "niveau": 1,
+      "type": "flash",
+      "question": "Qu’est-ce qui rend une expérience utile pour étayer un attendu ?",
+      "reponse": "Une situation précise, une action personnelle et un lien expliqué avec l’attendu.",
+      "explication": "C’est une grille de rédaction proposée, pas un barème officiel.",
+      "aide": "Cherche une situation, une action personnelle et un résultat observable.",
+      "source": [
+        {
+          "texte": "Onisep : diplôme d’État infirmier, attendus",
+          "url": "https://www.onisep.fr/ressources/univers-formation/formations/post-bac/diplome-d-etat-d-infirmier",
+          "nature": "institution",
+          "consulte_le": "2026-09-07",
+          "parti": "Organisme public ; portée pédagogique ou information sur la candidature, pas promesse d’admission."
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "modele": "GPT-6",
+        "outil": "Codex",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root",
+        "genere_le": "2026-09-07",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "statut": "valide",
+      "partage": "banque",
+      "verifie": "2026-09-07",
+      "peremption": "2027-01-07",
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root/revue_ifsi",
+        "date": "2026-09-07",
+        "rapport": "travail/rentree-2026-09-07/RELECTURE-IFSI.md",
+        "assertions": [
+          "Sources HTML et exercices examinés indépendamment ; cas fictifs, réponses et calculs contrôlés dans le rapport.",
+          "Carte examinée : entree-parcoursup-attendus-et-preuves-rentree-1"
+        ],
+        "sources": [
+          "https://www.onisep.fr/ressources/univers-formation/formations/post-bac/diplome-d-etat-d-infirmier"
+        ],
+        "reserves": [
+          "Aucune admission, aptitude clinique ou efficacité chez Arthur démontrée.",
+          "Titre historique FPC pour le calcul ; usage préparatoire général explicitement indiqué."
+        ]
+      }
+    },
+    {
+      "id": "entree-parcoursup-attendus-et-preuves-rentree-2",
+      "chapitre": "entree.parcoursup.attendus-et-preuves",
+      "domaine": "entree",
+      "branche": "parcoursup",
+      "niveau": 1,
+      "type": "libre",
+      "question": "Un candidat dit avoir « dirigé » un groupe alors qu’il a seulement aidé à préparer le matériel. Que corriger ?",
+      "reponse": "Décrire sa contribution réelle sans transformer une aide en responsabilité de direction.",
+      "explication": "Le texte doit rester vérifiable et proportionné.",
+      "aide": "Cherche une situation, une action personnelle et un résultat observable.",
+      "source": [
+        {
+          "texte": "Onisep : diplôme d’État infirmier, attendus",
+          "url": "https://www.onisep.fr/ressources/univers-formation/formations/post-bac/diplome-d-etat-d-infirmier",
+          "nature": "institution",
+          "consulte_le": "2026-09-07",
+          "parti": "Organisme public ; portée pédagogique ou information sur la candidature, pas promesse d’admission."
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "modele": "GPT-6",
+        "outil": "Codex",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root",
+        "genere_le": "2026-09-07",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "statut": "valide",
+      "partage": "banque",
+      "verifie": "2026-09-07",
+      "peremption": "2027-01-07",
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root/revue_ifsi",
+        "date": "2026-09-07",
+        "rapport": "travail/rentree-2026-09-07/RELECTURE-IFSI.md",
+        "assertions": [
+          "Sources HTML et exercices examinés indépendamment ; cas fictifs, réponses et calculs contrôlés dans le rapport.",
+          "Carte examinée : entree-parcoursup-attendus-et-preuves-rentree-2"
+        ],
+        "sources": [
+          "https://www.onisep.fr/ressources/univers-formation/formations/post-bac/diplome-d-etat-d-infirmier"
+        ],
+        "reserves": [
+          "Aucune admission, aptitude clinique ou efficacité chez Arthur démontrée.",
+          "Titre historique FPC pour le calcul ; usage préparatoire général explicitement indiqué."
+        ]
+      }
+    },
+    {
+      "id": "entree-parcoursup-attendus-et-preuves-rentree-3",
+      "chapitre": "entree.parcoursup.attendus-et-preuves",
+      "domaine": "entree",
+      "branche": "parcoursup",
+      "niveau": 1,
+      "type": "libre",
+      "question": "Une expérience de coopération prouve-t-elle aussi la maîtrise du calcul ?",
+      "reponse": "Non, il faut une production pertinente pour chaque capacité.",
+      "explication": "Le même récit ne démontre pas tous les attendus.",
+      "aide": "Cherche une situation, une action personnelle et un résultat observable.",
+      "source": [
+        {
+          "texte": "Onisep : diplôme d’État infirmier, attendus",
+          "url": "https://www.onisep.fr/ressources/univers-formation/formations/post-bac/diplome-d-etat-d-infirmier",
+          "nature": "institution",
+          "consulte_le": "2026-09-07",
+          "parti": "Organisme public ; portée pédagogique ou information sur la candidature, pas promesse d’admission."
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "modele": "GPT-6",
+        "outil": "Codex",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root",
+        "genere_le": "2026-09-07",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "statut": "valide",
+      "partage": "banque",
+      "verifie": "2026-09-07",
+      "peremption": "2027-01-07",
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root/revue_ifsi",
+        "date": "2026-09-07",
+        "rapport": "travail/rentree-2026-09-07/RELECTURE-IFSI.md",
+        "assertions": [
+          "Sources HTML et exercices examinés indépendamment ; cas fictifs, réponses et calculs contrôlés dans le rapport.",
+          "Carte examinée : entree-parcoursup-attendus-et-preuves-rentree-3"
+        ],
+        "sources": [
+          "https://www.onisep.fr/ressources/univers-formation/formations/post-bac/diplome-d-etat-d-infirmier"
+        ],
+        "reserves": [
+          "Aucune admission, aptitude clinique ou efficacité chez Arthur démontrée.",
+          "Titre historique FPC pour le calcul ; usage préparatoire général explicitement indiqué."
+        ]
+      }
+    }
+  ],
+  "verifie_par": {
+    "outil": "Codex",
+    "modele": "GPT-6",
+    "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root/revue_ifsi",
+    "date": "2026-09-07",
+    "rapport": "travail/rentree-2026-09-07/RELECTURE-IFSI.md",
+    "assertions": [
+      "Sources HTML et exercices examinés indépendamment ; cas fictifs, réponses et calculs contrôlés dans le rapport."
+    ],
+    "sources": [
+      "https://www.onisep.fr/ressources/univers-formation/formations/post-bac/diplome-d-etat-d-infirmier"
+    ],
+    "reserves": [
+      "Aucune admission, aptitude clinique ou efficacité chez Arthur démontrée.",
+      "Titre historique FPC pour le calcul ; usage préparatoire général explicitement indiqué."
+    ]
+  }
+}

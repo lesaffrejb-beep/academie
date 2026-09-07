@@ -1,3 +1,4 @@
+import { Demarrage } from "./Demarrage";
 import { compteActuel } from "../app/compte";
 import { ArrowRight, ArrowUpRight, Check, RotateCcw, Network } from "lucide-react";
 import type { CSSProperties } from "react";
@@ -40,6 +41,7 @@ export function Accueil() {
         <span className="font-mono text-[var(--c-accent)] font-semibold">{points?.serieJours ?? 0}j série</span>
       </button>
     </div>
+    {metier === "ifsi" && <p className="cursus-etapes">Un seul chemin : admission → formation IFSI → exercice et spécialisations → approfondissements.</p>}
     <section className="accueil-ouverture">
       <div className="invitation">
         <h1>{parcours?.titre ?? "Apprendre ton métier"}</h1>
@@ -56,6 +58,7 @@ export function Accueil() {
         <p className="apercu-question">{prochaine.amorce.question.replace(/\s+([;?!:])/g, "\u202f$1")}</p>
       </aside>}
     </section>
+    <Demarrage />
     {parcours ? <section className="parcours-ouvert" aria-labelledby="titre-parcours">
       <div className="parcours-entete"><div><h2 id="titre-parcours">Les étapes du parcours</h2><p>{parcours.accroche}</p></div><span className="parcours-public">{parcours.public}</span></div>
       <ol className="fil-chapitres">{lecons.map((lecon, i) => {
@@ -70,6 +73,7 @@ export function Accueil() {
       })}</ol>
       <p className="limite-parcours">{parcours.limite}</p>
     </section> : <section className="parcours-ouvert"><h2>Les études sont en vérification</h2><p>Tu peux réviser les cartes disponibles ou explorer le programme.</p></section>}
+    {metier === "copro" && <section className="parcours-ouvert"><h2>Les cours écrits</h2><p>La bibliothèque contient les chapitres rédigés du programme, avec leurs cas et leurs sources. Ils restent des brouillons à recouper, séparés des études validées.</p><a className="lien-action" href="#/cours">Ouvrir la bibliothèque de cours<ArrowRight size={20}/></a></section>}
     <section className="accueil-suite">
       {banque.etudes?.parcours.filter(p => p.metier === metier && p.id !== parcours?.id).map(p => {
         const l = p.chapitres.map(id => banque.etudes?.lecons[id]).find(l => l && etudeDisponible(l, banque.cartes, journal, jour));

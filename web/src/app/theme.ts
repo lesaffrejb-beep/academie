@@ -27,7 +27,6 @@ export function poseTheme(theme: Theme): void {
  * L'accent vient du RANG du domaine, jamais de son nom : un autre metier
  * herite des palettes sans rien coder (DIRECTION-ARTISTIQUE.md 2).
  */
-export function accentDuRang(rang: number): string {
-  const n = ((rang - 1) % 10) + 1;
-  return `var(--c-rang-${n})`;
+export function accentDuRang(_rang: number): string {
+  return "var(--c-rang-1)";
 }

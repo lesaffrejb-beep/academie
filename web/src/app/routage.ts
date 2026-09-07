@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 
 export interface Route {
   nom:
-    | "accueil" | "etude" | "arbre" | "domaine" | "noeud" | "seance" | "cloture"
+    | "cours" | "accueil" | "etude" | "arbre" | "domaine" | "noeud" | "seance" | "cloture"
     | "eleves" | "arrivee" | "profil" | "boite" | "credits" | "confiance";
   parametre?: string;
 }
@@ -18,6 +18,7 @@ export function analyse(fragment: string): Route {
   const tete = bouts[0] ?? "";
   const queue = bouts.slice(1).join("/");
   switch (tete) {
+    case "cours": return {nom:"cours",parametre:queue||undefined};
     case "arrivee": return {nom:"arrivee"};
     case "eleves": return {nom:"eleves"};
     case "arbre": return {nom: "arbre"};
@@ -27,7 +28,7 @@ export function analyse(fragment: string): Route {
       if (bouts[1] === "etude") return {nom:"etude", parametre:bouts.slice(2).join("/")};
       return bouts[1] === "cloture" ? { nom: "cloture" } : { nom: "seance", parametre: bouts[2] };
     case "profil": return { nom: "profil", parametre: queue || undefined };
-    case "boite": return { nom: "boite" };
+    case "boite": return { nom: "accueil" };
     case "credits": return { nom: "credits" };
     case "confiance": return { nom: "confiance", parametre: queue };
     default: return { nom: "accueil" };

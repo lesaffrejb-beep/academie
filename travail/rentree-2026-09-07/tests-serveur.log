@@ -1,0 +1,115 @@
+..........E.........../Users/jb/Code/academie/serveur/tests/commun.py:46: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10901a980>
+  base.update(maj)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Users/jb/Code/academie/serveur/tests/commun.py:46: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10901aa70>
+  base.update(maj)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Users/jb/Code/academie/serveur/tests/commun.py:46: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10901ab60>
+  base.update(maj)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Users/jb/Code/academie/serveur/tests/commun.py:46: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10901a2f0>
+  base.update(maj)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Users/jb/Code/academie/serveur/tests/commun.py:46: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10901ac50>
+  base.update(maj)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Users/jb/Code/academie/serveur/tests/commun.py:46: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10901ad40>
+  base.update(maj)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Users/jb/Code/academie/serveur/tests/commun.py:46: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10901af20>
+  base.update(maj)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Users/jb/Code/academie/serveur/tests/commun.py:46: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10901b100>
+  base.update(maj)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Users/jb/Code/academie/serveur/tests/commun.py:46: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10901ae30>
+  base.update(maj)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Users/jb/Code/academie/serveur/tests/commun.py:46: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10901b010>
+  base.update(maj)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Users/jb/Code/academie/serveur/tests/commun.py:46: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10901b2e0>
+  base.update(maj)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Users/jb/Code/academie/serveur/tests/commun.py:46: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10901b4c0>
+  base.update(maj)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Users/jb/Code/academie/serveur/tests/commun.py:46: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10901b5b0>
+  base.update(maj)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+..................<frozen os>:709: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10901b5b0>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<frozen os>:709: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10901b4c0>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<frozen os>:709: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10901b3d0>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<frozen os>:709: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10901b1f0>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<frozen os>:709: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10901b2e0>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<frozen os>:709: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10901b010>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<frozen os>:709: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1086f0d60>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<frozen os>:709: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x108edc400>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<frozen os>:709: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1086f3a60>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<frozen os>:709: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1086f2f20>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<frozen os>:709: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10901ae30>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<frozen os>:709: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10901b100>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<frozen os>:709: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10910c400>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<frozen os>:709: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10901ad40>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<frozen os>:709: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10910c4f0>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<frozen os>:709: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10910c5e0>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<frozen os>:709: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10910c6d0>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<frozen os>:709: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10910c7c0>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+usage: academie-etat [-h] [--base BASE]
+                     {servir,profil,jeton,purger,reinitialiser-comptes,demandes,importer} ...
+academie-etat: error: confirmation exacte attendue : SUPPRIMER LES COMPTES
+...E
+======================================================================
+ERROR: test_sante_et_journal_par_socket (test_http.Http.test_sante_et_journal_par_socket)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jb/Code/academie/serveur/tests/test_http.py", line 16, in test_sante_et_journal_par_socket
+    srv = ThreadingHTTPServer(("127.0.0.1", 0), fabrique_handler(appli))
+  File "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/socketserver.py", line 457, in __init__
+    self.server_bind()
+    ~~~~~~~~~~~~~~~~^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/http/server.py", line 148, in server_bind
+    socketserver.TCPServer.server_bind(self)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/socketserver.py", line 478, in server_bind
+    self.socket.bind(self.server_address)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 1] Operation not permitted
+
+======================================================================
+ERROR: test_rentree (unittest.loader._FailedTest.test_rentree)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_rentree
+Traceback (most recent call last):
+  File "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/unittest/loader.py", line 433, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/unittest/loader.py", line 374, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "/Users/jb/Code/academie/serveur/tests/test_rentree.py", line 2, in <module>
+    from .commun import application, requete, ligne
+ImportError: attempted relative import with no known parent package
+
+
+----------------------------------------------------------------------
+Ran 44 tests in 3.118s
+
+FAILED (errors=2)

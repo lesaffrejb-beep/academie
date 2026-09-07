@@ -13,3 +13,11 @@ describe("acquittement reel du journal", () => {
     expect((await api.envoieJournal(null,[ligne])).ok).toBe(true);
   });
 });
+it('borne une requête bloquée et conserve les réponses locales', async()=>{
+ vi.useFakeTimers();
+ vi.stubGlobal('fetch',vi.fn((_url,init)=>new Promise((_resolve,reject)=>{
+   init.signal.addEventListener('abort',()=>reject(new DOMException('timeout','AbortError')));
+ })));
+ try {const attente=api.profil();await vi.advanceTimersByTimeAsync(15000);expect((await attente).ok).toBe(false);}
+ finally {vi.useRealTimers();}
+});

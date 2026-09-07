@@ -127,7 +127,7 @@ test("le cursus IFSI ne sert pas le parcours façade",async({page})=>{
   }}));
   await sessionTest(page,"ifsi");
   await page.goto("./");
-  await expect(page.getByRole("heading",{name:"Prendre soin commence ici",exact:true})).toBeVisible();
+  await expect(page.getByRole("heading",{name:"Préparer ton entrée en IFSI",exact:true})).toBeVisible();
   await expect(page.getByRole("button",{name:ouverture,exact:true})).toHaveCount(0);
   await page.goto(`./#/salle/etude/${chapitre}`);
   await expect(page.getByRole("heading",{name:"Cette étude est en vérification",exact:true})).toBeVisible();

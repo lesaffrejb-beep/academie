@@ -277,7 +277,9 @@ export function brancheReprise(surBilan?: (b: Bilan) => void): () => void {
   const relance = () => {
     void synchronise().then((b) => surBilan?.(b)).catch(() => undefined);
   };
+  const retour = () => {if (!document.hidden && navigator.onLine) relance();};
   window.addEventListener("online", relance);
+  document.addEventListener("visibilitychange", retour);
   if (navigator.onLine) relance();
-  return () => window.removeEventListener("online", relance);
+  return () => {window.removeEventListener("online", relance);document.removeEventListener("visibilitychange", retour);};
 }

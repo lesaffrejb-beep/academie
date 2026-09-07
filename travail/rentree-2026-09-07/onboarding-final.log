@@ -1,0 +1,15 @@
+
+Running 8 tests using 1 worker
+
+(node:62798) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 tests/onboarding/comptes.spec.ts:17:1 › deux comptes : contenu, sauvegarde, reconnexion, masquage et reprise hors ligne (3.0s)
+  ✓  2 tests/onboarding/comptes.spec.ts:64:1 › un cookie changé par un autre onglet refuse la synchronisation (979ms)
+  ✓  3 tests/onboarding/comptes.spec.ts:76:1 › accueil joignable connecté et ancien travail repris une seule fois (1.4s)
+  ✓  4 tests/onboarding/comptes.spec.ts:126:1 › brouillon seul récupéré et accès indépendant du scope ancien (1.1s)
+  ✓  5 tests/onboarding/comptes.spec.ts:148:1 › la clé remplace une phrase perdue et devient invalide (2.3s)
+  ✓  6 tests/onboarding/comptes.spec.ts:185:1 › inscription avec cursus puis clic sur le pseudo et mot de passe (1.3s)
+  ✓  7 tests/onboarding/comptes.spec.ts:211:1 › ajout de cursus, retour et brouillon conservé après rechargement (1.2s)
+  ✓  8 tests/onboarding/comptes.spec.ts:229:1 › la reprise du code conserve compte et brouillon local (900ms)
+
+  8 passed (13.5s)

@@ -1,0 +1,229 @@
+{
+  "id": "entree.ecrit.lire-un-texte-sanitaire-et-social",
+  "titre": "Lire un texte sanitaire et social",
+  "domaine": "entree",
+  "branche": "ecrit",
+  "niveau": 2,
+  "prerequis": [],
+  "objectifs": [
+    "Dégager la thèse et les arguments d'un texte d'actualité",
+    "Distinguer un fait rapporté, une intention et un résultat démontré."
+  ],
+  "amorce": {
+    "question": "Texte fictif : « Une permanence a changé ses horaires. Un habitant dit que personne ne sera aidé. » Qu’est-ce qui est constaté et qu’est-ce qui reste une affirmation à examiner ?",
+    "aide": "Sépare ce qui est rapporté, son auteur et la conclusion qui en est tirée.",
+    "reponse_attendue": "Le changement d’horaires est rapporté ; l’impossibilité générale d’aider est une affirmation attribuée à un habitant, non démontrée par ce seul texte."
+  },
+  "lecon": "Lire un texte sanitaire et social demande de comprendre ce qu’il dit avant de prendre position. Le CLEMI invite à examiner la construction de l’information et le point de vue de ceux qui la produisent. Nous appliquons cette vigilance à un texte entièrement fictif : « Une permanence associative ouvre désormais le soir. Une personne affirme que les habitants âgés n’y viendront plus. L’association annonce vouloir accueillir ceux qui travaillent. » Aucun de ces éléments n’est une statistique sur un territoire réel.\n\nCommence par attribuer chaque proposition. Le texte rapporte un changement d’horaire, une inquiétude individuelle et un objectif déclaré de l’association. Il ne dit pas combien de personnes viennent, si leur fréquentation a changé ou si un autre accès existe. Tu peux comprendre la tension entre des besoins différents sans décider immédiatement qui a raison.\n\nLe résumé doit conserver cette structure. Une proposition possible est : « L’association cherche à adapter l’accès à certains horaires de travail ; une personne craint que le changement défavorise d’autres habitants ; les effets ne sont pas mesurés dans le texte. » Cette phrase est plus fidèle que « la réforme exclut les personnes âgées ». La seconde transforme une inquiétude en résultat démontré.\n\nPasse ensuite aux arguments. Pour soutenir une conclusion, quelle preuve manque ? On pourrait chercher des retours de différents usagers, décrire les possibilités alternatives et comparer les usages avant et après. Ce sont des pistes d’enquête, pas des résultats disponibles. Une seule réaction peut être importante sans représenter tout le public. À l’inverse, une intention bien formulée ne prouve pas que l’effet recherché a eu lieu.\n\nTu vas maintenant changer une donnée du cas : imagine qu’une permanence téléphonique reste ouverte en journée. Cette information modifie-t-elle tout le raisonnement ? Elle apporte une alternative, mais ne prouve pas que tous savent ou peuvent l’utiliser. La conclusion devient plus précise et garde ses limites. Dans ta production, sépare résumé, question critique et position personnelle. Cette méthode de lecture s’entraîne avant l’entrée en IFSI ; elle n’est pas présentée comme une épreuve obligatoire de la voie Parcoursup.",
+  "synthese": {
+    "consigne": "Texte fictif : une permanence ouvre le soir et maintient un téléphone en journée ; un habitant craint de perdre son accès. Rédige un résumé fidèle, une question d’enquête et une conclusion prudente.",
+    "attendus": [
+      "Propos attribués à leurs auteurs.",
+      "Intention et effet distingués.",
+      "Téléphone pris en compte sans supposer son accessibilité universelle.",
+      "Donnée manquante précise."
+    ]
+  },
+  "sources": [
+    {
+      "texte": "CLEMI : les journalistes sont-ils objectifs",
+      "url": "https://www.clemi.fr/ressources/les-series-de-ressources/les-cles-des-medias/les-journalistes-sont-ils-objectifs",
+      "nature": "institution",
+      "consulte_le": "2026-09-07",
+      "parti": "Organisme public ; portée pédagogique ou information sur la candidature, pas promesse d’admission."
+    }
+  ],
+  "provenance": {
+    "auteur": "modele",
+    "modele": "GPT-6",
+    "outil": "Codex",
+    "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root",
+    "genere_le": "2026-09-07",
+    "sources_retrouvees": 1,
+    "sources_concordantes": 0,
+    "sans_source": false
+  },
+  "statut": "valide",
+  "partage": "banque",
+  "verifie": "2026-09-07",
+  "peremption": "2027-01-07",
+  "version": 1,
+  "cartes": [
+    {
+      "id": "entree-ecrit-lire-un-texte-sanitaire-et-social-rentree-1",
+      "chapitre": "entree.ecrit.lire-un-texte-sanitaire-et-social",
+      "domaine": "entree",
+      "branche": "ecrit",
+      "niveau": 2,
+      "type": "flash",
+      "question": "Dans un texte, pourquoi attribuer une affirmation à son auteur ?",
+      "reponse": "Pour distinguer ce qui est observé, rapporté ou interprété et examiner la preuve disponible.",
+      "explication": "C’est l’application de la vigilance sur la source.",
+      "aide": "Sépare ce qui est rapporté, son auteur et la conclusion qui en est tirée.",
+      "source": [
+        {
+          "texte": "CLEMI : les journalistes sont-ils objectifs",
+          "url": "https://www.clemi.fr/ressources/les-series-de-ressources/les-cles-des-medias/les-journalistes-sont-ils-objectifs",
+          "nature": "institution",
+          "consulte_le": "2026-09-07",
+          "parti": "Organisme public ; portée pédagogique ou information sur la candidature, pas promesse d’admission."
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "modele": "GPT-6",
+        "outil": "Codex",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root",
+        "genere_le": "2026-09-07",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "statut": "valide",
+      "partage": "banque",
+      "verifie": "2026-09-07",
+      "peremption": "2027-01-07",
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root/revue_ifsi",
+        "date": "2026-09-07",
+        "rapport": "travail/rentree-2026-09-07/RELECTURE-IFSI.md",
+        "assertions": [
+          "Sources HTML et exercices examinés indépendamment ; cas fictifs, réponses et calculs contrôlés dans le rapport.",
+          "Carte examinée : entree-ecrit-lire-un-texte-sanitaire-et-social-rentree-1"
+        ],
+        "sources": [
+          "https://www.clemi.fr/ressources/les-series-de-ressources/les-cles-des-medias/les-journalistes-sont-ils-objectifs"
+        ],
+        "reserves": [
+          "Aucune admission, aptitude clinique ou efficacité chez Arthur démontrée.",
+          "Titre historique FPC pour le calcul ; usage préparatoire général explicitement indiqué."
+        ]
+      }
+    },
+    {
+      "id": "entree-ecrit-lire-un-texte-sanitaire-et-social-rentree-2",
+      "chapitre": "entree.ecrit.lire-un-texte-sanitaire-et-social",
+      "domaine": "entree",
+      "branche": "ecrit",
+      "niveau": 2,
+      "type": "libre",
+      "question": "Cas fictif : un habitant craint un effet négatif. Peut-on résumer « tous les habitants sont pénalisés » ?",
+      "reponse": "Non, la généralisation dépasse les éléments fournis.",
+      "explication": "Un témoignage reste une information située.",
+      "aide": "Sépare ce qui est rapporté, son auteur et la conclusion qui en est tirée.",
+      "source": [
+        {
+          "texte": "CLEMI : les journalistes sont-ils objectifs",
+          "url": "https://www.clemi.fr/ressources/les-series-de-ressources/les-cles-des-medias/les-journalistes-sont-ils-objectifs",
+          "nature": "institution",
+          "consulte_le": "2026-09-07",
+          "parti": "Organisme public ; portée pédagogique ou information sur la candidature, pas promesse d’admission."
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "modele": "GPT-6",
+        "outil": "Codex",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root",
+        "genere_le": "2026-09-07",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "statut": "valide",
+      "partage": "banque",
+      "verifie": "2026-09-07",
+      "peremption": "2027-01-07",
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root/revue_ifsi",
+        "date": "2026-09-07",
+        "rapport": "travail/rentree-2026-09-07/RELECTURE-IFSI.md",
+        "assertions": [
+          "Sources HTML et exercices examinés indépendamment ; cas fictifs, réponses et calculs contrôlés dans le rapport.",
+          "Carte examinée : entree-ecrit-lire-un-texte-sanitaire-et-social-rentree-2"
+        ],
+        "sources": [
+          "https://www.clemi.fr/ressources/les-series-de-ressources/les-cles-des-medias/les-journalistes-sont-ils-objectifs"
+        ],
+        "reserves": [
+          "Aucune admission, aptitude clinique ou efficacité chez Arthur démontrée.",
+          "Titre historique FPC pour le calcul ; usage préparatoire général explicitement indiqué."
+        ]
+      }
+    },
+    {
+      "id": "entree-ecrit-lire-un-texte-sanitaire-et-social-rentree-3",
+      "chapitre": "entree.ecrit.lire-un-texte-sanitaire-et-social",
+      "domaine": "entree",
+      "branche": "ecrit",
+      "niveau": 2,
+      "type": "libre",
+      "question": "Une association annonce vouloir améliorer l’accès. A-t-elle déjà prouvé un meilleur accès ?",
+      "reponse": "Non. Un objectif annoncé n’est pas un résultat mesuré.",
+      "explication": "Il faudrait des données pertinentes sur les effets.",
+      "aide": "Sépare ce qui est rapporté, son auteur et la conclusion qui en est tirée.",
+      "source": [
+        {
+          "texte": "CLEMI : les journalistes sont-ils objectifs",
+          "url": "https://www.clemi.fr/ressources/les-series-de-ressources/les-cles-des-medias/les-journalistes-sont-ils-objectifs",
+          "nature": "institution",
+          "consulte_le": "2026-09-07",
+          "parti": "Organisme public ; portée pédagogique ou information sur la candidature, pas promesse d’admission."
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "modele": "GPT-6",
+        "outil": "Codex",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root",
+        "genere_le": "2026-09-07",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "statut": "valide",
+      "partage": "banque",
+      "verifie": "2026-09-07",
+      "peremption": "2027-01-07",
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root/revue_ifsi",
+        "date": "2026-09-07",
+        "rapport": "travail/rentree-2026-09-07/RELECTURE-IFSI.md",
+        "assertions": [
+          "Sources HTML et exercices examinés indépendamment ; cas fictifs, réponses et calculs contrôlés dans le rapport.",
+          "Carte examinée : entree-ecrit-lire-un-texte-sanitaire-et-social-rentree-3"
+        ],
+        "sources": [
+          "https://www.clemi.fr/ressources/les-series-de-ressources/les-cles-des-medias/les-journalistes-sont-ils-objectifs"
+        ],
+        "reserves": [
+          "Aucune admission, aptitude clinique ou efficacité chez Arthur démontrée.",
+          "Titre historique FPC pour le calcul ; usage préparatoire général explicitement indiqué."
+        ]
+      }
+    }
+  ],
+  "verifie_par": {
+    "outil": "Codex",
+    "modele": "GPT-6",
+    "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root/revue_ifsi",
+    "date": "2026-09-07",
+    "rapport": "travail/rentree-2026-09-07/RELECTURE-IFSI.md",
+    "assertions": [
+      "Sources HTML et exercices examinés indépendamment ; cas fictifs, réponses et calculs contrôlés dans le rapport."
+    ],
+    "sources": [
+      "https://www.clemi.fr/ressources/les-series-de-ressources/les-cles-des-medias/les-journalistes-sont-ils-objectifs"
+    ],
+    "reserves": [
+      "Aucune admission, aptitude clinique ou efficacité chez Arthur démontrée.",
+      "Titre historique FPC pour le calcul ; usage préparatoire général explicitement indiqué."
+    ]
+  }
+}

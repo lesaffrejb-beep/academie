@@ -17,6 +17,7 @@ import { VitePWA } from "vite-plugin-pwa";
  * vite-plugin-pwa les met ensuite en cache (globPatterns couvre *.json).
  */
 const DONNEES = [
+  { nom: "cours.json", source: new URL("../site/cours.json", import.meta.url) },
   { nom: "banque.json", source: new URL("../site/banque.json", import.meta.url) },
   { nom: "catalogue.json", source: new URL("../programme/catalogue.json", import.meta.url) },
   { nom: "voix.json", source: new URL("../contenu/voix.json", import.meta.url) },
@@ -25,7 +26,7 @@ const DONNEES = [
 function contenuDonnee(d: {nom:string;source:URL}): Buffer {
   if (d.nom !== "catalogue.json") return readFileSync(d.source);
   const catalogue = JSON.parse(readFileSync(d.source, "utf8"));
-  const banque = JSON.parse(readFileSync(DONNEES[0].source, "utf8"));
+  const banque = JSON.parse(readFileSync(new URL("../site/banque.json", import.meta.url), "utf8"));
   for (const p of catalogue.parcours) {
     const programme = JSON.parse(readFileSync(new URL(`../${p.programme}`, import.meta.url), "utf8"));
     p.chapitres = programme.chapitres.length;
@@ -37,7 +38,7 @@ function contenuDonnee(d: {nom:string;source:URL}): Buffer {
 }
 function donneesDuDepot(): Plugin {
   function medias() {
-    const banque = JSON.parse(readFileSync(DONNEES[0].source, "utf8")) as { cartes: { image?: { fichier?: string } }[] };
+    const banque = JSON.parse(readFileSync(new URL("../site/banque.json", import.meta.url), "utf8")) as { cartes: { image?: { fichier?: string } }[] };
     return [...new Set(banque.cartes.map((c) => c.image?.fichier).filter((f): f is string =>
       typeof f === "string" && /^images\/[a-zA-Z0-9_-]+\.(svg|png|jpe?g|webp)$/.test(f)))].map((nom) => ({ nom, source: new URL(`../site/${nom}`, import.meta.url) }));
   }
@@ -118,6 +119,7 @@ export default defineConfig({
         maximumFileSizeToCacheInBytes: 4 * 1024 * 1024,
         globPatterns: ["**/*.{js,css,html,svg,png,jpg,jpeg,webp,json,woff2}"],
         navigateFallback: "/academie/index.html",
+        navigateFallbackDenylist: [/^\/academie\/api\//],
         // Même contenu hors du scope de l’ancien SW ; les URL restent canoniques.
         manifestTransforms: [async (entries) => ({manifest: entries.map(e => ({...e, url: `/academie/${e.url.replace(/^\/+/, "")}`})), warnings: []})],
         cleanupOutdatedCaches: true,

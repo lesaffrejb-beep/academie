@@ -1,7 +1,7 @@
 {
-  "_": "Catalogue des cursus ; compteurs recalculés par le build depuis les programmes et les études servies. Nouveau cursus enregistre une demande privée pour JB.",
+  "_": "Un cursus continu par métier. Ajout possible, un cursus actif à la fois, choix et réponses conservés dans le journal.",
   "version": "0.1",
-  "mis_a_jour_le": "2026-09-06",
+  "mis_a_jour_le": "2026-09-07",
   "parcours": [
     {
       "cle": "copro",
@@ -13,12 +13,12 @@
       "chapitres": 389,
       "chapitres_ecrits": 8,
       "cartes_jouables": 134,
-      "aujourd_hui": "Essayer les études disponibles et les rappels ; le programme complet reste à écrire.",
+      "aujourd_hui": "Études disponibles et rappels ; programme complet et état éditorial distingués.",
       "ouvert_a": "tous"
     },
     {
       "cle": "ifsi",
-      "titre": "Entrer en IFSI, devenir infirmier, continuer à apprendre",
+      "titre": "IFSI : de l’entrée aux spécialisations",
       "metier": "infirmier",
       "programme": "programme/ifsi.json",
       "sommaire": "SYLLABUS-IFSI.md",
@@ -26,8 +26,14 @@
       "chapitres": 375,
       "chapitres_ecrits": 2,
       "cartes_jouables": 10,
-      "aujourd_hui": "Essayer les études disponibles et les rappels ; le programme complet reste à écrire.",
-      "ouvert_a": "tous"
+      "aujourd_hui": "Études disponibles et rappels ; programme complet et état éditorial distingués.",
+      "ouvert_a": "tous",
+      "etapes": [
+        "Préparer son admission",
+        "Étudier en IFSI",
+        "Exercer et se spécialiser",
+        "Approfondir sans fin"
+      ]
     }
   ],
   "creer_le_votre": {

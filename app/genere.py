@@ -463,6 +463,10 @@ def main() -> int:
         cible.parent.mkdir(parents=True, exist_ok=True)
         cible.write_text(texte, encoding="utf-8")
 
+    if (ACADEMIE / "cours/copro/REGLES.md").exists():
+        from export_cours import exporter
+        (args.sortie.parent / "cours.json").write_text(json.dumps(exporter(ACADEMIE), ensure_ascii=False) + "\n", encoding="utf-8")
+
     brouillons = sum(1 for c in retenues if c.get("statut") == "brouillon")
     ou = []
     for cible in sorties:

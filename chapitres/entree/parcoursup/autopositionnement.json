@@ -1,0 +1,229 @@
+{
+  "id": "entree.parcoursup.autopositionnement",
+  "titre": "Comprendre l’auto-positionnement Parcoursup",
+  "domaine": "entree",
+  "branche": "parcoursup",
+  "niveau": 1,
+  "prerequis": [],
+  "objectifs": [
+    "Expliquer pourquoi les réponses du test officiel ne classent pas le candidat",
+    "Distinguer le diagnostic pédagogique de l’Académie du test officiel Parcoursup"
+  ],
+  "amorce": {
+    "question": "Cas fictif : un candidat cherche les « meilleures réponses » au test officiel pour améliorer son classement. Que lui expliquer ?",
+    "aide": "Distingue obligation de réalisation, transmission des réponses et sélection.",
+    "reponse_attendue": "Le test officiel aide à comprendre la formation ; ses réponses ne sont pas communiquées aux formations et ne servent pas à la sélection."
+  },
+  "lecon": "Le test d’auto-positionnement de Parcoursup est présenté comme un moyen de réfléchir à la connaissance du métier et de la formation. La page consultée précise qu’il est obligatoire pour confirmer les vœux IFSI, mais que les réponses ne sont pas transmises aux formations et n’interviennent pas dans la sélection. Un exercice de l’Académie n’effectue pas cette démarche officielle à ta place.\n\nCela change la façon de s’y préparer. Chercher à jouer un candidat idéal enlève l’occasion de repérer une représentation incomplète. Une erreur peut révéler une question utile : qu’imaginais-tu, sur quoi t’appuyais-tu, et quel document permettrait de préciser ? Nous ne reprenons pas les questions du test officiel. Le cas suivant est un exercice original pour travailler cette attitude.\n\nUn candidat fictif pense que tout le travail infirmier est constitué de gestes techniques. Après une première recherche, il comprend que son image mérite d’être élargie. Il peut noter : « Mon idée initiale était trop étroite ; je dois explorer aussi les échanges, l’organisation et le suivi. » Cette formulation montre une révision de représentation. Elle ne prouve pas qu’il maîtrise le métier ou qu’il se sentira à l’aise dans chaque situation.\n\nPour utiliser ton résultat comme point de départ, tiens une liste de questions, et non une liste de défauts personnels. Classe ce que tu sais expliquer, ce que tu crois comprendre et ce que tu dois explorer. Choisis ensuite une action adaptée à la question : lire une fiche officielle, comparer des descriptions de la formation, préparer une question pour une rencontre d’information. La réponse à une question de connaissance et le choix de ton orientation restent deux décisions distinctes.\n\nDans la synthèse, tu vas rédiger une note avant/après sur le personnage fictif. La qualité attendue est la capacité à corriger une idée, à reconnaître une inconnue et à choisir une source utile. Répondre correctement ici ne remplit pas le test Parcoursup et n’accorde aucun avantage de sélection. Tu pourras refaire un exercice différent après tes recherches pour constater ce que tu expliques mieux ; le résultat ne doit pas être transformé en diagnostic de ton aptitude à devenir infirmier.",
+  "synthese": {
+    "consigne": "Le candidat fictif n’imaginait que des gestes techniques. Rédige une note sur son idée initiale, ce qu’il doit explorer et l’action suivante. Précise le rôle du test officiel.",
+    "attendus": [
+      "Idée initiale et incertitude explicites.",
+      "Action de recherche adaptée.",
+      "Test officiel distinct des exercices Académie.",
+      "Aucun effet de classement attribué aux réponses."
+    ]
+  },
+  "sources": [
+    {
+      "texte": "Parcoursup : test d’auto-positionnement IFSI",
+      "url": "https://www.parcoursup.gouv.fr/contenus/test-d-auto-positionnement-ifsi-1812",
+      "nature": "institution",
+      "consulte_le": "2026-09-07",
+      "parti": "Organisme public ; portée pédagogique ou information sur la candidature, pas promesse d’admission."
+    }
+  ],
+  "provenance": {
+    "auteur": "modele",
+    "modele": "GPT-6",
+    "outil": "Codex",
+    "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root",
+    "genere_le": "2026-09-07",
+    "sources_retrouvees": 1,
+    "sources_concordantes": 0,
+    "sans_source": false
+  },
+  "statut": "valide",
+  "partage": "banque",
+  "verifie": "2026-09-07",
+  "peremption": "2027-01-07",
+  "version": 1,
+  "cartes": [
+    {
+      "id": "entree-parcoursup-autopositionnement-rentree-1",
+      "chapitre": "entree.parcoursup.autopositionnement",
+      "domaine": "entree",
+      "branche": "parcoursup",
+      "niveau": 1,
+      "type": "flash",
+      "question": "Les réponses au test officiel d’auto-positionnement IFSI servent-elles au classement ?",
+      "reponse": "Non. Elles ne sont pas communiquées aux formations et n’interviennent pas dans la sélection.",
+      "explication": "La réalisation requise et l’utilisation des réponses sont distinctes.",
+      "aide": "Distingue obligation de réalisation, transmission des réponses et sélection.",
+      "source": [
+        {
+          "texte": "Parcoursup : test d’auto-positionnement IFSI",
+          "url": "https://www.parcoursup.gouv.fr/contenus/test-d-auto-positionnement-ifsi-1812",
+          "nature": "institution",
+          "consulte_le": "2026-09-07",
+          "parti": "Organisme public ; portée pédagogique ou information sur la candidature, pas promesse d’admission."
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "modele": "GPT-6",
+        "outil": "Codex",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root",
+        "genere_le": "2026-09-07",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "statut": "valide",
+      "partage": "banque",
+      "verifie": "2026-09-07",
+      "peremption": "2027-01-07",
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root/revue_ifsi",
+        "date": "2026-09-07",
+        "rapport": "travail/rentree-2026-09-07/RELECTURE-IFSI.md",
+        "assertions": [
+          "Sources HTML et exercices examinés indépendamment ; cas fictifs, réponses et calculs contrôlés dans le rapport.",
+          "Carte examinée : entree-parcoursup-autopositionnement-rentree-1"
+        ],
+        "sources": [
+          "https://www.parcoursup.gouv.fr/contenus/test-d-auto-positionnement-ifsi-1812"
+        ],
+        "reserves": [
+          "Aucune admission, aptitude clinique ou efficacité chez Arthur démontrée.",
+          "Titre historique FPC pour le calcul ; usage préparatoire général explicitement indiqué."
+        ]
+      }
+    },
+    {
+      "id": "entree-parcoursup-autopositionnement-rentree-2",
+      "chapitre": "entree.parcoursup.autopositionnement",
+      "domaine": "entree",
+      "branche": "parcoursup",
+      "niveau": 1,
+      "type": "libre",
+      "question": "Réussir cette étude Académie remplit-il le test demandé dans Parcoursup ?",
+      "reponse": "Non, il faut effectuer la démarche dans le dossier officiel.",
+      "explication": "Les deux services ne sont pas reliés.",
+      "aide": "Distingue obligation de réalisation, transmission des réponses et sélection.",
+      "source": [
+        {
+          "texte": "Parcoursup : test d’auto-positionnement IFSI",
+          "url": "https://www.parcoursup.gouv.fr/contenus/test-d-auto-positionnement-ifsi-1812",
+          "nature": "institution",
+          "consulte_le": "2026-09-07",
+          "parti": "Organisme public ; portée pédagogique ou information sur la candidature, pas promesse d’admission."
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "modele": "GPT-6",
+        "outil": "Codex",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root",
+        "genere_le": "2026-09-07",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "statut": "valide",
+      "partage": "banque",
+      "verifie": "2026-09-07",
+      "peremption": "2027-01-07",
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root/revue_ifsi",
+        "date": "2026-09-07",
+        "rapport": "travail/rentree-2026-09-07/RELECTURE-IFSI.md",
+        "assertions": [
+          "Sources HTML et exercices examinés indépendamment ; cas fictifs, réponses et calculs contrôlés dans le rapport.",
+          "Carte examinée : entree-parcoursup-autopositionnement-rentree-2"
+        ],
+        "sources": [
+          "https://www.parcoursup.gouv.fr/contenus/test-d-auto-positionnement-ifsi-1812"
+        ],
+        "reserves": [
+          "Aucune admission, aptitude clinique ou efficacité chez Arthur démontrée.",
+          "Titre historique FPC pour le calcul ; usage préparatoire général explicitement indiqué."
+        ]
+      }
+    },
+    {
+      "id": "entree-parcoursup-autopositionnement-rentree-3",
+      "chapitre": "entree.parcoursup.autopositionnement",
+      "domaine": "entree",
+      "branche": "parcoursup",
+      "niveau": 1,
+      "type": "libre",
+      "question": "Que faire d’une représentation du métier contredite par une source ?",
+      "reponse": "La reformuler et nommer la question restante puis une action pour l’explorer.",
+      "explication": "L’exercice vise une réflexion, pas un jugement sur la personne.",
+      "aide": "Distingue obligation de réalisation, transmission des réponses et sélection.",
+      "source": [
+        {
+          "texte": "Parcoursup : test d’auto-positionnement IFSI",
+          "url": "https://www.parcoursup.gouv.fr/contenus/test-d-auto-positionnement-ifsi-1812",
+          "nature": "institution",
+          "consulte_le": "2026-09-07",
+          "parti": "Organisme public ; portée pédagogique ou information sur la candidature, pas promesse d’admission."
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "modele": "GPT-6",
+        "outil": "Codex",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root",
+        "genere_le": "2026-09-07",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "statut": "valide",
+      "partage": "banque",
+      "verifie": "2026-09-07",
+      "peremption": "2027-01-07",
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root/revue_ifsi",
+        "date": "2026-09-07",
+        "rapport": "travail/rentree-2026-09-07/RELECTURE-IFSI.md",
+        "assertions": [
+          "Sources HTML et exercices examinés indépendamment ; cas fictifs, réponses et calculs contrôlés dans le rapport.",
+          "Carte examinée : entree-parcoursup-autopositionnement-rentree-3"
+        ],
+        "sources": [
+          "https://www.parcoursup.gouv.fr/contenus/test-d-auto-positionnement-ifsi-1812"
+        ],
+        "reserves": [
+          "Aucune admission, aptitude clinique ou efficacité chez Arthur démontrée.",
+          "Titre historique FPC pour le calcul ; usage préparatoire général explicitement indiqué."
+        ]
+      }
+    }
+  ],
+  "verifie_par": {
+    "outil": "Codex",
+    "modele": "GPT-6",
+    "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root/revue_ifsi",
+    "date": "2026-09-07",
+    "rapport": "travail/rentree-2026-09-07/RELECTURE-IFSI.md",
+    "assertions": [
+      "Sources HTML et exercices examinés indépendamment ; cas fictifs, réponses et calculs contrôlés dans le rapport."
+    ],
+    "sources": [
+      "https://www.parcoursup.gouv.fr/contenus/test-d-auto-positionnement-ifsi-1812"
+    ],
+    "reserves": [
+      "Aucune admission, aptitude clinique ou efficacité chez Arthur démontrée.",
+      "Titre historique FPC pour le calcul ; usage préparatoire général explicitement indiqué."
+    ]
+  }
+}

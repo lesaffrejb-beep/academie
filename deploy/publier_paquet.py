@@ -31,7 +31,7 @@ BASE = Path("/var/lib/academie/etat.sqlite")
 SAUVEGARDES = Path("/var/lib/academie/sauvegardes")
 VERROU = Path("/run/lock/academie-publication-20260905.lock")
 REQUIS = {"index.html", "sw.js", "registerSW.js", "manifest.webmanifest", "icone.svg",
-          "banque.json", "voix.json", "catalogue.json", ".vite/manifest.json", "version-source.json"}
+          "banque.json", "voix.json", "catalogue.json", "cours.json", "reprise.html", "reprise.js", ".vite/manifest.json", "version-source.json"}
 
 
 def empreinte(chemin: Path) -> str:

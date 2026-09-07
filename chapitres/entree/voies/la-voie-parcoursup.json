@@ -1,0 +1,229 @@
+{
+  "id": "entree.voies.la-voie-parcoursup",
+  "titre": "La voie Parcoursup",
+  "domaine": "entree",
+  "branche": "voies",
+  "niveau": 1,
+  "prerequis": [],
+  "objectifs": [
+    "Distinguer les pièces du dossier, les attendus et le rôle non classant du test d’auto-positionnement",
+    "Séparer une démarche officielle d’un entraînement personnel."
+  ],
+  "amorce": {
+    "question": "Cas fictif : une lycéenne prépare un concours écrit d’entrée en IFSI parce qu’un vieux manuel le conseille. Que doit-elle vérifier avant de continuer ?",
+    "aide": "Distingue sa situation, la voie d’accès et la campagne concernée.",
+    "reponse_attendue": "Vérifier la voie Parcoursup et la fiche actuelle de l’institut : pour les lycéens, la sélection se fait sur dossier, sans concours."
+  },
+  "lecon": "Avant de choisir une préparation, il faut identifier ce que l’on prépare. La page Parcoursup consultée distingue l’entrée en formation initiale, notamment pour les lycéens et étudiants en réorientation, des modalités propres à la formation professionnelle continue. Pour le premier groupe, la candidature est examinée sur dossier. Un manuel portant sur un ancien concours ne définit donc pas ta procédure actuelle. La situation administrative précise reste à vérifier dans la fiche officielle et auprès de l’institut si elle est particulière.\n\nVoici un exercice original. Une candidate fictive a noté « acheter un manuel, apprendre des questions, envoyer ma candidature ». Ce plan mélange un moyen, un entraînement et une démarche. Réécris-le autour de preuves : identifier la voie qui la concerne ; retrouver la formation visée et ses critères ; préparer les pièces demandées ; vérifier l’état de sa candidature. Le résultat utile de cette première séance est une petite fiche de repérage, pas une certitude d’être admise.\n\nDans cette fiche, sépare ce qui est connu de ce qui est à confirmer. « Je suis intéressée par le soin » décrit une intention. « Ma situation relève de cette voie » demande une vérification. « J’ai envoyé mon dossier » ne prouve pas que toutes les pièces sont recevables. Pour chaque question, note le document qui peut répondre et l’action que tu feras ensuite. Ne renseigne aucun identifiant de connexion dans l’exercice.\n\nLa difficulté est de résister à la préparation rassurante mais mal ciblée. Une personne peut travailler beaucoup et ignorer une condition de sa candidature. À l’inverse, comprendre la procédure ne prépare pas à lui seul aux exigences des études. Tu vas donc tenir deux listes : démarches de candidature et capacités à entraîner. Les suivantes porteront sur la lecture, l’expression, l’organisation et le raisonnement.\n\nContre-exemple : « Mon amie a passé un entretien, donc je dois forcément passer le même. » Il manque son statut et sa voie d’accès. La bonne question porte sur la comparabilité des situations. Dans ta production finale, formule une conclusion conditionnelle et indique la pièce qui la rendrait certaine. Ce module ne choisit pas ta voie à ta place et ne remplace aucune démarche officielle.",
+  "synthese": {
+    "consigne": "Un candidat fictif en réorientation utilise une fiche ancienne de concours. Rédige son premier plan d’action en distinguant démarches officielles et entraînement personnel.",
+    "attendus": [
+      "Situation et voie à vérifier explicitement.",
+      "Fiche officielle actuelle recherchée.",
+      "Démarche distinguée de l’entraînement.",
+      "Aucune admission déduite de ce plan."
+    ]
+  },
+  "sources": [
+    {
+      "texte": "Parcoursup : formations en soins infirmiers",
+      "url": "https://www.parcoursup.gouv.fr/trouver-une-formation/zoom-sur-des-formations-en-sante-pass-las-et-ifsi/les-formations-en-soins-1652",
+      "nature": "institution",
+      "consulte_le": "2026-09-07",
+      "parti": "Organisme public ; portée pédagogique ou information sur la candidature, pas promesse d’admission."
+    }
+  ],
+  "provenance": {
+    "auteur": "modele",
+    "modele": "GPT-6",
+    "outil": "Codex",
+    "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root",
+    "genere_le": "2026-09-07",
+    "sources_retrouvees": 1,
+    "sources_concordantes": 0,
+    "sans_source": false
+  },
+  "statut": "valide",
+  "partage": "banque",
+  "verifie": "2026-09-07",
+  "peremption": "2027-01-07",
+  "version": 1,
+  "cartes": [
+    {
+      "id": "entree-voies-la-voie-parcoursup-rentree-1",
+      "chapitre": "entree.voies.la-voie-parcoursup",
+      "domaine": "entree",
+      "branche": "voies",
+      "niveau": 1,
+      "type": "flash",
+      "question": "Pour un lycéen, la préparation IFSI doit-elle être présentée comme un concours écrit universel ?",
+      "reponse": "Non. La voie Parcoursup repose sur un examen du dossier.",
+      "explication": "D’autres voies ont leurs modalités ; vérifier la situation et la campagne.",
+      "aide": "Distingue sa situation, la voie d’accès et la campagne concernée.",
+      "source": [
+        {
+          "texte": "Parcoursup : formations en soins infirmiers",
+          "url": "https://www.parcoursup.gouv.fr/trouver-une-formation/zoom-sur-des-formations-en-sante-pass-las-et-ifsi/les-formations-en-soins-1652",
+          "nature": "institution",
+          "consulte_le": "2026-09-07",
+          "parti": "Organisme public ; portée pédagogique ou information sur la candidature, pas promesse d’admission."
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "modele": "GPT-6",
+        "outil": "Codex",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root",
+        "genere_le": "2026-09-07",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "statut": "valide",
+      "partage": "banque",
+      "verifie": "2026-09-07",
+      "peremption": "2027-01-07",
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root/revue_ifsi",
+        "date": "2026-09-07",
+        "rapport": "travail/rentree-2026-09-07/RELECTURE-IFSI.md",
+        "assertions": [
+          "Sources HTML et exercices examinés indépendamment ; cas fictifs, réponses et calculs contrôlés dans le rapport.",
+          "Carte examinée : entree-voies-la-voie-parcoursup-rentree-1"
+        ],
+        "sources": [
+          "https://www.parcoursup.gouv.fr/trouver-une-formation/zoom-sur-des-formations-en-sante-pass-las-et-ifsi/les-formations-en-soins-1652"
+        ],
+        "reserves": [
+          "Aucune admission, aptitude clinique ou efficacité chez Arthur démontrée.",
+          "Titre historique FPC pour le calcul ; usage préparatoire général explicitement indiqué."
+        ]
+      }
+    },
+    {
+      "id": "entree-voies-la-voie-parcoursup-rentree-2",
+      "chapitre": "entree.voies.la-voie-parcoursup",
+      "domaine": "entree",
+      "branche": "voies",
+      "niveau": 1,
+      "type": "libre",
+      "question": "Cas fictif : un proche a passé un entretien. Cela détermine-t-il ta procédure ?",
+      "reponse": "Non : il faut comparer sa situation et sa voie aux tiennes.",
+      "explication": "Une expérience individuelle ne remplace pas la fiche officielle.",
+      "aide": "Distingue sa situation, la voie d’accès et la campagne concernée.",
+      "source": [
+        {
+          "texte": "Parcoursup : formations en soins infirmiers",
+          "url": "https://www.parcoursup.gouv.fr/trouver-une-formation/zoom-sur-des-formations-en-sante-pass-las-et-ifsi/les-formations-en-soins-1652",
+          "nature": "institution",
+          "consulte_le": "2026-09-07",
+          "parti": "Organisme public ; portée pédagogique ou information sur la candidature, pas promesse d’admission."
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "modele": "GPT-6",
+        "outil": "Codex",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root",
+        "genere_le": "2026-09-07",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "statut": "valide",
+      "partage": "banque",
+      "verifie": "2026-09-07",
+      "peremption": "2027-01-07",
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root/revue_ifsi",
+        "date": "2026-09-07",
+        "rapport": "travail/rentree-2026-09-07/RELECTURE-IFSI.md",
+        "assertions": [
+          "Sources HTML et exercices examinés indépendamment ; cas fictifs, réponses et calculs contrôlés dans le rapport.",
+          "Carte examinée : entree-voies-la-voie-parcoursup-rentree-2"
+        ],
+        "sources": [
+          "https://www.parcoursup.gouv.fr/trouver-une-formation/zoom-sur-des-formations-en-sante-pass-las-et-ifsi/les-formations-en-soins-1652"
+        ],
+        "reserves": [
+          "Aucune admission, aptitude clinique ou efficacité chez Arthur démontrée.",
+          "Titre historique FPC pour le calcul ; usage préparatoire général explicitement indiqué."
+        ]
+      }
+    },
+    {
+      "id": "entree-voies-la-voie-parcoursup-rentree-3",
+      "chapitre": "entree.voies.la-voie-parcoursup",
+      "domaine": "entree",
+      "branche": "voies",
+      "niveau": 1,
+      "type": "libre",
+      "question": "Tu as trouvé un ancien manuel de concours. Quel usage prudent en faire ?",
+      "reponse": "Utiliser éventuellement des exercices de base, après avoir vérifié les modalités actuelles dans les sources officielles.",
+      "explication": "L’entraînement et la règle d’admission sont deux informations différentes.",
+      "aide": "Distingue sa situation, la voie d’accès et la campagne concernée.",
+      "source": [
+        {
+          "texte": "Parcoursup : formations en soins infirmiers",
+          "url": "https://www.parcoursup.gouv.fr/trouver-une-formation/zoom-sur-des-formations-en-sante-pass-las-et-ifsi/les-formations-en-soins-1652",
+          "nature": "institution",
+          "consulte_le": "2026-09-07",
+          "parti": "Organisme public ; portée pédagogique ou information sur la candidature, pas promesse d’admission."
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "modele": "GPT-6",
+        "outil": "Codex",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root",
+        "genere_le": "2026-09-07",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "statut": "valide",
+      "partage": "banque",
+      "verifie": "2026-09-07",
+      "peremption": "2027-01-07",
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root/revue_ifsi",
+        "date": "2026-09-07",
+        "rapport": "travail/rentree-2026-09-07/RELECTURE-IFSI.md",
+        "assertions": [
+          "Sources HTML et exercices examinés indépendamment ; cas fictifs, réponses et calculs contrôlés dans le rapport.",
+          "Carte examinée : entree-voies-la-voie-parcoursup-rentree-3"
+        ],
+        "sources": [
+          "https://www.parcoursup.gouv.fr/trouver-une-formation/zoom-sur-des-formations-en-sante-pass-las-et-ifsi/les-formations-en-soins-1652"
+        ],
+        "reserves": [
+          "Aucune admission, aptitude clinique ou efficacité chez Arthur démontrée.",
+          "Titre historique FPC pour le calcul ; usage préparatoire général explicitement indiqué."
+        ]
+      }
+    }
+  ],
+  "verifie_par": {
+    "outil": "Codex",
+    "modele": "GPT-6",
+    "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root/revue_ifsi",
+    "date": "2026-09-07",
+    "rapport": "travail/rentree-2026-09-07/RELECTURE-IFSI.md",
+    "assertions": [
+      "Sources HTML et exercices examinés indépendamment ; cas fictifs, réponses et calculs contrôlés dans le rapport."
+    ],
+    "sources": [
+      "https://www.parcoursup.gouv.fr/trouver-une-formation/zoom-sur-des-formations-en-sante-pass-las-et-ifsi/les-formations-en-soins-1652"
+    ],
+    "reserves": [
+      "Aucune admission, aptitude clinique ou efficacité chez Arthur démontrée.",
+      "Titre historique FPC pour le calcul ; usage préparatoire général explicitement indiqué."
+    ]
+  }
+}

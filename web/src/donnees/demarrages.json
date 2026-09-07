@@ -1,0 +1,106 @@
+{
+  "copro": [
+    {
+      "type": "etude",
+      "chapitre": "droit.organes.le-syndic-et-ses-missions",
+      "objectif": "Tenter le cas, comprendre la leçon, puis produire une réponse personnelle."
+    },
+    {
+      "type": "etude",
+      "chapitre": "droit.majorites.l-article-24",
+      "objectif": "Tenter le cas, comprendre la leçon, puis produire une réponse personnelle."
+    },
+    {
+      "type": "etude",
+      "chapitre": "droit.assemblee.le-proces-verbal-et-sa-notification",
+      "objectif": "Tenter le cas, comprendre la leçon, puis produire une réponse personnelle."
+    },
+    {
+      "type": "etude",
+      "chapitre": "satellite.droit.diagnostic-partage-fragilite",
+      "objectif": "Tenter le cas, comprendre la leçon, puis produire une réponse personnelle."
+    },
+    {
+      "type": "rappel",
+      "titre": "Faire revenir les premières notions",
+      "objectif": "Répondre sans ouvrir la leçon, puis expliquer une erreur corrigée."
+    },
+    {
+      "type": "etude",
+      "chapitre": "satellite.pathologie.facade-ancienne-avant-devis",
+      "objectif": "Tenter le cas, comprendre la leçon, puis produire une réponse personnelle."
+    },
+    {
+      "type": "etude",
+      "chapitre": "satellite.equipements.comprendre-protections-electriques",
+      "objectif": "Tenter le cas, comprendre la leçon, puis produire une réponse personnelle."
+    },
+    {
+      "type": "etude",
+      "chapitre": "satellite.travaux.rentabilite-renovation",
+      "objectif": "Tenter le cas, comprendre la leçon, puis produire une réponse personnelle."
+    },
+    {
+      "type": "etude",
+      "chapitre": "satellite.travaux.contre-expertise-renovation",
+      "objectif": "Tenter le cas, comprendre la leçon, puis produire une réponse personnelle."
+    },
+    {
+      "type": "rappel",
+      "titre": "Consolider et préparer la suite",
+      "objectif": "Reprendre les rappels disponibles ; nommer ce qui reste difficile et revenir au cas correspondant."
+    }
+  ],
+  "ifsi": [
+    {
+      "type": "etude",
+      "chapitre": "entree.voies.la-voie-parcoursup",
+      "objectif": "Tenter le cas, comprendre la leçon, puis produire une réponse personnelle."
+    },
+    {
+      "type": "etude",
+      "chapitre": "entree.parcoursup.attendus-et-preuves",
+      "objectif": "Tenter le cas, comprendre la leçon, puis produire une réponse personnelle."
+    },
+    {
+      "type": "etude",
+      "chapitre": "entree.parcoursup.projet-et-activites",
+      "objectif": "Tenter le cas, comprendre la leçon, puis produire une réponse personnelle."
+    },
+    {
+      "type": "etude",
+      "chapitre": "entree.parcoursup.voeux-et-calendrier",
+      "objectif": "Tenter le cas, comprendre la leçon, puis produire une réponse personnelle."
+    },
+    {
+      "type": "rappel",
+      "titre": "Faire revenir les premières notions",
+      "objectif": "Répondre sans ouvrir la leçon, puis expliquer une erreur corrigée."
+    },
+    {
+      "type": "etude",
+      "chapitre": "entree.parcoursup.autopositionnement",
+      "objectif": "Tenter le cas, comprendre la leçon, puis produire une réponse personnelle."
+    },
+    {
+      "type": "etude",
+      "chapitre": "entree.ecrit.lire-un-texte-sanitaire-et-social",
+      "objectif": "Tenter le cas, comprendre la leçon, puis produire une réponse personnelle."
+    },
+    {
+      "type": "etude",
+      "chapitre": "entree.ecrit.argumenter-en-une-page",
+      "objectif": "Tenter le cas, comprendre la leçon, puis produire une réponse personnelle."
+    },
+    {
+      "type": "etude",
+      "chapitre": "entree.ecrit.les-calculs-de-l-ecrit",
+      "objectif": "Tenter le cas, comprendre la leçon, puis produire une réponse personnelle."
+    },
+    {
+      "type": "rappel",
+      "titre": "Consolider et préparer la suite",
+      "objectif": "Reprendre les rappels disponibles ; nommer ce qui reste difficile et revenir au cas correspondant."
+    }
+  ]
+}

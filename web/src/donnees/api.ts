@@ -21,9 +21,13 @@ async function appelle<T>(
   route: string,
   init: RequestInit = {},
 ): Promise<Resultat<T>> {
+  const controle = new AbortController();
+  const delai = setTimeout(() => controle.abort(), 12000);
   try {
     const reponse = await fetch(PREFIXE + route, {
       credentials: "include",
+      signal: controle.signal,
+      cache: "no-store",
       headers: { "Content-Type": "application/json", ...(compteActuel() ? {"X-Academie-Profil": compteActuel()?.id ?? ""} : {}), ...(init.headers ?? {}) },
       ...init,
     });
@@ -48,8 +52,8 @@ async function appelle<T>(
     return { ok: true, valeur: corps as T };
   } catch {
     // Hors-ligne, serveur absent, DNS : un seul chemin, sans bruit.
-    return { ok: false, code: "hors_ligne", motif: "serveur injoignable" };
-  }
+    return { ok: false, code: "hors_ligne", motif: "Serveur injoignable. Tes réponses restent sur cet appareil." };
+  } finally {clearTimeout(delai);}
 }
 
 export interface Sante {
@@ -57,7 +61,7 @@ export interface Sante {
   moteur_version?: string;
   contrats?: string[];
 }
-export type CompteEtCle = Compte & { cle_recuperation: string };
+export type CompteEtCle = Compte & { cle_recuperation?: string };
 
 export const api = {
   sante: () => appelle<Sante>("/sante"),
@@ -76,7 +80,7 @@ export const api = {
 
   profil: () => appelle<Compte>("/profil"),
   comptesConnexion: () => appelle<{comptes:{pseudo:string;titre_affiche:string}[]}>("/auth/comptes"),
-  inscription: (pseudo: string, phrase_secrete: string) => appelle<CompteEtCle>("/compte", {method:"POST", body:JSON.stringify({pseudo, phrase_secrete})}),
+  inscription: (pseudo: string, phrase_secrete: string, phrase_recuperation?: string) => appelle<CompteEtCle>("/compte", {method:"POST", body:JSON.stringify({pseudo, phrase_secrete, ...(phrase_recuperation ? {phrase_recuperation} : {})})}),
   connexion: (pseudo: string, phrase_secrete: string) => appelle<Compte>("/auth/connexion", {method:"POST", body:JSON.stringify({pseudo, phrase_secrete})}),
   recuperation: (pseudo: string, cle_recuperation: string, phrase_secrete: string) => appelle<CompteEtCle>("/auth/recuperation", {method:"POST", body:JSON.stringify({pseudo, cle_recuperation, phrase_secrete})}),
   deconnexion: () => appelle<{ok:boolean}>("/auth/deconnexion", {method:"POST"}),

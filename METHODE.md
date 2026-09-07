@@ -597,3 +597,17 @@ pas l'efficacité d'un professeur IA ni le transfert professionnel local.
 parcours réel, puis production de l'élève et essai différé. Le script ne
 juge pas une réponse libre ; aucune réussite personnelle n'est inventée.
 Détail : CHEMINS.md et décision 0051.
+
+## METHODE38 : un départ proposé, des traces réelles
+
+Décision 0053, demande du 07/09/2026. Le départ en dix séances propose huit
+études et deux rappels, répartissables sur deux semaines. L’ordre reprend
+les mécanismes déjà documentés de tentative, explication, rappel et transfert ;
+le nombre de séances est un choix éditorial, sans efficacité particulière
+attribuée à ce calendrier. Les travaux de Roediger et Karpicke (2006),
+[Testing enhances long-term retention](https://doi.org/10.1111/j.1467-9280.2006.01693.x),
+appuient le principe de rappel étudié dans des contextes expérimentaux,
+pas une promesse de devenir expert avec cette séquence. La synthèse et les
+réponses sauvegardées sont des productions, pas une validation clinique ou
+professionnelle. La bibliothèque brute donne accès à la rédaction sans
+transformer son ouverture en événement de maîtrise.

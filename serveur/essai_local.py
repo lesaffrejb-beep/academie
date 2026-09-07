@@ -33,6 +33,9 @@ def main():
         def do_GET(self):
             if urlsplit(self.path).path.startswith("/academie/api/"):
                 return self._servir()
+            if urlsplit(self.path).path == "/academie-reprise/":
+                self.path = "/reprise.html"
+                return SimpleHTTPRequestHandler.do_GET(self)
             prefixe = "/academie-acces" if self.path.startswith("/academie-acces/") else "/academie"
             if not self.path.startswith(prefixe + "/"):
                 self.send_response(302)

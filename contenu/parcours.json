@@ -2,6 +2,30 @@
   "version": 1,
   "parcours": [
     {
+      "id": "entree-ifsi",
+      "metier": "ifsi",
+      "titre": "Préparer ton entrée en IFSI",
+      "promesse": "Comprendre la voie, construire ton projet, raisonner avec précision.",
+      "accroche": "Un départ pour apprendre, puis poursuivre vers la formation et les spécialisations.",
+      "rang": 1,
+      "chapitres": [
+        "entree.voies.la-voie-parcoursup",
+        "entree.parcoursup.attendus-et-preuves",
+        "entree.parcoursup.projet-et-activites",
+        "entree.parcoursup.voeux-et-calendrier",
+        "entree.parcoursup.autopositionnement",
+        "entree.ecrit.lire-un-texte-sanitaire-et-social",
+        "entree.ecrit.argumenter-en-une-page",
+        "entree.ecrit.les-calculs-de-l-ecrit"
+      ],
+      "etiquettes": [
+        "Candidature",
+        "Expression et raisonnement"
+      ],
+      "public": "Préparation à l’admission IFSI",
+      "limite": "Exercices originaux, distincts des démarches officielles. La voie Parcoursup ne comporte pas un concours écrit universel ; les autres voies ont leurs modalités à vérifier. Aucun acte clinique enseigné."
+    },
+    {
       "id": "ag",
       "metier": "copro",
       "titre": "Tenir le fil d’une assemblée",

@@ -1,0 +1,229 @@
+{
+  "id": "entree.parcoursup.voeux-et-calendrier",
+  "titre": "Organiser les vœux et vérifier le calendrier",
+  "domaine": "entree",
+  "branche": "parcoursup",
+  "niveau": 2,
+  "prerequis": [],
+  "objectifs": [
+    "Retrouver une échéance sur la campagne officielle en cours",
+    "Vérifier la complétude d’une candidature fictive"
+  ],
+  "amorce": {
+    "question": "Cas fictif : une capture d’écran ancienne donne une date ; un candidat l’a inscrite dans son agenda sans ouvrir la campagne actuelle. Quel est le défaut ?",
+    "aide": "Vérifie la date du document, l’action concernée et la situation du candidat.",
+    "reponse_attendue": "La capture ne prouve pas l’échéance de la campagne actuelle ni l’action exacte à accomplir."
+  },
+  "lecon": "Un calendrier est utile quand chaque échéance correspond à une action vérifiée. Une date isolée peut être exacte dans son contexte et fausse pour ta situation. La page officielle Parcoursup permet de rejoindre les informations de campagne et les fiches des formations ; ce sont ces références actuelles qu’il faut consulter. Ce module ne fournit volontairement aucune date limite à recopier d’une année à l’autre.\n\nConstruis un tableau personnel avec l’action, sa source, l’échéance vérifiée et la preuve de réalisation. Les intitulés doivent rester concrets : ouvrir une fiche, vérifier les pièces, compléter une rubrique, contrôler le statut affiché. « Faire Parcoursup » ne permet pas de savoir ce qui est terminé. Dans l’exercice, utilise des données fictives et n’inscris aucun mot de passe, numéro de dossier ou document personnel dans ta réponse.\n\nVoici une simulation originale. La candidate a repéré deux instituts ; l’un est accessible depuis son domicile, l’autre demanderait un hébergement. Elle classe le second en premier parce que sa présentation lui plaît, mais n’a vérifié ni trajet ni budget. Son choix n’est pas interdit. Il est incomplet. Ajoute les informations nécessaires pour décider si une proposition éventuelle serait réellement acceptable. Ce travail n’invente aucun coût : les montants restent à obtenir.\n\nUne confusion fréquente oppose « enregistré » et « confirmé ». Dans une procédure, une action intermédiaire ne prouve pas que l’étape finale a réussi. Il faut lire les libellés affichés par le service au lieu d’interpréter la présence d’une ligne comme une confirmation complète. Si une consigne est ambiguë, note la question exacte à adresser au service compétent et garde une trace de la réponse utile.\n\nÀ la fin de cette séance, produis un plan que quelqu’un d’autre pourrait relire. Il doit pouvoir repérer ce que tu sais, ce que tu as vérifié et ce qui demande encore une décision. Prévoir une relecture avant une échéance est une organisation proposée, pas une obligation officielle supplémentaire. Le but est de rendre les dépendances visibles : une pièce attendue, un choix matériel non résolu ou une confirmation à contrôler. Tu restes libre d’adapter le rythme ; l’application ne réalise aucune candidature à ta place.",
+  "synthese": {
+    "consigne": "Cas fictif : un institut proche et un institut nécessitant un logement t’intéressent. Prépare une liste d’actions avec sources et inconnues, sans inventer de date ni de coût.",
+    "attendus": [
+      "Actions distinctes et vérifiables.",
+      "Campagne actuelle comme référence.",
+      "Transport/logement nommés comme inconnues.",
+      "Enregistrement et confirmation distingués."
+    ]
+  },
+  "sources": [
+    {
+      "texte": "Parcoursup : formations en soins infirmiers",
+      "url": "https://www.parcoursup.gouv.fr/trouver-une-formation/zoom-sur-des-formations-en-sante-pass-las-et-ifsi/les-formations-en-soins-1652",
+      "nature": "institution",
+      "consulte_le": "2026-09-07",
+      "parti": "Organisme public ; portée pédagogique ou information sur la candidature, pas promesse d’admission."
+    }
+  ],
+  "provenance": {
+    "auteur": "modele",
+    "modele": "GPT-6",
+    "outil": "Codex",
+    "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root",
+    "genere_le": "2026-09-07",
+    "sources_retrouvees": 1,
+    "sources_concordantes": 0,
+    "sans_source": false
+  },
+  "statut": "valide",
+  "partage": "banque",
+  "verifie": "2026-09-07",
+  "peremption": "2027-01-07",
+  "version": 1,
+  "cartes": [
+    {
+      "id": "entree-parcoursup-voeux-et-calendrier-rentree-1",
+      "chapitre": "entree.parcoursup.voeux-et-calendrier",
+      "domaine": "entree",
+      "branche": "parcoursup",
+      "niveau": 2,
+      "type": "flash",
+      "question": "Pourquoi une capture ancienne ne suffit-elle pas pour fixer une échéance ?",
+      "reponse": "Elle peut concerner une autre campagne ou une autre étape.",
+      "explication": "Retrouver la source actuelle et l’action exacte.",
+      "aide": "Vérifie la date du document, l’action concernée et la situation du candidat.",
+      "source": [
+        {
+          "texte": "Parcoursup : formations en soins infirmiers",
+          "url": "https://www.parcoursup.gouv.fr/trouver-une-formation/zoom-sur-des-formations-en-sante-pass-las-et-ifsi/les-formations-en-soins-1652",
+          "nature": "institution",
+          "consulte_le": "2026-09-07",
+          "parti": "Organisme public ; portée pédagogique ou information sur la candidature, pas promesse d’admission."
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "modele": "GPT-6",
+        "outil": "Codex",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root",
+        "genere_le": "2026-09-07",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "statut": "valide",
+      "partage": "banque",
+      "verifie": "2026-09-07",
+      "peremption": "2027-01-07",
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root/revue_ifsi",
+        "date": "2026-09-07",
+        "rapport": "travail/rentree-2026-09-07/RELECTURE-IFSI.md",
+        "assertions": [
+          "Sources HTML et exercices examinés indépendamment ; cas fictifs, réponses et calculs contrôlés dans le rapport.",
+          "Carte examinée : entree-parcoursup-voeux-et-calendrier-rentree-1"
+        ],
+        "sources": [
+          "https://www.parcoursup.gouv.fr/trouver-une-formation/zoom-sur-des-formations-en-sante-pass-las-et-ifsi/les-formations-en-soins-1652"
+        ],
+        "reserves": [
+          "Aucune admission, aptitude clinique ou efficacité chez Arthur démontrée.",
+          "Titre historique FPC pour le calcul ; usage préparatoire général explicitement indiqué."
+        ]
+      }
+    },
+    {
+      "id": "entree-parcoursup-voeux-et-calendrier-rentree-2",
+      "chapitre": "entree.parcoursup.voeux-et-calendrier",
+      "domaine": "entree",
+      "branche": "parcoursup",
+      "niveau": 2,
+      "type": "libre",
+      "question": "Un vœu apparaît dans un dossier fictif. Est-ce une preuve qu’il est confirmé ?",
+      "reponse": "Non, il faut contrôler son statut et les exigences de l’étape.",
+      "explication": "Une trace intermédiaire ne prouve pas la finalisation.",
+      "aide": "Vérifie la date du document, l’action concernée et la situation du candidat.",
+      "source": [
+        {
+          "texte": "Parcoursup : formations en soins infirmiers",
+          "url": "https://www.parcoursup.gouv.fr/trouver-une-formation/zoom-sur-des-formations-en-sante-pass-las-et-ifsi/les-formations-en-soins-1652",
+          "nature": "institution",
+          "consulte_le": "2026-09-07",
+          "parti": "Organisme public ; portée pédagogique ou information sur la candidature, pas promesse d’admission."
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "modele": "GPT-6",
+        "outil": "Codex",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root",
+        "genere_le": "2026-09-07",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "statut": "valide",
+      "partage": "banque",
+      "verifie": "2026-09-07",
+      "peremption": "2027-01-07",
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root/revue_ifsi",
+        "date": "2026-09-07",
+        "rapport": "travail/rentree-2026-09-07/RELECTURE-IFSI.md",
+        "assertions": [
+          "Sources HTML et exercices examinés indépendamment ; cas fictifs, réponses et calculs contrôlés dans le rapport.",
+          "Carte examinée : entree-parcoursup-voeux-et-calendrier-rentree-2"
+        ],
+        "sources": [
+          "https://www.parcoursup.gouv.fr/trouver-une-formation/zoom-sur-des-formations-en-sante-pass-las-et-ifsi/les-formations-en-soins-1652"
+        ],
+        "reserves": [
+          "Aucune admission, aptitude clinique ou efficacité chez Arthur démontrée.",
+          "Titre historique FPC pour le calcul ; usage préparatoire général explicitement indiqué."
+        ]
+      }
+    },
+    {
+      "id": "entree-parcoursup-voeux-et-calendrier-rentree-3",
+      "chapitre": "entree.parcoursup.voeux-et-calendrier",
+      "domaine": "entree",
+      "branche": "parcoursup",
+      "niveau": 2,
+      "type": "libre",
+      "question": "Deux instituts intéressent un candidat, mais l’un impose un déménagement. Quelle inconnue ajouter au plan ?",
+      "reponse": "Les conditions matérielles permettant d’accepter une proposition : trajet, logement et financement à vérifier.",
+      "explication": "On nomme les informations à obtenir sans inventer de montant.",
+      "aide": "Vérifie la date du document, l’action concernée et la situation du candidat.",
+      "source": [
+        {
+          "texte": "Parcoursup : formations en soins infirmiers",
+          "url": "https://www.parcoursup.gouv.fr/trouver-une-formation/zoom-sur-des-formations-en-sante-pass-las-et-ifsi/les-formations-en-soins-1652",
+          "nature": "institution",
+          "consulte_le": "2026-09-07",
+          "parti": "Organisme public ; portée pédagogique ou information sur la candidature, pas promesse d’admission."
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "modele": "GPT-6",
+        "outil": "Codex",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root",
+        "genere_le": "2026-09-07",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "statut": "valide",
+      "partage": "banque",
+      "verifie": "2026-09-07",
+      "peremption": "2027-01-07",
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root/revue_ifsi",
+        "date": "2026-09-07",
+        "rapport": "travail/rentree-2026-09-07/RELECTURE-IFSI.md",
+        "assertions": [
+          "Sources HTML et exercices examinés indépendamment ; cas fictifs, réponses et calculs contrôlés dans le rapport.",
+          "Carte examinée : entree-parcoursup-voeux-et-calendrier-rentree-3"
+        ],
+        "sources": [
+          "https://www.parcoursup.gouv.fr/trouver-une-formation/zoom-sur-des-formations-en-sante-pass-las-et-ifsi/les-formations-en-soins-1652"
+        ],
+        "reserves": [
+          "Aucune admission, aptitude clinique ou efficacité chez Arthur démontrée.",
+          "Titre historique FPC pour le calcul ; usage préparatoire général explicitement indiqué."
+        ]
+      }
+    }
+  ],
+  "verifie_par": {
+    "outil": "Codex",
+    "modele": "GPT-6",
+    "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root/revue_ifsi",
+    "date": "2026-09-07",
+    "rapport": "travail/rentree-2026-09-07/RELECTURE-IFSI.md",
+    "assertions": [
+      "Sources HTML et exercices examinés indépendamment ; cas fictifs, réponses et calculs contrôlés dans le rapport."
+    ],
+    "sources": [
+      "https://www.parcoursup.gouv.fr/trouver-une-formation/zoom-sur-des-formations-en-sante-pass-las-et-ifsi/les-formations-en-soins-1652"
+    ],
+    "reserves": [
+      "Aucune admission, aptitude clinique ou efficacité chez Arthur démontrée.",
+      "Titre historique FPC pour le calcul ; usage préparatoire général explicitement indiqué."
+    ]
+  }
+}

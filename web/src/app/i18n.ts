@@ -88,7 +88,7 @@ export const LIB = {
   prerequis: "Prérequis",
   objectifs: "Objectifs",
   aucunPrerequis: "Aucun prérequis",
-  cartesNonRattachees: "Cartes en cours de rattachement",
+  cartesNonRattachees: "Exercices de rappel hors chapitre",
   domainePrecedent: "Domaine précédent",
   domaineSuivant: "Domaine suivant",
   zoomPlus: "Agrandir l'arbre",

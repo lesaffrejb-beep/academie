@@ -267,3 +267,16 @@
 .etude-support-cadre {max-width: 100%; overflow-x: auto; border-radius: 12px;}
 .etude-support img {display: block; width: 100%; height: auto;}
 .etude-support figcaption {font-size: .8rem; color: var(--c-encre-2); margin: .65rem 0;}
+
+.cours-statut { padding: 16px; border-left: 3px solid var(--c-accent); background: var(--c-surface); }
+.cours-index { list-style: none; padding: 0; display: grid; gap: 12px; }
+.cours-index li { border-bottom: 1px solid var(--c-trait); padding: 12px 0; display: grid; gap: 4px; }
+.cours-index small { color: var(--c-encre-2); }
+.bibliotheque input { display: block; width: 100%; padding: 12px; background: var(--c-surface); color: var(--c-encre); border: 1px solid var(--c-trait); border-radius: 6px; }
+.bibliotheque .lecon-texte { white-space: pre-line; overflow-wrap: anywhere; }
+.cours-source { margin: 24px 0; padding-bottom: 16px; border-bottom: 1px solid var(--c-trait); }
+.demarrage { margin: 32px 0; }
+.demarrage summary { cursor: pointer; font-size: 1.25rem; font-weight: 600; padding: 16px 0; }
+.demarrage ol { list-style: none; padding: 0; display: grid; gap: 8px; }
+.demarrage li { border-bottom: 1px solid var(--c-trait); padding: 12px 0; }
+.demarrage a { display: block; padding: 8px 0; }

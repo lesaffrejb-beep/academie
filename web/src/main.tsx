@@ -5,6 +5,7 @@ import { StrictMode, useEffect } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
 import "./experience.css";
+import { Cours } from "./ecrans/Cours";
 import { Accueil } from "./ecrans/Accueil";
 import { Etude } from "./ecrans/Etude";
 import { ChoixTheme } from "./ecrans/ChoixTheme";
@@ -20,7 +21,6 @@ import { Noeud } from "./ecrans/Noeud";
 import { Seance } from "./ecrans/Seance";
 import { Cloture } from "./ecrans/Cloture";
 import { Profil } from "./ecrans/Profil";
-import { Boite } from "./ecrans/Boite";
 import { Credits } from "./ecrans/Credits";
 import { Confiance } from "./ecrans/Confiance";
 
@@ -51,6 +51,7 @@ function Application() {
 
   let ecran: JSX.Element;
   switch (route.nom) {
+    case "cours": ecran = <Cours id={route.parametre} />; break;
     case "eleves": ecran = <Eleves />; break;
     case "etude": ecran = <Etude id={route.parametre ?? ""} />; break;
     case "arbre": ecran = <Arbre />; break;
@@ -59,7 +60,6 @@ function Application() {
     case "seance": ecran = <Seance portee={route.parametre} />; break;
     case "cloture": ecran = <Cloture />; break;
     case "profil": ecran = <Profil ongletDefaut={route.parametre} />; break;
-    case "boite": ecran = <Boite />; break;
     case "credits": ecran = <Credits />; break;
     case "confiance": ecran = <Confiance domaine={route.parametre} />; break;
     default: ecran = <Accueil />;

@@ -135,13 +135,6 @@ def fusionner(conn: sqlite3.Connection, profil: str, lignes: list[dict], depuis:
     valider_lot(lignes)
     if depuis is not None and not _iso(depuis):
         raise LigneInvalide(-1, "`depuis` n'est pas un horodatage ISO 8601")
-    from .auth import cursus_actuel
-    cursus = cursus_actuel(conn, profil)
-    for index, ligne in enumerate(lignes):
-        if ligne["mode"] == "cursus":
-            if cursus is not None and cursus != ligne["cursus"]:
-                raise LigneInvalide(index, "Un seul cursus est actif par compte.")
-            cursus = ligne["cursus"]
     recu_le = datetime.now(timezone.utc).isoformat(timespec="seconds")
     envoyees = set()
     acceptees = ignorees = 0

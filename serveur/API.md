@@ -143,9 +143,9 @@ appareil partagé, la déconnexion ferme aussi les autres onglets ouverts.
 Le stockage local n'est pas chiffré par le mot de passe du compte.
 
 L'événement journal `mode:cursus` exige `cursus` dans le catalogue.
-Le premier choix fixe le cursus du compte ; les réémissions du même
-choix sont acceptées, un choix différent est refusé 422. Le profil rend
-`cursus` calculé depuis le journal. Import et export gardent l'événement.
+Chaque choix valide ajoute ou reprend un cursus. Le profil rend
+`cursus` calculé depuis le dernier instant du journal et `cursus_inscrits`.
+Import et export gardent les événements.
 
 `GET /auth/comptes` ne requiert pas de session personnelle et rend seulement
 `{comptes:[{pseudo,titre_affiche}]}`. Le pseudo est l'identifiant de connexion
@@ -154,10 +154,11 @@ sont proposés, sans identifiant interne, cursus ni activité. Le masquage retir
 le compte des deux annuaires ; la connexion par saisie reste possible. La
 protection d'accès commune du VPS s'applique toujours avant cette API.
 
-Le choix du cursus se présente à l'inscription. Après conservation de la clé,
-le client crée l'événement de cursus et attend sa confirmation serveur avant
-l'ouverture de l'étude. La clé reste en mémoire jusqu'à conservation explicite,
-y compris pendant une récupération ; la projection persistée du profil l'exclut.
+Le choix du cursus se présente à l'inscription, avec une phrase de récupération
+choisie. Le client crée l'événement de cursus et attend sa confirmation serveur
+avant l'ouverture de l'étude. Si une ancienne voie retourne une clé aléatoire,
+la clé reste en mémoire jusqu'à conservation explicite ; la projection persistée
+du profil l'exclut.
 
 `GET /eleves` authentifié ne rend que `{eleves:[{id,pseudo,cursus}]}`.
 Les profils supprimés, masqués ou `reglages.visibilite=false` sont absents.
@@ -208,3 +209,18 @@ reprendre le curseur serveur ancien ni écraser un conflit. Les rejets
 empêchent tout message de succès complet. Les originaux restent conservés.
 Les brouillons peuvent être récupérés même sans réponse validée ; ils
 restent dans le stockage local du compte, sans synchronisation serveur.
+
+## Rentrée du 07/09/2026 — compatibilité des comptes
+
+`POST /compte` accepte `phrase_recuperation` en plus du champ
+historique `phrase_secrete` (qui désigne le mot de passe). Si fournie, la phrase
+de récupération doit compter au moins 12 caractères et différer du mot de passe.
+Elle est hachée, jamais retournée dans la réponse ; le client doit la conserver
+séparément. En son absence, l’ancienne clé aléatoire reste retournée une fois.
+La récupération accepte la phrase choisie ou l’ancienne clé et renouvelle la clé
+après usage ; les anciennes sessions sont révoquées.
+
+Le profil retourne `cursus_inscrits` en plus du cursus actif. Les événements
+valides `cursus_choisi` peuvent ajouter ou reprendre un cursus ; le dernier selon
+son instant réel devient actif. Les anciens événements restent intacts. Le
+client ne confond pas cette liste d’inscriptions avec les étapes du cursus IFSI.

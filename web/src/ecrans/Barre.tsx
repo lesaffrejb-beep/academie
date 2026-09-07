@@ -2,12 +2,11 @@
 
 import { LIB } from "../app/i18n";
 import { va, type Route } from "../app/routage";
-import { Users, Network, Inbox, UserRound, BookOpen, Play, type LucideIcon } from "lucide-react";
+import { Users, Network, UserRound, BookOpen, Play, type LucideIcon } from "lucide-react";
 
 const ENTREES: { cle: Route["nom"]; chemin: string; libelle: string; icon: LucideIcon }[] = [
   { cle: "accueil", chemin: "/", libelle: "Apprendre", icon: BookOpen },
   { cle: "arbre", chemin: "/arbre", libelle: LIB.arbre, icon: Network },
-  { cle: "boite", chemin: "/boite", libelle: LIB.boite, icon: Inbox },
   { cle: "eleves", chemin: "/eleves", libelle: "Élèves", icon: Users },
   { cle: "profil", chemin: "/profil", libelle: LIB.profil, icon: UserRound },
 ];

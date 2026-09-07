@@ -21,9 +21,9 @@ test("le métier IFSI ouvre ses propres contenus", async ({page}) => {
   await page.goto("./");
   await sessionTest(page,"ifsi");
   await page.reload();
-  await expect(page.getByRole("heading",{name:"Prendre soin commence ici"})).toBeVisible();
+  await expect(page.getByRole("heading",{name:"Préparer ton entrée en IFSI"})).toBeVisible();
   await page.getByRole("button",{name:"Commencer l’étude",exact:true}).click();
-  await expect(page.getByRole("heading",{name:"Les cinq B",exact:true})).toBeVisible();
+  await expect(page.getByRole("heading",{name:"La voie Parcoursup",exact:true})).toBeVisible();
 });
 
 test("une étude entière hors ligne garde production et rappels, puis recommence sans ancien corrigé", async ({page,context}) => {

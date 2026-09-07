@@ -10,9 +10,9 @@ const RACINE = fileURLToPath(new URL("..", import.meta.url));
 const MANIFESTE = "publication-manifeste.json";
 const CLIENT = ["src", "public", "tests", "index.html", "package.json", "package-lock.json",
   "tsconfig.json", "vite.config.ts", "vitest.config.ts", "tailwind.config.ts", "postcss.config.js"];
-const DONNEES = ["academie.json", "banque", "chapitres", "programme"];
+const DONNEES = ["academie.json", "banque", "chapitres", "programme", "cours"];
 const REQUIS = ["index.html", "sw.js", "registerSW.js", "manifest.webmanifest", "icone.svg",
-  "banque.json", "voix.json", "catalogue.json", ".vite/manifest.json"];
+  "banque.json", "voix.json", "catalogue.json", "cours.json", "reprise.html", "reprise.js", ".vite/manifest.json"];
 
 export function fichiers(racine, prefixe = "") {
   return fs.readdirSync(path.join(racine, prefixe), { withFileTypes: true }).flatMap((entree) => {

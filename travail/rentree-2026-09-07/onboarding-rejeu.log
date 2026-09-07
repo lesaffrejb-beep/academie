@@ -1,0 +1,9 @@
+
+Running 2 tests using 1 worker
+
+(node:60745) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 tests/onboarding/comptes.spec.ts:211:1 › ajout de cursus, retour et brouillon conservé après rechargement (1.4s)
+  ✓  2 tests/onboarding/comptes.spec.ts:229:1 › la reprise du code conserve compte et brouillon local (792ms)
+
+  2 passed (3.5s)

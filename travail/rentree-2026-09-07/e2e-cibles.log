@@ -1,0 +1,78 @@
+[WebServer] (node:60513) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] <script src="/academie/registerSW.js"> in "/index.html" can't be bundled without type="module" attribute
+[WebServer] (node:60583) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 16 tests using 1 worker
+
+(node:60586) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] 8:20:52 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓   1 [ordinateur] › tests/e2e/boite.spec.ts:2:1 › ancienne adresse de la boîte revient à l’accueil sans onglet Boîte (570ms)
+[WebServer] 8:20:52 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓   2 [ordinateur] › tests/e2e/graphe.spec.ts:9:1 › les vrais liens se parcourent au clavier et les chapitres vides restent honnêtes (587ms)
+[WebServer] 8:20:53 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓   3 [ordinateur] › tests/e2e/graphe.spec.ts:32:1 › le graphe donne accès à une étude serviable (545ms)
+[WebServer] 8:20:53 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓   4 [ordinateur] › tests/e2e/graphe.spec.ts:40:1 › un parent du programme ouvre son approfondissement façade et garde le retour (797ms)
+[WebServer] 8:20:54 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓   5 [ordinateur] › tests/e2e/graphe.spec.ts:66:1 › les satellites copro restent absents de l’index IFSI (485ms)
+[WebServer] 8:20:54 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓   6 [ordinateur] › tests/e2e/graphe.spec.ts:74:1 › filtre du cursus, recherche vide et rendus accessibles (872ms)
+[WebServer] 8:20:55 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓   7 [ordinateur] › tests/e2e/rentree.spec.ts:2:1 › bibliothèque brute, source et dix séances avec graphe (950ms)
+[WebServer] 8:20:56 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓   8 [ordinateur] › tests/e2e/rentree.spec.ts:15:1 › IFSI reste continu, sans bibliothèque copro et avec huit premières études (486ms)
+(node:60640) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] 8:20:58 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓   9 [telephone] › tests/e2e/boite.spec.ts:2:1 › ancienne adresse de la boîte revient à l’accueil sans onglet Boîte (516ms)
+[WebServer] 8:20:58 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓  10 [telephone] › tests/e2e/graphe.spec.ts:9:1 › les vrais liens se parcourent au clavier et les chapitres vides restent honnêtes (606ms)
+[WebServer] 8:20:59 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓  11 [telephone] › tests/e2e/graphe.spec.ts:32:1 › le graphe donne accès à une étude serviable (549ms)
+[WebServer] 8:20:59 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓  12 [telephone] › tests/e2e/graphe.spec.ts:40:1 › un parent du programme ouvre son approfondissement façade et garde le retour (770ms)
+[WebServer] 8:21:00 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓  13 [telephone] › tests/e2e/graphe.spec.ts:66:1 › les satellites copro restent absents de l’index IFSI (473ms)
+[WebServer] 8:21:00 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓  14 [telephone] › tests/e2e/graphe.spec.ts:74:1 › filtre du cursus, recherche vide et rendus accessibles (775ms)
+[WebServer] 8:21:01 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓  15 [telephone] › tests/e2e/rentree.spec.ts:2:1 › bibliothèque brute, source et dix séances avec graphe (979ms)
+[WebServer] 8:21:02 AM [vite] http proxy error: /academie/api/v1/journal
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:8796
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)
+  ✓  16 [telephone] › tests/e2e/rentree.spec.ts:15:1 › IFSI reste continu, sans bibliothèque copro et avec huit premières études (487ms)
+
+  16 passed (19.0s)

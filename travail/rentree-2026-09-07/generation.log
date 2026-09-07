@@ -1,0 +1,6 @@
+168 carte(s) servie(s) → site/banque.json
+  couches : banque
+  dispositions : 76 carte(s) v1 (banque/), 92 carte(s) v2 (chapitres/) ; contrat servi : carte-v1 (champ absent)
+  11 image(s) publiée(s) → /Users/jb/Code/academie/site/ : images/electricite-contacts.svg, images/electricite-mecanismes.svg, images/frise-recouvrement-charges.svg, images/renovation-axes.svg, images/renovation-classements.svg, images/renovation-perspectives.svg, images/vmc-caisson-coupe.svg
+  client autonome publié : aucun (archipel archivé, client v2 à venir)
+  écartées : 0 hors couche, 20 par statut, 0 par statut de chapitre

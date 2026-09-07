@@ -1,0 +1,229 @@
+{
+  "id": "entree.parcoursup.projet-et-activites",
+  "titre": "Rédiger le projet et les activités",
+  "domaine": "entree",
+  "branche": "parcoursup",
+  "niveau": 2,
+  "prerequis": [],
+  "objectifs": [
+    "Rédiger un paragraphe de motivation appuyé sur une expérience",
+    "Réviser une rubrique d’activités pour la rendre précise"
+  ],
+  "amorce": {
+    "question": "Cas fictif : « Depuis toujours je veux aider, donc ce métier est fait pour moi ». Quelle question rendrait ce projet plus précis ?",
+    "aide": "Relie une expérience réelle, ce que tu en comprends et ce que tu veux apprendre.",
+    "reponse_attendue": "Demander ce qui a nourri cet intérêt et ce que le candidat connaît réellement de la formation et du métier."
+  },
+  "lecon": "Un projet de formation ne se réduit pas à une déclaration d’enthousiasme. Parcoursup invite les candidats à expliciter leurs motivations, leurs compétences et leurs expériences dans les rubriques demandées. Il faut aussi lire les critères des instituts envisagés. Le texte doit aider le lecteur à comprendre ton cheminement, sans lui demander de croire une vocation sur parole.\n\nPrenons un brouillon fictif : « J’aime le contact, je suis courageux et je réussirai. » Aucune de ces phrases ne montre ce que son auteur a observé, essayé ou compris. Une réécriture originale pourrait partir d’une expérience de coopération scolaire : la personne a appris à écouter une consigne contradictoire, à demander une précision et à reconnaître une erreur. Cela n’est pas une expérience de soin. Le paragraphe devient intéressant lorsqu’il dit pourquoi cette expérience donne envie d’explorer un métier exigeant de la rigueur et des échanges humains.\n\nFais tenir un paragraphe autour d’une idée. Commence par une situation authentique, sélectionne l’action qui compte, explique ce qu’elle a changé dans ta réflexion et relie-la à une question sur la formation. Tu n’es pas obligé de raconter un événement spectaculaire. Ne reprends pas l’histoire fictive du module comme si elle était la tienne : elle sert seulement à comprendre la construction.\n\nLa révision se fait à plusieurs niveaux. D’abord la fidélité : chaque fait doit correspondre à ton expérience. Ensuite la précision : remplace une qualité vague par une action quand tu en disposes. Puis la cohérence : le lien vers la formation doit être compréhensible. Enfin la langue : enlève les répétitions et lis ton texte à voix haute pour repérer les phrases qui ne disent rien de concret.\n\nUne objection peut améliorer le projet. Si quelqu’un demande « que sais-tu des contraintes de ce métier ? », la réponse n’est pas de prétendre tout accepter sans expérience. Nomme ce que tu connais, ce que tu ignores encore et comment tu comptes le découvrir. Dans la synthèse, la grille juge une production explicite et honnête. Elle ne prédit ni le classement de ton dossier ni la décision d’un institut. Les limites de longueur et pièces à fournir se vérifient directement dans la campagne officielle concernée.",
+  "synthese": {
+    "consigne": "Réécris ce brouillon fictif sans inventer d’expérience : « J’aime aider ; j’ai participé à un travail de groupe difficile ; je voudrais découvrir la formation ». Ajoute la question que tu poserais au candidat pour compléter.",
+    "attendus": [
+      "Expérience conservée sans embellissement.",
+      "Lien expliqué avec le projet.",
+      "Question utile sur une information absente.",
+      "Texte personnel à adapter, jamais à recopier comme vécu."
+    ]
+  },
+  "sources": [
+    {
+      "texte": "Parcoursup : formations en soins infirmiers",
+      "url": "https://www.parcoursup.gouv.fr/trouver-une-formation/zoom-sur-des-formations-en-sante-pass-las-et-ifsi/les-formations-en-soins-1652",
+      "nature": "institution",
+      "consulte_le": "2026-09-07",
+      "parti": "Organisme public ; portée pédagogique ou information sur la candidature, pas promesse d’admission."
+    }
+  ],
+  "provenance": {
+    "auteur": "modele",
+    "modele": "GPT-6",
+    "outil": "Codex",
+    "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root",
+    "genere_le": "2026-09-07",
+    "sources_retrouvees": 1,
+    "sources_concordantes": 0,
+    "sans_source": false
+  },
+  "statut": "valide",
+  "partage": "banque",
+  "verifie": "2026-09-07",
+  "peremption": "2027-01-07",
+  "version": 1,
+  "cartes": [
+    {
+      "id": "entree-parcoursup-projet-et-activites-rentree-1",
+      "chapitre": "entree.parcoursup.projet-et-activites",
+      "domaine": "entree",
+      "branche": "parcoursup",
+      "niveau": 2,
+      "type": "flash",
+      "question": "À quoi sert une expérience dans un projet motivé ?",
+      "reponse": "À expliquer un cheminement et une capacité à partir de faits, sans promettre une admission.",
+      "explication": "Le lecteur doit comprendre le lien proposé.",
+      "aide": "Relie une expérience réelle, ce que tu en comprends et ce que tu veux apprendre.",
+      "source": [
+        {
+          "texte": "Parcoursup : formations en soins infirmiers",
+          "url": "https://www.parcoursup.gouv.fr/trouver-une-formation/zoom-sur-des-formations-en-sante-pass-las-et-ifsi/les-formations-en-soins-1652",
+          "nature": "institution",
+          "consulte_le": "2026-09-07",
+          "parti": "Organisme public ; portée pédagogique ou information sur la candidature, pas promesse d’admission."
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "modele": "GPT-6",
+        "outil": "Codex",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root",
+        "genere_le": "2026-09-07",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "statut": "valide",
+      "partage": "banque",
+      "verifie": "2026-09-07",
+      "peremption": "2027-01-07",
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root/revue_ifsi",
+        "date": "2026-09-07",
+        "rapport": "travail/rentree-2026-09-07/RELECTURE-IFSI.md",
+        "assertions": [
+          "Sources HTML et exercices examinés indépendamment ; cas fictifs, réponses et calculs contrôlés dans le rapport.",
+          "Carte examinée : entree-parcoursup-projet-et-activites-rentree-1"
+        ],
+        "sources": [
+          "https://www.parcoursup.gouv.fr/trouver-une-formation/zoom-sur-des-formations-en-sante-pass-las-et-ifsi/les-formations-en-soins-1652"
+        ],
+        "reserves": [
+          "Aucune admission, aptitude clinique ou efficacité chez Arthur démontrée.",
+          "Titre historique FPC pour le calcul ; usage préparatoire général explicitement indiqué."
+        ]
+      }
+    },
+    {
+      "id": "entree-parcoursup-projet-et-activites-rentree-2",
+      "chapitre": "entree.parcoursup.projet-et-activites",
+      "domaine": "entree",
+      "branche": "parcoursup",
+      "niveau": 2,
+      "type": "libre",
+      "question": "Peux-tu reprendre l’histoire d’un candidat fictif à la première personne ?",
+      "reponse": "Non, seule la structure peut inspirer la rédaction ; les faits doivent rester les tiens.",
+      "explication": "Un exemple pédagogique n’est pas une expérience personnelle.",
+      "aide": "Relie une expérience réelle, ce que tu en comprends et ce que tu veux apprendre.",
+      "source": [
+        {
+          "texte": "Parcoursup : formations en soins infirmiers",
+          "url": "https://www.parcoursup.gouv.fr/trouver-une-formation/zoom-sur-des-formations-en-sante-pass-las-et-ifsi/les-formations-en-soins-1652",
+          "nature": "institution",
+          "consulte_le": "2026-09-07",
+          "parti": "Organisme public ; portée pédagogique ou information sur la candidature, pas promesse d’admission."
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "modele": "GPT-6",
+        "outil": "Codex",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root",
+        "genere_le": "2026-09-07",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "statut": "valide",
+      "partage": "banque",
+      "verifie": "2026-09-07",
+      "peremption": "2027-01-07",
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root/revue_ifsi",
+        "date": "2026-09-07",
+        "rapport": "travail/rentree-2026-09-07/RELECTURE-IFSI.md",
+        "assertions": [
+          "Sources HTML et exercices examinés indépendamment ; cas fictifs, réponses et calculs contrôlés dans le rapport.",
+          "Carte examinée : entree-parcoursup-projet-et-activites-rentree-2"
+        ],
+        "sources": [
+          "https://www.parcoursup.gouv.fr/trouver-une-formation/zoom-sur-des-formations-en-sante-pass-las-et-ifsi/les-formations-en-soins-1652"
+        ],
+        "reserves": [
+          "Aucune admission, aptitude clinique ou efficacité chez Arthur démontrée.",
+          "Titre historique FPC pour le calcul ; usage préparatoire général explicitement indiqué."
+        ]
+      }
+    },
+    {
+      "id": "entree-parcoursup-projet-et-activites-rentree-3",
+      "chapitre": "entree.parcoursup.projet-et-activites",
+      "domaine": "entree",
+      "branche": "parcoursup",
+      "niveau": 2,
+      "type": "libre",
+      "question": "Un projet devient-il plus solide quand il affirme n’avoir aucun doute ?",
+      "reponse": "Pas nécessairement. Une inconnue précise et une démarche pour l’explorer rendent le raisonnement plus explicite.",
+      "explication": "C’est un conseil de rédaction, pas une règle de sélection.",
+      "aide": "Relie une expérience réelle, ce que tu en comprends et ce que tu veux apprendre.",
+      "source": [
+        {
+          "texte": "Parcoursup : formations en soins infirmiers",
+          "url": "https://www.parcoursup.gouv.fr/trouver-une-formation/zoom-sur-des-formations-en-sante-pass-las-et-ifsi/les-formations-en-soins-1652",
+          "nature": "institution",
+          "consulte_le": "2026-09-07",
+          "parti": "Organisme public ; portée pédagogique ou information sur la candidature, pas promesse d’admission."
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "modele": "GPT-6",
+        "outil": "Codex",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root",
+        "genere_le": "2026-09-07",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "statut": "valide",
+      "partage": "banque",
+      "verifie": "2026-09-07",
+      "peremption": "2027-01-07",
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root/revue_ifsi",
+        "date": "2026-09-07",
+        "rapport": "travail/rentree-2026-09-07/RELECTURE-IFSI.md",
+        "assertions": [
+          "Sources HTML et exercices examinés indépendamment ; cas fictifs, réponses et calculs contrôlés dans le rapport.",
+          "Carte examinée : entree-parcoursup-projet-et-activites-rentree-3"
+        ],
+        "sources": [
+          "https://www.parcoursup.gouv.fr/trouver-une-formation/zoom-sur-des-formations-en-sante-pass-las-et-ifsi/les-formations-en-soins-1652"
+        ],
+        "reserves": [
+          "Aucune admission, aptitude clinique ou efficacité chez Arthur démontrée.",
+          "Titre historique FPC pour le calcul ; usage préparatoire général explicitement indiqué."
+        ]
+      }
+    }
+  ],
+  "verifie_par": {
+    "outil": "Codex",
+    "modele": "GPT-6",
+    "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root/revue_ifsi",
+    "date": "2026-09-07",
+    "rapport": "travail/rentree-2026-09-07/RELECTURE-IFSI.md",
+    "assertions": [
+      "Sources HTML et exercices examinés indépendamment ; cas fictifs, réponses et calculs contrôlés dans le rapport."
+    ],
+    "sources": [
+      "https://www.parcoursup.gouv.fr/trouver-une-formation/zoom-sur-des-formations-en-sante-pass-las-et-ifsi/les-formations-en-soins-1652"
+    ],
+    "reserves": [
+      "Aucune admission, aptitude clinique ou efficacité chez Arthur démontrée.",
+      "Titre historique FPC pour le calcul ; usage préparatoire général explicitement indiqué."
+    ]
+  }
+}

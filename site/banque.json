@@ -1,6 +1,6 @@
 {
   "_": "Généré par app/genere.py — ne pas éditer à la main. Toute carte porte sa source et sa date de vérification ; une carte de statut `brouillon` n'a pas été revérifiée à la source et DOIT être signalée comme telle à l'écran.",
-  "genere_le": "2026-09-06",
+  "genere_le": "2026-09-07",
   "profil_defaut": "jb",
   "domaines": {
     "droit": {
@@ -3832,6 +3832,1302 @@
       "aide": "Reviens au principe du chapitre et nomme ce qui manque."
     },
     {
+      "id": "entree-ecrit-argumenter-en-une-page-rentree-1",
+      "domaine": "entree",
+      "branche": "ecrit",
+      "niveau": 2,
+      "type": "flash",
+      "question": "Quelle différence entre un slogan et un argument ?",
+      "reponse": "Un argument explique pourquoi une proposition répond au problème ; un slogan peut seulement la valoriser.",
+      "explication": "Exercice de raisonnement, pas barème officiel.",
+      "source": [
+        {
+          "texte": "Onisep : diplôme d’État infirmier, attendus",
+          "url": "https://www.onisep.fr/ressources/univers-formation/formations/post-bac/diplome-d-etat-d-infirmier",
+          "nature": "institution",
+          "consulte_le": "2026-09-07",
+          "parti": "Organisme public ; portée pédagogique ou information sur la candidature, pas promesse d’admission."
+        }
+      ],
+      "verifie": "2026-09-07",
+      "peremption": "2027-01-07",
+      "statut": "valide",
+      "chapitre": "entree.ecrit.argumenter-en-une-page",
+      "provenance": {
+        "auteur": "modele",
+        "modele": "GPT-6",
+        "outil": "Codex",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root",
+        "genere_le": "2026-09-07",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root/revue_ifsi",
+        "date": "2026-09-07",
+        "rapport": "travail/rentree-2026-09-07/RELECTURE-IFSI.md",
+        "assertions": [
+          "Sources HTML et exercices examinés indépendamment ; cas fictifs, réponses et calculs contrôlés dans le rapport.",
+          "Carte examinée : entree-ecrit-argumenter-en-une-page-rentree-1"
+        ],
+        "sources": [
+          "https://www.onisep.fr/ressources/univers-formation/formations/post-bac/diplome-d-etat-d-infirmier"
+        ],
+        "reserves": [
+          "Aucune admission, aptitude clinique ou efficacité chez Arthur démontrée.",
+          "Titre historique FPC pour le calcul ; usage préparatoire général explicitement indiqué."
+        ]
+      },
+      "a_recouper": false,
+      "note_confiance": "B",
+      "aide": "Une position doit rencontrer une objection réelle puis préciser ses conditions."
+    },
+    {
+      "id": "entree-ecrit-argumenter-en-une-page-rentree-2",
+      "domaine": "entree",
+      "branche": "ecrit",
+      "niveau": 2,
+      "type": "libre",
+      "question": "Le numérique facilite certains dossiers. Cela suffit-il à imposer ce canal à tous ?",
+      "reponse": "Non : il faut examiner les conditions d’accès et les alternatives utiles.",
+      "explication": "Le bénéfice dans un cas ne prouve pas un bénéfice universel.",
+      "source": [
+        {
+          "texte": "Onisep : diplôme d’État infirmier, attendus",
+          "url": "https://www.onisep.fr/ressources/univers-formation/formations/post-bac/diplome-d-etat-d-infirmier",
+          "nature": "institution",
+          "consulte_le": "2026-09-07",
+          "parti": "Organisme public ; portée pédagogique ou information sur la candidature, pas promesse d’admission."
+        }
+      ],
+      "verifie": "2026-09-07",
+      "peremption": "2027-01-07",
+      "statut": "valide",
+      "chapitre": "entree.ecrit.argumenter-en-une-page",
+      "provenance": {
+        "auteur": "modele",
+        "modele": "GPT-6",
+        "outil": "Codex",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root",
+        "genere_le": "2026-09-07",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root/revue_ifsi",
+        "date": "2026-09-07",
+        "rapport": "travail/rentree-2026-09-07/RELECTURE-IFSI.md",
+        "assertions": [
+          "Sources HTML et exercices examinés indépendamment ; cas fictifs, réponses et calculs contrôlés dans le rapport.",
+          "Carte examinée : entree-ecrit-argumenter-en-une-page-rentree-2"
+        ],
+        "sources": [
+          "https://www.onisep.fr/ressources/univers-formation/formations/post-bac/diplome-d-etat-d-infirmier"
+        ],
+        "reserves": [
+          "Aucune admission, aptitude clinique ou efficacité chez Arthur démontrée.",
+          "Titre historique FPC pour le calcul ; usage préparatoire général explicitement indiqué."
+        ]
+      },
+      "a_recouper": false,
+      "note_confiance": "B",
+      "aide": "Une position doit rencontrer une objection réelle puis préciser ses conditions."
+    },
+    {
+      "id": "entree-ecrit-argumenter-en-une-page-rentree-3",
+      "domaine": "entree",
+      "branche": "ecrit",
+      "niveau": 2,
+      "type": "libre",
+      "question": "Une objection solide oblige-t-elle toujours à abandonner sa proposition ?",
+      "reponse": "Non, elle peut conduire à la préciser, la conditionner ou la réviser.",
+      "explication": "Le raisonnement doit répondre à l’objection, pas l’ignorer.",
+      "source": [
+        {
+          "texte": "Onisep : diplôme d’État infirmier, attendus",
+          "url": "https://www.onisep.fr/ressources/univers-formation/formations/post-bac/diplome-d-etat-d-infirmier",
+          "nature": "institution",
+          "consulte_le": "2026-09-07",
+          "parti": "Organisme public ; portée pédagogique ou information sur la candidature, pas promesse d’admission."
+        }
+      ],
+      "verifie": "2026-09-07",
+      "peremption": "2027-01-07",
+      "statut": "valide",
+      "chapitre": "entree.ecrit.argumenter-en-une-page",
+      "provenance": {
+        "auteur": "modele",
+        "modele": "GPT-6",
+        "outil": "Codex",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root",
+        "genere_le": "2026-09-07",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root/revue_ifsi",
+        "date": "2026-09-07",
+        "rapport": "travail/rentree-2026-09-07/RELECTURE-IFSI.md",
+        "assertions": [
+          "Sources HTML et exercices examinés indépendamment ; cas fictifs, réponses et calculs contrôlés dans le rapport.",
+          "Carte examinée : entree-ecrit-argumenter-en-une-page-rentree-3"
+        ],
+        "sources": [
+          "https://www.onisep.fr/ressources/univers-formation/formations/post-bac/diplome-d-etat-d-infirmier"
+        ],
+        "reserves": [
+          "Aucune admission, aptitude clinique ou efficacité chez Arthur démontrée.",
+          "Titre historique FPC pour le calcul ; usage préparatoire général explicitement indiqué."
+        ]
+      },
+      "a_recouper": false,
+      "note_confiance": "B",
+      "aide": "Une position doit rencontrer une objection réelle puis préciser ses conditions."
+    },
+    {
+      "id": "entree-ecrit-les-calculs-de-l-ecrit-rentree-1",
+      "domaine": "entree",
+      "branche": "ecrit",
+      "niveau": 2,
+      "type": "flash",
+      "question": "Qu’est-ce qui caractérise une situation de proportionnalité entre deux grandeurs ?",
+      "reponse": "Un coefficient multiplicateur constant relie les valeurs correspondantes.",
+      "explication": "Il faut vérifier cette hypothèse avant le calcul.",
+      "source": [
+        {
+          "texte": "Éducation nationale : programme de mathématiques cycle 4, référence pédagogique historique de 2015",
+          "url": "https://www.education.gouv.fr/bo/15/Special11/MENE1526483Aannexe3.htm",
+          "nature": "institution",
+          "consulte_le": "2026-09-07",
+          "parti": "Texte pédagogique institutionnel historique ; appui sur proportionnalité et unités, pas programme actuel ou règlement d’admission IFSI."
+        }
+      ],
+      "verifie": "2026-09-07",
+      "peremption": "2027-01-07",
+      "statut": "valide",
+      "chapitre": "entree.ecrit.les-calculs-de-l-ecrit",
+      "provenance": {
+        "auteur": "modele",
+        "modele": "GPT-6",
+        "outil": "Codex",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root",
+        "genere_le": "2026-09-07",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root/revue_ifsi",
+        "date": "2026-09-07",
+        "rapport": "travail/rentree-2026-09-07/RELECTURE-IFSI.md",
+        "assertions": [
+          "Sources HTML et exercices examinés indépendamment ; cas fictifs, réponses et calculs contrôlés dans le rapport.",
+          "Carte examinée : entree-ecrit-les-calculs-de-l-ecrit-rentree-1"
+        ],
+        "sources": [
+          "https://www.education.gouv.fr/bo/15/Special11/MENE1526483Aannexe3.htm"
+        ],
+        "reserves": [
+          "Aucune admission, aptitude clinique ou efficacité chez Arthur démontrée.",
+          "Titre historique FPC pour le calcul ; usage préparatoire général explicitement indiqué."
+        ]
+      },
+      "a_recouper": false,
+      "note_confiance": "B",
+      "aide": "Passe par une unité et écris ce que représente chaque nombre."
+    },
+    {
+      "id": "entree-ecrit-les-calculs-de-l-ecrit-rentree-2",
+      "domaine": "entree",
+      "branche": "ecrit",
+      "niveau": 2,
+      "type": "libre",
+      "question": "Exercice fictif : 4 cahiers coûtent 12 euros, sans frais ni remise. Quel prix pour 7 cahiers ?",
+      "reponse": "21 euros : 12 ÷ 4 = 3 euros par cahier, puis 7 × 3.",
+      "explication": "Calcul sur un tarif fictif et constant.",
+      "source": [
+        {
+          "texte": "Éducation nationale : programme de mathématiques cycle 4, référence pédagogique historique de 2015",
+          "url": "https://www.education.gouv.fr/bo/15/Special11/MENE1526483Aannexe3.htm",
+          "nature": "institution",
+          "consulte_le": "2026-09-07",
+          "parti": "Texte pédagogique institutionnel historique ; appui sur proportionnalité et unités, pas programme actuel ou règlement d’admission IFSI."
+        }
+      ],
+      "verifie": "2026-09-07",
+      "peremption": "2027-01-07",
+      "statut": "valide",
+      "chapitre": "entree.ecrit.les-calculs-de-l-ecrit",
+      "provenance": {
+        "auteur": "modele",
+        "modele": "GPT-6",
+        "outil": "Codex",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root",
+        "genere_le": "2026-09-07",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root/revue_ifsi",
+        "date": "2026-09-07",
+        "rapport": "travail/rentree-2026-09-07/RELECTURE-IFSI.md",
+        "assertions": [
+          "Sources HTML et exercices examinés indépendamment ; cas fictifs, réponses et calculs contrôlés dans le rapport.",
+          "Carte examinée : entree-ecrit-les-calculs-de-l-ecrit-rentree-2"
+        ],
+        "sources": [
+          "https://www.education.gouv.fr/bo/15/Special11/MENE1526483Aannexe3.htm"
+        ],
+        "reserves": [
+          "Aucune admission, aptitude clinique ou efficacité chez Arthur démontrée.",
+          "Titre historique FPC pour le calcul ; usage préparatoire général explicitement indiqué."
+        ]
+      },
+      "a_recouper": false,
+      "note_confiance": "B",
+      "aide": "Passe par une unité et écris ce que représente chaque nombre."
+    },
+    {
+      "id": "entree-ecrit-les-calculs-de-l-ecrit-rentree-3",
+      "domaine": "entree",
+      "branche": "ecrit",
+      "niveau": 2,
+      "type": "libre",
+      "question": "Exercice fictif : 9 inscriptions sont confirmées sur 36. Quelle part est confirmée ?",
+      "reponse": "25 %, car 9 ÷ 36 = 0,25.",
+      "explication": "Le dénominateur est le total des inscriptions, pas le nombre confirmé.",
+      "source": [
+        {
+          "texte": "Éducation nationale : programme de mathématiques cycle 4, référence pédagogique historique de 2015",
+          "url": "https://www.education.gouv.fr/bo/15/Special11/MENE1526483Aannexe3.htm",
+          "nature": "institution",
+          "consulte_le": "2026-09-07",
+          "parti": "Texte pédagogique institutionnel historique ; appui sur proportionnalité et unités, pas programme actuel ou règlement d’admission IFSI."
+        }
+      ],
+      "verifie": "2026-09-07",
+      "peremption": "2027-01-07",
+      "statut": "valide",
+      "chapitre": "entree.ecrit.les-calculs-de-l-ecrit",
+      "provenance": {
+        "auteur": "modele",
+        "modele": "GPT-6",
+        "outil": "Codex",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root",
+        "genere_le": "2026-09-07",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root/revue_ifsi",
+        "date": "2026-09-07",
+        "rapport": "travail/rentree-2026-09-07/RELECTURE-IFSI.md",
+        "assertions": [
+          "Sources HTML et exercices examinés indépendamment ; cas fictifs, réponses et calculs contrôlés dans le rapport.",
+          "Carte examinée : entree-ecrit-les-calculs-de-l-ecrit-rentree-3"
+        ],
+        "sources": [
+          "https://www.education.gouv.fr/bo/15/Special11/MENE1526483Aannexe3.htm"
+        ],
+        "reserves": [
+          "Aucune admission, aptitude clinique ou efficacité chez Arthur démontrée.",
+          "Titre historique FPC pour le calcul ; usage préparatoire général explicitement indiqué."
+        ]
+      },
+      "a_recouper": false,
+      "note_confiance": "B",
+      "aide": "Passe par une unité et écris ce que représente chaque nombre."
+    },
+    {
+      "id": "entree-ecrit-lire-un-texte-sanitaire-et-social-rentree-1",
+      "domaine": "entree",
+      "branche": "ecrit",
+      "niveau": 2,
+      "type": "flash",
+      "question": "Dans un texte, pourquoi attribuer une affirmation à son auteur ?",
+      "reponse": "Pour distinguer ce qui est observé, rapporté ou interprété et examiner la preuve disponible.",
+      "explication": "C’est l’application de la vigilance sur la source.",
+      "source": [
+        {
+          "texte": "CLEMI : les journalistes sont-ils objectifs",
+          "url": "https://www.clemi.fr/ressources/les-series-de-ressources/les-cles-des-medias/les-journalistes-sont-ils-objectifs",
+          "nature": "institution",
+          "consulte_le": "2026-09-07",
+          "parti": "Organisme public ; portée pédagogique ou information sur la candidature, pas promesse d’admission."
+        }
+      ],
+      "verifie": "2026-09-07",
+      "peremption": "2027-01-07",
+      "statut": "valide",
+      "chapitre": "entree.ecrit.lire-un-texte-sanitaire-et-social",
+      "provenance": {
+        "auteur": "modele",
+        "modele": "GPT-6",
+        "outil": "Codex",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root",
+        "genere_le": "2026-09-07",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root/revue_ifsi",
+        "date": "2026-09-07",
+        "rapport": "travail/rentree-2026-09-07/RELECTURE-IFSI.md",
+        "assertions": [
+          "Sources HTML et exercices examinés indépendamment ; cas fictifs, réponses et calculs contrôlés dans le rapport.",
+          "Carte examinée : entree-ecrit-lire-un-texte-sanitaire-et-social-rentree-1"
+        ],
+        "sources": [
+          "https://www.clemi.fr/ressources/les-series-de-ressources/les-cles-des-medias/les-journalistes-sont-ils-objectifs"
+        ],
+        "reserves": [
+          "Aucune admission, aptitude clinique ou efficacité chez Arthur démontrée.",
+          "Titre historique FPC pour le calcul ; usage préparatoire général explicitement indiqué."
+        ]
+      },
+      "a_recouper": false,
+      "note_confiance": "B",
+      "aide": "Sépare ce qui est rapporté, son auteur et la conclusion qui en est tirée."
+    },
+    {
+      "id": "entree-ecrit-lire-un-texte-sanitaire-et-social-rentree-2",
+      "domaine": "entree",
+      "branche": "ecrit",
+      "niveau": 2,
+      "type": "libre",
+      "question": "Cas fictif : un habitant craint un effet négatif. Peut-on résumer « tous les habitants sont pénalisés » ?",
+      "reponse": "Non, la généralisation dépasse les éléments fournis.",
+      "explication": "Un témoignage reste une information située.",
+      "source": [
+        {
+          "texte": "CLEMI : les journalistes sont-ils objectifs",
+          "url": "https://www.clemi.fr/ressources/les-series-de-ressources/les-cles-des-medias/les-journalistes-sont-ils-objectifs",
+          "nature": "institution",
+          "consulte_le": "2026-09-07",
+          "parti": "Organisme public ; portée pédagogique ou information sur la candidature, pas promesse d’admission."
+        }
+      ],
+      "verifie": "2026-09-07",
+      "peremption": "2027-01-07",
+      "statut": "valide",
+      "chapitre": "entree.ecrit.lire-un-texte-sanitaire-et-social",
+      "provenance": {
+        "auteur": "modele",
+        "modele": "GPT-6",
+        "outil": "Codex",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root",
+        "genere_le": "2026-09-07",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root/revue_ifsi",
+        "date": "2026-09-07",
+        "rapport": "travail/rentree-2026-09-07/RELECTURE-IFSI.md",
+        "assertions": [
+          "Sources HTML et exercices examinés indépendamment ; cas fictifs, réponses et calculs contrôlés dans le rapport.",
+          "Carte examinée : entree-ecrit-lire-un-texte-sanitaire-et-social-rentree-2"
+        ],
+        "sources": [
+          "https://www.clemi.fr/ressources/les-series-de-ressources/les-cles-des-medias/les-journalistes-sont-ils-objectifs"
+        ],
+        "reserves": [
+          "Aucune admission, aptitude clinique ou efficacité chez Arthur démontrée.",
+          "Titre historique FPC pour le calcul ; usage préparatoire général explicitement indiqué."
+        ]
+      },
+      "a_recouper": false,
+      "note_confiance": "B",
+      "aide": "Sépare ce qui est rapporté, son auteur et la conclusion qui en est tirée."
+    },
+    {
+      "id": "entree-ecrit-lire-un-texte-sanitaire-et-social-rentree-3",
+      "domaine": "entree",
+      "branche": "ecrit",
+      "niveau": 2,
+      "type": "libre",
+      "question": "Une association annonce vouloir améliorer l’accès. A-t-elle déjà prouvé un meilleur accès ?",
+      "reponse": "Non. Un objectif annoncé n’est pas un résultat mesuré.",
+      "explication": "Il faudrait des données pertinentes sur les effets.",
+      "source": [
+        {
+          "texte": "CLEMI : les journalistes sont-ils objectifs",
+          "url": "https://www.clemi.fr/ressources/les-series-de-ressources/les-cles-des-medias/les-journalistes-sont-ils-objectifs",
+          "nature": "institution",
+          "consulte_le": "2026-09-07",
+          "parti": "Organisme public ; portée pédagogique ou information sur la candidature, pas promesse d’admission."
+        }
+      ],
+      "verifie": "2026-09-07",
+      "peremption": "2027-01-07",
+      "statut": "valide",
+      "chapitre": "entree.ecrit.lire-un-texte-sanitaire-et-social",
+      "provenance": {
+        "auteur": "modele",
+        "modele": "GPT-6",
+        "outil": "Codex",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root",
+        "genere_le": "2026-09-07",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root/revue_ifsi",
+        "date": "2026-09-07",
+        "rapport": "travail/rentree-2026-09-07/RELECTURE-IFSI.md",
+        "assertions": [
+          "Sources HTML et exercices examinés indépendamment ; cas fictifs, réponses et calculs contrôlés dans le rapport.",
+          "Carte examinée : entree-ecrit-lire-un-texte-sanitaire-et-social-rentree-3"
+        ],
+        "sources": [
+          "https://www.clemi.fr/ressources/les-series-de-ressources/les-cles-des-medias/les-journalistes-sont-ils-objectifs"
+        ],
+        "reserves": [
+          "Aucune admission, aptitude clinique ou efficacité chez Arthur démontrée.",
+          "Titre historique FPC pour le calcul ; usage préparatoire général explicitement indiqué."
+        ]
+      },
+      "a_recouper": false,
+      "note_confiance": "B",
+      "aide": "Sépare ce qui est rapporté, son auteur et la conclusion qui en est tirée."
+    },
+    {
+      "id": "entree-parcoursup-attendus-et-preuves-rentree-1",
+      "domaine": "entree",
+      "branche": "parcoursup",
+      "niveau": 1,
+      "type": "flash",
+      "question": "Qu’est-ce qui rend une expérience utile pour étayer un attendu ?",
+      "reponse": "Une situation précise, une action personnelle et un lien expliqué avec l’attendu.",
+      "explication": "C’est une grille de rédaction proposée, pas un barème officiel.",
+      "source": [
+        {
+          "texte": "Onisep : diplôme d’État infirmier, attendus",
+          "url": "https://www.onisep.fr/ressources/univers-formation/formations/post-bac/diplome-d-etat-d-infirmier",
+          "nature": "institution",
+          "consulte_le": "2026-09-07",
+          "parti": "Organisme public ; portée pédagogique ou information sur la candidature, pas promesse d’admission."
+        }
+      ],
+      "verifie": "2026-09-07",
+      "peremption": "2027-01-07",
+      "statut": "valide",
+      "chapitre": "entree.parcoursup.attendus-et-preuves",
+      "provenance": {
+        "auteur": "modele",
+        "modele": "GPT-6",
+        "outil": "Codex",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root",
+        "genere_le": "2026-09-07",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root/revue_ifsi",
+        "date": "2026-09-07",
+        "rapport": "travail/rentree-2026-09-07/RELECTURE-IFSI.md",
+        "assertions": [
+          "Sources HTML et exercices examinés indépendamment ; cas fictifs, réponses et calculs contrôlés dans le rapport.",
+          "Carte examinée : entree-parcoursup-attendus-et-preuves-rentree-1"
+        ],
+        "sources": [
+          "https://www.onisep.fr/ressources/univers-formation/formations/post-bac/diplome-d-etat-d-infirmier"
+        ],
+        "reserves": [
+          "Aucune admission, aptitude clinique ou efficacité chez Arthur démontrée.",
+          "Titre historique FPC pour le calcul ; usage préparatoire général explicitement indiqué."
+        ]
+      },
+      "a_recouper": false,
+      "note_confiance": "B",
+      "aide": "Cherche une situation, une action personnelle et un résultat observable."
+    },
+    {
+      "id": "entree-parcoursup-attendus-et-preuves-rentree-2",
+      "domaine": "entree",
+      "branche": "parcoursup",
+      "niveau": 1,
+      "type": "libre",
+      "question": "Un candidat dit avoir « dirigé » un groupe alors qu’il a seulement aidé à préparer le matériel. Que corriger ?",
+      "reponse": "Décrire sa contribution réelle sans transformer une aide en responsabilité de direction.",
+      "explication": "Le texte doit rester vérifiable et proportionné.",
+      "source": [
+        {
+          "texte": "Onisep : diplôme d’État infirmier, attendus",
+          "url": "https://www.onisep.fr/ressources/univers-formation/formations/post-bac/diplome-d-etat-d-infirmier",
+          "nature": "institution",
+          "consulte_le": "2026-09-07",
+          "parti": "Organisme public ; portée pédagogique ou information sur la candidature, pas promesse d’admission."
+        }
+      ],
+      "verifie": "2026-09-07",
+      "peremption": "2027-01-07",
+      "statut": "valide",
+      "chapitre": "entree.parcoursup.attendus-et-preuves",
+      "provenance": {
+        "auteur": "modele",
+        "modele": "GPT-6",
+        "outil": "Codex",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root",
+        "genere_le": "2026-09-07",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root/revue_ifsi",
+        "date": "2026-09-07",
+        "rapport": "travail/rentree-2026-09-07/RELECTURE-IFSI.md",
+        "assertions": [
+          "Sources HTML et exercices examinés indépendamment ; cas fictifs, réponses et calculs contrôlés dans le rapport.",
+          "Carte examinée : entree-parcoursup-attendus-et-preuves-rentree-2"
+        ],
+        "sources": [
+          "https://www.onisep.fr/ressources/univers-formation/formations/post-bac/diplome-d-etat-d-infirmier"
+        ],
+        "reserves": [
+          "Aucune admission, aptitude clinique ou efficacité chez Arthur démontrée.",
+          "Titre historique FPC pour le calcul ; usage préparatoire général explicitement indiqué."
+        ]
+      },
+      "a_recouper": false,
+      "note_confiance": "B",
+      "aide": "Cherche une situation, une action personnelle et un résultat observable."
+    },
+    {
+      "id": "entree-parcoursup-attendus-et-preuves-rentree-3",
+      "domaine": "entree",
+      "branche": "parcoursup",
+      "niveau": 1,
+      "type": "libre",
+      "question": "Une expérience de coopération prouve-t-elle aussi la maîtrise du calcul ?",
+      "reponse": "Non, il faut une production pertinente pour chaque capacité.",
+      "explication": "Le même récit ne démontre pas tous les attendus.",
+      "source": [
+        {
+          "texte": "Onisep : diplôme d’État infirmier, attendus",
+          "url": "https://www.onisep.fr/ressources/univers-formation/formations/post-bac/diplome-d-etat-d-infirmier",
+          "nature": "institution",
+          "consulte_le": "2026-09-07",
+          "parti": "Organisme public ; portée pédagogique ou information sur la candidature, pas promesse d’admission."
+        }
+      ],
+      "verifie": "2026-09-07",
+      "peremption": "2027-01-07",
+      "statut": "valide",
+      "chapitre": "entree.parcoursup.attendus-et-preuves",
+      "provenance": {
+        "auteur": "modele",
+        "modele": "GPT-6",
+        "outil": "Codex",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root",
+        "genere_le": "2026-09-07",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root/revue_ifsi",
+        "date": "2026-09-07",
+        "rapport": "travail/rentree-2026-09-07/RELECTURE-IFSI.md",
+        "assertions": [
+          "Sources HTML et exercices examinés indépendamment ; cas fictifs, réponses et calculs contrôlés dans le rapport.",
+          "Carte examinée : entree-parcoursup-attendus-et-preuves-rentree-3"
+        ],
+        "sources": [
+          "https://www.onisep.fr/ressources/univers-formation/formations/post-bac/diplome-d-etat-d-infirmier"
+        ],
+        "reserves": [
+          "Aucune admission, aptitude clinique ou efficacité chez Arthur démontrée.",
+          "Titre historique FPC pour le calcul ; usage préparatoire général explicitement indiqué."
+        ]
+      },
+      "a_recouper": false,
+      "note_confiance": "B",
+      "aide": "Cherche une situation, une action personnelle et un résultat observable."
+    },
+    {
+      "id": "entree-parcoursup-autopositionnement-rentree-1",
+      "domaine": "entree",
+      "branche": "parcoursup",
+      "niveau": 1,
+      "type": "flash",
+      "question": "Les réponses au test officiel d’auto-positionnement IFSI servent-elles au classement ?",
+      "reponse": "Non. Elles ne sont pas communiquées aux formations et n’interviennent pas dans la sélection.",
+      "explication": "La réalisation requise et l’utilisation des réponses sont distinctes.",
+      "source": [
+        {
+          "texte": "Parcoursup : test d’auto-positionnement IFSI",
+          "url": "https://www.parcoursup.gouv.fr/contenus/test-d-auto-positionnement-ifsi-1812",
+          "nature": "institution",
+          "consulte_le": "2026-09-07",
+          "parti": "Organisme public ; portée pédagogique ou information sur la candidature, pas promesse d’admission."
+        }
+      ],
+      "verifie": "2026-09-07",
+      "peremption": "2027-01-07",
+      "statut": "valide",
+      "chapitre": "entree.parcoursup.autopositionnement",
+      "provenance": {
+        "auteur": "modele",
+        "modele": "GPT-6",
+        "outil": "Codex",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root",
+        "genere_le": "2026-09-07",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root/revue_ifsi",
+        "date": "2026-09-07",
+        "rapport": "travail/rentree-2026-09-07/RELECTURE-IFSI.md",
+        "assertions": [
+          "Sources HTML et exercices examinés indépendamment ; cas fictifs, réponses et calculs contrôlés dans le rapport.",
+          "Carte examinée : entree-parcoursup-autopositionnement-rentree-1"
+        ],
+        "sources": [
+          "https://www.parcoursup.gouv.fr/contenus/test-d-auto-positionnement-ifsi-1812"
+        ],
+        "reserves": [
+          "Aucune admission, aptitude clinique ou efficacité chez Arthur démontrée.",
+          "Titre historique FPC pour le calcul ; usage préparatoire général explicitement indiqué."
+        ]
+      },
+      "a_recouper": false,
+      "note_confiance": "B",
+      "aide": "Distingue obligation de réalisation, transmission des réponses et sélection."
+    },
+    {
+      "id": "entree-parcoursup-autopositionnement-rentree-2",
+      "domaine": "entree",
+      "branche": "parcoursup",
+      "niveau": 1,
+      "type": "libre",
+      "question": "Réussir cette étude Académie remplit-il le test demandé dans Parcoursup ?",
+      "reponse": "Non, il faut effectuer la démarche dans le dossier officiel.",
+      "explication": "Les deux services ne sont pas reliés.",
+      "source": [
+        {
+          "texte": "Parcoursup : test d’auto-positionnement IFSI",
+          "url": "https://www.parcoursup.gouv.fr/contenus/test-d-auto-positionnement-ifsi-1812",
+          "nature": "institution",
+          "consulte_le": "2026-09-07",
+          "parti": "Organisme public ; portée pédagogique ou information sur la candidature, pas promesse d’admission."
+        }
+      ],
+      "verifie": "2026-09-07",
+      "peremption": "2027-01-07",
+      "statut": "valide",
+      "chapitre": "entree.parcoursup.autopositionnement",
+      "provenance": {
+        "auteur": "modele",
+        "modele": "GPT-6",
+        "outil": "Codex",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root",
+        "genere_le": "2026-09-07",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root/revue_ifsi",
+        "date": "2026-09-07",
+        "rapport": "travail/rentree-2026-09-07/RELECTURE-IFSI.md",
+        "assertions": [
+          "Sources HTML et exercices examinés indépendamment ; cas fictifs, réponses et calculs contrôlés dans le rapport.",
+          "Carte examinée : entree-parcoursup-autopositionnement-rentree-2"
+        ],
+        "sources": [
+          "https://www.parcoursup.gouv.fr/contenus/test-d-auto-positionnement-ifsi-1812"
+        ],
+        "reserves": [
+          "Aucune admission, aptitude clinique ou efficacité chez Arthur démontrée.",
+          "Titre historique FPC pour le calcul ; usage préparatoire général explicitement indiqué."
+        ]
+      },
+      "a_recouper": false,
+      "note_confiance": "B",
+      "aide": "Distingue obligation de réalisation, transmission des réponses et sélection."
+    },
+    {
+      "id": "entree-parcoursup-autopositionnement-rentree-3",
+      "domaine": "entree",
+      "branche": "parcoursup",
+      "niveau": 1,
+      "type": "libre",
+      "question": "Que faire d’une représentation du métier contredite par une source ?",
+      "reponse": "La reformuler et nommer la question restante puis une action pour l’explorer.",
+      "explication": "L’exercice vise une réflexion, pas un jugement sur la personne.",
+      "source": [
+        {
+          "texte": "Parcoursup : test d’auto-positionnement IFSI",
+          "url": "https://www.parcoursup.gouv.fr/contenus/test-d-auto-positionnement-ifsi-1812",
+          "nature": "institution",
+          "consulte_le": "2026-09-07",
+          "parti": "Organisme public ; portée pédagogique ou information sur la candidature, pas promesse d’admission."
+        }
+      ],
+      "verifie": "2026-09-07",
+      "peremption": "2027-01-07",
+      "statut": "valide",
+      "chapitre": "entree.parcoursup.autopositionnement",
+      "provenance": {
+        "auteur": "modele",
+        "modele": "GPT-6",
+        "outil": "Codex",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root",
+        "genere_le": "2026-09-07",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root/revue_ifsi",
+        "date": "2026-09-07",
+        "rapport": "travail/rentree-2026-09-07/RELECTURE-IFSI.md",
+        "assertions": [
+          "Sources HTML et exercices examinés indépendamment ; cas fictifs, réponses et calculs contrôlés dans le rapport.",
+          "Carte examinée : entree-parcoursup-autopositionnement-rentree-3"
+        ],
+        "sources": [
+          "https://www.parcoursup.gouv.fr/contenus/test-d-auto-positionnement-ifsi-1812"
+        ],
+        "reserves": [
+          "Aucune admission, aptitude clinique ou efficacité chez Arthur démontrée.",
+          "Titre historique FPC pour le calcul ; usage préparatoire général explicitement indiqué."
+        ]
+      },
+      "a_recouper": false,
+      "note_confiance": "B",
+      "aide": "Distingue obligation de réalisation, transmission des réponses et sélection."
+    },
+    {
+      "id": "entree-parcoursup-projet-et-activites-rentree-1",
+      "domaine": "entree",
+      "branche": "parcoursup",
+      "niveau": 2,
+      "type": "flash",
+      "question": "À quoi sert une expérience dans un projet motivé ?",
+      "reponse": "À expliquer un cheminement et une capacité à partir de faits, sans promettre une admission.",
+      "explication": "Le lecteur doit comprendre le lien proposé.",
+      "source": [
+        {
+          "texte": "Parcoursup : formations en soins infirmiers",
+          "url": "https://www.parcoursup.gouv.fr/trouver-une-formation/zoom-sur-des-formations-en-sante-pass-las-et-ifsi/les-formations-en-soins-1652",
+          "nature": "institution",
+          "consulte_le": "2026-09-07",
+          "parti": "Organisme public ; portée pédagogique ou information sur la candidature, pas promesse d’admission."
+        }
+      ],
+      "verifie": "2026-09-07",
+      "peremption": "2027-01-07",
+      "statut": "valide",
+      "chapitre": "entree.parcoursup.projet-et-activites",
+      "provenance": {
+        "auteur": "modele",
+        "modele": "GPT-6",
+        "outil": "Codex",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root",
+        "genere_le": "2026-09-07",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root/revue_ifsi",
+        "date": "2026-09-07",
+        "rapport": "travail/rentree-2026-09-07/RELECTURE-IFSI.md",
+        "assertions": [
+          "Sources HTML et exercices examinés indépendamment ; cas fictifs, réponses et calculs contrôlés dans le rapport.",
+          "Carte examinée : entree-parcoursup-projet-et-activites-rentree-1"
+        ],
+        "sources": [
+          "https://www.parcoursup.gouv.fr/trouver-une-formation/zoom-sur-des-formations-en-sante-pass-las-et-ifsi/les-formations-en-soins-1652"
+        ],
+        "reserves": [
+          "Aucune admission, aptitude clinique ou efficacité chez Arthur démontrée.",
+          "Titre historique FPC pour le calcul ; usage préparatoire général explicitement indiqué."
+        ]
+      },
+      "a_recouper": false,
+      "note_confiance": "B",
+      "aide": "Relie une expérience réelle, ce que tu en comprends et ce que tu veux apprendre."
+    },
+    {
+      "id": "entree-parcoursup-projet-et-activites-rentree-2",
+      "domaine": "entree",
+      "branche": "parcoursup",
+      "niveau": 2,
+      "type": "libre",
+      "question": "Peux-tu reprendre l’histoire d’un candidat fictif à la première personne ?",
+      "reponse": "Non, seule la structure peut inspirer la rédaction ; les faits doivent rester les tiens.",
+      "explication": "Un exemple pédagogique n’est pas une expérience personnelle.",
+      "source": [
+        {
+          "texte": "Parcoursup : formations en soins infirmiers",
+          "url": "https://www.parcoursup.gouv.fr/trouver-une-formation/zoom-sur-des-formations-en-sante-pass-las-et-ifsi/les-formations-en-soins-1652",
+          "nature": "institution",
+          "consulte_le": "2026-09-07",
+          "parti": "Organisme public ; portée pédagogique ou information sur la candidature, pas promesse d’admission."
+        }
+      ],
+      "verifie": "2026-09-07",
+      "peremption": "2027-01-07",
+      "statut": "valide",
+      "chapitre": "entree.parcoursup.projet-et-activites",
+      "provenance": {
+        "auteur": "modele",
+        "modele": "GPT-6",
+        "outil": "Codex",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root",
+        "genere_le": "2026-09-07",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root/revue_ifsi",
+        "date": "2026-09-07",
+        "rapport": "travail/rentree-2026-09-07/RELECTURE-IFSI.md",
+        "assertions": [
+          "Sources HTML et exercices examinés indépendamment ; cas fictifs, réponses et calculs contrôlés dans le rapport.",
+          "Carte examinée : entree-parcoursup-projet-et-activites-rentree-2"
+        ],
+        "sources": [
+          "https://www.parcoursup.gouv.fr/trouver-une-formation/zoom-sur-des-formations-en-sante-pass-las-et-ifsi/les-formations-en-soins-1652"
+        ],
+        "reserves": [
+          "Aucune admission, aptitude clinique ou efficacité chez Arthur démontrée.",
+          "Titre historique FPC pour le calcul ; usage préparatoire général explicitement indiqué."
+        ]
+      },
+      "a_recouper": false,
+      "note_confiance": "B",
+      "aide": "Relie une expérience réelle, ce que tu en comprends et ce que tu veux apprendre."
+    },
+    {
+      "id": "entree-parcoursup-projet-et-activites-rentree-3",
+      "domaine": "entree",
+      "branche": "parcoursup",
+      "niveau": 2,
+      "type": "libre",
+      "question": "Un projet devient-il plus solide quand il affirme n’avoir aucun doute ?",
+      "reponse": "Pas nécessairement. Une inconnue précise et une démarche pour l’explorer rendent le raisonnement plus explicite.",
+      "explication": "C’est un conseil de rédaction, pas une règle de sélection.",
+      "source": [
+        {
+          "texte": "Parcoursup : formations en soins infirmiers",
+          "url": "https://www.parcoursup.gouv.fr/trouver-une-formation/zoom-sur-des-formations-en-sante-pass-las-et-ifsi/les-formations-en-soins-1652",
+          "nature": "institution",
+          "consulte_le": "2026-09-07",
+          "parti": "Organisme public ; portée pédagogique ou information sur la candidature, pas promesse d’admission."
+        }
+      ],
+      "verifie": "2026-09-07",
+      "peremption": "2027-01-07",
+      "statut": "valide",
+      "chapitre": "entree.parcoursup.projet-et-activites",
+      "provenance": {
+        "auteur": "modele",
+        "modele": "GPT-6",
+        "outil": "Codex",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root",
+        "genere_le": "2026-09-07",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root/revue_ifsi",
+        "date": "2026-09-07",
+        "rapport": "travail/rentree-2026-09-07/RELECTURE-IFSI.md",
+        "assertions": [
+          "Sources HTML et exercices examinés indépendamment ; cas fictifs, réponses et calculs contrôlés dans le rapport.",
+          "Carte examinée : entree-parcoursup-projet-et-activites-rentree-3"
+        ],
+        "sources": [
+          "https://www.parcoursup.gouv.fr/trouver-une-formation/zoom-sur-des-formations-en-sante-pass-las-et-ifsi/les-formations-en-soins-1652"
+        ],
+        "reserves": [
+          "Aucune admission, aptitude clinique ou efficacité chez Arthur démontrée.",
+          "Titre historique FPC pour le calcul ; usage préparatoire général explicitement indiqué."
+        ]
+      },
+      "a_recouper": false,
+      "note_confiance": "B",
+      "aide": "Relie une expérience réelle, ce que tu en comprends et ce que tu veux apprendre."
+    },
+    {
+      "id": "entree-parcoursup-voeux-et-calendrier-rentree-1",
+      "domaine": "entree",
+      "branche": "parcoursup",
+      "niveau": 2,
+      "type": "flash",
+      "question": "Pourquoi une capture ancienne ne suffit-elle pas pour fixer une échéance ?",
+      "reponse": "Elle peut concerner une autre campagne ou une autre étape.",
+      "explication": "Retrouver la source actuelle et l’action exacte.",
+      "source": [
+        {
+          "texte": "Parcoursup : formations en soins infirmiers",
+          "url": "https://www.parcoursup.gouv.fr/trouver-une-formation/zoom-sur-des-formations-en-sante-pass-las-et-ifsi/les-formations-en-soins-1652",
+          "nature": "institution",
+          "consulte_le": "2026-09-07",
+          "parti": "Organisme public ; portée pédagogique ou information sur la candidature, pas promesse d’admission."
+        }
+      ],
+      "verifie": "2026-09-07",
+      "peremption": "2027-01-07",
+      "statut": "valide",
+      "chapitre": "entree.parcoursup.voeux-et-calendrier",
+      "provenance": {
+        "auteur": "modele",
+        "modele": "GPT-6",
+        "outil": "Codex",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root",
+        "genere_le": "2026-09-07",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root/revue_ifsi",
+        "date": "2026-09-07",
+        "rapport": "travail/rentree-2026-09-07/RELECTURE-IFSI.md",
+        "assertions": [
+          "Sources HTML et exercices examinés indépendamment ; cas fictifs, réponses et calculs contrôlés dans le rapport.",
+          "Carte examinée : entree-parcoursup-voeux-et-calendrier-rentree-1"
+        ],
+        "sources": [
+          "https://www.parcoursup.gouv.fr/trouver-une-formation/zoom-sur-des-formations-en-sante-pass-las-et-ifsi/les-formations-en-soins-1652"
+        ],
+        "reserves": [
+          "Aucune admission, aptitude clinique ou efficacité chez Arthur démontrée.",
+          "Titre historique FPC pour le calcul ; usage préparatoire général explicitement indiqué."
+        ]
+      },
+      "a_recouper": false,
+      "note_confiance": "B",
+      "aide": "Vérifie la date du document, l’action concernée et la situation du candidat."
+    },
+    {
+      "id": "entree-parcoursup-voeux-et-calendrier-rentree-2",
+      "domaine": "entree",
+      "branche": "parcoursup",
+      "niveau": 2,
+      "type": "libre",
+      "question": "Un vœu apparaît dans un dossier fictif. Est-ce une preuve qu’il est confirmé ?",
+      "reponse": "Non, il faut contrôler son statut et les exigences de l’étape.",
+      "explication": "Une trace intermédiaire ne prouve pas la finalisation.",
+      "source": [
+        {
+          "texte": "Parcoursup : formations en soins infirmiers",
+          "url": "https://www.parcoursup.gouv.fr/trouver-une-formation/zoom-sur-des-formations-en-sante-pass-las-et-ifsi/les-formations-en-soins-1652",
+          "nature": "institution",
+          "consulte_le": "2026-09-07",
+          "parti": "Organisme public ; portée pédagogique ou information sur la candidature, pas promesse d’admission."
+        }
+      ],
+      "verifie": "2026-09-07",
+      "peremption": "2027-01-07",
+      "statut": "valide",
+      "chapitre": "entree.parcoursup.voeux-et-calendrier",
+      "provenance": {
+        "auteur": "modele",
+        "modele": "GPT-6",
+        "outil": "Codex",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root",
+        "genere_le": "2026-09-07",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root/revue_ifsi",
+        "date": "2026-09-07",
+        "rapport": "travail/rentree-2026-09-07/RELECTURE-IFSI.md",
+        "assertions": [
+          "Sources HTML et exercices examinés indépendamment ; cas fictifs, réponses et calculs contrôlés dans le rapport.",
+          "Carte examinée : entree-parcoursup-voeux-et-calendrier-rentree-2"
+        ],
+        "sources": [
+          "https://www.parcoursup.gouv.fr/trouver-une-formation/zoom-sur-des-formations-en-sante-pass-las-et-ifsi/les-formations-en-soins-1652"
+        ],
+        "reserves": [
+          "Aucune admission, aptitude clinique ou efficacité chez Arthur démontrée.",
+          "Titre historique FPC pour le calcul ; usage préparatoire général explicitement indiqué."
+        ]
+      },
+      "a_recouper": false,
+      "note_confiance": "B",
+      "aide": "Vérifie la date du document, l’action concernée et la situation du candidat."
+    },
+    {
+      "id": "entree-parcoursup-voeux-et-calendrier-rentree-3",
+      "domaine": "entree",
+      "branche": "parcoursup",
+      "niveau": 2,
+      "type": "libre",
+      "question": "Deux instituts intéressent un candidat, mais l’un impose un déménagement. Quelle inconnue ajouter au plan ?",
+      "reponse": "Les conditions matérielles permettant d’accepter une proposition : trajet, logement et financement à vérifier.",
+      "explication": "On nomme les informations à obtenir sans inventer de montant.",
+      "source": [
+        {
+          "texte": "Parcoursup : formations en soins infirmiers",
+          "url": "https://www.parcoursup.gouv.fr/trouver-une-formation/zoom-sur-des-formations-en-sante-pass-las-et-ifsi/les-formations-en-soins-1652",
+          "nature": "institution",
+          "consulte_le": "2026-09-07",
+          "parti": "Organisme public ; portée pédagogique ou information sur la candidature, pas promesse d’admission."
+        }
+      ],
+      "verifie": "2026-09-07",
+      "peremption": "2027-01-07",
+      "statut": "valide",
+      "chapitre": "entree.parcoursup.voeux-et-calendrier",
+      "provenance": {
+        "auteur": "modele",
+        "modele": "GPT-6",
+        "outil": "Codex",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root",
+        "genere_le": "2026-09-07",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root/revue_ifsi",
+        "date": "2026-09-07",
+        "rapport": "travail/rentree-2026-09-07/RELECTURE-IFSI.md",
+        "assertions": [
+          "Sources HTML et exercices examinés indépendamment ; cas fictifs, réponses et calculs contrôlés dans le rapport.",
+          "Carte examinée : entree-parcoursup-voeux-et-calendrier-rentree-3"
+        ],
+        "sources": [
+          "https://www.parcoursup.gouv.fr/trouver-une-formation/zoom-sur-des-formations-en-sante-pass-las-et-ifsi/les-formations-en-soins-1652"
+        ],
+        "reserves": [
+          "Aucune admission, aptitude clinique ou efficacité chez Arthur démontrée.",
+          "Titre historique FPC pour le calcul ; usage préparatoire général explicitement indiqué."
+        ]
+      },
+      "a_recouper": false,
+      "note_confiance": "B",
+      "aide": "Vérifie la date du document, l’action concernée et la situation du candidat."
+    },
+    {
+      "id": "entree-voies-la-voie-parcoursup-rentree-1",
+      "domaine": "entree",
+      "branche": "voies",
+      "niveau": 1,
+      "type": "flash",
+      "question": "Pour un lycéen, la préparation IFSI doit-elle être présentée comme un concours écrit universel ?",
+      "reponse": "Non. La voie Parcoursup repose sur un examen du dossier.",
+      "explication": "D’autres voies ont leurs modalités ; vérifier la situation et la campagne.",
+      "source": [
+        {
+          "texte": "Parcoursup : formations en soins infirmiers",
+          "url": "https://www.parcoursup.gouv.fr/trouver-une-formation/zoom-sur-des-formations-en-sante-pass-las-et-ifsi/les-formations-en-soins-1652",
+          "nature": "institution",
+          "consulte_le": "2026-09-07",
+          "parti": "Organisme public ; portée pédagogique ou information sur la candidature, pas promesse d’admission."
+        }
+      ],
+      "verifie": "2026-09-07",
+      "peremption": "2027-01-07",
+      "statut": "valide",
+      "chapitre": "entree.voies.la-voie-parcoursup",
+      "provenance": {
+        "auteur": "modele",
+        "modele": "GPT-6",
+        "outil": "Codex",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root",
+        "genere_le": "2026-09-07",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root/revue_ifsi",
+        "date": "2026-09-07",
+        "rapport": "travail/rentree-2026-09-07/RELECTURE-IFSI.md",
+        "assertions": [
+          "Sources HTML et exercices examinés indépendamment ; cas fictifs, réponses et calculs contrôlés dans le rapport.",
+          "Carte examinée : entree-voies-la-voie-parcoursup-rentree-1"
+        ],
+        "sources": [
+          "https://www.parcoursup.gouv.fr/trouver-une-formation/zoom-sur-des-formations-en-sante-pass-las-et-ifsi/les-formations-en-soins-1652"
+        ],
+        "reserves": [
+          "Aucune admission, aptitude clinique ou efficacité chez Arthur démontrée.",
+          "Titre historique FPC pour le calcul ; usage préparatoire général explicitement indiqué."
+        ]
+      },
+      "a_recouper": false,
+      "note_confiance": "B",
+      "aide": "Distingue sa situation, la voie d’accès et la campagne concernée."
+    },
+    {
+      "id": "entree-voies-la-voie-parcoursup-rentree-2",
+      "domaine": "entree",
+      "branche": "voies",
+      "niveau": 1,
+      "type": "libre",
+      "question": "Cas fictif : un proche a passé un entretien. Cela détermine-t-il ta procédure ?",
+      "reponse": "Non : il faut comparer sa situation et sa voie aux tiennes.",
+      "explication": "Une expérience individuelle ne remplace pas la fiche officielle.",
+      "source": [
+        {
+          "texte": "Parcoursup : formations en soins infirmiers",
+          "url": "https://www.parcoursup.gouv.fr/trouver-une-formation/zoom-sur-des-formations-en-sante-pass-las-et-ifsi/les-formations-en-soins-1652",
+          "nature": "institution",
+          "consulte_le": "2026-09-07",
+          "parti": "Organisme public ; portée pédagogique ou information sur la candidature, pas promesse d’admission."
+        }
+      ],
+      "verifie": "2026-09-07",
+      "peremption": "2027-01-07",
+      "statut": "valide",
+      "chapitre": "entree.voies.la-voie-parcoursup",
+      "provenance": {
+        "auteur": "modele",
+        "modele": "GPT-6",
+        "outil": "Codex",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root",
+        "genere_le": "2026-09-07",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root/revue_ifsi",
+        "date": "2026-09-07",
+        "rapport": "travail/rentree-2026-09-07/RELECTURE-IFSI.md",
+        "assertions": [
+          "Sources HTML et exercices examinés indépendamment ; cas fictifs, réponses et calculs contrôlés dans le rapport.",
+          "Carte examinée : entree-voies-la-voie-parcoursup-rentree-2"
+        ],
+        "sources": [
+          "https://www.parcoursup.gouv.fr/trouver-une-formation/zoom-sur-des-formations-en-sante-pass-las-et-ifsi/les-formations-en-soins-1652"
+        ],
+        "reserves": [
+          "Aucune admission, aptitude clinique ou efficacité chez Arthur démontrée.",
+          "Titre historique FPC pour le calcul ; usage préparatoire général explicitement indiqué."
+        ]
+      },
+      "a_recouper": false,
+      "note_confiance": "B",
+      "aide": "Distingue sa situation, la voie d’accès et la campagne concernée."
+    },
+    {
+      "id": "entree-voies-la-voie-parcoursup-rentree-3",
+      "domaine": "entree",
+      "branche": "voies",
+      "niveau": 1,
+      "type": "libre",
+      "question": "Tu as trouvé un ancien manuel de concours. Quel usage prudent en faire ?",
+      "reponse": "Utiliser éventuellement des exercices de base, après avoir vérifié les modalités actuelles dans les sources officielles.",
+      "explication": "L’entraînement et la règle d’admission sont deux informations différentes.",
+      "source": [
+        {
+          "texte": "Parcoursup : formations en soins infirmiers",
+          "url": "https://www.parcoursup.gouv.fr/trouver-une-formation/zoom-sur-des-formations-en-sante-pass-las-et-ifsi/les-formations-en-soins-1652",
+          "nature": "institution",
+          "consulte_le": "2026-09-07",
+          "parti": "Organisme public ; portée pédagogique ou information sur la candidature, pas promesse d’admission."
+        }
+      ],
+      "verifie": "2026-09-07",
+      "peremption": "2027-01-07",
+      "statut": "valide",
+      "chapitre": "entree.voies.la-voie-parcoursup",
+      "provenance": {
+        "auteur": "modele",
+        "modele": "GPT-6",
+        "outil": "Codex",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root",
+        "genere_le": "2026-09-07",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root/revue_ifsi",
+        "date": "2026-09-07",
+        "rapport": "travail/rentree-2026-09-07/RELECTURE-IFSI.md",
+        "assertions": [
+          "Sources HTML et exercices examinés indépendamment ; cas fictifs, réponses et calculs contrôlés dans le rapport.",
+          "Carte examinée : entree-voies-la-voie-parcoursup-rentree-3"
+        ],
+        "sources": [
+          "https://www.parcoursup.gouv.fr/trouver-une-formation/zoom-sur-des-formations-en-sante-pass-las-et-ifsi/les-formations-en-soins-1652"
+        ],
+        "reserves": [
+          "Aucune admission, aptitude clinique ou efficacité chez Arthur démontrée.",
+          "Titre historique FPC pour le calcul ; usage préparatoire général explicitement indiqué."
+        ]
+      },
+      "a_recouper": false,
+      "note_confiance": "B",
+      "aide": "Distingue sa situation, la voie d’accès et la campagne concernée."
+    },
+    {
       "id": "methodes-communication-les-transmissions-orales-rappel",
       "domaine": "methodes",
       "branche": "communication",
@@ -7304,6 +8600,574 @@
           "droit-organes-le-syndic-et-ses-missions-transfert"
         ]
       },
+      "entree.ecrit.argumenter-en-une-page": {
+        "id": "entree.ecrit.argumenter-en-une-page",
+        "titre": "Argumenter en une page",
+        "domaine": "entree",
+        "branche": "ecrit",
+        "niveau": 2,
+        "objectifs": [
+          "Écrire une réponse structurée, personnelle et sans jargon",
+          "Défendre une position conditionnelle et traiter une objection."
+        ],
+        "amorce": {
+          "question": "Cas fictif : faut-il proposer uniquement des inscriptions numériques à une activité associative ? Donne une raison et une objection avant de conclure.",
+          "aide": "Une position doit rencontrer une objection réelle puis préciser ses conditions.",
+          "reponse_attendue": "Le numérique peut simplifier certaines démarches, mais un accès exclusif peut gêner des personnes ; une solution doit examiner les possibilités réelles du public."
+        },
+        "lecon": "Argumenter ne consiste pas à additionner des affirmations. Il faut répondre à une question, donner une raison et montrer ce qui pourrait modifier sa conclusion. Les attendus présentés par l’Onisep comprennent l’expression et le raisonnement. Le travail proposé ici est un exercice original de préparation générale ; ce n’est ni un sujet officiel ni une promesse de réussite à la sélection.\n\nConsidère une activité associative fictive qui veut passer à l’inscription entièrement numérique. Une première réponse dit : « C’est moderne, donc c’est mieux. » Le mot moderne ne démontre aucun bénéfice précis. Reformule l’argument : un formulaire peut faciliter le regroupement des demandes si les personnes savent l’utiliser et peuvent y accéder. Les conditions font partie du raisonnement ; elles ne sont pas une gêne à dissimuler.\n\nConstruis maintenant l’objection la plus sérieuse. Certaines personnes peuvent rencontrer des difficultés d’accès ou de compréhension. Cela ne démontre pas que tout outil numérique est mauvais. Cela demande d’examiner la possibilité d’un accompagnement ou d’un autre canal. Tu peux défendre un formulaire sans défendre l’exclusivité numérique. Une distinction bien posée est souvent plus utile qu’une conclusion extrême.\n\nÉcris un court développement qui suit le problème. Le premier paragraphe pose la question et ta réponse provisoire. Le suivant explique une raison avec un exemple explicitement fictif. Un autre examine l’objection et modifie la proposition si nécessaire. Termine par une condition ou une information à vérifier. Il s’agit d’une structure de travail proposée ; il n’existe pas dans cette leçon de nombre officiel de paragraphes imposé.\n\nRelis en cherchant les sauts logiques. Un exemple possible ne prouve pas la fréquence d’un phénomène. Une intention ne démontre pas un effet. Un mot valorisant ne remplace pas un mécanisme expliqué. Si tu utilises un chiffre sur une situation réelle, il faudra une source vérifiable ; dans notre cas, tu peux argumenter sans en inventer.\n\nPour la synthèse, change le public : l’activité souhaite accueillir de nouveaux participants qui connaissent peu son fonctionnement. Révise ta proposition. La grille n’exige pas une opinion prédéterminée ; elle demande un argument explicite, une objection comprise et une conclusion proportionnée. Une réponse différente peut être solide si elle suit les mêmes exigences de justification.",
+        "synthese": {
+          "consigne": "Une association fictive accueille de nouveaux participants et veut imposer un formulaire numérique. Propose une décision conditionnelle, un argument, une objection et une information à vérifier.",
+          "attendus": [
+            "Position compréhensible.",
+            "Mécanisme expliqué sans chiffre inventé.",
+            "Objection traitée sans caricature.",
+            "Condition de révision indiquée."
+          ]
+        },
+        "sources": [
+          {
+            "texte": "Onisep : diplôme d’État infirmier, attendus",
+            "url": "https://www.onisep.fr/ressources/univers-formation/formations/post-bac/diplome-d-etat-d-infirmier",
+            "nature": "institution",
+            "consulte_le": "2026-09-07",
+            "parti": "Organisme public ; portée pédagogique ou information sur la candidature, pas promesse d’admission."
+          }
+        ],
+        "provenance": {
+          "auteur": "modele",
+          "modele": "GPT-6",
+          "outil": "Codex",
+          "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root",
+          "genere_le": "2026-09-07",
+          "sources_retrouvees": 1,
+          "sources_concordantes": 0,
+          "sans_source": false
+        },
+        "verifie_par": {
+          "outil": "Codex",
+          "modele": "GPT-6",
+          "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root/revue_ifsi",
+          "date": "2026-09-07",
+          "rapport": "travail/rentree-2026-09-07/RELECTURE-IFSI.md",
+          "assertions": [
+            "Sources HTML et exercices examinés indépendamment ; cas fictifs, réponses et calculs contrôlés dans le rapport."
+          ],
+          "sources": [
+            "https://www.onisep.fr/ressources/univers-formation/formations/post-bac/diplome-d-etat-d-infirmier"
+          ],
+          "reserves": [
+            "Aucune admission, aptitude clinique ou efficacité chez Arthur démontrée.",
+            "Titre historique FPC pour le calcul ; usage préparatoire général explicitement indiqué."
+          ]
+        },
+        "verifie": "2026-09-07",
+        "version": 1,
+        "statut": "valide",
+        "peremption": "2027-01-07",
+        "cartes": [
+          "entree-ecrit-argumenter-en-une-page-rentree-1",
+          "entree-ecrit-argumenter-en-une-page-rentree-2",
+          "entree-ecrit-argumenter-en-une-page-rentree-3"
+        ]
+      },
+      "entree.ecrit.les-calculs-de-l-ecrit": {
+        "id": "entree.ecrit.les-calculs-de-l-ecrit",
+        "titre": "Les calculs simples de l’écrit FPC",
+        "domaine": "entree",
+        "branche": "ecrit",
+        "niveau": 2,
+        "objectifs": [
+          "Résoudre un problème de calcul simple ; l’entraînement sans calculatrice est un choix pédagogique",
+          "Expliquer le prix unitaire et vérifier les unités du résultat."
+        ],
+        "amorce": {
+          "question": "Exercice fictif : 6 cahiers coûtent 18 euros au même prix unitaire. Combien coûtent 10 cahiers, sans remise ni frais fixes ?",
+          "aide": "Passe par une unité et écris ce que représente chaque nombre.",
+          "reponse_attendue": "Un cahier coûte 18 ÷ 6 = 3 euros ; 10 cahiers coûtent 30 euros."
+        },
+        "lecon": "Cette séance travaille des bases arithmétiques utiles pour préparer les études. Son identifiant appartient à la branche historique de l’écrit FPC ; elle est ici utilisée comme remise à niveau générale. Elle ne signifie pas que les candidats Parcoursup doivent passer une épreuve de calcul. Aucun dosage, débit de perfusion ou décision de soin n’est enseigné.\n\nDans l’exercice fictif, six cahiers coûtent dix-huit euros avec un même prix unitaire, sans remise ni frais fixes. Le prix d’un cahier est donc dix-huit divisé par six, soit trois euros. Pour dix cahiers, on multiplie trois par dix : trente euros. Les données et le tarif sont inventés pour l’exercice. Le mécanisme relève de la proportionnalité, qui relie les grandeurs par un coefficient constant, telle qu’enseignée dans les ressources nationales de mathématiques.\n\nLe calcul ne commence pas par une multiplication automatique. Vérifie d’abord le modèle. Si le magasin ajoute un montant fixe de livraison, le coût total n’est plus proportionnel au nombre de cahiers. Le prix des cahiers seuls peut le rester. Nommer le périmètre évite d’appliquer une règle de trois à toute situation comportant plusieurs nombres.\n\nUn pourcentage exprime une part rapportée à cent. Autre exercice fictif : parmi quarante inscriptions, dix sont confirmées. La part confirmée vaut dix divisé par quarante, soit un quart, donc vingt-cinq pour cent. Si cinq inscriptions supplémentaires sont confirmées sans changer le total, la part vaut quinze sur quarante, soit trente-sept virgule cinq pour cent. L’augmentation de la part est de douze virgule cinq points de pourcentage ; elle ne se confond pas avec le taux de croissance du nombre confirmé.\n\nPour vérifier ton résultat, donne toujours l’unité et le sens. Trente euros est un prix, pas un nombre de cahiers. Vingt-cinq pour cent porte sur les quarante inscriptions, pas sur les seules confirmations. Un résultat supérieur au total doit déclencher une relecture si tu cherchais une partie de ce total. Ce contrôle de cohérence peut révéler une erreur sans refaire toute l’opération.\n\nDans la synthèse, écris les étapes et explique l’hypothèse qui autorise ton calcul. Une calculatrice peut vérifier une opération ; elle ne choisit pas correctement le dénominateur à ta place. La correction est mathématique sur des données fictives et ne renseigne pas sur ton aptitude à réaliser un acte clinique.",
+        "synthese": {
+          "consigne": "Exercices fictifs : 8 cahiers coûtent 24 euros au même prix, sans frais ; calcule le prix de 5 cahiers. Puis 12 inscriptions sur 48 sont confirmées : calcule leur part et explique le dénominateur.",
+          "attendus": [
+            "24 ÷ 8 = 3 euros par cahier puis 5 × 3 = 15 euros.",
+            "12 ÷ 48 = 0,25 soit 25 %.",
+            "Prix unitaire constant et absence de frais explicités.",
+            "Unité et total de référence nommés."
+          ]
+        },
+        "sources": [
+          {
+            "texte": "Éducation nationale : programme de mathématiques cycle 4, référence pédagogique historique de 2015",
+            "url": "https://www.education.gouv.fr/bo/15/Special11/MENE1526483Aannexe3.htm",
+            "nature": "institution",
+            "consulte_le": "2026-09-07",
+            "parti": "Texte pédagogique institutionnel historique ; appui sur proportionnalité et unités, pas programme actuel ou règlement d’admission IFSI."
+          }
+        ],
+        "provenance": {
+          "auteur": "modele",
+          "modele": "GPT-6",
+          "outil": "Codex",
+          "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root",
+          "genere_le": "2026-09-07",
+          "sources_retrouvees": 1,
+          "sources_concordantes": 0,
+          "sans_source": false
+        },
+        "verifie_par": {
+          "outil": "Codex",
+          "modele": "GPT-6",
+          "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root/revue_ifsi",
+          "date": "2026-09-07",
+          "rapport": "travail/rentree-2026-09-07/RELECTURE-IFSI.md",
+          "assertions": [
+            "Sources HTML et exercices examinés indépendamment ; cas fictifs, réponses et calculs contrôlés dans le rapport."
+          ],
+          "sources": [
+            "https://www.education.gouv.fr/bo/15/Special11/MENE1526483Aannexe3.htm"
+          ],
+          "reserves": [
+            "Aucune admission, aptitude clinique ou efficacité chez Arthur démontrée.",
+            "Titre historique FPC pour le calcul ; usage préparatoire général explicitement indiqué."
+          ]
+        },
+        "verifie": "2026-09-07",
+        "version": 1,
+        "statut": "valide",
+        "peremption": "2027-01-07",
+        "cartes": [
+          "entree-ecrit-les-calculs-de-l-ecrit-rentree-1",
+          "entree-ecrit-les-calculs-de-l-ecrit-rentree-2",
+          "entree-ecrit-les-calculs-de-l-ecrit-rentree-3"
+        ]
+      },
+      "entree.ecrit.lire-un-texte-sanitaire-et-social": {
+        "id": "entree.ecrit.lire-un-texte-sanitaire-et-social",
+        "titre": "Lire un texte sanitaire et social",
+        "domaine": "entree",
+        "branche": "ecrit",
+        "niveau": 2,
+        "objectifs": [
+          "Dégager la thèse et les arguments d'un texte d'actualité",
+          "Distinguer un fait rapporté, une intention et un résultat démontré."
+        ],
+        "amorce": {
+          "question": "Texte fictif : « Une permanence a changé ses horaires. Un habitant dit que personne ne sera aidé. » Qu’est-ce qui est constaté et qu’est-ce qui reste une affirmation à examiner ?",
+          "aide": "Sépare ce qui est rapporté, son auteur et la conclusion qui en est tirée.",
+          "reponse_attendue": "Le changement d’horaires est rapporté ; l’impossibilité générale d’aider est une affirmation attribuée à un habitant, non démontrée par ce seul texte."
+        },
+        "lecon": "Lire un texte sanitaire et social demande de comprendre ce qu’il dit avant de prendre position. Le CLEMI invite à examiner la construction de l’information et le point de vue de ceux qui la produisent. Nous appliquons cette vigilance à un texte entièrement fictif : « Une permanence associative ouvre désormais le soir. Une personne affirme que les habitants âgés n’y viendront plus. L’association annonce vouloir accueillir ceux qui travaillent. » Aucun de ces éléments n’est une statistique sur un territoire réel.\n\nCommence par attribuer chaque proposition. Le texte rapporte un changement d’horaire, une inquiétude individuelle et un objectif déclaré de l’association. Il ne dit pas combien de personnes viennent, si leur fréquentation a changé ou si un autre accès existe. Tu peux comprendre la tension entre des besoins différents sans décider immédiatement qui a raison.\n\nLe résumé doit conserver cette structure. Une proposition possible est : « L’association cherche à adapter l’accès à certains horaires de travail ; une personne craint que le changement défavorise d’autres habitants ; les effets ne sont pas mesurés dans le texte. » Cette phrase est plus fidèle que « la réforme exclut les personnes âgées ». La seconde transforme une inquiétude en résultat démontré.\n\nPasse ensuite aux arguments. Pour soutenir une conclusion, quelle preuve manque ? On pourrait chercher des retours de différents usagers, décrire les possibilités alternatives et comparer les usages avant et après. Ce sont des pistes d’enquête, pas des résultats disponibles. Une seule réaction peut être importante sans représenter tout le public. À l’inverse, une intention bien formulée ne prouve pas que l’effet recherché a eu lieu.\n\nTu vas maintenant changer une donnée du cas : imagine qu’une permanence téléphonique reste ouverte en journée. Cette information modifie-t-elle tout le raisonnement ? Elle apporte une alternative, mais ne prouve pas que tous savent ou peuvent l’utiliser. La conclusion devient plus précise et garde ses limites. Dans ta production, sépare résumé, question critique et position personnelle. Cette méthode de lecture s’entraîne avant l’entrée en IFSI ; elle n’est pas présentée comme une épreuve obligatoire de la voie Parcoursup.",
+        "synthese": {
+          "consigne": "Texte fictif : une permanence ouvre le soir et maintient un téléphone en journée ; un habitant craint de perdre son accès. Rédige un résumé fidèle, une question d’enquête et une conclusion prudente.",
+          "attendus": [
+            "Propos attribués à leurs auteurs.",
+            "Intention et effet distingués.",
+            "Téléphone pris en compte sans supposer son accessibilité universelle.",
+            "Donnée manquante précise."
+          ]
+        },
+        "sources": [
+          {
+            "texte": "CLEMI : les journalistes sont-ils objectifs",
+            "url": "https://www.clemi.fr/ressources/les-series-de-ressources/les-cles-des-medias/les-journalistes-sont-ils-objectifs",
+            "nature": "institution",
+            "consulte_le": "2026-09-07",
+            "parti": "Organisme public ; portée pédagogique ou information sur la candidature, pas promesse d’admission."
+          }
+        ],
+        "provenance": {
+          "auteur": "modele",
+          "modele": "GPT-6",
+          "outil": "Codex",
+          "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root",
+          "genere_le": "2026-09-07",
+          "sources_retrouvees": 1,
+          "sources_concordantes": 0,
+          "sans_source": false
+        },
+        "verifie_par": {
+          "outil": "Codex",
+          "modele": "GPT-6",
+          "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root/revue_ifsi",
+          "date": "2026-09-07",
+          "rapport": "travail/rentree-2026-09-07/RELECTURE-IFSI.md",
+          "assertions": [
+            "Sources HTML et exercices examinés indépendamment ; cas fictifs, réponses et calculs contrôlés dans le rapport."
+          ],
+          "sources": [
+            "https://www.clemi.fr/ressources/les-series-de-ressources/les-cles-des-medias/les-journalistes-sont-ils-objectifs"
+          ],
+          "reserves": [
+            "Aucune admission, aptitude clinique ou efficacité chez Arthur démontrée.",
+            "Titre historique FPC pour le calcul ; usage préparatoire général explicitement indiqué."
+          ]
+        },
+        "verifie": "2026-09-07",
+        "version": 1,
+        "statut": "valide",
+        "peremption": "2027-01-07",
+        "cartes": [
+          "entree-ecrit-lire-un-texte-sanitaire-et-social-rentree-1",
+          "entree-ecrit-lire-un-texte-sanitaire-et-social-rentree-2",
+          "entree-ecrit-lire-un-texte-sanitaire-et-social-rentree-3"
+        ]
+      },
+      "entree.parcoursup.attendus-et-preuves": {
+        "id": "entree.parcoursup.attendus-et-preuves",
+        "titre": "Relier ses expériences aux attendus",
+        "domaine": "entree",
+        "branche": "parcoursup",
+        "niveau": 1,
+        "objectifs": [
+          "Associer une expérience personnelle à un attendu publié",
+          "Distinguer un exemple vérifiable d’une affirmation générale"
+        ],
+        "amorce": {
+          "question": "Cas fictif : « Je suis très empathique et organisé » suffit-il à montrer ce qu’un candidat sait faire ?",
+          "aide": "Cherche une situation, une action personnelle et un résultat observable.",
+          "reponse_attendue": "Il faut un exemple précis, limité à ce que le candidat a réellement fait, et expliquer son lien avec un attendu."
+        },
+        "lecon": "Une qualité déclarée n’est pas encore une preuve. La fiche Onisep du diplôme présente des attendus portant notamment sur l’intérêt sanitaire et social, les relations, l’expression, le raisonnement scientifique et arithmétique, ainsi que l’organisation. Leur détail guide ta réflexion ; il ne fournit pas une recette de candidature gagnante. Nous allons les utiliser pour examiner une expérience sans la gonfler.\n\nExercice original : pendant un travail de groupe, une candidate fictive a constaté que plusieurs consignes étaient comprises différemment. Elle a proposé une reformulation commune puis réparti les tâches avec les participants. Que peut-elle en tirer ? Elle peut décrire son action de clarification et de coopération. Elle ne peut pas en conclure qu’elle sait gérer une équipe de soins. Le lien avec un attendu est une interprétation raisonnable de l’expérience, pas une compétence clinique certifiée.\n\nConstruis une trace en trois moments : la situation rend l’action compréhensible ; ton action dit ce que tu as personnellement réalisé ; le recul précise ce que tu as appris ou ce que tu ferais autrement. Évite les formules qui rendent ton rôle impossible à distinguer de celui des autres. « Nous avons réussi » peut être vrai, mais ne dit pas comment tu as contribué. « J’ai tout organisé » mérite d’être corrigé si la répartition avait été collective.\n\nUn exemple modeste peut être plus instructif qu’une grande affirmation. Une activité familiale, scolaire, sportive ou associative peut fournir une situation à analyser. L’exercice ne t’invite pas à inventer un stage, une responsabilité ou une difficulté surmontée. Si tu n’as pas encore d’exemple pour une capacité, écris que tu souhaites l’explorer et indique une prochaine action possible.\n\nLe piège inverse serait de remplir mécaniquement toutes les catégories avec le même récit. Choisis plutôt ce que l’expérience montre effectivement. Dans le cas précédent, la clarification des consignes soutient l’expression et la coopération. Elle ne montre pas nécessairement l’arithmétique. La grille de correction cherchera un lien argumenté, une action identifiable et une limite honnête. Cette démarche est un entraînement original à l’explicitation ; seule la formation visée publie ses critères d’examen.",
+        "synthese": {
+          "consigne": "Cas fictif : dans une association, un candidat a aidé à reformuler des consignes et à préparer le matériel avec deux personnes. Propose un paragraphe précis puis une limite.",
+          "attendus": [
+            "Action personnelle identifiable.",
+            "Lien justifié avec un attendu.",
+            "Contribution collective conservée.",
+            "Aucune compétence infirmière inventée."
+          ]
+        },
+        "sources": [
+          {
+            "texte": "Onisep : diplôme d’État infirmier, attendus",
+            "url": "https://www.onisep.fr/ressources/univers-formation/formations/post-bac/diplome-d-etat-d-infirmier",
+            "nature": "institution",
+            "consulte_le": "2026-09-07",
+            "parti": "Organisme public ; portée pédagogique ou information sur la candidature, pas promesse d’admission."
+          }
+        ],
+        "provenance": {
+          "auteur": "modele",
+          "modele": "GPT-6",
+          "outil": "Codex",
+          "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root",
+          "genere_le": "2026-09-07",
+          "sources_retrouvees": 1,
+          "sources_concordantes": 0,
+          "sans_source": false
+        },
+        "verifie_par": {
+          "outil": "Codex",
+          "modele": "GPT-6",
+          "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root/revue_ifsi",
+          "date": "2026-09-07",
+          "rapport": "travail/rentree-2026-09-07/RELECTURE-IFSI.md",
+          "assertions": [
+            "Sources HTML et exercices examinés indépendamment ; cas fictifs, réponses et calculs contrôlés dans le rapport."
+          ],
+          "sources": [
+            "https://www.onisep.fr/ressources/univers-formation/formations/post-bac/diplome-d-etat-d-infirmier"
+          ],
+          "reserves": [
+            "Aucune admission, aptitude clinique ou efficacité chez Arthur démontrée.",
+            "Titre historique FPC pour le calcul ; usage préparatoire général explicitement indiqué."
+          ]
+        },
+        "verifie": "2026-09-07",
+        "version": 1,
+        "statut": "valide",
+        "peremption": "2027-01-07",
+        "cartes": [
+          "entree-parcoursup-attendus-et-preuves-rentree-1",
+          "entree-parcoursup-attendus-et-preuves-rentree-2",
+          "entree-parcoursup-attendus-et-preuves-rentree-3"
+        ]
+      },
+      "entree.parcoursup.autopositionnement": {
+        "id": "entree.parcoursup.autopositionnement",
+        "titre": "Comprendre l’auto-positionnement Parcoursup",
+        "domaine": "entree",
+        "branche": "parcoursup",
+        "niveau": 1,
+        "objectifs": [
+          "Expliquer pourquoi les réponses du test officiel ne classent pas le candidat",
+          "Distinguer le diagnostic pédagogique de l’Académie du test officiel Parcoursup"
+        ],
+        "amorce": {
+          "question": "Cas fictif : un candidat cherche les « meilleures réponses » au test officiel pour améliorer son classement. Que lui expliquer ?",
+          "aide": "Distingue obligation de réalisation, transmission des réponses et sélection.",
+          "reponse_attendue": "Le test officiel aide à comprendre la formation ; ses réponses ne sont pas communiquées aux formations et ne servent pas à la sélection."
+        },
+        "lecon": "Le test d’auto-positionnement de Parcoursup est présenté comme un moyen de réfléchir à la connaissance du métier et de la formation. La page consultée précise qu’il est obligatoire pour confirmer les vœux IFSI, mais que les réponses ne sont pas transmises aux formations et n’interviennent pas dans la sélection. Un exercice de l’Académie n’effectue pas cette démarche officielle à ta place.\n\nCela change la façon de s’y préparer. Chercher à jouer un candidat idéal enlève l’occasion de repérer une représentation incomplète. Une erreur peut révéler une question utile : qu’imaginais-tu, sur quoi t’appuyais-tu, et quel document permettrait de préciser ? Nous ne reprenons pas les questions du test officiel. Le cas suivant est un exercice original pour travailler cette attitude.\n\nUn candidat fictif pense que tout le travail infirmier est constitué de gestes techniques. Après une première recherche, il comprend que son image mérite d’être élargie. Il peut noter : « Mon idée initiale était trop étroite ; je dois explorer aussi les échanges, l’organisation et le suivi. » Cette formulation montre une révision de représentation. Elle ne prouve pas qu’il maîtrise le métier ou qu’il se sentira à l’aise dans chaque situation.\n\nPour utiliser ton résultat comme point de départ, tiens une liste de questions, et non une liste de défauts personnels. Classe ce que tu sais expliquer, ce que tu crois comprendre et ce que tu dois explorer. Choisis ensuite une action adaptée à la question : lire une fiche officielle, comparer des descriptions de la formation, préparer une question pour une rencontre d’information. La réponse à une question de connaissance et le choix de ton orientation restent deux décisions distinctes.\n\nDans la synthèse, tu vas rédiger une note avant/après sur le personnage fictif. La qualité attendue est la capacité à corriger une idée, à reconnaître une inconnue et à choisir une source utile. Répondre correctement ici ne remplit pas le test Parcoursup et n’accorde aucun avantage de sélection. Tu pourras refaire un exercice différent après tes recherches pour constater ce que tu expliques mieux ; le résultat ne doit pas être transformé en diagnostic de ton aptitude à devenir infirmier.",
+        "synthese": {
+          "consigne": "Le candidat fictif n’imaginait que des gestes techniques. Rédige une note sur son idée initiale, ce qu’il doit explorer et l’action suivante. Précise le rôle du test officiel.",
+          "attendus": [
+            "Idée initiale et incertitude explicites.",
+            "Action de recherche adaptée.",
+            "Test officiel distinct des exercices Académie.",
+            "Aucun effet de classement attribué aux réponses."
+          ]
+        },
+        "sources": [
+          {
+            "texte": "Parcoursup : test d’auto-positionnement IFSI",
+            "url": "https://www.parcoursup.gouv.fr/contenus/test-d-auto-positionnement-ifsi-1812",
+            "nature": "institution",
+            "consulte_le": "2026-09-07",
+            "parti": "Organisme public ; portée pédagogique ou information sur la candidature, pas promesse d’admission."
+          }
+        ],
+        "provenance": {
+          "auteur": "modele",
+          "modele": "GPT-6",
+          "outil": "Codex",
+          "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root",
+          "genere_le": "2026-09-07",
+          "sources_retrouvees": 1,
+          "sources_concordantes": 0,
+          "sans_source": false
+        },
+        "verifie_par": {
+          "outil": "Codex",
+          "modele": "GPT-6",
+          "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root/revue_ifsi",
+          "date": "2026-09-07",
+          "rapport": "travail/rentree-2026-09-07/RELECTURE-IFSI.md",
+          "assertions": [
+            "Sources HTML et exercices examinés indépendamment ; cas fictifs, réponses et calculs contrôlés dans le rapport."
+          ],
+          "sources": [
+            "https://www.parcoursup.gouv.fr/contenus/test-d-auto-positionnement-ifsi-1812"
+          ],
+          "reserves": [
+            "Aucune admission, aptitude clinique ou efficacité chez Arthur démontrée.",
+            "Titre historique FPC pour le calcul ; usage préparatoire général explicitement indiqué."
+          ]
+        },
+        "verifie": "2026-09-07",
+        "version": 1,
+        "statut": "valide",
+        "peremption": "2027-01-07",
+        "cartes": [
+          "entree-parcoursup-autopositionnement-rentree-1",
+          "entree-parcoursup-autopositionnement-rentree-2",
+          "entree-parcoursup-autopositionnement-rentree-3"
+        ]
+      },
+      "entree.parcoursup.projet-et-activites": {
+        "id": "entree.parcoursup.projet-et-activites",
+        "titre": "Rédiger le projet et les activités",
+        "domaine": "entree",
+        "branche": "parcoursup",
+        "niveau": 2,
+        "objectifs": [
+          "Rédiger un paragraphe de motivation appuyé sur une expérience",
+          "Réviser une rubrique d’activités pour la rendre précise"
+        ],
+        "amorce": {
+          "question": "Cas fictif : « Depuis toujours je veux aider, donc ce métier est fait pour moi ». Quelle question rendrait ce projet plus précis ?",
+          "aide": "Relie une expérience réelle, ce que tu en comprends et ce que tu veux apprendre.",
+          "reponse_attendue": "Demander ce qui a nourri cet intérêt et ce que le candidat connaît réellement de la formation et du métier."
+        },
+        "lecon": "Un projet de formation ne se réduit pas à une déclaration d’enthousiasme. Parcoursup invite les candidats à expliciter leurs motivations, leurs compétences et leurs expériences dans les rubriques demandées. Il faut aussi lire les critères des instituts envisagés. Le texte doit aider le lecteur à comprendre ton cheminement, sans lui demander de croire une vocation sur parole.\n\nPrenons un brouillon fictif : « J’aime le contact, je suis courageux et je réussirai. » Aucune de ces phrases ne montre ce que son auteur a observé, essayé ou compris. Une réécriture originale pourrait partir d’une expérience de coopération scolaire : la personne a appris à écouter une consigne contradictoire, à demander une précision et à reconnaître une erreur. Cela n’est pas une expérience de soin. Le paragraphe devient intéressant lorsqu’il dit pourquoi cette expérience donne envie d’explorer un métier exigeant de la rigueur et des échanges humains.\n\nFais tenir un paragraphe autour d’une idée. Commence par une situation authentique, sélectionne l’action qui compte, explique ce qu’elle a changé dans ta réflexion et relie-la à une question sur la formation. Tu n’es pas obligé de raconter un événement spectaculaire. Ne reprends pas l’histoire fictive du module comme si elle était la tienne : elle sert seulement à comprendre la construction.\n\nLa révision se fait à plusieurs niveaux. D’abord la fidélité : chaque fait doit correspondre à ton expérience. Ensuite la précision : remplace une qualité vague par une action quand tu en disposes. Puis la cohérence : le lien vers la formation doit être compréhensible. Enfin la langue : enlève les répétitions et lis ton texte à voix haute pour repérer les phrases qui ne disent rien de concret.\n\nUne objection peut améliorer le projet. Si quelqu’un demande « que sais-tu des contraintes de ce métier ? », la réponse n’est pas de prétendre tout accepter sans expérience. Nomme ce que tu connais, ce que tu ignores encore et comment tu comptes le découvrir. Dans la synthèse, la grille juge une production explicite et honnête. Elle ne prédit ni le classement de ton dossier ni la décision d’un institut. Les limites de longueur et pièces à fournir se vérifient directement dans la campagne officielle concernée.",
+        "synthese": {
+          "consigne": "Réécris ce brouillon fictif sans inventer d’expérience : « J’aime aider ; j’ai participé à un travail de groupe difficile ; je voudrais découvrir la formation ». Ajoute la question que tu poserais au candidat pour compléter.",
+          "attendus": [
+            "Expérience conservée sans embellissement.",
+            "Lien expliqué avec le projet.",
+            "Question utile sur une information absente.",
+            "Texte personnel à adapter, jamais à recopier comme vécu."
+          ]
+        },
+        "sources": [
+          {
+            "texte": "Parcoursup : formations en soins infirmiers",
+            "url": "https://www.parcoursup.gouv.fr/trouver-une-formation/zoom-sur-des-formations-en-sante-pass-las-et-ifsi/les-formations-en-soins-1652",
+            "nature": "institution",
+            "consulte_le": "2026-09-07",
+            "parti": "Organisme public ; portée pédagogique ou information sur la candidature, pas promesse d’admission."
+          }
+        ],
+        "provenance": {
+          "auteur": "modele",
+          "modele": "GPT-6",
+          "outil": "Codex",
+          "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root",
+          "genere_le": "2026-09-07",
+          "sources_retrouvees": 1,
+          "sources_concordantes": 0,
+          "sans_source": false
+        },
+        "verifie_par": {
+          "outil": "Codex",
+          "modele": "GPT-6",
+          "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root/revue_ifsi",
+          "date": "2026-09-07",
+          "rapport": "travail/rentree-2026-09-07/RELECTURE-IFSI.md",
+          "assertions": [
+            "Sources HTML et exercices examinés indépendamment ; cas fictifs, réponses et calculs contrôlés dans le rapport."
+          ],
+          "sources": [
+            "https://www.parcoursup.gouv.fr/trouver-une-formation/zoom-sur-des-formations-en-sante-pass-las-et-ifsi/les-formations-en-soins-1652"
+          ],
+          "reserves": [
+            "Aucune admission, aptitude clinique ou efficacité chez Arthur démontrée.",
+            "Titre historique FPC pour le calcul ; usage préparatoire général explicitement indiqué."
+          ]
+        },
+        "verifie": "2026-09-07",
+        "version": 1,
+        "statut": "valide",
+        "peremption": "2027-01-07",
+        "cartes": [
+          "entree-parcoursup-projet-et-activites-rentree-1",
+          "entree-parcoursup-projet-et-activites-rentree-2",
+          "entree-parcoursup-projet-et-activites-rentree-3"
+        ]
+      },
+      "entree.parcoursup.voeux-et-calendrier": {
+        "id": "entree.parcoursup.voeux-et-calendrier",
+        "titre": "Organiser les vœux et vérifier le calendrier",
+        "domaine": "entree",
+        "branche": "parcoursup",
+        "niveau": 2,
+        "objectifs": [
+          "Retrouver une échéance sur la campagne officielle en cours",
+          "Vérifier la complétude d’une candidature fictive"
+        ],
+        "amorce": {
+          "question": "Cas fictif : une capture d’écran ancienne donne une date ; un candidat l’a inscrite dans son agenda sans ouvrir la campagne actuelle. Quel est le défaut ?",
+          "aide": "Vérifie la date du document, l’action concernée et la situation du candidat.",
+          "reponse_attendue": "La capture ne prouve pas l’échéance de la campagne actuelle ni l’action exacte à accomplir."
+        },
+        "lecon": "Un calendrier est utile quand chaque échéance correspond à une action vérifiée. Une date isolée peut être exacte dans son contexte et fausse pour ta situation. La page officielle Parcoursup permet de rejoindre les informations de campagne et les fiches des formations ; ce sont ces références actuelles qu’il faut consulter. Ce module ne fournit volontairement aucune date limite à recopier d’une année à l’autre.\n\nConstruis un tableau personnel avec l’action, sa source, l’échéance vérifiée et la preuve de réalisation. Les intitulés doivent rester concrets : ouvrir une fiche, vérifier les pièces, compléter une rubrique, contrôler le statut affiché. « Faire Parcoursup » ne permet pas de savoir ce qui est terminé. Dans l’exercice, utilise des données fictives et n’inscris aucun mot de passe, numéro de dossier ou document personnel dans ta réponse.\n\nVoici une simulation originale. La candidate a repéré deux instituts ; l’un est accessible depuis son domicile, l’autre demanderait un hébergement. Elle classe le second en premier parce que sa présentation lui plaît, mais n’a vérifié ni trajet ni budget. Son choix n’est pas interdit. Il est incomplet. Ajoute les informations nécessaires pour décider si une proposition éventuelle serait réellement acceptable. Ce travail n’invente aucun coût : les montants restent à obtenir.\n\nUne confusion fréquente oppose « enregistré » et « confirmé ». Dans une procédure, une action intermédiaire ne prouve pas que l’étape finale a réussi. Il faut lire les libellés affichés par le service au lieu d’interpréter la présence d’une ligne comme une confirmation complète. Si une consigne est ambiguë, note la question exacte à adresser au service compétent et garde une trace de la réponse utile.\n\nÀ la fin de cette séance, produis un plan que quelqu’un d’autre pourrait relire. Il doit pouvoir repérer ce que tu sais, ce que tu as vérifié et ce qui demande encore une décision. Prévoir une relecture avant une échéance est une organisation proposée, pas une obligation officielle supplémentaire. Le but est de rendre les dépendances visibles : une pièce attendue, un choix matériel non résolu ou une confirmation à contrôler. Tu restes libre d’adapter le rythme ; l’application ne réalise aucune candidature à ta place.",
+        "synthese": {
+          "consigne": "Cas fictif : un institut proche et un institut nécessitant un logement t’intéressent. Prépare une liste d’actions avec sources et inconnues, sans inventer de date ni de coût.",
+          "attendus": [
+            "Actions distinctes et vérifiables.",
+            "Campagne actuelle comme référence.",
+            "Transport/logement nommés comme inconnues.",
+            "Enregistrement et confirmation distingués."
+          ]
+        },
+        "sources": [
+          {
+            "texte": "Parcoursup : formations en soins infirmiers",
+            "url": "https://www.parcoursup.gouv.fr/trouver-une-formation/zoom-sur-des-formations-en-sante-pass-las-et-ifsi/les-formations-en-soins-1652",
+            "nature": "institution",
+            "consulte_le": "2026-09-07",
+            "parti": "Organisme public ; portée pédagogique ou information sur la candidature, pas promesse d’admission."
+          }
+        ],
+        "provenance": {
+          "auteur": "modele",
+          "modele": "GPT-6",
+          "outil": "Codex",
+          "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root",
+          "genere_le": "2026-09-07",
+          "sources_retrouvees": 1,
+          "sources_concordantes": 0,
+          "sans_source": false
+        },
+        "verifie_par": {
+          "outil": "Codex",
+          "modele": "GPT-6",
+          "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root/revue_ifsi",
+          "date": "2026-09-07",
+          "rapport": "travail/rentree-2026-09-07/RELECTURE-IFSI.md",
+          "assertions": [
+            "Sources HTML et exercices examinés indépendamment ; cas fictifs, réponses et calculs contrôlés dans le rapport."
+          ],
+          "sources": [
+            "https://www.parcoursup.gouv.fr/trouver-une-formation/zoom-sur-des-formations-en-sante-pass-las-et-ifsi/les-formations-en-soins-1652"
+          ],
+          "reserves": [
+            "Aucune admission, aptitude clinique ou efficacité chez Arthur démontrée.",
+            "Titre historique FPC pour le calcul ; usage préparatoire général explicitement indiqué."
+          ]
+        },
+        "verifie": "2026-09-07",
+        "version": 1,
+        "statut": "valide",
+        "peremption": "2027-01-07",
+        "cartes": [
+          "entree-parcoursup-voeux-et-calendrier-rentree-1",
+          "entree-parcoursup-voeux-et-calendrier-rentree-2",
+          "entree-parcoursup-voeux-et-calendrier-rentree-3"
+        ]
+      },
+      "entree.voies.la-voie-parcoursup": {
+        "id": "entree.voies.la-voie-parcoursup",
+        "titre": "La voie Parcoursup",
+        "domaine": "entree",
+        "branche": "voies",
+        "niveau": 1,
+        "objectifs": [
+          "Distinguer les pièces du dossier, les attendus et le rôle non classant du test d’auto-positionnement",
+          "Séparer une démarche officielle d’un entraînement personnel."
+        ],
+        "amorce": {
+          "question": "Cas fictif : une lycéenne prépare un concours écrit d’entrée en IFSI parce qu’un vieux manuel le conseille. Que doit-elle vérifier avant de continuer ?",
+          "aide": "Distingue sa situation, la voie d’accès et la campagne concernée.",
+          "reponse_attendue": "Vérifier la voie Parcoursup et la fiche actuelle de l’institut : pour les lycéens, la sélection se fait sur dossier, sans concours."
+        },
+        "lecon": "Avant de choisir une préparation, il faut identifier ce que l’on prépare. La page Parcoursup consultée distingue l’entrée en formation initiale, notamment pour les lycéens et étudiants en réorientation, des modalités propres à la formation professionnelle continue. Pour le premier groupe, la candidature est examinée sur dossier. Un manuel portant sur un ancien concours ne définit donc pas ta procédure actuelle. La situation administrative précise reste à vérifier dans la fiche officielle et auprès de l’institut si elle est particulière.\n\nVoici un exercice original. Une candidate fictive a noté « acheter un manuel, apprendre des questions, envoyer ma candidature ». Ce plan mélange un moyen, un entraînement et une démarche. Réécris-le autour de preuves : identifier la voie qui la concerne ; retrouver la formation visée et ses critères ; préparer les pièces demandées ; vérifier l’état de sa candidature. Le résultat utile de cette première séance est une petite fiche de repérage, pas une certitude d’être admise.\n\nDans cette fiche, sépare ce qui est connu de ce qui est à confirmer. « Je suis intéressée par le soin » décrit une intention. « Ma situation relève de cette voie » demande une vérification. « J’ai envoyé mon dossier » ne prouve pas que toutes les pièces sont recevables. Pour chaque question, note le document qui peut répondre et l’action que tu feras ensuite. Ne renseigne aucun identifiant de connexion dans l’exercice.\n\nLa difficulté est de résister à la préparation rassurante mais mal ciblée. Une personne peut travailler beaucoup et ignorer une condition de sa candidature. À l’inverse, comprendre la procédure ne prépare pas à lui seul aux exigences des études. Tu vas donc tenir deux listes : démarches de candidature et capacités à entraîner. Les suivantes porteront sur la lecture, l’expression, l’organisation et le raisonnement.\n\nContre-exemple : « Mon amie a passé un entretien, donc je dois forcément passer le même. » Il manque son statut et sa voie d’accès. La bonne question porte sur la comparabilité des situations. Dans ta production finale, formule une conclusion conditionnelle et indique la pièce qui la rendrait certaine. Ce module ne choisit pas ta voie à ta place et ne remplace aucune démarche officielle.",
+        "synthese": {
+          "consigne": "Un candidat fictif en réorientation utilise une fiche ancienne de concours. Rédige son premier plan d’action en distinguant démarches officielles et entraînement personnel.",
+          "attendus": [
+            "Situation et voie à vérifier explicitement.",
+            "Fiche officielle actuelle recherchée.",
+            "Démarche distinguée de l’entraînement.",
+            "Aucune admission déduite de ce plan."
+          ]
+        },
+        "sources": [
+          {
+            "texte": "Parcoursup : formations en soins infirmiers",
+            "url": "https://www.parcoursup.gouv.fr/trouver-une-formation/zoom-sur-des-formations-en-sante-pass-las-et-ifsi/les-formations-en-soins-1652",
+            "nature": "institution",
+            "consulte_le": "2026-09-07",
+            "parti": "Organisme public ; portée pédagogique ou information sur la candidature, pas promesse d’admission."
+          }
+        ],
+        "provenance": {
+          "auteur": "modele",
+          "modele": "GPT-6",
+          "outil": "Codex",
+          "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root",
+          "genere_le": "2026-09-07",
+          "sources_retrouvees": 1,
+          "sources_concordantes": 0,
+          "sans_source": false
+        },
+        "verifie_par": {
+          "outil": "Codex",
+          "modele": "GPT-6",
+          "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root/revue_ifsi",
+          "date": "2026-09-07",
+          "rapport": "travail/rentree-2026-09-07/RELECTURE-IFSI.md",
+          "assertions": [
+            "Sources HTML et exercices examinés indépendamment ; cas fictifs, réponses et calculs contrôlés dans le rapport."
+          ],
+          "sources": [
+            "https://www.parcoursup.gouv.fr/trouver-une-formation/zoom-sur-des-formations-en-sante-pass-las-et-ifsi/les-formations-en-soins-1652"
+          ],
+          "reserves": [
+            "Aucune admission, aptitude clinique ou efficacité chez Arthur démontrée.",
+            "Titre historique FPC pour le calcul ; usage préparatoire général explicitement indiqué."
+          ]
+        },
+        "verifie": "2026-09-07",
+        "version": 1,
+        "statut": "valide",
+        "peremption": "2027-01-07",
+        "cartes": [
+          "entree-voies-la-voie-parcoursup-rentree-1",
+          "entree-voies-la-voie-parcoursup-rentree-2",
+          "entree-voies-la-voie-parcoursup-rentree-3"
+        ]
+      },
       "methodes.communication.les-transmissions-orales": {
         "id": "methodes.communication.les-transmissions-orales",
         "titre": "Les transmissions orales",
@@ -7915,6 +9779,30 @@
       }
     },
     "parcours": [
+      {
+        "id": "entree-ifsi",
+        "metier": "ifsi",
+        "titre": "Préparer ton entrée en IFSI",
+        "promesse": "Comprendre la voie, construire ton projet, raisonner avec précision.",
+        "accroche": "Un départ pour apprendre, puis poursuivre vers la formation et les spécialisations.",
+        "rang": 1,
+        "chapitres": [
+          "entree.voies.la-voie-parcoursup",
+          "entree.parcoursup.attendus-et-preuves",
+          "entree.parcoursup.projet-et-activites",
+          "entree.parcoursup.voeux-et-calendrier",
+          "entree.parcoursup.autopositionnement",
+          "entree.ecrit.lire-un-texte-sanitaire-et-social",
+          "entree.ecrit.argumenter-en-une-page",
+          "entree.ecrit.les-calculs-de-l-ecrit"
+        ],
+        "etiquettes": [
+          "Candidature",
+          "Expression et raisonnement"
+        ],
+        "public": "Préparation à l’admission IFSI",
+        "limite": "Exercices originaux, distincts des démarches officielles. La voie Parcoursup ne comporte pas un concours écrit universel ; les autres voies ont leurs modalités à vérifier. Aucun acte clinique enseigné."
+      },
       {
         "id": "ag",
         "metier": "copro",
@@ -23756,6 +25644,30 @@
         "5": "Frontière"
       },
       "cartes": [
+        "entree-ecrit-argumenter-en-une-page-rentree-1",
+        "entree-ecrit-argumenter-en-une-page-rentree-2",
+        "entree-ecrit-argumenter-en-une-page-rentree-3",
+        "entree-ecrit-les-calculs-de-l-ecrit-rentree-1",
+        "entree-ecrit-les-calculs-de-l-ecrit-rentree-2",
+        "entree-ecrit-les-calculs-de-l-ecrit-rentree-3",
+        "entree-ecrit-lire-un-texte-sanitaire-et-social-rentree-1",
+        "entree-ecrit-lire-un-texte-sanitaire-et-social-rentree-2",
+        "entree-ecrit-lire-un-texte-sanitaire-et-social-rentree-3",
+        "entree-parcoursup-attendus-et-preuves-rentree-1",
+        "entree-parcoursup-attendus-et-preuves-rentree-2",
+        "entree-parcoursup-attendus-et-preuves-rentree-3",
+        "entree-parcoursup-autopositionnement-rentree-1",
+        "entree-parcoursup-autopositionnement-rentree-2",
+        "entree-parcoursup-autopositionnement-rentree-3",
+        "entree-parcoursup-projet-et-activites-rentree-1",
+        "entree-parcoursup-projet-et-activites-rentree-2",
+        "entree-parcoursup-projet-et-activites-rentree-3",
+        "entree-parcoursup-voeux-et-calendrier-rentree-1",
+        "entree-parcoursup-voeux-et-calendrier-rentree-2",
+        "entree-parcoursup-voeux-et-calendrier-rentree-3",
+        "entree-voies-la-voie-parcoursup-rentree-1",
+        "entree-voies-la-voie-parcoursup-rentree-2",
+        "entree-voies-la-voie-parcoursup-rentree-3",
         "methodes-communication-les-transmissions-orales-rappel",
         "methodes-communication-les-transmissions-orales-observation",
         "methodes-communication-les-transmissions-orales-demande",

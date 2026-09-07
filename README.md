@@ -1,8 +1,14 @@
 # academie, l'école d'un métier jouée tous les jours
 
-**Passe du 06/09 :** [suivi de l’essai de lundi](travail/essai-lundi-2026-09-07/SUIVI.md). Accès par pseudo et cursus, graphe des prérequis, réponses et critères conservés. Les nouveaux dossiers de contre-expertise rénovation, [fragilité](travail/fragilite-2026-09-06/RELECTURE-INDEPENDANTE.md), [façade ancienne](travail/facade-2026-09-06/RELECTURE-INDEPENDANTE.md) et [protections électriques](travail/preuve-concrete-2026-09-06/NOTIONS-ELECTRICITE.md) portent la banque locale à 144 cartes et dix études. Le suivi distingue les contrôles locaux de la publication VPS, encore en attente de confirmation directe. [Comparatif NotebookLM](travail/benchmark-notebooklm-2026-09-06/RESULTATS.md) : texte et médias récupérables, mais omission constatée sur une vraie page scannée.
-
-**Livraison locale du 05/09 :** [expérience et preuves](travail/experience-2026-09-05/LIVRAISON.md), [roadmap priorisée](ROADMAP.md). Deux parcours jouables, cinq chapitres et 27 cartes v2 relus indépendamment, en complément des 76 cartes v1. Accueil Copropriété/IFSI, étude reprenable et réponses aidées distinctes des rappels autonomes. L'[audit initial](travail/audit-2026-09-05/AUDIT.md) est conservé comme photographie avant ces corrections. Le [client a été installé sur le VPS le 05/09](travail/experience-2026-09-05/PUBLICATION-VPS.md), avec ACL Caddy et sauvegardes ; L’[essai comptes du soir](travail/onboarding/PUBLICATION-VPS.md) est publié : palette bleue, mail/mot de passe, cursus et sauvegardes séparées. Accueil HTTPS authentifié affiché ; soumission du compte technique refusée par la revue automatique du navigateur, parcours joueur VPS et trajet physique encore à constater.
+**Rentrée du 07/09 :** [état et preuves](travail/rentree-2026-09-07/SUIVI.md),
+[prompt de relais pour les autres modèles](travail/rentree-2026-09-07/RELAIS-LLM.md).
+Interface bleue commune, pseudo/mot de passe/phrase de récupération, session
+persistante, cursus actif modifiable, arbre et graphe, bibliothèque des
+389 brouillons copro. Dix-huit études interactives et 168 cartes disponibles
+localement ; la preuve VPS figure dans le suivi. Dix séances proposées par
+cursus. IFSI est un cursus continu, de l’admission aux spécialisations.
+Le carnet NotebookLM contient 200 sources ; 181 captures texte conservées ont
+été contrôlées par empreinte, sans prétendre à une relecture exhaustive.
 
 L'Académie transforme des sources vérifiées en un **arbre de
 compétences** qu'on conquiert par des exercices de rappel, de
@@ -39,7 +45,10 @@ La conception d'août est archivée intacte dans
 | 11 | [`IDEES-EN-VOL.md`](IDEES-EN-VOL.md), [`lab/VEILLE.md`](lab/VEILLE.md), [`travail/`](travail/) | ce qui n'est pas perdu |
 | 12 | [`MODELES.md`](MODELES.md), [`COMMENCER.md`](COMMENCER.md), [`prompts/`](prompts/README.md) | ce qu'un modèle peut et ne peut pas faire ici ; l'arrivée d'un élève et les prompts à coller dans Claude Code, Codex, Antigravity ou Cursor |
 
-## Ce qui existe et ce qui reste à prouver (05/09/2026)
+## Repères historiques (05/09/2026)
+
+Les nombres ci-dessous décrivent la photographie du 05/09. Pour l’état courant,
+utiliser le suivi du 07/09 et le manifeste de publication.
 
 ```
   banque/<domaine>/<branche>.json    84 cartes copro (76 valides, 4 signalées, 4 brouillons), contrat carte-v1

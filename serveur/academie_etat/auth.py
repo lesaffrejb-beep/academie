@@ -75,7 +75,7 @@ def profil_public(conn: sqlite3.Connection, pid: str) -> dict | None:
     return {"id": row["id"], "titre_affiche": row["titre_affiche"], "cree_le": row["cree_le"],
             "reglages": json.loads(row["reglages"] or "{}"), "domaines": domaines,
             "compte_personnel": bool(row["phrase_secrete_hache"]),
-            "suppression_demandee_le": row["supprime_le"], "cursus": cursus_actuel(conn, pid)}
+            "suppression_demandee_le": row["supprime_le"], "cursus": cursus_actuel(conn, pid), "cursus_inscrits": cursus_inscrits(conn, pid)}
 
 
 def modifier_reglages(conn: sqlite3.Connection, pid: str, maj: dict) -> dict:
@@ -113,8 +113,10 @@ def catalogue() -> list[str]:
 
 
 def cursus_actuel(conn, pid):
-    row = conn.execute("SELECT ligne FROM journal WHERE profil = ? AND mode = 'cursus' LIMIT 1", (pid,)).fetchone()
-    return json.loads(row[0])["cursus"] if row else None
+    from .journal import cle_chronologique
+    lignes = [json.loads(r[0]) for r in conn.execute(
+        "SELECT ligne FROM journal WHERE profil = ? AND mode = 'cursus'", (pid,))]
+    return max(lignes, key=cle_chronologique)["cursus"] if lignes else None
 
 
 def pseudo_normalise(valeur):
@@ -149,6 +151,21 @@ def creer_cle_recuperation():
     return "-".join(brut[i:i + 4] for i in range(0, len(brut), 4))
 
 
+def cursus_inscrits(conn, pid):
+    return sorted({json.loads(r[0])["cursus"] for r in conn.execute(
+        "SELECT ligne FROM journal WHERE profil=? AND mode='cursus'", (pid,))})
+
+
+def secours_choisi(data, mot_de_passe):
+    from .app import Refus
+    if "phrase_recuperation" not in data:
+        return None
+    valeur = phrase_valide(data["phrase_recuperation"])
+    if valeur == mot_de_passe:
+        raise Refus(422, "secours-identique", "Choisis une phrase de récupération différente du mot de passe.")
+    return cle_normalisee(valeur) or valeur
+
+
 def cle_normalisee(valeur):
     if not isinstance(valeur, str):
         return None
@@ -171,12 +188,13 @@ def inscrire(conn, data, appareil=""):
     pseudo = data.get("pseudo")
     pseudo_connexion = pseudo_normalise(pseudo)
     phrase = phrase_valide(data.get("phrase_secrete"))
+    secours = secours_choisi(data, phrase)
     cle = creer_cle_recuperation()
     conn.execute("BEGIN IMMEDIATE")
     try:
         pid = creer_profil(conn, pseudo.strip())
         conn.execute("UPDATE profils SET pseudo_connexion=?, phrase_secrete_hache=?, cle_recuperation_hache=? WHERE id = ?",
-                     (pseudo_connexion, hacher_secret(phrase), hacher_secret(cle_normalisee(cle)), pid))
+                     (pseudo_connexion, hacher_secret(phrase), hacher_secret(secours or cle_normalisee(cle)), pid))
         jeton = creer_jeton(conn, pid, "cookie", appareil)
         conn.execute("COMMIT")
     except sqlite3.IntegrityError:
@@ -185,23 +203,23 @@ def inscrire(conn, data, appareil=""):
     except Exception:
         conn.execute("ROLLBACK")
         raise
-    return {**profil_public(conn, pid), "cle_recuperation": cle}, jeton
+    return {**profil_public(conn, pid), **({} if secours else {"cle_recuperation": cle})}, jeton
 
 
 def connecter_compte(conn, data, appareil=""):
     from .app import Refus
     try: pseudo = pseudo_normalise(data.get("pseudo"))
-    except Refus: raise Refus(401, "connexion-refusee", "Pseudo ou phrase secrète incorrect.")
+    except Refus: raise Refus(401, "connexion-refusee", "Pseudo ou mot de passe incorrect.")
     phrase = data.get("phrase_secrete")
     if not isinstance(phrase, str) or len(phrase) > 256:
-        raise Refus(401, "connexion-refusee", "Pseudo ou phrase secrète incorrect.")
+        raise Refus(401, "connexion-refusee", "Pseudo ou mot de passe incorrect.")
     limite = "pseudo:" + hacher(pseudo)
     limiter(conn, limite)
     row = conn.execute("SELECT id, phrase_secrete_hache, supprime_le FROM profils WHERE pseudo_connexion = ?", (pseudo,)).fetchone()
     hache = row["phrase_secrete_hache"] if row else hacher_secret("", bytes(16))
     # Même calcul coûteux pour un pseudo absent ; refus identique pour tous.
     if not correspond(phrase, hache) or row is None or row["supprime_le"]:
-        raise Refus(401, "connexion-refusee", "Pseudo ou phrase secrète incorrect.")
+        raise Refus(401, "connexion-refusee", "Pseudo ou mot de passe incorrect.")
     conn.execute("DELETE FROM tentatives_auth WHERE cle = ?", (limite,))
     return profil_public(conn, row["id"]), creer_jeton(conn, row["id"], "cookie", appareil)
 
@@ -210,7 +228,8 @@ def recuperer_compte(conn, data, appareil=""):
     from .app import Refus
     try: pseudo = pseudo_normalise(data.get("pseudo"))
     except Refus: raise Refus(401, "recuperation-refusee", "Pseudo ou clé de récupération incorrect.")
-    cle = cle_normalisee(data.get("cle_recuperation"))
+    brut = data.get("cle_recuperation")
+    cle = (cle_normalisee(brut) or brut) if isinstance(brut, str) and 12 <= len(brut) <= 256 else None
     phrase = phrase_valide(data.get("phrase_secrete"))
     limite = "recuperation:" + hacher(pseudo)
     limiter(conn, limite, 8)

@@ -59,7 +59,7 @@ function SalleEtude({lecon, cartes}: {lecon: Lecon; cartes: Carte[]}) {
   function brouillon(changement: {texte?:string; aide?:boolean; choix?:number; confiance?:boolean; revelee?:boolean; coches?:number[]}) {
     const b = {texte, aide, choix, confiance, revelee, coches, ...changement};
     setTexte(b.texte); setAide(b.aide); setChoix(b.choix); setConfiance(b.confiance); setRevelee(b.revelee); setCoches(b.coches);
-    try { localStorage.setItem(cleBrouillon,JSON.stringify(b)); } catch { /* brouillon en mémoire */ }
+    try { localStorage.setItem(cleBrouillon,JSON.stringify(b)); setErreur(""); } catch { setErreur("Le brouillon ne peut pas être sauvegardé sur cet appareil. Garde cette page ouverte et copie ta réponse."); }
   }
   function ecritTexte(t: string) { brouillon({texte:t}); }
   async function enregistre(suite: string, champs: Partial<LigneJournal> = {}, prochainIndex = index) {
@@ -85,6 +85,7 @@ function SalleEtude({lecon, cartes}: {lecon: Lecon; cartes: Carte[]}) {
     <header className="etude-barre"><button className="sortie-etude" disabled={occupe} onClick={() => va("/")} aria-label="Quitter l’étude"><ArrowLeft size={20} /><span>Reprendre plus tard</span></button><span>{parcours?.titre}</span><span>Étude</span></header>
     <ol className="etude-fil" aria-label="Étapes de l’étude">{["Tenter", "Comprendre", "Pratiquer", "Expliquer"].map((e,i) => <li key={e} aria-current={i + 1 === numero ? "step" : undefined}><span>{i + 1 < numero ? <Check size={13} /> : i + 1}</span>{e}</li>)}</ol>
     <div className="etude-corps">
+      <p className="arrivee-detail">Brouillon enregistré automatiquement sur cet appareil. Les réponses confirmées rejoignent ton journal et se synchronisent.</p>
       <h1 ref={titre} tabIndex={-1}>{lecon.titre}</h1>
       {etape === "tentative" && <>
         <p className="etude-intro">Commence avec ce que tu sais. Tu pourras demander un indice.</p>

@@ -1,0 +1,229 @@
+{
+  "id": "entree.ecrit.les-calculs-de-l-ecrit",
+  "titre": "Les calculs simples de l’écrit FPC",
+  "domaine": "entree",
+  "branche": "ecrit",
+  "niveau": 2,
+  "prerequis": [],
+  "objectifs": [
+    "Résoudre un problème de calcul simple ; l’entraînement sans calculatrice est un choix pédagogique",
+    "Expliquer le prix unitaire et vérifier les unités du résultat."
+  ],
+  "amorce": {
+    "question": "Exercice fictif : 6 cahiers coûtent 18 euros au même prix unitaire. Combien coûtent 10 cahiers, sans remise ni frais fixes ?",
+    "aide": "Passe par une unité et écris ce que représente chaque nombre.",
+    "reponse_attendue": "Un cahier coûte 18 ÷ 6 = 3 euros ; 10 cahiers coûtent 30 euros."
+  },
+  "lecon": "Cette séance travaille des bases arithmétiques utiles pour préparer les études. Son identifiant appartient à la branche historique de l’écrit FPC ; elle est ici utilisée comme remise à niveau générale. Elle ne signifie pas que les candidats Parcoursup doivent passer une épreuve de calcul. Aucun dosage, débit de perfusion ou décision de soin n’est enseigné.\n\nDans l’exercice fictif, six cahiers coûtent dix-huit euros avec un même prix unitaire, sans remise ni frais fixes. Le prix d’un cahier est donc dix-huit divisé par six, soit trois euros. Pour dix cahiers, on multiplie trois par dix : trente euros. Les données et le tarif sont inventés pour l’exercice. Le mécanisme relève de la proportionnalité, qui relie les grandeurs par un coefficient constant, telle qu’enseignée dans les ressources nationales de mathématiques.\n\nLe calcul ne commence pas par une multiplication automatique. Vérifie d’abord le modèle. Si le magasin ajoute un montant fixe de livraison, le coût total n’est plus proportionnel au nombre de cahiers. Le prix des cahiers seuls peut le rester. Nommer le périmètre évite d’appliquer une règle de trois à toute situation comportant plusieurs nombres.\n\nUn pourcentage exprime une part rapportée à cent. Autre exercice fictif : parmi quarante inscriptions, dix sont confirmées. La part confirmée vaut dix divisé par quarante, soit un quart, donc vingt-cinq pour cent. Si cinq inscriptions supplémentaires sont confirmées sans changer le total, la part vaut quinze sur quarante, soit trente-sept virgule cinq pour cent. L’augmentation de la part est de douze virgule cinq points de pourcentage ; elle ne se confond pas avec le taux de croissance du nombre confirmé.\n\nPour vérifier ton résultat, donne toujours l’unité et le sens. Trente euros est un prix, pas un nombre de cahiers. Vingt-cinq pour cent porte sur les quarante inscriptions, pas sur les seules confirmations. Un résultat supérieur au total doit déclencher une relecture si tu cherchais une partie de ce total. Ce contrôle de cohérence peut révéler une erreur sans refaire toute l’opération.\n\nDans la synthèse, écris les étapes et explique l’hypothèse qui autorise ton calcul. Une calculatrice peut vérifier une opération ; elle ne choisit pas correctement le dénominateur à ta place. La correction est mathématique sur des données fictives et ne renseigne pas sur ton aptitude à réaliser un acte clinique.",
+  "synthese": {
+    "consigne": "Exercices fictifs : 8 cahiers coûtent 24 euros au même prix, sans frais ; calcule le prix de 5 cahiers. Puis 12 inscriptions sur 48 sont confirmées : calcule leur part et explique le dénominateur.",
+    "attendus": [
+      "24 ÷ 8 = 3 euros par cahier puis 5 × 3 = 15 euros.",
+      "12 ÷ 48 = 0,25 soit 25 %.",
+      "Prix unitaire constant et absence de frais explicités.",
+      "Unité et total de référence nommés."
+    ]
+  },
+  "sources": [
+    {
+      "texte": "Éducation nationale : programme de mathématiques cycle 4, référence pédagogique historique de 2015",
+      "url": "https://www.education.gouv.fr/bo/15/Special11/MENE1526483Aannexe3.htm",
+      "nature": "institution",
+      "consulte_le": "2026-09-07",
+      "parti": "Texte pédagogique institutionnel historique ; appui sur proportionnalité et unités, pas programme actuel ou règlement d’admission IFSI."
+    }
+  ],
+  "provenance": {
+    "auteur": "modele",
+    "modele": "GPT-6",
+    "outil": "Codex",
+    "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root",
+    "genere_le": "2026-09-07",
+    "sources_retrouvees": 1,
+    "sources_concordantes": 0,
+    "sans_source": false
+  },
+  "statut": "valide",
+  "partage": "banque",
+  "verifie": "2026-09-07",
+  "peremption": "2027-01-07",
+  "version": 1,
+  "cartes": [
+    {
+      "id": "entree-ecrit-les-calculs-de-l-ecrit-rentree-1",
+      "chapitre": "entree.ecrit.les-calculs-de-l-ecrit",
+      "domaine": "entree",
+      "branche": "ecrit",
+      "niveau": 2,
+      "type": "flash",
+      "question": "Qu’est-ce qui caractérise une situation de proportionnalité entre deux grandeurs ?",
+      "reponse": "Un coefficient multiplicateur constant relie les valeurs correspondantes.",
+      "explication": "Il faut vérifier cette hypothèse avant le calcul.",
+      "aide": "Passe par une unité et écris ce que représente chaque nombre.",
+      "source": [
+        {
+          "texte": "Éducation nationale : programme de mathématiques cycle 4, référence pédagogique historique de 2015",
+          "url": "https://www.education.gouv.fr/bo/15/Special11/MENE1526483Aannexe3.htm",
+          "nature": "institution",
+          "consulte_le": "2026-09-07",
+          "parti": "Texte pédagogique institutionnel historique ; appui sur proportionnalité et unités, pas programme actuel ou règlement d’admission IFSI."
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "modele": "GPT-6",
+        "outil": "Codex",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root",
+        "genere_le": "2026-09-07",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "statut": "valide",
+      "partage": "banque",
+      "verifie": "2026-09-07",
+      "peremption": "2027-01-07",
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root/revue_ifsi",
+        "date": "2026-09-07",
+        "rapport": "travail/rentree-2026-09-07/RELECTURE-IFSI.md",
+        "assertions": [
+          "Sources HTML et exercices examinés indépendamment ; cas fictifs, réponses et calculs contrôlés dans le rapport.",
+          "Carte examinée : entree-ecrit-les-calculs-de-l-ecrit-rentree-1"
+        ],
+        "sources": [
+          "https://www.education.gouv.fr/bo/15/Special11/MENE1526483Aannexe3.htm"
+        ],
+        "reserves": [
+          "Aucune admission, aptitude clinique ou efficacité chez Arthur démontrée.",
+          "Titre historique FPC pour le calcul ; usage préparatoire général explicitement indiqué."
+        ]
+      }
+    },
+    {
+      "id": "entree-ecrit-les-calculs-de-l-ecrit-rentree-2",
+      "chapitre": "entree.ecrit.les-calculs-de-l-ecrit",
+      "domaine": "entree",
+      "branche": "ecrit",
+      "niveau": 2,
+      "type": "libre",
+      "question": "Exercice fictif : 4 cahiers coûtent 12 euros, sans frais ni remise. Quel prix pour 7 cahiers ?",
+      "reponse": "21 euros : 12 ÷ 4 = 3 euros par cahier, puis 7 × 3.",
+      "explication": "Calcul sur un tarif fictif et constant.",
+      "aide": "Passe par une unité et écris ce que représente chaque nombre.",
+      "source": [
+        {
+          "texte": "Éducation nationale : programme de mathématiques cycle 4, référence pédagogique historique de 2015",
+          "url": "https://www.education.gouv.fr/bo/15/Special11/MENE1526483Aannexe3.htm",
+          "nature": "institution",
+          "consulte_le": "2026-09-07",
+          "parti": "Texte pédagogique institutionnel historique ; appui sur proportionnalité et unités, pas programme actuel ou règlement d’admission IFSI."
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "modele": "GPT-6",
+        "outil": "Codex",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root",
+        "genere_le": "2026-09-07",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "statut": "valide",
+      "partage": "banque",
+      "verifie": "2026-09-07",
+      "peremption": "2027-01-07",
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root/revue_ifsi",
+        "date": "2026-09-07",
+        "rapport": "travail/rentree-2026-09-07/RELECTURE-IFSI.md",
+        "assertions": [
+          "Sources HTML et exercices examinés indépendamment ; cas fictifs, réponses et calculs contrôlés dans le rapport.",
+          "Carte examinée : entree-ecrit-les-calculs-de-l-ecrit-rentree-2"
+        ],
+        "sources": [
+          "https://www.education.gouv.fr/bo/15/Special11/MENE1526483Aannexe3.htm"
+        ],
+        "reserves": [
+          "Aucune admission, aptitude clinique ou efficacité chez Arthur démontrée.",
+          "Titre historique FPC pour le calcul ; usage préparatoire général explicitement indiqué."
+        ]
+      }
+    },
+    {
+      "id": "entree-ecrit-les-calculs-de-l-ecrit-rentree-3",
+      "chapitre": "entree.ecrit.les-calculs-de-l-ecrit",
+      "domaine": "entree",
+      "branche": "ecrit",
+      "niveau": 2,
+      "type": "libre",
+      "question": "Exercice fictif : 9 inscriptions sont confirmées sur 36. Quelle part est confirmée ?",
+      "reponse": "25 %, car 9 ÷ 36 = 0,25.",
+      "explication": "Le dénominateur est le total des inscriptions, pas le nombre confirmé.",
+      "aide": "Passe par une unité et écris ce que représente chaque nombre.",
+      "source": [
+        {
+          "texte": "Éducation nationale : programme de mathématiques cycle 4, référence pédagogique historique de 2015",
+          "url": "https://www.education.gouv.fr/bo/15/Special11/MENE1526483Aannexe3.htm",
+          "nature": "institution",
+          "consulte_le": "2026-09-07",
+          "parti": "Texte pédagogique institutionnel historique ; appui sur proportionnalité et unités, pas programme actuel ou règlement d’admission IFSI."
+        }
+      ],
+      "provenance": {
+        "auteur": "modele",
+        "modele": "GPT-6",
+        "outil": "Codex",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root",
+        "genere_le": "2026-09-07",
+        "sources_retrouvees": 1,
+        "sources_concordantes": 0,
+        "sans_source": false
+      },
+      "statut": "valide",
+      "partage": "banque",
+      "verifie": "2026-09-07",
+      "peremption": "2027-01-07",
+      "verifie_par": {
+        "outil": "Codex",
+        "modele": "GPT-6",
+        "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root/revue_ifsi",
+        "date": "2026-09-07",
+        "rapport": "travail/rentree-2026-09-07/RELECTURE-IFSI.md",
+        "assertions": [
+          "Sources HTML et exercices examinés indépendamment ; cas fictifs, réponses et calculs contrôlés dans le rapport.",
+          "Carte examinée : entree-ecrit-les-calculs-de-l-ecrit-rentree-3"
+        ],
+        "sources": [
+          "https://www.education.gouv.fr/bo/15/Special11/MENE1526483Aannexe3.htm"
+        ],
+        "reserves": [
+          "Aucune admission, aptitude clinique ou efficacité chez Arthur démontrée.",
+          "Titre historique FPC pour le calcul ; usage préparatoire général explicitement indiqué."
+        ]
+      }
+    }
+  ],
+  "verifie_par": {
+    "outil": "Codex",
+    "modele": "GPT-6",
+    "session": "01a07a6c-5925-7273-aa7f-fb667b5f4c8e/root/revue_ifsi",
+    "date": "2026-09-07",
+    "rapport": "travail/rentree-2026-09-07/RELECTURE-IFSI.md",
+    "assertions": [
+      "Sources HTML et exercices examinés indépendamment ; cas fictifs, réponses et calculs contrôlés dans le rapport."
+    ],
+    "sources": [
+      "https://www.education.gouv.fr/bo/15/Special11/MENE1526483Aannexe3.htm"
+    ],
+    "reserves": [
+      "Aucune admission, aptitude clinique ou efficacité chez Arthur démontrée.",
+      "Titre historique FPC pour le calcul ; usage préparatoire général explicitement indiqué."
+    ]
+  }
+}
