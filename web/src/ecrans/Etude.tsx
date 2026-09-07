@@ -1,5 +1,5 @@
 import { clePrivee } from "../app/compte";
-import { useEffect, useRef, useState, type CSSProperties } from "react";
+import { useEffect, useRef, useState, type CSSProperties, type TextareaHTMLAttributes } from "react";
 import { ArrowLeft, ArrowRight, Check, Lightbulb, ExternalLink } from "lucide-react";
 import { useMagasin } from "../app/magasin";
 import { va } from "../app/routage";
@@ -8,6 +8,8 @@ import type { Carte, Lecon, LigneJournal, Source } from "../donnees/types";
 import { etudeDisponible, repriseEtude } from "../moteur/etude";
 import { SupportEtude } from "./SupportEtude";
 import {ModuleRelier,ModuleRole,ModuleDatation} from "./ModulesSeance";
+
+type BrouillonEtude = {texte:string; aide:boolean; choix:number|null; confiance:boolean; revelee:boolean; coches:number[]};
 
 export function Etude({ id }: {id: string}) {
   const { banque, journal, jour } = useMagasin();
@@ -21,7 +23,8 @@ function SalleEtude({lecon, cartes}: {lecon: Lecon; cartes: Carte[]}) {
   const reprise = repriseEtude(lecon, journal);
   const [etape, setEtape] = useState(reprise.etape);
   const [index, setIndex] = useState(reprise.index);
-  const [texte, setTexte] = useState("");
+  const [texteInitial, setTexteInitial] = useState("");
+  const [texteRenseigne, setTexteRenseigne] = useState(false);
   const [aide, setAide] = useState(false);
   const [confiance, setConfiance] = useState(false);
   const [revelee, setRevelee] = useState(false);
@@ -32,6 +35,9 @@ function SalleEtude({lecon, cartes}: {lecon: Lecon; cartes: Carte[]}) {
   const [supportCharge, setSupportCharge] = useState<string | null>(null);
   const titre = useRef<HTMLHeadingElement>(null);
   const verrou = useRef(false);
+  const texte = useRef("");
+  const ecritureBrouillon = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const brouillonEnAttente = useRef<BrouillonEtude | null>(null);
   const parcours = banque?.etudes?.parcours.find(p => p.chapitres.includes(lecon.id));
   const prochaineId = parcours?.chapitres[(parcours.chapitres.indexOf(lecon.id) ?? -1) + 1];
   const exercices = cartes.filter(c => c.type !== "synthese");
@@ -43,30 +49,67 @@ function SalleEtude({lecon, cartes}: {lecon: Lecon; cartes: Carte[]}) {
   useEffect(() => {
     try {
       const b = JSON.parse((localStorage.getItem(cleBrouillon) ?? sessionStorage.getItem(cleBrouillon)) ?? "{}");
-      setTexte(typeof b.texte === "string" ? b.texte : ""); setAide(b.aide === true);
+      const texteRestaure = typeof b.texte === "string" ? b.texte : "";
+      texte.current = texteRestaure; setTexteInitial(texteRestaure); setTexteRenseigne(Boolean(texteRestaure.trim())); setAide(b.aide === true);
       setChoix(typeof b.choix === "number" ? b.choix : null); setConfiance(b.confiance === true); setRevelee(b.revelee === true);
       const indices:number[]=Array.isArray(b.coches) ? b.coches.filter((i:unknown):i is number=>
         typeof i === "number" && Number.isInteger(i) && i>=0 && i<lecon.synthese.attendus.length) : [];
       setCoches([...new Set(indices)].sort((a,b)=>a-b));
-    } catch { setTexte(""); setAide(false); setChoix(null); setConfiance(false); setRevelee(false); setCoches([]); }
+    } catch { texte.current = ""; setTexteInitial(""); setTexteRenseigne(false); setAide(false); setChoix(null); setConfiance(false); setRevelee(false); setCoches([]); }
     titre.current?.focus({preventScroll:true});
     window.scrollTo(0,0);
+  }, [cleBrouillon]);
+  useEffect(() => {
+    const avantQuitter = () => termineEcritureBrouillon();
+    window.addEventListener("pagehide", avantQuitter);
+    return () => {
+      window.removeEventListener("pagehide", avantQuitter);
+      termineEcritureBrouillon();
+    };
   }, [cleBrouillon]);
   useEffect(() => {
     const echap = (e: KeyboardEvent) => { if (e.key === "Escape" && !verrou.current) va("/"); };
     window.addEventListener("keydown", echap); return () => window.removeEventListener("keydown", echap);
   }, []);
-  function brouillon(changement: {texte?:string; aide?:boolean; choix?:number; confiance?:boolean; revelee?:boolean; coches?:number[]}) {
-    const b = {texte, aide, choix, confiance, revelee, coches, ...changement};
-    setTexte(b.texte); setAide(b.aide); setChoix(b.choix); setConfiance(b.confiance); setRevelee(b.revelee); setCoches(b.coches);
+  function annuleEcritureBrouillon() {
+    if (ecritureBrouillon.current) clearTimeout(ecritureBrouillon.current);
+    ecritureBrouillon.current = null;
+    brouillonEnAttente.current = null;
+  }
+  function persisteBrouillon(b: BrouillonEtude) {
     try { localStorage.setItem(cleBrouillon,JSON.stringify(b)); setErreur(""); } catch { setErreur("Le brouillon ne peut pas être sauvegardé sur cet appareil. Garde cette page ouverte et copie ta réponse."); }
   }
-  function ecritTexte(t: string) { brouillon({texte:t}); }
+  function termineEcritureBrouillon() {
+    if (!brouillonEnAttente.current) return;
+    const b = brouillonEnAttente.current;
+    annuleEcritureBrouillon();
+    persisteBrouillon(b);
+  }
+  function ecritBrouillon(b: BrouillonEtude, differe = false) {
+    annuleEcritureBrouillon();
+    if (differe) {
+      brouillonEnAttente.current = b;
+      ecritureBrouillon.current = setTimeout(() => termineEcritureBrouillon(), 250);
+    } else persisteBrouillon(b);
+  }
+  function brouillon(changement: {aide?:boolean; choix?:number; confiance?:boolean; revelee?:boolean; coches?:number[]}) {
+    const b = {texte:texte.current, aide, choix, confiance, revelee, coches, ...changement};
+    setAide(b.aide); setChoix(b.choix); setConfiance(b.confiance); setRevelee(b.revelee); setCoches(b.coches);
+    ecritBrouillon(b);
+  }
+  function ecritTexte(t: string) {
+    const etaitRenseigne = Boolean(texte.current.trim());
+    texte.current = t;
+    const estRenseigne = Boolean(t.trim());
+    if (etaitRenseigne !== estRenseigne) setTexteRenseigne(estRenseigne);
+    ecritBrouillon({texte:t, aide, choix, confiance, revelee, coches}, true);
+  }
   async function enregistre(suite: string, champs: Partial<LigneJournal> = {}, prochainIndex = index) {
     if (verrou.current) return;
     verrou.current = true; setOccupe(true); setErreur("");
+    annuleEcritureBrouillon();
     try {
-      await note({mode:"synthese", chapitre:lecon.id, attendus_coches:coches, format:"etude", contenu_version:lecon.version, etude_etape:suite, exercice_index:prochainIndex, reponse_libre:texte, aide_utilisee:aide, confiance, ...champs});
+      await note({mode:"synthese", chapitre:lecon.id, attendus_coches:coches, format:"etude", contenu_version:lecon.version, etude_etape:suite, exercice_index:prochainIndex, reponse_libre:texte.current, aide_utilisee:aide, confiance, ...champs});
       try { localStorage.removeItem(cleBrouillon); sessionStorage.removeItem(cleBrouillon); } catch { /* réponse déjà dans le journal */ }
       setEtape(suite); setIndex(prochainIndex); setRevelee(false); setChoix(null); setAide(false); setCoches([]);
     } catch { setErreur("Ta réponse n’a pas pu être enregistrée. Réessaie avant de quitter."); }
@@ -76,7 +119,7 @@ function SalleEtude({lecon, cartes}: {lecon: Lecon; cartes: Carte[]}) {
     if (!carte || (supportNecessaire && supportCharge !== carte.id)) return;
     await enregistre(index + 1 < exercices.length ? "exercices" : "synthese", {
       mode: aide ? "synthese" : "revision", carte:carte.id,
-      ...(aide ? {} : {note:noteFsrs}), reponse_libre:carte.choix?.[choix ?? -1]?.texte ?? texte,
+      ...(aide ? {} : {note:noteFsrs}), reponse_libre:carte.choix?.[choix ?? -1]?.texte ?? texte.current,
     }, index + 1);
   }
   const numero = etape === "tentative" ? 1 : etape === "principe" ? 2 : etape === "exercices" ? 3 : 4;
@@ -90,10 +133,10 @@ function SalleEtude({lecon, cartes}: {lecon: Lecon; cartes: Carte[]}) {
       {etape === "tentative" && <>
         <p className="etude-intro">Commence avec ce que tu sais. Tu pourras demander un indice.</p>
         <h2 className="question-etude">{lecon.amorce.question.replace(/\s+([;?!:])/g,"\u202f$1")}</h2>
-        <label className="reponse-etude">Ta réponse<textarea value={texte} onChange={e => ecritTexte(e.target.value)} rows={4} maxLength={5000} placeholder="Pose ton raisonnement, même incomplet." /></label>
+        <label className="reponse-etude">Ta réponse<ChampBrouillon identifiant={cleBrouillon} valeurInitiale={texteInitial} surChangement={ecritTexte} rows={4} maxLength={5000} placeholder="Pose ton raisonnement, même incomplet." /></label>
         <label className="confiance-etude"><input type="checkbox" checked={confiance} onChange={e => brouillon({confiance:e.target.checked})} />Cette réponse te semble sûre</label>
         {aide ? <p className="indice-etude"><Lightbulb size={18}/>{lecon.amorce.aide}</p> : <button className="aide-etude" onClick={() => brouillon({aide:true})}><Lightbulb size={18}/>Un indice</button>}
-        <div className="etude-actions"><button className="action-etude" disabled={!texte.trim() || occupe} onClick={() => void enregistre("principe")}>Confronter ma réponse<ArrowRight size={19}/></button><button className="lien-action" disabled={occupe} onClick={() => void enregistre("principe",{aide_utilisee:true,reponse_libre:"Sans réponse initiale"})}>Besoin des bases</button></div>
+        <div className="etude-actions"><button className="action-etude" disabled={!texteRenseigne || occupe} onClick={() => void enregistre("principe")}>Confronter ma réponse<ArrowRight size={19}/></button><button className="lien-action" disabled={occupe} onClick={() => void enregistre("principe",{aide_utilisee:true,reponse_libre:"Sans réponse initiale"})}>Besoin des bases</button></div>
       </>}
       {etape === "principe" && <>
         <section className="retour-amorce"><h2>Le principe</h2><p>{lecon.amorce.reponse_attendue}</p><details><summary>Retrouver ta première réponse</summary><p>{journal.filter(l => l.chapitre === lecon.id && l.contenu_version === lecon.version && l.etude_etape === "principe").at(-1)?.reponse_libre}</p></details></section>
@@ -106,18 +149,18 @@ function SalleEtude({lecon, cartes}: {lecon: Lecon; cartes: Carte[]}) {
         <h2 className="question-etude">{carte.question}</h2>
         {supportNecessaire && <SupportEtude key={carte.id} image={carte.image} onCharge={ok => setSupportCharge(ok ? carte.id : null)} />}
         {carte.choix ? <div className="etude-choix">{carte.choix.map((c,i) => <button key={i} aria-pressed={choix === i} disabled={revelee} onClick={() => brouillon({choix:i})}><span>{String.fromCharCode(65+i)}</span>{c.texte}</button>)}</div>
-          : carte.type === "relier" ? <ModuleRelier key={carte.id} carte={carte} reponse={texte} surChangementReponse={ecritTexte} revele={revelee}/>
-          : carte.type === "role" ? <ModuleRole key={carte.id} carte={carte} reponse={texte} surChangementReponse={ecritTexte} revele={revelee}/>
-          : carte.type === "datation" ? <ModuleDatation key={carte.id} carte={carte} reponse={texte} surChangementReponse={ecritTexte} revele={revelee}/>
-          : <label className="reponse-etude">Ta réponse<textarea disabled={revelee} rows={3} maxLength={5000} value={texte} onChange={e => ecritTexte(e.target.value)} /></label>}
-        {!revelee ? <><button className="aide-etude" onClick={() => brouillon({aide:true})}><Lightbulb size={18}/>Un indice</button>{aide && <p className="indice-etude">{String(carte.aide ?? "Identifie la règle qui change la décision, puis l’information manquante.")}</p>}<div className="etude-actions"><button className="action-etude" disabled={supportNecessaire && supportCharge !== carte.id || (carte.choix ? choix === null : !texte.trim())} onClick={() => brouillon({revelee:true})}>Voir le retour<ArrowRight size={19}/></button></div></>
+          : carte.type === "relier" ? <ModuleRelier key={carte.id} carte={carte} reponse={texte.current} surChangementReponse={ecritTexte} revele={revelee}/>
+          : carte.type === "role" ? <ModuleRole key={carte.id} carte={carte} reponse={texte.current} surChangementReponse={ecritTexte} revele={revelee}/>
+          : carte.type === "datation" ? <ModuleDatation key={carte.id} carte={carte} reponse={texte.current} surChangementReponse={ecritTexte} revele={revelee}/>
+          : <label className="reponse-etude">Ta réponse<ChampBrouillon identifiant={cleBrouillon} valeurInitiale={texteInitial} surChangement={ecritTexte} disabled={revelee} rows={3} maxLength={5000} /></label>}
+        {!revelee ? <><button className="aide-etude" onClick={() => brouillon({aide:true})}><Lightbulb size={18}/>Un indice</button>{aide && <p className="indice-etude">{String(carte.aide ?? "Identifie la règle qui change la décision, puis l’information manquante.")}</p>}<div className="etude-actions"><button className="action-etude" disabled={supportNecessaire && supportCharge !== carte.id || (carte.choix ? choix === null : !texteRenseigne)} onClick={() => brouillon({revelee:true})}>Voir le retour<ArrowRight size={19}/></button></div></>
           : <section className="retour-etude" aria-live="polite"><h3>{carte.choix ? carte.choix[choix ?? -1]?.correct ? "C’est ça." : "À reprendre." : "Compare ton raisonnement"}</h3><p>{carte.reponse}</p><p>{carte.explication}</p>{carte.choix && !carte.choix[choix ?? -1]?.correct && <p>{carte.choix[choix ?? -1]?.pourquoi_faux}</p>}{source}
             <p className="etude-intro">{aide ? "Réponse avec indice : aucun rappel autonome n’est crédité." : "Comment ce rappel s’est-il passé ?"}</p>{aide ? <button className="action-etude" disabled={occupe} onClick={() => void noteCarte(1)}>Continuer avec cette aide</button> : <div className="etude-notes">{(["À revoir", "Difficile", "Bien", "Évident"] as const).map((n,i) => <button key={n} disabled={occupe} onClick={() => void noteCarte(carte.choix && !carte.choix[choix ?? -1]?.correct ? 1 : (i + 1) as 1|2|3|4)}>{n}</button>)}</div>}</section>}
       </>}
       {etape === "synthese" && <>
         <p className="etude-intro">Une situation nouvelle. Écris sans ouvrir la leçon.</p><h2 className="question-etude">{lecon.synthese.consigne}</h2>
-        <label className="reponse-etude">Ta réponse<textarea rows={6} maxLength={5000} value={texte} onChange={e => ecritTexte(e.target.value)} placeholder="Explique ta décision et ce qui reste à vérifier." /></label>
-        <div className="etude-actions"><button className="action-etude" disabled={!texte.trim() || occupe} onClick={() => void enregistre("grille")}>Comparer à la grille<ArrowRight size={19}/></button></div>
+        <label className="reponse-etude">Ta réponse<ChampBrouillon identifiant={cleBrouillon} valeurInitiale={texteInitial} surChangement={ecritTexte} rows={6} maxLength={5000} placeholder="Explique ta décision et ce qui reste à vérifier." /></label>
+        <div className="etude-actions"><button className="action-etude" disabled={!texteRenseigne || occupe} onClick={() => void enregistre("grille")}>Comparer à la grille<ArrowRight size={19}/></button></div>
       </>}
       {etape === "grille" && <>
         <h2 className="question-etude">Ce que ta réponse doit faire apparaître</h2>
@@ -142,4 +185,17 @@ function DossierSources({sources,lecon}: {sources: Source[]; lecon: Lecon}) {
     <p>Écrit par {lecon.provenance.modele ?? "auteur non renseigné"} · {lecon.provenance.genere_le}. Relecture : {lecon.verifie_par.modele}, {lecon.verifie_par.date}.</p>
     <p>Les sources étayent le contenu. Les situations fictives et l’ordre des exercices sont des choix pédagogiques.</p>
   </details>;
+}
+
+function ChampBrouillon({identifiant, valeurInitiale, surChangement, ...props}: {
+  identifiant: string;
+  valeurInitiale: string;
+  surChangement: (valeur: string) => void;
+} & Omit<TextareaHTMLAttributes<HTMLTextAreaElement>, "value" | "onChange">) {
+  const [valeur, setValeur] = useState(valeurInitiale);
+  useEffect(() => setValeur(valeurInitiale), [identifiant, valeurInitiale]);
+  return <textarea {...props} value={valeur} onChange={e => {
+    setValeur(e.target.value);
+    surChangement(e.target.value);
+  }} />;
 }

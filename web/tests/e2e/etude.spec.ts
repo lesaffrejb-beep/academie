@@ -17,6 +17,26 @@ test("l'accueil conduit à une tentative et conserve la réponse après fermetur
   await expect(page.getByRole("heading",{name:"Le principe"})).toBeVisible();
 });
 
+test("la saisie d'une étude reste immédiate et groupe la sauvegarde du brouillon", async ({ page }) => {
+  await page.addInitScript(() => {
+    const original = Storage.prototype.setItem;
+    let ecritures = 0;
+    Storage.prototype.setItem = function(cle: string, valeur: string) {
+      if (cle.includes("academie-etude-brouillon:")) ecritures += 1;
+      return original.call(this, cle, valeur);
+    };
+    Object.defineProperty(window, "__ecrituresBrouillonEtude", { get: () => ecritures });
+  });
+  await page.goto("./");
+  await page.getByRole("button", {name:"Commencer l’étude",exact:true}).click();
+  const reponse = page.getByLabel("Ta réponse");
+  await reponse.type("Une réponse saisie sans attendre chaque écriture.");
+  await expect(reponse).toHaveValue("Une réponse saisie sans attendre chaque écriture.");
+  expect(await page.evaluate(() => (window as unknown as {__ecrituresBrouillonEtude:number}).__ecrituresBrouillonEtude)).toBe(0);
+  await page.waitForTimeout(300);
+  expect(await page.evaluate(() => (window as unknown as {__ecrituresBrouillonEtude:number}).__ecrituresBrouillonEtude)).toBe(1);
+});
+
 test("le métier IFSI ouvre ses propres contenus", async ({page}) => {
   await page.goto("./");
   await sessionTest(page,"ifsi");

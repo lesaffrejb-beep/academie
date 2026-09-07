@@ -18,6 +18,7 @@ import {
   ModuleRelier,
   ModuleDatation,
   ModuleSynthese,
+  ChampReponse,
 } from "./ModulesSeance";
 
 type TraceReponse = Pick<LigneJournal,"reponse_libre"|"attendus_coches">;
@@ -132,7 +133,7 @@ function Exercice({ carte, graine, enregistrement, enregistre }: {
   const [expGagnee, setExpGagnee] = useState<number | null>(null);
   const [confiance, setConfiance] = useState(false);
   const [choisi, setChoisi] = useState<number | null>(null);
-  const [reponse, setReponse] = useState("");
+  const reponse = useRef("");
   const [attendusCoches,setAttendusCoches] = useState<number[]>([]);
   const [imageAbsente, setImageAbsente] = useState(false);
   const [zoomImage, setZoomImage] = useState(1);
@@ -157,7 +158,7 @@ function Exercice({ carte, graine, enregistrement, enregistre }: {
         const gain = (noteChoisie === 4 ? 30 : noteChoisie === 3 ? 20 : noteChoisie === 2 ? 10 : 5);
         setExpGagnee(gain);
         if (noteChoisie >= 3) setEclat(true);
-        void enregistre(noteChoisie, confiance, Date.now() - debut.current, {reponse_libre:qcm && choisi!==null ? carte.choix?.[choisi]?.texte ?? "" : reponse,attendus_coches:attendusCoches});
+        void enregistre(noteChoisie, confiance, Date.now() - debut.current, {reponse_libre:qcm && choisi!==null ? carte.choix?.[choisi]?.texte ?? "" : reponse.current,attendus_coches:attendusCoches});
       } else if (!revele && qcm && ["1", "2", "3", "4"].includes(e.key)) {
         const choix = Number(e.key) - 1;
         if (carte.choix?.[choix]) {
@@ -175,7 +176,7 @@ function Exercice({ carte, graine, enregistrement, enregistre }: {
     }
     window.addEventListener("keydown", clavier);
     return () => window.removeEventListener("keydown", clavier);
-  }, [carte.choix, confiance, correct, enregistre, enregistrement, qcm, revele, choisi, reponse, attendusCoches]);
+  }, [carte.choix, confiance, correct, enregistre, enregistrement, qcm, revele, choisi, attendusCoches]);
 
   return <>
     <article className={`salle-carte salle-carte-${carte.type}`}>
@@ -228,22 +229,22 @@ function Exercice({ carte, graine, enregistrement, enregistre }: {
       {carte.type === "role" ? (
         <ModuleRole
           carte={carte}
-          reponse={reponse}
-          surChangementReponse={setReponse}
+          reponse={reponse.current}
+          surChangementReponse={valeur => { reponse.current = valeur; }}
           revele={revele}
         />
       ) : carte.type === "relier" ? (
         <ModuleRelier
           carte={carte}
-          reponse={reponse}
-          surChangementReponse={setReponse}
+          reponse={reponse.current}
+          surChangementReponse={valeur => { reponse.current = valeur; }}
           revele={revele}
         />
       ) : carte.type === "datation" ? (
         <ModuleDatation
           carte={carte}
-          reponse={reponse}
-          surChangementReponse={setReponse}
+          reponse={reponse.current}
+          surChangementReponse={valeur => { reponse.current = valeur; }}
           revele={revele}
         />
       ) : (carte.type === "synthese" || carte.type === "cas") ? (
@@ -251,8 +252,8 @@ function Exercice({ carte, graine, enregistrement, enregistre }: {
           attendusCoches={attendusCoches}
           surChangementAttendus={setAttendusCoches}
           carte={carte}
-          reponse={reponse}
-          surChangementReponse={setReponse}
+          reponse={reponse.current}
+          surChangementReponse={valeur => { reponse.current = valeur; }}
           revele={revele}
         />
       ) : qcm ? (
@@ -284,8 +285,8 @@ function Exercice({ carte, graine, enregistrement, enregistre }: {
       ) : carte.type !== "flash" ? (
         <div className="salle-reponse-libre">
           <label htmlFor="reponse-carte">{LIB.taReponse}</label>
-          <textarea id="reponse-carte" maxLength={5000} rows={4} value={reponse} readOnly={revele}
-            onChange={(e) => setReponse(e.target.value)} />
+          <ChampReponse identifiant={carte.id} id="reponse-carte" maxLength={5000} rows={4} reponse={reponse.current} readOnly={revele}
+            surChangementReponse={valeur => { reponse.current = valeur; }} />
         </div>
       ) : null}
 
@@ -325,7 +326,7 @@ function Exercice({ carte, graine, enregistrement, enregistre }: {
               const gain = (i === 3 ? 30 : i === 2 ? 20 : i === 1 ? 10 : 5);
               setExpGagnee(gain);
               if (i >= 2) setEclat(true);
-              void enregistre((i + 1) as 1 | 2 | 3 | 4, confiance, Date.now() - debut.current, {reponse_libre:qcm && choisi!==null ? carte.choix?.[choisi]?.texte ?? "" : reponse,attendus_coches:attendusCoches});
+              void enregistre((i + 1) as 1 | 2 | 3 | 4, confiance, Date.now() - debut.current, {reponse_libre:qcm && choisi!==null ? carte.choix?.[choisi]?.texte ?? "" : reponse.current,attendus_coches:attendusCoches});
             }}
             enfants={libelle} />)}
       </div>

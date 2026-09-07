@@ -1,4 +1,4 @@
-import { useState, useMemo, type ChangeEvent } from "react";
+import { useEffect, useState, useMemo, type TextareaHTMLAttributes } from "react";
 import {
   Check,
   Copy,
@@ -15,6 +15,19 @@ import {
 import type { Carte } from "../donnees/types";
 import {pairesDe,etapesDe,associationsDe,combineAssociations} from "./supportSeance";
 import { LIB } from "../app/i18n";
+
+export function ChampReponse({identifiant, reponse, surChangementReponse, ...props}: {
+  identifiant: string;
+  reponse: string;
+  surChangementReponse: (valeur: string) => void;
+} & Omit<TextareaHTMLAttributes<HTMLTextAreaElement>, "value" | "onChange">) {
+  const [valeur, setValeur] = useState(reponse);
+  useEffect(() => setValeur(reponse), [identifiant, reponse]);
+  return <textarea {...props} value={valeur} onChange={e => {
+    setValeur(e.target.value);
+    surChangementReponse(e.target.value);
+  }} />;
+}
 
 /**
  * 1. MODULE JEU DE ROLE & MISE EN SITUATION (type: "role")
@@ -123,13 +136,14 @@ export function ModuleRole({
         <label htmlFor="reponse-carte" className="text-xs font-semibold text-[var(--c-encre)]">
           {LIB.taReponse}
         </label>
-        <textarea
+        <ChampReponse
+          identifiant={carte.id}
           id="reponse-carte"
           maxLength={5000}
           rows={4}
-          value={reponse}
           readOnly={revele}
-          onChange={(e: ChangeEvent<HTMLTextAreaElement>) => surChangementReponse(e.target.value)}
+          reponse={reponse}
+          surChangementReponse={surChangementReponse}
           placeholder="Rédige ta réponse à l’interlocuteur et les questions utiles à la situation."
         />
       </div>
@@ -156,12 +170,14 @@ export function ModuleRelier({
 
   const [selectionGauche, setSelectionGauche] = useState<string | null>(null);
   const [erreurAssociation,setErreurAssociation]=useState("");
-  const {liens,explication} = useMemo(()=>associationsDe(reponse,donneesPaires),[reponse,donneesPaires]);
+  const [texte, setTexte] = useState(reponse);
+  useEffect(() => setTexte(reponse), [carte.id, reponse]);
+  const {liens,explication} = useMemo(()=>associationsDe(texte,donneesPaires),[texte,donneesPaires]);
 
   const synchroniserReponse = (nouveauxLiens: Record<string, string>) => {
     try {
       const prochaine=combineAssociations(nouveauxLiens,explication);
-      surChangementReponse(prochaine);setErreurAssociation("");return true;
+      setTexte(prochaine);surChangementReponse(prochaine);setErreurAssociation("");return true;
     } catch (erreur) {
       setErreurAssociation(erreur instanceof Error ? erreur.message : "L’association ne peut pas être ajoutée. Ton texte reste conservé.");
       return false;
@@ -315,9 +331,9 @@ export function ModuleRelier({
           id="reponse-carte"
           maxLength={5000}
           rows={2}
-          value={reponse}
+          value={texte}
           readOnly={revele}
-          onChange={(e: ChangeEvent<HTMLTextAreaElement>) => surChangementReponse(e.target.value)}
+          onChange={e => { setTexte(e.target.value); surChangementReponse(e.target.value); }}
           placeholder="Ex : 1-e, 2-c, 3-d..."
         />
       </div>
@@ -400,13 +416,14 @@ export function ModulePhotoPlan({
 
       <div className="salle-reponse-libre">
         <label htmlFor="reponse-carte">{LIB.taReponse}</label>
-        <textarea
+        <ChampReponse
+          identifiant={image.fichier}
           id="reponse-carte"
           maxLength={5000}
           rows={3}
-          value={reponse}
           readOnly={revele}
-          onChange={(e: ChangeEvent<HTMLTextAreaElement>) => surChangementReponse(e.target.value)}
+          reponse={reponse}
+          surChangementReponse={surChangementReponse}
           placeholder="Décris le composant, son rôle et le diagnostic de défaillance..."
         />
       </div>
@@ -479,13 +496,14 @@ export function ModuleDatation({
 
       <div className="salle-reponse-libre">
         <label htmlFor="reponse-carte">{LIB.taReponse}</label>
-        <textarea
+        <ChampReponse
+          identifiant={carte.id}
           id="reponse-carte"
           maxLength={5000}
           rows={3}
-          value={reponse}
           readOnly={revele}
-          onChange={(e: ChangeEvent<HTMLTextAreaElement>) => surChangementReponse(e.target.value)}
+          reponse={reponse}
+          surChangementReponse={surChangementReponse}
           placeholder="Nomme le délai, son point de départ et le rang de l étape..."
         />
       </div>
@@ -550,13 +568,14 @@ export function ModuleSynthese({
 
       <div className="salle-reponse-libre">
         <label htmlFor="reponse-carte">{LIB.taReponse}</label>
-        <textarea
+        <ChampReponse
+          identifiant={carte.id}
           id="reponse-carte"
           maxLength={5000}
           rows={4}
-          value={reponse}
           readOnly={revele}
-          onChange={(e: ChangeEvent<HTMLTextAreaElement>) => surChangementReponse(e.target.value)}
+          reponse={reponse}
+          surChangementReponse={surChangementReponse}
           placeholder="Rédige ta transmission ou analyse complète sans inventer de données..."
         />
       </div>
