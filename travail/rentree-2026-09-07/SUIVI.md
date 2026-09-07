@@ -48,7 +48,29 @@ Le trajet entre téléphone physique et Mac personnel reste à constater.
 
 ## Publication
 
-À compléter par le SHA, le manifeste, les sauvegardes et la preuve navigateur.
+Code publié : 53d6563a4e18dc1ea0332ece47c712a3c6a65af8 sur main et VPS,
+le 07/09/2026 à 08:34 (Paris). Archive SHA-256 :
+c4875d2032123f352118b72550bf02291f28c3b3407302d847cceaa578cedcb3.
+Vingt-cinq empreintes de fichiers contrôlées sur place : 18 études, 168 cartes,
+389 cours ; SQLite quick_check = ok. API, timer et Caddy actifs.
+Sauvegarde : /var/lib/academie/sauvegardes/avant-53d6563a4e18-20260907T063404Z.
+Caddy : /etc/caddy/Caddyfile.aca-rentree-20260907T063406Z.
+Conservation comparée : deux profils, quatre sessions, trois événements du
+journal ; aucune différence des lignes existantes. Pas de restauration SQLite.
+
+Routes anonymes /academie/, /academie-reprise/ et profil API : HTTP 401 attendu.
+Le navigateur automatisé n’a pas franchi la protection HTTP de la nouvelle
+route (net::ERR_BLOCKED_BY_CLIENT) ; l’ancien onglet continue donc d’afficher
+son ancien code. Le formulaire actuel a été inspecté visuellement sur le
+serveur local, et la reprise conservant compte/brouillon est testée localement.
+Ne pas confondre ces preuves avec un essai utilisateur authentifié sur le VPS.
+Ouvrir https://vps-5a3d618c.vps.ovh.net/academie-reprise/ avec l’accès VPS
+habituel, puis cliquer « Actualiser et ouvrir Académie ». Aucun effacement de
+données n’est requis. Le trajet physique entre deux appareils reste à constater.
+
+La CI du premier commit a signalé un tiret cadratin dans le dernier ajout de
+documentation API ; il est corrigé dans le commit de consolidation. Les tests
+Python avaient réussi ; les contrôles obligatoires sont rejoués après correction.
 Une ancienne version est restée servie par le service worker du navigateur,
 alors que le serveur possédait un paquet plus récent. Une page de reprise hors
 anciens scopes remplace les enregistrements de code sans supprimer IndexedDB,

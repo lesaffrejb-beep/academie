@@ -951,7 +951,7 @@
     {
       "id": "ACA-RENTREE-1",
       "outcome": "Accès personnel, cursus ajoutables et dix séances copro/préparation IFSI accessibles sur VPS.",
-      "status": "ready",
+      "status": "done",
       "mode": "agent-review",
       "risk": "medium",
       "priority": 110,

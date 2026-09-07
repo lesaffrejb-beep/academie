@@ -210,7 +210,7 @@ empêchent tout message de succès complet. Les originaux restent conservés.
 Les brouillons peuvent être récupérés même sans réponse validée ; ils
 restent dans le stockage local du compte, sans synchronisation serveur.
 
-## Rentrée du 07/09/2026 — compatibilité des comptes
+## Rentrée du 07/09/2026 : compatibilité des comptes
 
 `POST /compte` accepte `phrase_recuperation` en plus du champ
 historique `phrase_secrete` (qui désigne le mot de passe). Si fournie, la phrase
