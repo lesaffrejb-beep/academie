@@ -52,7 +52,9 @@ from datetime import date, datetime, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+import erreurs as erreurs_mod  # noqa: E402
 import progression as progression_mod  # noqa: E402
+import quiz as quiz_mod  # noqa: E402
 import seance as seance_mod  # noqa: E402
 from genere import charge_programme  # noqa: E402
 from planificateur import Planificateur  # noqa: E402
@@ -459,6 +461,86 @@ def cmd_schema(args, ctx) -> int:
     return 0
 
 
+# --- carnet d'erreurs et quiz (ACA-SANS-FRONT-2) ----------------------
+
+def cmd_erreur(args, ctx) -> int:
+    carte = trouve_carte(ctx["cartes"], args.carte)
+    if carte is None:
+        return _trou(f"carte inconnue : {args.carte}", args)
+    ligne = erreurs_mod.note_erreur(ctx["profil"], args.carte, args.raison,
+                                    mode=args.mode, racine_etat=dossier_etat(args))
+    if args.json:
+        print(json.dumps({"ecrit": ligne}, ensure_ascii=False, indent=2))
+        return 0
+    detail = f" — {ligne['raison']}" if ligne.get("raison") else ""
+    print(f"noté au carnet : {ligne['carte']}{detail}")
+    return 0
+
+
+def cmd_erreurs(args, ctx) -> int:
+    carnet = erreurs_mod.lit_carnet(ctx["profil"], racine_etat=dossier_etat(args))
+    recurrentes = erreurs_mod.raisons_recurrentes(carnet)
+    resume = {"profil": ctx["profil"], "lignes": len(carnet),
+              "cartes": recurrentes["par_carte"], "mots": recurrentes["par_mot"]}
+    if args.json:
+        print(json.dumps(resume, ensure_ascii=False, indent=2))
+        return 0
+    print(f"Carnet d'erreurs — profil {ctx['profil']} — {len(carnet)} ligne(s)")
+    if not carnet:
+        print("  Rien de noté. Une raison tient en une ligne, ou pas du tout.")
+        return 0
+    for fiche in recurrentes["par_carte"]:
+        print(f"  · {fiche['carte']} : {fiche['occurrences']} fois")
+    for bloc in recurrentes["par_mot"][:5]:
+        print(f"  · « {bloc['mot']} » revient sur {bloc['occurrences']} carte(s)")
+    return 0
+
+
+def cmd_quiz(args, ctx) -> int:
+    regions = [args.region] if args.region else None
+    graine = args.graine if args.graine is not None else date.today().toordinal()
+    questions = quiz_mod.compose(ctx["cartes"], ctx["config"], graine=graine,
+                                 regions=regions)
+    if args.resultats is None:
+        charge = {"graine": graine, "region": args.region,
+                  "questions": [presentation_question(c) for c in questions]}
+        if args.json:
+            print(json.dumps(charge, ensure_ascii=False, indent=2))
+            return 0
+        print(f"Quiz de positionnement — {len(questions)} question(s) — graine {graine}")
+        for c in charge["questions"]:
+            print(f"  · [{c.get('domaine')}] {c['question']}")
+        print("  Réponds, puis clôt avec `quiz --resultats '<json>'`.")
+        return 0
+    try:
+        reponses = json.loads(args.resultats)
+    except json.JSONDecodeError as exc:
+        return _trou(f"resultats illisibles : {exc}", args)
+    if not isinstance(reponses, dict):
+        return _trou("resultats attendus : un objet {id: true|false}", args)
+    resultats = []
+    for cid, juste in reponses.items():
+        carte = trouve_carte(ctx["cartes"], cid)
+        if carte is None:
+            return _trou(f"carte inconnue : {cid}", args)
+        resultats.append({"carte": cid, "domaine": carte.get("domaine"),
+                          "juste": bool(juste)})
+    try:
+        lignes = quiz_mod.applique_resultats(ctx["profil"], resultats, ctx["config"],
+                                             racine_etat=dossier_etat(args),
+                                             quand=args.quand)
+    except quiz_mod.QuizDejaJoue as exc:
+        return _trou(str(exc), args)
+    ouvertes = quiz_mod.regions_ouvertes(resultats, ctx["config"])
+    if args.json:
+        print(json.dumps({"ecrites": len(lignes), "regions_ouvertes": ouvertes},
+                         ensure_ascii=False, indent=2))
+        return 0
+    print(f"Quiz clos : {len(lignes)} bonne(s) réponse(s) écrite(s) ; "
+          f"régions ouvertes : {', '.join(ouvertes) or 'aucune'}")
+    return 0
+
+
 # --- erreurs nommées --------------------------------------------------
 
 def _trou(message: str, args) -> int:
@@ -520,6 +602,23 @@ def construit_parseur() -> argparse.ArgumentParser:
     p.add_argument("carte")
     p.add_argument("--ouvrir", action="store_true")
     p.set_defaults(fn=cmd_schema)
+
+    p = sous.add_parser("erreur", parents=[commun],
+                        help="noter pourquoi une carte est ratée")
+    p.add_argument("carte")
+    p.add_argument("raison", nargs="?", help="une ligne, facultative")
+    p.add_argument("--mode", default="flash")
+    p.set_defaults(fn=cmd_erreur)
+
+    p = sous.add_parser("erreurs", parents=[commun], help="relire le carnet d'erreurs")
+    p.set_defaults(fn=cmd_erreurs)
+
+    p = sous.add_parser("quiz", parents=[commun], help="quiz de positionnement")
+    p.add_argument("--region")
+    p.add_argument("--graine", type=int)
+    p.add_argument("--resultats", help="objet JSON {carte: true|false} pour clore")
+    p.add_argument("--quand")
+    p.set_defaults(fn=cmd_quiz)
 
     return ap
 

@@ -16,6 +16,8 @@ Tu es un agent de code et tu fais jouer une séance de l'Académie dans son dép
 
 7. Montrer, au besoin. `python3 app/academie.py qcm <id> --ouvrir` ou `schema <id> --ouvrir` écrit un HTML jetable dans `sorties/` (hors git) et l'affiche.
 
+8. Erreurs et positionnement, au besoin. Pour une carte ratée, propose de noter la cause en une ligne : `python3 app/academie.py erreur <id> "confondu avec..."`, relue par `erreurs`. Pour ne pas retaper les bases, `quiz --region <domaine>` pose les questions, puis `quiz --resultats '<json>'` clôt ; une bonne réponse amorce la carte à trois semaines, une mauvaise n'écrit rien, et le quiz ne se rejoue pas.
+
 Ce que tu ne fais pas. Aucune lecture de document, aucune écriture dans la banque, les chapitres ou le serveur. Aucun `etat/` modifié à la main. Aucun chiffre, aucune date et aucun montant sans source : si la source manque, dis « sans source retrouvée ». Aucune exclamation, aucun emoji, aucun mot du jeu (`VOIX.md`).
 
 Le rendu. Ce que tu as joué, ce qui a été journalisé, où en est le joueur, et où tu t'arrêtes.

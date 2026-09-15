@@ -174,6 +174,9 @@ MUTATIONS = [
     ("la surface agent laisse fuir la réponse dans la question", "academie.py",
      "    vue = presentation_question(carte)\n    if args.reponse:",
      "    vue = presentation_correction(carte)\n    if args.reponse:"),
+    ("le carnet d'erreurs accepte une carte inconnue", "academie.py",
+     'def cmd_erreur(args, ctx) -> int:\n    carte = trouve_carte(ctx["cartes"], args.carte)\n    if carte is None:',
+     'def cmd_erreur(args, ctx) -> int:\n    carte = trouve_carte(ctx["cartes"], args.carte)\n    if False:'),
 ]
 
 

@@ -132,6 +132,15 @@ def moteur(tmp: Path) -> dict:
 
 def journal_du(tmp: Path) -> list[dict]:
     p = tmp / "etat" / PROFIL / "revues.jsonl"
+    if not p.is_file():
+        return []
+    return [json.loads(l) for l in p.read_text(encoding="utf-8").splitlines() if l.strip()]
+
+
+def carnet_du(tmp: Path) -> list[dict]:
+    p = tmp / "etat" / PROFIL / "erreurs.jsonl"
+    if not p.is_file():
+        return []
     return [json.loads(l) for l in p.read_text(encoding="utf-8").splitlines() if l.strip()]
 
 
@@ -337,6 +346,109 @@ def test_schema_ecrit_une_fiche() -> list[str]:
         shutil.rmtree(tmp, ignore_errors=True)
 
 
+# --- 6. carnet d'erreurs (ACA-SANS-FRONT-2) --------------------------
+
+def test_erreur_ajoute_au_carnet() -> list[str]:
+    tmp = racine_jetable([carte("droit-a")])
+    try:
+        code, out, err = cli(tmp, "erreur", "droit-a", "confondu avec X")
+        if code != 0:
+            return [f"erreur a échoué (code {code}) : {err[-300:]}"]
+        cli(tmp, "erreur", "droit-a")           # sans raison : autorisé
+        lignes = carnet_du(tmp)
+        if len(lignes) != 2:
+            return [f"attendu 2 lignes de carnet, reçu {len(lignes)}"]
+        if lignes[0].get("raison") != "confondu avec X":
+            return ["la première ligne du carnet a été réécrite"]
+        if lignes[1].get("raison") is not None:
+            return ["une raison vide devrait rester nulle"]
+        return []
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+
+def test_erreur_carte_inconnue_necrit_rien() -> list[str]:
+    tmp = racine_jetable([carte("droit-a")])
+    try:
+        code, out, err = cli(tmp, "erreur", "fantome", "x")
+        if code == 0:
+            return ["noter une erreur sur une carte inconnue réussit"]
+        if carnet_du(tmp):
+            return ["une carte inconnue a quand même écrit au carnet"]
+        return []
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+
+def test_erreurs_relit_les_recurrentes() -> list[str]:
+    tmp = racine_jetable([carte("droit-a")])
+    try:
+        cli(tmp, "erreur", "droit-a", "confondu avec X")
+        cli(tmp, "erreur", "droit-a", "lu trop vite")
+        code, out, err = cli(tmp, "erreurs", "--json")
+        if code != 0:
+            return [f"erreurs a échoué (code {code}) : {err[-300:]}"]
+        resume = json.loads(out)
+        if resume["lignes"] != 2:
+            return [f"le carnet devrait compter 2 lignes, reçu {resume['lignes']}"]
+        occurrences = {f["carte"]: f["occurrences"] for f in resume["cartes"]}
+        if occurrences.get("droit-a") != 2:
+            return ["la carte à deux erreurs n'est pas remontée deux fois"]
+        return []
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+
+# --- 7. quiz de positionnement (ACA-SANS-FRONT-2) --------------------
+
+def test_quiz_sans_resultats_necrit_rien() -> list[str]:
+    tmp = racine_jetable([carte(f"droit-{x}") for x in "abc"])
+    try:
+        code, out, err = cli(tmp, "quiz", "--region", "droit", "--json")
+        if code != 0:
+            return [f"quiz a échoué (code {code}) : {err[-300:]}"]
+        charge = json.loads(out)
+        if not charge["questions"]:
+            return ["le quiz ne pose aucune question"]
+        if any(q.get("reponse") for q in charge["questions"]):
+            return ["une question de quiz porte sa réponse"]
+        if journal_du(tmp):
+            return ["un quiz sans résultats a écrit au journal"]
+        return []
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+
+def test_quiz_ecrit_les_bonnes_et_ouvre() -> list[str]:
+    tmp = racine_jetable([carte(f"droit-{x}") for x in "abcde"])
+    try:
+        resultats = json.dumps({"droit-a": True, "droit-b": True, "droit-c": True,
+                                "droit-d": True, "droit-e": False})
+        code, out, err = cli(tmp, "quiz", "--region", "droit",
+                             "--resultats", resultats, "--json",
+                             "--quand", "2026-09-15T07:00:00+00:00")
+        if code != 0:
+            return [f"quiz --resultats a échoué (code {code}) : {err[-300:]}"]
+        charge = json.loads(out)
+        if charge["ecrites"] != 4:
+            return [f"attendu 4 bonnes réponses écrites, reçu {charge['ecrites']}"]
+        if "droit" not in charge["regions_ouvertes"]:
+            return ["le quiz n'a pas ouvert la région malgré 80 % de réussite"]
+        lignes = journal_du(tmp)
+        if len(lignes) != 4:
+            return [f"une mauvaise réponse a été écrite : {len(lignes)} lignes"]
+        if any(l.get("origine") != "quiz" or l.get("carte") == "droit-e"
+               for l in lignes):
+            return ["les lignes de quiz ne portent pas la bonne origine"]
+        code2, out2, err2 = cli(tmp, "quiz", "--region", "droit",
+                                "--resultats", resultats, "--json")
+        if code2 == 0:
+            return ["un second quiz de la même région est accepté"]
+        return []
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+
 TESTS = [
     ("1. séance identique au moteur", test_seance_est_celle_du_moteur),
     ("1. progression identique au moteur", test_progression_est_celle_du_moteur),
@@ -349,6 +461,11 @@ TESTS = [
     ("4. carte inconnue : rien à jouer", test_carte_inconnue_ne_sert_rien),
     ("5. qcm écrit un HTML", test_qcm_ecrit_un_html),
     ("5. schema écrit une fiche", test_schema_ecrit_une_fiche),
+    ("6. erreur ajoute au carnet", test_erreur_ajoute_au_carnet),
+    ("6. carte inconnue n'écrit rien au carnet", test_erreur_carte_inconnue_necrit_rien),
+    ("6. erreurs relit les récurrentes", test_erreurs_relit_les_recurrentes),
+    ("7. quiz sans résultats n'écrit rien", test_quiz_sans_resultats_necrit_rien),
+    ("7. quiz n'écrit que les bonnes et ouvre", test_quiz_ecrit_les_bonnes_et_ouvre),
 ]
 
 

@@ -79,6 +79,18 @@ Vitrine jetable, hors git, ouverte dans le navigateur :
 C'est un artefact d'une séance, pas un écran à maintenir. La réponse
 n'est pas pré-marquée dans le QCM avant le clic.
 
+## Noter une erreur, passer le quiz
+
+- Quand une carte est ratée, tu peux proposer de noter la cause en une
+  ligne : `python3 app/academie.py erreur <id> "confondu avec..."`. La
+  raison est facultative et le carnet est privé. `python3 app/academie.py
+  erreurs` relit ce qui revient, pour préparer une mini-leçon.
+- Pour ne pas repasser les bases déjà sues : `python3 app/academie.py
+  quiz --region <domaine>`. Tu poses les questions, puis tu clôt avec
+  `quiz --resultats '{"<id>": true}'`. Une bonne réponse amorce la carte
+  à trois semaines ; une mauvaise n'écrit rien. Le quiz ouvre une
+  région, il ne remplit jamais sa progression, et il ne se rejoue pas.
+
 ## La voix
 
 Un collègue plus avancé, qui a le sens de la mesure. Tutoiement, faits

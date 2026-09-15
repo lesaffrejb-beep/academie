@@ -373,6 +373,26 @@
       "note": "Décision 0054. Livré le 15/09 : app/academie.py (etat, seance, carte, correction, repondre, progression, qcm, schema), app/tests_academie.py (parité moteur, append-only, réponse cachée, trou nommé, HTML), skills/academie/SKILL.md et prompts/jouer.md. tests.py, check.py et --mutation verts, mutation de fuite détectée. Comparatif des dépôts existants dans travail/veille-2026-09-15-comparatif-depots.md. Reste l'observation humaine : première séance réelle jouée et QCM affiché dans le navigateur."
     },
     {
+      "id": "ACA-SANS-FRONT-2",
+      "outcome": "La surface de conversation expose le carnet d'erreurs (erreur, erreurs) et le quiz de positionnement (quiz), en réutilisant app/erreurs.py et app/quiz.py sans les réécrire.",
+      "status": "done",
+      "done_on": "2026-09-15",
+      "mode": "agent-review",
+      "risk": "low",
+      "priority": 100,
+      "depends_on": [
+        "ACA-SANS-FRONT-1"
+      ],
+      "budget": {
+        "max_units": 1,
+        "max_minutes": 120,
+        "max_tokens": 30000
+      },
+      "proof": "tests_academie.py vert : une carte inconnue n'écrit rien au carnet, un quiz sans résultats n'écrit rien, un quiz avec résultats n'écrit que les bonnes réponses et ouvre la région, un second passage est refusé ; tests.py, check.py et la mutation verts.",
+      "parent_milestone": "ACADEMIE-V2-JOUEUR",
+      "note": "Décision 0054, suite de ACA-SANS-FRONT-1. Livré le 15/09 : erreur, erreurs, quiz dans app/academie.py ; 16 tests dans tests_academie.py ; mutation du carnet détectée. Essai réel : 2 bonnes réponses sur 3 n'ouvrent pas la région (seuil 0.8), un second passage est refusé."
+    },
+    {
       "id": "ACA-ARBRE-1",
       "outcome": "progression.py v2 descend au niveau du chapitre et de la branche : états de nœud (inconnu, ouvert, en cours, solide, validé, à revoir par seuil de fraîcheur), ouverture de branche à 75 %, règle de croissance ; genere.py publie chapitres et prérequis dans banque.json ; le client recalcule la même chose (parité).",
       "status": "done",

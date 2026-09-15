@@ -11,7 +11,10 @@ Nouveau chantier : `ACA-SANS-FRONT-1`, cahier
 15/09 : surface `app/academie.py`, tests `app/tests_academie.py`, skill
 `skills/academie/SKILL.md`, prompt `prompts/jouer.md` ; `tests.py`,
 `check.py` et `--mutation` verts. Reste l'observation humaine : une
-première séance réelle jouée et un QCM affiché. Les items
+première séance réelle jouée et un QCM affiché. `ACA-SANS-FRONT-2` est
+livré aussi : carnet d'erreurs (`erreur`, `erreurs`) et quiz de
+positionnement (`quiz`) dans la surface, 16 tests verts et une mutation
+du carnet détectée. Les items
 qui pointaient vers `ACA-FRONT-2` s'y raccrochent. La comparaison des
 dépôts existants (apprendre en chat, répétition espacée) est faite dans
 [travail/veille-2026-09-15-comparatif-depots.md](travail/veille-2026-09-15-comparatif-depots.md),
