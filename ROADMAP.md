@@ -21,6 +21,11 @@ plusieurs fois), 19 tests verts et une mutation d'intervalle détectée.
 (ouverture `seance`, réponses `revision` avec format et nonce) et expose
 `rituel` : l'habitude devient mesurable et la synchronisation serveur
 possible. 22 tests verts et deux mutations nouvelles.
+`ACA-SANS-FRONT-5` et `ACA-SANS-FRONT-6` rendent la surface multi-cursus
+et complète : `--cursus` isole copro et IFSI, `cursus <cle>` journalise
+le choix, et la surface charge aussi les chapitres v2 (92 cartes, dont
+34 IFSI restées invisibles jusqu'ici). 26 tests verts et deux mutations
+nouvelles.
 Les items
 qui pointaient vers `ACA-FRONT-2` s'y raccrochent. La comparaison des
 dépôts existants (apprendre en chat, répétition espacée) est faite dans

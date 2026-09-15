@@ -105,6 +105,25 @@ def racine_jetable(cartes=None, journal=None, avec_banque=True) -> Path:
     return tmp
 
 
+def racine_cursus() -> Path:
+    """Une racine jetable avec deux cursus et une carte dans chacun."""
+    tmp = racine_jetable([carte("a-droit", domaine="droit"),
+                          carte("b-entree", domaine="entree")])
+    prog = tmp / "programme"
+    prog.mkdir()
+    (prog / "catalogue.json").write_text(json.dumps({"parcours": [
+        {"cle": "a", "titre": "Cursus A", "programme": "programme/a.json"},
+        {"cle": "b", "titre": "Cursus B", "programme": "programme/b.json"}]}),
+        encoding="utf-8")
+    (prog / "a.json").write_text(json.dumps({
+        "metier": "A", "domaines": {"droit": {"titre": "Droit", "ordre": 1}},
+        "branches": {}, "chapitres": []}), encoding="utf-8")
+    (prog / "b.json").write_text(json.dumps({
+        "metier": "B", "domaines": {"entree": {"titre": "Entree", "ordre": 1}},
+        "branches": {}, "chapitres": []}), encoding="utf-8")
+    return tmp
+
+
 def env(tmp: Path) -> dict:
     import os
     e = dict(os.environ)
@@ -121,6 +140,16 @@ def cli(tmp: Path, *args: str, etat: bool = True) -> tuple[int, str, str]:
     if etat:
         commande += ["--etat", str(tmp / "etat")]
     res = subprocess.run(commande, capture_output=True, text=True, env=env(tmp))
+    return res.returncode, res.stdout, res.stderr
+
+
+def cli_repo(*args: str):
+    """La surface sur le dépôt réel, sans ACADEMIE_RACINE jetable."""
+    import os
+    e = dict(os.environ)
+    e.pop("ACADEMIE_RACINE", None)
+    res = subprocess.run([sys.executable, str(APP / "academie.py"), *args],
+                         capture_output=True, text=True, env=e, cwd=str(RACINE))
     return res.returncode, res.stdout, res.stderr
 
 
@@ -562,6 +591,83 @@ def test_rituel_vide() -> list[str]:
         shutil.rmtree(tmp, ignore_errors=True)
 
 
+# --- 10. cursus actif et isolation (ACA-SANS-FRONT-5) ----------------
+
+def test_cursus_isole_les_domaines() -> list[str]:
+    tmp = racine_cursus()
+    try:
+        for cle, attendu, exclu in (("a", "a-droit", "b-entree"),
+                                    ("b", "b-entree", "a-droit")):
+            code, out, err = cli(tmp, "seance", "--cursus", cle, "--json")
+            if code != 0:
+                return [f"seance --cursus {cle} a échoué (code {code}) : {err[-300:]}"]
+            ids = [c["id"] for c in json.loads(out)["cartes"]]
+            if attendu not in ids:
+                return [f"cursus {cle} ne sert pas {attendu} : {ids}"]
+            if exclu in ids:
+                return [f"cursus {cle} sert {exclu} : fuite entre cursus"]
+        code, out, _ = cli(tmp, "seance", "--json")
+        ids = [c["id"] for c in json.loads(out)["cartes"]]
+        if "b-entree" in ids:
+            return ["sans --cursus, le premier parcours ne fait pas foi"]
+        return []
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+
+def test_cursus_journalise_le_choix() -> list[str]:
+    tmp = racine_cursus()
+    try:
+        code, out, err = cli(tmp, "cursus", "b")
+        if code != 0:
+            return [f"cursus b a échoué (code {code}) : {err[-300:]}"]
+        code, out, err = cli(tmp, "seance", "--json")
+        if code != 0:
+            return [f"la séance après choix a échoué : {err[-300:]}"]
+        ids = [c["id"] for c in json.loads(out)["cartes"]]
+        if "b-entree" not in ids:
+            return ["le cursus journalisé n'est pas respecté à la séance suivante"]
+        if "a-droit" in ids:
+            return ["le cursus journalisé laisse fuir l'autre cursus"]
+        return []
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+
+def test_cursus_inconnu() -> list[str]:
+    tmp = racine_cursus()
+    try:
+        code, out, err = cli(tmp, "seance", "--cursus", "z", "--json")
+        if code == 0:
+            return ["un cursus inconnu est servi au lieu d'être refusé"]
+        return []
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+
+# --- 11. les cartes v2 sont servies (ACA-SANS-FRONT-6) ---------------
+
+def test_les_cartes_v2_et_ifsi_sont_servies() -> list[str]:
+    etat = Path(tempfile.mkdtemp(prefix="academie-repo-"))
+    try:
+        code, out, err = cli_repo("seance", "--cursus", "ifsi", "--json",
+                                  "--etat", str(etat))
+        if code != 0:
+            return [f"seance --cursus ifsi sur le dépôt a échoué "
+                    f"(code {code}) : {err[-300:]}"]
+        cartes = json.loads(out)["cartes"]
+        if not cartes:
+            return ["aucune carte IFSI servie : les chapitres v2 ne sont pas chargés"]
+        domaines = {c["domaine"] for c in cartes}
+        ifs = {"entree", "sante-publique", "humaines", "corps", "pathologies",
+               "hygiene", "pharmaco", "soins", "methodes", "stage", "culture"}
+        if domaines - ifs:
+            return [f"domaine hors IFSI servi : {sorted(domaines - ifs)}"]
+        return []
+    finally:
+        shutil.rmtree(etat, ignore_errors=True)
+
+
 TESTS = [
     ("1. séance identique au moteur", test_seance_est_celle_du_moteur),
     ("1. progression identique au moteur", test_progression_est_celle_du_moteur),
@@ -585,6 +691,10 @@ TESTS = [
     ("9. repondre écrit une ligne v1", test_repondre_ecrit_une_ligne_v1),
     ("9. rituel lit les séances de la surface", test_rituel_lit_les_seances_de_la_surface),
     ("9. rituel vide", test_rituel_vide),
+    ("10. le cursus isole les domaines", test_cursus_isole_les_domaines),
+    ("10. le choix de cursus est journalisé", test_cursus_journalise_le_choix),
+    ("10. un cursus inconnu est refusé", test_cursus_inconnu),
+    ("11. les cartes v2 et l'IFSI sont servies", test_les_cartes_v2_et_ifsi_sont_servies),
 ]
 
 

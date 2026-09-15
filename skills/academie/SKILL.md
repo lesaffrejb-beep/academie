@@ -27,6 +27,15 @@ banque reste la vérité, l'état du joueur reste un journal local.
    ajoutée par `repondre`. Le journal vit dans `etat/<pseudo>/revues.jsonl`,
    hors git, et ne se modifie ni ne se supprime à la main.
 
+## Un cursus à la fois
+
+Le dépôt porte plusieurs cursus (`programme/catalogue.json` : copro,
+IFSI). La surface n'en joue qu'un : `python3 app/academie.py cursus`
+montre l'actif et la liste, `python3 app/academie.py cursus ifsi`
+l'inscrit au journal. Sans choix, le dernier journalisé fait foi, sinon
+le premier parcours. Une carte d'un autre cursus n'entre jamais dans la
+séance. Le choix peut aussi se forcer ponctuellement : `--cursus ifsi`.
+
 ## Le geste d'une séance
 
 Tu ne codes rien. Tu ouvres le dépôt et tu appelles la surface.

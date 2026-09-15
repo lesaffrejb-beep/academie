@@ -433,6 +433,46 @@
       "note": "Décision 0054, suite de ACA-SANS-FRONT-3. Livré le 15/09 : seance.note_v1, seance.ouvre_seance, repondre en v1, seance --journaliser, commande rituel ; 22 tests, mutation de format détectée. Le journal de la surface est désormais lisible par le rituel et syncable."
     },
     {
+      "id": "ACA-SANS-FRONT-5",
+      "outcome": "La surface joue un cursus à la fois : --cursus choisit le programme du catalogue, les cartes sont isolées à ses domaines, et cursus <cle> inscrit le choix au journal. Sans option, le dernier choix journalisé, sinon le premier parcours.",
+      "status": "done",
+      "done_on": "2026-09-15",
+      "mode": "agent-review",
+      "risk": "medium",
+      "priority": 97,
+      "depends_on": [
+        "ACA-SANS-FRONT-4"
+      ],
+      "budget": {
+        "max_units": 1,
+        "max_minutes": 120,
+        "max_tokens": 30000
+      },
+      "proof": "tests_academie.py vert : deux cursus sur une racine jetable ne se mélangent pas, le premier parcours fait foi par défaut, cursus <cle> journalise le choix et la séance suivante le respecte, un cursus inconnu est un trou nommé ; tests.py, check.py et mutation verts.",
+      "parent_milestone": "ACADEMIE-V2-JOUEUR",
+      "note": "Décision 0054, suite de ACA-SANS-FRONT-4. Livré le 15/09 : option --cursus, commande cursus, isolation par domaines du programme, config domaines/socle/semaine_type prise au programme ; tests_academie.py et mutation d'isolation verts."
+    },
+    {
+      "id": "ACA-SANS-FRONT-6",
+      "outcome": "La surface charge les deux dispositions : les cartes v1 de banque/ et les cartes v2 de chapitres/, par le même chemin que genere.py, ce qui rend jouables les 92 cartes v2 dont les 34 IFSI.",
+      "status": "done",
+      "done_on": "2026-09-15",
+      "mode": "agent-review",
+      "risk": "medium",
+      "priority": 96,
+      "depends_on": [
+        "ACA-SANS-FRONT-5"
+      ],
+      "budget": {
+        "max_units": 1,
+        "max_minutes": 90,
+        "max_tokens": 25000
+      },
+      "proof": "tests_academie.py vert : sur le dépôt réel, seance --cursus ifsi sert au moins une carte IFSI et aucune hors IFSI ; tests.py, check.py et mutation verts.",
+      "parent_milestone": "ACADEMIE-V2-JOUEUR",
+      "note": "Décision 0054, suite de ACA-SANS-FRONT-5. Livré le 15/09 : charge_cartes_du_depot réunit banque v1 et chapitres v2 par les deux valideurs ; 26 tests, mutation de chargement v2 détectée. Corrige une cécité réelle : la surface ne lisait que banque/ (76 cartes) et ignorait chapitres/ (92 valides dont 34 IFSI)."
+    },
+    {
       "id": "ACA-ARBRE-1",
       "outcome": "progression.py v2 descend au niveau du chapitre et de la branche : états de nœud (inconnu, ouvert, en cours, solide, validé, à revoir par seuil de fraîcheur), ouverture de branche à 75 %, règle de croissance ; genere.py publie chapitres et prérequis dans banque.json ; le client recalcule la même chose (parité).",
       "status": "done",

@@ -37,10 +37,11 @@ Usage, pour un agent comme pour un humain :
     python3 app/academie.py mini-lecons
     python3 app/academie.py prevue <id>
     python3 app/academie.py rituel
+    python3 app/academie.py cursus [<cle>]
 
-Options communes : `--profil <pseudo>`, `--etat <dossier>` (racine du
-journal, défaut `etat/`), `--sortie <dossier>` (artefacts HTML, défaut
-`sorties/`).
+Options communes : `--profil <pseudo>`, `--cursus <cle>`, `--etat
+<dossier>` (racine du journal, défaut `etat/`), `--sortie <dossier>`
+(artefacts HTML, défaut `sorties/`).
 
 Stdlib seule, aucun appel de modèle, aucun réseau.
 """
@@ -53,6 +54,7 @@ import hashlib
 import html
 import json
 import os
+import secrets
 import sys
 import webbrowser
 from datetime import date, datetime, timezone
@@ -64,9 +66,9 @@ import progression as progression_mod  # noqa: E402
 import quiz as quiz_mod  # noqa: E402
 import rituel as rituel_mod  # noqa: E402
 import seance as seance_mod  # noqa: E402
-from genere import charge_programme  # noqa: E402
+from genere import charge_cartes_v2, charge_programme  # noqa: E402
 from planificateur import Planificateur  # noqa: E402
-from valide_banque import BANQUE, charge_banque, charge_config  # noqa: E402
+from valide_banque import ACADEMIE, BANQUE, charge_banque, charge_config  # noqa: E402
 
 RACINE = Path(__file__).resolve().parents[1]
 DOSSIER_SORTIES = RACINE / "sorties"
@@ -124,22 +126,108 @@ def ajoute_revue(profil: str, carte_id: str, note: int, format_: str,
 
 # --- contexte ---------------------------------------------------------
 
-def charge_contexte(args) -> dict:
-    """Config, banque, journal, programme : tout ce que la surface lit."""
-    config = charge_config()
-    profil = args.profil or config.get("profil_defaut", "jb")
+def charge_catalogue() -> dict:
+    """Le catalogue des cursus. Vide s'il n'existe pas (racine de test)."""
+    fichier = ACADEMIE / "programme" / "catalogue.json"
+    if not fichier.is_file():
+        return {"parcours": []}
+    try:
+        return json.loads(fichier.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        return {"parcours": []}
+
+
+def charge_cursus(cle: str | None) -> dict | None:
+    """Le programme d'un cursus, lu depuis le catalogue. None si inconnu."""
+    if not cle:
+        return None
+    for parcours in charge_catalogue().get("parcours", []):
+        if str(parcours.get("cle")) != str(cle):
+            continue
+        fichier = ACADEMIE / str(parcours.get("programme") or "")
+        if not fichier.is_file():
+            return None
+        try:
+            programme = json.loads(fichier.read_text(encoding="utf-8"))
+        except json.JSONDecodeError:
+            return None
+        return {"cle": str(cle), "meta": parcours, "programme": programme}
+    return None
+
+
+def cursus_actif(journal: list[dict], args) -> str | None:
+    """Le cursus du jour : l'option, sinon le dernier journalisé, sinon le premier.
+
+    C'est la règle de 0053 cote serveur, portee au local : le dernier
+    evenement `mode: cursus` selon l'instant reel fait foi.
+    """
+    choisi = getattr(args, "cursus", None)
+    if choisi:
+        return str(choisi)
+    for ligne in reversed(journal):
+        if ligne.get("mode") == "cursus" and ligne.get("cursus"):
+            return str(ligne["cursus"])
+    parcours = charge_catalogue().get("parcours", [])
+    return str(parcours[0]["cle"]) if parcours else None
+
+
+def config_du_cursus(config: dict, programme: dict | None) -> dict:
+    """La config moteur, domaines, socle et semaine type pris au programme."""
+    if not programme:
+        return config
+    effectif = dict(config)
+    for cle in ("domaines", "socle", "semaine_type"):
+        if programme.get(cle):
+            effectif[cle] = programme[cle]
+    return effectif
+
+
+def charge_cartes_du_depot() -> tuple[list[dict], list[str]]:
+    """Toutes les cartes jouables du dépôt : banque v1 et chapitres v2.
+
+    Le même geste que `app/genere.py` : la v1 par `charge_banque`, la v2
+    par le valideur des chapitres (couches banque et interne, sans
+    brouillon). Sans ce second chargement, les cartes v2 n'existaient pas
+    pour la surface, ni pour l'IFSI.
+    """
     paires, erreurs = charge_banque()
     cartes = [c for c, _ in paires]
+    v2, erreurs_v2, _ = charge_cartes_v2({"banque", "interne"}, False, date.today())
+    return cartes + v2, erreurs + erreurs_v2
+
+
+def charge_contexte(args) -> dict:
+    """Config, banque, journal et cursus : tout ce que la surface lit."""
+    config = charge_config()
+    profil = args.profil or config.get("profil_defaut", "jb")
+    cartes, erreurs = charge_cartes_du_depot()
     journal = lit_journal(profil, dossier_etat(args))
+
+    cle = cursus_actif(journal, args)
+    cursus = charge_cursus(cle) if cle else None
+    explicite = getattr(args, "cursus", None)
+    erreur_cursus = (f"cursus inconnu : {explicite}"
+                     if explicite and cursus is None else None)
+    if cursus is not None:
+        programme = cursus["programme"]
+        config = config_du_cursus(config, programme)
+        domaines = set(programme.get("domaines") or {})
+        if domaines:
+            cartes = [c for c in cartes if c.get("domaine") in domaines]
+    else:
+        programme = charge_programme() or None
+
     sched = Planificateur(retention=config["fsrs"]["retention_souhaitee"])
     return {
         "config": config,
         "profil": profil,
+        "cursus": cle,
+        "erreur_cursus": erreur_cursus,
         "cartes": cartes,
         "erreurs": erreurs,
         "journal": journal,
         "sched": sched,
-        "programme": charge_programme() or None,
+        "programme": programme,
         "etats": seance_mod.etats_cartes(journal, sched),
     }
 
@@ -209,6 +297,7 @@ def cmd_etat(args, ctx) -> int:
         ctx["cartes"], ctx["journal"], ctx["config"], programme=ctx["programme"])
     resume = {
         "profil": ctx["profil"],
+        "cursus": ctx.get("cursus"),
         "date": aujourdhui.isoformat(),
         "jour": seance_mod.couleur_du_jour(ctx["config"], aujourdhui),
         "revisions_dues": len(dues),
@@ -226,7 +315,7 @@ def cmd_etat(args, ctx) -> int:
         print(json.dumps(resume, ensure_ascii=False, indent=2))
         return 0
     print(f"Profil {ctx['profil']} — {aujourdhui.isoformat()} — "
-          f"{resume['jour']}")
+          f"{resume['jour']} — cursus {ctx.get('cursus') or 'aucun'}")
     if resume.get("trou"):
         print(f"  {resume['trou']}")
         return 0
@@ -636,6 +725,37 @@ def cmd_rituel(args, ctx) -> int:
     return 0
 
 
+def _ecrit_cursus(profil: str, cle: str) -> dict:
+    """Inscrit le choix de cursus au journal (mode cursus, contrat v1)."""
+    ligne = {"quand": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+             "mode": "cursus", "nonce": secrets.token_hex(8), "cursus": cle}
+    p = seance_mod.chemin_revues(profil)
+    p.parent.mkdir(parents=True, exist_ok=True)
+    with p.open("a", encoding="utf-8") as f:
+        f.write(json.dumps(ligne, ensure_ascii=False) + "\n")
+    return ligne
+
+
+def cmd_cursus(args, ctx) -> int:
+    parcours = charge_catalogue().get("parcours", [])
+    if args.cle:
+        if not any(str(p.get("cle")) == args.cle for p in parcours):
+            return _trou(f"cursus inconnu : {args.cle}", args)
+        with _etat_actif(dossier_etat(args)):
+            _ecrit_cursus(ctx["profil"], args.cle)
+        print(f"cursus actif : {args.cle}")
+        return 0
+    if args.json:
+        print(json.dumps({"actif": ctx.get("cursus"), "parcours": parcours},
+                         ensure_ascii=False, indent=2))
+        return 0
+    print(f"Cursus actif : {ctx.get('cursus') or 'aucun'}")
+    for p in parcours:
+        marque = " (actif)" if str(p.get("cle")) == str(ctx.get("cursus")) else ""
+        print(f"  · {p.get('cle')} : {p.get('titre')}{marque}")
+    return 0
+
+
 # --- erreurs nommées --------------------------------------------------
 
 def _trou(message: str, args) -> int:
@@ -652,6 +772,7 @@ def _trou(message: str, args) -> int:
 def construit_parseur() -> argparse.ArgumentParser:
     commun = argparse.ArgumentParser(add_help=False)
     commun.add_argument("--profil")
+    commun.add_argument("--cursus", help="le cursus actif (copro, ifsi, ...)")
     commun.add_argument("--etat", type=Path,
                         help="dossier racine du journal (défaut etat/)")
     commun.add_argument("--sortie", type=Path,
@@ -731,6 +852,11 @@ def construit_parseur() -> argparse.ArgumentParser:
                         help="le rapport d'habitude, lu depuis le journal")
     p.set_defaults(fn=cmd_rituel)
 
+    p = sous.add_parser("cursus", parents=[commun],
+                        help="le cursus actif et son choix")
+    p.add_argument("cle", nargs="?", help="le cursus à activer (copro, ifsi, ...)")
+    p.set_defaults(fn=cmd_cursus)
+
     return ap
 
 
@@ -740,6 +866,8 @@ def main() -> int:
         ctx = charge_contexte(args)
     except SystemExit as exc:
         return int(exc.code or 1)
+    if ctx.get("erreur_cursus"):
+        return _trou(ctx["erreur_cursus"], args)
     if ctx["erreurs"]:
         return _trou("la banque est illisible : python3 app/valide_banque.py", args)
     return args.fn(args, ctx)

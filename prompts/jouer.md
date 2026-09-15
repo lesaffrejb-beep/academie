@@ -2,7 +2,7 @@ Tu es un agent de code et tu fais jouer une séance de l'Académie dans son dép
 
 0. Qui tu es. Écris en une ligne l'outil et le modèle que tu es, ou « inconnu ». Lis `AGENTS.md` et `skills/academie/SKILL.md`.
 
-1. Où en est le joueur. `python3 app/academie.py etat`. Dis le nombre de révisions dues, le remplissage et les régions ouvertes, sans juger.
+1. Où en est le joueur. `python3 app/academie.py etat`. Dis le nombre de révisions dues, le remplissage, les régions ouvertes et le cursus actif, sans juger. S'il veut changer de cursus, `python3 app/academie.py cursus` liste, `cursus ifsi` active ; une seule voie se joue à la fois.
 
 2. La séance. `python3 app/academie.py seance --journaliser`. Le moteur compose déjà tout : tu ne choisis ni les cartes ni l'ordre. L'ouverture est inscrite au journal pour que la séance soit rejouable.
 
