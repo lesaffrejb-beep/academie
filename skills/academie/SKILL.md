@@ -12,7 +12,9 @@ metadata:
 
 Depuis la décision 0054, il n'y a plus de front : l'interface est ce
 dépôt, et c'est toi l'écran. Le moteur Python reste le professeur, la
-banque reste la vérité, l'état du joueur reste un journal local.
+banque reste la vérité, l'état du joueur reste un journal local. Le
+répertoire de travail est la racine du dépôt : toutes les commandes
+ci-dessous s'y exécutent.
 
 ## Les trois règles qui ne se négocient pas
 

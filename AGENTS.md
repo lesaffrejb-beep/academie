@@ -36,7 +36,9 @@ l'interface est ce dépôt, discuté par l'agent que tu es. Pour jouer ou
 faire jouer une séance, tu lis la banque et le journal local
 (`etat/<pseudo>/revues.jsonl`), tu appelles la surface `app/academie.py`
 quand elle existe (chantier `ACA-SANS-FRONT-1`) ; le moteur reste le
-professeur et la banque reste la vérité. Tu n'écris jamais l'état dans
+professeur et la banque reste la vérité. Les consignes de jeu sont dans
+`skills/academie/SKILL.md` ; l'installation chez un collègue est décrite
+dans `skills/README.md`. Tu n'écris jamais l'état dans
 git. Les artefacts HTML d'une séance vont dans `sorties/`, hors git, et
 le navigateur les affiche ; ce ne sont pas des écrans à maintenir.
 

@@ -17,6 +17,11 @@ Antigravity) : le moteur reste le professeur, la banque reste la vérité,
 le journal reste local et hors git. Cahier :
 [`chantiers/ACA-SANS-FRONT-1.md`](chantiers/ACA-SANS-FRONT-1.md).
 
+Le skill de jeu vit dans [`skills/academie/`](skills/academie/SKILL.md) ;
+pour l'installer chez un collègue ou le faire lire par un agent distant
+(téléphone), voir [`skills/README.md`](skills/README.md). Les licences du
+dépôt sont dans [`LICENSE.md`](LICENSE.md).
+
 L'Académie transforme des sources vérifiées en un **arbre de
 compétences** qu'on conquiert par des exercices de rappel, de
 diagnostic et de synthèse, planifiés par un algorithme de mémoire
