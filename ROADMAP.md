@@ -14,7 +14,10 @@ Nouveau chantier : `ACA-SANS-FRONT-1`, cahier
 première séance réelle jouée et un QCM affiché. `ACA-SANS-FRONT-2` est
 livré aussi : carnet d'erreurs (`erreur`, `erreurs`) et quiz de
 positionnement (`quiz`) dans la surface, 16 tests verts et une mutation
-du carnet détectée. Les items
+du carnet détectée. `ACA-SANS-FRONT-3` ferme les aides de séance :
+`prevue` (l'échéance selon la note) et `mini-lecons` (les cartes ratées
+plusieurs fois), 19 tests verts et une mutation d'intervalle détectée.
+Les items
 qui pointaient vers `ACA-FRONT-2` s'y raccrochent. La comparaison des
 dépôts existants (apprendre en chat, répétition espacée) est faite dans
 [travail/veille-2026-09-15-comparatif-depots.md](travail/veille-2026-09-15-comparatif-depots.md),

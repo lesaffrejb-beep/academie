@@ -449,6 +449,57 @@ def test_quiz_ecrit_les_bonnes_et_ouvre() -> list[str]:
         shutil.rmtree(tmp, ignore_errors=True)
 
 
+# --- 8. aides de séance (ACA-SANS-FRONT-3) ---------------------------
+
+def test_prevue_donne_quatre_intervalles() -> list[str]:
+    tmp = racine_jetable([carte("droit-a")])
+    try:
+        code, out, err = cli(tmp, "prevue", "droit-a", "--json")
+        if code != 0:
+            return [f"prevue a échoué (code {code}) : {err[-300:]}"]
+        intervalles = json.loads(out)["intervalles"]
+        if set(intervalles) != {"1", "2", "3", "4"}:
+            return ["prevue ne rend pas une échéance pour chaque note"]
+        if intervalles["4"]["intervalle_jours"] <= intervalles["1"]["intervalle_jours"]:
+            return ["les intervalles ne dépendent pas de la note"]
+        if "reponse" in out:
+            return ["prevue laisse fuir la réponse"]
+        return []
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+
+def test_mini_lecons_liste_les_ratees() -> list[str]:
+    journal = [{"quand": f"2026-09-{d:02d}T07:00:00+00:00", "carte": "droit-a",
+                "note": 1, "mode": "flash"} for d in (1, 2, 3)]
+    tmp = racine_jetable([carte("droit-a"), carte("droit-b")], journal=journal)
+    try:
+        code, out, err = cli(tmp, "mini-lecons", "--json")
+        if code != 0:
+            return [f"mini-lecons a échoué (code {code}) : {err[-300:]}"]
+        cartes = {c["carte"]: c for c in json.loads(out)["cartes"]}
+        if cartes.get("droit-a", {}).get("echecs") != 3:
+            return ["la carte ratée trois fois n'est pas listée"]
+        if "droit-b" in cartes:
+            return ["une carte sans raté entre dans les mini-leçons"]
+        return []
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+
+def test_mini_lecons_vide() -> list[str]:
+    tmp = racine_jetable([carte("droit-a")])
+    try:
+        code, out, err = cli(tmp, "mini-lecons", "--json")
+        if code != 0:
+            return [f"mini-lecons a échoué (code {code}) : {err[-300:]}"]
+        if json.loads(out)["cartes"]:
+            return ["mini-leçons liste une carte sans raté"]
+        return []
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+
 TESTS = [
     ("1. séance identique au moteur", test_seance_est_celle_du_moteur),
     ("1. progression identique au moteur", test_progression_est_celle_du_moteur),
@@ -466,6 +517,9 @@ TESTS = [
     ("6. erreurs relit les récurrentes", test_erreurs_relit_les_recurrentes),
     ("7. quiz sans résultats n'écrit rien", test_quiz_sans_resultats_necrit_rien),
     ("7. quiz n'écrit que les bonnes et ouvre", test_quiz_ecrit_les_bonnes_et_ouvre),
+    ("8. prevue rend quatre intervalles croissants", test_prevue_donne_quatre_intervalles),
+    ("8. mini-lecons liste les ratées", test_mini_lecons_liste_les_ratees),
+    ("8. mini-lecons vide sans rate", test_mini_lecons_vide),
 ]
 
 

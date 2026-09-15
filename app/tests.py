@@ -177,6 +177,9 @@ MUTATIONS = [
     ("le carnet d'erreurs accepte une carte inconnue", "academie.py",
      'def cmd_erreur(args, ctx) -> int:\n    carte = trouve_carte(ctx["cartes"], args.carte)\n    if carte is None:',
      'def cmd_erreur(args, ctx) -> int:\n    carte = trouve_carte(ctx["cartes"], args.carte)\n    if False:'),
+    ("la prévision d'intervalle ignore la note", "academie.py",
+     "            stabilite, _ = sched.premiere(note)",
+     "            stabilite, _ = sched.premiere(3)"),
 ]
 
 

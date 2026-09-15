@@ -541,6 +541,68 @@ def cmd_quiz(args, ctx) -> int:
     return 0
 
 
+# --- aides de séance (ACA-SANS-FRONT-3) -------------------------------
+
+def _intervalles(carte: dict, etats: dict, sched) -> dict:
+    """Le prochain intervalle pour chaque note, calculé par le moteur."""
+    etat = etats.get(carte["id"])
+    aujourdhui = date.today()
+    resultat = {}
+    for note in (1, 2, 3, 4):
+        if etat is None:
+            stabilite, _ = sched.premiere(note)
+        else:
+            ecoules = max(0, (aujourdhui - etat["vu_le"]).days)
+            stabilite, _ = sched.revise(etat["stabilite"], etat["difficulte"],
+                                        note, ecoules)
+        resultat[note] = {"stabilite_jours": round(stabilite, 1),
+                          "intervalle_jours": sched.intervalle(stabilite)}
+    return resultat
+
+
+def cmd_prevue(args, ctx) -> int:
+    carte = trouve_carte(ctx["cartes"], args.carte)
+    if carte is None:
+        return _trou(f"carte inconnue : {args.carte}", args)
+    vue = {"id": carte["id"], "etat_actuel": ctx["etats"].get(carte["id"]),
+           "intervalles": _intervalles(carte, ctx["etats"], ctx["sched"])}
+    if args.json:
+        print(json.dumps(vue, ensure_ascii=False, indent=2))
+        return 0
+    libelles = {1: "raté", 2: "dur", 3: "bien", 4: "facile"}
+    print(f"Carte {carte['id']} — prochaine échéance selon ta note :")
+    for note in (1, 2, 3, 4):
+        info = vue["intervalles"][note]
+        print(f"  {note} {libelles[note]:<6} : {info['intervalle_jours']} j "
+              f"(stabilité {info['stabilite_jours']} j)")
+    return 0
+
+
+def cmd_mini_lecons(args, ctx) -> int:
+    a_lecon = erreurs_mod.cartes_a_mini_lecon(ctx["journal"], ctx["config"])
+    carnet = erreurs_mod.lit_carnet(ctx["profil"], racine_etat=dossier_etat(args))
+    recurrentes = erreurs_mod.raisons_recurrentes(carnet)
+    par_id = {c["id"]: c for c in ctx["cartes"]}
+    cartes = []
+    for fiche in a_lecon:
+        carte = par_id.get(fiche["carte"])
+        cartes.append({**fiche,
+                       "question": carte.get("question") if carte else None})
+    vue = {"cartes": cartes, "raisons": recurrentes["par_mot"]}
+    if args.json:
+        print(json.dumps(vue, ensure_ascii=False, indent=2))
+        return 0
+    print(f"Mini-leçons — {len(cartes)} carte(s) ratée(s) plusieurs fois")
+    if not cartes:
+        print("  Rien à reprendre : aucune carte n'atteint le seuil d'échecs.")
+        return 0
+    for fiche in cartes:
+        print(f"  · {fiche['carte']} : {fiche['echecs']} raté(s)")
+        if fiche.get("question"):
+            print(f"    {fiche['question'][:90]}")
+    return 0
+
+
 # --- erreurs nommées --------------------------------------------------
 
 def _trou(message: str, args) -> int:
@@ -619,6 +681,15 @@ def construit_parseur() -> argparse.ArgumentParser:
     p.add_argument("--resultats", help="objet JSON {carte: true|false} pour clore")
     p.add_argument("--quand")
     p.set_defaults(fn=cmd_quiz)
+
+    p = sous.add_parser("mini-lecons", parents=[commun],
+                        help="les cartes ratées plusieurs fois, à reprendre")
+    p.set_defaults(fn=cmd_mini_lecons)
+
+    p = sous.add_parser("prevue", parents=[commun],
+                        help="la prochaine échéance selon la note choisie")
+    p.add_argument("carte")
+    p.set_defaults(fn=cmd_prevue)
 
     return ap
 

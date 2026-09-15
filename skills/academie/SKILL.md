@@ -90,6 +90,11 @@ n'est pas pré-marquée dans le QCM avant le clic.
   `quiz --resultats '{"<id>": true}'`. Une bonne réponse amorce la carte
   à trois semaines ; une mauvaise n'écrit rien. Le quiz ouvre une
   région, il ne remplit jamais sa progression, et il ne se rejoue pas.
+- Avant de noter, tu peux montrer l'effet de chaque note : `python3
+  app/academie.py prevue <id>` rend la prochaine échéance pour 1 à 4.
+  Et `python3 app/academie.py mini-lecons` liste les cartes ratées
+  plusieurs fois, avec leur question, pour proposer une reprise ciblée
+  plutôt que repasser la même.
 
 ## La voix
 

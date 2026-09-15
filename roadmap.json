@@ -393,6 +393,26 @@
       "note": "Décision 0054, suite de ACA-SANS-FRONT-1. Livré le 15/09 : erreur, erreurs, quiz dans app/academie.py ; 16 tests dans tests_academie.py ; mutation du carnet détectée. Essai réel : 2 bonnes réponses sur 3 n'ouvrent pas la région (seuil 0.8), un second passage est refusé."
     },
     {
+      "id": "ACA-SANS-FRONT-3",
+      "outcome": "La surface expose mini-lecons (cartes ratées trois fois, avec question et raisons récurrentes) et prevue (prochain intervalle selon la note 1-4), appuyés sur le moteur sans rien recalculer.",
+      "status": "done",
+      "done_on": "2026-09-15",
+      "mode": "agent-review",
+      "risk": "low",
+      "priority": 99,
+      "depends_on": [
+        "ACA-SANS-FRONT-2"
+      ],
+      "budget": {
+        "max_units": 1,
+        "max_minutes": 90,
+        "max_tokens": 25000
+      },
+      "proof": "tests_academie.py vert : prevue rend quatre intervalles croissants sans révéler la réponse, mini-lecons liste une carte ratée trois fois et sort vide sans rate ; tests.py, check.py et mutation verts.",
+      "parent_milestone": "ACADEMIE-V2-JOUEUR",
+      "note": "Décision 0054, suite de ACA-SANS-FRONT-2. Livré le 15/09 : prevue et mini-lecons dans app/academie.py ; 19 tests dans tests_academie.py ; mutation d'intervalle détectée. Reprend les patterns de la veille (règle des 3 échecs, aperçu d'intervalle de spacedrep)."
+    },
+    {
       "id": "ACA-ARBRE-1",
       "outcome": "progression.py v2 descend au niveau du chapitre et de la branche : états de nœud (inconnu, ouvert, en cours, solide, validé, à revoir par seuil de fraîcheur), ouverture de branche à 75 %, règle de croissance ; genere.py publie chapitres et prérequis dans banque.json ; le client recalcule la même chose (parité).",
       "status": "done",
