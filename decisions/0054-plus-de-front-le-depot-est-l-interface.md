@@ -25,7 +25,7 @@ La distribution des rôles ne bouge pas :
   avec leur provenance. Un chiffre, une date, un délai ou un montant sans
   source ne se dit pas (invariant 1) ;
 - **l'état reste un journal append-only**, hors de la banque et hors de
-  git (invariant 6). Un dossier par joueur, `etat/<pseudo>/journal.jsonl`,
+  git (invariant 6). Un dossier par joueur, `etat/<pseudo>/revues.jsonl`,
   local par défaut. Aucune branche par joueur : le code et la banque
   vivent dans le dépôt partagé, le carnet de chacun reste chez lui.
 

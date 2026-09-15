@@ -31,7 +31,7 @@ la banque, les valideurs, `serveur/` (conservé, non branché par défaut),
   ses sorties, il ne recompose jamais une séance (`decisions/0007`,
   invariant 5).
 - Le journal est append-only, se rejoue, n'est jamais dans git
-  (invariant 6). Un fichier par joueur : `etat/<pseudo>/journal.jsonl`.
+  (invariant 6). Un fichier par joueur : `etat/<pseudo>/revues.jsonl`.
 - Aucune branche par joueur : le dépôt partagé porte le code et la
   banque ; le carnet reste local.
 - Rien de rouge n'est servi : seules les cartes validées et leur
@@ -115,7 +115,7 @@ dépendances.
 
 ```bash
 python3 app/tests_academie.py && python3 app/tests.py && python3 tooling/check.py
-python3 app/academie.py seance --journal etat/jb/journal.jsonl
+python3 app/academie.py seance --profil jb --etat etat
 python3 app/academie.py qcm <carte> --ouvrir
 ```
 

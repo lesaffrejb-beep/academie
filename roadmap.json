@@ -354,7 +354,8 @@
     {
       "id": "ACA-SANS-FRONT-1",
       "outcome": "Plus de client web : l'agent est l'écran, le moteur reste le professeur. Une surface mince (commandes Python et consignes par outil) joue une séance de bout en bout, journalise en local et ouvre les artefacts HTML jetables.",
-      "status": "ready",
+      "status": "done",
+      "done_on": "2026-09-15",
       "mode": "agent-review",
       "risk": "medium",
       "priority": 103,
@@ -369,7 +370,7 @@
       },
       "proof": "Depuis un journal fixture, la surface rend une séance identique à app/seance.py sans web ; une carte jouée et journalisée de bout en bout ; un QCM HTML ouvert dans le navigateur ; tests.py et check.py verts ; web/ archivé et son workflow retiré.",
       "parent_milestone": "ACADEMIE-V2-JOUEUR",
-      "note": "Décision 0054. Comparatif des dépôts existants fait le 15/09 (travail/veille-2026-09-15-comparatif-depots.md) : aucun ne couvre moteur déterministe + banque sourcée + journal append-only, mais des patterns sont repris (spacedrep, learn-anything, agent-tutor-skill, agentic-learning), licences lues à la source (ACA-REUSE-1)."
+      "note": "Décision 0054. Livré le 15/09 : app/academie.py (etat, seance, carte, correction, repondre, progression, qcm, schema), app/tests_academie.py (parité moteur, append-only, réponse cachée, trou nommé, HTML), skills/academie/SKILL.md et prompts/jouer.md. tests.py, check.py et --mutation verts, mutation de fuite détectée. Comparatif des dépôts existants dans travail/veille-2026-09-15-comparatif-depots.md. Reste l'observation humaine : première séance réelle jouée et QCM affiché dans le navigateur."
     },
     {
       "id": "ACA-ARBRE-1",

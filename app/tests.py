@@ -63,6 +63,7 @@ SUITES = [
     ("registre des sources", "tests_sources.py"),
     ("rituel", "tests_rituel.py"),
     ("export Anki", "tests_export.py"),
+    ("surface agent", "tests_academie.py"),
 ]
 
 # (description, fichier, texte à remplacer, remplacement).
@@ -170,6 +171,9 @@ MUTATIONS = [
      "        pass"),
     ("un lot mixte s'annonce quand même en carte-v2", "genere.py",
      "    if cartes_v2 and nb_v1 == 0:", "    if cartes_v2:"),
+    ("la surface agent laisse fuir la réponse dans la question", "academie.py",
+     "    vue = presentation_question(carte)\n    if args.reponse:",
+     "    vue = presentation_correction(carte)\n    if args.reponse:"),
 ]
 
 

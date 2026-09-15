@@ -1,0 +1,372 @@
+#!/usr/bin/env python3
+"""Tests de la surface agent `app/academie.py` (décision 0054).
+
+Ce que ces tests protègent, dans l'ordre de gravité :
+
+  1. **La surface ne recompose pas la séance.** Ce qu'elle rend est
+     exactement ce que `seance.compose` rend sur le même journal : le
+     moteur reste le professeur, l'agent le relaie.
+  2. **Le journal est append-only.** Une réponse ajoute une ligne, ne
+     réécrit ni ne supprime jamais les précédentes.
+  3. **La réponse ne fuit pas.** `carte` montre la question sans la
+     réponse ; `correction` la donne.
+  4. **Un trou se nomme.** Banque absente, carte inconnue : la surface
+     s'arrête avec un message, elle n'invente jamais une carte.
+  5. **Les artefacts HTML sont écrits là où on le demande.**
+
+Chaque test lance la surface en sous-processus sur une racine jetable
+(`ACADEMIE_RACINE`), et compare, quand c'est le cas, au moteur appelé
+directement sur la même racine.
+
+    python3 app/tests_academie.py
+"""
+
+from __future__ import annotations
+
+import json
+import shutil
+import subprocess
+import sys
+import tempfile
+from pathlib import Path
+
+APP = Path(__file__).resolve().parent
+RACINE = APP.parent
+PROFIL = "jb"
+
+# Le moteur, appelé directement sur la racine jetable : la référence à
+# laquelle la surface doit être identique.
+CODE_MOTEUR = r"""
+import json, os, sys
+from datetime import date
+from pathlib import Path
+sys.path.insert(0, os.environ["ACADEMIE_APP"])
+import seance
+from valide_banque import charge_banque, charge_config
+from genere import charge_programme
+from planificateur import Planificateur
+from progression import carte_monde
+
+tmp = Path(os.environ["ACADEMIE_RACINE"])
+seance.ETAT = tmp / "etat"
+config = charge_config()
+cartes = [c for c, _ in charge_banque()[0]]
+journal = seance.lit_journal(os.environ["PROFIL"])
+sched = Planificateur(retention=config["fsrs"]["retention_souhaitee"])
+etats = seance.etats_cartes(journal, sched)
+programme = charge_programme() or None
+s = seance.compose(cartes, etats, config, date.today(), sched,
+                   programme=programme, journal=journal)
+monde = carte_monde(cartes, journal, config, programme=programme)
+print(json.dumps({
+    "ids": [c["id"] for c in s["revisions"] + s["nouveau"]],
+    "graine": s["graine"], "jour": s["jour"],
+    "xp": monde["xp"], "remplissage": monde["remplissage_global"],
+    "dues": len(s["revisions"]),
+}))
+"""
+
+
+def carte(cid, **maj) -> dict:
+    base = {
+        "id": cid, "domaine": "droit", "branche": "majorites", "niveau": 1,
+        "type": "flash", "question": f"Question {cid} ?", "reponse": f"Réponse {cid}.",
+        "explication": "Le pourquoi.", "vigilance": "Le piège.",
+        "source": [{"texte": "Art. 24, loi du 10 juillet 1965",
+                    "nature": "texte-officiel"}],
+        "verifie": "2026-09-01", "statut": "valide", "partage": "banque",
+    }
+    base.update(maj)
+    return base
+
+
+def carte_qcm(cid) -> dict:
+    return carte(cid, type="qcm", choix=[
+        {"texte": "Bonne", "correct": True},
+        {"texte": "Fausse A", "correct": False, "pourquoi_faux": "parce que A"},
+        {"texte": "Fausse B", "correct": False, "pourquoi_faux": "parce que B"},
+    ])
+
+
+def racine_jetable(cartes=None, journal=None, avec_banque=True) -> Path:
+    tmp = Path(tempfile.mkdtemp(prefix="academie-surface-"))
+    shutil.copy(RACINE / "academie.json", tmp / "academie.json")
+    if avec_banque:
+        (tmp / "banque" / "droit").mkdir(parents=True)
+        (tmp / "banque" / "droit" / "t.json").write_text(
+            json.dumps(cartes if cartes is not None else [], ensure_ascii=False),
+            encoding="utf-8")
+    if journal is not None:
+        dossier = tmp / "etat" / PROFIL
+        dossier.mkdir(parents=True)
+        (dossier / "revues.jsonl").write_text(
+            "\n".join(json.dumps(l, ensure_ascii=False) for l in journal) + "\n",
+            encoding="utf-8")
+    return tmp
+
+
+def env(tmp: Path) -> dict:
+    import os
+    e = dict(os.environ)
+    e["ACADEMIE_RACINE"] = str(tmp)
+    e["ACADEMIE_APP"] = str(APP)
+    e["PROFIL"] = PROFIL
+    return e
+
+
+def cli(tmp: Path, *args: str, etat: bool = True) -> tuple[int, str, str]:
+    # Les options communes vivent sur chaque sous-parser : on les met
+    # après la sous-commande, jamais avant.
+    commande = [sys.executable, str(APP / "academie.py"), *args, "--profil", PROFIL]
+    if etat:
+        commande += ["--etat", str(tmp / "etat")]
+    res = subprocess.run(commande, capture_output=True, text=True, env=env(tmp))
+    return res.returncode, res.stdout, res.stderr
+
+
+def moteur(tmp: Path) -> dict:
+    res = subprocess.run([sys.executable, "-c", CODE_MOTEUR],
+                         capture_output=True, text=True, env=env(tmp))
+    return json.loads(res.stdout) if res.returncode == 0 else {}
+
+
+def journal_du(tmp: Path) -> list[dict]:
+    p = tmp / "etat" / PROFIL / "revues.jsonl"
+    return [json.loads(l) for l in p.read_text(encoding="utf-8").splitlines() if l.strip()]
+
+
+# --- 1. parité avec le moteur ----------------------------------------
+
+def test_seance_est_celle_du_moteur() -> list[str]:
+    cartes = [carte("droit-a"), carte("droit-b"), carte("droit-c"), carte_qcm("droit-q")]
+    tmp = racine_jetable(cartes, journal=[
+        {"quand": "2026-01-01T00:00:00+00:00", "carte": "droit-a", "note": 3, "mode": "flash"}])
+    try:
+        code, out, err = cli(tmp, "seance", "--json")
+        if code != 0:
+            return [f"seance --json a échoué (code {code}) : {err[-300:]}"]
+        surface = json.loads(out)
+        reference = moteur(tmp)
+        ids_surface = [c["id"] for c in surface["cartes"]]
+        if ids_surface != reference["ids"]:
+            return [f"la surface ne joue pas la séance du moteur : "
+                    f"{ids_surface} != {reference['ids']}"]
+        if surface["graine"] != reference["graine"]:
+            return [f"graine différente : {surface['graine']} != {reference['graine']}"]
+        if surface["jour"] != reference["jour"]:
+            return [f"jour différent : {surface['jour']} != {reference['jour']}"]
+        # La carte due du journal doit être servie en révision.
+        if reference["dues"] and surface["cartes"][0]["id"] != "droit-a":
+            return ["la carte due n'est pas servie en tête"]
+        return []
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+
+def test_progression_est_celle_du_moteur() -> list[str]:
+    cartes = [carte("droit-a"), carte("droit-b")]
+    tmp = racine_jetable(cartes, journal=[
+        {"quand": "2026-01-01T00:00:00+00:00", "carte": "droit-a", "note": 3, "mode": "flash"}])
+    try:
+        code, out, err = cli(tmp, "progression", "--json")
+        if code != 0:
+            return [f"progression --json a échoué (code {code}) : {err[-300:]}"]
+        surface = json.loads(out)
+        reference = moteur(tmp)
+        if surface["xp"] != reference["xp"]:
+            return [f"xp différent : {surface['xp']} != {reference['xp']}"]
+        if surface["remplissage_global"] != reference["remplissage"]:
+            return [f"remplissage différent : {surface['remplissage_global']} "
+                    f"!= {reference['remplissage']}"]
+        return []
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+
+# --- 2. journal append-only ------------------------------------------
+
+def test_repondre_ajoute_sans_reecrire() -> list[str]:
+    cartes = [carte("droit-a"), carte("droit-b")]
+    origine = {"quand": "2026-01-01T00:00:00+00:00", "carte": "droit-a",
+               "note": 3, "mode": "flash"}
+    tmp = racine_jetable(cartes, journal=[origine])
+    try:
+        for note in (2, 4):
+            code, out, err = cli(tmp, "repondre", "droit-b", str(note))
+            if code != 0:
+                return [f"repondre a échoué (code {code}) : {err[-300:]}"]
+        lignes = journal_du(tmp)
+        if lignes[0] != origine:
+            return ["la première ligne du journal a été réécrite"]
+        if len(lignes) != 3:
+            return [f"attendu 3 lignes après deux réponses, reçu {len(lignes)}"]
+        if [l["note"] for l in lignes[1:]] != [2, 4]:
+            return ["les notes ajoutées ne sont pas dans l'ordre"]
+        return []
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+
+def test_repondre_carte_inconnue_necrit_rien() -> list[str]:
+    cartes = [carte("droit-a")]
+    tmp = racine_jetable(cartes, journal=[{"quand": "2026-01-01T00:00:00+00:00",
+                                          "carte": "droit-a", "note": 3, "mode": "flash"}])
+    try:
+        avant = journal_du(tmp)
+        code, out, err = cli(tmp, "repondre", "carte-fantome", "3")
+        if code == 0:
+            return ["repondre sur une carte inconnue réussit au lieu d'échouer"]
+        if journal_du(tmp) != avant:
+            return ["une carte inconnue a quand même écrit au journal"]
+        return []
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+
+# --- 3. la réponse ne fuit pas ---------------------------------------
+
+def test_la_question_cache_la_reponse() -> list[str]:
+    tmp = racine_jetable([carte("droit-a")])
+    try:
+        code, out, err = cli(tmp, "carte", "droit-a", "--json")
+        if code != 0:
+            return [f"carte a échoué (code {code}) : {err[-300:]}"]
+        vue = json.loads(out)
+        for champ in ("reponse", "explication", "vigilance"):
+            if champ in vue:
+                return [f"`{champ}` fuit dans la question"]
+        code, out, _ = cli(tmp, "carte", "droit-a", "--reponse", "--json")
+        avec = json.loads(out)
+        if not (avec.get("correction") or {}).get("reponse"):
+            return ["--reponse n'affiche pas la réponse"]
+        return []
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+
+def test_le_qcm_cache_le_bon_choix() -> list[str]:
+    tmp = racine_jetable([carte_qcm("droit-q")])
+    try:
+        code, out, err = cli(tmp, "carte", "droit-q", "--json")
+        if code != 0:
+            return [f"carte qcm a échoué (code {code}) : {err[-300:]}"]
+        choix = json.loads(out)["choix"]
+        if any("correct" in c for c in choix):
+            return ["un choix de QCM porte `correct` avant la correction"]
+        code, out, _ = cli(tmp, "correction", "droit-q", "--json")
+        if not any(c.get("correct") for c in json.loads(out)["choix"]):
+            return ["la correction ne dit pas quel choix est juste"]
+        return []
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+
+# --- 4. un trou se nomme ---------------------------------------------
+
+def test_banque_absente_ne_sert_rien() -> list[str]:
+    tmp = racine_jetable(avec_banque=False)
+    try:
+        code, out, err = cli(tmp, "seance", "--json")
+        if code == 0:
+            return ["une banque absente est servie comme si de rien n'était"]
+        if "aucune carte" in out and json.loads(out).get("cartes"):
+            return ["un trou a produit des cartes"]
+        return []
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+
+def test_banque_vide_ne_sert_rien() -> list[str]:
+    tmp = racine_jetable([])
+    try:
+        code, out, err = cli(tmp, "seance", "--json")
+        if code != 0:
+            return [f"une banque vide fait planter au lieu de nommer le vide : {err[-200:]}"]
+        charge = json.loads(out)
+        if charge["cartes"]:
+            return ["une banque vide sert des cartes"]
+        return []
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+
+def test_carte_inconnue_ne_sert_rien() -> list[str]:
+    tmp = racine_jetable([carte("droit-a")])
+    try:
+        code, out, err = cli(tmp, "carte", "inconnue", "--json")
+        if code == 0:
+            return ["une carte inconnue est servie"]
+        return []
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+
+# --- 5. artefacts HTML ------------------------------------------------
+
+def test_qcm_ecrit_un_html() -> list[str]:
+    tmp = racine_jetable([carte_qcm("droit-q")])
+    try:
+        sortie = tmp / "art"
+        code, out, err = cli(tmp, "qcm", "droit-q", "--sortie", str(sortie))
+        if code != 0:
+            return [f"qcm a échoué (code {code}) : {err[-300:]}"]
+        html_ = Path(out.strip())
+        if not html_.is_file():
+            return [f"le QCM n'a pas été écrit : {out.strip()}"]
+        contenu = html_.read_text(encoding="utf-8")
+        for attendu in ("Question droit-q ?", "Bonne", "Fausse A"):
+            if attendu not in contenu:
+                return [f"le QCM ne contient pas « {attendu} »"]
+        return []
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+
+def test_schema_ecrit_une_fiche() -> list[str]:
+    tmp = racine_jetable([carte("droit-a")])
+    try:
+        sortie = tmp / "art"
+        code, out, err = cli(tmp, "schema", "droit-a", "--sortie", str(sortie))
+        if code != 0:
+            return [f"schema a échoué (code {code}) : {err[-300:]}"]
+        contenu = Path(out.strip()).read_text(encoding="utf-8")
+        if "Réponse droit-a." not in contenu:
+            return ["la fiche ne porte pas la réponse"]
+        return []
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+
+TESTS = [
+    ("1. séance identique au moteur", test_seance_est_celle_du_moteur),
+    ("1. progression identique au moteur", test_progression_est_celle_du_moteur),
+    ("2. repondre ajoute sans réécrire", test_repondre_ajoute_sans_reecrire),
+    ("2. carte inconnue n'écrit rien", test_repondre_carte_inconnue_necrit_rien),
+    ("3. la question cache la réponse", test_la_question_cache_la_reponse),
+    ("3. le QCM cache le bon choix", test_le_qcm_cache_le_bon_choix),
+    ("4. banque absente : trou nommé", test_banque_absente_ne_sert_rien),
+    ("4. banque vide : rien à jouer", test_banque_vide_ne_sert_rien),
+    ("4. carte inconnue : rien à jouer", test_carte_inconnue_ne_sert_rien),
+    ("5. qcm écrit un HTML", test_qcm_ecrit_un_html),
+    ("5. schema écrit une fiche", test_schema_ecrit_une_fiche),
+]
+
+
+def main() -> int:
+    total = []
+    for nom, fn in TESTS:
+        err = fn()
+        total += err
+        print(f"  {'ok  ' if not err else 'ÉCHEC'} {nom}")
+        for e in err:
+            print(f"        ✗ {e}")
+    if total:
+        print(f"\n{len(total)} problème(s) sur la surface agent.")
+        return 1
+    print("\nVERT — la surface relaie le moteur, journalise sans réécrire "
+          "et ne laisse pas fuir la réponse.")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

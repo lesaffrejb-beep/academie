@@ -6,11 +6,16 @@ Le client web est retiré et archivé (`archive/conception-2026-09-web/`),
 son workflow supprimé. L'interface est désormais le dépôt discuté par un
 agent ; le moteur reste le professeur et l'état reste un journal local,
 hors git ([décision 0054](decisions/0054-plus-de-front-le-depot-est-l-interface.md)).
-Nouveau chantier prêt : `ACA-SANS-FRONT-1`, cahier
-[chantiers/ACA-SANS-FRONT-1.md](chantiers/ACA-SANS-FRONT-1.md). Les items
+Nouveau chantier : `ACA-SANS-FRONT-1`, cahier
+[chantiers/ACA-SANS-FRONT-1.md](chantiers/ACA-SANS-FRONT-1.md). Livré le
+15/09 : surface `app/academie.py`, tests `app/tests_academie.py`, skill
+`skills/academie/SKILL.md`, prompt `prompts/jouer.md` ; `tests.py`,
+`check.py` et `--mutation` verts. Reste l'observation humaine : une
+première séance réelle jouée et un QCM affiché. Les items
 qui pointaient vers `ACA-FRONT-2` s'y raccrochent. La comparaison des
-dépôts existants (apprendre en chat, répétition espacée) est une étape
-suivante, licences lues à la source.
+dépôts existants (apprendre en chat, répétition espacée) est faite dans
+[travail/veille-2026-09-15-comparatif-depots.md](travail/veille-2026-09-15-comparatif-depots.md),
+licences lues à la source.
 
 ## Actualisation du 06/09 : ambition expertise
 

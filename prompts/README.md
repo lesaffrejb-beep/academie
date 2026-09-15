@@ -8,6 +8,7 @@ réinventent pas ([`decisions/0027`](../decisions/0027-pas-a-pas-impose-points-d
 
 | Prompt | Quand |
 |---|---|
+| [`jouer.md`](jouer.md) | faire jouer une séance dans le dépôt, sans front (décision 0054) |
 | [`creer-un-parcours.md`](creer-un-parcours.md) | l'élève n'a pas son métier dans le catalogue |
 | [`ajouter-des-documents.md`](ajouter-des-documents.md) | l'élève suit un parcours et apporte des documents |
 | [`reprendre.md`](reprendre.md) | la session a coupé, le plafond de jetons est atteint, on reprend au point de sauvegarde |
