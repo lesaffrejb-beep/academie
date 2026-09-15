@@ -27,3 +27,14 @@ Même format que `labor/lab/VEILLE.md` : une ligne par lien, quatre verdicts (PR
 | 03/09/2026 | Rive, runtimes web et React (MIT) | À ESSAYER | Runtimes libres, éditeur propriétaire, les fichiers .riv restent à nous |
 | 03/09/2026 | GSAP, Lottie | À CONNAÎTRE | Licences NON LUES : gsap.com et lottiefiles.com sont injoignables depuis le Cloud, et GSAP n'a pas de LICENSE dans son dépôt. À lire depuis le Mac avant tout usage |
 | 03/09/2026 | Playwright (Apache-2.0) | À ESSAYER | Les tests de bout en bout qui manquent à web/ (ACA-FRONT-2) |
+| 15/09/2026 | ChenChenyaqi/learn-anything, ZYQIO (MIT) | À ESSAYER | Le générateur d'adaptateurs multi-outils et un state.json compact ; ni provenance ni FSRS (ACA-SANS-FRONT-1) |
+| 15/09/2026 | vesperchinn/learn-anything-skill (MIT) | À ESSAYER | Snapshot plus journal append-only et couche sources (claim_ledger, freshness_log) ; le plus proche de nos règles 3 et 4 |
+| 15/09/2026 | Bhala-Srinivash/agent-tutor-skill (MIT) | À ESSAYER | Quiz sans indice, notes d'erreur Confusion/Point clé/Source, gate de prérequis ; FSRS artisanal à ignorer |
+| 15/09/2026 | FavioVazquez/agentic-learning (MIT) | À ESSAYER | Vocabulaire explain-first, struggle en échelle d'indices, interleave, cognitive-load |
+| 15/09/2026 | wpwilson10/spacedrep (MIT) | À ESSAYER | Boucle agent get_next_card puis notation, pacing, cartes sœurs enterrées, preview_review |
+| 15/09/2026 | ArnaudGuiovanna/tutor-mcp (MIT), ryantthomas/learning-mcp (MIT) | À CONNAÎTRE | Le moteur décide et le LLM ne planifie pas ; lib Python pure servie par MCP ; alpha, sans banque sourcée |
+| 15/09/2026 | OpenTutor, Smart-Study-Agent (MIT), DeepTutor (Apache-2.0) | À CONNAÎTRE | FSRS ou BKT côté app LLM-centrée ; ni provenance-contrat ni append-only |
+| 15/09/2026 | Lunaris (AGPL-3.0), Anchor, groundly, SourceLens, Groundmap | ÉCARTÉ | Sourcing fort mais pas de SRS déterministe ; Lunaris AGPL |
+| 15/09/2026 | GarethManning/education-agent-skills (CC BY-SA 4.0) | ÉCARTÉ | Copyleft sur le texte ; re-dériver depuis Cepeda 2006 |
+| 15/09/2026 | johwiebe/anki-mcp, koganei/learn-anything-skill, YusenZhang0601/tutor, RoundTable02/tutor-skills, learners-mcp, Yggdrasil, Math Frontier, Sapient | ÉCARTÉ | Sans licence lisible ; ne rien copier avant vérification à la source |
+| 15/09/2026 | Anki, Logseq, vestige (AGPL-3.0) | ÉCARTÉ | Copyleft réseau ; idées seulement, confirmé à la source |

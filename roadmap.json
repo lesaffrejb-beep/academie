@@ -369,7 +369,7 @@
       },
       "proof": "Depuis un journal fixture, la surface rend une séance identique à app/seance.py sans web ; une carte jouée et journalisée de bout en bout ; un QCM HTML ouvert dans le navigateur ; tests.py et check.py verts ; web/ archivé et son workflow retiré.",
       "parent_milestone": "ACADEMIE-V2-JOUEUR",
-      "note": "Décision 0054. La comparaison des dépôts existants (spacedrep, learn-anything, agent-tutor-skill) est une étape suivante, licences lues à la source (ACA-REUSE-1)."
+      "note": "Décision 0054. Comparatif des dépôts existants fait le 15/09 (travail/veille-2026-09-15-comparatif-depots.md) : aucun ne couvre moteur déterministe + banque sourcée + journal append-only, mais des patterns sont repris (spacedrep, learn-anything, agent-tutor-skill, agentic-learning), licences lues à la source (ACA-REUSE-1)."
     },
     {
       "id": "ACA-ARBRE-1",

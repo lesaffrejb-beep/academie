@@ -72,6 +72,34 @@ la banque, les valideurs, `serveur/` (conservé, non branché par défaut),
 7. Brancher la suite dans `app/tests.py` et ajouter la mutation qui
    prouve que la surface retombe bien sur `app/seance.py`.
 
+## Reprises retenues (veille du 15/09/2026)
+
+Comparatif complet : [`travail/veille-2026-09-15-comparatif-depots.md`](../travail/veille-2026-09-15-comparatif-depots.md).
+Licences MIT lues à la source ; aucune copie de code avant confirmation
+depuis le Mac (`ACA-REUSE-1`). On ne prend que des patterns, pas des
+dépendances.
+
+- **Adaptateurs multi-outils** (ChenChenyaqi/learn-anything, MIT) : une
+  interface plus un registre, un formateur par outil. La vraie voie
+  2026 est le standard AgentSkills (`agentskills.io`), installable par
+  `skills.sh`, pour couvrir Claude, Cursor, Codex, Gemini, OpenCode et
+  Antigravity avec un seul fichier.
+- **Snapshot plus journal append-only** et **couche sources**
+  (vesperchinn/learn-anything-skill, MIT) : un `progress` court et un
+  journal complet qui ne se tronque pas ; `claim_ledger`,
+  `freshness_log`, marque `[unverified]`.
+- **Quiz sans indice, gate de prérequis, notes d'erreur**
+  (Bhala-Srinivash/agent-tutor-skill, MIT) : quatre options plausibles,
+  erreurs notées Confusion / Point clé / Source.
+- **Vocabulaire pédagogique** (FavioVazquez/agentic-learning, MIT) :
+  `explain-first`, `struggle` en échelle d'indices, `interleave`,
+  `cognitive-load`.
+- **Boucle agent** (wpwilson10/spacedrep, MIT) : `get_next_card` puis
+  notation choisie par l'agent, `due_remaining`, revues récentes inline,
+  cartes sœurs enterrées, `preview_review`.
+- **FSRS** : `py-fsrs` (MIT) reste l'oracle de comparaison du moteur
+  existant ; aucune réimplémentation parallèle.
+
 ## Ce qu'on ne fait pas
 
 - Aucun nouvel écran, aucune dépendance graphique, aucun serveur.
