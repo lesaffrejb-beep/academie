@@ -38,6 +38,8 @@ Usage, pour un agent comme pour un humain :
     python3 app/academie.py prevue <id>
     python3 app/academie.py rituel
     python3 app/academie.py cursus [<cle>]
+    python3 app/academie.py exporter <fichier>
+    python3 app/academie.py importer <fichier>
 
 Options communes : `--profil <pseudo>`, `--cursus <cle>`, `--etat
 <dossier>` (racine du journal, défaut `etat/`), `--sortie <dossier>`
@@ -756,6 +758,97 @@ def cmd_cursus(args, ctx) -> int:
     return 0
 
 
+# --- sauvegarde et transfert (ACA-SANS-FRONT-7) -----------------------
+
+def _lit_lignes(chemin: Path) -> list[dict]:
+    """Un JSONL lu avec tolérance : une ligne illisible est ignorée."""
+    if not chemin.is_file():
+        return []
+    lignes = []
+    for brut in chemin.read_text(encoding="utf-8").splitlines():
+        brut = brut.strip()
+        if not brut:
+            continue
+        try:
+            entree = json.loads(brut)
+        except json.JSONDecodeError:
+            continue
+        if isinstance(entree, dict):
+            lignes.append(entree)
+    return lignes
+
+
+def _cle_revue(ligne: dict):
+    nonce = ligne.get("nonce")
+    if nonce:
+        return ("nonce", str(nonce))
+    return ("quad", str(ligne.get("quand")), str(ligne.get("mode")),
+            str(ligne.get("carte")), str(ligne.get("note")))
+
+
+def _cle_erreur(ligne: dict):
+    return ("err", str(ligne.get("quand")), str(ligne.get("carte")),
+            str(ligne.get("mode")), str(ligne.get("raison")))
+
+
+def _union_append(chemin: Path, nouvelles: list, cle) -> int:
+    """Ajoute les lignes inconnues d'une sauvegarde. N'écrase jamais."""
+    connues = {cle(l) for l in _lit_lignes(chemin)}
+    chemin.parent.mkdir(parents=True, exist_ok=True)
+    ajout = 0
+    with chemin.open("a", encoding="utf-8") as f:
+        for ligne in nouvelles:
+            if not isinstance(ligne, dict):
+                continue
+            k = cle(ligne)
+            if k in connues:
+                continue
+            connues.add(k)
+            f.write(json.dumps(ligne, ensure_ascii=False) + "\n")
+            ajout += 1
+    return ajout
+
+
+def _chemin_profil(args, ctx, nom: str) -> Path:
+    return dossier_etat(args) / ctx["profil"] / nom
+
+
+def cmd_exporter(args, ctx) -> int:
+    revues = _lit_lignes(_chemin_profil(args, ctx, "revues.jsonl"))
+    erreurs = _lit_lignes(_chemin_profil(args, ctx, "erreurs.jsonl"))
+    bundle = {
+        "format": "academie-sauvegarde-1",
+        "profil": ctx["profil"],
+        "exporte_le": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+        "revues": revues,
+        "erreurs": erreurs,
+    }
+    cible = Path(args.fichier)
+    cible.parent.mkdir(parents=True, exist_ok=True)
+    cible.write_text(json.dumps(bundle, ensure_ascii=False, indent=2) + "\n",
+                     encoding="utf-8")
+    print(f"sauvegarde : {len(revues)} révision(s), {len(erreurs)} erreur(s) → {cible}")
+    return 0
+
+
+def cmd_importer(args, ctx) -> int:
+    source = Path(args.fichier)
+    if not source.is_file():
+        return _trou(f"fichier introuvable : {source}", args)
+    try:
+        bundle = json.loads(source.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as exc:
+        return _trou(f"sauvegarde illisible : {exc}", args)
+    if not isinstance(bundle, dict) or bundle.get("format") != "academie-sauvegarde-1":
+        return _trou("ce n'est pas une sauvegarde academie-sauvegarde-1", args)
+    ajout_r = _union_append(_chemin_profil(args, ctx, "revues.jsonl"),
+                            bundle.get("revues") or [], _cle_revue)
+    ajout_e = _union_append(_chemin_profil(args, ctx, "erreurs.jsonl"),
+                            bundle.get("erreurs") or [], _cle_erreur)
+    print(f"fusion : {ajout_r} révision(s) ajoutée(s), {ajout_e} erreur(s) ajoutée(s)")
+    return 0
+
+
 # --- erreurs nommées --------------------------------------------------
 
 def _trou(message: str, args) -> int:
@@ -856,6 +949,16 @@ def construit_parseur() -> argparse.ArgumentParser:
                         help="le cursus actif et son choix")
     p.add_argument("cle", nargs="?", help="le cursus à activer (copro, ifsi, ...)")
     p.set_defaults(fn=cmd_cursus)
+
+    p = sous.add_parser("exporter", parents=[commun],
+                        help="sauvegarder le journal et le carnet")
+    p.add_argument("fichier")
+    p.set_defaults(fn=cmd_exporter)
+
+    p = sous.add_parser("importer", parents=[commun],
+                        help="fusionner une sauvegarde (union, sans écraser)")
+    p.add_argument("fichier")
+    p.set_defaults(fn=cmd_importer)
 
     return ap
 

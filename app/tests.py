@@ -189,6 +189,9 @@ MUTATIONS = [
     ("la surface ne charge plus les chapitres v2", "academie.py",
      '    v2, erreurs_v2, _ = charge_cartes_v2({"banque", "interne"}, False, date.today())\n    return cartes + v2, erreurs + erreurs_v2',
      '    v2, erreurs_v2, _ = charge_cartes_v2({"banque", "interne"}, False, date.today())\n    return cartes, erreurs'),
+    ("l'import ne déduplique plus", "academie.py",
+     "            if k in connues:\n                continue",
+     "            if False:\n                continue"),
 ]
 
 

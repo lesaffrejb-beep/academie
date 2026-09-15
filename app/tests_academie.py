@@ -668,6 +668,66 @@ def test_les_cartes_v2_et_ifsi_sont_servies() -> list[str]:
         shutil.rmtree(etat, ignore_errors=True)
 
 
+# --- 12. sauvegarde et transfert (ACA-SANS-FRONT-7) ------------------
+
+def test_export_import_union() -> list[str]:
+    tmp = racine_jetable([carte("droit-a")])
+    try:
+        cli(tmp, "repondre", "droit-a", "3")
+        bundle = tmp / "sauvegarde.json"
+        code, out, err = cli(tmp, "exporter", str(bundle))
+        if code != 0:
+            return [f"exporter a échoué (code {code}) : {err[-300:]}"]
+        if not bundle.is_file():
+            return ["aucun fichier de sauvegarde produit"]
+        avant = len(journal_du(tmp))
+
+        code, out, err = cli(tmp, "importer", str(bundle))
+        if code != 0:
+            return [f"importer a échoué (code {code}) : {err[-300:]}"]
+        if len(journal_du(tmp)) != avant:
+            return ["un import dans le même état a dupliqué des lignes"]
+
+        tmp2 = racine_jetable([carte("droit-a")])
+        try:
+            code, out, err = cli(tmp2, "importer", str(bundle))
+            if code != 0:
+                return [f"import dans un état neuf a échoué : {err[-300:]}"]
+            if len(journal_du(tmp2)) != avant:
+                return [f"l'import ne rend pas les mêmes lignes : "
+                        f"{len(journal_du(tmp2))} != {avant}"]
+        finally:
+            shutil.rmtree(tmp2, ignore_errors=True)
+
+        existante = {"quand": "2026-02-01T00:00:00+00:00", "mode": "revision",
+                     "nonce": "deja-la", "carte": "droit-a", "note": 2,
+                     "format": "seance"}
+        tmp3 = racine_jetable([carte("droit-a")], journal=[existante])
+        try:
+            cli(tmp3, "importer", str(bundle))
+            nonces = {l.get("nonce") for l in journal_du(tmp3)}
+            if "deja-la" not in nonces:
+                return ["l'import a effacé une ligne déjà présente"]
+            if len(journal_du(tmp3)) != 1 + avant:
+                return ["l'union n'ajoute pas les lignes manquantes"]
+        finally:
+            shutil.rmtree(tmp3, ignore_errors=True)
+        return []
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+
+def test_import_fichier_illisible() -> list[str]:
+    tmp = racine_jetable([carte("droit-a")])
+    try:
+        code, out, err = cli(tmp, "importer", str(tmp / "absent.json"))
+        if code == 0:
+            return ["un fichier absent est importé au lieu d'être refusé"]
+        return []
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+
 TESTS = [
     ("1. séance identique au moteur", test_seance_est_celle_du_moteur),
     ("1. progression identique au moteur", test_progression_est_celle_du_moteur),
@@ -695,6 +755,8 @@ TESTS = [
     ("10. le choix de cursus est journalisé", test_cursus_journalise_le_choix),
     ("10. un cursus inconnu est refusé", test_cursus_inconnu),
     ("11. les cartes v2 et l'IFSI sont servies", test_les_cartes_v2_et_ifsi_sont_servies),
+    ("12. export puis import par union", test_export_import_union),
+    ("12. import d'un fichier illisible refusé", test_import_fichier_illisible),
 ]
 
 

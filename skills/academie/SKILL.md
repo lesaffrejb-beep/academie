@@ -109,6 +109,10 @@ n'est pas pré-marquée dans le QCM avant le clic.
   rituel` lit le journal et compte les séances menées au bout, les
   coupures et les jours. Le journal de la surface suit le contrat
   `journal-v1`, donc le rapport ne perd aucune ligne.
+- L'état est local, donc sauvegardable : `python3 app/academie.py
+  exporter <fichier>` puis `importer <fichier>` fusionne par union, sans
+  jamais écraser. Chaque réponse est déjà écrite au journal à l'instant
+  où elle est donnée.
 
 ## La voix
 

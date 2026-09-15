@@ -26,6 +26,9 @@ et complète : `--cursus` isole copro et IFSI, `cursus <cle>` journalise
 le choix, et la surface charge aussi les chapitres v2 (92 cartes, dont
 34 IFSI restées invisibles jusqu'ici). 26 tests verts et deux mutations
 nouvelles.
+`ACA-SANS-FRONT-7` ajoute `exporter`/`importer` : une sauvegarde
+versionnée, fusionnée par union sans écraser ni dupliquer, qui répond à
+deux appareils sans serveur. 28 tests verts.
 Les items
 qui pointaient vers `ACA-FRONT-2` s'y raccrochent. La comparaison des
 dépôts existants (apprendre en chat, répétition espacée) est faite dans
