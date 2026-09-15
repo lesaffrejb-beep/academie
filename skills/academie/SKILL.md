@@ -37,9 +37,10 @@ Tu ne codes rien. Tu ouvres le dépôt et tu appelles la surface.
    ouvertes. Tu le dis simplement, sans juger, sans exclamation.
 
 2. **La séance du jour.**
-   `python3 app/academie.py seance`
+   `python3 app/academie.py seance --journaliser`
    Elle rend les cartes dans l'ordre du moteur, avec le pourquoi de la
-   composition. Tu enchaînes les cartes une par une.
+   composition, et inscrit l'ouverture de séance au journal (mode
+   `seance`, rejouable). Tu enchaînes les cartes une par une.
 
 3. **Une carte à la fois.**
    `python3 app/academie.py carte <id>`
@@ -95,6 +96,10 @@ n'est pas pré-marquée dans le QCM avant le clic.
   Et `python3 app/academie.py mini-lecons` liste les cartes ratées
   plusieurs fois, avec leur question, pour proposer une reprise ciblée
   plutôt que repasser la même.
+- Pour parler du rythme, jamais du savoir : `python3 app/academie.py
+  rituel` lit le journal et compte les séances menées au bout, les
+  coupures et les jours. Le journal de la surface suit le contrat
+  `journal-v1`, donc le rapport ne perd aucune ligne.
 
 ## La voix
 

@@ -500,6 +500,68 @@ def test_mini_lecons_vide() -> list[str]:
         shutil.rmtree(tmp, ignore_errors=True)
 
 
+# --- 9. journal v1 et rituel (ACA-SANS-FRONT-4) ----------------------
+
+def test_repondre_ecrit_une_ligne_v1() -> list[str]:
+    tmp = racine_jetable([carte("droit-a")])
+    try:
+        code, out, err = cli(tmp, "repondre", "droit-a", "3")
+        if code != 0:
+            return [f"repondre a échoué (code {code}) : {err[-300:]}"]
+        lignes = journal_du(tmp)
+        if not lignes:
+            return ["repondre n'a rien écrit"]
+        ligne = lignes[-1]
+        if ligne.get("mode") != "revision":
+            return [f"mode {ligne.get('mode')!r}, attendu 'revision'"]
+        if not ligne.get("format"):
+            return ["la ligne de révision n'a pas de format (journal-v1)"]
+        if not ligne.get("nonce") or len(str(ligne["nonce"])) < 8:
+            return ["la ligne de révision n'a pas de nonce valide"]
+        return []
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+
+def test_rituel_lit_les_seances_de_la_surface() -> list[str]:
+    tmp = racine_jetable([carte(f"droit-{x}") for x in "abc"])
+    try:
+        code, out, err = cli(tmp, "seance", "--journaliser", "--json")
+        if code != 0:
+            return [f"seance --journaliser a échoué (code {code}) : {err[-300:]}"]
+        ids = [c["id"] for c in json.loads(out)["cartes"]]
+        if not ids:
+            return ["la séance ne sert aucune carte"]
+        for cid in ids:
+            cli(tmp, "repondre", cid, "3")
+        code, out, err = cli(tmp, "rituel", "--json")
+        if code != 0:
+            return [f"rituel a échoué (code {code}) : {err[-300:]}"]
+        rapport = json.loads(out)
+        if rapport["ecartees"].get("mode_inconnu"):
+            return ["le rituel écarte des lignes de mode inconnu"]
+        if rapport["seances"]["commencees"] != 1:
+            return [f"une séance attendue, reçu {rapport['seances']['commencees']}"]
+        if rapport["seances"]["finies"] != 1:
+            return [f"la séance ne compte pas finie : {rapport['seances']}"]
+        return []
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+
+def test_rituel_vide() -> list[str]:
+    tmp = racine_jetable([carte("droit-a")])
+    try:
+        code, out, err = cli(tmp, "rituel", "--json")
+        if code != 0:
+            return [f"rituel a échoué (code {code}) : {err[-300:]}"]
+        if json.loads(out)["periode"]["de"] is not None:
+            return ["un journal vide porte une période"]
+        return []
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+
 TESTS = [
     ("1. séance identique au moteur", test_seance_est_celle_du_moteur),
     ("1. progression identique au moteur", test_progression_est_celle_du_moteur),
@@ -520,6 +582,9 @@ TESTS = [
     ("8. prevue rend quatre intervalles croissants", test_prevue_donne_quatre_intervalles),
     ("8. mini-lecons liste les ratées", test_mini_lecons_liste_les_ratees),
     ("8. mini-lecons vide sans rate", test_mini_lecons_vide),
+    ("9. repondre écrit une ligne v1", test_repondre_ecrit_une_ligne_v1),
+    ("9. rituel lit les séances de la surface", test_rituel_lit_les_seances_de_la_surface),
+    ("9. rituel vide", test_rituel_vide),
 ]
 
 

@@ -27,6 +27,7 @@ import argparse
 import hashlib
 import json
 import random
+import secrets
 import sys
 from datetime import date, datetime, timezone
 from pathlib import Path
@@ -367,6 +368,52 @@ def note(profil: str, carte_id: str, valeur: int, mode: str = "flash") -> dict:
     p.parent.mkdir(parents=True, exist_ok=True)
     ligne = {"quand": datetime.now(timezone.utc).isoformat(timespec="seconds"),
              "carte": carte_id, "note": valeur, "mode": mode}
+    with p.open("a", encoding="utf-8") as f:
+        f.write(json.dumps(ligne, ensure_ascii=False) + "\n")
+    return ligne
+
+
+def note_v1(profil: str, carte_id: str, valeur: int, format_: str = "seance",
+            duree_ms: int | None = None, quand: str | None = None,
+            nonce: str | None = None) -> dict:
+    """Écrit une réponse conforme à `journal-v1` (mode `revision`).
+
+    Le contrat exige `quand`, `mode`, `nonce`, et pour `revision` :
+    `carte`, `note`, `format`. `nonce` est aléatoire côté client, comme
+    le veut le schéma ; deux révisions réelles ne fusionnent donc jamais
+    par erreur à l'union. La fonction `note` (mode `flash`) reste pour
+    les appelants existants et les anciens journaux.
+    """
+    if valeur not in (1, 2, 3, 4):
+        raise ValueError("note attendue entre 1 (raté) et 4 (facile)")
+    ligne = {
+        "quand": quand or datetime.now(timezone.utc).isoformat(timespec="seconds"),
+        "mode": "revision",
+        "nonce": nonce or secrets.token_hex(8),
+        "carte": carte_id,
+        "note": valeur,
+        "format": format_,
+    }
+    if duree_ms is not None:
+        ligne["duree_ms"] = int(duree_ms)
+    p = chemin_revues(profil)
+    p.parent.mkdir(parents=True, exist_ok=True)
+    with p.open("a", encoding="utf-8") as f:
+        f.write(json.dumps(ligne, ensure_ascii=False) + "\n")
+    return ligne
+
+
+def ouvre_seance(profil: str, seance_composee: dict, banque_version: str,
+                 moteur_version: str, quand: str | None = None) -> dict:
+    """Inscrit au journal la ligne `mode: seance` qui ouvre une séance.
+
+    C'est elle qui rend la séance rejouable (graine, versions, cartes
+    servies) et qui permet au rapport du rituel de savoir si la séance a
+    été menée au bout. Append-only, jamais de réécriture.
+    """
+    ligne = ligne_ouverture(seance_composee, banque_version, moteur_version, quand)
+    p = chemin_revues(profil)
+    p.parent.mkdir(parents=True, exist_ok=True)
     with p.open("a", encoding="utf-8") as f:
         f.write(json.dumps(ligne, ensure_ascii=False) + "\n")
     return ligne

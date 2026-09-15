@@ -24,13 +24,19 @@ lignes, elle n'en réécrit ni n'en supprime jamais.
 Usage, pour un agent comme pour un humain :
 
     python3 app/academie.py etat
-    python3 app/academie.py seance [--cap <domaine>] [--json]
+    python3 app/academie.py seance [--cap <domaine>] [--journaliser] [--json]
     python3 app/academie.py carte <id> [--reponse] [--json]
-    python3 app/academie.py repondre <id> <1-4>
+    python3 app/academie.py repondre <id> <1-4> [--format seance]
     python3 app/academie.py correction <id> [--json]
     python3 app/academie.py progression [--json]
     python3 app/academie.py qcm <id> [--ouvrir]
     python3 app/academie.py schema <id> [--ouvrir]
+    python3 app/academie.py erreur <id> [raison]
+    python3 app/academie.py erreurs
+    python3 app/academie.py quiz [--region <domaine>] [--resultats '<json>']
+    python3 app/academie.py mini-lecons
+    python3 app/academie.py prevue <id>
+    python3 app/academie.py rituel
 
 Options communes : `--profil <pseudo>`, `--etat <dossier>` (racine du
 journal, défaut `etat/`), `--sortie <dossier>` (artefacts HTML, défaut
@@ -43,6 +49,7 @@ from __future__ import annotations
 
 import argparse
 import contextlib
+import hashlib
 import html
 import json
 import os
@@ -55,6 +62,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import erreurs as erreurs_mod  # noqa: E402
 import progression as progression_mod  # noqa: E402
 import quiz as quiz_mod  # noqa: E402
+import rituel as rituel_mod  # noqa: E402
 import seance as seance_mod  # noqa: E402
 from genere import charge_programme  # noqa: E402
 from planificateur import Planificateur  # noqa: E402
@@ -62,6 +70,10 @@ from valide_banque import BANQUE, charge_banque, charge_config  # noqa: E402
 
 RACINE = Path(__file__).resolve().parents[1]
 DOSSIER_SORTIES = RACINE / "sorties"
+# Identifiant de la surface et du moteur local, écrit dans la ligne
+# d'ouverture. Provisoire et assumé comme tel : le jour où un vrai
+# versionnement existera, il changera, et les anciennes lignes resteront.
+MOTEUR_VERSION = "academie-surface-1"
 
 # La question se montre sans la réponse ; la correction vient après.
 CHAMPS_QUESTION = ("id", "domaine", "branche", "chapitre", "sous_branche",
@@ -102,11 +114,12 @@ def lit_journal(profil: str, etat: Path) -> list[dict]:
         return seance_mod.lit_journal(profil)
 
 
-def ajoute_revue(profil: str, carte_id: str, note: int, mode: str,
-                 etat: Path) -> dict:
-    """Ajoute une réponse au journal, append-only. Jamais de réécriture."""
+def ajoute_revue(profil: str, carte_id: str, note: int, format_: str,
+                 etat: Path, duree_ms: int | None = None) -> dict:
+    """Ajoute une réponse au journal (contrat journal-v1). Jamais de réécriture."""
     with _etat_actif(etat):
-        return seance_mod.note(profil, carte_id, note, mode)
+        return seance_mod.note_v1(profil, carte_id, note, format_=format_,
+                                  duree_ms=duree_ms)
 
 
 # --- contexte ---------------------------------------------------------
@@ -133,6 +146,12 @@ def charge_contexte(args) -> dict:
 
 def cartes_jouables(cartes: list[dict]) -> list[dict]:
     return [c for c in cartes if c.get("statut") == "valide"]
+
+
+def _version_banque(cartes: list[dict]) -> str:
+    """Empreinte courte des cartes jouables servies : la « version » locale."""
+    ids = sorted(str(c["id"]) for c in cartes_jouables(cartes))
+    return hashlib.sha256("\n".join(ids).encode("utf-8")).hexdigest()[:12]
 
 
 def trouve_carte(cartes: list[dict], cid: str) -> dict | None:
@@ -230,6 +249,10 @@ def cmd_seance(args, ctx) -> int:
     charge["cartes"] = [presentation_question(c)
                         for c in seance["revisions"] + seance["nouveau"]]
     charge["total"] = len(charge["cartes"])
+    if args.journaliser:
+        with _etat_actif(dossier_etat(args)):
+            charge["ouverture"] = seance_mod.ouvre_seance(
+                ctx["profil"], seance, _version_banque(ctx["cartes"]), MOTEUR_VERSION)
     if args.json:
         print(json.dumps(charge, ensure_ascii=False, indent=2))
         return 0
@@ -305,8 +328,8 @@ def cmd_repondre(args, ctx) -> int:
     if carte.get("statut") != "valide":
         return _trou(f"carte non jouable (statut `{carte.get('statut')}`) : "
                      f"rien n'est journalisé", args)
-    ligne = ajoute_revue(ctx["profil"], args.carte, args.note, args.mode,
-                         dossier_etat(args))
+    ligne = ajoute_revue(ctx["profil"], args.carte, args.note, args.format,
+                         dossier_etat(args), duree_ms=args.duree_ms)
     reste = _dues_apres(ctx, ligne)
     if args.json:
         print(json.dumps({"ecrit": ligne, "revisions_dues_restantes": reste},
@@ -603,6 +626,16 @@ def cmd_mini_lecons(args, ctx) -> int:
     return 0
 
 
+def cmd_rituel(args, ctx) -> int:
+    chemin = dossier_etat(args) / ctx["profil"] / "revues.jsonl"
+    rapport = rituel_mod.rapport(rituel_mod.lit(chemin))
+    if args.json:
+        print(json.dumps(rapport, ensure_ascii=False, indent=2))
+        return 0
+    print(rituel_mod.rend(rapport))
+    return 0
+
+
 # --- erreurs nommées --------------------------------------------------
 
 def _trou(message: str, args) -> int:
@@ -634,6 +667,8 @@ def construit_parseur() -> argparse.ArgumentParser:
 
     p = sous.add_parser("seance", parents=[commun], help="la séance du jour")
     p.add_argument("--cap", help="le domaine choisi pour ce matin")
+    p.add_argument("--journaliser", action="store_true",
+                   help="ouvrir la séance au journal (mode seance, rejouable)")
     p.set_defaults(fn=cmd_seance)
 
     p = sous.add_parser("carte", parents=[commun], help="une carte, sans sa réponse")
@@ -649,7 +684,8 @@ def construit_parseur() -> argparse.ArgumentParser:
     p = sous.add_parser("repondre", parents=[commun], help="journaliser une réponse")
     p.add_argument("carte")
     p.add_argument("note", type=int)
-    p.add_argument("--mode", default="flash")
+    p.add_argument("--format", default="seance")
+    p.add_argument("--duree-ms", type=int)
     p.set_defaults(fn=cmd_repondre)
 
     p = sous.add_parser("progression", parents=[commun], help="la carte-monde")
@@ -690,6 +726,10 @@ def construit_parseur() -> argparse.ArgumentParser:
                         help="la prochaine échéance selon la note choisie")
     p.add_argument("carte")
     p.set_defaults(fn=cmd_prevue)
+
+    p = sous.add_parser("rituel", parents=[commun],
+                        help="le rapport d'habitude, lu depuis le journal")
+    p.set_defaults(fn=cmd_rituel)
 
     return ap
 

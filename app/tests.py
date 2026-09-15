@@ -180,6 +180,9 @@ MUTATIONS = [
     ("la prévision d'intervalle ignore la note", "academie.py",
      "            stabilite, _ = sched.premiere(note)",
      "            stabilite, _ = sched.premiere(3)"),
+    ("une ligne de révision perd son format v1", "seance.py",
+     '        "note": valeur,\n        "format": format_,\n    }',
+     '        "note": valeur,\n    }'),
 ]
 
 

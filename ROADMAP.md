@@ -17,6 +17,10 @@ positionnement (`quiz`) dans la surface, 16 tests verts et une mutation
 du carnet détectée. `ACA-SANS-FRONT-3` ferme les aides de séance :
 `prevue` (l'échéance selon la note) et `mini-lecons` (les cartes ratées
 plusieurs fois), 19 tests verts et une mutation d'intervalle détectée.
+`ACA-SANS-FRONT-4` met le journal de la surface au contrat `journal-v1`
+(ouverture `seance`, réponses `revision` avec format et nonce) et expose
+`rituel` : l'habitude devient mesurable et la synchronisation serveur
+possible. 22 tests verts et deux mutations nouvelles.
 Les items
 qui pointaient vers `ACA-FRONT-2` s'y raccrochent. La comparaison des
 dépôts existants (apprendre en chat, répétition espacée) est faite dans
