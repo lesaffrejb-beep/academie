@@ -39,7 +39,7 @@ comme chemin par défaut.
  └──────────────┬───────────────────────────────────────────────┘
                 │ « je publie ma livraison » (geste humain)
                 ▼
- LE DÉPÔT PRODUIT `academie` (GitHub privé, compte JB)
+ LE DÉPÔT PRODUIT `academie` (GitHub public, compte JB, décision 0055)
  ┌──────────────────────────────────────────────────────────────┐
  │ app/        moteur Python (référence), valideurs, tests       │
  │ serveur/    API d'état : Python, SQLite, jetons, livraisons   │
@@ -78,7 +78,7 @@ Les invariants, dans l'ordre où ils protègent :
 | Chose | Mac | PC du bureau | NOIR (SSD) | VPS | GitHub | Téléphone |
 |---|---|---|---|---|---|---|
 | Code, doctrine, contrats, moteur | clone | rien | bundle mensuel | clone déployé | **vérité** | |
-| Banque copro validée (`banque`, `interne`) | clone | rien | bundle | clone déployé, servi | vérité (privé) | cache |
+| Banque copro validée (`banque`, `interne`) | clone | rien | bundle | clone déployé, servi | vérité (public depuis 0055) | cache |
 | Sources brutes (PDF, vidéos, transcriptions, captures Immocampus) | `sources/` hors git | rien | copie datée avec empreinte | **jamais** | **jamais** | |
 | Boîte (ce qu'on glisse) | `boite/` hors git ; `JOURNAL.md` versionné | rien | | file d'attente synchronisée (texte seulement) | JOURNAL.md | capture |
 | État joueur (journal, carnet, épreuves, insignes) | export JSON à la demande | rien | export mensuel | **vérité** (SQLite, hors git) | jamais | copie IndexedDB |

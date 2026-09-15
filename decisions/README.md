@@ -74,3 +74,5 @@ lisant le dépôt, une règle née d'un incident. Pas l'avancement
 - [0053 : cursus continus et interface bleue](0053-rentree-cursus-continu-et-interface-bleue.md).
 
 - [0054 : plus de front, le dépôt est l'interface](0054-plus-de-front-le-depot-est-l-interface.md)
+
+- [0055 : le dépôt devient public, Arthur est collaborateur](0055-le-depot-devient-public.md)

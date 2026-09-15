@@ -3,7 +3,7 @@
   "id": "academie",
   "name": "Académie",
   "kind": "product",
-  "classification": "private",
+  "classification": "public",
   "parent": "giverny",
   "canonical_instructions": "AGENTS.md",
   "roadmap": "ROADMAP.md",

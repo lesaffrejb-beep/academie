@@ -21,10 +21,13 @@ détaché.
 
 Le geste normal, pour un collègue :
 
-1. JB l'ajoute comme collaborateur du dépôt privé (geste humain).
-2. Il clone : `git clone https://github.com/lesaffrejb-beep/academie.git`
+1. Le dépôt est public depuis le 15/09/2026 : il clone directement.
+2. `git clone https://github.com/lesaffrejb-beep/academie.git`
 3. Il ouvre l'agent dans ce dossier. La plupart des outils découvrent
    `skills/academie/SKILL.md` tout seuls.
+
+Pour **écrire** dans le dépôt (pas pour jouer), il faut être
+collaborateur, ce que JB ajoute depuis l'interface GitHub.
 
 Sur téléphone, on passe par l'agent distant de l'outil (Codex, Claude,
 Antigravity) : il faut que cet agent ait accès au dépôt. Le skill est
@@ -39,10 +42,9 @@ Le CLI public est `npx skills` (Vercel). Depuis la racine du dépôt :
 
 La première commande liste ce que le dépôt expose sans rien installer ;
 la seconde installe le skill dans le dossier de skills de l'agent
-(`.agents/skills/`, ou l'équivalent de l'outil). Comme le dépôt est
-privé, il faut y avoir accès (`gh auth login`, ou un jeton). Pour tous
-les agents d'un coup, ajouter `--all` ; pour un usage sur toute la
-machine, `-g`.
+(`.agents/skills/`, ou l'équivalent de l'outil). Le dépôt étant public,
+aucun jeton n'est nécessaire. Pour tous les agents d'un coup, ajouter
+`--all` ; pour un usage sur toute la machine, `-g`.
 
 Après installation, ouvrir une nouvelle session pour que l'agent
 redécouvre le skill.

@@ -5,7 +5,8 @@ acceptée par délégation le 03/09, `decisions/0023`).
 
 - **Le code** (moteur `app/`, serveur, outils, scripts, skill
   `skills/`) : **MIT**. Un copain peut reprendre tout le dépôt,
-  l'héberger, le modifier. Le dépôt reste privé tant que JB le veut ; la
+  l'héberger, le modifier. Le dépôt est public depuis le 15/09/2026
+  ([`decisions/0055`](decisions/0055-le-depot-devient-public.md)) ; la
   licence dit ce qui est permis le jour où il l'ouvre ou le partage.
 - **Le contenu de la couche `banque`** (chapitres, cartes, schémas
   maison) : **CC BY-SA 4.0**. Attribution à l'Académie et à l'auteur du
