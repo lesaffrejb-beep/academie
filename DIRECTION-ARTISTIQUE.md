@@ -1,5 +1,11 @@
 # DIRECTION ARTISTIQUE, à quoi ressemble l'Académie et comment elle bouge
 
+**Amendement du 15/09/2026 :** il n'y a plus de front
+([`decisions/0054`](decisions/0054-plus-de-front-le-depot-est-l-interface.md)) ;
+ce document ne pilote plus d'écran à maintenir. Il garde son sens pour la
+voix visuelle des artefacts HTML jetables d'une séance (`sorties/`) et
+pour le contenu. Les écrans décrits plus bas sont historiques.
+
 Écrite le 02/09/2026 sur le brief de JB (« beau, sexy, Dribbble,
 Awwwards, jolies animations, agréable comme Duolingo, ni genre ni âge,
 pas de petit bateau »). Ce document remplace le `DESIGN.md` d'août

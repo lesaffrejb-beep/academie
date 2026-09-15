@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "project": "academie",
-  "_": "Actualisée le 05/09/2026 par audit (ROADMAP.md, décision 0035). done = périmètre et preuves du cahier, pas toute la promesse produit. ready | blocked ; modes deterministic | agent-safe | agent-review | human-only. Les budgets bornent une passe de travail, pas la durée complète. tooling/roadmap.py next ne choisit que les tâches automatisables sans revue.",
+  "_": "Actualisée le 15/09/2026 (décision 0054 : plus de front, la surface devient ACA-SANS-FRONT-1) puis le 05/09/2026 par audit (ROADMAP.md, décision 0035). done = périmètre et preuves du cahier, pas toute la promesse produit. ready | blocked ; modes deterministic | agent-safe | agent-review | human-only. Les budgets bornent une passe de travail, pas la durée complète. tooling/roadmap.py next ne choisit que les tâches automatisables sans revue.",
   "items": [
     {
       "id": "ACA-COURS-COPRO-1",
@@ -88,6 +88,7 @@
     },
     {
       "id": "ACA-UI-1",
+      "superseded_by": "ACA-SANS-FRONT-1",
       "outcome": "L'interface de jeu vit dans Académie, charge sa banque au runtime et ne dépend d'aucun module ou fichier ERP.",
       "status": "done",
       "mode": "agent-review",
@@ -106,6 +107,7 @@
     },
     {
       "id": "ACA-UI-2",
+      "superseded_by": "ACA-SANS-FRONT-1",
       "outcome": "L'archipel SVG autonome remet la carte au centre (habillage remplacé par l'arbre le 02/09/2026, decisions/0001 ; reste servi jusqu'à ACA-FRONT-2).",
       "status": "done",
       "mode": "agent-review",
@@ -329,6 +331,7 @@
     },
     {
       "id": "ACA-FRONT-2",
+      "superseded_by": "ACA-SANS-FRONT-1",
       "outcome": "Le client v2 (web/) remplace l'archipel : arbre global et vue domaine, séance, fiche de nœud, clôture, profil, boîte, crédits ; hors-ligne d'abord ; DA appliquée ; check.py mis à jour.",
       "status": "done",
       "mode": "agent-review",
@@ -347,6 +350,26 @@
       "proof": "Livraison locale du 05/09 : travail/experience-2026-09-05/LIVRAISON.md. Suites Python et contrôle verts,270 tests client + 5 publication,build, 70 scénarios navigateur vérifiés (69/70 puis minuit corrigé 2/2), relectures indépendantes. Publication et observation humaine restent séparées.",
       "parent_milestone": "ACADEMIE-V2-JOUEUR",
       "note": "Périmètre local du cahier terminé, décision 0036. Journal exact et reprise, contrat mixte,5 leçons / 27 cartes v2 en 2 parcours, écran accueil/étude et documentation. Les tests ne prouvent pas la rétention ni la synchronisation physique. Reprise du 05/09 : palette Papier par défaut et exploration lisible, décision 0037, trois corrections de revue résolues (REVUE-EXPLORATION.md). Acceptation JB encore distincte."
+    },
+    {
+      "id": "ACA-SANS-FRONT-1",
+      "outcome": "Plus de client web : l'agent est l'écran, le moteur reste le professeur. Une surface mince (commandes Python et consignes par outil) joue une séance de bout en bout, journalise en local et ouvre les artefacts HTML jetables.",
+      "status": "ready",
+      "mode": "agent-review",
+      "risk": "medium",
+      "priority": 103,
+      "depends_on": [
+        "ACA-ENGINE-1",
+        "ACA-JOURNAL-SYNC-1"
+      ],
+      "budget": {
+        "max_units": 3,
+        "max_minutes": 360,
+        "max_tokens": 90000
+      },
+      "proof": "Depuis un journal fixture, la surface rend une séance identique à app/seance.py sans web ; une carte jouée et journalisée de bout en bout ; un QCM HTML ouvert dans le navigateur ; tests.py et check.py verts ; web/ archivé et son workflow retiré.",
+      "parent_milestone": "ACADEMIE-V2-JOUEUR",
+      "note": "Décision 0054. La comparaison des dépôts existants (spacedrep, learn-anything, agent-tutor-skill) est une étape suivante, licences lues à la source (ACA-REUSE-1)."
     },
     {
       "id": "ACA-ARBRE-1",
@@ -395,7 +418,7 @@
       "priority": 94,
       "depends_on": [
         "ACA-PILOTE-CONTRAT-1",
-        "ACA-FRONT-2",
+        "ACA-SANS-FRONT-1",
         "ACA-METHODE-2",
         "ACA-RITUAL-1"
       ],
@@ -496,7 +519,7 @@
       "risk": "medium",
       "priority": 85,
       "depends_on": [
-        "ACA-FRONT-2",
+        "ACA-SANS-FRONT-1",
         "ACA-CONTRAT-2"
       ],
       "budget": {
@@ -610,7 +633,7 @@
       "priority": 40,
       "depends_on": [
         "ACA-MULTI-DECISION-1",
-        "ACA-FRONT-2"
+        "ACA-SANS-FRONT-1"
       ],
       "budget": {
         "max_units": 2,
@@ -706,7 +729,7 @@
       "priority": 35,
       "depends_on": [
         "ACA-JOURNAL-SYNC-1",
-        "ACA-FRONT-2"
+        "ACA-SANS-FRONT-1"
       ],
       "budget": {
         "max_units": 1,
@@ -792,6 +815,7 @@
     },
     {
       "id": "ACA-ONBOARDING-1",
+      "superseded_by": "ACA-SANS-FRONT-1",
       "outcome": "Dans le client v2, un nouvel élève crée son compte (mail pro, mot de passe), choisit un pseudo et un cursus du catalogue (copropriété, infirmier) ou dépose une demande de nouveau cursus à JB, puis passe au quiz du cursus choisi ; un seul cursus à la fois, relié au profil, sauvegardé par le journal (decisions/0032).",
       "status": "done",
       "mode": "agent-review",

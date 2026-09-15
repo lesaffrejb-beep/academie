@@ -30,6 +30,16 @@ Adaptateurs par outil, tous muets : `CLAUDE.md` (Claude Code), `GEMINI.md`
 Ils renvoient ici et n'ajoutent rien. L'accueil d'un élève est
 `COMMENCER.md`, les prompts prêts à coller sont dans `prompts/`.
 
+Depuis le 15/09/2026, il n'y a plus de front
+([`decisions/0054`](decisions/0054-plus-de-front-le-depot-est-l-interface.md)) :
+l'interface est ce dépôt, discuté par l'agent que tu es. Pour jouer ou
+faire jouer une séance, tu lis la banque et le journal local
+(`etat/<pseudo>/journal.jsonl`), tu appelles la surface `app/academie.py`
+quand elle existe (chantier `ACA-SANS-FRONT-1`) ; le moteur reste le
+professeur et la banque reste la vérité. Tu n'écris jamais l'état dans
+git. Les artefacts HTML d'une séance vont dans `sorties/`, hors git, et
+le navigateur les affiche ; ce ne sont pas des écrans à maintenir.
+
 Pour une demande « je veux apprendre X », appliquer `CHEMINS.md` et
 `prompts/construire-un-chemin.md` : cible observable, ancrage, diagnostic,
 sources et chemin révisable. Le script vérifie la cohérence du dossier ;

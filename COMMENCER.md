@@ -1,10 +1,11 @@
 # COMMENCER : un pseudo, un parcours
 
 Ce que vit quelqu'un qui arrive à l'Académie, et ce qu'il fait s'il veut
-son propre parcours. Écrit le 03/09/2026 ; l'écran correspondant est le
-chantier `ACA-ONBOARDING-1`, après le client v2. D'ici là, cette page est
-l'accueil, et les prompts de [`prompts/`](prompts/README.md) sont les
-boutons.
+son propre parcours. Écrit le 03/09/2026. Le 15/09/2026, le front est
+retiré ([`decisions/0054`](decisions/0054-plus-de-front-le-depot-est-l-interface.md)) :
+l'accueil est ce dépôt, discuté par un agent, et les prompts de
+[`prompts/`](prompts/README.md) sont les boutons. Les écrans décrits au
+§5 sont historiques.
 
 ## 1. Un pseudo
 

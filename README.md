@@ -10,6 +10,13 @@ cursus. IFSI est un cursus continu, de l’admission aux spécialisations.
 Le carnet NotebookLM contient 200 sources ; 181 captures texte conservées ont
 été contrôlées par empreinte, sans prétendre à une relecture exhaustive.
 
+**15/09/2026, décision 0054 : plus de front.** Le client web est archivé
+(`archive/conception-2026-09-web/`). L'interface est désormais le dépôt
+lui-même, discuté par un agent (OpenCode, Claude Code, Codex, Gemini,
+Antigravity) : le moteur reste le professeur, la banque reste la vérité,
+le journal reste local et hors git. Cahier :
+[`chantiers/ACA-SANS-FRONT-1.md`](chantiers/ACA-SANS-FRONT-1.md).
+
 L'Académie transforme des sources vérifiées en un **arbre de
 compétences** qu'on conquiert par des exercices de rappel, de
 diagnostic et de synthèse, planifiés par un algorithme de mémoire
@@ -58,7 +65,7 @@ utiliser le suivi du 07/09 et le manifeste de publication.
         │
   app/genere.py                      publie banque.json (cartes valides, couche banque)
         │
-  web/ : build Vite → dist/          accueil, étude, arbre, rappels, profil, boîte
+  web/ : archivé 15/09/2026 → archive/conception-2026-09-web/ (0054)
         │
   VPS (constat : 05/09)               comptes publiés, accueil HTTPS affiché ; essai joueur à constater
 ```

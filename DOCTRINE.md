@@ -22,8 +22,12 @@ abonnement à un modèle.
 
 ## 2. Ce que ce n'est pas
 
-- **Pas un chatbot.** Le modèle fabrique et corrige, il n'est jamais
-  l'écran d'accueil.
+- **Pas un chatbot qui fait autorité.** Le modèle peut être l'écran, il
+  n'est jamais le professeur ni la source : la séance, l'ordre et le
+  moment du rappel viennent du moteur, le contenu vient de la banque
+  validée. Un agent qui sert ces deux-là dans la conversation est
+  l'interface prévue depuis le 15/09/2026
+  ([`decisions/0054`](decisions/0054-plus-de-front-le-depot-est-l-interface.md)).
 - **Pas un produit vendu.** Aucun paiement demandé à un joueur, jamais.
   Chacun apporte son dépôt et son abonnement ; JB porte le serveur pour
   son cercle ; tout le monde peut héberger le sien.
@@ -129,7 +133,7 @@ corrige.
 |---|---|
 | JB n'ouvre plus l'app le matin | le rituel est le gate de tout le reste ; on répare le format, jamais la culpabilité |
 | Une carte fausse est apprise | valideur, double passe par agent frais, source affichée, bouton « fausse » qui sort la carte |
-| Le front absorbe tout l'effort et le fond stagne | le front est déclaré jetable ; le moteur, la banque et le programme sont la valeur |
+| Le front absorbe tout l'effort et le fond stagne | le front est retiré ; l'agent est l'écran, le moteur reste le professeur ([`decisions/0054`](decisions/0054-plus-de-front-le-depot-est-l-interface.md)) |
 | Un collègue se sent surveillé | visibilité symétrique et consentie, carnet d'erreurs privé, aucun export pour un tiers |
 | L'arbre est fini, l'ennui s'installe | l'arbre pousse par chapitres satellites (la boîte) et par niveaux 4 et 5 sans fin |
 | Le stock de neuf s'assèche en silence | l'agent-compagnon interpelle et propose la fabrication ; les trous sont nommés |

@@ -48,7 +48,7 @@ fête. Il ne dit jamais « je ».
 
 ## 4. Les interdits mécaniques
 
-Dans `contenu/`, `chapitres/`, `web/` et ce fichier, `tooling/check.py`
+Dans `contenu/`, `chapitres/` et ce fichier, `tooling/check.py`
 refuse :
 
 1. un point d'exclamation dans un texte affiché (les leçons et les
@@ -59,6 +59,10 @@ refuse :
 5. « je » comme sujet de l'Académie dans les micro-textes (une carte qui
    fait parler un copropriétaire à la première personne dans un cas
    reste possible : c'est un personnage de l'exercice, pas l'Académie).
+
+Les artefacts HTML jetables d'une séance (`sorties/`, hors git, décision
+0054) suivent la même voix, mais la machine ne les contrôle pas : c'est à
+l'agent qui les écrit de la respecter.
 
 ## 5. La règle de variation
 

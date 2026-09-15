@@ -12,6 +12,16 @@ qui la fondent : [`decisions/0006`](decisions/0006-etat-joueur-sur-le-serveur-cl
 [`0019`](decisions/0019-peremption-du-droit-et-veille.md),
 [`0020`](decisions/0020-telemetrie-zero-tiers.md).
 
+**Amendement du 15/09/2026 ([`decisions/0054`](decisions/0054-plus-de-front-le-depot-est-l-interface.md)) :**
+la pièce « client web » décrite ci-dessous est archivée dans
+`archive/conception-2026-09-web/`. Il n'y a plus de front. L'interface est
+le dépôt discuté par un agent ; la surface à construire (commandes Python
+et consignes par outil) est décrite dans
+[`chantiers/ACA-SANS-FRONT-1.md`](chantiers/ACA-SANS-FRONT-1.md). Le
+moteur, la banque, le journal et les contrats restent tels quels.
+`serveur/` est conservé comme voie de synchronisation optionnelle, plus
+comme chemin par défaut.
+
 ---
 
 ## 1. Les quatre pièces
@@ -246,7 +256,7 @@ Squelette dans [`deploy/`](deploy/README.md).
 | Sur le VPS | Rôle |
 |---|---|
 | `/home/academie/repo` | clone du dépôt produit, lecture seule pour le service |
-| `academie-publication.timer` | 05:15 : `genere.py --couches banque` puis build du client vers `/var/lib/academie/publication/` (existant, périmètre étendu au client) |
+| `academie-publication.timer` | 05:15 : `genere.py --couches banque` ; le build du client est retiré avec le front (`decisions/0054`) |
 | `academie-etat.service` | l'API d'état, port local, SQLite dans `/var/lib/academie/` (à créer) |
 | Caddy | `handle_path /academie/*` statique (existant) ; `/academie/api/*` vers l'API (à ajouter) |
 | `sauvegarde-socle.timer` | étendu à `/var/lib/academie/` |
@@ -293,7 +303,7 @@ n'est promis à un joueur avant mesure.
 |---|---|---|
 | `app/` | le moteur, ses tests | coder les modules du §4 |
 | `serveur/` | `README`, `API.md`, `schema.sql` | coder l'API contre le schéma |
-| `web/` | `README` avec l'arborescence, les écrans, les composants | initialiser Vite et coder écran par écran |
+| `web/` | archivé le 15/09/2026 dans `archive/conception-2026-09-web/` (`decisions/0054`) ; remplacé par la surface `ACA-SANS-FRONT-1` |
 | `contrats/` | JSON Schema v2 et `README` | brancher les valideurs |
 | `programme/` | `copro.json`, `README` | écrire `valide_programme.py` |
 | `banque/` | la banque v1, `satellites/README` | migrer vers la disposition v2 |

@@ -1,5 +1,17 @@
 # Roadmap Académie, 05/09/2026
 
+## Actualisation du 15/09 : plus de front (décision 0054)
+
+Le client web est retiré et archivé (`archive/conception-2026-09-web/`),
+son workflow supprimé. L'interface est désormais le dépôt discuté par un
+agent ; le moteur reste le professeur et l'état reste un journal local,
+hors git ([décision 0054](decisions/0054-plus-de-front-le-depot-est-l-interface.md)).
+Nouveau chantier prêt : `ACA-SANS-FRONT-1`, cahier
+[chantiers/ACA-SANS-FRONT-1.md](chantiers/ACA-SANS-FRONT-1.md). Les items
+qui pointaient vers `ACA-FRONT-2` s'y raccrochent. La comparaison des
+dépôts existants (apprendre en chat, répétition espacée) est une étape
+suivante, licences lues à la source.
+
 ## Actualisation du 06/09 : ambition expertise
 
 La demande de JB ouvre `ACA-EXPERTISE-1` : [cahier](chantiers/ACA-EXPERTISE-1.md),

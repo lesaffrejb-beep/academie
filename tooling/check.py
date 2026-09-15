@@ -26,10 +26,10 @@ RE_IMPORT_LABOR = re.compile(r"(?:^|\n)\s*(?:from|import)\s+(?:labor|erp)\b|['\"
 DOCS_V2 = ["DOCTRINE.md", "BLUEPRINT.md", "PROGRAMME.md", "ARCHITECTURE.md", "DIRECTION-ARTISTIQUE.md",
            "ROADMAP.md", "README.md", "AGENTS.md", "CONTRIBUER.md", "VOIX.md", "CONTRAT-CARTE-V2.md", "SYLLABUS.md",
            "MODELES.md", "COMMENCER.md", "GEMINI.md", "CLAUDE.md"]
-DOSSIERS_V2 = ["decisions", "chantiers", "contenu", "chapitres", "sources", "boite", "serveur", "web",
+DOSSIERS_V2 = ["decisions", "chantiers", "contenu", "chapitres", "sources", "boite", "serveur",
                "programme", "contrats", "prompts", ".agents", ".cursor", "app/usine"]
 # Ce que le produit affiche : voix contrôlée (exclamation, emoji, mots interdits).
-DOSSIERS_VOIX = ["contenu", "chapitres", "web"]
+DOSSIERS_VOIX = ["contenu", "chapitres"]
 
 
 def fichiers(dossiers, suffixes):
@@ -109,9 +109,12 @@ def controle_ancien_couplage(errors):
 
 
 def controle_client_archipel(errors):
-    """L'archipel est archivé depuis le 04/09 (archive/client-archipel-2026-09-04) : il ne revient pas."""
+    """Le front est retiré le 15/09/2026 (decisions/0054) : ni l'archipel ni le client web ne reviennent."""
     if (ROOT / "client").exists():
-        errors.append("client/ ne doit pas revenir : l'archipel est archivé, le client v2 est web/ (ACA-FRONT-2)")
+        errors.append("client/ ne doit pas revenir : l'archipel est archivé")
+    if (ROOT / "web").exists():
+        errors.append("web/ ne doit pas revenir : le front est retiré, "
+                      "l'interface est le dépôt discuté par un agent (decisions/0054, ACA-SANS-FRONT-1)")
 
 
 def controle_roadmap(errors):
@@ -244,7 +247,7 @@ def controle_contenu(errors):
 
 
 def controle_imports(errors):
-    for f in fichiers(["app", "serveur", "web", "client"], {".py", ".ts", ".tsx", ".js"}):
+    for f in fichiers(["app", "serveur", "client"], {".py", ".ts", ".tsx", ".js"}):
         if "node_modules" in f.parts:
             continue
         if RE_IMPORT_LABOR.search(lit(f)):

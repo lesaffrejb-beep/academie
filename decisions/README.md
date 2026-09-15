@@ -72,3 +72,5 @@ lisant le dépôt, une règle née d'un incident. Pas l'avancement
 - [0052. Base écrite complète, centrée sur la copropriété](0052-cours-bruts-complets-et-exigence-editoriale.md)
 
 - [0053 : cursus continus et interface bleue](0053-rentree-cursus-continu-et-interface-bleue.md).
+
+- [0054 : plus de front, le dépôt est l'interface](0054-plus-de-front-le-depot-est-l-interface.md)

@@ -5,8 +5,12 @@ node_modules/
 .env
 .env.*
 .claude/
+.vite/
 etat/*
 !etat/.gitignore
+
+# Artefacts HTML jetables d'une séance (QCM, schéma), affichés puis jetés (decisions/0054).
+sorties/
 
 # Vecteurs de parité : régénérés par les tests à l'instant du test
 # (app/vecteurs_fsrs.py, app/vecteurs_progression.py). Un fichier
