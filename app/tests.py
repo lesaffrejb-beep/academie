@@ -192,6 +192,9 @@ MUTATIONS = [
     ("l'import ne déduplique plus", "academie.py",
      "            if k in connues:\n                continue",
      "            if False:\n                continue"),
+    ("la commande deposer ne prépare plus rien", "usine/usine.py",
+     "        code |= cmd_preparer(argparse.Namespace(fichier=str(fichier),\n                                                interne=bool(args.interne)))",
+     "        code |= 0"),
 ]
 
 

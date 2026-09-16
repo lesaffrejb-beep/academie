@@ -7,6 +7,7 @@ Tu es un agent de code (Claude Code, Codex, Antigravity, Cursor ou un autre) et 
 2. Les documents. Demande à l'élève, une question à la fois : où sont les documents ; lesquels sont publics et lesquels sont internes à son employeur ou portent des noms ; pour chacun, ce qu'il espère en tirer en une phrase. Un document interne va dans `sources/interne/` et n'en sortira jamais ; un document public va dans `sources/`. Rien qui contienne des données de clients ou de copropriétés réelles.
 
 3. Un document à la fois, pas à pas :
+   Si l'élève a plusieurs PDF, tu peux les faire déposer dans `sources/a-preparer/` puis lancer `python3 app/usine/usine.py deposer` (`--interne` pour un lot interne) : chaque fichier est préparé comme ci-dessous, dans l'ordre.
    `python3 app/usine/usine.py preparer <fichier>` (avec `--interne` s'il est interne) ;
    `python3 app/usine/usine.py declarer <empreinte> --outil <ton outil> --modele <ton modèle>` ;
    la boucle `python3 app/usine/usine.py suivant <empreinte>`, faire exactement ce que la consigne demande dans le pivot (garder le texte, recoller, titres, figures décrites depuis la page rendue, rien résumé, aucun chiffre ajouté), puis `python3 app/usine/usine.py valider <empreinte>` jusqu'au vert ;

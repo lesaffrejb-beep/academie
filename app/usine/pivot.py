@@ -131,6 +131,21 @@ def rendre_pages(pdf: Path, dossier: Path, pages: list[int], dpi: int) -> list[s
     return crees
 
 
+def extraire_images(pdf: Path, dossier: Path) -> list[str]:
+    """Extrait les images intégrées en PNG, pour les réutiliser telles quelles.
+
+    À côté des pages rendues (`p-####.png`, une page entière), `pdfimages
+    -png -p` sort les images réelles (`img-<page>-<n>.png`). Une extraction
+    impossible ne fait pas échouer la préparation : on rend une liste vide.
+    """
+    dossier.mkdir(parents=True, exist_ok=True)
+    try:
+        _commande(["pdfimages", "-png", "-p", str(pdf), str(dossier / "img")], delai=900)
+    except (RuntimeError, subprocess.TimeoutExpired):
+        return []
+    return sorted(str(p) for p in dossier.glob("img-*.png"))
+
+
 def mots(texte: str) -> set[str]:
     """Les mots de contenu (quatre caractères ou plus), en minuscules, sans doublon."""
     return set(RE_MOT.findall(texte.lower()))
@@ -190,6 +205,7 @@ def preparer_pdf(pdf: Path, dossier_pages: Path, dossier_figures: Path, config: 
     seuil = int(config["mots_page_texte"])
     a_rendre = [i for i in range(1, n_pages + 1) if figures.get(i, 0) > 0 or compte_mots(pages[i - 1]) < seuil]
     rendus = rendre_pages(pdf, dossier_figures, a_rendre, int(config["dpi_rendu"])) if a_rendre else []
+    images_extraites = extraire_images(pdf, dossier_figures)
     titres = titres_par_page(pdf)
     total_mots = sum(compte_mots(p) for p in pages)
     ocr_requis = n_pages > 0 and total_mots < n_pages * 5 and sum(images.values()) > 0
@@ -197,7 +213,8 @@ def preparer_pdf(pdf: Path, dossier_pages: Path, dossier_figures: Path, config: 
         "type": "pdf", "pages": n_pages, "mots_machine": total_mots,
         "images_par_page": {str(k): v for k, v in sorted(images.items())},
         "figures_par_page": {str(k): v for k, v in sorted(figures.items())},
-        "pages_rendues": rendus, "ocr_requis": ocr_requis,
+        "pages_rendues": rendus, "images_extraites": len(images_extraites),
+        "ocr_requis": ocr_requis,
         "titres_candidats": len(titres), "titres": titres,
         "texte": pages,
     }
@@ -210,6 +227,7 @@ def ecrire_structure(chemin: Path, info: dict) -> None:
         "images_par_page": info.get("images_par_page", {}),
         "figures_par_page": info.get("figures_par_page", {}),
         "pages_rendues": info.get("pages_rendues", []),
+        "images_extraites": info.get("images_extraites", 0),
         "titres_candidats": info.get("titres", []),
     }
     chemin.write_text(json.dumps(structure, ensure_ascii=False, indent=1), encoding="utf-8")

@@ -2,6 +2,7 @@
 """L'usine en ligne de commande : un document réel, pas à pas (decisions/0026, 0027).
 
     python3 app/usine/usine.py preparer <fichier> [--interne]
+    python3 app/usine/usine.py deposer [--interne]
     python3 app/usine/usine.py declarer <empreinte> --outil <outil> --modele <modèle>
     python3 app/usine/usine.py suivant <empreinte>
     python3 app/usine/usine.py valider <empreinte>
@@ -76,6 +77,29 @@ def cmd_preparer(args) -> int:
         print("  interne : ce document et tout ce qui en sort restent dans sources/interne/ ; aucun nom ne doit passer dans une fiche ni un chapitre")
     print(f"ensuite : python3 app/usine/usine.py declarer {emp} --outil <outil> --modele <modèle>")
     return 0
+
+
+def cmd_deposer(args) -> int:
+    """Prépare en lot tout ce qui est déposé dans `sources/a-preparer/`."""
+    rac = E.racine()
+    dossier = rac / "sources" / (("interne/" if args.interne else "") + "a-preparer")
+    if not dossier.is_dir():
+        print(f"dossier de dépôt absent : {dossier}")
+        print("crée-le, dépose un PDF, puis relance `deposer`")
+        return 1
+    fichiers = [f for f in sorted(dossier.iterdir())
+                if f.is_file() and not f.name.startswith(".")]
+    if not fichiers:
+        print(f"rien à déposer dans {dossier}")
+        return 0
+    code = 0
+    for fichier in fichiers:
+        print(f"--- {fichier.name}")
+        code |= cmd_preparer(argparse.Namespace(fichier=str(fichier),
+                                                interne=bool(args.interne)))
+        print()
+    print(f"{len(fichiers)} fichier(s) traité(s) depuis {dossier}")
+    return code
 
 
 def _doc(cle: str) -> tuple[E.Document, dict, dict]:
@@ -171,6 +195,7 @@ def main(argv=None) -> int:
     p = argparse.ArgumentParser(description="L'usine de l'Académie, pas à pas.")
     sp = p.add_subparsers(dest="cmd", required=True)
     s = sp.add_parser("preparer"); s.add_argument("fichier"); s.add_argument("--interne", action="store_true"); s.set_defaults(f=cmd_preparer)
+    s = sp.add_parser("deposer"); s.add_argument("--interne", action="store_true"); s.set_defaults(f=cmd_deposer)
     s = sp.add_parser("declarer"); s.add_argument("empreinte"); s.add_argument("--outil", required=True); s.add_argument("--modele", required=True)
     s.add_argument("--classe", default=None, help=argparse.SUPPRESS); s.set_defaults(f=cmd_declarer)
     s = sp.add_parser("suivant"); s.add_argument("empreinte"); s.set_defaults(f=cmd_suivant)

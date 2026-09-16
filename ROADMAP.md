@@ -29,6 +29,10 @@ nouvelles.
 `ACA-SANS-FRONT-7` ajoute `exporter`/`importer` : une sauvegarde
 versionnée, fusionnée par union sans écraser ni dupliquer, qui répond à
 deux appareils sans serveur. 28 tests verts.
+`ACA-USINE-1` ouvre l'entrée des documents : un dossier de dépôt
+`sources/a-preparer/` et une commande `deposer` préparent en lot les PDF
+(texte par page, pages rendues, images réelles extraites), sans recopier
+de chemin.
 Les items
 qui pointaient vers `ACA-FRONT-2` s'y raccrochent. La comparaison des
 dépôts existants (apprendre en chat, répétition espacée) est faite dans

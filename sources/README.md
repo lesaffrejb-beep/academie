@@ -32,6 +32,16 @@ se déduit la ligne de registre) et, pour un document rattaché,
 `<empreinte>.rattachements.json`. Tout hors git. Un document interne a
 les mêmes fichiers sous `sources/interne/`.
 
+**Le dépôt.** Jette un PDF (ou une transcription) dans
+`sources/a-preparer/`, puis `python3 app/usine/usine.py deposer`. Chaque
+fichier est préparé comme par `preparer` et reste à sa place ; un
+document déjà préparé est sauté. Dans `<empreinte>.figures/`, les pages à
+figures sont rendues (`p-####.png`, une page entière) et les images
+réelles extraites (`img-*.png`, réutilisables telles quelles). Un PDF
+scanné sans couche texte est signalé : `ocrmypdf --language fra` sur le
+fichier, puis `deposer` à nouveau. Le dossier de dépôt n'est pas
+versionné (seul un `.gitkeep` l'est).
+
 Fiabilité :
 
 | Note | Ce que ça veut dire |

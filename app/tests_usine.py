@@ -266,6 +266,31 @@ def scenario_pdf() -> None:
     verifie("la ligne ne s'écrit pas deux fois", registre.count("Guide des majorités") == (rac / "sources" / "REGISTRE.md").read_text(encoding="utf-8").count("Guide des majorités"))
 
 
+def scenario_depot() -> None:
+    if shutil.which("pdftotext") is None:
+        print("~ poppler absent : scénario dépôt sauté")
+        return
+    rac = racine_test(mots_page_texte=5)
+    depot = rac / "sources" / "a-preparer"
+    depot.mkdir()
+    (depot / "guide.pdf").write_bytes(pdf_fixture([
+        ["Guide du depot", "Le fonds de travaux est obligatoire.", "Graphique 1 : evolution des charges"],
+        [],
+    ]))
+    code, sortie = lance(rac, "deposer")
+    verifie("le dossier de dépôt prépare le PDF",
+            code == 0 and "1 fichier(s)" in sortie and "préparé :" in sortie, sortie)
+    emp = empreinte_de(rac)
+    structure = json.loads((rac / "sources" / f"{emp}.structure.json").read_text(encoding="utf-8"))
+    verifie("la structure retient les images extraites",
+            "images_extraites" in structure, json.dumps(structure)[:200])
+    verifie("les pages à figures sont rendues",
+            any((rac / "sources" / f"{emp}.figures").glob("p-*.png")), "")
+    code, sortie = lance(rac, "deposer")
+    verifie("un document déjà préparé est sauté", "déjà préparé" in sortie, sortie)
+    verifie("le fichier reste dans le dossier de dépôt", (depot / "guide.pdf").is_file())
+
+
 def scenario_reprise_ancien_etat() -> None:
     rac = racine_test()
     src = rac / "ancien.txt"
@@ -329,6 +354,7 @@ def scenario_transcription_unitaire() -> None:
 def main() -> int:
     scenario_transcription_et_pas_a_pas()
     scenario_pdf()
+    scenario_depot()
     scenario_transcription_unitaire()
     scenario_reprise_ancien_etat()
     if ECHECS:

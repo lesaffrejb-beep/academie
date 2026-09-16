@@ -493,6 +493,24 @@
       "note": "Décision 0054, suite de ACA-SANS-FRONT-6. Livré le 15/09 : exporter/importer avec union et déduplication (nonce, clé composite du carnet) ; 28 tests, mutation de déduplication détectée. Réponse locale à deux appareils, sans serveur."
     },
     {
+      "id": "ACA-USINE-1",
+      "outcome": "Un dossier de dépôt sources/a-preparer/ et une commande deposer préparent en lot les PDF déposés (texte par page, pages à figures rendues, extraction des images réelles), sautent les déjà préparés et rappellent l'OCR si besoin.",
+      "status": "done",
+      "done_on": "2026-09-15",
+      "mode": "agent-review",
+      "risk": "low",
+      "priority": 90,
+      "depends_on": [],
+      "budget": {
+        "max_units": 1,
+        "max_minutes": 90,
+        "max_tokens": 25000
+      },
+      "proof": "tests_usine.py vert : un PDF déposé est préparé par deposer, la structure porte images_extraites, un second passage saute le document ; tests.py, check.py et mutation verts.",
+      "parent_milestone": "ACADEMIE-V2-CONTENU",
+      "note": "Décision 0026 et 0027. Livré le 15/09 : sources/a-preparer/, commande deposer, extraction des images réelles (pdfimages -png) ; scénario de dépôt dans tests_usine.py et mutation détectée. Preuve réelle : un PDF déposé devient .pdf, .pages/, .md, .structure.json et .figures/."
+    },
+    {
       "id": "ACA-ARBRE-1",
       "outcome": "progression.py v2 descend au niveau du chapitre et de la branche : états de nœud (inconnu, ouvert, en cours, solide, validé, à revoir par seuil de fraîcheur), ouverture de branche à 75 %, règle de croissance ; genere.py publie chapitres et prérequis dans banque.json ; le client recalcule la même chose (parité).",
       "status": "done",
