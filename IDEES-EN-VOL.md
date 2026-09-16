@@ -68,6 +68,26 @@ arbitrée) · **ÉCARTÉE** (dit pourquoi).
 | 03/09 | « Documente les modèles actuels, forces et faiblesses selon nos benchmarks, humblement » | GRAVÉE | `MODELES.md` (à relire le 03/12/2026) |
 | 03/09 | « Un onboarding : nouveau pseudo, petit catalogue, créer le vôtre, le prompt à coller dans Claude Code, Codex, Antigravity, Cursor » | GRAVÉE | `COMMENCER.md`, `prompts/`, `programme/catalogue.json`, chantier `ACA-ONBOARDING-1` |
 
+| 15/09 | Le rendez-vous quotidien : l'interface est pull, rien ne relance le matin (la notification opt-in de 0020 n'existe pas) | À CREUSER | Peut tuer le produit (DOCTRINE §6) ; le journal local empêche une relance cloud |
+| 15/09 | Outiller le test à froid de vingt cartes et le bilan du rituel depuis la surface | À CREUSER | `ACA-RITUAL-1` attend son instrument ; sans lui, rien n'est mesuré |
+| 15/09 | Le contenu manque : 168 cartes jouables pour 389 chapitres copro et 375 IFSI | À CREUSER | `ACA-CONTENT-2` ; goulot réel, dépend de sources et d'humain |
+| 15/09 | Qui juge une réponse libre, et comment le tracer | À CREUSER | L'agent note 1-4 sans règle ni trace ; risque de modèle-juge, `ACA-RESPONSE-1` |
+| 15/09 | Sauvegarde automatique et durabilité du journal local (Mac qui meurt) | DIFFÉRÉE | `exporter`/`importer` existent ; rappel et copie NOIR non codés (ARCHITECTURE §3) |
+| 15/09 | Les types d'exercices non jouables en chat : relier, datation, plan, photo, cas, role, ecoute, papier | DIFFÉRÉE | La surface ne joue que flash et qcm (HTML) ; le contrat en définit huit et plus |
+| 15/09 | Montrer les schémas et images dans la conversation | DIFFÉRÉE | Contourné par un HTML jetable ; aucun schéma rendu dans le chat, `ACA-MEDIA-1` |
+| 15/09 | Revérifier et périmer les cartes (une carte de droit périmée reste servie) | DIFFÉRÉE | `ACA-VERIF-1` |
+| 15/09 | La page « Pourquoi croire ce professeur » et l'audit de banque | DIFFÉRÉE | `ACA-AUDIT-1`, `decisions/0022` |
+| 15/09 | Le quiz de positionnement comme première étape, pas seulement une commande | DIFFÉRÉE | `quiz.py` existe ; onboarding non branché |
+| 15/09 | Synchronisation continue, cercles, bibliothèque commune | DIFFÉRÉE | `serveur/` dormant ; `ACA-BIBLIOTHEQUE-1`, `ACA-CERCLE-1` |
+| 15/09 | Consigner la réponse du joueur et la correction du modèle au journal (user_answer + feedback) | À CREUSER | Rien ne garde ce qu'on a répondu ni le jugement rendu ; pattern repéré chez spacedrep, non utilisé |
+| 15/09 | Le budget de temps et le coût d'une séance | À CREUSER | « quinze minutes » ni mesuré en direct ni borné ; aucun compteur de jetons |
+| 15/09 | L'onboarding non technique : cloner et faire tourner Python reste un mur | À CREUSER | L'agent distant n'a souvent ni poppler ni les fichiers locaux |
+| 15/09 | L'accessibilité des artefacts HTML d'une séance (lecteur d'écran, contraste) | À CREUSER | La DA s'en souciait ; les artefacts ne sont pas contrôlés |
+| 15/09 | La vie du dépôt public : issues, PR, forks, SECURITY, confidentialité des carnets sur machine partagée | À CREUSER | `etat/` est en clair dans le dossier local |
+| 15/09 | Un garde-fou pré-commit contre la règle 1 (données client, pièces, contacts) | À CREUSER | La règle repose sur la discipline, pas sur un contrôle |
+| 15/09 | Les PDF difficiles : tableaux, plans, OCR français, doublons par contenu, documents très longs | À CREUSER | `ACA-USINE-1` couvre le dépôt ; la qualité et les plafonds restent à faire |
+| 15/09 | La dérive de configuration entre cursus (socle et calendrier copro appliqués à l'IFSI) | À CREUSER | `config_du_cursus` reprend domaines, socle, semaine type ; le calendrier reste copro |
+
 *Toute session qui entend JB lancer une idée en route l'ajoute ici
 dans le commit du jour, même si elle est gravée ailleurs dans la
 foulée : ce tableau est l'index de traçabilité.*
