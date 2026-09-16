@@ -38,6 +38,8 @@ Usage, pour un agent comme pour un humain :
     python3 app/academie.py prevue <id>
     python3 app/academie.py rituel
     python3 app/academie.py cursus [<cle>]
+    python3 app/academie.py accueil [--json]
+    python3 app/academie.py profil [--pseudo <pseudo> --voix <v> --exigence <e>]
     python3 app/academie.py exporter <fichier>
     python3 app/academie.py importer <fichier>
 
@@ -56,6 +58,7 @@ import hashlib
 import html
 import json
 import os
+import re
 import secrets
 import sys
 import webbrowser
@@ -85,6 +88,11 @@ CHAMPS_QUESTION = ("id", "domaine", "branche", "chapitre", "sous_branche",
                    "peremption", "note_confiance", "a_recouper")
 # Ce qui n'apparaît qu'à la correction (ou pendant une épreuve, à la fin).
 CHAMPS_CORRECTION = ("reponse", "explication", "vigilance")
+
+# Le profil local (ACA-ONBOARDING-2, decisions/0056) : des préférences,
+# pas une mesure. Écrit par `profil`, lu par tous les agents.
+PROFIL_FORMAT = "academie-profil-1"
+RE_PSEUDO = re.compile(r"^[A-Za-z0-9][A-Za-z0-9._-]{0,39}$")
 
 
 # --- état et journal --------------------------------------------------
@@ -139,6 +147,56 @@ def charge_catalogue() -> dict:
         return {"parcours": []}
 
 
+def charge_arrivee() -> dict:
+    """Les choix de l'arrivée : voix, exigences, zones de dépôt (0056)."""
+    fichier = ACADEMIE / "contenu" / "arrivee.json"
+    if not fichier.is_file():
+        return {}
+    try:
+        data = json.loads(fichier.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        return {}
+    return data if isinstance(data, dict) else {}
+
+
+def charge_profil(profil: str | None, etat: Path) -> dict | None:
+    """Le profil local d'un pseudo, ou None s'il n'a pas encore été écrit."""
+    if not profil:
+        return None
+    fichier = Path(etat) / str(profil) / "profil.json"
+    if not fichier.is_file():
+        return None
+    try:
+        data = json.loads(fichier.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        return None
+    return data if isinstance(data, dict) else None
+
+
+def config_du_profil(config: dict, prefs: dict | None) -> dict:
+    """L'exigence du joueur appliquée à la config du moteur, sans le réécrire.
+
+    Le profil ne crée aucune mesure : il bouge `fsrs.retention_souhaitee`,
+    `quotas.nouveau_par_seance` et `erreurs.seuil_echecs`, déjà lus par le
+    moteur (decisions/0056). Sans profil, la config reste identique, et la
+    parité de la surface avec le moteur tient.
+    """
+    if not prefs:
+        return config
+    table = {e.get("cle"): e for e in charge_arrivee().get("exigences", [])}
+    reglage = table.get(prefs.get("exigence"))
+    if not reglage:
+        return config
+    effectif = dict(config)
+    effectif["fsrs"] = dict(config.get("fsrs", {}))
+    effectif["fsrs"]["retention_souhaitee"] = reglage["retention"]
+    effectif["quotas"] = dict(config.get("quotas", {}))
+    effectif["quotas"]["nouveau_par_seance"] = reglage["nouveau_par_seance"]
+    effectif["erreurs"] = dict(config.get("erreurs", {}))
+    effectif["erreurs"]["seuil_echecs"] = reglage["seuil_echecs"]
+    return effectif
+
+
 def charge_cursus(cle: str | None) -> dict | None:
     """Le programme d'un cursus, lu depuis le catalogue. None si inconnu."""
     if not cle:
@@ -157,11 +215,12 @@ def charge_cursus(cle: str | None) -> dict | None:
     return None
 
 
-def cursus_actif(journal: list[dict], args) -> str | None:
-    """Le cursus du jour : l'option, sinon le dernier journalisé, sinon le premier.
+def cursus_actif(journal: list[dict], args, prefs: dict | None = None) -> str | None:
+    """Le cursus du jour : l'option, puis le dernier journalisé, puis le profil, puis le premier.
 
     C'est la règle de 0053 cote serveur, portee au local : le dernier
-    evenement `mode: cursus` selon l'instant reel fait foi.
+    evenement `mode: cursus` selon l'instant reel fait foi. Le profil sert
+    de repli quand aucun choix n'a encore ete journalise (0056).
     """
     choisi = getattr(args, "cursus", None)
     if choisi:
@@ -169,6 +228,10 @@ def cursus_actif(journal: list[dict], args) -> str | None:
     for ligne in reversed(journal):
         if ligne.get("mode") == "cursus" and ligne.get("cursus"):
             return str(ligne["cursus"])
+    if prefs and prefs.get("cursus"):
+        repli = str(prefs["cursus"])
+        if charge_cursus(repli):
+            return repli
     parcours = charge_catalogue().get("parcours", [])
     return str(parcours[0]["cle"]) if parcours else None
 
@@ -204,8 +267,10 @@ def charge_contexte(args) -> dict:
     profil = args.profil or config.get("profil_defaut", "jb")
     cartes, erreurs = charge_cartes_du_depot()
     journal = lit_journal(profil, dossier_etat(args))
+    prefs = charge_profil(profil, dossier_etat(args))
+    config = config_du_profil(config, prefs)
 
-    cle = cursus_actif(journal, args)
+    cle = cursus_actif(journal, args, prefs)
     cursus = charge_cursus(cle) if cle else None
     explicite = getattr(args, "cursus", None)
     erreur_cursus = (f"cursus inconnu : {explicite}"
@@ -223,6 +288,7 @@ def charge_contexte(args) -> dict:
     return {
         "config": config,
         "profil": profil,
+        "prefs": prefs,
         "cursus": cle,
         "erreur_cursus": erreur_cursus,
         "cartes": cartes,
@@ -758,6 +824,105 @@ def cmd_cursus(args, ctx) -> int:
     return 0
 
 
+# --- arrivée locale et profil (ACA-ONBOARDING-2) ----------------------
+
+def cmd_accueil(args, ctx) -> int:
+    """L'arrivée : ce qu'il faut pour choisir, et l'état du profil local.
+
+    Un seul appel rend tout ce que l'agent présente au premier message :
+    le catalogue, la liste des voix, la liste des exigences, les zones de
+    dépôt et si un profil existe déjà.
+    """
+    catalogue = charge_catalogue()
+    arrivee = charge_arrivee()
+    prefs = ctx.get("prefs")
+    charge = {
+        "profil_existe": prefs is not None,
+        "profil": prefs,
+        "pseudo_actif": ctx["profil"],
+        "catalogue": catalogue.get("parcours", []),
+        "creer_le_votre": catalogue.get("creer_le_votre", {}),
+        "voix": arrivee.get("voix", []),
+        "exigences": arrivee.get("exigences", []),
+        "depot": arrivee.get("depot", {}),
+        "etat": str(dossier_etat(args)),
+    }
+    if prefs is None:
+        charge["trou"] = ("aucun profil local : l'arrivée n'a pas encore "
+                          "été faite")
+    if args.json:
+        print(json.dumps(charge, ensure_ascii=False, indent=2))
+        return 0
+    if prefs is None:
+        print("Aucun profil local. L'arrivée commence ici.")
+    else:
+        print(f"Profil {prefs.get('pseudo')} : cursus "
+              f"{prefs.get('cursus') or 'aucun'}, voix {prefs.get('voix')}, "
+              f"exigence {prefs.get('exigence')}")
+    parcours = charge["catalogue"]
+    print(f"  cursus : {', '.join(str(p.get('cle')) for p in parcours) or 'aucun'}")
+    print(f"  voix : {', '.join(str(v.get('cle')) for v in charge['voix']) or 'aucune'}")
+    print("  exigences : "
+          f"{', '.join(str(e.get('cle')) for e in charge['exigences']) or 'aucune'}")
+    depot = charge["depot"]
+    print(f"  dépôt public : {depot.get('public')}")
+    print(f"  dépôt privé : {depot.get('prive')}")
+    print(f"  état : {charge['etat']}")
+    return 0
+
+
+def _choix_profil(args, arrivee: dict) -> tuple[dict | None, str | None]:
+    """Valide les choix d'un profil avant écriture. Aucune écriture ici."""
+    pseudo = getattr(args, "pseudo", None)
+    if not pseudo or not RE_PSEUDO.match(str(pseudo)):
+        return None, ("pseudo attendu : lettre ou chiffre d'abord, puis "
+                      "lettres, chiffres, point, tiret ou souligné (40 max)")
+    cursus = getattr(args, "cursus", None)
+    if cursus and not any(str(p.get("cle")) == str(cursus)
+                          for p in charge_catalogue().get("parcours", [])):
+        return None, f"cursus inconnu : {cursus}"
+    voix = getattr(args, "voix", None) or "sobre"
+    if not any(v.get("cle") == voix for v in arrivee.get("voix", [])):
+        return None, f"voix inconnue : {voix}"
+    exigence = getattr(args, "exigence", None) or "standard"
+    if not any(e.get("cle") == exigence for e in arrivee.get("exigences", [])):
+        return None, f"exigence inconnue : {exigence}"
+    return {"pseudo": str(pseudo), "cursus": cursus, "voix": voix,
+            "exigence": exigence}, None
+
+
+def cmd_profil(args, ctx) -> int:
+    """Lire le profil local, ou l'écrire depuis les choix de l'arrivée."""
+    arrivee = charge_arrivee()
+    if getattr(args, "pseudo", None) is None:
+        nom = ctx["profil"]
+        prefs = ctx.get("prefs") or charge_profil(nom, dossier_etat(args))
+        if prefs is None:
+            return _trou("aucun profil local : l'arrivée n'a pas encore "
+                         "été faite", args)
+        if args.json:
+            print(json.dumps(prefs, ensure_ascii=False, indent=2))
+            return 0
+        print(f"profil {prefs.get('pseudo')} : cursus "
+              f"{prefs.get('cursus') or 'aucun'}, voix {prefs.get('voix')}, "
+              f"exigence {prefs.get('exigence')}")
+        return 0
+    choix, erreur = _choix_profil(args, arrivee)
+    if erreur:
+        return _trou(erreur, args)
+    ligne = {**choix, "format": PROFIL_FORMAT,
+             "cree_le": datetime.now(timezone.utc).isoformat(timespec="seconds")}
+    cible = dossier_etat(args) / choix["pseudo"] / "profil.json"
+    cible.parent.mkdir(parents=True, exist_ok=True)
+    cible.write_text(json.dumps(ligne, ensure_ascii=False, indent=2) + "\n",
+                     encoding="utf-8")
+    if args.json:
+        print(json.dumps(ligne, ensure_ascii=False, indent=2))
+        return 0
+    print(f"profil écrit : {cible}")
+    return 0
+
+
 # --- sauvegarde et transfert (ACA-SANS-FRONT-7) -----------------------
 
 def _lit_lignes(chemin: Path) -> list[dict]:
@@ -949,6 +1114,17 @@ def construit_parseur() -> argparse.ArgumentParser:
                         help="le cursus actif et son choix")
     p.add_argument("cle", nargs="?", help="le cursus à activer (copro, ifsi, ...)")
     p.set_defaults(fn=cmd_cursus)
+
+    p = sous.add_parser("accueil", parents=[commun],
+                        help="l'arrivée : catalogue, voix, exigences, dépôt")
+    p.set_defaults(fn=cmd_accueil)
+
+    p = sous.add_parser("profil", parents=[commun],
+                        help="lire le profil local, ou l'écrire (--pseudo)")
+    p.add_argument("--pseudo", help="le pseudo à écrire (sinon lecture)")
+    p.add_argument("--voix", help="sobre, direct ou patient")
+    p.add_argument("--exigence", help="detendu, standard ou exigeant")
+    p.set_defaults(fn=cmd_profil)
 
     p = sous.add_parser("exporter", parents=[commun],
                         help="sauvegarder le journal et le carnet")

@@ -33,6 +33,12 @@ deux appareils sans serveur. 28 tests verts.
 `sources/a-preparer/` et une commande `deposer` préparent en lot les PDF
 (texte par page, pages rendues, images réelles extraites), sans recopier
 de chemin.
+`ACA-ONBOARDING-2` ferme l'arrivée, sans front : au premier message,
+`accueil` sert le catalogue, les trois voix, les trois exigences et les
+zones de dépôt ; `profil` écrit et relit `etat/<pseudo>/profil.json`,
+dont l'exigence règle le moteur sans le réécrire
+([décision 0056](decisions/0056-arrivee-locale-et-profil-du-joueur.md)).
+34 tests verts et une mutation d'exigence détectée.
 Les items
 qui pointaient vers `ACA-FRONT-2` s'y raccrochent. La comparaison des
 dépôts existants (apprendre en chat, répétition espacée) est faite dans

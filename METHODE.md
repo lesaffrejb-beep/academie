@@ -598,6 +598,32 @@ parcours réel, puis production de l'élève et essai différé. Le script ne
 juge pas une réponse libre ; aucune réussite personnelle n'est inventée.
 Détail : CHEMINS.md et décision 0051.
 
+## 40. L'arrivée règle des préférences, pas des mesures (16/09/2026)
+
+**Ce qu'on fait** : au premier message, l'agent lit
+`etat/<pseudo>/profil.json` et, s'il manque, choisit avec l'élève le
+cursus, le pseudo, la zone de dépôt, une voix de professeur et un
+niveau d'exigence. La voix reste dans le cadre de `VOIX.md` (sobre,
+direct, patient). L'exigence règle la rétention FSRS, le nombre de
+cartes neuves par séance et le seuil de reprise, puis le ton des
+corrections.
+
+**Pourquoi** : le rythme et la sévérité utiles varient d'une personne et
+d'une période à l'autre, et les choisir explicitement évite de les
+imposer. Le mécanisme ne crée aucune mesure nouvelle : l'exigence
+retouche des paramètres déjà documentés (FSRS, section 1 ; seuil de
+reprise, section 5) et le journal reste la seule trace d'apprentissage.
+
+**Sources** : mécanique dérivée des décisions 0056 et 0024, et de
+`VOIX.md`. Les trois registres et les trois niveaux sont des choix
+éditoriaux, sans effet pédagogique mesuré ; les valeurs d'exigence sont
+des paramètres de travail, pas des seuils scientifiques.
+
+**Contrôles** : `app/tests_academie.py` vérifie que le profil se relit,
+que les choix invalides ne s'écrivent pas, que le cursus du profil cède
+devant un choix journalisé et que l'exigence change les intervalles.
+La parité de la surface avec le moteur reste exacte sans profil.
+
 ## METHODE38 : un départ proposé, des traces réelles
 
 Décision 0053, demande du 07/09/2026. Le départ en dix séances propose huit

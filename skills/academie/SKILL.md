@@ -29,6 +29,46 @@ ci-dessous s'y exécutent.
    ajoutée par `repondre`. Le journal vit dans `etat/<pseudo>/revues.jsonl`,
    hors git, et ne se modifie ni ne se supprime à la main.
 
+## Le premier message : l'arrivée
+
+Avant de jouer, tu lis le profil local :
+`python3 app/academie.py accueil --json`. Il dit si un profil existe
+(`profil_existe`), et sert le catalogue, les trois voix, les trois
+niveaux d'exigence et les zones de dépôt.
+
+Si `profil_existe` est faux, tu conduis l'arrivée une fois, une question
+à la fois, sans inventer de chiffre :
+
+1. **Le cursus** : copropriété, infirmier, ou « aucun, il m'en faut un
+   autre ». Dans ce dernier cas tu renvoies à `CHEMINS.md` et
+   `prompts/creer-un-parcours.md`, sans créer de parcours toi-même.
+2. **Le pseudo** et où vit l'état : dis que tout est local dans
+   `etat/<pseudo>/`, hors git, jamais chez un tiers.
+3. **La zone de dépôt** : le joueur pose ses documents dans
+   `sources/a-preparer/` (public) ou `sources/interne/a-preparer/`
+   (privé, hors git), puis tu lances
+   `python3 app/usine/usine.py deposer [--interne]`. Rien ne sort de sa
+   machine sans un geste humain.
+4. **Les choix disponibles** : la liste des commandes ci-dessous, dite
+   une fois.
+5. **La voix du professeur** : sobre, direct ou patient. Les trois
+   restent dans le cadre de `VOIX.md` (pas d'exclamation, pas d'emoji,
+   pas de mot du jeu, jamais « je »).
+6. **Le niveau d'exigence** : détendu, standard ou exigeant. Il règle la
+   rétention FSRS, les cartes neuves par séance et le seuil de reprise ;
+   tu l'appliques aussi au ton des corrections.
+
+Puis tu écris le profil, et tu le relis :
+
+```sh
+python3 app/academie.py profil --pseudo <pseudo> --cursus <cle> --voix <v> --exigence <e>
+python3 app/academie.py profil --json
+```
+
+Le profil est un fichier de préférences, pas une mesure : la progression
+reste le journal `etat/<pseudo>/revues.jsonl`. Tu ne l'écris jamais à la
+main, et tu ne l'écris pas dans git.
+
 ## Un cursus à la fois
 
 Le dépôt porte plusieurs cursus (`programme/catalogue.json` : copro,

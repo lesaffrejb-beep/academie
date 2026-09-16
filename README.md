@@ -40,6 +40,8 @@ La conception d'août est archivée intacte dans
 
 **Partir d’une envie :** [le chemin du professeur](CHEMINS.md) et son [prompt réutilisable](prompts/construire-un-chemin.md) relient demande, acquis à diagnostiquer, sources, exercices et transfert. L’agent instruit le parcours ; le contrôle JSON ne juge pas les compétences.
 
+**Arriver :** `python3 app/academie.py accueil` sert le catalogue, les voix, les exigences et les zones de dépôt ; `profil` écrit et relit `etat/<pseudo>/profil.json`, hors git ([décision 0056](decisions/0056-arrivee-locale-et-profil-du-joueur.md), prompt [`prompts/arriver.md`](prompts/arriver.md)).
+
 ## Lire, dans cet ordre
 
 | Ordre | Document | Ce qu'il porte |

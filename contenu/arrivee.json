@@ -1,0 +1,54 @@
+{
+  "_": "Les choix de l'arrivée, sans front (décision 0056). Trois registres de voix, tous dans le cadre de VOIX.md, et trois niveaux d'exigence qui règlent des paramètres du moteur sans le réécrire. Les identifiants sont stables ; ils vivent dans etat/<pseudo>/profil.json. Les zones de dépôt sont celles de l'usine, elles ne sont pas recréées ici.",
+  "version": "1",
+  "voix": [
+    {
+      "cle": "sobre",
+      "titre": "Sobre",
+      "description": "Les faits, la suite, rien de plus. Le registre de VOIX.md."
+    },
+    {
+      "cle": "direct",
+      "titre": "Direct",
+      "description": "Le verdict d'abord, l'explication ensuite. Une phrase par idée."
+    },
+    {
+      "cle": "patient",
+      "titre": "Patient",
+      "description": "L'explication d'abord, un exemple, puis la vigilance."
+    }
+  ],
+  "exigences": [
+    {
+      "cle": "detendu",
+      "titre": "Détendu",
+      "retention": 0.85,
+      "nouveau_par_seance": 1,
+      "seuil_echecs": 4,
+      "description": "Moins de cartes neuves, rappels plus espacés."
+    },
+    {
+      "cle": "standard",
+      "titre": "Standard",
+      "retention": 0.9,
+      "nouveau_par_seance": 1,
+      "seuil_echecs": 3,
+      "description": "Le réglage du moteur."
+    },
+    {
+      "cle": "exigeant",
+      "titre": "Exigeant",
+      "retention": 0.95,
+      "nouveau_par_seance": 2,
+      "seuil_echecs": 2,
+      "description": "Rappels plus rapprochés, reprise plus rapide."
+    }
+  ],
+  "depot": {
+    "public": "sources/a-preparer/",
+    "prive": "sources/interne/a-preparer/",
+    "formats": ["pdf", "txt", "md", "vtt", "srt", "png", "jpg", "jpeg"],
+    "commande": "python3 app/usine/usine.py deposer",
+    "commande_prive": "python3 app/usine/usine.py deposer --interne"
+  }
+}

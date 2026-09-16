@@ -728,6 +728,159 @@ def test_import_fichier_illisible() -> list[str]:
         shutil.rmtree(tmp, ignore_errors=True)
 
 
+# --- 13. arrivée locale et profil (ACA-ONBOARDING-2) ------------------
+
+def racine_arrivee() -> Path:
+    """Deux cursus, une carte dans chacun, et le catalogue de l'arrivée."""
+    tmp = racine_cursus()
+    (tmp / "contenu").mkdir()
+    shutil.copy(RACINE / "contenu" / "arrivee.json",
+                tmp / "contenu" / "arrivee.json")
+    return tmp
+
+
+def profil_du(tmp: Path) -> dict | None:
+    p = tmp / "etat" / PROFIL / "profil.json"
+    return json.loads(p.read_text(encoding="utf-8")) if p.is_file() else None
+
+
+def ecrit_profil(tmp: Path, *args: str) -> tuple[int, str, str]:
+    return cli(tmp, "profil", *args)
+
+
+def test_accueil_sans_profil_nomme_le_trou() -> list[str]:
+    tmp = racine_arrivee()
+    try:
+        code, out, err = cli(tmp, "accueil", "--json")
+        if code != 0:
+            return [f"accueil a échoué (code {code}) : {err[-300:]}"]
+        charge = json.loads(out)
+        if charge["profil_existe"]:
+            return ["un profil est annoncé alors qu'aucun n'est écrit"]
+        if charge.get("profil") is not None:
+            return ["un profil est servi alors qu'aucun n'est écrit"]
+        if not charge.get("trou"):
+            return ["le trou n'est pas nommé quand aucun profil n'existe"]
+        return []
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+
+def test_accueil_sert_les_choix() -> list[str]:
+    tmp = racine_arrivee()
+    try:
+        code, out, err = cli(tmp, "accueil", "--json")
+        if code != 0:
+            return [f"accueil a échoué (code {code}) : {err[-300:]}"]
+        charge = json.loads(out)
+        if len(charge["catalogue"]) != 2:
+            return [f"le catalogue devrait lister 2 parcours, "
+                    f"reçu {len(charge['catalogue'])}"]
+        if len(charge["voix"]) != 3:
+            return [f"trois voix attendues, reçu {len(charge['voix'])}"]
+        if len(charge["exigences"]) != 3:
+            return [f"trois exigences attendues, reçu {len(charge['exigences'])}"]
+        depot = charge.get("depot") or {}
+        if not depot.get("public") or not depot.get("prive"):
+            return ["l'arrivée ne nomme pas les zones de dépôt"]
+        if "creer_le_votre" not in charge:
+            return ["l'arrivée n'offre pas « créer le vôtre »"]
+        return []
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+
+def test_profil_ecrit_puis_relu() -> list[str]:
+    tmp = racine_arrivee()
+    try:
+        code, out, err = ecrit_profil(tmp, "--pseudo", PROFIL, "--cursus", "b",
+                                      "--voix", "sobre", "--exigence", "standard")
+        if code != 0:
+            return [f"profil a échoué (code {code}) : {err[-300:]}"]
+        ecrit = profil_du(tmp)
+        if not ecrit:
+            return ["aucun profil écrit sur le disque"]
+        if ecrit.get("cursus") != "b" or ecrit.get("voix") != "sobre":
+            return [f"le profil écrit ne garde pas les choix : {ecrit}"]
+        if not ecrit.get("format") or not ecrit.get("cree_le"):
+            return ["le profil écrit n'a ni format ni date"]
+        code, out, err = cli(tmp, "profil", "--json")
+        if code != 0:
+            return [f"profil --json a échoué (code {code}) : {err[-300:]}"]
+        relu = json.loads(out)
+        if relu.get("exigence") != "standard" or relu.get("pseudo") != PROFIL:
+            return [f"le profil relu ne correspond pas : {relu}"]
+        return []
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+
+def test_profil_refuse_les_choix_invalides() -> list[str]:
+    tmp = racine_arrivee()
+    try:
+        for args in (("--pseudo", PROFIL, "--voix", "inventee", "--exigence", "standard"),
+                     ("--pseudo", PROFIL, "--voix", "sobre", "--exigence", "inventee"),
+                     ("--pseudo", "", "--voix", "sobre", "--exigence", "standard"),
+                     ("--pseudo", PROFIL, "--cursus", "fantome",
+                      "--voix", "sobre", "--exigence", "standard")):
+            code, out, err = ecrit_profil(tmp, *args)
+            if code == 0:
+                return [f"un choix invalide est accepté : {args}"]
+            if profil_du(tmp):
+                return [f"un choix invalide a quand même écrit un profil : {args}"]
+        return []
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+
+def test_cursus_du_profil_est_repli() -> list[str]:
+    tmp = racine_arrivee()
+    try:
+        code, out, err = ecrit_profil(tmp, "--pseudo", PROFIL, "--cursus", "b",
+                                      "--voix", "sobre", "--exigence", "standard")
+        if code != 0:
+            return [f"profil a échoué (code {code}) : {err[-300:]}"]
+        code, out, err = cli(tmp, "seance", "--json")
+        if code != 0:
+            return [f"la séance après profil a échoué : {err[-300:]}"]
+        ids = [c["id"] for c in json.loads(out)["cartes"]]
+        if "b-entree" not in ids:
+            return ["le cursus du profil n'est pas respecté"]
+        code, out, err = cli(tmp, "cursus", "a")
+        if code != 0:
+            return [f"cursus a a échoué (code {code}) : {err[-300:]}"]
+        code, out, _ = cli(tmp, "seance", "--json")
+        ids = [c["id"] for c in json.loads(out)["cartes"]]
+        if "a-droit" not in ids:
+            return ["un choix de cursus journalisé ne l'emporte pas sur le profil"]
+        return []
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+
+def test_exigence_change_les_intervalles() -> list[str]:
+    tmp = racine_arrivee()
+    try:
+        intervalles = {}
+        for exigence in ("detendu", "standard", "exigeant"):
+            code, out, err = ecrit_profil(tmp, "--pseudo", PROFIL, "--cursus", "a",
+                                          "--voix", "sobre", "--exigence", exigence)
+            if code != 0:
+                return [f"profil {exigence} a échoué (code {code}) : {err[-300:]}"]
+            code, out, err = cli(tmp, "prevue", "a-droit", "--json")
+            if code != 0:
+                return [f"prevue a échoué (code {code}) : {err[-300:]}"]
+            intervalles[exigence] = json.loads(out)["intervalles"]["3"]["intervalle_jours"]
+        if not (intervalles["detendu"] >= intervalles["standard"]
+                >= intervalles["exigeant"]):
+            return [f"l'exigence ne change pas le moteur : {intervalles}"]
+        if intervalles["detendu"] == intervalles["exigeant"]:
+            return [f"les trois exigences donnent le même intervalle : {intervalles}"]
+        return []
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+
 TESTS = [
     ("1. séance identique au moteur", test_seance_est_celle_du_moteur),
     ("1. progression identique au moteur", test_progression_est_celle_du_moteur),
@@ -757,6 +910,12 @@ TESTS = [
     ("11. les cartes v2 et l'IFSI sont servies", test_les_cartes_v2_et_ifsi_sont_servies),
     ("12. export puis import par union", test_export_import_union),
     ("12. import d'un fichier illisible refusé", test_import_fichier_illisible),
+    ("13. accueil sans profil nomme le trou", test_accueil_sans_profil_nomme_le_trou),
+    ("13. accueil sert catalogue, voix, exigences, dépôt", test_accueil_sert_les_choix),
+    ("13. profil écrit puis relu", test_profil_ecrit_puis_relu),
+    ("13. les choix invalides sont refusés", test_profil_refuse_les_choix_invalides),
+    ("13. le cursus du profil est un repli", test_cursus_du_profil_est_repli),
+    ("13. l'exigence change le moteur", test_exigence_change_les_intervalles),
 ]
 
 

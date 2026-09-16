@@ -1125,6 +1125,26 @@
       },
       "proof": "travail/rentree-2026-09-07/SUIVI.md",
       "parent_milestone": "ACADEMIE-1"
+    },
+    {
+      "id": "ACA-ONBOARDING-2",
+      "outcome": "Au premier message, l'agent lit etat/<pseudo>/profil.json (hors git) pour connaître pseudo, cursus, voix et exigence ; sans profil, il conduit l'arrivée une fois (cursus du catalogue ou « créer le vôtre », pseudo et lieu de stockage, zone de dépôt, choix disponibles, voix, exigence), puis écrit le profil que la surface applique au moteur.",
+      "status": "done",
+      "done_on": "2026-09-16",
+      "mode": "agent-review",
+      "risk": "medium",
+      "priority": 94,
+      "depends_on": [
+        "ACA-SANS-FRONT-7"
+      ],
+      "budget": {
+        "max_units": 2,
+        "max_minutes": 180,
+        "max_tokens": 50000
+      },
+      "proof": "tests_academie.py vert : accueil sans profil nomme le trou et sert catalogue, voix, exigences et dépôt ; profil écrit puis relu ; choix invalides refusés sans écriture ; le cursus du profil fait repli sans événement journalisé et s'efface devant un choix journalisé ; une exigence change les intervalles de prevue ; la parité sans profil avec le moteur reste exacte ; tests.py, check.py et mutation verts.",
+      "parent_milestone": "ACADEMIE-V2-JOUEUR",
+      "note": "Décision 0056, demande de JB du 16/09/2026. L'arrivée reprend le rôle de ACA-ONBOARDING-1 (superseded_by ACA-SANS-FRONT-1) sans front : un fichier local de préférences, aucune écriture du moteur, et les trois registres de voix restent dans le cadre de VOIX.md."
     }
   ]
 }
