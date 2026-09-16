@@ -4,7 +4,7 @@ Tu es un agent de code (Claude Code, Codex, Antigravity, Cursor ou un autre) et 
 
 1. Le dépôt. Si tu n'es pas déjà dans le dépôt de l'élève, clone https://github.com/lesaffrejb-beep/academie.git (privé, accès donné par JB, ou une copie). Lis AGENTS.md, DOCTRINE.md, CONTRIBUER.md, MODELES.md, decisions/0026, decisions/0027 et sources/README.md. Lance `python3 app/tests.py` puis `python3 tooling/check.py` ; vert avant de commencer, sinon arrête-toi et dis-le.
 
-2. Les documents. Demande à l'élève, une question à la fois : où sont les documents ; lesquels sont publics et lesquels sont internes à son employeur ou portent des noms ; pour chacun, ce qu'il espère en tirer en une phrase. Un document interne va dans `sources/interne/` et n'en sortira jamais ; un document public va dans `sources/`. Rien qui contienne des données de clients ou de copropriétés réelles.
+2. Les documents. Demande à l'élève, une question à la fois : où sont les documents ; lesquels sont publics et lesquels sont internes à son employeur ou portent des noms ; pour chacun, ce qu'il espère en tirer en une phrase. Un document interne va dans `sources/interne/` et n'en sortira jamais ; un document public va dans `sources/`. Rien qui contienne des données de clients ou de copropriétés réelles. Si les documents viennent de Google Drive, iCloud, NotebookLM ou d'un téléphone, suis `sources/AMENER-UN-DOCUMENT.md` pour les amener en local.
 
 3. Un document à la fois, pas à pas :
    Si l'élève a plusieurs PDF, tu peux les faire déposer dans `sources/a-preparer/` puis lancer `python3 app/usine/usine.py deposer` (`--interne` pour un lot interne) : chaque fichier est préparé comme ci-dessous, dans l'ordre.

@@ -2,6 +2,9 @@
 
 Le registre des sources du domaine copropriété, et les copies locales.
 
+D'où vient un document et comment l'amener (Google Drive, iCloud,
+NotebookLM, téléphone, page web, vidéo) : [`AMENER-UN-DOCUMENT.md`](AMENER-UN-DOCUMENT.md).
+
 - `registre.json` : **versionné, il fait foi**. La forme machine du
   registre : une entrée par source, avec son `domaine_web` ou son
   `motif` (ce qui rattache une source de carte à sa ligne). Le
