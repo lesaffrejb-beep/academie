@@ -1145,6 +1145,24 @@
       "proof": "tests_academie.py vert : accueil sans profil nomme le trou et sert catalogue, voix, exigences et dépôt ; profil écrit puis relu ; choix invalides refusés sans écriture ; le cursus du profil fait repli sans événement journalisé et s'efface devant un choix journalisé ; une exigence change les intervalles de prevue ; la parité sans profil avec le moteur reste exacte ; tests.py, check.py et mutation verts.",
       "parent_milestone": "ACADEMIE-V2-JOUEUR",
       "note": "Décision 0056, demande de JB du 16/09/2026. L'arrivée reprend le rôle de ACA-ONBOARDING-1 (superseded_by ACA-SANS-FRONT-1) sans front : un fichier local de préférences, aucune écriture du moteur, et les trois registres de voix restent dans le cadre de VOIX.md."
+    },
+    {
+      "id": "ACA-PRECOMMIT-1",
+      "outcome": "Un hook pre-commit local bloque le diff stágé qui porte un motif de donnée client (mail, téléphone français, SIRET, IBAN, mention de labor), filet mécanique de la règle 1 d'AGENTS.md.",
+      "status": "done",
+      "done_on": "2026-09-17",
+      "mode": "deterministic",
+      "risk": "low",
+      "priority": 90,
+      "depends_on": [],
+      "budget": {
+        "max_units": 1,
+        "max_minutes": 120,
+        "max_tokens": 25000
+      },
+      "proof": "tests_garde.py vert : mail, téléphone, SIRET, labor et IBAN alertés sur un diff réduit ; contextes, suppressions et faux positifs IPv6 passent ; le hook installé refuse un commit porteur de mail et --no-verify passe ; tests.py, check.py et la mutation du garde verts. Un nom d'immeuble sans motif passe : le garde détecte, il ne certifie pas.",
+      "parent_milestone": "ACADEMIE-V2-FONDATIONS",
+      "note": "Sort de l'idée « À CREUSER » du 15/09 (IDEES-EN-VOL). Pré-commit, pas CI : la donnée est vue là où elle arrive. Le hook est contournable (choix humain, à avouer) ; la détection est prudente, pas un catalogue de parties."
     }
   ]
 }

@@ -64,6 +64,7 @@ SUITES = [
     ("rituel", "tests_rituel.py"),
     ("export Anki", "tests_export.py"),
     ("surface agent", "tests_academie.py"),
+    ("garde de confidentialité", "tests_garde.py"),
 ]
 
 # (description, fichier, texte à remplacer, remplacement).
@@ -198,6 +199,9 @@ MUTATIONS = [
     ("la commande deposer ne prépare plus rien", "usine/usine.py",
      "        code |= cmd_preparer(argparse.Namespace(fichier=str(fichier),\n                                                interne=bool(args.interne)))",
      "        code |= 0"),
+    ("le garde de confidentialité ne voit plus les mails", "garde_confidentialite.py",
+     "        if RE_MAIL.search(corps):",
+     "        if False:"),
 ]
 
 

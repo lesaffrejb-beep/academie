@@ -65,6 +65,7 @@ quand la machine peut le voir : `python3 tooling/check.py`.
 | aucun import de labor ou d'ERP dans `app/`, `serveur/`, `web/`, `client/` | code |
 | l'archipel est archivé (`archive/client-archipel-2026-09-04`), `client/` ne revient pas | `web/` |
 | la clé `usine` d'`academie.json` et celle du gabarit portent les mêmes seuils | `academie.json`, `gabarit-domaine/` |
+| le hook pre-commit appelle le garde de confidentialité (règle 1, `ACA-PRECOMMIT-1`) | `.git/hooks/pre-commit` |
 | `MODELES.md`, `COMMENCER.md`, `GEMINI.md`, `prompts/`, les adaptateurs par outil existent et sans tiret cadratin | racine, `prompts/`, `.agents/`, `.cursor/` |
 
 Un contrôle qui bloque un chantier légitime se discute par décision ;

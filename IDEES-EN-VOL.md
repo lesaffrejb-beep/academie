@@ -84,7 +84,7 @@ arbitrée) · **ÉCARTÉE** (dit pourquoi).
 | 15/09 | L'onboarding non technique : cloner et faire tourner Python reste un mur | À CREUSER | L'agent distant n'a souvent ni poppler ni les fichiers locaux |
 | 15/09 | L'accessibilité des artefacts HTML d'une séance (lecteur d'écran, contraste) | À CREUSER | La DA s'en souciait ; les artefacts ne sont pas contrôlés |
 | 15/09 | La vie du dépôt public : issues, PR, forks, SECURITY, confidentialité des carnets sur machine partagée | À CREUSER | `etat/` est en clair dans le dossier local |
-| 15/09 | Un garde-fou pré-commit contre la règle 1 (données client, pièces, contacts) | À CREUSER | La règle repose sur la discipline, pas sur un contrôle |
+| 15/09 | Un garde-fou pré-commit contre la règle 1 (données client, pièces, contacts) | GRAVÉE le 17/09 | Machine posée : `app/garde_confidentialite.py`, hook installé par `app/installation_precommit.py`, chantier `ACA-PRECOMMIT-1` ; hook local, contournable avec `--no-verify` (choix humain à avouer) |
 | 15/09 | Les PDF difficiles : tableaux, plans, OCR français, doublons par contenu, documents très longs | À CREUSER | `ACA-USINE-1` couvre le dépôt ; la qualité et les plafonds restent à faire |
 | 15/09 | La dérive de configuration entre cursus (socle et calendrier copro appliqués à l'IFSI) | À CREUSER | `config_du_cursus` reprend domaines, socle, semaine type ; le calendrier reste copro |
 

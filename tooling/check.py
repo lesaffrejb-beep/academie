@@ -299,12 +299,27 @@ def controle_chapitres(errors):
             errors.append(f"chapitres : {l}")
 
 
+def controle_garde_precommit(errors):
+    """Règle 1 (AGENTS.md) : un hook pre-commit doit appeler le garde de
+    confidentialité (chantier ACA-PRECOMMIT-1). Le hook est local et
+    contournable par --no-verify ; la machine vérifie qu'il est posé,
+    pas qu'il a été contourné.
+    """
+    hook = ROOT / ".git" / "hooks" / "pre-commit"
+    if not hook.is_file():
+        errors.append("pre-commit absent : python3 app/installation_precommit.py")
+        return
+    texte = hook.read_text(encoding="utf-8", errors="replace")
+    if "academie-precommit" not in texte or "garde_confidentialite" not in texte:
+        errors.append("pre-commit n'appelle pas le garde de confidentialité")
+
+
 def main() -> int:
     errors: list[str] = []
     for controle in (controle_fichiers_requis, controle_fichiers_suivis,
                      controle_json, controle_ancien_couplage, controle_client_archipel,
                      controle_roadmap, controle_decisions, controle_programme, controle_expertises, controle_tirets, controle_voix,
-                     controle_contenu, controle_imports, controle_usine, controle_chapitres):
+                     controle_contenu, controle_imports, controle_usine, controle_chapitres, controle_garde_precommit):
         controle(errors)
     for error in errors:
         print(f"ERREUR: {error}")
