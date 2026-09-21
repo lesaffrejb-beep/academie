@@ -130,6 +130,7 @@ def env(tmp: Path) -> dict:
     e["ACADEMIE_RACINE"] = str(tmp)
     e["ACADEMIE_APP"] = str(APP)
     e["PROFIL"] = PROFIL
+    e.pop("ACADEMIE_PROFIL", None)
     return e
 
 
@@ -139,6 +140,21 @@ def cli(tmp: Path, *args: str, etat: bool = True) -> tuple[int, str, str]:
     commande = [sys.executable, str(APP / "academie.py"), *args, "--profil", PROFIL]
     if etat:
         commande += ["--etat", str(tmp / "etat")]
+    res = subprocess.run(commande, capture_output=True, text=True, env=env(tmp))
+    return res.returncode, res.stdout, res.stderr
+
+
+def cli_sans_profil(tmp: Path, *args: str) -> tuple[int, str, str]:
+    """La surface sans `--profil` : ce que voit un joueur sur un clone neuf."""
+    commande = [sys.executable, str(APP / "academie.py"), *args,
+                "--etat", str(tmp / "etat")]
+    res = subprocess.run(commande, capture_output=True, text=True, env=env(tmp))
+    return res.returncode, res.stdout, res.stderr
+
+
+def cli_avec_profil(tmp: Path, profil: str, *args: str) -> tuple[int, str, str]:
+    commande = [sys.executable, str(APP / "academie.py"), *args,
+                "--profil", profil, "--etat", str(tmp / "etat")]
     res = subprocess.run(commande, capture_output=True, text=True, env=env(tmp))
     return res.returncode, res.stdout, res.stderr
 
@@ -881,6 +897,349 @@ def test_exigence_change_les_intervalles() -> list[str]:
         shutil.rmtree(tmp, ignore_errors=True)
 
 
+# --- 14. isolation des profils locaux (ACA-PROFILS-LOCAUX-1) ---------
+
+def instantane(tmp: Path) -> dict[str, bytes]:
+    """Tous les fichiers d'une racine jetable, pour prouver zéro écriture."""
+    return {str(p.relative_to(tmp)): p.read_bytes()
+            for p in tmp.rglob("*") if p.is_file()}
+
+
+def profil_ecrit(tmp: Path, pseudo: str) -> dict | None:
+    p = tmp / "etat" / pseudo / "profil.json"
+    return json.loads(p.read_text(encoding="utf-8")) if p.is_file() else None
+
+
+def journal_du_profil(tmp: Path, pseudo: str) -> list[dict]:
+    p = tmp / "etat" / pseudo / "revues.jsonl"
+    if not p.is_file():
+        return []
+    return [json.loads(l) for l in p.read_text(encoding="utf-8").splitlines() if l.strip()]
+
+
+def test_profil_active_persiste_hors_git() -> list[str]:
+    tmp = racine_arrivee()
+    try:
+        config = (tmp / "academie.json").read_bytes()
+        code, out, err = cli_sans_profil(tmp, "accueil", "--json")
+        if code != 0 or json.loads(out).get("profil_actif_source") != "defaut":
+            return ["sur un clone neuf, l'accueil ne dit pas venir du défaut"]
+        code, out, err = cli(tmp, "profil", "--pseudo", "arthur", "--cursus", "b",
+                             "--voix", "sobre", "--exigence", "standard")
+        if code != 0:
+            return [f"l'écriture du profil Arthur a échoué (code {code}) : {err[-300:]}"]
+        if not (tmp / "etat" / "profil-actif.json").is_file():
+            return ["aucune sélection locale n'est écrite à l'écriture du profil"]
+        code, out, err = cli_sans_profil(tmp, "etat", "--json")
+        if code != 0:
+            return [f"etat sans --profil a échoué (code {code}) : {err[-300:]}"]
+        if json.loads(out).get("profil") != "arthur":
+            return [f"le profil actif n'est pas Arthur : {json.loads(out).get('profil')}"]
+        code, out, err = cli_sans_profil(tmp, "accueil", "--json")
+        if code != 0:
+            return [f"accueil sans --profil a échoué (code {code}) : {err[-300:]}"]
+        charge = json.loads(out)
+        if charge.get("pseudo_actif") != "arthur" or not charge.get("profil_existe"):
+            return [f"accueil ne suit pas le profil actif : {charge.get('pseudo_actif')}"]
+        if (charge.get("profil") or {}).get("pseudo") != "arthur":
+            return ["accueil ne sert pas le profil d'Arthur"]
+        if charge.get("profil_actif_source") != "selection":
+            return ["l'accueil ne dit pas que le profil vient de la sélection"]
+        code, out, err = cli_avec_profil(tmp, "arthur", "accueil", "--json")
+        if code != 0 or json.loads(out).get("profil_actif_source") != "option":
+            return ["l'accueil ne reconnaît pas un --profil explicite"]
+        if (tmp / "academie.json").read_bytes() != config:
+            return ["le choix du profil a modifié academie.json"]
+        if "etat/*" not in (RACINE / ".gitignore").read_text(encoding="utf-8"):
+            return ["etat/ n'est plus ignoré par git"]
+        return []
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+
+def test_pseudos_dangereux_refuses_sans_ecriture() -> list[str]:
+    tmp = racine_arrivee()
+    try:
+        for pseudo in ("arthur\n", "arthur.", "CON", "con.json", "NUL", "COM1",
+                       "LPT9.txt", "a/b", "..", ".", "profil-actif.json", "au\\thur"):
+            avant = instantane(tmp)
+            code, out, err = cli(tmp, "profil", "--pseudo", pseudo,
+                                 "--voix", "sobre", "--exigence", "standard")
+            if code == 0:
+                return [f"un pseudo dangereux est accepté : {pseudo!r}"]
+            if instantane(tmp) != avant:
+                return [f"un pseudo dangereux a écrit sur le disque : {pseudo!r}"]
+        return []
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+
+def test_collision_de_casse_refusee() -> list[str]:
+    tmp = racine_arrivee()
+    try:
+        code, out, err = cli(tmp, "profil", "--pseudo", "Arthur", "--cursus", "a",
+                             "--voix", "sobre", "--exigence", "standard")
+        if code != 0:
+            return [f"l'écriture du profil Arthur a échoué (code {code}) : {err[-300:]}"]
+        avant = instantane(tmp)
+        code, out, err = cli(tmp, "profil", "--pseudo", "arthur", "--cursus", "b",
+                             "--voix", "sobre", "--exigence", "standard")
+        if code == 0:
+            return ["un pseudo qui ne diffère que par la casse est accepté"]
+        if instantane(tmp) != avant:
+            return ["le refus de collision de casse a écrit sur le disque"]
+        code, out, err = cli(tmp, "profil", "--activer", "arthur")
+        if code == 0:
+            return ["l'activation d'un pseudo en collision de casse est acceptée"]
+        if (profil_ecrit(tmp, "Arthur") or {}).get("pseudo") != "Arthur":
+            return ["le profil existant a changé de casse"]
+        return []
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+
+def test_selection_invalide_nomme_le_trou() -> list[str]:
+    tmp = racine_arrivee()
+    try:
+        (tmp / "etat").mkdir(exist_ok=True)
+        for contenu in (
+            "pas du json",
+            '{"format": "academie-profil-actif-1", "profil": "../autre"}',
+            '{"format": "autre", "profil": "jb"}',
+            '{"format": "academie-profil-actif-1", "profil": "jb."}',
+        ):
+            (tmp / "etat" / "profil-actif.json").write_text(contenu, encoding="utf-8")
+            avant = instantane(tmp)
+            code, out, err = cli_sans_profil(tmp, "etat", "--json")
+            if code == 0:
+                return [f"une sélection illisible sert un profil : {contenu[:40]!r}"]
+            if instantane(tmp) != avant:
+                return ["la lecture d'une sélection illisible a écrit sur le disque"]
+        return []
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+
+def test_profil_incoherent_nomme_le_trou() -> list[str]:
+    tmp = racine_arrivee()
+    try:
+        dossier = tmp / "etat" / PROFIL
+        dossier.mkdir(parents=True)
+        for contenu in (
+            {"format": "academie-profil-1", "pseudo": "arthur",
+             "cursus": "a", "voix": "sobre", "exigence": "standard"},
+            {"format": "autre-format", "pseudo": PROFIL,
+             "cursus": "a", "voix": "sobre", "exigence": "standard"},
+        ):
+            (dossier / "profil.json").write_text(
+                json.dumps(contenu, ensure_ascii=False), encoding="utf-8")
+            for commande in (("profil", "--json"), ("seance", "--json")):
+                code, out, err = cli_sans_profil(tmp, *commande)
+                if code == 0:
+                    return [f"un profil incohérent est servi : {commande}"]
+        return []
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+
+def test_import_refuse_un_autre_profil() -> list[str]:
+    tmp = racine_jetable([carte("droit-a")])
+    tmp2 = racine_jetable([carte("droit-a")])
+    try:
+        cli(tmp, "repondre", "droit-a", "3")
+        bundle = tmp / "sauvegarde.json"
+        code, out, err = cli(tmp, "exporter", str(bundle))
+        if code != 0:
+            return [f"l'export a échoué (code {code}) : {err[-300:]}"]
+        if json.loads(bundle.read_text(encoding="utf-8")).get("profil") != PROFIL:
+            return ["la sauvegarde n'annonce pas son profil"]
+        avant = instantane(tmp2)
+        code, out, err = cli_avec_profil(tmp2, "arthur", "importer", str(bundle))
+        if code == 0:
+            return ["une sauvegarde de jb est importée dans le profil arthur"]
+        if instantane(tmp2) != avant:
+            return ["l'import refusé a écrit des octets"]
+        return []
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+        shutil.rmtree(tmp2, ignore_errors=True)
+
+
+def test_import_mal_forme_refuse_sans_ecriture() -> list[str]:
+    tmp = racine_arrivee()
+    base = {"format": "academie-sauvegarde-1", "profil": "arthur"}
+    cas = {
+        "racine non objet": ["pas", "un", "objet"],
+        "format inconnu": {**base, "format": "autre", "revues": [], "erreurs": []},
+        "sans profil": {"format": "academie-sauvegarde-1", "revues": [], "erreurs": []},
+        "revues non liste": {**base, "revues": "x", "erreurs": []},
+        "erreurs non liste": {**base, "revues": [], "erreurs": {}},
+        "ligne non objet": {**base, "revues": [1], "erreurs": []},
+        "revue sans quand": {**base, "revues": [{"mode": "revision", "carte": "a"}],
+                             "erreurs": []},
+        "horodatage invalide": {**base, "revues": [
+            {"quand": "oops", "mode": "revision", "carte": "a", "note": 3}],
+            "erreurs": []},
+        "carte non texte": {**base, "revues": [
+            {"quand": "2026-01-01T00:00:00+00:00", "mode": "revision",
+             "carte": [], "note": 3}], "erreurs": []},
+        "note non entière": {**base, "revues": [
+            {"quand": "2026-01-01T00:00:00+00:00", "mode": "revision",
+             "carte": "a", "note": "oops"}], "erreurs": []},
+        "note hors contrat": {**base, "revues": [
+            {"quand": "2026-01-01T00:00:00+00:00", "mode": "revision",
+             "carte": "a", "note": 9}], "erreurs": []},
+        "nonce non texte": {**base, "revues": [
+            {"quand": "2026-01-01T00:00:00+00:00", "mode": "revision",
+             "carte": "a", "note": 3, "nonce": 12}], "erreurs": []},
+        "erreur sans horodatage": {**base, "revues": [],
+                                   "erreurs": [{"quand": "oops", "carte": "a"}]},
+        "erreur sans carte": {**base, "revues": [],
+                              "erreurs": [{"quand": "2026-01-01T00:00:00+00:00"}]},
+        "prefs d'un autre profil": {
+            **base, "revues": [], "erreurs": [],
+            "prefs": {"format": "academie-profil-1", "pseudo": "jb",
+                      "cursus": "a", "voix": "sobre", "exigence": "standard"}},
+    }
+    try:
+        for nom, contenu in cas.items():
+            fichier = tmp / "bundle.json"
+            fichier.write_text(json.dumps(contenu, ensure_ascii=False), encoding="utf-8")
+            avant = instantane(tmp)
+            code, out, err = cli_avec_profil(tmp, "arthur", "importer", str(fichier))
+            if code == 0:
+                return [f"une sauvegarde mal formée est importée : {nom}"]
+            if instantane(tmp) != avant:
+                return [f"l'import refusé a écrit des octets : {nom}"]
+        return []
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+
+def test_export_import_prefs() -> list[str]:
+    tmp = racine_arrivee()
+    try:
+        code, out, err = cli(tmp, "profil", "--pseudo", "arthur", "--cursus", "b",
+                             "--voix", "sobre", "--exigence", "exigeant")
+        if code != 0:
+            return [f"l'écriture du profil a échoué (code {code}) : {err[-300:]}"]
+        cli_avec_profil(tmp, "arthur", "repondre", "b-entree", "3")
+        bundle = tmp / "sauvegarde.json"
+        code, out, err = cli_avec_profil(tmp, "arthur", "exporter", str(bundle))
+        if code != 0:
+            return [f"l'export a échoué (code {code}) : {err[-300:]}"]
+        charge = json.loads(bundle.read_text(encoding="utf-8"))
+        prefs = charge.get("prefs")
+        if not isinstance(prefs, dict) or prefs.get("exigence") != "exigeant":
+            return [f"la sauvegarde n'emporte pas les préférences validées : {prefs}"]
+
+        tmp2 = racine_arrivee()
+        try:
+            code, out, err = cli_avec_profil(tmp2, "arthur", "importer", str(bundle))
+            if code != 0:
+                return [f"l'import des préférences a échoué (code {code}) : {err[-300:]}"]
+            relu = profil_ecrit(tmp2, "arthur")
+            if not relu or relu.get("exigence") != "exigeant":
+                return [f"les préférences ne sont pas restaurées : {relu}"]
+            if len(journal_du_profil(tmp2, "arthur")) != 1:
+                return ["le journal n'est pas restauré avec les préférences"]
+        finally:
+            shutil.rmtree(tmp2, ignore_errors=True)
+
+        tmp3 = racine_arrivee()
+        try:
+            sans_prefs = {k: v for k, v in charge.items() if k != "prefs"}
+            fichier = tmp3 / "ancienne.json"
+            fichier.write_text(json.dumps(sans_prefs, ensure_ascii=False), encoding="utf-8")
+            code, out, err = cli_avec_profil(tmp3, "arthur", "importer", str(fichier))
+            if code != 0:
+                return [f"une sauvegarde sans préférences est refusée : {err[-300:]}"]
+            if profil_ecrit(tmp3, "arthur") is not None:
+                return ["l'import a inventé un profil absent de la sauvegarde"]
+            if len(journal_du_profil(tmp3, "arthur")) != 1:
+                return ["le journal n'est pas importé depuis une sauvegarde sans préférences"]
+        finally:
+            shutil.rmtree(tmp3, ignore_errors=True)
+
+        tmp4 = racine_arrivee()
+        try:
+            cli(tmp4, "profil", "--pseudo", "arthur", "--cursus", "b",
+                "--voix", "sobre", "--exigence", "detendu")
+            code, out, err = cli_avec_profil(tmp4, "arthur", "importer", str(bundle))
+            if code != 0:
+                return [f"l'import dans un poste déjà réglé a échoué : {err[-300:]}"]
+            relu = profil_ecrit(tmp4, "arthur")
+            if not relu or relu.get("exigence") != "detendu":
+                return [f"l'import a écrasé les préférences locales : {relu}"]
+        finally:
+            shutil.rmtree(tmp4, ignore_errors=True)
+        return []
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+
+def test_export_profil_incoherent_refuse() -> list[str]:
+    tmp = racine_arrivee()
+    try:
+        dossier = tmp / "etat" / PROFIL
+        dossier.mkdir(parents=True)
+        (dossier / "profil.json").write_text(
+            json.dumps({"format": "academie-profil-1", "pseudo": "arthur",
+                        "cursus": "a", "voix": "sobre", "exigence": "standard"}),
+            encoding="utf-8")
+        bundle = tmp / "sauvegarde.json"
+        code, out, err = cli_sans_profil(tmp, "exporter", str(bundle))
+        if code == 0:
+            return ["un profil incohérent est exporté tel quel"]
+        if bundle.is_file():
+            return ["l'export refusé a quand même écrit un fichier"]
+        return []
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+
+def test_import_accepte_les_lignes_historiques() -> list[str]:
+    tmp = racine_arrivee()
+    try:
+        bundle = tmp / "historique.json"
+        bundle.write_text(json.dumps({
+            "format": "academie-sauvegarde-1", "profil": "arthur",
+            "revues": [{"quand": "2026-02-01T00:00:00+00:00", "mode": "flash",
+                        "carte": "b-entree", "note": 2}],
+            "erreurs": [{"quand": "2026-02-01T00:00:00+00:00", "carte": "b-entree",
+                         "raison": "", "mode": "flash"}],
+        }, ensure_ascii=False), encoding="utf-8")
+        code, out, err = cli_avec_profil(tmp, "arthur", "importer", str(bundle))
+        if code != 0:
+            return [f"une ligne historique est refusée : {err[-300:]}"]
+        code, out, err = cli_avec_profil(tmp, "arthur", "seance", "--json")
+        if code != 0:
+            return [f"le moteur casse sur une ligne historique : {err[-300:]}"]
+        return []
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+
+def test_profil_en_collision_de_casse_refuse_a_l_acces() -> list[str]:
+    tmp = racine_arrivee()
+    try:
+        dossier = tmp / "etat" / "arthur"
+        dossier.mkdir(parents=True)
+        (dossier / "revues.jsonl").write_text(json.dumps(
+            {"quand": "2026-02-01T00:00:00+00:00", "mode": "flash",
+             "carte": "b-entree", "note": 2}, ensure_ascii=False) + "\n",
+            encoding="utf-8")
+        avant = instantane(tmp)
+        code, out, err = cli_avec_profil(tmp, "ARTHUR", "etat", "--json")
+        if code == 0:
+            return ["--profil ARTHUR lit le journal d'arthur malgré la casse"]
+        if instantane(tmp) != avant:
+            return ["l'accès refusé a écrit sur le disque"]
+        return []
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+
 TESTS = [
     ("1. séance identique au moteur", test_seance_est_celle_du_moteur),
     ("1. progression identique au moteur", test_progression_est_celle_du_moteur),
@@ -916,6 +1275,19 @@ TESTS = [
     ("13. les choix invalides sont refusés", test_profil_refuse_les_choix_invalides),
     ("13. le cursus du profil est un repli", test_cursus_du_profil_est_repli),
     ("13. l'exigence change le moteur", test_exigence_change_les_intervalles),
+    ("14. le profil actif persiste hors git", test_profil_active_persiste_hors_git),
+    ("14. les pseudos dangereux sont refusés", test_pseudos_dangereux_refuses_sans_ecriture),
+    ("14. la collision de casse est refusée", test_collision_de_casse_refusee),
+    ("14. une sélection invalide est un trou", test_selection_invalide_nomme_le_trou),
+    ("14. un profil incohérent est un trou", test_profil_incoherent_nomme_le_trou),
+    ("14. l'import d'un autre profil est refusé", test_import_refuse_un_autre_profil),
+    ("14. une sauvegarde mal formée est refusée sans écriture",
+     test_import_mal_forme_refuse_sans_ecriture),
+    ("14. les préférences voyagent sans écraser", test_export_import_prefs),
+    ("14. l'export d'un profil incohérent est refusé", test_export_profil_incoherent_refuse),
+    ("14. les lignes historiques restent importables", test_import_accepte_les_lignes_historiques),
+    ("14. une collision de casse est refusée à l'accès",
+     test_profil_en_collision_de_casse_refuse_a_l_acces),
 ]
 
 

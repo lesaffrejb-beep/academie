@@ -25,6 +25,20 @@ Le geste normal, pour un collègue :
 2. `git clone https://github.com/lesaffrejb-beep/academie.git`
 3. Il ouvre l'agent dans ce dossier. La plupart des outils découvrent
    `skills/academie/SKILL.md` tout seuls.
+4. Il demande à l'agent de démarrer : `python3 app/demarrer.py --json`
+   vérifie Git et Python 3.12, prépare le hook pre-commit et rappelle
+   où vit l'état local. `--installer` installe les manquants
+   (autorisation déjà donnée). Sur un Windows sans Python, l'entrée est
+   `demarrer.ps1` : `winget --scope user`, sans élévation automatique.
+
+Un dépôt reçu en ZIP plutôt que cloné ne se répare pas en place :
+`python3 app/demarrer.py --guide-zip` dit de cloner à côté et de
+transférer l'état local par `exporter` puis `importer`. L'état d'un
+joueur vit dans `etat/<pseudo>/`, hors git, et ne voyage pas par
+`git pull` : sans transfert, deux machines tiennent deux copies
+indépendantes de la progression de la même personne, qui divergent sans
+prévenir. Le profil actif se choisit avec
+`python3 app/academie.py profil --activer <pseudo>`.
 
 Pour **écrire** dans le dépôt (pas pour jouer), il faut être
 collaborateur, ce que JB ajoute depuis l'interface GitHub.

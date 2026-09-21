@@ -18,3 +18,10 @@ Ce que tous les trois imposent : le modèle se déclare (`MODELES.md`),
 travaille par unités que `app/usine/usine.py` distribue et juge,
 n'écrit jamais « fait » sans le verdict du script, ne touche ni aux
 chapitres ni au serveur, n'a besoin d'aucune clé d'API.
+
+Sur un poste qui n'a jamais joué, le premier geste est
+`python3 app/demarrer.py --json` : il vérifie Git utilisable et Python
+3.12, prépare le hook pre-commit et rappelle où vit l'état local. Les
+manquants s'installent avec `--installer`, autorisation déjà donnée. Sur
+un Windows sans Python, `demarrer.ps1` fait le même travail. Cahier :
+[`chantiers/ACA-DEMARRAGE-1.md`](../chantiers/ACA-DEMARRAGE-1.md).

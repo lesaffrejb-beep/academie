@@ -1,5 +1,10 @@
 name: check
 on: [push, pull_request]
+env:
+  # Une console Windows en cp1252 casse sur les accents et les coches du
+  # rapport de tests (ACA-PORTABILITE-1) ; le bootstrap pose la même
+  # variable par défaut dans le hook.
+  PYTHONUTF8: "1"
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -8,6 +13,30 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      # Le hook vit dans .git/hooks/, jamais dans le clone : un dépôt
+      # neuf doit l'installer avant que check.py ne le cherche.
+      - run: python3 app/installation_precommit.py
       - run: python3 tooling/check.py
       - run: python3 app/tests.py
       - run: python3 app/genere.py --couches banque
+  test-windows:
+    # Preuve d'exécution Windows : Git pour Windows, hook en sh, `python`
+    # au lieu de `python3`. Le verdict se lit dans la CI.
+    runs-on: windows-latest
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      # Le premier geste d'un joueur Windows (ACA-DEMARRAGE-1) est
+      # seulement diagnostiqué ici : setup-python fournit Python, rien
+      # n'est installé par winget et aucun droit n'est élevé.
+      - name: demarrage Windows en diagnostic
+        shell: pwsh
+        run: ./demarrer.ps1 -Diagnostic
+      - run: python app/installation_precommit.py
+      - run: python tooling/check.py
+      - run: python app/tests.py

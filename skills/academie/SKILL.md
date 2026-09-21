@@ -31,7 +31,30 @@ ci-dessous s'y exécutent.
 
 ## Le premier message : l'arrivée
 
-Avant de jouer, tu lis le profil local :
+Avant toute commande, même si la demande est « je veux réviser ».
+
+Sur Windows, le premier geste est PowerShell, même si `python` répond
+déjà :
+
+```powershell
+powershell -ExecutionPolicy Bypass -File demarrer.ps1
+```
+
+Puis, partout :
+
+```sh
+python3 app/demarrer.py --json
+```
+
+Il dit si Git répond, si Python atteint 3.12, si tu es bien à la racine
+d'un clone et si le hook pre-commit est posé. S'il manque un outil,
+`-Installer` (Windows) ou `python3 app/demarrer.py --installer`
+l'installe (autorisation déjà donnée par JB) ; tu ne redemandes pas la
+permission à chaque étape. Un dossier arrivé en ZIP n'est jamais
+réécrit : `--guide-zip` dit de cloner à côté et de transférer l'état par
+`exporter` puis `importer`.
+
+Ensuite, tu lis le profil local :
 `python3 app/academie.py accueil --json`. Il dit si un profil existe
 (`profil_existe`), et sert le catalogue, les trois voix, les trois
 niveaux d'exigence et les zones de dépôt.

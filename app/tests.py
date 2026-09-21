@@ -30,6 +30,7 @@ obligatoires n'était couverte par aucun cas.
 from __future__ import annotations
 
 import argparse
+import os
 import shutil
 import subprocess
 import sys
@@ -38,6 +39,13 @@ from pathlib import Path
 
 APP = Path(__file__).resolve().parent
 RACINE = APP.parent
+
+# Windows : la console par défaut (cp1252) ne sait pas écrire les coches
+# du rapport ; l'encodage est déclaré ici et passé aux suites lancées
+# (ACA-PORTABILITE-1).
+for flux in (sys.stdout, sys.stderr):
+    if hasattr(flux, "reconfigure"):
+        flux.reconfigure(encoding="utf-8", errors="replace")
 
 SUITES = [
     ("chemins d'apprentissage", "tests_chemin_apprentissage.py"),
@@ -65,6 +73,7 @@ SUITES = [
     ("export Anki", "tests_export.py"),
     ("surface agent", "tests_academie.py"),
     ("garde de confidentialité", "tests_garde.py"),
+    ("démarrage du poste", "tests_demarrer.py"),
 ]
 
 # (description, fichier, texte à remplacer, remplacement).
@@ -196,30 +205,54 @@ MUTATIONS = [
     ("le profil n'applique plus l'exigence au moteur", "academie.py",
      "    if not prefs:\n        return config",
      "    if True:\n        return config"),
+    ("l'import ignore le profil de la sauvegarde", "academie.py",
+     '    refus = _valide_bundle(bundle, ctx["profil"])\n    if refus:\n        return _trou(refus, args)',
+     '    refus = _valide_bundle(bundle, ctx["profil"])\n    if False:\n        return _trou(refus, args)'),
     ("la commande deposer ne prépare plus rien", "usine/usine.py",
      "        code |= cmd_preparer(argparse.Namespace(fichier=str(fichier),\n                                                interne=bool(args.interne)))",
      "        code |= 0"),
     ("le garde de confidentialité ne voit plus les mails", "garde_confidentialite.py",
      "        if RE_MAIL.search(corps):",
      "        if False:"),
+    ("l'installation fige l'interpréteur du hook", "installation_precommit.py",
+     '    return trouves or ["python3", "python"]',
+     '    return ["python3"]'),
 ]
 
 
+def env_utf8() -> dict[str, str]:
+    """Les descendants doivent émettre de l'UTF-8.
+
+    Le décodage UTF-8 côté parent ne suffit pas : sur Windows hors CI, la
+    console par défaut d'un enfant est en cp1252 et une coche affichée le
+    fait mourir (ACA-PORTABILITE-1).
+    """
+    return {**os.environ, "PYTHONUTF8": "1"}
+
+
+def python_utf8(*arguments: str) -> list[str]:
+    """Commande d'un descendant Python forcé en UTF-8."""
+    return [sys.executable, "-X", "utf8", *arguments]
+
+
 def lance(fichier: str) -> tuple[bool, str]:
-    res = subprocess.run([sys.executable, str(APP / fichier)],
-                         capture_output=True, text=True)
+    res = subprocess.run(python_utf8(str(APP / fichier)),
+                         capture_output=True, text=True, encoding="utf-8",
+                         errors="replace", env=env_utf8())
     return res.returncode == 0, res.stdout + res.stderr
 
 
 def valide_vraie_banque() -> tuple[bool, str]:
-    res = subprocess.run([sys.executable, str(APP / "valide_banque.py")],
-                         capture_output=True, text=True)
+    res = subprocess.run(python_utf8(str(APP / "valide_banque.py")),
+                         capture_output=True, text=True, encoding="utf-8",
+                         errors="replace", env=env_utf8())
     return res.returncode == 0, res.stdout + res.stderr
 
 
 def valide_vrais_chapitres() -> tuple[bool, str]:
-    res = subprocess.run([sys.executable, str(APP / "valide_chapitres.py")],
-                         capture_output=True, text=True)
+    res = subprocess.run(python_utf8(str(APP / "valide_chapitres.py")),
+                         capture_output=True, text=True, encoding="utf-8",
+                         errors="replace", env=env_utf8())
     return res.returncode == 0, res.stdout + res.stderr
 
 

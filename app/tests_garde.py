@@ -13,6 +13,7 @@ ce dépôt, même sous forme de fixture.
 from __future__ import annotations
 
 import os
+import shutil
 import subprocess
 import sys
 import tempfile
@@ -22,6 +23,13 @@ from pathlib import Path
 APP = Path(__file__).resolve().parent
 sys.path.insert(0, str(APP))
 import garde_confidentialite  # noqa: E402
+import installation_precommit  # noqa: E402
+
+# Windows : une console en cp1252 ne sait pas écrire les accents du
+# rapport ni les coches (ACA-PORTABILITE-1).
+for flux in (sys.stdout, sys.stderr):
+    if hasattr(flux, "reconfigure"):
+        flux.reconfigure(encoding="utf-8", errors="replace")
 
 
 def assemble(*parts):
@@ -31,6 +39,35 @@ def assemble(*parts):
 
 def diff_avec(ligne):
     return f"--- a/travail/x.md\n+++ b/travail/x.md\n@@ -0,0 +1 @@\n+{ligne}\n"
+
+
+def python_utf8(*arguments):
+    """Descendant Python forcé en UTF-8 : sur Windows hors CI, la console
+    par défaut est cp1252 et un enfant qui affiche un accent meurt
+    (ACA-PORTABILITE-1)."""
+    return [sys.executable, "-X", "utf8", *arguments]
+
+
+def env_utf8():
+    return {**os.environ, "PYTHONUTF8": "1"}
+
+
+def lance_script(script, *arguments, cwd=None):
+    return subprocess.run(python_utf8(str(script), *arguments), cwd=cwd,
+                          capture_output=True, text=True, encoding="utf-8",
+                          errors="replace", env=env_utf8())
+
+
+def installe_hook(cwd):
+    """Pose le hook par le script réel, encodage des descendants inclus."""
+    return lance_script(APP / "installation_precommit.py", cwd=cwd)
+
+
+def git(*arguments, cwd, env=None):
+    """Commande git du test, sortie décodée en UTF-8."""
+    return subprocess.run(["git", *arguments], cwd=cwd, capture_output=True,
+                          text=True, encoding="utf-8", errors="replace",
+                          env=env)
 
 
 class AlertesDiff(unittest.TestCase):
@@ -109,47 +146,205 @@ class ScanStage(unittest.TestCase):
 
     def test_scan_stage_sur_un_depot_temporaire(self):
         with tempfile.TemporaryDirectory() as tmp:
-            run = lambda *a: subprocess.run(a, cwd=tmp, capture_output=True, text=True)
-            run("git", "init", "-q")
-            run("git", "config", "user.email", "joueur@exemple.org")
-            run("git", "config", "user.name", "Joueur")
+            git("init", "-q", cwd=tmp)
+            git("config", "user.email", "joueur@exemple.org", cwd=tmp)
+            git("config", "user.name", "Joueur", cwd=tmp)
             Path(tmp, "note.md").write_text(
                 "contact " + ttrepiece() + "\n", encoding="utf-8")
-            run("git", "add", "note.md")
+            git("add", "note.md", cwd=tmp)
             resultat = garde_confidentialite.scan_stage(depot=tmp)
             self.assertEqual(resultat, 1)  # bloquant
-            self.assertIn("note.md", subprocess.run(
-                [sys.executable, str(APP / "garde_confidentialite.py")],
-                cwd=tmp, capture_output=True, text=True).stderr)
+            self.assertIn("note.md", lance_script(
+                APP / "garde_confidentialite.py", cwd=tmp).stderr)
 
     def test_scan_stage_propre_passe(self):
         with tempfile.TemporaryDirectory() as tmp:
-            run = lambda *a: subprocess.run(a, cwd=tmp, capture_output=True, text=True)
-            run("git", "init", "-q")
-            run("git", "config", "user.email", "joueur@exemple.org")
-            run("git", "config", "user.name", "Joueur")
+            git("init", "-q", cwd=tmp)
+            git("config", "user.email", "joueur@exemple.org", cwd=tmp)
+            git("config", "user.name", "Joueur", cwd=tmp)
             Path(tmp, "a.md").write_text("Saine.\n", encoding="utf-8")
-            run("git", "add", "a.md")
+            git("add", "a.md", cwd=tmp)
             self.assertEqual(garde_confidentialite.scan_stage(depot=tmp), 0)
 
     def test_hook_installe_refuse_le_commit_et_no_verify_passe(self):
         with tempfile.TemporaryDirectory() as tmp:
-            run = lambda *a: subprocess.run(a, cwd=tmp, capture_output=True, text=True)
-            run("git", "init", "-q")
-            run("git", "config", "user.email", "joueur@exemple.org")
-            run("git", "config", "user.name", "Joueur")
-            subprocess.run([sys.executable, str(APP / "installation_precommit.py")],
-                           cwd=tmp, capture_output=True, text=True)
+            git("init", "-q", cwd=tmp)
+            git("config", "user.email", "joueur@exemple.org", cwd=tmp)
+            git("config", "user.name", "Joueur", cwd=tmp)
+            installe_hook(tmp)
             hook = Path(tmp, ".git", "hooks", "pre-commit")
             self.assertTrue(hook.is_file() and os.access(hook, os.X_OK))
             Path(tmp, "b.md").write_text("contact " + ttrepiece() + "\n",
                                          encoding="utf-8")
-            run("git", "add", "b.md")
-            refuse = run("git", "commit", "-m", "essai")
+            git("add", "b.md", cwd=tmp)
+            refuse = git("commit", "-m", "essai", cwd=tmp)
             self.assertNotEqual(refuse.returncode, 0)
             self.assertIn("règle 1", refuse.stderr + refuse.stdout)
-            passe = run("git", "commit", "--no-verify", "-m", "essai")
+            passe = git("commit", "--no-verify", "-m", "essai", cwd=tmp)
             self.assertEqual(passe.returncode, 0)
+
+
+class InstallationPortable(unittest.TestCase):
+    """Le hook doit tenir sur un dépôt cloné ailleurs que sur ce Mac :
+    Git pour Windows, worktree, interpréteur nommé `python`. Voir
+    chantiers/ACA-PORTABILITE-1.md.
+    """
+
+    def depot_temporaire(self, tmp):
+        git("init", "-q", cwd=tmp)
+        git("config", "user.email", "joueur@exemple.org", cwd=tmp)
+        git("config", "user.name", "Joueur", cwd=tmp)
+
+    def hook_du_depot(self, tmp):
+        res = git("rev-parse", "--git-path", "hooks/pre-commit", cwd=tmp)
+        chemin = Path(res.stdout.strip())
+        return chemin if chemin.is_absolute() else Path(tmp) / chemin
+
+    def test_hook_genere_est_un_script_sh_relogeable(self):
+        racine = APP.parent
+        contenu = installation_precommit.contenu_hook(racine)
+        self.assertTrue(contenu.startswith("#!/bin/sh\n"))
+        self.assertIn("academie-precommit", contenu)
+        # La racine est relue à chaque commit : un worktree a la sienne.
+        self.assertIn("git rev-parse --show-toplevel", contenu)
+        # L'interpréteur est cherché à l'exécution, pas figé.
+        self.assertIn("for python in", contenu)
+        self.assertIn("python3", contenu)
+        self.assertIn(" python ", contenu)
+        self.assertIn("garde_confidentialite.py", contenu)
+        # Le nom ne suffit pas : la version est sondée avant l'exec.
+        self.assertIn("version_info", contenu)
+        self.assertIn("exec", contenu)
+
+    def test_hook_ecrit_en_lf(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            self.depot_temporaire(tmp)
+            installe_hook(tmp)
+            octets = self.hook_du_depot(tmp).read_bytes()
+            # Un hook en CRLF casse `#!/bin/sh` dans Git pour Windows.
+            self.assertNotIn(b"\r\n", octets)
+            self.assertTrue(octets.startswith(b"#!/bin/sh\n"))
+
+    def test_hook_bloque_si_python3_absent_du_path(self):
+        """Sur Windows, l'interpréteur s'appelle souvent `python`. Le hook
+        doit le trouver quand `python3` n'existe pas, sans quoi il ne
+        protégerait rien là où il doit servir.
+        """
+        git_exe = shutil.which("git")
+        if not git_exe:
+            self.skipTest("git absent")
+        with tempfile.TemporaryDirectory() as tmp:
+            self.depot_temporaire(tmp)
+            installe_hook(tmp)
+            bacs = Path(tmp, "faux-bin")
+            bacs.mkdir()
+            ecrit_bouchon(bacs, "python", sys.executable)
+            ecrit_bouchon(bacs, "git", git_exe)
+            env = dict(os.environ, PATH=str(bacs))
+            Path(tmp, "sale.md").write_text("contact " + ttrepiece() + "\n",
+                                            encoding="utf-8")
+            git("add", "sale.md", cwd=tmp)
+            refuse = subprocess.run([git_exe, "commit", "-m", "sale"], cwd=tmp,
+                                    capture_output=True, text=True, env=env)
+            self.assertNotEqual(refuse.returncode, 0)
+            self.assertIn("règle 1", refuse.stderr + refuse.stdout)
+            git("reset", "-q", cwd=tmp)
+            Path(tmp, "propre.md").write_text("Une ligne saine.\n", encoding="utf-8")
+            git("add", "propre.md", cwd=tmp)
+            passe = subprocess.run([git_exe, "commit", "-m", "propre"], cwd=tmp,
+                                   capture_output=True, text=True, env=env)
+            self.assertEqual(passe.returncode, 0, passe.stderr)
+
+    def test_hook_ignore_un_python3_qui_echoue(self):
+        """L'alias du Microsoft Store porte le nom `python3` et échoue à
+        l'exécution : le hook doit le sonder, puis passer à `python`.
+        """
+        git_exe = shutil.which("git")
+        if not git_exe:
+            self.skipTest("git absent")
+        with tempfile.TemporaryDirectory() as tmp:
+            self.depot_temporaire(tmp)
+            installe_hook(tmp)
+            bacs = Path(tmp, "faux-bin")
+            bacs.mkdir()
+            leurre = Path(bacs, "python3")
+            leurre.write_text("#!/bin/sh\nexit 9009\n", encoding="utf-8")
+            leurre.chmod(0o755)
+            ecrit_bouchon(bacs, "python", sys.executable)
+            ecrit_bouchon(bacs, "git", git_exe)
+            env = dict(os.environ, PATH=str(bacs))
+            Path(tmp, "sale.md").write_text("contact " + ttrepiece() + "\n",
+                                            encoding="utf-8")
+            git("add", "sale.md", cwd=tmp)
+            refuse = subprocess.run([git_exe, "commit", "-m", "sale"], cwd=tmp,
+                                    capture_output=True, text=True, env=env)
+            self.assertNotEqual(refuse.returncode, 0)
+            self.assertIn("règle 1", refuse.stderr + refuse.stdout)
+
+    def test_hook_fonctionne_dans_un_worktree(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            principal = Path(tmp, "principal")
+            principal.mkdir()
+            self.depot_temporaire(principal)
+            Path(principal, "a.md").write_text("Une ligne saine.\n", encoding="utf-8")
+            git("add", "a.md", cwd=principal)
+            git("commit", "-m", "depart", cwd=principal)
+            arbre = Path(tmp, "arbre")
+            self.assertEqual(git("worktree", "add", "-q", "-b", "essai",
+                                 str(arbre), cwd=principal).returncode, 0)
+            self.assertTrue((arbre / ".git").is_file())  # .git est un fichier
+            installe = installe_hook(arbre)
+            self.assertEqual(installe.returncode, 0, installe.stderr)
+            hook = self.hook_du_depot(arbre)
+            self.assertTrue(hook.is_file())
+            self.assertIn("academie-precommit", hook.read_text(encoding="utf-8"))
+            Path(arbre, "note.md").write_text("contact " + ttrepiece() + "\n",
+                                              encoding="utf-8")
+            git("add", "note.md", cwd=arbre)
+            refuse = git("commit", "-m", "sale", cwd=arbre)
+            self.assertNotEqual(refuse.returncode, 0)
+            self.assertIn("règle 1", refuse.stderr + refuse.stdout)
+
+    def test_hook_inconnu_non_ecrase(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            self.depot_temporaire(tmp)
+            hook = self.hook_du_depot(tmp)
+            hook.parent.mkdir(parents=True, exist_ok=True)
+            gardien = "#!/bin/sh\necho autre outil\n"
+            hook.write_text(gardien, encoding="utf-8")
+            res = installe_hook(tmp)
+            self.assertNotEqual(res.returncode, 0)
+            self.assertEqual(hook.read_text(encoding="utf-8"), gardien)
+
+
+class CheminsReels(unittest.TestCase):
+    """Le dépôt peut être atteint par un chemin symbolique : /tmp vers
+    /private/tmp sur macOS, un lecteur mappé sur Windows. Les contrôles
+    ne doivent pas voir deux fois le même fichier.
+    """
+
+    def test_check_ne_se_signale_pas_par_chemin_symbolique(self):
+        racine = APP.parent
+        with tempfile.TemporaryDirectory() as tmp:
+            lien = Path(tmp, "lien")
+            try:
+                lien.symlink_to(racine, target_is_directory=True)
+            except (OSError, NotImplementedError):
+                self.skipTest("liens symboliques indisponibles")
+            res = subprocess.run(
+                python_utf8(str(lien / "tooling" / "check.py")),
+                cwd=lien, capture_output=True, text=True, encoding="utf-8",
+                errors="replace", env=env_utf8())
+            self.assertNotIn("ancien couplage technique dans tooling/check.py",
+                             res.stdout + res.stderr)
+
+
+def ecrit_bouchon(dossier, nom, cible):
+    """Écrit un exécutable qui relaie vers un outil existant."""
+    chemin = Path(dossier, nom)
+    chemin.write_text(f'#!/bin/sh\nexec "{cible}" "$@"\n', encoding="utf-8")
+    chemin.chmod(0o755)
+    return chemin
 
 
 if __name__ == "__main__":

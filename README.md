@@ -1,21 +1,63 @@
 # academie, l'école d'un métier jouée tous les jours
 
-**Rentrée du 07/09 :** [état et preuves](travail/rentree-2026-09-07/SUIVI.md),
-[prompt de relais pour les autres modèles](travail/rentree-2026-09-07/RELAIS-LLM.md).
-Interface bleue commune, pseudo/mot de passe/phrase de récupération, session
-persistante, cursus actif modifiable, arbre et graphe, bibliothèque des
-389 brouillons copro. Dix-huit études interactives et 168 cartes disponibles
-localement ; la preuve VPS figure dans le suivi. Dix séances proposées par
-cursus. IFSI est un cursus continu, de l’admission aux spécialisations.
-Le carnet NotebookLM contient 200 sources ; 181 captures texte conservées ont
-été contrôlées par empreinte, sans prétendre à une relecture exhaustive.
+Premier message, à coller dans l'agent de code ouvert à la racine du
+dépôt :
 
-**15/09/2026, décision 0054 : plus de front.** Le client web est archivé
-(`archive/conception-2026-09-web/`). L'interface est désormais le dépôt
-lui-même, discuté par un agent (OpenCode, Claude Code, Codex, Gemini,
-Antigravity) : le moteur reste le professeur, la banque reste la vérité,
-le journal reste local et hors git. Cahier :
-[`chantiers/ACA-SANS-FRONT-1.md`](chantiers/ACA-SANS-FRONT-1.md).
+> Prépare ce poste, vérifie et installe les outils manquants, crée mon
+> profil personnel puis commence ma première séance.
+
+Sur Windows, ouvrir d'abord PowerShell dans ce dossier, même si
+`python` répond déjà : `powershell -ExecutionPolicy Bypass -File
+demarrer.ps1`. L'agent y trouve le préflight complet (Git utilisable,
+Python 3.12, racine du clone, hook, profil) dans
+[`AGENTS.md`](AGENTS.md).
+
+**Arriver sur un poste neuf.** Ouvrir l'agent de code à la racine du
+dépôt et lui demander de démarrer. Il vérifie Git et Python, réutilise
+ce qui est déjà installé et pose le hook pre-commit exigé par
+`tooling/check.py` :
+
+```bash
+python3 app/demarrer.py
+python3 app/academie.py accueil --json
+```
+
+`demarrer.py` ne fait que diagnostiquer. Pour installer les outils
+manquants, `python3 app/demarrer.py --installer` exécute le plan du
+poste, autorisation déjà donnée. Sur un Windows sans Python, ouvrir
+d'abord `demarrer.ps1` : il détecte `py -3`, `python3` ou `python`, puis
+transmet le Python utilisable au diagnostic. Le détail est dans
+[`COMMENCER.md`](COMMENCER.md) ; l'installation chez un collègue, dans
+[`skills/README.md`](skills/README.md).
+
+**L'interface est ce dépôt.** Depuis la
+[décision 0054](decisions/0054-plus-de-front-le-depot-est-l-interface.md),
+il n'y a plus de front : le client web est archivé
+(`archive/conception-2026-09-web/`). Le dépôt est discuté par un agent
+(OpenCode, Claude Code, Codex, Gemini, Antigravity) : le moteur reste le
+professeur, la banque reste la vérité, le journal reste local et hors
+git. Cahier : [`chantiers/ACA-SANS-FRONT-1.md`](chantiers/ACA-SANS-FRONT-1.md).
+
+**L'état du joueur ne voyage pas par git.** `etat/<pseudo>/` vit hors
+versionnement et n'est pas synchronisé entre le Mac et un poste de
+travail. Sans transfert, les deux machines tiennent deux copies
+indépendantes de la progression de la même personne, qui divergent sans
+prévenir. Le profil actif d'une machine se choisit avec
+`python3 app/academie.py profil --activer <pseudo>` ; le transfert se
+fait par `python3 app/academie.py exporter <fichier>` puis `importer`,
+jamais par un `git pull`.
+
+**Chaque matin, avant de jouer.** Si le dossier est un clone propre,
+sans modification locale, mettre le dépôt à jour :
+
+```bash
+git pull --ff-only
+```
+
+Jamais `git reset`, `git clean` ni `git pull --autostash` sur ce dépôt :
+l'état du joueur et vos notes locales ne doivent pas être réécrits. Si
+le réseau est coupé, continuer à jouer : la banque locale et le journal
+restent lisibles hors ligne, et la mise à jour attendra.
 
 Le skill de jeu vit dans [`skills/academie/`](skills/academie/SKILL.md) ;
 pour l'installer chez un collègue ou le faire lire par un agent distant

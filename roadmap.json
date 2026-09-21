@@ -4,6 +4,24 @@
   "_": "Actualisée le 15/09/2026 (décision 0054 : plus de front, la surface devient ACA-SANS-FRONT-1) puis le 05/09/2026 par audit (ROADMAP.md, décision 0035). done = périmètre et preuves du cahier, pas toute la promesse produit. ready | blocked ; modes deterministic | agent-safe | agent-review | human-only. Les budgets bornent une passe de travail, pas la durée complète. tooling/roadmap.py next ne choisit que les tâches automatisables sans revue.",
   "items": [
     {
+      "id": "ACA-PROFILS-LOCAUX-1",
+      "outcome": "Un clone neuf sait qui joue : un profil actif local (etat/profil-actif.json, hors git) est suivi par les commandes sans --profil, les pseudos dangereux ou en collision de casse sont refuses, un import d'un autre profil est refuse avant toute ecriture, et l'export transporte les preferences validees sans casser academie-sauvegarde-1.",
+      "status": "in_progress",
+      "mode": "agent-review",
+      "risk": "medium",
+      "priority": 96,
+      "depends_on": [
+        "ACA-ONBOARDING-2"
+      ],
+      "budget": {
+        "max_units": 1,
+        "max_minutes": 150,
+        "max_tokens": 60000
+      },
+      "proof": "Chantier ouvert le 21/09/2026. Preuves obtenues le 21/09 : suite complète app/tests.py TOUT VERT hors sandbox par le parent, puis tooling/check.py 0 erreur ; copie neuve dans /tmp sans état ni fichiers ignorés, .git init/add temporaire, hook détecté absent puis posé, check.py 0 et tests.py TOUT VERT. Mutations : la passe globale a été interrompue puis restaurée ; les mutations ciblées garde et imports ont été détectées. Preuve propre à cet item encore attendue : section 14 de tests_academie.py (selection persistante, pseudos refuses, collision de casse, import d'un autre profil sans octet change, preferences exportees et non ecrasees).",
+      "parent_milestone": "ACADEMIE-V2-JOUEUR"
+    },
+    {
       "id": "ACA-COURS-COPRO-1",
       "outcome": "Base écrite exigeante de tous les chapitres copro, sans images, indexée et contrôlée.",
       "status": "done",
@@ -1163,6 +1181,40 @@
       "proof": "tests_garde.py vert : mail, téléphone, SIRET, labor et IBAN alertés sur un diff réduit ; contextes, suppressions et faux positifs IPv6 passent ; le hook installé refuse un commit porteur de mail et --no-verify passe ; tests.py, check.py et la mutation du garde verts. Un nom d'immeuble sans motif passe : le garde détecte, il ne certifie pas.",
       "parent_milestone": "ACADEMIE-V2-FONDATIONS",
       "note": "Sort de l'idée « À CREUSER » du 15/09 (IDEES-EN-VOL). Pré-commit, pas CI : la donnée est vue là où elle arrive. Le hook est contournable (choix humain, à avouer) ; la détection est prudente, pas un catalogue de parties."
+    },
+    {
+      "id": "ACA-PORTABILITE-1",
+      "outcome": "L'installation du hook pré-commit et les vérifications du dépôt fonctionnent sur un poste Windows (Git pour Windows) comme sur macOS et Linux : interpréteur cherché à l'exécution, racine par git, dossier de hooks retrouvé dans un worktree, encodage UTF-8 des sorties, et CI qui installe le hook avant de vérifier.",
+      "status": "in_progress",
+      "mode": "agent-safe",
+      "risk": "low",
+      "priority": 91,
+      "depends_on": ["ACA-PRECOMMIT-1", "ACA-ONBOARDING-2"],
+      "budget": {
+        "max_units": 1,
+        "max_minutes": 120,
+        "max_tokens": 30000
+      },
+      "proof": "21/09/2026, preuves rapportées par le chantier : 20 tests garde verts avec hook à interpréteur détecté, blocage d'un commit sans python3 dans le PATH, installation depuis un worktree retrouvée par check.py et hook inconnu préservé ; check.py vert ; copie neuve locale en ASCII dont le hook refuse un mail et accepte un fichier sain ; worktree contrôlé. Preuves globales du parent : suite complète app/tests.py TOUT VERT hors sandbox, puis tooling/check.py 0 erreur ; copie neuve dans /tmp sans état ni fichiers ignorés, .git init/add temporaire, hook détecté absent puis posé, check.py 0 et tests.py TOUT VERT. Mutations ciblées garde et imports détectées ; passe globale interrompue puis restaurée. Limite : aucun poste Windows réel n'a exécuté le hook, seul le job CI Windows le dira (demarrer.ps1 -Diagnostic, puis hook, check.py et tests).",
+      "parent_milestone": "ACADEMIE-V2-FONDATIONS",
+      "note": "Demande de JB du 21/09/2026 : le dépôt part sur un Windows de travail et chez un second joueur. Suite d'ACA-PRECOMMIT-1 ; laisse l'arrivée d'un élève (ACA-ONBOARDING-2) appeler la commande d'installation. Windows n'est pas constaté sur une machine réelle, seul le job CI le dira."
+    },
+    {
+      "id": "ACA-DEMARRAGE-1",
+      "outcome": "Au premier message sur une machine neuve, quel qu'il soit, un agent vérifie Git utilisable et Python 3.12+, réutilise l'existant, installe les manquants avec l'autorisation déjà donnée (winget --scope user, identifiants vérifiés à la source), fait le préflight avant toute commande, pose le hook pre-commit exigé par tooling/check.py, oriente un dossier arrivé en ZIP vers un clone voisin sans le réécrire, et dit où vit l'état local et comment le sauvegarder.",
+      "status": "in_progress",
+      "mode": "agent-safe",
+      "risk": "low",
+      "priority": 93,
+      "depends_on": ["ACA-ONBOARDING-2", "ACA-PORTABILITE-1"],
+      "budget": {
+        "max_units": 2,
+        "max_minutes": 150,
+        "max_tokens": 50000
+      },
+      "proof": "21/09/2026, preuves obtenues : 49 tests tests_demarrer.py verts, 1 ignoré (pwsh absent de ce Mac), couvrant la version Python réelle exigée, Python trop ancien encore lisible, plan Windows winget --scope user sans curl ni élévation, aucun outil facultatif, --installer qui n'exécute que les manquants, échec d'installation en code non nul avec rapport conservé, guide ZIP sans git init ni reset, racine exacte sans héritage du dépôt parent, Git muet refusé, profil absent non annoncé prêt, demarrer.ps1 pour un Windows sans Python, --json stable. Preuves globales du parent : suite complète app/tests.py TOUT VERT hors sandbox, puis tooling/check.py 0 erreur ; copie neuve dans /tmp sans état ni fichiers ignorés, .git init/add temporaire, hook détecté absent puis posé, check.py 0 et tests.py TOUT VERT. Mutations ciblées garde et imports détectées ; passe globale interrompue puis restaurée. Limite : aucun poste Windows réel n'a exécuté demarrer.ps1, seul le job CI Windows le dira.",
+      "parent_milestone": "ACADEMIE-V2-OUVERTURE",
+      "note": "Demande de JB du 21/09/2026 : le dépôt part sur un Windows de travail et chez Arthur, second joueur. Le démarrage ne touche pas au moteur : il installe, vérifie, oriente et explique. Aucune réparation en place d'un dépôt existant (revue du 21/09) : un ZIP se clone à côté et l'état se transfère. Les outils facultatifs de l'usine (poppler, export) ne sont pas installés pour jouer, et l'état local n'est pas synchronisé par git entre deux machines. Antigravity lit .agents/rules (pluriel), confirmé sur la documentation officielle."
     }
   ]
 }

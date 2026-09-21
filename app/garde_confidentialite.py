@@ -21,6 +21,12 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 
+# Windows : une console en cp1252 ne doit pas faire mourir le message
+# d'alerte sur un accent (ACA-PORTABILITE-1).
+for flux in (sys.stdout, sys.stderr):
+    if hasattr(flux, "reconfigure"):
+        flux.reconfigure(encoding="utf-8", errors="replace")
+
 RE_MAIL = re.compile(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9-]+\.[A-Za-z]{2,}")
 RE_TEL_FR = re.compile(
     r"(?<!\d)(?:0|\+33\s?|33\s?)[1-9](?:[\s.-]?\d{2}){4}(?!\d)")
@@ -92,8 +98,10 @@ def alertes_par_fichier(diff_texte: str) -> list[tuple[str, str]]:
 
 def lire_diff_stagé(depot: str | None = None) -> str:
     argv = ["git", "diff", "--cached"]
+    # Encodage déclaré : sous Windows, la locale par défaut (cp1252) ne
+    # décode pas les accents du diff (ACA-PORTABILITE-1).
     return subprocess.run(argv, cwd=depot, capture_output=True,
-                          text=True).stdout
+                          text=True, encoding="utf-8", errors="replace").stdout
 
 
 def scan_stage(depot: str | None = None) -> int:

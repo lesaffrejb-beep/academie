@@ -6,6 +6,27 @@ puis uniquement le document que ta mission exige (`DOCTRINE.md` §4 donne
 la précédence ; en cas de divergence, le plus haut fait foi et le plus
 bas se corrige).
 
+## Premier message, sur une machine qui n'a jamais joué
+
+Avant toute commande, y compris quand la demande est « je veux
+réviser » : fais le préflight. **Sur Windows, le premier geste est
+toujours `powershell -ExecutionPolicy Bypass -File demarrer.ps1`, même
+si `python` répond déjà** : lui seul vérifie que le Python trouvé
+atteint 3.12 et n'est pas un alias du Store. Ailleurs, ou après ce
+script : `python3 app/demarrer.py --json`. Le diagnostic dit si Git
+répond, si Python atteint 3.12, si le dossier est bien la racine d'un
+clone, et si le hook pre-commit est posé. Les outils manquants
+s'installent avec l'autorisation déjà donnée par JB, par
+`-Installer` sur Windows ou `python3 app/demarrer.py --installer`
+ailleurs ; le diagnostic dit aussi comment faire à la main. Aucune
+élévation automatique.
+
+Un dossier arrivé en ZIP n'est jamais réécrit sur place : `--guide-zip`
+donne le clone à côté et le transfert de l'état par `exporter` puis
+`importer`. L'état d'un joueur vit dans `etat/<pseudo>/`, hors git : il
+ne suit pas un `git pull` et ne passe pas d'une machine à l'autre par
+git. Cahier : [`chantiers/ACA-DEMARRAGE-1.md`](chantiers/ACA-DEMARRAGE-1.md).
+
 Règles dures :
 
 1. Aucun contact, immeuble, contrat, mail, réunion ou document client ne doit entrer dans ce dépôt.

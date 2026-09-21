@@ -8,11 +8,19 @@ légitime se discute par décision ; il ne se contourne pas.
 """
 from pathlib import Path
 import json
+import os
 import re
 import subprocess
 import sys
 
 ROOT = Path(__file__).resolve().parents[1]
+
+# Windows : sans cela, une console en cp1252 casse sur les accents ou les
+# coches des scripts appelés ici (ACA-PORTABILITE-1).
+for flux in (sys.stdout, sys.stderr):
+    if hasattr(flux, "reconfigure"):
+        flux.reconfigure(encoding="utf-8", errors="replace")
+
 RE_OLD_REPO = re.compile(r"erp/app/etude|wiki-copro-sergic|\.claude/skills")
 # Vocabulaire du jeu et de l'archipel, interdit dans ce que le produit affiche (VOIX.md §3).
 RE_MOTS_INTERDITS = re.compile(
@@ -75,7 +83,8 @@ def controle_fichiers_suivis(errors):
     ailleurs. `sources/.gitignore` masque tout son dossier par défaut,
     et c'est exactement là que le cas s'est produit le 03/09/2026.
     """
-    res = subprocess.run(["git", "ls-files", "-z"], cwd=ROOT, capture_output=True, text=True)
+    res = subprocess.run(["git", "ls-files", "-z"], cwd=ROOT, capture_output=True,
+                         text=True, encoding="utf-8", errors="replace")
     if res.returncode != 0:
         return  # hors dépôt git : rien à vérifier
     suivis = set(res.stdout.split("\0"))
@@ -96,14 +105,19 @@ def controle_json(errors):
 
 
 def controle_ancien_couplage(errors):
+    moi = Path(__file__).resolve()
     for path in ROOT.rglob("*"):
-        if path == Path(__file__) or not path.is_file() or ".git" in path.parts or {"node_modules", "dist", "dev-dist", "test-results", "playwright-report"} & set(path.parts):
+        # Comparaison résolue : par /tmp sur macOS ou un lecteur mappé sur
+        # Windows, le même fichier arrive par deux chemins et le contrôle
+        # se signalait lui-même (ACA-PORTABILITE-1).
+        if (path.is_file() and path.resolve() == moi) or not path.is_file() or ".git" in path.parts or {"node_modules", "dist", "dev-dist", "test-results", "playwright-report"} & set(path.parts):
             continue
         if path.suffix not in {".md", ".py", ".json", ".yaml", ".yml", ".ts", ".tsx", ".js"}:
             continue
         if RE_OLD_REPO.search(lit(path)):
             errors.append(f"ancien couplage technique dans {rel(path)}")
-    tracked = subprocess.run(["git", "ls-files", ".claude"], cwd=ROOT, capture_output=True, text=True).stdout.strip()
+    tracked = subprocess.run(["git", "ls-files", ".claude"], cwd=ROOT, capture_output=True,
+                             text=True, encoding="utf-8", errors="replace").stdout.strip()
     if tracked:
         errors.append(".claude ne doit pas être versionné")
 
@@ -154,10 +168,22 @@ def controle_decisions(errors):
             errors.append(f"decisions/README.md indexe un fichier absent : {lien}")
 
 
+def python_utf8(*arguments: str) -> list[str]:
+    """Descendant Python forcé en UTF-8 : sur Windows hors CI, la console
+    par défaut est cp1252 et un enfant qui affiche un accent meurt
+    (ACA-PORTABILITE-1)."""
+    return [sys.executable, "-X", "utf8", *arguments]
+
+
+def env_utf8() -> dict:
+    return {**os.environ, "PYTHONUTF8": "1"}
+
+
 def controle_programme(errors):
     """Le programme et son alignement avec academie.json : app/valide_programme.py (ACA-PROGRAMME-1)."""
-    res = subprocess.run([sys.executable, str(ROOT / "app" / "valide_programme.py")],
-                         capture_output=True, text=True)
+    res = subprocess.run(python_utf8(str(ROOT / "app" / "valide_programme.py")),
+                         capture_output=True, text=True, encoding="utf-8",
+                         errors="replace", env=env_utf8())
     if res.returncode != 0:
         for l in (res.stdout + res.stderr).splitlines()[-8:]:
             errors.append(f"programme : {l}")
@@ -292,11 +318,26 @@ def controle_usine(errors):
 
 
 def controle_chapitres(errors):
-    res = subprocess.run([sys.executable, str(ROOT / "app" / "valide_chapitres.py")],
-                         cwd=ROOT, capture_output=True, text=True)
+    res = subprocess.run(python_utf8(str(ROOT / "app" / "valide_chapitres.py")),
+                         cwd=ROOT, capture_output=True, text=True,
+                         encoding="utf-8", errors="replace", env=env_utf8())
     if res.returncode != 0:
         for l in (res.stdout + res.stderr).splitlines()[-8:]:
             errors.append(f"chapitres : {l}")
+
+
+def chemin_hook(depot: Path) -> Path | None:
+    """Le hook vit dans `.git/hooks/`, mais dans un worktree `.git` est un
+    fichier : git seul sait où poser et retrouver le hook
+    (ACA-PORTABILITE-1).
+    """
+    res = subprocess.run(["git", "rev-parse", "--git-path", "hooks/pre-commit"],
+                         cwd=depot, capture_output=True, text=True,
+                         encoding="utf-8", errors="replace")
+    if res.returncode != 0 or not res.stdout.strip():
+        return None
+    chemin = Path(res.stdout.strip())
+    return chemin if chemin.is_absolute() else (depot / chemin)
 
 
 def controle_garde_precommit(errors):
@@ -305,7 +346,9 @@ def controle_garde_precommit(errors):
     contournable par --no-verify ; la machine vérifie qu'il est posé,
     pas qu'il a été contourné.
     """
-    hook = ROOT / ".git" / "hooks" / "pre-commit"
+    hook = chemin_hook(ROOT)
+    if hook is None:
+        return  # hors dépôt git : rien à vérifier
     if not hook.is_file():
         errors.append("pre-commit absent : python3 app/installation_precommit.py")
         return

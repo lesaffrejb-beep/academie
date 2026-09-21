@@ -40,6 +40,7 @@ Usage, pour un agent comme pour un humain :
     python3 app/academie.py cursus [<cle>]
     python3 app/academie.py accueil [--json]
     python3 app/academie.py profil [--pseudo <pseudo> --voix <v> --exigence <e>]
+    python3 app/academie.py profil --activer <pseudo>
     python3 app/academie.py exporter <fichier>
     python3 app/academie.py importer <fichier>
 
@@ -92,7 +93,17 @@ CHAMPS_CORRECTION = ("reponse", "explication", "vigilance")
 # Le profil local (ACA-ONBOARDING-2, decisions/0056) : des préférences,
 # pas une mesure. Écrit par `profil`, lu par tous les agents.
 PROFIL_FORMAT = "academie-profil-1"
-RE_PSEUDO = re.compile(r"^[A-Za-z0-9][A-Za-z0-9._-]{0,39}$")
+# Le profil actif local (ACA-PROFILS-LOCAUX-1, decisions/0057) : quel
+# pseudo joue sur ce clone. `etat/` reste hors git.
+SELECTION_FORMAT = "academie-profil-actif-1"
+NOM_SELECTION = "profil-actif.json"
+# `fullmatch` ferme le piège du `$` qui acceptait un saut de ligne final.
+RE_PSEUDO = re.compile(r"[A-Za-z0-9][A-Za-z0-9._-]{0,39}")
+# Noms que Windows refuse comme dossier, extension comprise (CON, CON.txt),
+# plus le fichier de sélection, pour qu'un pseudo ne prenne pas sa place.
+PSEUDOS_RESERVES = frozenset(
+    {"CON", "PRN", "AUX", "NUL", "PROFIL-ACTIF",
+     *(f"COM{i}" for i in range(1, 10)), *(f"LPT{i}" for i in range(1, 10))})
 
 
 # --- état et journal --------------------------------------------------
@@ -104,6 +115,56 @@ def dossier_etat(args) -> Path:
         return Path(choisi)
     env = os.environ.get("ACADEMIE_ETAT")
     return Path(env) if env else RACINE / "etat"
+
+
+def valide_pseudo(pseudo) -> str | None:
+    """Un pseudo est un nom de dossier, sûr sur Windows comme sur macOS.
+
+    Rend le message du refus, ou None si le pseudo convient. `fullmatch`
+    remplace `match` : avec `$`, « jb\\n » passait pour « jb ». Le point
+    final est refusé, et les noms de périphériques Windows le sont
+    extension comprise, parce que le dossier serait créé ailleurs que
+    prévu (decisions/0057).
+    """
+    texte = "" if pseudo is None else str(pseudo)
+    if not RE_PSEUDO.fullmatch(texte):
+        return ("pseudo attendu : lettre ou chiffre d'abord, puis lettres, "
+                "chiffres, point, tiret ou souligné (40 max)")
+    if texte.endswith("."):
+        return f"pseudo refusé, un nom ne finit pas par un point : {texte}"
+    if texte.split(".", 1)[0].upper() in PSEUDOS_RESERVES:
+        return f"pseudo réservé par Windows : {texte}"
+    return None
+
+
+def chemin_du_profil(etat: Path, profil: str) -> tuple[Path | None, str | None]:
+    """Le dossier d'un profil, ou None si le pseudo sort du dossier d'état."""
+    erreur = valide_pseudo(profil)
+    if erreur:
+        return None, erreur
+    racine = Path(etat).resolve()
+    cible = (racine / str(profil)).resolve()
+    if cible.parent != racine:
+        return None, f"pseudo hors du dossier d'état : {profil}"
+    return cible, None
+
+
+def collision_pseudo(etat: Path, profil: str) -> str | None:
+    """Refuse deux pseudos qui ne diffèrent que par la casse.
+
+    Windows et macOS confondent `Arthur` et `arthur` : sans ce refus, le
+    second écraserait le premier.
+    """
+    racine = Path(etat)
+    if not racine.is_dir():
+        return None
+    for entree in racine.iterdir():
+        if not entree.is_dir():
+            continue
+        if entree.name.lower() == str(profil).lower() and entree.name != str(profil):
+            return (f"le profil « {entree.name} » existe déjà : la casse est ignorée "
+                    f"sur Windows et macOS, choisissez un autre pseudo que « {profil} »")
+    return None
 
 
 @contextlib.contextmanager
@@ -159,18 +220,118 @@ def charge_arrivee() -> dict:
     return data if isinstance(data, dict) else {}
 
 
+def _lit_json(chemin: Path) -> tuple[dict | None, str | None]:
+    """Un objet JSON, ou None et la raison de la lecture impossible."""
+    try:
+        data = json.loads(chemin.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return None, f"fichier illisible : {chemin}"
+    if not isinstance(data, dict):
+        return None, f"objet JSON attendu : {chemin}"
+    return data, None
+
+
 def charge_profil(profil: str | None, etat: Path) -> dict | None:
-    """Le profil local d'un pseudo, ou None s'il n'a pas encore été écrit."""
+    """Le profil local d'un pseudo, ou None s'il est absent ou incohérent.
+
+    Un fichier qui se dit d'un autre pseudo, ou d'un format inconnu, ne
+    sert pas de profil : mieux vaut un trou nommé qu'un état mélangé
+    (ACA-PROFILS-LOCAUX-1). `raison_profil_incoherent` dit pourquoi.
+    """
     if not profil:
         return None
-    fichier = Path(etat) / str(profil) / "profil.json"
+    dossier, erreur = chemin_du_profil(etat, profil)
+    if erreur:
+        return None
+    fichier = dossier / "profil.json"
     if not fichier.is_file():
         return None
-    try:
-        data = json.loads(fichier.read_text(encoding="utf-8"))
-    except json.JSONDecodeError:
+    data, _ = _lit_json(fichier)
+    if not data:
         return None
-    return data if isinstance(data, dict) else None
+    if data.get("format") != PROFIL_FORMAT:
+        return None
+    if data.get("pseudo") != str(profil):
+        return None
+    return data
+
+
+def raison_profil_incoherent(profil: str, etat: Path) -> str | None:
+    """Pourquoi le profil existe mais n'est pas jouable, ou None."""
+    dossier, erreur = chemin_du_profil(etat, profil)
+    if erreur:
+        return erreur
+    fichier = dossier / "profil.json"
+    if not fichier.is_file():
+        return None
+    data, lecture = _lit_json(fichier)
+    if lecture:
+        return (f"profil illisible ({lecture}) : corrigez le fichier, rien n'est "
+                f"supprimé et le journal reste intact")
+    if data.get("format") != PROFIL_FORMAT:
+        return f"profil de format inconnu : {fichier}"
+    if data.get("pseudo") != str(profil):
+        return (f"profil incohérent : {fichier} se dit « {data.get('pseudo')} » "
+                f"au lieu de « {profil} »")
+    return None
+
+
+def fichier_selection(etat: Path) -> Path:
+    """Le fichier qui retient le profil actif d'un clone, hors git."""
+    return Path(etat) / NOM_SELECTION
+
+
+def lit_selection(etat: Path) -> tuple[str | None, str | None]:
+    """Le profil actif local, ou None s'il n'y en a pas.
+
+    Un fichier de sélection illisible est un trou, jamais un repli
+    silencieux sur `profil_defaut` : le repli écrirait dans l'état de
+    quelqu'un d'autre (decisions/0057).
+    """
+    fichier = fichier_selection(etat)
+    if not fichier.is_file():
+        return None, None
+    data, lecture = _lit_json(fichier)
+    if lecture:
+        return None, f"sélection locale illisible : {fichier}"
+    if data.get("format") != SELECTION_FORMAT:
+        return None, f"sélection locale invalide : {fichier}"
+    erreur = valide_pseudo(data.get("profil"))
+    if erreur:
+        return None, f"sélection locale invalide ({erreur}) : {fichier}"
+    return str(data["profil"]), None
+
+
+def ecrit_selection(etat: Path, profil: str) -> Path:
+    """Retient le profil actif. `etat/` reste hors git (invariant 6)."""
+    cible = fichier_selection(etat)
+    cible.parent.mkdir(parents=True, exist_ok=True)
+    cible.write_text(json.dumps({
+        "format": SELECTION_FORMAT,
+        "profil": str(profil),
+        "active_le": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+    }, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    return cible
+
+
+def profil_actif(args, config: dict) -> tuple[str | None, str | None]:
+    """Qui joue : `--profil`, puis la sélection locale, puis `profil_defaut`."""
+    explicite = getattr(args, "profil", None)
+    if explicite is not None:
+        erreur = valide_pseudo(explicite)
+        if erreur:
+            return None, f"--profil invalide : {erreur}"
+        return str(explicite), None
+    nom, erreur = lit_selection(dossier_etat(args))
+    if erreur:
+        return None, erreur
+    if nom:
+        return nom, None
+    defaut = config.get("profil_defaut", "jb")
+    erreur = valide_pseudo(defaut)
+    if erreur:
+        return None, f"profil_defaut invalide dans academie.json : {erreur}"
+    return str(defaut), None
 
 
 def config_du_profil(config: dict, prefs: dict | None) -> dict:
@@ -264,10 +425,19 @@ def charge_cartes_du_depot() -> tuple[list[dict], list[str]]:
 def charge_contexte(args) -> dict:
     """Config, banque, journal et cursus : tout ce que la surface lit."""
     config = charge_config()
-    profil = args.profil or config.get("profil_defaut", "jb")
+    profil, erreur_profil = profil_actif(args, config)
+    if erreur_profil:
+        return {"erreur_profil": erreur_profil}
+    etat = dossier_etat(args)
+    collision = collision_pseudo(etat, profil)
+    if collision:
+        return {"erreur_profil": collision}
+    incoherence = raison_profil_incoherent(profil, etat)
+    if incoherence:
+        return {"erreur_profil": incoherence}
     cartes, erreurs = charge_cartes_du_depot()
-    journal = lit_journal(profil, dossier_etat(args))
-    prefs = charge_profil(profil, dossier_etat(args))
+    journal = lit_journal(profil, etat)
+    prefs = charge_profil(profil, etat)
     config = config_du_profil(config, prefs)
 
     cle = cursus_actif(journal, args, prefs)
@@ -826,6 +996,17 @@ def cmd_cursus(args, ctx) -> int:
 
 # --- arrivée locale et profil (ACA-ONBOARDING-2) ----------------------
 
+def _profils_locaux(etat: Path) -> list[str]:
+    """Les pseudos déjà écrits, pour laisser choisir quand il y en a plusieurs."""
+    racine = Path(etat)
+    if not racine.is_dir():
+        return []
+    noms = [e.name for e in racine.iterdir()
+            if e.is_dir() and (e / "profil.json").is_file()
+            and valide_pseudo(e.name) is None]
+    return sorted(noms, key=str.lower)
+
+
 def cmd_accueil(args, ctx) -> int:
     """L'arrivée : ce qu'il faut pour choisir, et l'état du profil local.
 
@@ -836,10 +1017,20 @@ def cmd_accueil(args, ctx) -> int:
     catalogue = charge_catalogue()
     arrivee = charge_arrivee()
     prefs = ctx.get("prefs")
+    selection, _ = lit_selection(dossier_etat(args))
+    source = ("option" if getattr(args, "profil", None) is not None
+              else "selection" if selection else "defaut")
     charge = {
         "profil_existe": prefs is not None,
         "profil": prefs,
         "pseudo_actif": ctx["profil"],
+        "profil_actif_source": source,
+        "selection": selection,
+        "profils_locaux": _profils_locaux(dossier_etat(args)),
+        "activation": {
+            "commande": "python3 app/academie.py profil --activer <pseudo>",
+            "active": selection is not None,
+        },
         "catalogue": catalogue.get("parcours", []),
         "creer_le_votre": catalogue.get("creer_le_votre", {}),
         "voix": arrivee.get("voix", []),
@@ -874,9 +1065,9 @@ def cmd_accueil(args, ctx) -> int:
 def _choix_profil(args, arrivee: dict) -> tuple[dict | None, str | None]:
     """Valide les choix d'un profil avant écriture. Aucune écriture ici."""
     pseudo = getattr(args, "pseudo", None)
-    if not pseudo or not RE_PSEUDO.match(str(pseudo)):
-        return None, ("pseudo attendu : lettre ou chiffre d'abord, puis "
-                      "lettres, chiffres, point, tiret ou souligné (40 max)")
+    erreur_pseudo = valide_pseudo(pseudo)
+    if erreur_pseudo:
+        return None, erreur_pseudo
     cursus = getattr(args, "cursus", None)
     if cursus and not any(str(p.get("cle")) == str(cursus)
                           for p in charge_catalogue().get("parcours", [])):
@@ -891,10 +1082,61 @@ def _choix_profil(args, arrivee: dict) -> tuple[dict | None, str | None]:
             "exigence": exigence}, None
 
 
-def cmd_profil(args, ctx) -> int:
-    """Lire le profil local, ou l'écrire depuis les choix de l'arrivée."""
+def _valide_prefs(prefs, profil: str, contexte: str = "préférences") -> str | None:
+    """Les préférences sont-elles jouables, et bien celles de ce profil."""
+    if not isinstance(prefs, dict):
+        return f"{contexte} attendues sous forme d'objet"
+    if prefs.get("format") != PROFIL_FORMAT:
+        return f"{contexte} de format inconnu"
+    erreur = valide_pseudo(prefs.get("pseudo"))
+    if erreur:
+        return f"{contexte} : {erreur}"
+    if prefs.get("pseudo") != profil:
+        return (f"{contexte} du profil {prefs.get('pseudo')}, "
+                f"pas celles de {profil}")
     arrivee = charge_arrivee()
-    if getattr(args, "pseudo", None) is None:
+    cursus = prefs.get("cursus")
+    if cursus and not any(str(p.get("cle")) == str(cursus)
+                          for p in charge_catalogue().get("parcours", [])):
+        return f"{contexte} : cursus inconnu {cursus}"
+    if not any(v.get("cle") == prefs.get("voix") for v in arrivee.get("voix", [])):
+        return f"{contexte} : voix inconnue {prefs.get('voix')}"
+    if not any(e.get("cle") == prefs.get("exigence")
+               for e in arrivee.get("exigences", [])):
+        return f"{contexte} : exigence inconnue {prefs.get('exigence')}"
+    return None
+
+
+def cmd_profil(args, ctx) -> int:
+    """Lire le profil actif, l'écrire (`--pseudo`) ou le sélectionner (`--activer`)."""
+    arrivee = charge_arrivee()
+    etat = dossier_etat(args)
+    a_activer = getattr(args, "activer", None)
+    pseudo = getattr(args, "pseudo", None)
+    if a_activer is not None and pseudo is not None:
+        return _trou("choisissez --pseudo (écrire) ou --activer (sélectionner), "
+                     "pas les deux", args)
+    if a_activer is not None:
+        erreur = valide_pseudo(a_activer)
+        if erreur:
+            return _trou(erreur, args)
+        collision = collision_pseudo(etat, a_activer)
+        if collision:
+            return _trou(collision, args)
+        if charge_profil(str(a_activer), etat) is None:
+            raison = raison_profil_incoherent(str(a_activer), etat)
+            if raison:
+                return _trou(raison, args)
+            return _trou(f"aucun profil local pour {a_activer} : écrivez-le "
+                         f"d'abord avec profil --pseudo {a_activer}", args)
+        cible = ecrit_selection(etat, str(a_activer))
+        if args.json:
+            print(json.dumps({"actif": str(a_activer), "selection": str(cible)},
+                             ensure_ascii=False, indent=2))
+            return 0
+        print(f"profil actif : {a_activer} ({cible})")
+        return 0
+    if pseudo is None:
         nom = ctx["profil"]
         prefs = ctx.get("prefs") or charge_profil(nom, dossier_etat(args))
         if prefs is None:
@@ -910,16 +1152,24 @@ def cmd_profil(args, ctx) -> int:
     choix, erreur = _choix_profil(args, arrivee)
     if erreur:
         return _trou(erreur, args)
+    collision = collision_pseudo(etat, choix["pseudo"])
+    if collision:
+        return _trou(collision, args)
     ligne = {**choix, "format": PROFIL_FORMAT,
              "cree_le": datetime.now(timezone.utc).isoformat(timespec="seconds")}
-    cible = dossier_etat(args) / choix["pseudo"] / "profil.json"
-    cible.parent.mkdir(parents=True, exist_ok=True)
-    cible.write_text(json.dumps(ligne, ensure_ascii=False, indent=2) + "\n",
-                     encoding="utf-8")
+    dossier, erreur_chemin = chemin_du_profil(etat, choix["pseudo"])
+    if erreur_chemin:
+        return _trou(erreur_chemin, args)
+    dossier.mkdir(parents=True, exist_ok=True)
+    (dossier / "profil.json").write_text(
+        json.dumps(ligne, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    cible = ecrit_selection(etat, choix["pseudo"])
     if args.json:
-        print(json.dumps(ligne, ensure_ascii=False, indent=2))
+        print(json.dumps({**ligne, "actif": choix["pseudo"],
+                          "selection": str(cible)}, ensure_ascii=False, indent=2))
         return 0
-    print(f"profil écrit : {cible}")
+    print(f"profil écrit : {dossier / 'profil.json'}")
+    print(f"profil actif : {choix['pseudo']} ({cible})")
     return 0
 
 
@@ -956,35 +1206,150 @@ def _cle_erreur(ligne: dict):
             str(ligne.get("mode")), str(ligne.get("raison")))
 
 
+def _horodatage_bon(valeur) -> bool:
+    """ISO 8601 daté, avec ou sans fuseau : les journaux locaux en portent."""
+    if not isinstance(valeur, str) or not re.match(r"^\d{4}-\d{2}-\d{2}[Tt]", valeur):
+        return False
+    try:
+        datetime.fromisoformat(valeur.upper().replace("Z", "+00:00"))
+    except ValueError:
+        return False
+    return True
+
+
+def _entier(valeur) -> bool:
+    return isinstance(valeur, int) and not isinstance(valeur, bool)
+
+
+def _nombre_fini(valeur) -> bool:
+    return isinstance(valeur, (int, float)) and not isinstance(valeur, bool)
+
+
+def _texte_non_vide(valeur) -> bool:
+    return isinstance(valeur, str) and bool(valeur.strip())
+
+
+def _valide_champs_journal(ligne: dict, cle: str) -> str | None:
+    """Les types de `journal-v1`, repris du valideur serveur.
+
+    Les lignes historiques locales restent lisibles : un `flash` sans
+    `nonce` passe. Les champs présents sont jugés, parce qu'un
+    `note: "oops"` accepté casserait le moteur après l'import.
+    """
+    if "note" in ligne and not (_entier(ligne["note"]) and 1 <= ligne["note"] <= 4):
+        return f"sauvegarde mal formée : note hors contrat dans « {cle} »"
+    if "format" in ligne and not _texte_non_vide(ligne["format"]):
+        return f"sauvegarde mal formée : format invalide dans « {cle} »"
+    if "duree_ms" in ligne and not (_entier(ligne["duree_ms"]) and ligne["duree_ms"] >= 0):
+        return f"sauvegarde mal formée : duree_ms invalide dans « {cle} »"
+    if "confiance" in ligne and not isinstance(ligne["confiance"], bool):
+        return f"sauvegarde mal formée : confiance invalide dans « {cle} »"
+    if "graine" in ligne and not _entier(ligne["graine"]):
+        return f"sauvegarde mal formée : graine invalide dans « {cle} »"
+    if "stabilite_forcee" in ligne and not (
+            _nombre_fini(ligne["stabilite_forcee"]) and ligne["stabilite_forcee"] > 0):
+        return f"sauvegarde mal formée : stabilite_forcee invalide dans « {cle} »"
+    if "score" in ligne and not (
+            _nombre_fini(ligne["score"]) and 0 <= ligne["score"] <= 1):
+        return f"sauvegarde mal formée : score hors contrat dans « {cle} »"
+    if "raison" in ligne and not isinstance(ligne["raison"], str):
+        return f"sauvegarde mal formée : raison invalide dans « {cle} »"
+    if "motif" in ligne and not isinstance(ligne["motif"], str):
+        return f"sauvegarde mal formée : motif invalide dans « {cle} »"
+    if "carte" in ligne and not _texte_non_vide(ligne["carte"]):
+        return f"sauvegarde mal formée : carte invalide dans « {cle} »"
+    for champ in ("origine", "region", "dossier", "cap", "chapitre",
+                  "banque_version", "moteur_version"):
+        if champ in ligne and not isinstance(ligne[champ], str):
+            return f"sauvegarde mal formée : {champ} invalide dans « {cle} »"
+    if "cursus" in ligne and not _texte_non_vide(ligne["cursus"]):
+        return f"sauvegarde mal formée : cursus invalide dans « {cle} »"
+    if "cartes" in ligne and not (
+            isinstance(ligne["cartes"], list)
+            and all(isinstance(c, str) for c in ligne["cartes"])):
+        return f"sauvegarde mal formée : cartes invalides dans « {cle} »"
+    if "attendus_coches" in ligne and not (
+            isinstance(ligne["attendus_coches"], list)
+            and all(_entier(c) for c in ligne["attendus_coches"])):
+        return f"sauvegarde mal formée : attendus_coches invalides dans « {cle} »"
+    return None
+
+
+def _valide_ligne_revue(ligne: dict, cle: str) -> str | None:
+    """Un événement de revues.jsonl, jugé sur ses champs présents."""
+    if not _horodatage_bon(ligne.get("quand")):
+        return f"sauvegarde mal formée : horodatage invalide dans « {cle} »"
+    mode = ligne.get("mode")
+    if not _texte_non_vide(mode):
+        return f"sauvegarde mal formée : mode invalide dans « {cle} »"
+    erreur = _valide_champs_journal(ligne, cle)
+    if erreur:
+        return erreur
+    if "nonce" in ligne and not _texte_non_vide(ligne["nonce"]):
+        return f"sauvegarde mal formée : nonce invalide dans « {cle} »"
+    if mode in ("revision", "flash", "quiz"):
+        if not _texte_non_vide(ligne.get("carte")):
+            return f"sauvegarde mal formée : {mode} sans carte dans « {cle} »"
+        if not (_entier(ligne.get("note")) and 1 <= ligne.get("note", 0) <= 4):
+            return f"sauvegarde mal formée : {mode} sans note valide dans « {cle} »"
+    if mode in ("erreur", "signalement") and not _texte_non_vide(ligne.get("carte")):
+        return f"sauvegarde mal formée : {mode} sans carte dans « {cle} »"
+    if mode == "cursus" and not _texte_non_vide(ligne.get("cursus")):
+        return f"sauvegarde mal formée : cursus sans clé dans « {cle} »"
+    return None
+
+
+def _valide_ligne_erreur(ligne: dict, cle: str) -> str | None:
+    """Une ligne du carnet d'erreurs, jugée sur ses champs présents."""
+    if not _horodatage_bon(ligne.get("quand")):
+        return f"sauvegarde mal formée : horodatage invalide dans « {cle} »"
+    if not _texte_non_vide(ligne.get("carte")):
+        return f"sauvegarde mal formée : erreur sans carte dans « {cle} »"
+    if "mode" in ligne and not isinstance(ligne["mode"], str):
+        return f"sauvegarde mal formée : mode invalide dans « {cle} »"
+    if "raison" in ligne and not isinstance(ligne["raison"], str):
+        return f"sauvegarde mal formée : raison invalide dans « {cle} »"
+    return None
+
+
 def _union_append(chemin: Path, nouvelles: list, cle) -> int:
     """Ajoute les lignes inconnues d'une sauvegarde. N'écrase jamais."""
     connues = {cle(l) for l in _lit_lignes(chemin)}
+    a_ecrire = []
+    for ligne in nouvelles:
+        if not isinstance(ligne, dict):
+            continue
+        k = cle(ligne)
+        if k in connues:
+            continue
+        connues.add(k)
+        a_ecrire.append(ligne)
+    if not a_ecrire:
+        return 0
     chemin.parent.mkdir(parents=True, exist_ok=True)
-    ajout = 0
     with chemin.open("a", encoding="utf-8") as f:
-        for ligne in nouvelles:
-            if not isinstance(ligne, dict):
-                continue
-            k = cle(ligne)
-            if k in connues:
-                continue
-            connues.add(k)
+        for ligne in a_ecrire:
             f.write(json.dumps(ligne, ensure_ascii=False) + "\n")
-            ajout += 1
-    return ajout
+    return len(a_ecrire)
 
 
 def _chemin_profil(args, ctx, nom: str) -> Path:
-    return dossier_etat(args) / ctx["profil"] / nom
+    dossier, _ = chemin_du_profil(dossier_etat(args), ctx["profil"])
+    return (dossier or (dossier_etat(args) / ctx["profil"])) / nom
 
 
 def cmd_exporter(args, ctx) -> int:
+    etat = dossier_etat(args)
+    incoherent = raison_profil_incoherent(ctx["profil"], etat)
+    if incoherent:
+        return _trou(f"sauvegarde refusée : {incoherent}", args)
     revues = _lit_lignes(_chemin_profil(args, ctx, "revues.jsonl"))
     erreurs = _lit_lignes(_chemin_profil(args, ctx, "erreurs.jsonl"))
     bundle = {
         "format": "academie-sauvegarde-1",
         "profil": ctx["profil"],
         "exporte_le": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+        "prefs": charge_profil(ctx["profil"], etat),
         "revues": revues,
         "erreurs": erreurs,
     }
@@ -996,21 +1361,65 @@ def cmd_exporter(args, ctx) -> int:
     return 0
 
 
+def _valide_bundle(bundle, profil: str) -> str | None:
+    """Tout ce qui doit être vrai avant d'écrire un octet d'un import."""
+    if not isinstance(bundle, dict) or bundle.get("format") != "academie-sauvegarde-1":
+        return "ce n'est pas une sauvegarde academie-sauvegarde-1"
+    du_bundle = bundle.get("profil")
+    erreur = valide_pseudo(du_bundle)
+    if erreur:
+        return f"sauvegarde sans profil jouable ({erreur}) : import refusé"
+    if str(du_bundle) != str(profil):
+        return (f"sauvegarde du profil {du_bundle} : import refusé dans {profil}, "
+                f"rien n'a été écrit; relancez avec --profil {du_bundle}")
+    valideurs = {"revues": _valide_ligne_revue, "erreurs": _valide_ligne_erreur}
+    for cle, valideur in valideurs.items():
+        lignes = bundle.get(cle)
+        if not isinstance(lignes, list):
+            return f"sauvegarde mal formée : « {cle} » doit être une liste"
+        for ligne in lignes:
+            if not isinstance(ligne, dict):
+                return f"sauvegarde mal formée : une ligne de « {cle} » n'est pas un objet"
+            motif = valideur(ligne, cle)
+            if motif:
+                return motif
+    if bundle.get("prefs") is not None:
+        erreur = _valide_prefs(bundle["prefs"], str(profil),
+                               "préférences de la sauvegarde")
+        if erreur:
+            return erreur
+    return None
+
+
 def cmd_importer(args, ctx) -> int:
     source = Path(args.fichier)
     if not source.is_file():
         return _trou(f"fichier introuvable : {source}", args)
     try:
         bundle = json.loads(source.read_text(encoding="utf-8"))
-    except json.JSONDecodeError as exc:
+    except (OSError, json.JSONDecodeError) as exc:
         return _trou(f"sauvegarde illisible : {exc}", args)
-    if not isinstance(bundle, dict) or bundle.get("format") != "academie-sauvegarde-1":
-        return _trou("ce n'est pas une sauvegarde academie-sauvegarde-1", args)
+    refus = _valide_bundle(bundle, ctx["profil"])
+    if refus:
+        return _trou(refus, args)
     ajout_r = _union_append(_chemin_profil(args, ctx, "revues.jsonl"),
-                            bundle.get("revues") or [], _cle_revue)
+                            bundle["revues"], _cle_revue)
     ajout_e = _union_append(_chemin_profil(args, ctx, "erreurs.jsonl"),
-                            bundle.get("erreurs") or [], _cle_erreur)
-    print(f"fusion : {ajout_r} révision(s) ajoutée(s), {ajout_e} erreur(s) ajoutée(s)")
+                            bundle["erreurs"], _cle_erreur)
+    prefs = bundle.get("prefs")
+    restaure = False
+    if prefs is not None and charge_profil(ctx["profil"], dossier_etat(args)) is None:
+        dossier, _ = chemin_du_profil(dossier_etat(args), ctx["profil"])
+        dossier.mkdir(parents=True, exist_ok=True)
+        (dossier / "profil.json").write_text(
+            json.dumps(prefs, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        restaure = True
+    mots = f"fusion : {ajout_r} révision(s) ajoutée(s), {ajout_e} erreur(s) ajoutée(s)"
+    if restaure:
+        mots += ", préférences restaurées"
+    elif prefs is not None:
+        mots += ", préférences locales conservées"
+    print(mots)
     return 0
 
 
@@ -1120,8 +1529,10 @@ def construit_parseur() -> argparse.ArgumentParser:
     p.set_defaults(fn=cmd_accueil)
 
     p = sous.add_parser("profil", parents=[commun],
-                        help="lire le profil local, ou l'écrire (--pseudo)")
+                        help="lire le profil actif, l'écrire (--pseudo) ou le choisir (--activer)")
     p.add_argument("--pseudo", help="le pseudo à écrire (sinon lecture)")
+    p.add_argument("--activer",
+                   help="sélectionner un profil déjà écrit pour les commandes suivantes")
     p.add_argument("--voix", help="sobre, direct ou patient")
     p.add_argument("--exigence", help="detendu, standard ou exigeant")
     p.set_defaults(fn=cmd_profil)
@@ -1145,6 +1556,8 @@ def main() -> int:
         ctx = charge_contexte(args)
     except SystemExit as exc:
         return int(exc.code or 1)
+    if ctx.get("erreur_profil"):
+        return _trou(ctx["erreur_profil"], args)
     if ctx.get("erreur_cursus"):
         return _trou(ctx["erreur_cursus"], args)
     if ctx["erreurs"]:
