@@ -354,6 +354,15 @@ class EntreeSansPython(unittest.TestCase):
         self.assertIn("sys.version_info", texte)
         self.assertIn("git --version", texte)
 
+    def test_la_liste_des_candidats_n_est_pas_emballee_par_une_virgule(self):
+        """Cause racine de la CI Windows du 21/09/2026 : `return ,@(...)`
+        sort UN objet du pipeline, `foreach` reçoit la chaîne
+        « py -3 python3 python » au lieu des trois candidats, et tous
+        échouent. Les appelants garantissent le tableau avec @(...)."""
+        texte = self.script()
+        self.assertNotIn("return ,@(", texte)
+        self.assertIn("@(Get-CandidatsPython)", texte)
+
     def test_le_script_lit_le_code_de_sortie_de_winget(self):
         texte = self.script()
         self.assertIn("$LASTEXITCODE", texte)
@@ -558,17 +567,82 @@ class CliInstallation(unittest.TestCase):
 class Ps1DryRun(unittest.TestCase):
     """Si `pwsh` est présent, le script est exécuté pour de vrai en mode
     diagnostic. Sinon le test est ignoré, et le job CI Windows le
-    couvrira (ACA-PORTABILITE-1)."""
+    couvrira (ACA-PORTABILITE-1).
+
+    Le test décisif est le comportement, pas la présence du script : la
+    CI Windows du 21/09/2026 disait « Python absent » sur un poste qui
+    en avait un. Un test qui accepte 0 ou 1 ne l'aurait pas vu, donc on
+    exige la détection quand un Python conforme existe réellement ici.
+    """
+
+    def pwsh(self):
+        # `ACADEMIE_PWSH` permet de pointer un runtime portable officiel
+        # (MIT) sans l'installer globalement ni l'ajouter au dépôt.
+        chemin = os.environ.get("ACADEMIE_PWSH") or shutil.which("pwsh") \
+            or shutil.which("powershell")
+        if not chemin:
+            self.skipTest("pwsh absent de cette machine")
+        return chemin
+
+    def python_conforme_local(self):
+        """Le Python 3.12+ réellement joignable ici, ou None."""
+        for candidat in ("python3", "python"):
+            chemin = shutil.which(candidat)
+            if not chemin:
+                continue
+            res = run(chemin, "-c",
+                      "import sys; print('%d.%d' % sys.version_info[:2])")
+            if res.returncode != 0:
+                continue
+            try:
+                if tuple(int(p) for p in res.stdout.strip().split(".")) >= (3, 12):
+                    return candidat
+            except ValueError:
+                continue
+        return None
+
+    def lance(self, *arguments):
+        return run(self.pwsh(), "-NoProfile", "-File",
+                   str(RACINE / "demarrer.ps1"), *arguments, cwd=RACINE)
 
     def test_pwsh_diagnostic_si_disponible(self):
-        pwsh = shutil.which("pwsh") or shutil.which("powershell")
-        if not pwsh:
-            self.skipTest("pwsh absent de cette machine")
-        res = run(pwsh, "-NoProfile", "-File",
-                  str(RACINE / "demarrer.ps1"), "-Diagnostic", cwd=RACINE)
+        res = self.lance("-Diagnostic")
         self.assertIn(res.returncode, (0, 1), res.stdout + res.stderr)
         self.assertIn("Git :", res.stdout)
         self.assertIn("Python 3.12", res.stdout)
+
+    def test_python_present_est_detecte_par_la_liste_par_defaut(self):
+        """Régression de la CI du 21/09 : la virgule unaire faisait
+        arriver les trois candidats en une seule chaîne, donc un poste
+        pourvu de Python était déclaré « absent ou inutilisable »."""
+        if shutil.which("git") is None:
+            self.skipTest("git absent de cette machine")
+        candidat = self.python_conforme_local()
+        if not candidat:
+            self.skipTest("aucun Python 3.12+ local à détecter")
+        res = self.lance("-Diagnostic")
+        self.assertIn("present", res.stdout,
+                      "un Python conforme existe ici mais n'est pas détecté : "
+                      + res.stdout + res.stderr)
+        self.assertNotIn("absent ou inutilisable", res.stdout)
+        self.assertEqual(0, res.returncode, res.stdout + res.stderr)
+
+    def test_un_candidat_absent_n_est_pas_declare_present(self):
+        """Un nom qui n'existe sur aucune plateforme : le test ne peut
+        pas être sauté parce qu'un `python` traîne dans le PATH."""
+        sentinelle = "__academie_python_absent_test__"
+        self.assertIsNone(shutil.which(sentinelle))
+        res = self.lance("-Diagnostic", "-CandidatPython", sentinelle)
+        self.assertIn("absent ou inutilisable", res.stdout)
+        self.assertEqual(1, res.returncode, res.stdout + res.stderr)
+
+    def test_un_candidat_fourni_est_interroge(self):
+        candidat = self.python_conforme_local()
+        if not candidat:
+            self.skipTest("aucun Python 3.12+ local")
+        res = self.lance("-Diagnostic", "-CandidatPython", candidat)
+        self.assertIn("present", res.stdout, res.stdout + res.stderr)
+        self.assertEqual(0, res.returncode, res.stdout + res.stderr)
 
 
 if __name__ == "__main__":

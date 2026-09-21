@@ -29,9 +29,16 @@ $ErrorActionPreference = "Stop"
 # avant que `python` n'apparaisse), puis `python3`, puis `python`. Un
 # alias Microsoft Store qui echoue ne doit pas faire croire a un Python
 # pret : chaque candidat est interroge pour de vrai.
+#
+# Pas de virgule unaire devant le tableau ici : elle fait sortir UN
+# objet du pipeline, et l'appel en boucle recoit alors une seule chaine
+# « py -3 python3 python » a la place des trois candidats. Tous les
+# candidats echouaient, et un poste pourvu de Python etait declare
+# « absent ou inutilisable » (CI Windows du 21/09/2026). Les appelants
+# garantissent le tableau avec @(...).
 function Get-CandidatsPython {
-    if ($CandidatPython.Count -gt 0) { return ,@($CandidatPython) }
-    return ,@("py -3", "python3", "python")
+    if ($CandidatPython.Count -gt 0) { return $CandidatPython }
+    return @("py -3", "python3", "python")
 }
 
 # Un candidat se lit en deux morceaux : le nom du lanceur et ses
@@ -69,7 +76,7 @@ function Invoque-PythonCandidat {
 # Le Python utilisable du poste, ou $null. On garde son nom : le
 # diagnostic le transmet ensuite pour ne pas relancer un candidat muet.
 function Resolve-PythonPret {
-    foreach ($candidat in Get-CandidatsPython) {
+    foreach ($candidat in @(Get-CandidatsPython)) {
         $sortie = Invoque-PythonCandidat -Candidat $candidat `
             -Arguments @("-c", "import sys; print('%d.%d' % sys.version_info[:2])")
         if (-not $sortie) { continue }

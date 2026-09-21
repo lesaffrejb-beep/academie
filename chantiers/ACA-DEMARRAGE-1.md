@@ -73,6 +73,21 @@ valideurs, `serveur/`, le format du journal, `.agents/rules/` et
 - Sur un Windows sans Python, `app/demarrer.py` ne peut pas tourner :
   le point d'entrée est `demarrer.ps1`, qui interroge `winget` et
   propose les mêmes identifiants, sans élever ni télécharger à la main.
+- **Cause racine corrigée le 21/09/2026 (CI Windows, run 35636369078).**
+  `Get-CandidatsPython` finissait par `return ,@(...)` ; la virgule
+  unaire faisait sortir un seul objet du pipeline, donc
+  `foreach ($candidat in Get-CandidatsPython)` recevait la chaîne
+  « py -3 python3 python » au lieu des trois candidats. Chaque essai
+  lançait `py -3 python3 python -X utf8 -c ...`, échouait, et le script
+  annonçait « Python absent ou inutilisable » sur un poste qui en avait
+  un (Git pour Windows + `python` fourni par setup-python). Correctif :
+  plus de virgule unaire dans la fonction, et `@(...)` au site d'appel
+  pour garantir le tableau. Prouvé en runtime avec PowerShell 7.6.6
+  portable officiel (MIT, téléchargé hors dépôt) : la version fautive
+  sortait 1 et « absent », la version corrigée détecte le Python et
+  sort 0. Les tests `Ps1DryRun` exigent désormais la détection quand un
+  Python conforme existe ; l'ancien test acceptait 0 ou 1 et n'aurait
+  jamais vu la panne.
 
 ## Étapes, dans l'ordre
 
@@ -103,6 +118,9 @@ valideurs, `serveur/`, le format du journal, `.agents/rules/` et
      `python3` puis `python` en interrogeant chaque candidat pour de
      vrai, transmet le candidat entier avec `-X utf8`, lit le code du
      diagnostic complet, et ne dit pas « installé » sans re-tester ;
+   - la liste des candidats n'est pas emballée par une virgule unaire,
+     et la détection par défaut trouve un Python conforme présent
+     (régression de la CI Windows du 21/09) ;
    - un diagnostic absent (`app/demarrer.py` manquant) ou non exécuté
      n'est jamais vert : mode `-Diagnostic` comme mode normal sortent en
      1 avec un message nommé, et la branche après installation lit
