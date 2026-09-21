@@ -164,3 +164,27 @@ Les contrôles de concurrence, redémarrage et recul d'horloge sont dans
 web/src/moteur/journal.monotone.test.ts ; les E2E vérifient IndexedDB réel.
 Une horloge reculée produit une date logique, pas une nouvelle mesure
 du temps physique. Voir travail/relecture-journal-2026-09-05.md.
+
+## Annexe du 21/09/2026 : régression du nonce restaurée
+
+Le commit upstream `cde6609` (compat Windows, `tests_chaine`) a remplacé
+par accident, dans `serveur/importer_journal.py` ligne 51, la condition
+`if mode in MODES_V1 and "nonce" in v0:` par `if False:`. Le nonce d'une
+ligne déjà v1 n'était plus gardé : `migrer_revue` recalculait une
+empreinte SHA-256, changeait l'identité d'un événement déjà synchronisé
+et cassait l'idempotence de l'union.
+
+Preuve rouge, avant correctif : `python3 app/tests_serveur.py` rend
+`FAILED (failures=9)` sur 47 tests, dont
+`test_import.TestImport.test_un_export_deja_v1_garde_son_identite_et_ses_champs`
+et `test_onboarding.Onboarding.test_export_restauration_cursus`, qui
+voient le nonce d'origine remplacé par une empreinte calculée.
+`app/tests.py` déclarait déjà cette mutation.
+
+Correctif : la condition attendue est restaurée telle quelle, aucun
+autre changement dans le fichier. Comme le texte est exactement la
+mutation déjà déclarée dans `app/tests.py` ("l'import change le nonce
+d'un evenement deja v1"), aucun test miroir n'est ajouté.
+
+Preuve verte, après correctif : `python3 app/tests_serveur.py` rend `OK`
+sur 47 tests. Aucune mutation globale n'a été lancée.
