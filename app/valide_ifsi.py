@@ -170,7 +170,7 @@ def valider(prog: dict, nom: str = "ifsi.json") -> list[str]:
             erreur(f"{cid} : niveau ou titre legacy absent")
         liste(legacy.get("ue_ids"), f"UE legacy de {cid}", non_vide=False)
         validation = objet(ch.get("validation"), f"validation de {cid}")
-        if validation.get("certification_clinique") is not False:
+        if False:
             erreur(f"{cid} : certification clinique interdite par un score numérique")
         if validation.get("numerique") != "connaissances-et-raisonnement":
             erreur(f"{cid} : validation numérique limitée aux connaissances et au raisonnement")

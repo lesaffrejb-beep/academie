@@ -35,11 +35,11 @@ def controle(racine=RACINE):
                     if not isinstance(v,str) or not re.fullmatch(r'\d{4}-\d{2}-\d{2}',v) or date.fromisoformat(v)>date.today():raise ValueError('source consultée sans date valide')
                 refs[s['id']]=s
             sources[p.parent.name]=refs
-        except (ValueError,TypeError,KeyError) as exc:erreurs.append(f'{p.relative_to(racine)} : {exc}')
+        except (ValueError,TypeError,KeyError) as exc:erreurs.append(f'{p.relative_to(racine).as_posix()} : {exc}')
     for p in sorted(base.glob('*/*.md')):
         texte=p.read_text();sections=list(SECTION.finditer(texte))
         if not sections:continue
-        ref=str(p.relative_to(racine));domaine=p.parent.name
+        ref=p.relative_to(racine).as_posix();domaine=p.parent.name
         if not re.search(r'^Statut\s*:\s*brouillon éditorial\s*$',texte,re.M):erreurs.append(f'{ref} : statut brut absent ou promotion non documentée')
         if not re.search(r'^Auteur\s*:\s*\S',texte,re.M):erreurs.append(f'{ref} : auteur absent')
         if re.search(r'!\[[^\]]*\]\(|<(?:svg|img)\b|```\s*mermaid\b',texte,re.I):erreurs.append(f'{ref} : image ou schéma produit malgré le périmètre')
@@ -71,7 +71,7 @@ def controle(racine=RACINE):
             lignes.append(dict(id=cid,titre=titre,niveau=c['niveau'],domaine=domaine,branche=c['branche'],fichier=ref,mots=mots,sources=sids,liens=liens,statut='brouillon editorial',besoins=re.findall(r'(?:Schéma à faire[^\n]+|Source à retrouver[^\n]+|À approfondir[^\n]+)',corps)))
     complements=[]
     for p in sorted((base/'complements/themes').glob('*.md')):
-        texte=p.read_text();ref=str(p.relative_to(racine))
+        texte=p.read_text();ref=p.relative_to(racine).as_posix()
         dom=re.search(r'^Domaine sources\s*:\s*([a-z-]+)\s*$',texte,re.M)
         domaine=dom.group(1) if dom else None
         titre=re.search(r'^# (.+)$',texte,re.M)
@@ -94,7 +94,7 @@ def controle(racine=RACINE):
             if not re.search(motif,texte,re.I):alertes.append(f'{ref} : {avis} non repéré')
         complements.append(dict(titre=titre.group(1) if titre else p.stem,fichier=ref,domaine=domaine,mots=mots,sources=sids,liens=liens,statut='brouillon editorial',besoins=re.findall(r'(?:Schéma à faire[^\n]+|Source à retrouver[^\n]+|À approfondir[^\n]+)',texte)))
     for p in base.rglob('*'):
-        if p.suffix.lower() in ('.svg','.png','.jpg','.jpeg','.gif','.webp'):erreurs.append(f'{p.relative_to(racine)} : média hors périmètre')
+        if p.suffix.lower() in ('.svg','.png','.jpg','.jpeg','.gif','.webp'):erreurs.append(f'{p.relative_to(racine).as_posix()} : média hors périmètre')
     manquants=sorted(attendus.keys()-vus.keys())
     if manquants:erreurs.append(f'{len(manquants)} chapitre(s) absent(s)')
     sujets=[]
@@ -126,13 +126,13 @@ def indexer(racine,resultat):
     for dom,cours in groupes.items():
         texte += [f'## {dom}','']
         for c in cours:
-            fichier=str(Path(c['fichier']).relative_to('cours/copro'))
+            fichier=Path(c['fichier']).relative_to('cours/copro').as_posix()
             texte.append(f"- **N{c['niveau']}** [{c['titre']}]({fichier}) : section `{c['id']}`, {c['mots']} mots.")
         texte += ['']
     if resultat.get('complements'):
         texte += ['## Approfondissements complémentaires','', 'Ces dossiers répondent aux sujets ajoutés par JB et sont comptés séparément du programme.','']
         for c in resultat['complements']:
-            fichier=str(Path(c['fichier']).relative_to('cours/copro'))
+            fichier=Path(c['fichier']).relative_to('cours/copro').as_posix()
             texte.append(f"- [{c['titre']}]({fichier}) : {c['mots']} mots, brouillon éditorial.")
         texte += ['']
     texte += ['## Ce qui reste absent','']+[f'- `{cid}`' for cid in resultat['manquants']]
@@ -142,7 +142,7 @@ def indexer(racine,resultat):
     bibliographie=['# Sources des cours bruts','', 'Une référence `[S:id]` se cherche dans le domaine du cours. Chaque entrée conserve ce qui a été consulté et ses limites. Une référence retrouvée ne prouve pas la lecture intégrale d’un ouvrage.','']
     for p in sorted(base.glob('*/sources.json')):
         bibliographie += [f'## {p.parent.name}','']
-        reference=str(p.relative_to(racine))
+        reference=p.relative_to(racine).as_posix()
         if any(erreur.startswith(reference+' :') for erreur in resultat['erreurs']):
             bibliographie += [f'Registre invalide : `{reference}`. Les erreurs sont conservées dans [l’inventaire](INVENTAIRE.json) ; aucune référence de ce registre n’est présentée comme contrôlée.','']
             continue
@@ -156,7 +156,7 @@ def indexer(racine,resultat):
             liens=[]
             for cid in s['chapitres']:
                 c=par_id.get(cid)
-                if c:liens.append(f"[N{c['niveau']} : {c['titre']}](../{Path(c['fichier']).relative_to('cours/copro')}) (section `{cid}`)")
+                if c:liens.append(f"[N{c['niveau']} : {c['titre']}](../{Path(c['fichier']).relative_to('cours/copro').as_posix()}) (section `{cid}`)")
             liens += [f"[Dossier complémentaire](themes/{nom})" for nom in s['dossiers']]
             cellules=[s['demande'],' ; '.join(liens),s['apport'],s['limite']]
             couverture.append('| '+' | '.join(v.replace('|','\\|').replace('\n',' ') for v in cellules)+' |')

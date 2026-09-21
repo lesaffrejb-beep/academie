@@ -33,43 +33,46 @@ def main(argv: list[str] | None = None) -> int:
     args = ap.parse_args(argv)
 
     conn = db.connecter(args.base)
-    if args.cmd == "servir":
-        from .app import servir
-        srv = servir(conn, args.hote, args.port, securise=not args.sans_secure)
-        print(f"academie-etat sur http://{args.hote}:{args.port}{PREFIXE} (base {args.base})", flush=True)
-        try:
-            srv.serve_forever()
-        except KeyboardInterrupt:
-            pass
-        return 0
-    if args.cmd == "profil":
-        if args.action == "creer":
-            if not args.titre:
-                ap.error("titre attendu")
-            print(auth.creer_profil(conn, args.titre))
-        else:
-            for r in conn.execute("SELECT id, titre_affiche, cree_le, supprime_le FROM profils ORDER BY cree_le"):
-                print(f"{r['id']}  {r['titre_affiche']}  {r['cree_le']}" + ("  (suppression demandée)" if r["supprime_le"] else ""))
-        return 0
-    if args.cmd == "jeton":
-        print(auth.creer_jeton(conn, args.profil, "outil", args.appareil))
-        return 0
-    if args.cmd == "demandes":
-        for row in conn.execute("SELECT id, profil, texte, cree_le FROM demandes_cursus ORDER BY cree_le"):
-            print(dict(row))
-        return 0
-    if args.cmd == "purger":
-        print(f"{auth.purger(conn)} profil(s) effacé(s)")
-        return 0
-    if args.cmd == "reinitialiser-comptes":
-        if args.confirmer != "SUPPRIMER LES COMPTES":
-            ap.error("confirmation exacte attendue : SUPPRIMER LES COMPTES")
-        print(f"{auth.effacer_comptes(conn)} compte(s) et leurs données distantes effacés")
-        return 0
-    if args.cmd == "importer":
-        sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-        from importer_journal import importer_dans_base
-        res = importer_dans_base(conn, args.profil, Path(args.revues), Path(args.erreurs) if args.erreurs else None)
-        print(f"{res['lues']} ligne(s) lue(s), {res['acceptees']} ajoutée(s), {res['ignorees']} déjà connue(s), {res['illisibles']} illisible(s)")
-        return 0
-    return 1
+    try:
+        if args.cmd == "servir":
+            from .app import servir
+            srv = servir(conn, args.hote, args.port, securise=not args.sans_secure)
+            print(f"academie-etat sur http://{args.hote}:{args.port}{PREFIXE} (base {args.base})", flush=True)
+            try:
+                srv.serve_forever()
+            except KeyboardInterrupt:
+                pass
+            return 0
+        if args.cmd == "profil":
+            if args.action == "creer":
+                if not args.titre:
+                    ap.error("titre attendu")
+                print(auth.creer_profil(conn, args.titre))
+            else:
+                for r in conn.execute("SELECT id, titre_affiche, cree_le, supprime_le FROM profils ORDER BY cree_le"):
+                    print(f"{r['id']}  {r['titre_affiche']}  {r['cree_le']}" + ("  (suppression demandée)" if r["supprime_le"] else ""))
+            return 0
+        if args.cmd == "jeton":
+            print(auth.creer_jeton(conn, args.profil, "outil", args.appareil))
+            return 0
+        if args.cmd == "demandes":
+            for row in conn.execute("SELECT id, profil, texte, cree_le FROM demandes_cursus ORDER BY cree_le"):
+                print(dict(row))
+            return 0
+        if args.cmd == "purger":
+            print(f"{auth.purger(conn)} profil(s) effacé(s)")
+            return 0
+        if args.cmd == "reinitialiser-comptes":
+            if args.confirmer != "SUPPRIMER LES COMPTES":
+                ap.error("confirmation exacte attendue : SUPPRIMER LES COMPTES")
+            print(f"{auth.effacer_comptes(conn)} compte(s) et leurs données distantes effacés")
+            return 0
+        if args.cmd == "importer":
+            sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+            from importer_journal import importer_dans_base
+            res = importer_dans_base(conn, args.profil, Path(args.revues), Path(args.erreurs) if args.erreurs else None)
+            print(f"{res['lues']} ligne(s) lue(s), {res['acceptees']} ajoutée(s), {res['ignorees']} déjà connue(s), {res['illisibles']} illisible(s)")
+            return 0
+        return 1
+    finally:
+        conn.close()

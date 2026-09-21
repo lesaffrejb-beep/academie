@@ -189,7 +189,8 @@ def main(argv=None) -> int:
         texte = syllabus(prog)
         sortie = RACINE / "SYLLABUS-IFSI.md"
         if args.check:
-            if not sortie.exists() or sortie.read_text(encoding="utf-8") != texte:
+            existant = sortie.read_text(encoding="utf-8").replace("\r\n", "\n") if sortie.exists() else None
+            if existant != texte:
                 print("SYLLABUS-IFSI.md diffère du programme : relancer le générateur.", file=sys.stderr)
                 return 1
         else:

@@ -245,10 +245,10 @@ class ContratIFSI(unittest.TestCase):
 
 class IntegrationIFSI(unittest.TestCase):
     def test_historique_exact_et_anciens_identifiants_preserves(self):
-        b = (RACINE / "programme/versions/ifsi-2009.json").read_bytes()
+        b = (RACINE / "programme/versions/ifsi-2009.json").read_bytes().replace(b"\r\n", b"\n")
         self.assertEqual(hashlib.sha256(b).hexdigest(), SHA_HISTORIQUE)
         ancien = {c["id"] for c in json.loads(b)["chapitres"]}
-        courant = json.loads((RACINE / "programme/ifsi.json").read_text())
+        courant = json.loads((RACINE / "programme/ifsi.json").read_text(encoding="utf-8"))
         self.assertTrue(ancien <= {c["id"] for c in courant["chapitres"]})
         par_id = {c["id"]: c for c in courant["chapitres"]}
         for chapitre in json.loads(b)["chapitres"]:
@@ -269,7 +269,7 @@ class IntegrationIFSI(unittest.TestCase):
         avant = chemin.read_bytes()
         module = charger("genere_ifsi_test", RACINE / "programme/genere_ifsi.py")
         texte = module.syllabus(json.loads(avant))
-        self.assertEqual(texte, (RACINE / "SYLLABUS-IFSI.md").read_text())
+        self.assertEqual(texte, (RACINE / "SYLLABUS-IFSI.md").read_text(encoding="utf-8").replace("\r\n", "\n"))
         for titre in ("Parcoursup", "FPC", "spécifiques", "DEI-2026"):
             self.assertIn(titre, texte)
         resultat = subprocess.run([sys.executable, str(RACINE / "programme/genere_ifsi.py"), "--check"],

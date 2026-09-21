@@ -128,4 +128,5 @@ class Onboarding(unittest.TestCase):
             with redirect_stdout(sortie): self.assertEqual(cli.main(["--base",str(chemin),"reinitialiser-comptes","--confirmer","SUPPRIMER LES COMPTES"]),0)
             vide=db.connecter(chemin)
             self.assertEqual(vide.execute("SELECT COUNT(*) FROM profils").fetchone()[0],0)
+            vide.close()
             self.assertIn("effacés",sortie.getvalue())

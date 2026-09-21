@@ -28,6 +28,7 @@ from __future__ import annotations
 
 import copy
 import json
+import os
 import shutil
 import subprocess
 import sys
@@ -70,10 +71,10 @@ def genere(banque: list[dict], *args: str) -> tuple[dict | None, str, int]:
         # pointer sur la banque jetable via le répertoire de travail.
         res = subprocess.run(
             [sys.executable, str(APP / "genere.py"), "--sortie", str(sortie), *args],
-            capture_output=True, text=True, env={"PATH": "/usr/bin:/bin",
-                                                 "ACADEMIE_RACINE": str(tmp)})
+            capture_output=True, text=True, encoding="utf-8", errors="replace",
+            env={**os.environ, "ACADEMIE_RACINE": str(tmp), "PYTHONUTF8": "1", "PYTHONIOENCODING": "utf-8"})
         charge = json.loads(sortie.read_text(encoding="utf-8")) if sortie.exists() else None
-        return charge, res.stderr + res.stdout, res.returncode
+        return charge, (res.stderr or "") + (res.stdout or ""), res.returncode
     finally:
         shutil.rmtree(tmp, ignore_errors=True)
 

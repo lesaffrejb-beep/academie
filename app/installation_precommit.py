@@ -14,12 +14,12 @@ import stat
 import sys
 from pathlib import Path
 
-APPEL = "# academie-precommit\n"
+APPEL = "#!/bin/sh\n# academie-precommit\n"
 MARQUEUR = "academie-precommit"
 
 
 def contenu_hook(racine: Path) -> str:
-    python = Path(__file__).resolve().parent / "garde_confidentialite.py"
+    python = (Path(__file__).resolve().parent / "garde_confidentialite.py").as_posix()
     return (APPEL
             + f'exec python3 "{python}" "$@"\n')
 
