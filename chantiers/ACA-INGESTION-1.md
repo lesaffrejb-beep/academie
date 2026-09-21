@@ -144,6 +144,26 @@ Preuve :
 python3 app/tests_usine.py && python3 app/tests.py && python3 tooling/check.py
 ```
 
+## Annexe du 21/09/2026 : poppler incomplet se dit, il ne saute pas
+
+Le scénario PDF ne testait que `shutil.which("pdftotext")`, alors qu'un
+PDF demande les quatre outils de poppler (`pdfinfo`, `pdftotext`,
+`pdfimages`, `pdftoppm`). Sur un poste où `pdftotext` seul existe, la
+garde passait, la préparation refusait honnêtement (`outil absent`),
+aucun état n'était écrit et le test mourait en `IndexError` sur la
+lecture de cet état absent : la CI accusait le code pour une dépendance
+manquante.
+
+Désormais la garde demande les quatre outils. S'il en manque un, le cas
+n'est pas sauté en silence : il vérifie le refus attendu (l'outil absent
+est nommé, aucun état n'est écrit, le lot nomme l'échec et laisse le
+fichier dans le dépôt), puis il dit lequel manque. La lecture des sorties
+de poppler est aussi fixée en UTF-8, comme `pdftotext -enc UTF-8`.
+
+Périmètre : `app/tests_usine.py`, `app/usine/pivot.py` (encodage),
+`app/tests.py` (la sortie complète d'une suite en échec n'est plus
+coupée aux douze dernières lignes), cette annexe.
+
 ## Preuve
 
 ```bash

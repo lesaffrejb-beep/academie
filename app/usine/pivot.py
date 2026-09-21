@@ -39,7 +39,11 @@ def outil_present(nom: str) -> bool:
 
 
 def _commande(args: list[str], delai: int = 300) -> str:
-    res = subprocess.run(args, capture_output=True, text=True, timeout=delai, errors="replace")
+    # `pdftotext` sort en UTF-8 par `-enc UTF-8` ; le lire avec l'encodage
+    # du poste (cp1252 sous Windows) abîmerait les accents avant analyse
+    # (ACA-PORTABILITE-1).
+    res = subprocess.run(args, capture_output=True, text=True, encoding="utf-8",
+                         timeout=delai, errors="replace")
     if res.returncode != 0:
         raise RuntimeError(f"{args[0]} a échoué : {res.stderr.strip()[:300]}")
     return res.stdout

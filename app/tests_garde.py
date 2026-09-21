@@ -52,8 +52,49 @@ def env_utf8():
     return {**os.environ, "PYTHONUTF8": "1"}
 
 
+PYTHONS = ("python", "python3", "python.exe", "python3.exe")
+
+
+def dossiers_shell():
+    """Dossiers du `sh` avec lequel Git pour Windows lance un hook.
+
+    Sous Windows, Git résout l'interpréteur du shebang `#!/bin/sh` dans le
+    `PATH` : réduit au seul dossier des bouchons, il refuse de spawner le
+    hook (`cannot spawn .git/hooks/pre-commit: No such file or directory`)
+    et le test ne prouve plus le refus du garde. Sous Unix, le noyau lit le
+    shebang : rien à ajouter, et `/usr/bin` porterait un Python réel qui
+    rendrait le scénario « python3 absent » faux. Un dossier candidat qui
+    porte un Python est donc écarté : l'environnement réduit garde son sens
+    (ACA-PORTABILITE-1).
+    """
+    if os.name != "nt":
+        return []
+    candidats = []
+    for nom in ("sh", "bash"):
+        chemin = shutil.which(nom)
+        if chemin:
+            candidats.append(Path(chemin).resolve().parent)
+    git = shutil.which("git")
+    if git:
+        dossier_git = Path(git).resolve().parent
+        # Git pour Windows : `bin` et `usr/bin` à côté du `cmd/` qui porte
+        # le lanceur git.
+        candidats += [dossier_git, dossier_git.parent / "bin",
+                      dossier_git.parent / "usr" / "bin"]
+    gardes = []
+    for dossier in candidats:
+        if dossier in gardes or not dossier.is_dir():
+            continue
+        if any((dossier / nom).is_file() for nom in PYTHONS):
+            continue
+        gardes.append(dossier)
+    return gardes
+
+
 def env_avec_path(dossier):
-    """Environnement des descendants avec un `PATH` réduit au dossier donné.
+    """Environnement des descendants avec un `PATH` réduit au dossier donné,
+    plus, sous Windows, les dossiers du `sh` de Git (sans quoi Git ne
+    spawne pas le hook) — ces dossiers-là ne portent aucun Python.
 
     Sous Windows, `os.environ` peut porter la clé `Path` ; ajouter un
     second `PATH` donnerait deux variables de même nom, et Windows en
@@ -62,11 +103,13 @@ def env_avec_path(dossier):
     (ACA-PORTABILITE-1).
     """
     env = {**os.environ, "PYTHONUTF8": "1"}
+    morceaux = [str(dossier)] + [str(d) for d in dossiers_shell()]
+    valeur = os.pathsep.join(morceaux)
     cles = [cle for cle in env if cle.upper() == "PATH"]
     for cle in cles:
-        env[cle] = str(dossier)
+        env[cle] = valeur
     if not cles:
-        env["PATH"] = str(dossier)
+        env["PATH"] = valeur
     return env
 
 
@@ -261,18 +304,33 @@ class InstallationPortable(unittest.TestCase):
         """Sur Windows, l'interpréteur s'appelle souvent `python`. Le hook
         doit le trouver quand `python3` n'existe pas, sans quoi il ne
         protégerait rien là où il doit servir.
+
+        Le `PATH` réduit ne porte que le bac de bouchons (plus, sous
+        Windows, les dossiers du `sh` de Git, filtrés sans Python) : la
+        trace du bouchon `python` prouve le repli, au lieu de le supposer.
         """
         git_exe = shutil.which("git")
         if not git_exe:
             self.skipTest("git absent")
+        if os.name == "nt" and not dossiers_shell():
+            self.skipTest("aucun dossier de shell sans Python : le PATH "
+                          "réduit ne resterait pas hermétique")
         with tempfile.TemporaryDirectory() as tmp:
             self.depot_temporaire(tmp)
             installe_hook(tmp)
             bacs = Path(tmp, "faux-bin")
             bacs.mkdir()
-            ecrit_bouchon(bacs, "python", sys.executable)
-            ecrit_bouchon(bacs, "git", git_exe)
+            journal = Path(tmp, "appels-python")
+            ecrit_bouchon(bacs, "python", sys.executable, journal=journal)
+            if os.name != "nt":
+                # Sous Windows un script `sh` sans extension ne se lance pas
+                # par `CreateProcess` ; le dossier de Git, gardé dans le
+                # PATH, tient ce rôle.
+                ecrit_bouchon(bacs, "git", git_exe)
             env = env_avec_path(bacs)
+            valeur = next(v for c, v in env.items() if c.upper() == "PATH")
+            self.assertIsNone(shutil.which("python3", path=valeur),
+                              "le scénario n'a de sens que sans python3 dans le PATH")
             Path(tmp, "sale.md").write_text("contact " + ttrepiece() + "\n",
                                             encoding="utf-8")
             git("add", "sale.md", cwd=tmp)
@@ -280,6 +338,9 @@ class InstallationPortable(unittest.TestCase):
                                     capture_output=True, text=True, env=env)
             self.assertNotEqual(refuse.returncode, 0)
             self.assertIn("règle 1", refuse.stderr + refuse.stdout)
+            # Le repli sur `python` est observé, pas supposé.
+            self.assertTrue(journal.is_file(),
+                            "le hook n'a pas exécuté le `python` de secours")
             git("reset", "-q", cwd=tmp)
             Path(tmp, "propre.md").write_text("Une ligne saine.\n", encoding="utf-8")
             git("add", "propre.md", cwd=tmp)
@@ -294,14 +355,19 @@ class InstallationPortable(unittest.TestCase):
         git_exe = shutil.which("git")
         if not git_exe:
             self.skipTest("git absent")
+        if os.name == "nt" and not dossiers_shell():
+            self.skipTest("aucun dossier de shell sans Python : le PATH "
+                          "réduit ne resterait pas hermétique")
         with tempfile.TemporaryDirectory() as tmp:
             self.depot_temporaire(tmp)
             installe_hook(tmp)
             bacs = Path(tmp, "faux-bin")
             bacs.mkdir()
             ecrit_script_sh(Path(bacs, "python3"), ["#!/bin/sh", "exit 9009"])
-            ecrit_bouchon(bacs, "python", sys.executable)
-            ecrit_bouchon(bacs, "git", git_exe)
+            journal = Path(tmp, "appels-python")
+            ecrit_bouchon(bacs, "python", sys.executable, journal=journal)
+            if os.name != "nt":
+                ecrit_bouchon(bacs, "git", git_exe)
             env = env_avec_path(bacs)
             Path(tmp, "sale.md").write_text("contact " + ttrepiece() + "\n",
                                             encoding="utf-8")
@@ -310,6 +376,10 @@ class InstallationPortable(unittest.TestCase):
                                     capture_output=True, text=True, env=env)
             self.assertNotEqual(refuse.returncode, 0)
             self.assertIn("règle 1", refuse.stderr + refuse.stdout)
+            # Après le `python3` qui échoue, le repli sur `python` est
+            # observé, pas supposé.
+            self.assertTrue(journal.is_file(),
+                            "le hook n'a pas exécuté le `python` de secours")
 
     def test_hook_fonctionne_dans_un_worktree(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -372,9 +442,34 @@ class CheminsReels(unittest.TestCase):
 class FixturesPortables(unittest.TestCase):
     """Les fixtures du test ne doivent pas être la panne : un script `sh`
     écrit avec `write_text` sort en CRLF sous Windows et son shebang ne
-    vaut plus rien (ACA-PORTABILITE-1). Ces deux cas tournent sur toutes
-    les plateformes, y compris le job Windows.
+    vaut plus rien, et un `PATH` réduit doit garder le `sh` de Git sans
+    remettre un Python réel (ACA-PORTABILITE-1). Ces cas tournent sur
+    toutes les plateformes, y compris le job Windows.
     """
+
+    def test_env_avec_path_garde_le_shell_de_git(self):
+        """Le `PATH` réduit garde le dossier du `sh` que Git résout.
+
+        Sans lui, Git pour Windows refuse de spawner le hook
+        (`cannot spawn .git/hooks/pre-commit`) : le scénario ne prouve
+        plus le refus du garde. Le dossier des bouchons reste en tête, et
+        le dossier du Python réel n'est jamais remis devant
+        (ACA-PORTABILITE-1).
+        """
+        with tempfile.TemporaryDirectory() as tmp:
+            env = env_avec_path(tmp)
+            valeur = next(v for c, v in env.items() if c.upper() == "PATH")
+            chemins = valeur.split(os.pathsep)
+            self.assertEqual(chemins[0], tmp)
+            if os.name == "nt":
+                # Git pour Windows résout le `sh` du shebang dans le PATH.
+                sh = shutil.which("sh")
+                if sh:
+                    self.assertIn(str(Path(sh).resolve().parent), chemins)
+            # Le scénario garde son sens : aucun Python réel n'est remis.
+            for nom in ("python", "python3"):
+                self.assertIsNone(shutil.which(nom, path=valeur),
+                                  f"{nom} ne doit pas revenir dans le PATH réduit")
 
     def test_ecrit_script_sh_ecrit_en_lf(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -396,18 +491,24 @@ class FixturesPortables(unittest.TestCase):
             self.assertNotIn("\\", texte.replace("\\'", ""))
 
 
-def ecrit_bouchon(dossier, nom, cible):
+def ecrit_bouchon(dossier, nom, cible, journal=None):
     """Écrit un exécutable `sh` qui relaie vers un outil existant.
 
     Le relais est écrit en octets LF (un shebang CRLF casse sous Windows)
     et son chemin est cité pour `sh` avec des barres obliques : un
     `sys.executable` Windows (`C:\\...`) ou une apostrophe ne doit pas
-    casser le relais (ACA-PORTABILITE-1).
+    casser le relais (ACA-PORTABILITE-1). Avec `journal`, chaque appel du
+    bouchon y laisse une trace : le repli du hook sur cet interpréteur est
+    observé, pas supposé.
     """
     relais = installation_precommit.citer_sh(
         installation_precommit.chemin_sh(cible))
-    return ecrit_script_sh(Path(dossier, nom),
-                           ["#!/bin/sh", f'exec {relais} "$@"'])
+    lignes = ["#!/bin/sh"]
+    if journal is not None:
+        cible_journal = installation_precommit.chemin_sh(journal)
+        lignes.append(f"echo appel >> {installation_precommit.citer_sh(cible_journal)}")
+    lignes.append(f'exec {relais} "$@"')
+    return ecrit_script_sh(Path(dossier, nom), lignes)
 
 
 if __name__ == "__main__":

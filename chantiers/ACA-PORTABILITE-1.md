@@ -63,6 +63,17 @@ moteur, la banque, les valideurs, `serveur/`.
 - Un `PATH` réduit remplace la clé existante au lieu d'en ajouter une
   seconde : Windows enregistre `Path` et garderait un doublon `PATH`
   au hasard, ce qui rendrait le test dépendant de la machine.
+- Le `PATH` réduit des scénarios de hook garde, sous Windows, les
+  dossiers du `sh` que Git résout pour spawner le hook ; ces dossiers
+  sont filtrés pour ne porter aucun Python (ACA-PORTABILITE-1). Sous
+  Unix, le noyau lit le shebang : rien n'est ajouté, sinon `/usr/bin`
+  remettrait un `python3` réel et le scénario « python3 absent » ne
+  prouverait plus rien.
+- Le hook liste toujours les noms `python3` et `python` et les résout
+  dans son `PATH` au moment du commit : un interpréteur absent à
+  l'installation mais présent ensuite reste utilisable. Le test lit la
+  trace laissée par le bouchon `python` : le repli est observé, pas
+  supposé.
 
 ## Étapes, dans l'ordre
 

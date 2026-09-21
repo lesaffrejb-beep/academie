@@ -31,6 +31,14 @@ from usine import transcription  # noqa: E402
 
 ECHECS: list[str] = []
 
+# Un PDF demande les quatre outils de poppler ; `pdftotext` seul ne suffit
+# pas (ACA-INGESTION-1, ACA-PORTABILITE-1).
+OUTILS_PDF = ("pdfinfo", "pdftotext", "pdfimages", "pdftoppm")
+
+
+def outils_pdf_absents() -> list[str]:
+    return [nom for nom in OUTILS_PDF if shutil.which(nom) is None]
+
 
 def verifie(nom: str, condition: bool, detail: str = "") -> None:
     print(f"{'✓' if condition else '✗'} {nom}")
@@ -214,8 +222,21 @@ def scenario_transcription_et_pas_a_pas() -> None:
 
 
 def scenario_pdf() -> None:
-    if shutil.which("pdftotext") is None:
-        print("~ poppler absent : scénario PDF sauté")
+    absents = outils_pdf_absents()
+    if absents:
+        # Poppler incomplet (le runner Windows peut porter `pdftotext`
+        # sans `pdfinfo`, `pdfimages` ni `pdftoppm`) : l'absence doit être
+        # dite et refusée nommément, pas contournée par un IndexError sur
+        # un état qui n'existe pas (ACA-PORTABILITE-1).
+        rac = racine_test(mots_page_texte=5)
+        src = rac / "guide.pdf"
+        src.write_bytes(pdf_fixture([["La loi du 10 juillet 1965 fixe les majorites."]]))
+        code, sortie = lance(rac, "preparer", str(src))
+        verifie("poppler incomplet : le PDF est refusé en nommant l'outil absent",
+                code == 1 and "outil absent" in sortie and absents[0] in sortie, sortie)
+        verifie("poppler incomplet : aucun état n'est écrit",
+                not list((rac / "sources").glob("*.etat.json")), sortie)
+        print(f"~ poppler incomplet ({', '.join(absents)}) : scénario PDF remplacé par le refus attendu")
         return
     rac = racine_test(mots_page_texte=5)
     src = rac / "guide.pdf"
@@ -273,8 +294,22 @@ def scenario_pdf() -> None:
 
 
 def scenario_depot() -> None:
-    if shutil.which("pdftotext") is None:
-        print("~ poppler absent : scénario dépôt sauté")
+    absents = outils_pdf_absents()
+    if absents:
+        # Même refus honnête que `scenario_pdf`, vu par le lot : le bilan
+        # nomme l'échec, le fichier reste dans le dépôt de départ
+        # (ACA-INGESTION-1).
+        rac = racine_test(mots_page_texte=5)
+        depot = rac / "sources" / "a-preparer"
+        depot.mkdir()
+        (depot / "guide.pdf").write_bytes(pdf_fixture([["Le fonds de travaux est obligatoire."]]))
+        code, sortie = lance(rac, "deposer")
+        verifie("poppler incomplet : le dépôt nomme l'échec et sort non nul",
+                code == 1 and "1 échec" in sortie and "échec : guide.pdf" in sortie
+                and absents[0] in sortie, sortie)
+        verifie("poppler incomplet : le PDF refusé reste dans le dépôt",
+                (depot / "guide.pdf").is_file(), sortie)
+        print(f"~ poppler incomplet ({', '.join(absents)}) : scénario dépôt remplacé par le refus attendu")
         return
     rac = racine_test(mots_page_texte=5)
     depot = rac / "sources" / "a-preparer"

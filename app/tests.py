@@ -215,8 +215,8 @@ MUTATIONS = [
      "        if RE_MAIL.search(corps):",
      "        if False:"),
     ("l'installation fige l'interpréteur du hook", "installation_precommit.py",
-     '    return trouves or ["python3", "python"]',
-     '    return ["python3"]'),
+     "    trouves = list(NOMS_INTERPRETEURS)",
+     "    trouves = []"),
 ]
 
 
@@ -263,7 +263,14 @@ def mode_normal() -> int:
         print(f"{'✓' if ok else '✗'} {nom}")
         if not ok:
             echecs.append(nom)
-            print("\n".join("    " + l for l in sortie.splitlines()[-12:]))
+            # La cause d'un échec doit survivre au résumé : les douze
+            # dernières lignes ne portaient que la trace, jamais le
+            # diagnostic qui l'explique (ACA-PORTABILITE-1). La sortie
+            # entière est rendue, bornée pour ne pas noyer le journal.
+            lignes = sortie.splitlines()
+            if len(lignes) > 400:
+                lignes = [f"… {len(lignes) - 400} ligne(s) coupée(s) …"] + lignes[-400:]
+            print("\n".join("    " + l for l in lignes))
 
     ok, sortie = valide_vraie_banque()
     resume = next((l for l in sortie.splitlines() if l.startswith("banque :")), "")

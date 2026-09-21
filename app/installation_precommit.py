@@ -27,7 +27,10 @@ from pathlib import Path
 
 APPEL = "# academie-precommit\n"
 MARQUEUR = "academie-precommit"
-INTERPRETEURS = ("python3", "python", "py")
+# Noms cherchés à l'exécution, dans l'ordre. Un poste Windows porte
+# souvent `python` seul, un poste Unix `python3` seul : les deux noms
+# sont donc toujours proposés au hook, même absents à l'installation.
+NOMS_INTERPRETEURS = ("python3", "python")
 
 # Windows : une console en cp1252 ne doit pas faire mourir le message
 # d'installation sur un accent (ACA-PORTABILITE-1).
@@ -58,27 +61,27 @@ def chemin_sh(chemin: str | Path) -> str:
 def interpretes() -> list[str]:
     """Interpréteurs essayés par le hook, du plus portable au plus précis.
 
-    Un nom présent dans le `PATH` ne prouve pas un Python utilisable : le
-    hook sonde chaque candidat avant de l'exécuter. Le lanceur `py` de
-    Windows n'est pas une commande Python directe ; il est résolu ici en
-    un chemin réel.
+    Les noms `python3` et `python` sont toujours proposés : c'est le hook
+    qui les résout dans son `PATH` au moment du commit, donc un `python`
+    apparu depuis l'installation reste utilisable. Un nom présent ne
+    prouve pas un Python utilisable : le hook sonde chaque candidat avant
+    de l'exécuter (l'alias du Microsoft Store s'ouvre au lieu de
+    répondre). Le lanceur `py` de Windows n'est pas une commande Python
+    directe ; il est résolu ici en un chemin réel, et le chemin de
+    l'interpréteur qui a posé le hook vient en dernier recours
+    (ACA-PORTABILITE-1).
     """
-    trouves = []
-    for nom in INTERPRETEURS:
-        chemin = shutil.which(nom)
-        if not chemin or nom in trouves:
-            continue
-        if nom == "py":
-            reel = interpreteur_du_lanceur(chemin)
-            if not reel:
-                continue
-            chemin = chemin_sh(reel)
-        trouves.append(nom if nom != "py" else chemin)
+    trouves = list(NOMS_INTERPRETEURS)
+    lanceur = shutil.which("py")
+    if lanceur:
+        reel = interpreteur_du_lanceur(lanceur)
+        if reel and chemin_sh(reel) not in trouves:
+            trouves.append(chemin_sh(reel))
     if sys.executable:
         exact = chemin_sh(sys.executable)
         if exact not in trouves:
             trouves.append(exact)
-    return trouves or ["python3", "python"]
+    return trouves
 
 
 def interpreteur_du_lanceur(lanceur: str) -> str:
