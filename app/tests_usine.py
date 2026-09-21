@@ -12,6 +12,7 @@ absent du document ; une transcription perd horodatages et locuteurs.
 
 from __future__ import annotations
 
+import hashlib
 import json
 import os
 import re
@@ -25,6 +26,7 @@ APP = Path(__file__).resolve().parent
 RACINE = APP.parent
 USINE = APP / "usine" / "usine.py"
 sys.path.insert(0, str(APP))
+from usine import etat as E  # noqa: E402
 from usine import transcription  # noqa: E402
 
 ECHECS: list[str] = []
@@ -113,6 +115,10 @@ def pdf_fixture(pages: list[list[str]]) -> bytes:
 
 def empreinte_de(rac: Path) -> str:
     return sorted((rac / "sources").glob("*.etat.json"))[0].name.split(".")[0]
+
+
+def sha16(fichier: Path) -> str:
+    return hashlib.sha256(fichier.read_bytes()).hexdigest()[:16]
 
 
 def etat_de(rac: Path, emp: str) -> dict:
@@ -293,7 +299,7 @@ def scenario_depot() -> None:
 
 def scenario_reprise_ancien_etat() -> None:
     rac = racine_test()
-    src = rac / "ancien.txt"
+    src = rac / "ancien.vtt"
     src.write_text(transcription_fixture(), encoding="utf-8")
     lance(rac, "preparer", str(src))
     emp = empreinte_de(rac)
@@ -351,11 +357,139 @@ def scenario_transcription_unitaire() -> None:
     verifie("les pseudo-pages respectent la taille demandée", [len(p.splitlines()) for p in transcription.pseudo_pages(lignes, 2)] == [2, 2])
 
 
+TEXTE_MD = "# Cours\n\n2026\nObjectif : comprendre la source.\nNiveau : 3\n"
+
+
+def scenario_document_texte() -> None:
+    """Un .md ou un .txt n'est pas une transcription : ni son original, ni son texte ne se perdent."""
+    rac = racine_test(lignes_par_page=10, mots_page_texte=3)
+    src = rac / "cours.md"
+    src.write_text(TEXTE_MD, encoding="utf-8")
+    code, sortie = lance(rac, "preparer", str(src))
+    verifie("un Markdown se prépare", code == 0 and "préparé" in sortie, sortie)
+    emp = empreinte_de(rac)
+    archive = rac / "sources" / f"{emp}.source.md"
+    pivot = rac / "sources" / f"{emp}.md"
+    verifie("l'original est archivé à part du pivot",
+            archive.is_file() and archive.read_bytes() == src.read_bytes(),
+            str(sorted(p.name for p in (rac / "sources").iterdir())))
+    verifie("l'archive retrouve l'empreinte du document",
+            archive.is_file() and sha16(archive) == emp, emp)
+    verifie("le pivot reste distinct de l'original",
+            pivot.is_file() and pivot.read_bytes() != archive.read_bytes()
+            and "## [p. 1]" in pivot.read_text(encoding="utf-8"),
+            pivot.read_text(encoding="utf-8")[:200])
+    machine = (rac / "sources" / f"{emp}.pages" / "p-0001.txt").read_text(encoding="utf-8")
+    verifie("un document n'est pas nettoyé comme une transcription",
+            "2026" in machine and "Objectif : comprendre la source." in machine and "Niveau : 3" in machine,
+            machine)
+    verifie("l'état porte le chemin de la source",
+            etat_de(rac, emp)["fichier"] == f"{emp}.source.md")
+
+    src_txt = rac / "notes.txt"
+    src_txt.write_text("Niveau : 3\n2026\nObjectif : comprendre la source.\n", encoding="utf-8")
+    code, sortie = lance(rac, "preparer", str(src_txt))
+    emp_txt = sha16(src_txt)
+    machine_txt = (rac / "sources" / f"{emp_txt}.pages" / "p-0001.txt").read_text(encoding="utf-8")
+    verifie("un .txt garde son nom d'archive d'origine", (rac / "sources" / f"{emp_txt}.txt").is_file(), sortie)
+    verifie("un .txt garde ses lignes numériques et ses deux-points",
+            code == 0 and "2026" in machine_txt and "Niveau : 3" in machine_txt
+            and "Objectif : comprendre la source." in machine_txt, machine_txt)
+
+
+def scenario_reparation_archive_source() -> None:
+    """Un document préparé par la version fautive (archive écrasée par le pivot) se répare sans perdre le pivot."""
+    rac = racine_test(lignes_par_page=10, mots_page_texte=3)
+    src = rac / "cours.md"
+    src.write_text(TEXTE_MD, encoding="utf-8")
+    lance(rac, "preparer", str(src))
+    emp = empreinte_de(rac)
+    archive = rac / "sources" / f"{emp}.source.md"
+    pivot = rac / "sources" / f"{emp}.md"
+    pivot_avant = pivot.read_bytes()
+    archive.unlink()
+    code, sortie = lance(rac, "preparer", str(src))
+    verifie("un document déjà préparé réarchive sa source sans toucher au pivot",
+            code == 0 and "déjà préparé" in sortie and archive.read_bytes() == src.read_bytes()
+            and pivot.read_bytes() == pivot_avant, sortie)
+
+
+def scenario_archive_etrangere() -> None:
+    """Une archive qui ne porte pas l'empreinte du document n'est jamais écrasée."""
+    rac = racine_test(lignes_par_page=10, mots_page_texte=3)
+    src = rac / "cours.md"
+    src.write_text(TEXTE_MD, encoding="utf-8")
+    emp = sha16(src)
+    etrangere = rac / "sources" / f"{emp}.source.md"
+    etrangere.write_text("un autre document\n", encoding="utf-8")
+    code, sortie = lance(rac, "preparer", str(src))
+    verifie("une archive étrangère n'est pas écrasée",
+            code == 1 and "étrangère" in sortie
+            and etrangere.read_text(encoding="utf-8") == "un autre document\n", sortie)
+    verifie("un refus n'écrit aucun état", not (rac / "sources" / f"{emp}.etat.json").exists())
+
+
+def scenario_source_derivee() -> None:
+    """Un fichier dérivé posé près du pivot ne passe pas pour la source du document."""
+    rac = racine_test(lignes_par_page=10, mots_page_texte=3)
+    src = rac / "cours.md"
+    src.write_text(TEXTE_MD, encoding="utf-8")
+    emp = sha16(src)
+    derive = rac / "sources" / f"{emp}.notes.md"
+    derive.write_text("des notes prises à la main\n", encoding="utf-8")
+    doc = E.Document(rac, emp)
+    verifie("aucune source tant que l'original n'est pas archivé", doc.source() is None, str(doc.source()))
+    code, sortie = lance(rac, "preparer", str(src))
+    verifie("l'archive exacte devient la source, pas le dérivé",
+            code == 0 and doc.source() is not None and doc.source().name == f"{emp}.source.md"
+            and doc.source().read_bytes() == src.read_bytes(), sortie)
+
+
+def scenario_depot_partiel() -> None:
+    """Un fichier qui échoue (PDF cassé, format refusé, état corrompu) n'arrête plus le dépôt."""
+    rac = racine_test(lignes_par_page=10, mots_page_texte=3)
+    depot = rac / "sources" / "a-preparer"
+    depot.mkdir()
+    (depot / "aa-casse.pdf").write_bytes(b"%PDF-1.4\npas un vrai PDF\n")
+    (depot / "ab-mauvais.docx").write_bytes(b"un format non pris en charge")
+    casse = depot / "ac-etat-casse.txt"
+    casse.write_text("Niveau : 3\n2026\nObjectif : comprendre la source.\n", encoding="utf-8")
+    emp_casse = sha16(casse)
+    (rac / "sources" / f"{emp_casse}.etat.json").write_text('{"unites": [', encoding="utf-8")
+    (depot / "zz-bon.md").write_text(TEXTE_MD, encoding="utf-8")
+    code, sortie = lance(rac, "deposer")
+    emp = sha16(depot / "zz-bon.md")
+    verifie("le lot traverse un PDF cassé, un format refusé et un état corrompu",
+            (rac / "sources" / f"{emp}.etat.json").is_file() and (rac / "sources" / f"{emp}.source.md").is_file(),
+            sortie)
+    verifie("le dépôt sort non nul quand un fichier échoue", code == 1, sortie)
+    verifie("le bilan sépare les succès, les documents déjà présents et les échecs",
+            "1 préparé" in sortie and "3 échec" in sortie and "échec : aa-casse.pdf" in sortie
+            and "échec : ab-mauvais.docx" in sortie and "échec : ac-etat-casse.txt" in sortie, sortie)
+    verifie("les fichiers refusés restent dans le dépôt de départ",
+            (depot / "aa-casse.pdf").is_file() and (depot / "ab-mauvais.docx").is_file()
+            and casse.is_file(), sortie)
+    verifie("la source d'un fichier refusé est quand même conservée",
+            (rac / "sources" / f"{emp_casse}.txt").is_file(), sortie)
+    (depot / "aa-casse.pdf").unlink()
+    (depot / "ab-mauvais.docx").unlink()
+    casse.unlink()
+    (rac / "sources" / f"{emp_casse}.etat.json").unlink()
+    code, sortie = lance(rac, "deposer")
+    verifie("un dépôt entièrement préparé sort à zéro et compte les documents déjà présents",
+            code == 0 and "0 préparé" in sortie and "1 déjà" in sortie, sortie)
+
+
 def main() -> int:
     scenario_transcription_et_pas_a_pas()
     scenario_pdf()
     scenario_depot()
     scenario_transcription_unitaire()
+    scenario_document_texte()
+    scenario_reparation_archive_source()
+    scenario_archive_etrangere()
+    scenario_source_derivee()
+    scenario_depot_partiel()
     scenario_reprise_ancien_etat()
     if ECHECS:
         print(f"\n{len(ECHECS)} test(s) en échec : {', '.join(ECHECS)}")

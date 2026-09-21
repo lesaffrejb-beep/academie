@@ -90,6 +90,60 @@ Ne touche pas : le moteur, les contrats, `chapitres/`, le serveur.
 - Pas d'appel d'API, pas de service d'extraction en ligne.
 - Pas de copie d'image d'agence dans `banque/images/`.
 
+## Annexe du 21/09/2026 : le dépôt ne perd plus l'original (lot borné)
+
+Constat, reproduit par le QA du parent sur une fixture `.md`
+(`# Cours`, `2026`, `Objectif : comprendre la source.`) : `preparer`
+recopiait l'original vers `sources/<empreinte>.md`, c'est-à-dire vers le
+pivot lui-même, puis écrasait ce fichier par le pivot. L'original n'était
+plus retrouvable nulle part, et `Document.source()` ne rendait rien. Deux
+défauts voisins ont été relevés dans la foulée : un `.txt` ou un `.md`
+subissait le nettoyage de transcription (perte des lignes numériques et
+des préfixes avant deux-points, `Niveau : 3` par exemple) ; un échec au
+milieu d'un `deposer` interrompait le lot et le bilan ne distinguait ni
+les succès, ni les documents déjà préparés, ni les échecs.
+
+Résultat attendu : l'original d'un document préparé reste sur disque,
+exactement, sous un nom qui ne peut pas heurter le pivot
+(`<empreinte>.source.md` pour un Markdown, `<empreinte><extension>`
+sinon, nom inchangé pour les documents déjà préparés) ; le texte machine
+d'un `.txt` ou d'un `.md` est le document tel qu'il est écrit ; `deposer`
+traverse tout le dossier, nomme les échecs et sort non nul s'il en
+reste un.
+
+Périmètre : `app/usine/usine.py`, `app/usine/transcription.py`,
+`app/usine/etat.py` (chemins et recherche de la source),
+`app/usine/pivot.py` (constantes d'extension), `app/tests_usine.py`,
+`app/tests.py` (la seule mutation qui cite `deposer`), `sources/README.md`,
+cette annexe. Rien d'autre.
+
+Deux points de contrat que la revue a fixés. La recherche de la source
+énumère les noms exacts que l'usine archive (`<empreinte>.source.md`,
+puis `<empreinte><extension>` pour PDF, `.vtt`, `.srt`, `.txt`) et ne
+globe rien : un fichier dérivé déposé à la main près du pivot ne passe
+jamais pour l'original. Et `deposer` rend un échec attendu (outil absent,
+PDF illisible, archive étrangère, état `.json` corrompu) au lieu de le
+propager : le lot continue, le bilan nomme l'échec et la source du
+fichier refusé reste sur disque.
+
+Étapes : tests rouges d'abord (`scenario_document_texte`,
+`scenario_reparation_archive_source`, `scenario_archive_etrangere`,
+`scenario_source_derivee`, `scenario_depot_partiel`), puis le code, puis
+`python3 app/tests.py`, `python3 app/tests_usine.py` et
+`python3 tooling/check.py`.
+
+Ce qu'on ne fait pas : aucune migration destructive d'un dépôt existant.
+Un document préparé avant ce lot garde son état et son pivot ; relancer
+`preparer` sur le fichier d'origine réarchive celui-ci à côté du pivot,
+sans jamais réécrire le pivot. Aucun document réel n'est préparé ici, et
+aucun scellé fictif n'est posé.
+
+Preuve :
+
+```bash
+python3 app/tests_usine.py && python3 app/tests.py && python3 tooling/check.py
+```
+
 ## Preuve
 
 ```bash

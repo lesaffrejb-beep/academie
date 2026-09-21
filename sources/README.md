@@ -26,6 +26,17 @@ Le **pivot** d'un document lu (`decisions/0026`) : `sources/<empreinte>.md`
 et `sources/<empreinte>.figures/` (pages à figures rendues). Hors git
 comme le document. Les chapitres citent le pivot avec sa page.
 
+L'**original** reste sur disque à côté du pivot : `preparer` copie le
+fichier déposé sous son empreinte et ne l'écrase jamais. Un document
+Markdown garde son original en `<empreinte>.source.md`, parce que le
+pivot occupe déjà `<empreinte>.md` ; un PDF, un `.vtt`, un `.srt` ou un
+`.txt` garde `<empreinte><extension>`. L'archive porte exactement les
+octets du fichier déposé et se retrouve par son empreinte. Un `.vtt` ou
+un `.srt` est nettoyé de ses horodatages, numéros de séquence et
+étiquettes de locuteur avant d'être découpé en pages ; un `.txt` ou un
+`.md` est repris tel qu'il est écrit, lignes numériques et préfixes
+avant deux-points compris.
+
 L'usine (`app/usine/usine.py`, `decisions/0027`) ajoute à côté :
 `<empreinte>.pages/` (le texte machine par page, témoin des contrôles),
 `<empreinte>.structure.json` (titres candidats par taille de police),
@@ -38,12 +49,16 @@ les mêmes fichiers sous `sources/interne/`.
 **Le dépôt.** Jette un PDF (ou une transcription) dans
 `sources/a-preparer/`, puis `python3 app/usine/usine.py deposer`. Chaque
 fichier est préparé comme par `preparer` et reste à sa place ; un
-document déjà préparé est sauté. Dans `<empreinte>.figures/`, les pages à
-figures sont rendues (`p-####.png`, une page entière) et les images
-réelles extraites (`img-*.png`, réutilisables telles quelles). Un PDF
-scanné sans couche texte est signalé : `ocrmypdf --language fra` sur le
-fichier, puis `deposer` à nouveau. Le dossier de dépôt n'est pas
-versionné (seul un `.gitkeep` l'est).
+document déjà préparé est sauté. Un fichier qui échoue n'arrête pas les
+suivants : le bilan compte les préparés, les documents déjà présents et
+les échecs, nomme les échecs, et `deposer` sort non nul tant qu'il en
+reste un ; aucun fichier du dépôt n'est supprimé ni déplacé. Dans
+`<empreinte>.figures/`, les pages à figures sont rendues (`p-####.png`,
+une page entière) et les images réelles extraites (`img-*.png`,
+réutilisables telles quelles). Un PDF scanné sans couche texte est
+signalé : `ocrmypdf --language fra` sur le fichier, puis `deposer` à
+nouveau. Le dossier de dépôt n'est pas versionné (seul un `.gitkeep`
+l'est).
 
 Fiabilité :
 

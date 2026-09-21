@@ -32,6 +32,7 @@ import sys
 import tempfile
 import unittest
 from pathlib import Path
+from unittest import mock
 
 APP = Path(__file__).resolve().parent
 RACINE = APP.parent
@@ -41,7 +42,8 @@ import demarrer  # noqa: E402
 
 def run(*a, cwd=None):
     return subprocess.run(a, cwd=cwd, capture_output=True, text=True,
-                          encoding="utf-8", errors="replace")
+                          encoding="utf-8", errors="replace",
+                          env={**os.environ, "PYTHONUTF8": "1"})
 
 
 class VersionPython(unittest.TestCase):
@@ -196,20 +198,40 @@ class RacineExacte(unittest.TestCase):
 
 
 class GitMuet(unittest.TestCase):
+    """Un `git` présent mais muet n'est pas un Git prêt.
+
+    Le cas est vérifié sans fixture exécutable : sur Windows, un script
+    `sh` posé sans extension dans le `PATH` n'est pas lancé par
+    `subprocess`, et la fixture ne prouverait plus rien. Le module est
+    remplacé par un double, l'assertion métier reste la même
+    (ACA-PORTABILITE-1).
+    """
+
     def test_un_git_sans_version_lisible_n_est_pas_pret(self):
-        with tempfile.TemporaryDirectory() as tmp:
-            bouchon = Path(tmp, "git")
-            bouchon.write_text("#!/bin/sh\necho 'commande inconnue'\n",
-                               encoding="utf-8")
-            bouchon.chmod(0o755)
-            ancien = os.environ.get("PATH", "")
-            os.environ["PATH"] = str(tmp) + os.pathsep + ancien
-            try:
-                pret, sortie = demarrer.version_git_utilisable()
-            finally:
-                os.environ["PATH"] = ancien
-            self.assertFalse(pret)
-            self.assertNotRegex(sortie, r"\d+\.\d+\.\d+")
+        with mock.patch.object(demarrer.shutil, "which",
+                               return_value="/usr/bin/git"), \
+                mock.patch.object(demarrer, "_sortie",
+                                  return_value="commande inconnue"):
+            pret, sortie = demarrer.version_git_utilisable()
+        self.assertFalse(pret)
+        self.assertNotRegex(sortie, r"\d+\.\d+\.\d+")
+
+    def test_un_git_absent_du_path_n_est_pas_pret(self):
+        with mock.patch.object(demarrer.shutil, "which", return_value=None), \
+                mock.patch.object(demarrer, "_sortie") as sortie:
+            pret, texte = demarrer.version_git_utilisable()
+        self.assertFalse(pret)
+        self.assertEqual(texte, "")
+        sortie.assert_not_called()
+
+    def test_un_git_qui_repond_sa_version_est_pret(self):
+        with mock.patch.object(demarrer.shutil, "which",
+                               return_value="/usr/bin/git"), \
+                mock.patch.object(demarrer, "_sortie",
+                                  return_value="git version 2.55.0"):
+            pret, sortie = demarrer.version_git_utilisable()
+        self.assertTrue(pret)
+        self.assertIn("2.55.0", sortie)
 
 
 class GuideZip(unittest.TestCase):

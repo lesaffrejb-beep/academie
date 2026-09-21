@@ -52,6 +52,24 @@ def env_utf8():
     return {**os.environ, "PYTHONUTF8": "1"}
 
 
+def env_avec_path(dossier):
+    """Environnement des descendants avec un `PATH` réduit au dossier donné.
+
+    Sous Windows, `os.environ` peut porter la clé `Path` ; ajouter un
+    second `PATH` donnerait deux variables de même nom, et Windows en
+    garderait une au hasard. La casse de la clé existante est donc
+    respectée, et `PYTHONUTF8` est posé pour les descendants
+    (ACA-PORTABILITE-1).
+    """
+    env = {**os.environ, "PYTHONUTF8": "1"}
+    cles = [cle for cle in env if cle.upper() == "PATH"]
+    for cle in cles:
+        env[cle] = str(dossier)
+    if not cles:
+        env["PATH"] = str(dossier)
+    return env
+
+
 def lance_script(script, *arguments, cwd=None):
     return subprocess.run(python_utf8(str(script), *arguments), cwd=cwd,
                           capture_output=True, text=True, encoding="utf-8",
@@ -68,6 +86,20 @@ def git(*arguments, cwd, env=None):
     return subprocess.run(["git", *arguments], cwd=cwd, capture_output=True,
                           text=True, encoding="utf-8", errors="replace",
                           env=env)
+
+
+def ecrit_script_sh(chemin, lignes):
+    """Écrit un script `sh` en octets, sauts de ligne LF.
+
+    `write_text` traduit les `\\n` en CRLF sous Windows : le `#!/bin/sh`
+    n'est alors plus reconnu par le `sh` de Git pour Windows, et la
+    fixture ne prouve plus rien (ACA-PORTABILITE-1).
+    """
+    chemin = Path(chemin)
+    contenu = "".join(ligne + "\n" for ligne in lignes)
+    chemin.write_bytes(contenu.encode("utf-8"))
+    chemin.chmod(0o755)
+    return chemin
 
 
 class AlertesDiff(unittest.TestCase):
@@ -240,7 +272,7 @@ class InstallationPortable(unittest.TestCase):
             bacs.mkdir()
             ecrit_bouchon(bacs, "python", sys.executable)
             ecrit_bouchon(bacs, "git", git_exe)
-            env = dict(os.environ, PATH=str(bacs))
+            env = env_avec_path(bacs)
             Path(tmp, "sale.md").write_text("contact " + ttrepiece() + "\n",
                                             encoding="utf-8")
             git("add", "sale.md", cwd=tmp)
@@ -267,12 +299,10 @@ class InstallationPortable(unittest.TestCase):
             installe_hook(tmp)
             bacs = Path(tmp, "faux-bin")
             bacs.mkdir()
-            leurre = Path(bacs, "python3")
-            leurre.write_text("#!/bin/sh\nexit 9009\n", encoding="utf-8")
-            leurre.chmod(0o755)
+            ecrit_script_sh(Path(bacs, "python3"), ["#!/bin/sh", "exit 9009"])
             ecrit_bouchon(bacs, "python", sys.executable)
             ecrit_bouchon(bacs, "git", git_exe)
-            env = dict(os.environ, PATH=str(bacs))
+            env = env_avec_path(bacs)
             Path(tmp, "sale.md").write_text("contact " + ttrepiece() + "\n",
                                             encoding="utf-8")
             git("add", "sale.md", cwd=tmp)
@@ -311,7 +341,7 @@ class InstallationPortable(unittest.TestCase):
             hook = self.hook_du_depot(tmp)
             hook.parent.mkdir(parents=True, exist_ok=True)
             gardien = "#!/bin/sh\necho autre outil\n"
-            hook.write_text(gardien, encoding="utf-8")
+            ecrit_script_sh(hook, ["#!/bin/sh", "echo autre outil"])
             res = installe_hook(tmp)
             self.assertNotEqual(res.returncode, 0)
             self.assertEqual(hook.read_text(encoding="utf-8"), gardien)
@@ -339,12 +369,45 @@ class CheminsReels(unittest.TestCase):
                              res.stdout + res.stderr)
 
 
+class FixturesPortables(unittest.TestCase):
+    """Les fixtures du test ne doivent pas être la panne : un script `sh`
+    écrit avec `write_text` sort en CRLF sous Windows et son shebang ne
+    vaut plus rien (ACA-PORTABILITE-1). Ces deux cas tournent sur toutes
+    les plateformes, y compris le job Windows.
+    """
+
+    def test_ecrit_script_sh_ecrit_en_lf(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            chemin = ecrit_script_sh(Path(tmp, "python3"),
+                                     ["#!/bin/sh", "exit 9009"])
+            octets = chemin.read_bytes()
+            self.assertTrue(octets.startswith(b"#!/bin/sh\n"))
+            self.assertNotIn(b"\r\n", octets)
+
+    def test_le_relais_cite_un_chemin_windows(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            chemin = ecrit_bouchon(
+                Path(tmp), "python",
+                r"C:\Users\jb\Python 3.12\python.exe")
+            texte = chemin.read_text(encoding="utf-8")
+            # Barres obliques et citation : un chemin Windows avec des
+            # espaces reste un seul mot pour `sh`.
+            self.assertIn("'C:/Users/jb/Python 3.12/python.exe'", texte)
+            self.assertNotIn("\\", texte.replace("\\'", ""))
+
+
 def ecrit_bouchon(dossier, nom, cible):
-    """Écrit un exécutable qui relaie vers un outil existant."""
-    chemin = Path(dossier, nom)
-    chemin.write_text(f'#!/bin/sh\nexec "{cible}" "$@"\n', encoding="utf-8")
-    chemin.chmod(0o755)
-    return chemin
+    """Écrit un exécutable `sh` qui relaie vers un outil existant.
+
+    Le relais est écrit en octets LF (un shebang CRLF casse sous Windows)
+    et son chemin est cité pour `sh` avec des barres obliques : un
+    `sys.executable` Windows (`C:\\...`) ou une apostrophe ne doit pas
+    casser le relais (ACA-PORTABILITE-1).
+    """
+    relais = installation_precommit.citer_sh(
+        installation_precommit.chemin_sh(cible))
+    return ecrit_script_sh(Path(dossier, nom),
+                           ["#!/bin/sh", f'exec {relais} "$@"'])
 
 
 if __name__ == "__main__":

@@ -6,6 +6,35 @@ preuve de couverture. `python3 app/couverture_expertises.py --write`
 recalcule leur [inventaire](../travail/expertise-2026-09-06/COUVERTURE.md).
 Les objectifs ne sont jamais déclarés acquis à partir d'un simple rattachement.
 
+Pour instruire un thème précis sans relire le rapport entier :
+
+    python3 app/couverture_expertises.py --domaine energie
+    python3 app/couverture_expertises.py --specialite electricite --sortie sorties/electricite.md
+    python3 app/couverture_expertises.py --domaine droit --json
+
+`--domaine ID` et `--specialite ID` sont exclusifs ; un identifiant inconnu est
+refusé avec la liste des identifiants utilisables. Un extrait porte son objet,
+les chapitres prévus correspondants et, pour un domaine, les spécialités qui y
+déclarent une branche. Il ne recalcule aucun total global : le compteur de
+cartes sans rattachement exact reste dans le rapport global.
+
+`--sortie CHEMIN` écrit le rendu, global ou ciblé, à l'endroit choisi, par
+exemple un fichier de `sorties/` hors git. Sans filtre, l'écriture par défaut
+reste le rapport global ; `--check` et `--write` ne s'appliquent qu'à lui et
+refusent un filtre. Un artefact `site/banque.json` absent laisse les compteurs
+de cartes `inconnu`, jamais zéro.
+
+Le rapport global garde le Markdown pour forme canonique : `--write --json`
+sans `--sortie` est refusé, et une `--sortie` qui vise le rapport global est
+refusée dès qu'elle porte un filtre ou `--json`. `--json` reste possible vers un
+fichier distinct, par exemple `sorties/extrait.json`.
+
+Les compteurs de domaines incluent les cartes du socle et les cartes sans
+chapitre. Les compteurs de spécialités exigent un rattachement exact au socle.
+Les études et cartes satellites sont exclues : zéro dans une spécialité ne
+signifie pas absence de contenu sur le thème, et la portée le rappelle dans le
+rapport global comme dans chaque extrait.
+
 Le programme d'un métier en données : `copro.json` pour le gestionnaire
 de copropriété. `catalogue.json` liste les parcours proposés à l'arrivée
 (`COMMENCER.md` §2) ; ses compteurs se mettent à jour à chaque lot de

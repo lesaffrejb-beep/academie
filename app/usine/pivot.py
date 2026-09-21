@@ -17,6 +17,8 @@ from collections import Counter
 from pathlib import Path
 
 EXTENSIONS_PDF = {".pdf"}
+# Un sous-titre horodaté se nettoie ; un document écrit (.txt, .md) se garde tel quel.
+EXTENSIONS_HORODATAGE = {".vtt", ".srt"}
 EXTENSIONS_TRANSCRIPTION = {".vtt", ".srt", ".txt", ".md"}
 RE_MOT = re.compile(r"[a-zà-ÿœ0-9]{4,}")
 # Une figure vectorielle n'est pas une image pour pdfimages : on la repère à sa légende.

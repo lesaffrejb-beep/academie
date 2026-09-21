@@ -12,12 +12,18 @@
 
 Sort 0 quand la demande aboutit, 1 sinon. Les messages sont faits pour être
 lus par le modèle qui travaille : ils disent quoi faire ensuite.
+
+`preparer` écrit des copies sous l'empreinte du document et n'écrase jamais
+l'original : `sources/<empreinte><extension>`, ou
+`sources/<empreinte>.source.md` pour un Markdown, dont le pivot occupe déjà
+`<empreinte>.md`.
 """
 
 from __future__ import annotations
 
 import argparse
 import shutil
+import subprocess
 import sys
 from pathlib import Path
 
@@ -29,43 +35,71 @@ from usine import pivot as P  # noqa: E402
 from usine import transcription as T  # noqa: E402
 
 
-def cmd_preparer(args) -> int:
-    rac = E.racine()
-    cfg = E.config(rac)
-    fichier = Path(args.fichier).expanduser().resolve()
+STATUT_PREPARE = "préparé"
+STATUT_DEJA = "déjà préparé"
+STATUT_ECHEC = "échec"
+
+
+def _archiver_original(fichier: Path, cible: Path, emp: str) -> None:
+    """Copie l'original sous son empreinte ; refuse d'écraser une archive étrangère."""
+    if cible.exists():
+        if P.empreinte(cible) != emp:
+            raise RuntimeError(f"archive source étrangère en place : {cible.name} ne porte pas l'empreinte {emp} ; "
+                               "elle n'est pas écrasée")
+        return
+    cible.parent.mkdir(parents=True, exist_ok=True)
+    shutil.copy2(fichier, cible)
+    if P.empreinte(cible) != emp:
+        raise RuntimeError(f"copie altérée : {cible.name} ne porte pas l'empreinte {emp}")
+
+
+def preparer_fichier(fichier: Path, rac: Path, cfg: dict, interne: bool) -> str:
+    """Prépare un fichier déposé ; renvoie son statut et dit tout ce qu'il fait.
+
+    Un échec attendu (outil absent, PDF illisible, archive étrangère, état
+    corrompu) est rendu, pas propagé : `deposer` poursuit le lot et son bilan
+    reste juste.
+    """
     if not fichier.is_file():
         print(f"fichier introuvable : {fichier}")
-        return 1
+        return STATUT_ECHEC
     suffixe = fichier.suffix.lower()
     if suffixe not in P.EXTENSIONS_PDF | P.EXTENSIONS_TRANSCRIPTION:
         print(f"format non pris en charge : {suffixe} (PDF, .vtt, .srt, .txt, .md)")
-        return 1
-    emp = P.empreinte(fichier)
-    doc = E.Document(rac, emp, interne=bool(args.interne))
-    doc.base.mkdir(parents=True, exist_ok=True)
-    cible = doc.base / f"{emp}{suffixe}"
-    if not cible.exists():
-        shutil.copy2(fichier, cible)
-    if doc.etat.exists():
-        etat = E.charger(doc)
-        print(f"déjà préparé : {doc.rel(doc.etat)}")
-        print(E.resume(doc, etat))
-        return 0
-    if suffixe in P.EXTENSIONS_PDF:
-        info = P.preparer_pdf(cible, doc.pages, doc.figures, cfg)
-    else:
-        lignes = T.nettoyer(cible.read_text(encoding="utf-8", errors="replace"))
-        pages = T.pseudo_pages(lignes, int(cfg["lignes_par_page_transcription"]))
-        P.ecrire_pages(doc.pages, pages)
-        info = {"type": "transcription", "pages": len(pages), "mots_machine": sum(P.compte_mots(p) for p in pages),
-                "images_par_page": {}, "figures_par_page": {}, "pages_rendues": [], "ocr_requis": False, "titres": [], "texte": pages}
-    P.ecrire_structure(doc.structure, info)
-    doc.pivot.write_text(P.pivot_brut(info["texte"], {int(k): v for k, v in info["figures_par_page"].items()},
-                                      int(cfg["mots_page_texte"])), encoding="utf-8")
-    etat = E.etat_initial(doc, info, cfg)
-    E.journaliser(etat, "préparation", f"{info['pages']} page(s), {info['mots_machine']} mots machine, {len(info.get('pages_rendues', []))} page(s) rendue(s)")
-    E.sauver(doc, etat)
-    print(f"préparé : {doc.rel(cible)}")
+        return STATUT_ECHEC
+    try:
+        emp = P.empreinte(fichier)
+        doc = E.Document(rac, emp, interne=interne)
+        doc.base.mkdir(parents=True, exist_ok=True)
+        cible = doc.chemin_source(suffixe)
+        _archiver_original(fichier, cible, emp)
+        if doc.etat.exists():
+            etat = E.charger(doc)
+            print(f"déjà préparé : {doc.rel(doc.etat)}")
+            print(E.resume(doc, etat))
+            return STATUT_DEJA
+        if suffixe in P.EXTENSIONS_PDF:
+            info = P.preparer_pdf(cible, doc.pages, doc.figures, cfg)
+        else:
+            texte = cible.read_text(encoding="utf-8", errors="replace")
+            lignes = T.nettoyer(texte, horodatage=suffixe in P.EXTENSIONS_HORODATAGE)
+            pages = T.pseudo_pages(lignes, int(cfg["lignes_par_page_transcription"]))
+            P.ecrire_pages(doc.pages, pages)
+            info = {"type": "transcription" if suffixe in P.EXTENSIONS_HORODATAGE else "texte",
+                    "pages": len(pages), "mots_machine": sum(P.compte_mots(p) for p in pages),
+                    "images_par_page": {}, "figures_par_page": {}, "pages_rendues": [], "ocr_requis": False,
+                    "titres": [], "texte": pages}
+        P.ecrire_structure(doc.structure, info)
+        doc.pivot.write_text(P.pivot_brut(info["texte"], {int(k): v for k, v in info["figures_par_page"].items()},
+                                          int(cfg["mots_page_texte"])), encoding="utf-8")
+        etat = E.etat_initial(doc, info, cfg)
+        E.journaliser(etat, "préparation", f"{info['pages']} page(s), {info['mots_machine']} mots machine, {len(info.get('pages_rendues', []))} page(s) rendue(s)")
+        E.sauver(doc, etat)
+    except (OSError, RuntimeError, ValueError, subprocess.TimeoutExpired) as exc:
+        print(f"échec : {exc}")
+        return STATUT_ECHEC
+    print(f"préparé : {doc.rel(doc.pivot)}")
+    print(f"  original      : {doc.rel(cible)}")
     print(f"  pages machine : {doc.rel(doc.pages)}/ ({info['pages']} page(s), {info['mots_machine']} mots)")
     print(f"  pivot brut    : {doc.rel(doc.pivot)}")
     print(f"  structure     : {doc.rel(doc.structure)}")
@@ -73,15 +107,30 @@ def cmd_preparer(args) -> int:
         print(f"  pages rendues : {len(info['pages_rendues'])} dans {doc.rel(doc.figures)}/")
     if info.get("ocr_requis"):
         print("  OCR requis : aucune couche texte ; `ocrmypdf --language fra` puis `preparer` à nouveau")
-    if args.interne:
+    if interne:
         print("  interne : ce document et tout ce qui en sort restent dans sources/interne/ ; aucun nom ne doit passer dans une fiche ni un chapitre")
     print(f"ensuite : python3 app/usine/usine.py declarer {emp} --outil <outil> --modele <modèle>")
-    return 0
+    return STATUT_PREPARE
+
+
+def cmd_preparer(args) -> int:
+    rac = E.racine()
+    cfg = E.config(rac)
+    fichier = Path(args.fichier).expanduser().resolve()
+    statut = preparer_fichier(fichier, rac, cfg, bool(args.interne))
+    return 0 if statut != STATUT_ECHEC else 1
 
 
 def cmd_deposer(args) -> int:
-    """Prépare en lot tout ce qui est déposé dans `sources/a-preparer/`."""
+    """Prépare en lot tout ce qui est déposé dans `sources/a-preparer/`.
+
+    Un fichier qui échoue n'arrête pas les suivants ; le bilan sépare les
+    succès, les documents déjà préparés et les échecs, et le code de sortie
+    reste non nul tant qu'un échec subsiste. Aucun fichier du dépôt n'est
+    supprimé ni déplacé.
+    """
     rac = E.racine()
+    cfg = E.config(rac)
     dossier = rac / "sources" / (("interne/" if args.interne else "") + "a-preparer")
     if not dossier.is_dir():
         print(f"dossier de dépôt absent : {dossier}")
@@ -92,14 +141,20 @@ def cmd_deposer(args) -> int:
     if not fichiers:
         print(f"rien à déposer dans {dossier}")
         return 0
+    bilans = {STATUT_PREPARE: [], STATUT_DEJA: [], STATUT_ECHEC: []}
     code = 0
     for fichier in fichiers:
         print(f"--- {fichier.name}")
-        code |= cmd_preparer(argparse.Namespace(fichier=str(fichier),
-                                                interne=bool(args.interne)))
+        statut = preparer_fichier(fichier, rac, cfg, bool(args.interne))
+        code |= 1 if statut == STATUT_ECHEC else 0
+        bilans[statut].append(fichier.name)
         print()
     print(f"{len(fichiers)} fichier(s) traité(s) depuis {dossier}")
-    return code
+    print(f"bilan : {len(bilans[STATUT_PREPARE])} préparé(s), {len(bilans[STATUT_DEJA])} déjà présent(s), "
+          f"{len(bilans[STATUT_ECHEC])} échec(s)")
+    for nom in bilans[STATUT_ECHEC]:
+        print(f"  échec : {nom}")
+    return 1 if (code or bilans[STATUT_ECHEC]) else 0
 
 
 def _doc(cle: str) -> tuple[E.Document, dict, dict]:

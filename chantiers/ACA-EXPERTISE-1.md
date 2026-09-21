@@ -299,3 +299,91 @@ avancé montrent deux chemins sans attribuer ces acquis à JB. Contrôles
 locaux et revue indépendante avant commit, sans publier de données joueur.
 
 Routage documentaire autorisé pour rendre le protocole retrouvable : ajout d’un lien dans `AGENTS.md` vers `CHEMINS.md` et le prompt, sans modifier les règles dures.
+
+### Annexe du 21/09/2026 : lire la couverture d'un thème, pas du dépôt entier
+
+JB demande régulièrement où en est un thème précis. Le rapport global
+répond pour les onze domaines et les trente-quatre spécialisations à la
+fois ; pour instruire une demande bornée, il faut un extrait ciblé,
+recalculable et lisible, qui ne lise aucun état joueur.
+
+Périmètre de cette annexe : `app/couverture_expertises.py`,
+`app/tests_expertises.py`, `programme/README.md` (petit guide) et cette
+annexe. Aucun contenu, aucune carte, aucune source, aucun état joueur,
+aucune mécanique pédagogique, aucune entrée de `roadmap.json`. Le rapport
+global reste `travail/expertise-2026-09-06/COUVERTURE.md` : un extrait
+filtré ne l'écrase jamais.
+
+Sémantique des filtres : `--specialite <id>` et `--domaine <id>` réduisent
+le rapport à l'objet nommé. Un identifiant inconnu est refusé avec la
+liste des identifiants utilisables ; les deux filtres sont exclusifs et
+l'absence de filtre donne le rapport global. Un extrait porte l'objet du
+filtre, la liste des spécialités qui déclarent une branche dans le domaine
+ou des domaines touchés par les branches de la spécialité, et les
+chapitres prévus correspondants. Il ne recalcule aucun total global et
+n'affiche pas le compteur global de cartes sans rattachement : ce
+compteur reste dans le rapport global et `hors_extrait` le nomme.
+
+`--sortie <chemin>` écrit le rendu, global ou ciblé, à l'endroit choisi,
+par exemple un fichier de `sorties/`, hors git. `--check` et `--write`
+restent réservés au rapport global : `--check` refuse un filtre et
+`--write` filtré sans `--sortie` est refusé.
+
+Libellé corrigé : la colonne « N4/N5 servies localement » comptait des
+cartes de l'artefact par niveau déclaré, pas du contenu servi. Elle
+devient « Cartes artefact N4/N5 », et la note rappelle qu'un statut
+déclaré dans un fichier n'est pas un contenu actuellement servi à un
+joueur ; un artefact absent reste inconnu.
+
+Encodage : lectures et écritures en UTF-8 explicite, flux standard
+reconfiguré quand il le peut, pour Windows (`ACA-PORTABILITE-1`).
+
+Tests rouges avant code :
+
+- le filtre par domaine réduit le rapport à ce domaine, liste les
+  spécialités qui y déclarent une branche et laisse le rapport global
+  intact (fonction pure) ;
+- le filtre par spécialité réduit le rapport à cette spécialité, garde les
+  compteurs de rattachement de cette spécialité et ne reprend pas ceux des
+  autres ;
+- un identifiant inconnu, un domaine pris pour une spécialité, les deux
+  filtres ensemble et l'absence de filtre sont refusés avec les
+  identifiants utilisables ;
+- un extrait filtré ne renseigne aucun total global et un artefact absent
+  reste inconnu dans l'extrait ;
+- `--check` avec un filtre est refusé, `--write` filtré sans `--sortie`
+  est refusé, et `--sortie` écrit le fichier choisi sans modifier le
+  rapport global ;
+- le rendu ne parle plus de cartes « servies localement ».
+
+Précisions de contrôle demandées par le parent :
+
+- un extrait par domaine ne reprend pas le compteur global de cartes sans
+  rattachement exact ; `hors_extrait` le nomme et le JSON porte `filtre`
+  et `portee` ;
+- une spécialité transversale affiche ses compteurs de domaines sous un
+  titre qui rappelle qu'ils portent le domaine entier, pas la seule
+  spécialité ;
+- `site/banque.json` absent laisse les compteurs de cartes `inconnu` dans
+  l'extrait ; le programme seul ne fait pas apparaître de carte
+  disponible ;
+- le catalogue ne contient que des spécialités copro ; aucun élargissement
+  au cursus IFSI.
+
+Régression CLI relevée par le parent le 21/09/2026 : `--write --json` sans
+`--sortie` écrivait le JSON à la place du rapport global. `--write --json` et
+toute `--sortie` visant le rapport global (filtrée ou JSON) sont maintenant
+refusés avant toute écriture ; le Markdown reste la forme canonique de
+`travail/expertise-2026-09-06/COUVERTURE.md`. Tests sentinelles : le fichier
+reste octet pour octet inchangé après refus, `--json` reste possible vers un
+fichier distinct et `--write` seul écrit bien du Markdown.
+
+Portée corrigée après la même revue, sans toucher aux calculs : les compteurs
+de domaines incluent les cartes du socle et les cartes sans chapitre, les
+compteurs de spécialités exigent un rattachement exact au socle, et les études
+et cartes satellites sont exclues. Un extrait `--specialite electricite` peut
+donc afficher zéro carte alors que l'étude satellite
+`comprendre-protections-electriques` existe : zéro dans une spécialité ne
+signifie pas absence de contenu. La note de portée le dit, dans le rapport
+global comme dans chaque extrait ; un test vérifie qu'elle décrit les compteurs
+réels.

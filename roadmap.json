@@ -6,7 +6,7 @@
     {
       "id": "ACA-PROFILS-LOCAUX-1",
       "outcome": "Un clone neuf sait qui joue : un profil actif local (etat/profil-actif.json, hors git) est suivi par les commandes sans --profil, les pseudos dangereux ou en collision de casse sont refuses, un import d'un autre profil est refuse avant toute ecriture, et l'export transporte les preferences validees sans casser academie-sauvegarde-1.",
-      "status": "in_progress",
+      "status": "done",
       "mode": "agent-review",
       "risk": "medium",
       "priority": 96,
@@ -18,7 +18,7 @@
         "max_minutes": 150,
         "max_tokens": 60000
       },
-      "proof": "Chantier ouvert le 21/09/2026. Preuves obtenues le 21/09 : suite complète app/tests.py TOUT VERT hors sandbox par le parent, puis tooling/check.py 0 erreur ; copie neuve dans /tmp sans état ni fichiers ignorés, .git init/add temporaire, hook détecté absent puis posé, check.py 0 et tests.py TOUT VERT. Mutations : la passe globale a été interrompue puis restaurée ; les mutations ciblées garde et imports ont été détectées. Preuve propre à cet item encore attendue : section 14 de tests_academie.py (selection persistante, pseudos refuses, collision de casse, import d'un autre profil sans octet change, preferences exportees et non ecrasees).",
+      "proof": "Chantier ouvert le 21/09/2026. Preuves obtenues le 21/09 : suite complète app/tests.py TOUT VERT hors sandbox par le parent, puis tooling/check.py 0 erreur ; copie neuve dans /tmp sans état ni fichiers ignorés, .git init/add temporaire, hook détecté absent puis posé, check.py 0 et tests.py TOUT VERT. Mutations : la passe globale a été interrompue puis restaurée ; les mutations ciblées garde et imports ont été détectées. Preuve propre à cet item, obtenue par la vraie CLI le 21/09 : section 14 de tests_academie.py verte (selection persistante, pseudos refuses, collision de casse, import d'un autre profil sans octet change, preferences exportees et non ecrasees). Item clos sur ce perimetre ; aucun contenu client n'entre ici.",
       "parent_milestone": "ACADEMIE-V2-JOUEUR"
     },
     {
@@ -41,7 +41,7 @@
     {
       "id": "ACA-EXPERTISE-1",
       "outcome": "Spécialisations transverses explicites, couverture mesurée et dossiers experts sourcés, au-delà du socle.",
-      "status": "ready",
+      "status": "in_progress",
       "mode": "agent-review",
       "risk": "medium",
       "priority": 100,
@@ -52,7 +52,7 @@
         "max_units": 1,
         "max_minutes": 180
       },
-      "proof": "06/09 : cinq approfondissements relus et servis localement, dont protections électriques avec deux SVG ; protocole de chemin depuis la demande et contrôle testé (11 cas). Preuves : travail/preuve-concrete-2026-09-06/LIVRAISON.md. Couverture complète, transformation du corpus et apprentissage restent ouverts.",
+      "proof": "06/09 : cinq approfondissements relus et servis localement, dont protections électriques avec deux SVG ; protocole de chemin depuis la demande et contrôle testé (11 cas). Preuves : travail/preuve-concrete-2026-09-06/LIVRAISON.md. Couverture complète, transformation du corpus et apprentissage restent ouverts. 21/09/2026, sous-lot borné consigné dans l'annexe du cahier (lire la couverture d'un thème) : app/couverture_expertises.py rend un extrait ciblé par --specialite ou --domaine, ou vers --sortie, refuse les sorties JSON ou filtrées vers le rapport global canonique avant toute écriture (le Markdown global explicite reste permis), corrige le libellé « Cartes artefact N4/N5 », et lit et écrit en UTF-8 pour Windows. Tests expertises verts, check.py 0 erreur. Le chantier large reste ouvert : la couverture exhaustive des thèmes et la transformation du corpus ne sont pas faites.",
       "parent_milestone": "ACADEMIE-EXPERTISE"
     },
     {
@@ -292,7 +292,7 @@
     {
       "id": "ACA-INGESTION-1",
       "outcome": "Un script local transforme un document (PDF texte, PDF image, transcription) en pivot Markdown par page avec figures rendues et fiche de source ; un agent, sur abonnement, en tire registre, rattachements, lectures, satellites, corrections et coût (decisions/0026).",
-      "status": "ready",
+      "status": "in_progress",
       "mode": "agent-review",
       "risk": "medium",
       "priority": 81,
@@ -304,7 +304,7 @@
         "max_minutes": 240,
         "max_tokens": 80000
       },
-      "proof": "Au 03/09/2026 au soir : app/usine/ existe (preparer, declarer, suivant, valider, etat, fiche, registre), 40 tests et 4 mutations, les quatre documents du test sont préparés (pivots bruts, pages machine, 120 pages rendues) et la première unité du Focus du CAE est relue et validée par le script. Reste : les quatre documents relus de bout en bout avec fiches, lignes de registre et rattachements, et le rapport de coût ; aucun appel d'API.",
+      "proof": "Au 03/09/2026 au soir : app/usine/ existe (preparer, declarer, suivant, valider, etat, fiche, registre), 40 tests et 4 mutations, les quatre documents du test sont préparés (pivots bruts, pages machine, 120 pages rendues) et la première unité du Focus du CAE est relue et validée par le script. Reste : les quatre documents relus de bout en bout avec fiches, lignes de registre et rattachements, et le rapport de coût ; aucun appel d'API. 21/09/2026, sous-lot borné consigné dans l'annexe du cahier (le dépôt ne perd plus l'original) : preparer archive l'original à côté du pivot sans jamais l'écraser (<empreinte>.source.md, <empreinte><extension> sinon), un .txt ou .md n'est plus nettoyé comme une transcription, et deposer traverse tout le dossier, poursuit après un échec, le nomme et sort non nul. Cinq scénarios neufs dans tests_usine.py, tests.py et check.py verts. Pas de migration destructive d'un dépôt existant. Les quatre documents réels relus de bout en bout et le rapport de coût restent à faire.",
       "parent_milestone": "ACADEMIE-V2-FONDATIONS",
       "note": "Le code est vert ; la traversée des quatre documents réels ne peut se faire que depuis le Mac (sources/ hors git)."
     },
@@ -1195,7 +1195,7 @@
         "max_minutes": 120,
         "max_tokens": 30000
       },
-      "proof": "21/09/2026, preuves rapportées par le chantier : 20 tests garde verts avec hook à interpréteur détecté, blocage d'un commit sans python3 dans le PATH, installation depuis un worktree retrouvée par check.py et hook inconnu préservé ; check.py vert ; copie neuve locale en ASCII dont le hook refuse un mail et accepte un fichier sain ; worktree contrôlé. Preuves globales du parent : suite complète app/tests.py TOUT VERT hors sandbox, puis tooling/check.py 0 erreur ; copie neuve dans /tmp sans état ni fichiers ignorés, .git init/add temporaire, hook détecté absent puis posé, check.py 0 et tests.py TOUT VERT. Mutations ciblées garde et imports détectées ; passe globale interrompue puis restaurée. Limite : aucun poste Windows réel n'a exécuté le hook, seul le job CI Windows le dira (demarrer.ps1 -Diagnostic, puis hook, check.py et tests).",
+      "proof": "21/09/2026, preuves rapportées par le chantier : 20 tests garde verts avec hook à interpréteur détecté, blocage d'un commit sans python3 dans le PATH, installation depuis un worktree retrouvée par check.py et hook inconnu préservé ; check.py vert ; copie neuve locale en ASCII dont le hook refuse un mail et accepte un fichier sain ; worktree contrôlé. Preuves globales du parent : suite complète app/tests.py TOUT VERT hors sandbox, puis tooling/check.py 0 erreur ; copie neuve dans /tmp sans état ni fichiers ignorés, .git init/add temporaire, hook détecté absent puis posé, check.py 0 et tests.py TOUT VERT. Mutations ciblées garde et imports détectées ; passe globale interrompue puis restaurée. 21/09/2026, fixtures Windows ajoutées à tests_garde.py : 22 tests garde verts, dont l'écriture du script sh en LF et le relais qui cite un chemin Windows, à côté des tests de hook sans shebang, hook en CRLF et hook inconnu préservé. Limite qui garde l'item ouvert : aucun poste Windows réel n'a exécuté le hook, seul le job CI Windows le dira (demarrer.ps1 -Diagnostic, puis hook, check.py et tests). L'item n'est pas déclaré vert avant ce verdict.",
       "parent_milestone": "ACADEMIE-V2-FONDATIONS",
       "note": "Demande de JB du 21/09/2026 : le dépôt part sur un Windows de travail et chez un second joueur. Suite d'ACA-PRECOMMIT-1 ; laisse l'arrivée d'un élève (ACA-ONBOARDING-2) appeler la commande d'installation. Windows n'est pas constaté sur une machine réelle, seul le job CI le dira."
     },
@@ -1212,7 +1212,7 @@
         "max_minutes": 150,
         "max_tokens": 50000
       },
-      "proof": "21/09/2026, preuves obtenues : 49 tests tests_demarrer.py verts, 1 ignoré (pwsh absent de ce Mac), couvrant la version Python réelle exigée, Python trop ancien encore lisible, plan Windows winget --scope user sans curl ni élévation, aucun outil facultatif, --installer qui n'exécute que les manquants, échec d'installation en code non nul avec rapport conservé, guide ZIP sans git init ni reset, racine exacte sans héritage du dépôt parent, Git muet refusé, profil absent non annoncé prêt, demarrer.ps1 pour un Windows sans Python, --json stable. Preuves globales du parent : suite complète app/tests.py TOUT VERT hors sandbox, puis tooling/check.py 0 erreur ; copie neuve dans /tmp sans état ni fichiers ignorés, .git init/add temporaire, hook détecté absent puis posé, check.py 0 et tests.py TOUT VERT. Mutations ciblées garde et imports détectées ; passe globale interrompue puis restaurée. Limite : aucun poste Windows réel n'a exécuté demarrer.ps1, seul le job CI Windows le dira.",
+      "proof": "21/09/2026, preuves obtenues : 49 tests tests_demarrer.py verts, 1 ignoré (pwsh absent de ce Mac), couvrant la version Python réelle exigée, Python trop ancien encore lisible, plan Windows winget --scope user sans curl ni élévation, aucun outil facultatif, --installer qui n'exécute que les manquants, échec d'installation en code non nul avec rapport conservé, guide ZIP sans git init ni reset, racine exacte sans héritage du dépôt parent, Git muet refusé, profil absent non annoncé prêt, demarrer.ps1 pour un Windows sans Python, --json stable. Preuves globales du parent : suite complète app/tests.py TOUT VERT hors sandbox, puis tooling/check.py 0 erreur ; copie neuve dans /tmp sans état ni fichiers ignorés, .git init/add temporaire, hook détecté absent puis posé, check.py 0 et tests.py TOUT VERT. Mutations ciblées garde et imports détectées ; passe globale interrompue puis restaurée. 21/09/2026, fixtures Windows ajoutées à tests_demarrer.py : 51 tests verts, 1 ignoré (pwsh absent de ce Mac), dont un Git absent du PATH qui n'est pas annoncé prêt et un Git qui répond sa version qui est prêt. Limite qui garde l'item ouvert : aucun poste Windows réel n'a exécuté demarrer.ps1, seul le job CI Windows le dira. L'item n'est pas déclaré vert avant ce verdict.",
       "parent_milestone": "ACADEMIE-V2-OUVERTURE",
       "note": "Demande de JB du 21/09/2026 : le dépôt part sur un Windows de travail et chez Arthur, second joueur. Le démarrage ne touche pas au moteur : il installe, vérifie, oriente et explique. Aucune réparation en place d'un dépôt existant (revue du 21/09) : un ZIP se clone à côté et l'état se transfère. Les outils facultatifs de l'usine (poppler, export) ne sont pas installés pour jouer, et l'état local n'est pas synchronisé par git entre deux machines. Antigravity lit .agents/rules (pluriel), confirmé sur la documentation officielle."
     }

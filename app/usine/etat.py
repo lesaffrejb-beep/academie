@@ -18,7 +18,7 @@ import re
 from datetime import datetime, timezone
 from pathlib import Path
 
-from usine.pivot import RE_MOT, lire_page, mots
+from usine.pivot import EXTENSIONS_PDF, EXTENSIONS_TRANSCRIPTION, RE_MOT, lire_page, mots
 
 RE_ANCRE = re.compile(r"^## \[p\. (\d+)\]\s*$", re.M)
 RE_NOMBRE = re.compile(r"\d+(?:[ \u00a0\u202f\u2009\u2007\u2008]\d{3})*(?:[.,]\d+)?")
@@ -58,7 +58,10 @@ def config(rac: Path) -> dict:
 class Document:
     """Les chemins d'un document : source, pages machine, pivot, figures, état, fiche."""
 
-    SUFFIXES_PROPRES = (".etat.json", ".md", ".structure.json", ".fiche.json")
+    # Le pivot s'appelle `<empreinte>.md` : l'original d'un document Markdown
+    # ne peut donc pas porter ce nom, il vit en `<empreinte>.source.md`.
+    MARQUE_SOURCE = ".source"
+    EXTENSIONS_SOURCE = tuple(sorted(EXTENSIONS_PDF | EXTENSIONS_TRANSCRIPTION))
 
     def __init__(self, rac: Path, empreinte: str, interne: bool = False):
         self.racine = rac
@@ -72,10 +75,24 @@ class Document:
         self.structure = self.base / f"{empreinte}.structure.json"
         self.fiche = self.base / f"{empreinte}.fiche.json"
 
+    def chemin_source(self, suffixe: str) -> Path:
+        """Où archiver l'original, sans jamais viser le nom du pivot."""
+        if self.base / f"{self.empreinte}{suffixe}" == self.pivot:
+            return self.base / f"{self.empreinte}{self.MARQUE_SOURCE}{suffixe}"
+        return self.base / f"{self.empreinte}{suffixe}"
+
     def source(self) -> Path | None:
-        for f in sorted(self.base.glob(f"{self.empreinte}.*")):
-            if f.is_file() and not f.name.endswith(self.SUFFIXES_PROPRES):
-                return f
+        """Le fichier d'origine, aux noms exacts que l'usine archive.
+
+        Aucun glob : un fichier dérivé déposé à la main (`<empreinte>.html`,
+        `<empreinte>.notes.md`) ne doit pas passer pour la source. Les noms
+        des versions antérieures (`<empreinte><extension>`) restent lus.
+        """
+        candidats = [self.base / f"{self.empreinte}{self.MARQUE_SOURCE}.md"]
+        candidats += [self.base / f"{self.empreinte}{ext}" for ext in self.EXTENSIONS_SOURCE]
+        for c in candidats:
+            if c != self.pivot and c.is_file():
+                return c
         return None
 
     def rel(self, p: Path) -> str:

@@ -52,6 +52,17 @@ moteur, la banque, les valideurs, `serveur/`.
   jamais `.git/hooks/`, puisque les hooks ne sont pas versionnés. Le job
   Windows est ajouté en preuve d'exécution, sans promettre un poste
   Windows réel avant sa première exécution.
+- Les fixtures de test qui posent un bouchon `sh` écrivent en octets LF
+  et citent leurs chemins pour `sh` : sous Windows, `write_text` sort un
+  shebang CRLF qui ne prouve plus rien, et un `sys.executable` en
+  `C:\...` doit rester un seul mot pour l'interpréteur.
+- Un cas qui dépend d'un exécutable dépendant du système (un `git` muet
+  posé dans le `PATH`) se teste par double de module : sur Windows,
+  `subprocess` ne lance pas un script `sh` sans extension, et la fixture
+  passerait pour une raison qui n'est pas celle du test.
+- Un `PATH` réduit remplace la clé existante au lieu d'en ajouter une
+  seconde : Windows enregistre `Path` et garderait un doublon `PATH`
+  au hasard, ce qui rendrait le test dépendant de la machine.
 
 ## Étapes, dans l'ordre
 
@@ -73,7 +84,13 @@ moteur, la banque, les valideurs, `serveur/`.
    des sous-processus et de la sortie.
 5. `.github/workflows/check.yml` : étape d'installation du hook avant
    `check.py`, job `windows-latest`.
-6. Preuve : tests, `check.py`, clone neuf sans hook, worktree.
+6. Fixtures portables : `ecrit_bouchon` et le leurre `python3` en octets
+   LF, chemins cités pour `sh` en barres obliques ; le cas du `git` muet
+   passe au double de module (`demarrer.shutil.which` et
+   `demarrer._sortie`) ; deux cas neufs dans `app/tests_garde.py`
+   gardent ces fixtures en LF et vérifient la citation d'un chemin
+   Windows avec espaces.
+7. Preuve : tests, `check.py`, clone neuf sans hook, worktree.
 
 ## Ce qu'on ne fait pas
 
