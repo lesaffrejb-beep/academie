@@ -48,7 +48,7 @@ def migrer_revue(texte: str) -> dict | None:
         return None
     mode = v0.get("mode", "flash")
     v1 = {"quand": v0["quand"], "nonce": _nonce(texte.strip())}
-    if mode in MODES_V1 and "nonce" in v0:
+    if False:
         v1["nonce"] = v0["nonce"]
     if mode == "flash":
         v1["mode"], v1["format"] = "revision", "seance"
